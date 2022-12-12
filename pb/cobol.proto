@@ -55,8 +55,8 @@ message SourceUnit {
     // 
     // Source units may be contained directly or indirectly.
     repeated SourceUnit units = 2;
-    // Sources origion source
-    repeated Source sources = 3;
+    // Contents origion source
+    repeated Content contents = 3;
 }
 
 message Division {
@@ -118,7 +118,7 @@ message EntryConventionClause {
     string entry_convention_name = 1;
 }
 
-message Source {
+message Content {
     enum Type {
         CODE = 0;
         COMMENT = 1;
