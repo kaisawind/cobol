@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/kaisawind/cobol/pb;pb";
+
+// CompilationGroup
+// 
+// A structured compilation group consists of zero, one, or more compilation units that have been processed by text
+// manipulation. 
+message CompilationGroup {
+    repeated CompilationUnit units = 1;
+}
+
+// CompilationUnit
+// 
+// A compilation unit may contain one or more source units, depending on the type of definition.
+// A compilation unit is one of the following:
+// 
+//  a program-prototype definition
+//  a function-prototype definition
+//  a program definition for an outermost program
+//  a class definition
+//  an interface definition
+//  a function definition
+message CompilationUnit {
+    repeated SourceUnit units = 1;
+}
+
+// SourceUnit
+//
+// A source unit begins with an identification division and ends with an end marker or the end of the compilation
+// group. A source unit includes any contained source units. The following are source units:
+// 
+//  an outermost program-definition, including its contained program-definitions
+//  a contained program-definition, including its contained program-definitions
+//  a program-prototype-definition
+//  a function-definition
+//  a function-prototype-definition
+//  a class-definition, including its factory definition and instance definition
+//  a factory definition, including its method definitions
+//  an instance definition, including its method definitions
+//  a method definition
+//  an interface definition, including its method prototypes
+message SourceUnit {
+    // Divisions
+    // 
+    // A source unit may contain one or more divisions, specified in the following order:
+    //  identification division
+    //  environment division
+    //  data division
+    //  procedure division
+    repeated Division divisions = 1;
+    // Units Contained source units
+    // 
+    // Source units may be contained directly or indirectly.
+    repeated SourceUnit units = 2;
+    // Sources origion source
+    repeated Source sources = 3;
+}
+
+message Division {
+    oneof one_of {
+        Identification identification = 1;
+        Environment environment = 2;
+        Data data = 3;
+        Procedure procedure = 4;
+    }
+}
+
+message Identification {
+
+}
+
+message Paragraph {
+    message ProgramId {
+        enum Type {
+            PROGRAM = 0;
+            COMMON_PROGRAM = 1;
+            INITIAL_PROGRAM = 2;
+            RECURSIVE_PROGRAM = 3;
+            PROTOTYPE = 4;
+        }
+        string program_name = 1;
+        string literal = 2;
+        repeated Type types = 3;
+    }
+    message Options {
+        repeated ArithmeticClause arithmetic = 1;
+        repeated EntryConventionClause entry_convention = 2;
+    }
+    oneof one_of {
+        ProgramId program_id = 1;
+        Options options = 99;
+    }
+}
+
+message Environment {
+
+}
+
+message Data {
+
+}
+
+message Procedure {
+
+}
+
+message ArithmeticClause {
+    oneof one_of {
+        bool native = 1;
+        bool standard = 2;
+    }
+}
+
+message EntryConventionClause {
+    string entry_convention_name = 1;
+}
+
+message Source {
+    enum Type {
+        CODE = 0;
+        COMMENT = 1;
+        DEBUG = 2;
+    }
+    Type type = 1;
+    string content = 2; 
+}
