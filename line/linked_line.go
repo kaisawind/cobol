@@ -35,8 +35,9 @@ func NewLinkedLine(r io.Reader, opts ...any) (ll *LinkedLine) {
 	}
 	scan := bufio.NewScanner(r)
 	var last *LinkedLine
+	no := 0
 	for scan.Scan() {
-		l := NewLine(scan.Text(), f, dialect)
+		l := NewLine(scan.Text(), no, f, dialect)
 		if l == nil {
 			continue
 		}
@@ -51,8 +52,30 @@ func NewLinkedLine(r io.Reader, opts ...any) (ll *LinkedLine) {
 			last.next = tmp
 		}
 		last = tmp
+		no++
 	}
 	ll = normalizesLines(ll)
+	return
+}
+
+func CombineLinkedLine(ll *LinkedLine) (ret string) {
+	source := ll
+	for {
+		if source == nil {
+			break
+		}
+		if source.Type != CONTINUATION {
+			if source.No > 0 {
+				ret += "\n"
+			}
+			if source.Format != format.TANDEM {
+				ret += strings.Repeat(constant.CHAR_WHITESPACE, 6)
+			}
+			ret += source.Indicator
+		}
+		ret += source.Content()
+		source = source.next
+	}
 	return
 }
 

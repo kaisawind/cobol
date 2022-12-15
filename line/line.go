@@ -7,6 +7,7 @@ import (
 type Line struct {
 	Format    format.Format
 	Type      Type
+	No        int // Line No
 	Dialect   format.Dialect
 	Sequence  string
 	Indicator string
@@ -15,7 +16,7 @@ type Line struct {
 	Comment   string
 }
 
-func NewLine(text string, f format.Format, dialect format.Dialect) (l *Line) {
+func NewLine(text string, no int, f format.Format, dialect format.Dialect) (l *Line) {
 	re := f.Regexp()
 	groups := re.FindAllStringSubmatch(text, -1)
 	if len(groups) == 0 {
@@ -27,8 +28,9 @@ func NewLine(text string, f format.Format, dialect format.Dialect) (l *Line) {
 	}
 	l = &Line{
 		Format:    f,
-		Dialect:   dialect,
 		Type:      ToType(group[2]),
+		No:        no,
+		Dialect:   dialect,
 		Sequence:  group[1],
 		Indicator: group[2],
 		ContentA:  group[3],
