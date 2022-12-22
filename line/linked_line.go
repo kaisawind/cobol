@@ -58,7 +58,7 @@ func NewLinkedLine(r io.Reader, opts ...any) (ll *LinkedLine) {
 	return
 }
 
-func CombineLinkedLine(ll *LinkedLine) (ret string) {
+func CombineLinkedLine(ll *LinkedLine) (code string) {
 	source := ll
 	for {
 		if source == nil {
@@ -66,14 +66,14 @@ func CombineLinkedLine(ll *LinkedLine) (ret string) {
 		}
 		if source.Type != CONTINUATION {
 			if source.No > 0 {
-				ret += "\n"
+				code += "\n"
 			}
 			if source.Format != format.TANDEM {
-				ret += strings.Repeat(constant.CHAR_WHITESPACE, 6)
+				code += strings.Repeat(constant.CHAR_WHITESPACE, 6)
 			}
-			ret += source.Indicator
+			code += source.Indicator
 		}
-		ret += source.Content()
+		code += source.Content()
 		source = source.next
 	}
 	return

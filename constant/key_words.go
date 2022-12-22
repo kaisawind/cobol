@@ -11,4 +11,18 @@ const (
 	DATA          = "DATA"
 	PROCEDURE     = "PROCEDURE"
 	REMARKS       = "REMARKS"
+
+	CBL     = "CBL"
+	COPY    = "COPY"
+	EXEC    = "EXEC"
+	SQL     = "SQL"
+	SQLIMS  = "SQLIMS"
+	CICS    = "CICS"
+	PROCESS = "PROCESS"
+	REPLACE = "REPLACE"
+	EJECT   = "EJECT"
+	SKIP1   = "SKIP1"
+	SKIP2   = "SKIP2"
+	SKIP3   = "SKIP3"
+	TITLE   = "TITLE"
 )
