@@ -3,15 +3,43 @@ package parser
 import (
 	"fmt"
 
+	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/gen/preprocessor"
 )
 
 type PreprocessorListener struct {
 	*preprocessor.BaseCobol85PreprocessorListener
+
+	contexts []*PreprocessorContext
+	cts      *antlr.CommonTokenStream
 }
 
-func NewPreprocessorListener() *PreprocessorListener {
-	return &PreprocessorListener{}
+func NewPreprocessorListener(cts *antlr.CommonTokenStream) *PreprocessorListener {
+	return &PreprocessorListener{
+		contexts: []*PreprocessorContext{},
+		cts:      cts,
+	}
+}
+
+func (s *PreprocessorListener) push() {
+	s.contexts = append([]*PreprocessorContext{NewPreprocessorContext()}, s.contexts...)
+}
+
+func (s *PreprocessorListener) pop() {
+	if len(s.contexts) > 0 {
+		s.contexts = s.contexts[1:]
+	}
+}
+
+func (s *PreprocessorListener) peek() *PreprocessorContext {
+	if len(s.contexts) == 0 {
+		return nil
+	}
+	return s.contexts[0]
+}
+
+func (s *PreprocessorListener) context() *PreprocessorContext {
+	return s.peek()
 }
 
 // EnterCompilerOptions is called when production compilerOptions is entered.
@@ -25,10 +53,23 @@ func (s *PreprocessorListener) EnterCompilerOption(ctx *preprocessor.CompilerOpt
 // EnterCopyStatement is called when production copyStatement is entered.
 func (s *PreprocessorListener) EnterCopyStatement(ctx *preprocessor.CopyStatementContext) {
 	fmt.Println("EnterCopyStatement", ctx)
+	s.push()
 }
 
 // ExitCopyStatement is called when production copyStatement is exited.
-func (s *PreprocessorListener) ExitCopyStatement(ctx *preprocessor.CopyStatementContext) {}
+func (s *PreprocessorListener) ExitCopyStatement(ctx *preprocessor.CopyStatementContext) {
+	s.pop()
+
+	s.push()
+
+	for _, iPhrase := range ctx.AllReplacingPhrase() {
+		phrase, ok := iPhrase.(*preprocessor.ReplacingPhraseContext)
+		if ok {
+			fmt.Println(phrase.RuleIndex)
+			s.context().Store(phrase.AllReplaceClause())
+		}
+	}
+}
 
 // EnterEjectStatement is called when production ejectStatement is entered.
 func (s *PreprocessorListener) EnterEjectStatement(ctx *preprocessor.EjectStatementContext) {}
@@ -63,10 +104,14 @@ func (s *PreprocessorListener) EnterReplaceArea(ctx *preprocessor.ReplaceAreaCon
 func (s *PreprocessorListener) ExitReplaceArea(ctx *preprocessor.ReplaceAreaContext) {}
 
 // EnterReplaceByStatement is called when production replaceByStatement is entered.
-func (s *PreprocessorListener) EnterReplaceByStatement(ctx *preprocessor.ReplaceByStatementContext) {}
+func (s *PreprocessorListener) EnterReplaceByStatement(ctx *preprocessor.ReplaceByStatementContext) {
+	fmt.Println("EnterReplaceByStatement", ctx)
+}
 
 // ExitReplaceByStatement is called when production replaceByStatement is exited.
-func (s *PreprocessorListener) ExitReplaceByStatement(ctx *preprocessor.ReplaceByStatementContext) {}
+func (s *PreprocessorListener) ExitReplaceByStatement(ctx *preprocessor.ReplaceByStatementContext) {
+	fmt.Println("ExitReplaceByStatement", ctx)
+}
 
 // EnterReplaceOffStatement is called when production replaceOffStatement is entered.
 func (s *PreprocessorListener) EnterReplaceOffStatement(ctx *preprocessor.ReplaceOffStatementContext) {

@@ -49,7 +49,7 @@ func ExecutionParser(code string) string {
 		lexer := preprocessor.NewCobol85PreprocessorLexer(is)
 		cts := antlr.NewCommonTokenStream(lexer, 0)
 		cpp := preprocessor.NewCobol85PreprocessorParser(cts)
-		listener := NewPreprocessorListener()
+		listener := NewPreprocessorListener(cts)
 		antlr.ParseTreeWalkerDefault.Walk(listener, cpp.StartRule())
 	}
 	return code
