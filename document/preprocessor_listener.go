@@ -14,7 +14,7 @@ import (
 )
 
 type PreprocessorListener struct {
-	*preprocessor.BaseCobol85PreprocessorListener
+	preprocessor.BaseCobol85PreprocessorListener
 
 	contexts []*Context
 	cts      *antlr.CommonTokenStream
@@ -50,8 +50,12 @@ func (s *PreprocessorListener) peek() *Context {
 	return s.contexts[0]
 }
 
-func (s *PreprocessorListener) context() *Context {
+func (s *PreprocessorListener) Context() *Context {
 	return s.peek()
+}
+
+func (s *PreprocessorListener) GetText() string {
+	return s.Context().Read()
 }
 
 func (s *PreprocessorListener) getCopyBook(ctx preprocessor.ICopySourceContext, opts *options.Options) string {
@@ -83,7 +87,7 @@ func (s *PreprocessorListener) EnterCompilerOptions(ctx *preprocessor.CompilerOp
 }
 
 // ExitCompilerOptions is called when production compilerOptions is exited.
-func (s *PreprocessorListener) ExitCompilerOptions(ctx *preprocessor.CompilerOptionContext) {
+func (s *PreprocessorListener) ExitCompilerOptions(ctx *preprocessor.CompilerOptionsContext) {
 	s.pop()
 }
 
@@ -101,20 +105,20 @@ func (s *PreprocessorListener) ExitCopyStatement(ctx *preprocessor.CopyStatement
 	for _, iPhrase := range ctx.AllReplacingPhrase() {
 		phrase, ok := iPhrase.(*preprocessor.ReplacingPhraseContext)
 		if ok {
-			s.context().Store(phrase.AllReplaceClause())
+			s.Context().Store(phrase.AllReplaceClause())
 		}
 	}
 
 	// copy book
 	content := s.getCopyBook(ctx.CopySource(), s.opts)
 	if content != "" {
-		s.context().Write(content + constant.CHAR_NEWLINE)
-		s.context().Replace(s.cts)
+		s.Context().Write(content + constant.CHAR_NEWLINE)
+		s.Context().Replace(s.cts)
 	}
 
-	content = s.context().Read()
+	content = s.Context().Read()
 	s.pop()
-	s.context().Write(content)
+	s.Context().Write(content)
 }
 
 // EnterEjectStatement is called when production ejectStatement is entered.
@@ -140,11 +144,11 @@ func (s *PreprocessorListener) ExitExecCicsStatement(ctx *preprocessor.ExecCicsS
 	text := GetTextWithHiddenTokens(ctx, s.cts)
 	linePrefix := line.LinePrefix(s.opts.Format) + constant.EXEC_CICS_TAG
 	content := s.buildLines(linePrefix, text)
-	s.context().Write(content)
+	s.Context().Write(content)
 
-	content = s.context().Read()
+	content = s.Context().Read()
 	s.pop()
-	s.context().Write(content)
+	s.Context().Write(content)
 }
 
 // EnterExecSqlImsStatement is called when production execSqlImsStatement is entered.
@@ -160,11 +164,11 @@ func (s *PreprocessorListener) ExitExecSqlImsStatement(ctx *preprocessor.ExecSql
 	text := GetTextWithHiddenTokens(ctx, s.cts)
 	linePrefix := line.LinePrefix(s.opts.Format) + constant.EXEC_SQLIMS_TAG
 	content := s.buildLines(linePrefix, text)
-	s.context().Write(content)
+	s.Context().Write(content)
 
-	content = s.context().Read()
+	content = s.Context().Read()
 	s.pop()
-	s.context().Write(content)
+	s.Context().Write(content)
 
 }
 
@@ -181,11 +185,11 @@ func (s *PreprocessorListener) ExitExecSqlStatement(ctx *preprocessor.ExecSqlSta
 	text := GetTextWithHiddenTokens(ctx, s.cts)
 	linePrefix := line.LinePrefix(s.opts.Format) + constant.EXEC_SQL_TAG
 	content := s.buildLines(linePrefix, text)
-	s.context().Write(content)
+	s.Context().Write(content)
 
-	content = s.context().Read()
+	content = s.Context().Read()
 	s.pop()
-	s.context().Write(content)
+	s.Context().Write(content)
 }
 
 // EnterReplaceArea is called when production replaceArea is entered.
@@ -196,12 +200,12 @@ func (s *PreprocessorListener) EnterReplaceArea(ctx *preprocessor.ReplaceAreaCon
 // ExitReplaceArea is called when production replaceArea is exited.
 func (s *PreprocessorListener) ExitReplaceArea(ctx *preprocessor.ReplaceAreaContext) {
 	if cctx, ok := ctx.ReplaceByStatement().(*preprocessor.ReplaceByStatementContext); ok {
-		s.context().Store(cctx.AllReplaceClause())
-		s.context().Replace(s.cts)
+		s.Context().Store(cctx.AllReplaceClause())
+		s.Context().Replace(s.cts)
 
-		content := s.context().Read()
+		content := s.Context().Read()
 		s.pop()
-		s.context().Write(content)
+		s.Context().Write(content)
 	}
 }
 
@@ -248,9 +252,9 @@ func (s *PreprocessorListener) ExitTitleStatement(ctx *preprocessor.TitleStateme
 // VisitTerminal is called when a terminal node is visited.
 func (s *PreprocessorListener) VisitTerminal(node antlr.TerminalNode) {
 	pos := node.GetSourceInterval().Start
-	s.context().Write(GetHiddenTokensToLeft(s.cts, pos))
+	s.Context().Write(GetHiddenTokensToLeft(s.cts, pos))
 
 	if node.GetSymbol().GetTokenType() != antlr.TokenEOF {
-		s.context().Write(node.GetText())
+		s.Context().Write(node.GetText())
 	}
 }

@@ -21,7 +21,7 @@ func GetHiddenTokensToLeft(cts *antlr.CommonTokenStream, pos int) (out string) {
 }
 
 type VisitTerminalListener struct {
-	*preprocessor.BaseCobol85PreprocessorListener
+	preprocessor.BaseCobol85PreprocessorListener
 	cts      *antlr.CommonTokenStream
 	notFirst bool
 	text     string
@@ -40,7 +40,7 @@ func (s *VisitTerminalListener) VisitTerminal(node antlr.TerminalNode) {
 		pos := node.GetSourceInterval().Start
 		s.text += GetHiddenTokensToLeft(s.cts, pos)
 	}
-	if node.GetSymbol().GetTokenType() == antlr.TokenEOF {
+	if node.GetSymbol().GetTokenType() != antlr.TokenEOF {
 		s.text += node.GetText()
 	}
 	s.notFirst = true

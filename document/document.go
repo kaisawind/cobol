@@ -14,22 +14,22 @@ import (
 )
 
 var (
-	executionReg = regexp.MustCompile(
-		fmt.Sprintf(
-			`.*(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\s+%s|%s\s+%s|%s\s+%s).*`,
-			constant.CBL,
-			constant.COPY,
-			constant.PROCESS,
-			constant.REPLACE,
-			constant.EJECT,
-			constant.SKIP1,
-			constant.SKIP2,
-			constant.SKIP3,
-			constant.TITLE,
-			constant.EXEC, constant.SQL,
-			constant.EXEC, constant.SQLIMS,
-			constant.EXEC, constant.CICS,
-		))
+	execution = fmt.Sprintf(
+		`.*(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\s+%s|%s\s+%s|%s\s+%s).*`,
+		constant.CBL,
+		constant.COPY,
+		constant.PROCESS,
+		constant.REPLACE,
+		constant.EJECT,
+		constant.SKIP1,
+		constant.SKIP2,
+		constant.SKIP3,
+		constant.TITLE,
+		constant.EXEC, constant.SQL,
+		constant.EXEC, constant.SQLIMS,
+		constant.EXEC, constant.CICS,
+	)
+	executionReg = regexp.MustCompile(execution)
 )
 
 func ParseFile(filename string, opts ...options.Option) string {
@@ -53,6 +53,7 @@ func parseProcessedCode(code string) string {
 		cpp := preprocessor.NewCobol85PreprocessorParser(cts)
 		listener := NewPreprocessorListener(cts)
 		antlr.ParseTreeWalkerDefault.Walk(listener, cpp.StartRule())
+		code = listener.GetText()
 	}
 	return code
 }
