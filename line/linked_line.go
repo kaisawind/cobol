@@ -97,25 +97,25 @@ func normalizesLines(source *LinkedLine) (target *LinkedLine) {
 
 var (
 	triggersStart = []*regexp.Regexp{
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.AUTHOR, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.AUTHOR, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.INSTALLATION, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.DATE_COMPILED, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.SECURITY, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.REMARKS, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.INSTALLATION, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATE_COMPILED, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.SECURITY, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.REMARKS, constant.CHAR_DOT)),
 	}
 	triggersEnd = []*regexp.Regexp{
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.PROGRAM_ID, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.AUTHOR, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.INSTALLATION, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.DATE_COMPILED, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.SECURITY, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+.*`, constant.ENVIRONMENT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.DATA, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.PROCEDURE, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s+\%s`, constant.REMARKS, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.PROGRAM_ID, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.INSTALLATION, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATE_COMPILED, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.SECURITY, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*.*`, constant.ENVIRONMENT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATA, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.PROCEDURE, constant.CHAR_DOT)),
+		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.REMARKS, constant.CHAR_DOT)),
 	}
 	triggersGroup = regexp.MustCompile(fmt.Sprintf(
 		`([ \\t]*)(%s|%s|%s|%s|%s|%s|%s)(.+)`,
@@ -130,7 +130,7 @@ var (
 )
 
 func isTriggerStart(ctt string) bool {
-	upper := strings.ToUpper(ctt)
+	upper := strings.ToUpper(strings.TrimSpace(ctt))
 	for _, v := range triggersStart {
 		if v.MatchString(upper) {
 			return true
@@ -309,8 +309,8 @@ func (ll *LinkedLine) IsNextContinuation() bool {
 //		22222222222222222222
 //		33333333333333333333" TO DATA
 func (ll *LinkedLine) IsEndingWithOpenLiteral() bool {
-	reDoubleQuote := regexp.MustCompile(`\"([^\"]|\"\"|'')*\"`)
-	reSingleQuote := regexp.MustCompile(`'([^']|''|\"\")*'`)
+	reDoubleQuote := regexp.MustCompile("\"([^\"]|\"\"|'')*\"")
+	reSingleQuote := regexp.MustCompile("'([^']|''|\"\")*'")
 	content := reDoubleQuote.ReplaceAllString(ll.origin.Content(), constant.EMPTY_STRING)
 	content = reSingleQuote.ReplaceAllString(content, constant.EMPTY_STRING)
 	return strings.Contains(content, constant.CHAR_DOUBLE_QUOTE) ||
@@ -318,7 +318,7 @@ func (ll *LinkedLine) IsEndingWithOpenLiteral() bool {
 }
 
 func TrimPrefix(ctt string) string {
-	re := regexp.MustCompile(`^\\s+`)
+	re := regexp.MustCompile(`^\s+`)
 	return re.ReplaceAllString(ctt, constant.EMPTY_STRING)
 }
 
