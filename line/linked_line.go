@@ -119,13 +119,13 @@ var (
 	}
 	triggersGroup = regexp.MustCompile(fmt.Sprintf(
 		`([ \\t]*)(%s|%s|%s|%s|%s|%s|%s)(.+)`,
-		fmt.Sprintf(`%s\s+\%s`, constant.AUTHOR, constant.CHAR_DOT),
-		fmt.Sprintf(`%s\s+\%s`, constant.AUTHOR, constant.CHAR_DOT),
-		fmt.Sprintf(`%s\s+\%s`, constant.INSTALLATION, constant.CHAR_DOT),
-		fmt.Sprintf(`%s\s+\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT),
-		fmt.Sprintf(`%s\s+\%s`, constant.DATE_COMPILED, constant.CHAR_DOT),
-		fmt.Sprintf(`%s\s+\%s`, constant.SECURITY, constant.CHAR_DOT),
-		fmt.Sprintf(`%s\s+\%s`, constant.REMARKS, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.INSTALLATION, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.DATE_COMPILED, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.SECURITY, constant.CHAR_DOT),
+		fmt.Sprintf(`%s\s*\%s`, constant.REMARKS, constant.CHAR_DOT),
 	))
 )
 
@@ -202,7 +202,7 @@ func (ll *LinkedLine) escapeCommentEntry() {
 
 func (ll *LinkedLine) processInlineComment() {
 	// 注释直接跟字符的插入空格
-	re := regexp.MustCompile(`\*>[^ ]`)
+	re := regexp.MustCompile(`\\*>[^ ]`)
 	content := ll.Content()
 	if re.MatchString(content) {
 		content = strings.ReplaceAll(content, constant.COMMENT_TAG, constant.COMMENT_TAG+constant.CHAR_WHITESPACE)

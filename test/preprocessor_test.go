@@ -127,7 +127,7 @@ func TestPreprocessor(tt *testing.T) {
 					continue
 				}
 				ext := path.Ext(file.Name())
-				t.Log(ext, file.Name())
+				t.Log(file.Name())
 				isCobol := false
 				for _, v := range COBOL_EXTS {
 					if strings.EqualFold(v, ext) {
