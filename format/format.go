@@ -37,10 +37,16 @@ var (
 		VARIABLE: `(.{0,6})(?:([ABCdD$\t\-/*# ])(.{0,4})(.*)())?`,
 	}
 
+	values = map[Format]string{
+		FIXED:    "FIXED",
+		TANDEM:   "TANDEM",
+		VARIABLE: "VARIABLE",
+	}
+
 	regexps = map[Format]*regexp.Regexp{
-		FIXED:    regexp.MustCompile(FIXED.String()),
-		TANDEM:   regexp.MustCompile(TANDEM.String()),
-		VARIABLE: regexp.MustCompile(VARIABLE.String()),
+		FIXED:    regexp.MustCompile(FIXED.Format()),
+		TANDEM:   regexp.MustCompile(TANDEM.Format()),
+		VARIABLE: regexp.MustCompile(VARIABLE.Format()),
 	}
 
 	// if comment entry is multiline
@@ -52,6 +58,10 @@ var (
 )
 
 func (f Format) String() string {
+	return values[f]
+}
+
+func (f Format) Format() string {
 	return formats[f]
 }
 

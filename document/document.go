@@ -42,16 +42,16 @@ func ParseFile(filename string, opts ...options.Option) string {
 
 func Parse(text string, opts ...options.Option) string {
 	code := line.Combine(line.NewLinkedLine(strings.NewReader(text), opts...))
-	return parseProcessedCode(code)
+	return parseProcessedCode(code, opts...)
 }
 
-func parseProcessedCode(code string) string {
+func parseProcessedCode(code string, opts ...options.Option) string {
 	if executionReg.MatchString(code) {
 		is := antlr.NewInputStream(code)
 		lexer := preprocessor.NewCobol85PreprocessorLexer(is)
 		cts := antlr.NewCommonTokenStream(lexer, 0)
 		cpp := preprocessor.NewCobol85PreprocessorParser(cts)
-		listener := NewPreprocessorListener(cts)
+		listener := NewPreprocessorListener(cts, opts...)
 		antlr.ParseTreeWalkerDefault.Walk(listener, cpp.StartRule())
 		code = listener.GetText()
 	}
