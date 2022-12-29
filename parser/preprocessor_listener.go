@@ -62,13 +62,16 @@ func (s *PreprocessorListener) ExitCopyStatement(ctx *preprocessor.CopyStatement
 
 	s.push()
 
+	// replace phrase
 	for _, iPhrase := range ctx.AllReplacingPhrase() {
 		phrase, ok := iPhrase.(*preprocessor.ReplacingPhraseContext)
 		if ok {
-			fmt.Println(phrase.RuleIndex)
 			s.context().Store(phrase.AllReplaceClause())
 		}
 	}
+
+	// copy book
+	copySource := ctx.CopySource()
 }
 
 // EnterEjectStatement is called when production ejectStatement is entered.

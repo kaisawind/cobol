@@ -6,9 +6,9 @@ import (
 
 type Line struct {
 	Format    format.Format
+	Dialect   format.Dialect
 	Type      Type
 	No        int // Line No
-	Dialect   format.Dialect
 	Sequence  string
 	Indicator string
 	ContentA  string

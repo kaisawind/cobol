@@ -9,6 +9,7 @@ import (
 
 	"github.com/kaisawind/cobol/constant"
 	"github.com/kaisawind/cobol/format"
+	"github.com/kaisawind/cobol/options"
 )
 
 type LinkedLine struct {
@@ -20,19 +21,14 @@ type LinkedLine struct {
 	isInCommentEntry      bool
 }
 
-func NewLinkedLine(r io.Reader, opts ...any) (ll *LinkedLine) {
-	var f format.Format
-	if len(opts) >= 1 {
-		if v, ok := opts[0].(format.Format); ok {
-			f = v
-		}
+func NewLinkedLine(r io.Reader, opts ...options.Option) (ll *LinkedLine) {
+	o := options.NewOptions()
+	for _, opt := range opts {
+		opt.Apply(o)
 	}
-	var dialect format.Dialect
-	if len(opts) >= 2 {
-		if v, ok := opts[1].(format.Dialect); ok {
-			dialect = v
-		}
-	}
+	f := o.Format
+	dialect := o.Dialect
+
 	scan := bufio.NewScanner(r)
 	var last *LinkedLine
 	no := 0

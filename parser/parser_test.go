@@ -9,6 +9,7 @@ import (
 	"github.com/kaisawind/cobol/format"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/line"
+	"github.com/kaisawind/cobol/options"
 )
 
 type TreeShapeListener struct {
@@ -43,7 +44,9 @@ func TestExecutionParser(t *testing.T) {
 		t.FailNow()
 	}
 	defer f.Close()
-	code := line.CombineLinkedLine(line.NewLinkedLine(f, format.FIXED))
+	o := options.NewOptions()
+	o.SetFormat(format.FIXED)
+	code := line.CombineLinkedLine(line.NewLinkedLine(f, o))
 	code = ExecutionParser(code)
 	t.Log("\n" + code)
 }

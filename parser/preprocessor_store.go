@@ -79,8 +79,9 @@ func (s *Store) getReplacementText(ictx preprocessor.IReplacementContext, cts *a
 
 func (s *Store) extractPseudoText(ctx preprocessor.IPseudoTextContext, cts *antlr.CommonTokenStream) string {
 	pseudoText := GetTextWithHiddenTokens(ctx, cts)
-	pseudoText = strings.ReplaceAll(pseudoText, "^==", "")
-	pseudoText = strings.ReplaceAll(pseudoText, "==$", "")
+
+	pseudoText = regexp.MustCompile("^==").ReplaceAllString(pseudoText, "")
+	pseudoText = regexp.MustCompile("==$").ReplaceAllString(pseudoText, "")
 	pseudoText = strings.TrimSpace(pseudoText)
 	return pseudoText
 }

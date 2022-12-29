@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/kaisawind/cobol/format"
+	"github.com/kaisawind/cobol/options"
 )
 
 func TestLinkedLine(t *testing.T) {
@@ -14,7 +15,9 @@ func TestLinkedLine(t *testing.T) {
 		t.FailNow()
 	}
 	defer f.Close()
-	ll := NewLinkedLine(f, format.FIXED)
+	o := options.NewOptions()
+	o.SetFormat(format.FIXED)
+	ll := NewLinkedLine(f, o)
 	source := ll
 	for {
 		if source == nil {
