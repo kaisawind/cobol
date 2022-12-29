@@ -1,4 +1,4 @@
-package parser
+package document
 
 import (
 	"sort"
@@ -7,19 +7,19 @@ import (
 	"github.com/kaisawind/cobol/gen/preprocessor"
 )
 
-type PreprocessorContext struct {
+type Context struct {
 	stores Stores
 	buffer string
 }
 
-func NewPreprocessorContext() *PreprocessorContext {
-	return &PreprocessorContext{
+func NewContext() *Context {
+	return &Context{
 		stores: Stores{},
 		buffer: "",
 	}
 }
 
-func (ctx *PreprocessorContext) Store(ctxs []preprocessor.IReplaceClauseContext) {
+func (ctx *Context) Store(ctxs []preprocessor.IReplaceClauseContext) {
 	for _, v := range ctxs {
 		rcc, ok := v.(*preprocessor.ReplaceClauseContext)
 		if ok {
@@ -28,7 +28,7 @@ func (ctx *PreprocessorContext) Store(ctxs []preprocessor.IReplaceClauseContext)
 	}
 }
 
-func (ctx *PreprocessorContext) Replace(cts *antlr.CommonTokenStream) {
+func (ctx *Context) Replace(cts *antlr.CommonTokenStream) {
 	if len(ctx.stores) == 0 {
 		return
 	}
@@ -36,4 +36,12 @@ func (ctx *PreprocessorContext) Replace(cts *antlr.CommonTokenStream) {
 	for _, store := range ctx.stores {
 		ctx.buffer = store.Replace(ctx.buffer, cts)
 	}
+}
+
+func (ctx *Context) Read() string {
+	return ctx.buffer
+}
+
+func (ctx *Context) Write(s string) {
+	ctx.buffer += s
 }

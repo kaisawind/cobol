@@ -27,7 +27,7 @@ func TestLinkedLine(t *testing.T) {
 		source = source.next
 	}
 	source = ll
-	code := CombineLinkedLine(source)
+	code := Combine(source)
 	err = os.WriteFile("./testdata/lbli0420.after", []byte(code), os.ModePerm)
 	if err != nil {
 		t.Error(err)

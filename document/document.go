@@ -1,28 +1,17 @@
-package parser
+package document
 
 import (
-	"bufio"
 	"fmt"
-	"io"
+	"os"
 	"regexp"
+	"strings"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/constant"
 	"github.com/kaisawind/cobol/gen/preprocessor"
+	"github.com/kaisawind/cobol/line"
+	"github.com/kaisawind/cobol/options"
 )
-
-func Parser() {
-	_, err := antlr.NewFileStream("./testdata/lbli0420.src")
-	if err != nil {
-		return
-	}
-}
-
-func ReadLines(r io.Reader) {
-	scan := bufio.NewScanner(r)
-	scan.Scan()
-	scan.Text()
-}
 
 var (
 	executionReg = regexp.MustCompile(
@@ -43,7 +32,20 @@ var (
 		))
 )
 
-func ExecutionParser(code string) string {
+func ParseFile(filename string, opts ...options.Option) string {
+	buf, err := os.ReadFile(filename)
+	if err != nil {
+		return ""
+	}
+	return Parse(string(buf), opts...)
+}
+
+func Parse(text string, opts ...options.Option) string {
+	code := line.Combine(line.NewLinkedLine(strings.NewReader(text), opts...))
+	return parseProcessedCode(code)
+}
+
+func parseProcessedCode(code string) string {
 	if executionReg.MatchString(code) {
 		is := antlr.NewInputStream(code)
 		lexer := preprocessor.NewCobol85PreprocessorLexer(is)

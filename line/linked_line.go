@@ -54,7 +54,7 @@ func NewLinkedLine(r io.Reader, opts ...options.Option) (ll *LinkedLine) {
 	return
 }
 
-func CombineLinkedLine(ll *LinkedLine) (code string) {
+func Combine(ll *LinkedLine) (code string) {
 	source := ll
 	for {
 		if source == nil {
@@ -64,15 +64,20 @@ func CombineLinkedLine(ll *LinkedLine) (code string) {
 			if source.No > 0 {
 				code += "\n"
 			}
-			if source.Format != format.TANDEM {
-				code += strings.Repeat(constant.CHAR_WHITESPACE, 6)
-			}
+			code += LinePrefix(source.Format)
 			code += source.Indicator
 		}
 		code += source.Content()
 		source = source.next
 	}
 	return
+}
+
+func LinePrefix(f format.Format) (ret string) {
+	if f != format.TANDEM {
+		ret += strings.Repeat(constant.CHAR_WHITESPACE, 6)
+	}
+	return ret
 }
 
 func normalizesLines(source *LinkedLine) (target *LinkedLine) {
