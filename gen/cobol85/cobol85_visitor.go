@@ -700,8 +700,14 @@ type Cobol85Visitor interface {
 	// Visit a parse tree produced by Cobol85Parser#dataOccursTo.
 	VisitDataOccursTo(ctx *DataOccursToContext) interface{}
 
+	// Visit a parse tree produced by Cobol85Parser#dataOccursDepending.
+	VisitDataOccursDepending(ctx *DataOccursDependingContext) interface{}
+
 	// Visit a parse tree produced by Cobol85Parser#dataOccursSort.
 	VisitDataOccursSort(ctx *DataOccursSortContext) interface{}
+
+	// Visit a parse tree produced by Cobol85Parser#dataOccursIndexed.
+	VisitDataOccursIndexed(ctx *DataOccursIndexedContext) interface{}
 
 	// Visit a parse tree produced by Cobol85Parser#dataPictureClause.
 	VisitDataPictureClause(ctx *DataPictureClauseContext) interface{}
@@ -1177,6 +1183,9 @@ type Cobol85Visitor interface {
 	// Visit a parse tree produced by Cobol85Parser#multiplyGivingResult.
 	VisitMultiplyGivingResult(ctx *MultiplyGivingResultContext) interface{}
 
+	// Visit a parse tree produced by Cobol85Parser#nextSentenceStatement.
+	VisitNextSentenceStatement(ctx *NextSentenceStatementContext) interface{}
+
 	// Visit a parse tree produced by Cobol85Parser#openStatement.
 	VisitOpenStatement(ctx *OpenStatementContext) interface{}
 
@@ -1404,6 +1413,9 @@ type Cobol85Visitor interface {
 
 	// Visit a parse tree produced by Cobol85Parser#stopStatement.
 	VisitStopStatement(ctx *StopStatementContext) interface{}
+
+	// Visit a parse tree produced by Cobol85Parser#stopStatementGiving.
+	VisitStopStatementGiving(ctx *StopStatementGivingContext) interface{}
 
 	// Visit a parse tree produced by Cobol85Parser#stringStatement.
 	VisitStringStatement(ctx *StringStatementContext) interface{}
@@ -1636,8 +1648,8 @@ type Cobol85Visitor interface {
 	// Visit a parse tree produced by Cobol85Parser#length.
 	VisitLength(ctx *LengthContext) interface{}
 
-	// Visit a parse tree produced by Cobol85Parser#subscript_.
-	VisitSubscript_(ctx *Subscript_Context) interface{}
+	// Visit a parse tree produced by Cobol85Parser#subscript.
+	VisitSubscript(ctx *SubscriptContext) interface{}
 
 	// Visit a parse tree produced by Cobol85Parser#argument.
 	VisitArgument(ctx *ArgumentContext) interface{}

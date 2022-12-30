@@ -1574,11 +1574,23 @@ func (s *BaseCobol85Listener) EnterDataOccursTo(ctx *DataOccursToContext) {}
 // ExitDataOccursTo is called when production dataOccursTo is exited.
 func (s *BaseCobol85Listener) ExitDataOccursTo(ctx *DataOccursToContext) {}
 
+// EnterDataOccursDepending is called when production dataOccursDepending is entered.
+func (s *BaseCobol85Listener) EnterDataOccursDepending(ctx *DataOccursDependingContext) {}
+
+// ExitDataOccursDepending is called when production dataOccursDepending is exited.
+func (s *BaseCobol85Listener) ExitDataOccursDepending(ctx *DataOccursDependingContext) {}
+
 // EnterDataOccursSort is called when production dataOccursSort is entered.
 func (s *BaseCobol85Listener) EnterDataOccursSort(ctx *DataOccursSortContext) {}
 
 // ExitDataOccursSort is called when production dataOccursSort is exited.
 func (s *BaseCobol85Listener) ExitDataOccursSort(ctx *DataOccursSortContext) {}
+
+// EnterDataOccursIndexed is called when production dataOccursIndexed is entered.
+func (s *BaseCobol85Listener) EnterDataOccursIndexed(ctx *DataOccursIndexedContext) {}
+
+// ExitDataOccursIndexed is called when production dataOccursIndexed is exited.
+func (s *BaseCobol85Listener) ExitDataOccursIndexed(ctx *DataOccursIndexedContext) {}
 
 // EnterDataPictureClause is called when production dataPictureClause is entered.
 func (s *BaseCobol85Listener) EnterDataPictureClause(ctx *DataPictureClauseContext) {}
@@ -2570,6 +2582,12 @@ func (s *BaseCobol85Listener) EnterMultiplyGivingResult(ctx *MultiplyGivingResul
 // ExitMultiplyGivingResult is called when production multiplyGivingResult is exited.
 func (s *BaseCobol85Listener) ExitMultiplyGivingResult(ctx *MultiplyGivingResultContext) {}
 
+// EnterNextSentenceStatement is called when production nextSentenceStatement is entered.
+func (s *BaseCobol85Listener) EnterNextSentenceStatement(ctx *NextSentenceStatementContext) {}
+
+// ExitNextSentenceStatement is called when production nextSentenceStatement is exited.
+func (s *BaseCobol85Listener) ExitNextSentenceStatement(ctx *NextSentenceStatementContext) {}
+
 // EnterOpenStatement is called when production openStatement is entered.
 func (s *BaseCobol85Listener) EnterOpenStatement(ctx *OpenStatementContext) {}
 
@@ -3027,6 +3045,12 @@ func (s *BaseCobol85Listener) EnterStopStatement(ctx *StopStatementContext) {}
 
 // ExitStopStatement is called when production stopStatement is exited.
 func (s *BaseCobol85Listener) ExitStopStatement(ctx *StopStatementContext) {}
+
+// EnterStopStatementGiving is called when production stopStatementGiving is entered.
+func (s *BaseCobol85Listener) EnterStopStatementGiving(ctx *StopStatementGivingContext) {}
+
+// ExitStopStatementGiving is called when production stopStatementGiving is exited.
+func (s *BaseCobol85Listener) ExitStopStatementGiving(ctx *StopStatementGivingContext) {}
 
 // EnterStringStatement is called when production stringStatement is entered.
 func (s *BaseCobol85Listener) EnterStringStatement(ctx *StringStatementContext) {}
@@ -3502,11 +3526,11 @@ func (s *BaseCobol85Listener) EnterLength(ctx *LengthContext) {}
 // ExitLength is called when production length is exited.
 func (s *BaseCobol85Listener) ExitLength(ctx *LengthContext) {}
 
-// EnterSubscript_ is called when production subscript_ is entered.
-func (s *BaseCobol85Listener) EnterSubscript_(ctx *Subscript_Context) {}
+// EnterSubscript is called when production subscript is entered.
+func (s *BaseCobol85Listener) EnterSubscript(ctx *SubscriptContext) {}
 
-// ExitSubscript_ is called when production subscript_ is exited.
-func (s *BaseCobol85Listener) ExitSubscript_(ctx *Subscript_Context) {}
+// ExitSubscript is called when production subscript is exited.
+func (s *BaseCobol85Listener) ExitSubscript(ctx *SubscriptContext) {}
 
 // EnterArgument is called when production argument is entered.
 func (s *BaseCobol85Listener) EnterArgument(ctx *ArgumentContext) {}

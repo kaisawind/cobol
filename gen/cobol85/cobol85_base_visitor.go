@@ -931,7 +931,15 @@ func (v *BaseCobol85Visitor) VisitDataOccursTo(ctx *DataOccursToContext) interfa
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseCobol85Visitor) VisitDataOccursDepending(ctx *DataOccursDependingContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseCobol85Visitor) VisitDataOccursSort(ctx *DataOccursSortContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseCobol85Visitor) VisitDataOccursIndexed(ctx *DataOccursIndexedContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -1567,6 +1575,10 @@ func (v *BaseCobol85Visitor) VisitMultiplyGivingResult(ctx *MultiplyGivingResult
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseCobol85Visitor) VisitNextSentenceStatement(ctx *NextSentenceStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseCobol85Visitor) VisitOpenStatement(ctx *OpenStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -1868,6 +1880,10 @@ func (v *BaseCobol85Visitor) VisitStartKey(ctx *StartKeyContext) interface{} {
 }
 
 func (v *BaseCobol85Visitor) VisitStopStatement(ctx *StopStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseCobol85Visitor) VisitStopStatementGiving(ctx *StopStatementGivingContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -2179,7 +2195,7 @@ func (v *BaseCobol85Visitor) VisitLength(ctx *LengthContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseCobol85Visitor) VisitSubscript_(ctx *Subscript_Context) interface{} {
+func (v *BaseCobol85Visitor) VisitSubscript(ctx *SubscriptContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

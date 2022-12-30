@@ -6,10 +6,10 @@
  */
 
 /*
- * COBOL 85 Grammar for ANTLR4
+ * COBOL Grammar for ANTLR4
  * 
- * This is a COBOL 85 grammar, which is part of the COBOL parser at
- * https://github.com/uwol/cobol85parser.
+ * This is a COBOL grammar, which is part of the COBOL parser at
+ * https://github.com/uwol/proleap-cobol-parser.
  * 
  * The grammar passes the NIST test suite and has successfully been applied to numerous COBOL files
  * from banking and insurance. To be used in conjunction with the provided preprocessor, which
@@ -20,7 +20,7 @@ grammar Cobol85;
 
 startRule: compilationUnit EOF;
 
-compilationUnit: programUnit+;
+compilationUnit: programUnit*;
 
 programUnit:
 	identificationDivision environmentDivision? dataDivision? procedureDivision? programUnit*
@@ -70,7 +70,8 @@ securityParagraph: SECURITY DOT_FS commentEntry?;
 
 // - remarks paragraph ----------------------------------
 
-remarksParagraph: REMARKS DOT_FS commentEntry?;
+remarksParagraph:
+	REMARKS DOT_FS commentEntry? END_REMARKS? DOT_FS?;
 
 // --- environment division --------------------------------------------------------------------
 
@@ -93,17 +94,21 @@ configurationSectionParagraph:
 	sourceComputerParagraph
 	| objectComputerParagraph
 	| specialNamesParagraph;
-// strictly, specialNamesParagraph does not belong into configurationSectionParagraph, but ibm-cobol allows this
+// strictly, specialNamesParagraph does not belong into configurationSectionParagraph, but IBM-COBOL allows this
 
 // - source computer paragraph ----------------------------------
 
 sourceComputerParagraph:
-	SOURCE_COMPUTER DOT_FS computerName (WITH? DEBUGGING MODE)? DOT_FS;
+	SOURCE_COMPUTER DOT_FS (
+		computerName (WITH? DEBUGGING MODE)? DOT_FS
+	)?;
 
 // - object computer paragraph ----------------------------------
 
 objectComputerParagraph:
-	OBJECT_COMPUTER DOT_FS computerName objectComputerClause* DOT_FS;
+	OBJECT_COMPUTER DOT_FS (
+		computerName objectComputerClause* DOT_FS
+	)?;
 
 objectComputerClause:
 	memorySizeClause
@@ -240,7 +245,7 @@ inputOutputSectionParagraph:
 // - file control paragraph ----------------------------------
 
 fileControlParagraph:
-	FILE_CONTROL (DOT_FS? fileControlEntry)* DOT_FS;
+	FILE_CONTROL? (DOT_FS? fileControlEntry)* DOT_FS;
 
 fileControlEntry: selectClause fileControlClause*;
 
@@ -270,7 +275,7 @@ assignClause:
 		| REMOTE
 		| TAPE
 		| VIRTUAL
-		| assignmentName
+		| (DYNAMIC | EXTERNAL)? assignmentName
 		| literal
 	);
 
@@ -929,13 +934,18 @@ dataIntegerStringClause: INTEGER | STRING;
 dataJustifiedClause: (JUSTIFIED | JUST) RIGHT?;
 
 dataOccursClause:
-	OCCURS integerLiteral dataOccursTo? TIMES? (
-		DEPENDING ON? qualifiedDataName
-	)? dataOccursSort* (INDEXED BY? LOCAL? indexName+)?;
+	OCCURS (identifier | integerLiteral) dataOccursTo? TIMES? dataOccursDepending? (
+		dataOccursSort
+		| dataOccursIndexed
+	)*;
 
 dataOccursTo: TO integerLiteral;
 
+dataOccursDepending: DEPENDING ON? qualifiedDataName;
+
 dataOccursSort: (ASCENDING | DESCENDING) KEY? IS? qualifiedDataName+;
+
+dataOccursIndexed: INDEXED BY? LOCAL? indexName+;
 
 dataPictureClause: (PICTURE | PIC) IS? pictureString;
 
@@ -987,6 +997,7 @@ dataTypeClause:
 		| NUMERIC_DATE
 		| NUMERIC_TIME
 		| LONG_TIME
+		| (CLOB | BLOB | DBCLOB) LPARENCHAR integerLiteral RPARENCHAR
 	);
 
 dataTypeDefClause: IS? TYPEDEF;
@@ -1021,13 +1032,14 @@ dataUsageClause: (USAGE IS?)? (
 		| POINTER
 		| PROCEDURE_POINTER
 		| REAL
+		| SQL
 		| TASK
 	);
 
 dataUsingClause:
 	USING (LANGUAGE | CONVENTION) OF? (cobolWord | dataName);
 
-dataValueClause: (VALUE IS? | VALUES ARE?)? dataValueInterval (
+dataValueClause: ((VALUE | VALUES) (IS | ARE)?)? dataValueInterval (
 		COMMACHAR? dataValueInterval
 	)*;
 
@@ -1079,7 +1091,7 @@ procedureSection: procedureSectionHeader DOT_FS paragraphs;
 
 paragraphs: sentence* paragraph*;
 
-paragraph: paragraphName DOT_FS (alteredGoTo | sentence*);
+paragraph: paragraphName DOT_FS? (alteredGoTo | sentence*);
 
 sentence: statement* DOT_FS;
 
@@ -1114,6 +1126,7 @@ statement:
 	| mergeStatement
 	| moveStatement
 	| multiplyStatement
+	| nextSentenceStatement
 	| openStatement
 	| performStatement
 	| purgeStatement
@@ -1304,7 +1317,8 @@ disableStatement:
 // display statement
 
 displayStatement:
-	DISPLAY displayOperand+ displayAt? displayUpon? displayWith?;
+	DISPLAY displayOperand+ displayAt? displayUpon? displayWith? onExceptionClause?
+		notOnExceptionClause? END_DISPLAY?;
 
 displayOperand: identifier | literal;
 
@@ -1354,7 +1368,7 @@ entryStatement: ENTRY literal (USING identifier+)?;
 // evaluate statement
 
 evaluateStatement:
-	EVALUATE evaluateSelect evaluateAlsoSelect* evaluateWhenPhrase+ evaluateWhenOther? END_EVALUATE?
+	EVALUATE evaluateSelect evaluateAlsoSelect* evaluateWhenPhrase* evaluateWhenOther? END_EVALUATE?
 		;
 
 evaluateSelect:
@@ -1482,10 +1496,9 @@ inspectConvertingPhrase:
 inspectFor:
 	identifier FOR (inspectCharacters | inspectAllLeadings)+;
 
-inspectCharacters: CHARACTERS inspectBeforeAfter*;
+inspectCharacters: (CHARACTER | CHARACTERS) inspectBeforeAfter*;
 
-inspectReplacingCharacters:
-	CHARACTERS inspectBy inspectBeforeAfter*;
+inspectReplacingCharacters: (CHARACTER | CHARACTERS) inspectBy inspectBeforeAfter*;
 
 inspectAllLeadings: (ALL | LEADING) inspectAllLeading+;
 
@@ -1570,6 +1583,10 @@ multiplyGiving:
 multiplyGivingOperand: identifier | literal;
 
 multiplyGivingResult: identifier ROUNDED?;
+
+// next sentence
+
+nextSentenceStatement: NEXT SENTENCE;
 
 // open statement
 
@@ -1811,7 +1828,10 @@ startKey:
 
 // stop statement
 
-stopStatement: STOP (RUN | literal);
+stopStatement: STOP (RUN | literal | stopStatementGiving);
+
+stopStatementGiving:
+	RUN (GIVING | RETURNING) (identifier | integerLiteral);
 
 // string statement
 
@@ -1820,7 +1840,10 @@ stringStatement:
 		notOnOverflowPhrase? END_STRING?;
 
 stringSendingPhrase:
-	stringSending+ (stringDelimitedByPhrase | stringForPhrase);
+	stringSending (COMMACHAR? stringSending)* (
+		stringDelimitedByPhrase
+		| stringForPhrase
+	);
 
 stringSending: identifier | literal;
 
@@ -2008,7 +2031,7 @@ conditionNameReference:
 	);
 
 conditionNameSubscriptReference:
-	LPARENCHAR subscript_ (COMMACHAR? subscript_)* RPARENCHAR;
+	LPARENCHAR subscript (COMMACHAR? subscript)* RPARENCHAR;
 
 // relation ----------------------------------
 
@@ -2061,7 +2084,7 @@ identifier:
 
 tableCall:
 	qualifiedDataName (
-		LPARENCHAR subscript_ (COMMACHAR? subscript_)* RPARENCHAR
+		LPARENCHAR subscript (COMMACHAR? subscript)* RPARENCHAR
 	)* referenceModifier?;
 
 functionCall:
@@ -2076,7 +2099,7 @@ characterPosition: arithmeticExpression;
 
 length: arithmeticExpression;
 
-subscript_:
+subscript:
 	ALL
 	| integerLiteral
 	| qualifiedDataName integerLiteral?
@@ -2193,8 +2216,6 @@ textName: cobolWord;
 
 cobolWord:
 	IDENTIFIER
-	| COBOL
-	| PROGRAM
 	| ABORT
 	| AS
 	| ASCII
@@ -2210,17 +2231,21 @@ cobolWord:
 	| BINARY
 	| BIT
 	| BLINK
+	| BLOB
 	| BOUNDS
 	| CAPABLE
 	| CCSVERSION
 	| CHANGED
 	| CHANNEL
+	| CLOB
 	| CLOSE_DISPOSITION
+	| COBOL
 	| COMMITMENT
 	| CONTROL_POINT
 	| CONVENTION
 	| CRUNCH
 	| CURSOR
+	| DBCLOB
 	| DEFAULT
 	| DEFAULT_DISPLAY
 	| DEFINITION
@@ -2284,6 +2309,7 @@ cobolWord:
 	| PRINTER
 	| PRIVATE
 	| PROCESS
+	| PROGRAM
 	| PROMPT
 	| READER
 	| REAL
@@ -2301,6 +2327,7 @@ cobolWord:
 	| SHAREDBYRUNUNIT
 	| SHARING
 	| SHORT_DATE
+	| SQL
 	| SYMBOL
 	| TASK
 	| THREAD
@@ -2350,7 +2377,7 @@ figurativeConstant:
 	| HIGH_VALUES
 	| LOW_VALUE
 	| LOW_VALUES
-	| NULL_
+	| NULL
 	| NULLS
 	| QUOTE
 	| QUOTES
@@ -2443,6 +2470,7 @@ BINARY: B I N A R Y;
 BIT: B I T;
 BLANK: B L A N K;
 BLINK: B L I N K;
+BLOB: B L O B;
 BLOCK: B L O C K;
 BOUNDS: B O U N D S;
 BOTTOM: B O T T O M;
@@ -2463,6 +2491,7 @@ CHARACTER: C H A R A C T E R;
 CHARACTERS: C H A R A C T E R S;
 CLASS: C L A S S;
 CLASS_ID: C L A S S MINUSCHAR I D;
+CLOB: C L O B;
 CLOCK_UNITS: C L O C K MINUSCHAR U N I T S;
 CLOSE: C L O S E;
 CLOSE_DISPOSITION: C L O S E MINUSCHAR D I S P O S I T I O N;
@@ -2514,6 +2543,7 @@ DATE_WRITTEN: D A T E MINUSCHAR W R I T T E N;
 DAY: D A Y;
 DAY_OF_WEEK: D A Y MINUSCHAR O F MINUSCHAR W E E K;
 DBCS: D B C S;
+DBCLOB: D B C L O B;
 DE: D E;
 DEBUG_CONTENTS: D E B U G MINUSCHAR C O N T E N T S;
 DEBUG_ITEM: D E B U G MINUSCHAR I T E M;
@@ -2561,6 +2591,7 @@ END_ADD: E N D MINUSCHAR A D D;
 END_CALL: E N D MINUSCHAR C A L L;
 END_COMPUTE: E N D MINUSCHAR C O M P U T E;
 END_DELETE: E N D MINUSCHAR D E L E T E;
+END_DISPLAY: E N D MINUSCHAR D I S P L A Y;
 END_DIVIDE: E N D MINUSCHAR D I V I D E;
 END_EVALUATE: E N D MINUSCHAR E V A L U A T E;
 END_IF: E N D MINUSCHAR I F;
@@ -2569,6 +2600,7 @@ END_OF_PAGE: E N D MINUSCHAR O F MINUSCHAR P A G E;
 END_PERFORM: E N D MINUSCHAR P E R F O R M;
 END_READ: E N D MINUSCHAR R E A D;
 END_RECEIVE: E N D MINUSCHAR R E C E I V E;
+END_REMARKS: E N D MINUSCHAR R E M A R K S;
 END_RETURN: E N D MINUSCHAR R E T U R N;
 END_REWRITE: E N D MINUSCHAR R E W R I T E;
 END_SEARCH: E N D MINUSCHAR S E A R C H;
@@ -2710,7 +2742,7 @@ NEXT: N E X T;
 NO: N O;
 NO_ECHO: N O MINUSCHAR E C H O;
 NOT: N O T;
-NULL_: N U L L;
+NULL: N U L L;
 NULLS: N U L L S;
 NUMBER: N U M B E R;
 NUMERIC: N U M E R I C;
@@ -2850,6 +2882,7 @@ SOURCE_COMPUTER: S O U R C E MINUSCHAR C O M P U T E R;
 SPACE: S P A C E;
 SPACES: S P A C E S;
 SPECIAL_NAMES: S P E C I A L MINUSCHAR N A M E S;
+SQL: S Q L;
 STANDARD: S T A N D A R D;
 STANDARD_1: S T A N D A R D MINUSCHAR '1';
 STANDARD_2: S T A N D A R D MINUSCHAR '2';

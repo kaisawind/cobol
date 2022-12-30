@@ -700,8 +700,14 @@ type Cobol85Listener interface {
 	// EnterDataOccursTo is called when entering the dataOccursTo production.
 	EnterDataOccursTo(c *DataOccursToContext)
 
+	// EnterDataOccursDepending is called when entering the dataOccursDepending production.
+	EnterDataOccursDepending(c *DataOccursDependingContext)
+
 	// EnterDataOccursSort is called when entering the dataOccursSort production.
 	EnterDataOccursSort(c *DataOccursSortContext)
+
+	// EnterDataOccursIndexed is called when entering the dataOccursIndexed production.
+	EnterDataOccursIndexed(c *DataOccursIndexedContext)
 
 	// EnterDataPictureClause is called when entering the dataPictureClause production.
 	EnterDataPictureClause(c *DataPictureClauseContext)
@@ -1177,6 +1183,9 @@ type Cobol85Listener interface {
 	// EnterMultiplyGivingResult is called when entering the multiplyGivingResult production.
 	EnterMultiplyGivingResult(c *MultiplyGivingResultContext)
 
+	// EnterNextSentenceStatement is called when entering the nextSentenceStatement production.
+	EnterNextSentenceStatement(c *NextSentenceStatementContext)
+
 	// EnterOpenStatement is called when entering the openStatement production.
 	EnterOpenStatement(c *OpenStatementContext)
 
@@ -1404,6 +1413,9 @@ type Cobol85Listener interface {
 
 	// EnterStopStatement is called when entering the stopStatement production.
 	EnterStopStatement(c *StopStatementContext)
+
+	// EnterStopStatementGiving is called when entering the stopStatementGiving production.
+	EnterStopStatementGiving(c *StopStatementGivingContext)
 
 	// EnterStringStatement is called when entering the stringStatement production.
 	EnterStringStatement(c *StringStatementContext)
@@ -1636,8 +1648,8 @@ type Cobol85Listener interface {
 	// EnterLength is called when entering the length production.
 	EnterLength(c *LengthContext)
 
-	// EnterSubscript_ is called when entering the subscript_ production.
-	EnterSubscript_(c *Subscript_Context)
+	// EnterSubscript is called when entering the subscript production.
+	EnterSubscript(c *SubscriptContext)
 
 	// EnterArgument is called when entering the argument production.
 	EnterArgument(c *ArgumentContext)
@@ -2485,8 +2497,14 @@ type Cobol85Listener interface {
 	// ExitDataOccursTo is called when exiting the dataOccursTo production.
 	ExitDataOccursTo(c *DataOccursToContext)
 
+	// ExitDataOccursDepending is called when exiting the dataOccursDepending production.
+	ExitDataOccursDepending(c *DataOccursDependingContext)
+
 	// ExitDataOccursSort is called when exiting the dataOccursSort production.
 	ExitDataOccursSort(c *DataOccursSortContext)
+
+	// ExitDataOccursIndexed is called when exiting the dataOccursIndexed production.
+	ExitDataOccursIndexed(c *DataOccursIndexedContext)
 
 	// ExitDataPictureClause is called when exiting the dataPictureClause production.
 	ExitDataPictureClause(c *DataPictureClauseContext)
@@ -2962,6 +2980,9 @@ type Cobol85Listener interface {
 	// ExitMultiplyGivingResult is called when exiting the multiplyGivingResult production.
 	ExitMultiplyGivingResult(c *MultiplyGivingResultContext)
 
+	// ExitNextSentenceStatement is called when exiting the nextSentenceStatement production.
+	ExitNextSentenceStatement(c *NextSentenceStatementContext)
+
 	// ExitOpenStatement is called when exiting the openStatement production.
 	ExitOpenStatement(c *OpenStatementContext)
 
@@ -3189,6 +3210,9 @@ type Cobol85Listener interface {
 
 	// ExitStopStatement is called when exiting the stopStatement production.
 	ExitStopStatement(c *StopStatementContext)
+
+	// ExitStopStatementGiving is called when exiting the stopStatementGiving production.
+	ExitStopStatementGiving(c *StopStatementGivingContext)
 
 	// ExitStringStatement is called when exiting the stringStatement production.
 	ExitStringStatement(c *StringStatementContext)
@@ -3421,8 +3445,8 @@ type Cobol85Listener interface {
 	// ExitLength is called when exiting the length production.
 	ExitLength(c *LengthContext)
 
-	// ExitSubscript_ is called when exiting the subscript_ production.
-	ExitSubscript_(c *Subscript_Context)
+	// ExitSubscript is called when exiting the subscript production.
+	ExitSubscript(c *SubscriptContext)
 
 	// ExitArgument is called when exiting the argument production.
 	ExitArgument(c *ArgumentContext)
