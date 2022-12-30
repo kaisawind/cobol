@@ -49,7 +49,7 @@ func parseProcessedCode(code string, opts ...options.Option) string {
 	if executionReg.MatchString(code) {
 		is := antlr.NewInputStream(code)
 		lexer := preprocessor.NewCobol85PreprocessorLexer(is)
-		cts := antlr.NewCommonTokenStream(lexer, 0)
+		cts := antlr.NewCommonTokenStream(lexer, antlr.LexerDefaultTokenChannel)
 		cpp := preprocessor.NewCobol85PreprocessorParser(cts)
 		listener := NewPreprocessorListener(cts, opts...)
 		antlr.ParseTreeWalkerDefault.Walk(listener, cpp.StartRule())

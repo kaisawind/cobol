@@ -1,7 +1,7 @@
 package copybook
 
 import (
-	"os"
+	"io/fs"
 	"path"
 	fp "path/filepath"
 	"strings"
@@ -37,15 +37,14 @@ func (f *LiteralFinder) GetCopyBook(ctx preprocessor.ILiteralContext, opts *opti
 }
 
 func (f *LiteralFinder) GetCopyBookFromDirectory(ctx preprocessor.ILiteralContext, dir string, opts *options.Options) (ret string) {
-	infos, err := os.ReadDir(dir)
-	if err != nil {
-		return
-	}
-	if len(infos) == 0 {
-		return
-	}
-	for _, v := range infos {
-		filepath := path.Join(dir, v.Name())
+	infos := map[string]bool{}
+	fp.WalkDir(dir, func(path string, d fs.DirEntry, err error) error {
+		if !d.IsDir() {
+			infos[path] = d.IsDir()
+		}
+		return err
+	})
+	for filepath := range infos {
 		if f.isMatching(ctx, filepath, dir, opts) {
 			return filepath
 		}
