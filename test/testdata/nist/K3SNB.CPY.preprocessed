@@ -1,0 +1,6 @@
+      *> HEADER,CLBRY,K3SNB
+           XXXXX051
+           IS DUMMY-SW-1
+           ON STATUS IS DUMMY-ON
+           OFF STATUS IS DUMMY-OFF.
+      *> END-OF,K3SNB

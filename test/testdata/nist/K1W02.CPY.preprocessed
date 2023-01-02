@@ -1,0 +1,4 @@
+      *> HEADER,CLBRY,K1W02
+           RCD-4    PIC 9(5) VALUE 02734.
+       77  RCD-5    PICTURE IS 99999 VALUE IS
+      *> END-OF,K1W02

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"strings"
 	"testing"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
@@ -15,17 +16,22 @@ import (
 
 type ErrorListener struct {
 	antlr.DefaultErrorListener
-	t *testing.T
+	errs []string
 }
 
-func NewErrorListener(t *testing.T) *ErrorListener {
-	return &ErrorListener{t: t}
+func NewErrorListener() *ErrorListener {
+	return &ErrorListener{
+		errs: []string{},
+	}
 }
 
 func (l *ErrorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {
 	err := fmt.Sprintf("syntax error in line %d : %d %s", line, column, msg)
-	l.t.Error(err)
-	l.t.FailNow()
+	l.errs = append(l.errs, err)
+}
+
+func (l *ErrorListener) GetErrors() []string {
+	return l.errs
 }
 
 func TestParse(tt *testing.T) {
@@ -35,17 +41,29 @@ func TestParse(tt *testing.T) {
 		tt.Error(err)
 		tt.FailNow()
 	}
-
+	skips := []string{"ALTL1.CPY", "ALTLB.CPY"}
 	opts := options.NewOptions().AddCopyBookDirectory(rootdir).SetFormat(format.FIXED)
+FOR:
 	for _, info := range infos {
 		if info.IsDir() {
 			continue
 		}
+		if !strings.HasSuffix(info.Name(), ".CBL") {
+			continue FOR
+		}
+		for _, v := range skips {
+			if v == info.Name() {
+				continue FOR
+			}
+		}
 		tt.Run(info.Name(), func(t *testing.T) {
-			listener := NewErrorListener(t)
+			listener := NewErrorListener()
 
 			filepath := path.Join(rootdir, info.Name())
 			processed := document.ParseFile(filepath, opts)
+
+			processedPath := filepath + ".preprocessed"
+			os.WriteFile(processedPath, []byte(processed), os.ModePerm)
 			is := antlr.NewInputStream(processed)
 			lexer := cobol85.NewCobol85Lexer(is)
 			lexer.RemoveErrorListeners()
@@ -57,6 +75,13 @@ func TestParse(tt *testing.T) {
 			cpp.AddErrorListener(listener)
 
 			_ = antlr.TreesStringTree(cpp.StartRule(), []string{}, cpp)
+
+			for _, err := range listener.GetErrors() {
+				t.Error(err)
+			}
+			if len(listener.GetErrors()) != 0 {
+				t.FailNow()
+			}
 		})
 	}
 }

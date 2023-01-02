@@ -1,0 +1,7 @@
+      *> HEADER,CLBRY,K1DAA
+           SELECT RL-FS1
+           ASSIGN TO
+           XXXXX021
+           ORGANIZATION IS RELATIVE
+           ACCESS IS SEQUENTIAL.
+      *> END-OF,K1DAA

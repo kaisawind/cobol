@@ -1,0 +1,9 @@
+      *> HEADER,CLBRY,K2PRA
+           MOVE     FALSE-DATA-1 TO AREA-1.
+           MOVE     FALSE-DATA-2 TO AREA-2.
+           MOVE     FALSE-DATA-3 TO AREA-3.
+           MOVE     FALSE-DATA-4 TO AREA-4.
+           IF       TOTAL-AREA EQUAL TO "TRUE  TWO + 2 =    4"
+                    PERFORM PASS ELSE PERFORM FAIL.
+           GO       TO COPY-WRITE-16.
+      *> END-OF,K2PRA

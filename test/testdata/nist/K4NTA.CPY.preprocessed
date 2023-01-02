@@ -1,0 +1,5 @@
+      *> HEADER,CLBRY,K4NTA
+        NOTEPAR1-FAIL.
+           PERFORM FAIL.
+           GO       TO COPY-WRITE-1.
+      *> END-OF,K4NTA

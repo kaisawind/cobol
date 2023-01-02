@@ -1,0 +1,10 @@
+      *> HEADER,CLBRY,K501A
+           02  KEYS-GROUP.
+               03  KEY-1 PICTURE 9.
+               03  KEY-2 PICTURE 99.
+               03  KEY-3 PICTURE 999.
+               03  KEY-4 PICTURE 9999.
+               03  KEY-5 PICTURE 99999.
+           02 RDF-KEYS REDEFINES KEYS-GROUP PICTURE 9(15).
+           02 FILLER PICTURE X(105).
+      *> END-OF,K501A

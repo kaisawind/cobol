@@ -1,0 +1,12 @@
+      *> HEADER,CLBRY,K2SEA
+       PARA-1.
+           ALTER    PARA-X TO PROCEED TO PARA-4.
+       PARA-2.
+           GO       TO 12345.
+       12345.
+           PERFORM  FAIL.
+           GO       TO COPY-WRITE-15.
+       PARA-4.
+           PERFORM  DUMMY-PASS.
+           GO       TO COPY-WRITE-15.
+      *> END-OF,K2SEA
