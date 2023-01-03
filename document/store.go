@@ -95,7 +95,7 @@ func (ss Stores) Len() int {
 func (ss Stores) Less(i, j int) bool {
 	iText := ss[i].replaceable.GetText()
 	jText := ss[j].replaceable.GetText()
-	return len(iText) < len(jText)
+	return len(iText) > len(jText)
 }
 
 func (ss Stores) Swap(i, j int) {
