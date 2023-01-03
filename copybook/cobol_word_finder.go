@@ -10,13 +10,10 @@ import (
 )
 
 type CobolWordFinder struct {
-	Finder
 }
 
 func NewCobolWordFinder() *CobolWordFinder {
-	return &CobolWordFinder{
-		Finder: Finder{},
-	}
+	return &CobolWordFinder{}
 }
 
 func (f *CobolWordFinder) GetCopyBook(ctx preprocessor.ICobolWordContext, opts *options.Options) string {

@@ -11,13 +11,10 @@ import (
 )
 
 type FilenameFinder struct {
-	Finder
 }
 
 func NewFilenameFinder() *FilenameFinder {
-	return &FilenameFinder{
-		Finder: Finder{},
-	}
+	return &FilenameFinder{}
 }
 
 func (f *FilenameFinder) GetCopyBook(ctx preprocessor.IFilenameContext, opts *options.Options) string {

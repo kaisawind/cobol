@@ -11,13 +11,10 @@ import (
 )
 
 type LiteralFinder struct {
-	Finder
 }
 
 func NewLiteralFinder() *LiteralFinder {
-	return &LiteralFinder{
-		Finder: Finder{},
-	}
+	return &LiteralFinder{}
 }
 
 func (f *LiteralFinder) GetCopyBook(ctx preprocessor.ILiteralContext, opts *options.Options) string {
