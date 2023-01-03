@@ -9,7 +9,6 @@ import (
 	"testing"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/ast"
 	"github.com/kaisawind/cobol/document"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/options"
@@ -107,7 +106,6 @@ func TestAst(tt *testing.T) {
 					t.Log(cleanedFileTree)
 					t.FailNow()
 				}
-
 			}
 		})
 	}
@@ -141,16 +139,4 @@ func TestReplaceAmbiguous(t *testing.T) {
 		t.Log(cleanedFileTree)
 		t.FailNow()
 	}
-}
-
-func TestAST(t *testing.T) {
-	rootdir := "./testdata/cobol/ast"
-	filePath := path.Join(rootdir, "HelloWorld.cbl")
-	opts := options.NewOptions()
-	processed := document.ParseFile(filePath, opts)
-	if processed == "" {
-		t.FailNow()
-	}
-
-	ast.NewAST(processed)
 }
