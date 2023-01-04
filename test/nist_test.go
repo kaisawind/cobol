@@ -60,10 +60,21 @@ FOR:
 			listener := NewErrorListener()
 
 			filepath := path.Join(rootdir, info.Name())
-			processed := document.ParseFile(filepath, opts)
-
 			processedPath := filepath + ".preprocessed"
-			os.WriteFile(processedPath, []byte(processed), os.ModePerm)
+			var processed string
+			_, err := os.Stat(processedPath)
+			if err != nil {
+				processed = document.ParseFile(filepath, opts)
+				os.WriteFile(processedPath, []byte(processed), os.ModePerm)
+			} else {
+				buf, err := os.ReadFile(processedPath)
+				if err != nil {
+					t.Error(err)
+					t.FailNow()
+				}
+				processed = string(buf)
+			}
+
 			is := antlr.NewInputStream(processed)
 			lexer := cobol85.NewCobol85Lexer(is)
 			lexer.RemoveErrorListeners()
