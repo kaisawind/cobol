@@ -1,9 +1,8 @@
-package internal
+package data
 
 import (
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/data"
-	modelInternal "github.com/kaisawind/cobol/asg/model/internal"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
@@ -12,9 +11,9 @@ type DataDivision struct {
 	ctx *cobol85.DataDivisionContext
 }
 
-func NewDataDivision(ctx *cobol85.DataDivisionContext, programUnit model.ProgramUnit) data.DataDivision {
+func NewDataDivision(ctx *cobol85.DataDivisionContext, cobolDivision model.CobolDivision) data.DataDivision {
 	return &DataDivision{
-		CobolDivision: modelInternal.NewCobolDivision(ctx, programUnit),
+		CobolDivision: cobolDivision,
 		ctx:           ctx,
 	}
 }

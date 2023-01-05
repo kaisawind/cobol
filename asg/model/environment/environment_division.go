@@ -1,7 +1,7 @@
-package data
+package environment
 
 import "github.com/kaisawind/cobol/asg/model"
 
-type DataDivision interface {
+type EnvironmentDivision interface {
 	model.CobolDivision
 }

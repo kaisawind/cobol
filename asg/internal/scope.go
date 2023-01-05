@@ -1,4 +1,4 @@
-package impl
+package internal
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
