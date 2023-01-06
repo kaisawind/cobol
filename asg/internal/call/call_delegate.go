@@ -12,6 +12,10 @@ type CallDelegate struct {
 	delegate call.Call
 }
 
+func init() {
+	internal.RegisterNewCallDelegateFunc(NewCallDelegate)
+}
+
 func NewCallDelegate(ctx antlr.ParserRuleContext, delegate call.Call, programUnit model.ProgramUnit) call.Call {
 	return &CallDelegate{
 		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),

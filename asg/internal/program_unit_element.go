@@ -4,7 +4,10 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/call"
+	"github.com/kaisawind/cobol/asg/model/data/datadescription"
+	"github.com/kaisawind/cobol/asg/model/data/workingstorage"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
+	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
@@ -185,13 +188,21 @@ func (e *ProgramUnitElement) CreateCall(ctx antlr.ParserRuleContext) (ret call.C
 		ret = e.CreateCallValueStmt(ctx)
 	case *cobol85.QualifiedDataNameContext:
 		if t.QualifiedDataNameFormat1() != nil {
-
+			dataCall := e.CreateCall(t.QualifiedDataNameFormat1())
+			ret = NewCallDelegate(ctx, dataCall, e.ProgramUnit())
+			e.AddElement(ret)
 		} else if t.QualifiedDataNameFormat2() != nil {
-
+			dataCall := e.CreateCall(t.QualifiedDataNameFormat2())
+			ret = NewCallDelegate(ctx, dataCall, e.ProgramUnit())
+			e.AddElement(ret)
 		} else if t.QualifiedDataNameFormat3() != nil {
-
+			dataCall := e.CreateCall(t.QualifiedDataNameFormat3())
+			ret = NewCallDelegate(ctx, dataCall, e.ProgramUnit())
+			e.AddElement(ret)
 		} else if t.QualifiedDataNameFormat4() != nil {
-
+			dataCall := e.CreateCall(t.QualifiedDataNameFormat4())
+			ret = NewCallDelegate(ctx, dataCall, e.ProgramUnit())
+			e.AddElement(ret)
 		} else {
 
 		}
@@ -210,4 +221,22 @@ func (e *ProgramUnitElement) CreateCall(ctx antlr.ParserRuleContext) (ret call.C
 	default:
 	}
 	return
+}
+
+func (e *ProgramUnitElement) CreateDataDescriptionEntryCall(ctx antlr.ParserRuleContext) (ret call.Call) {
+	element := e.GetElement(ctx)
+	if element != nil {
+		ret = element.(call.Call)
+	} else {
+		name := util.DetermineName(ctx)
+	}
+	return
+}
+
+func (e *ProgramUnitElement) GetIndex(name string) datadescription.Index {
+
+}
+
+func (e *ProgramUnitElement) WorkingStorageSection() workingstorage.WorkingStorageSection {
+	programUnit := e.ProgramUnit().(*ProgramUnit)
 }
