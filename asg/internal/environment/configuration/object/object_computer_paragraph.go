@@ -4,6 +4,7 @@ import (
 	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
+	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
@@ -44,23 +45,59 @@ func (e *ObjectComputerParagraph) SetCharacterSetClause(ctx *cobol85.CharacterSe
 }
 
 func (e *ObjectComputerParagraph) GetCharacterSetClause() (ret object.CharacterSetClause) {
-	return
+	return e.characterSetClause
 }
 
 func (e *ObjectComputerParagraph) SetCollatingSequenceClause(ctx *cobol85.CollatingSequenceClauseContext) (ret object.CollatingSequenceClause) {
+	element := e.GetElement(ctx)
+	if element != nil {
+		ret = element.(object.CollatingSequenceClause)
+	} else {
+		ret = NewCollatingSequenceClause(ctx, e.ProgramUnit())
+
+		for _, v := range ctx.AllAlphabetName() {
+			ret.AddAlphabetName(util.DetermineName(v))
+		}
+
+		if cctx := ctx.CollatingSequenceClauseAlphanumeric(); cctx != nil {
+			if ictx, ok := cctx.(*cobol85.CollatingSequenceClauseAlphanumericContext); ok {
+				ret.SetAlphanumeric(util.DetermineName(ictx.AlphabetName()))
+			}
+		}
+
+		if cctx := ctx.CollatingSequenceClauseNational(); cctx != nil {
+			if ictx, ok := cctx.(*cobol85.CollatingSequenceClauseNationalContext); ok {
+				ret.SetNational(util.DetermineName(ictx.AlphabetName()))
+			}
+		}
+
+		e.collatingSequenceClause = ret
+		e.AddElement(ret)
+	}
 	return
 }
 
 func (e *ObjectComputerParagraph) GetCollatingSequenceClause() (ret object.CollatingSequenceClause) {
-	return
+	return e.collatingSequenceClause
 }
 
 func (e *ObjectComputerParagraph) SetDiskSizeClause(ctx *cobol85.DiskSizeClauseContext) (ret object.DiskSizeClause) {
+	element := e.GetElement(ctx)
+	if element != nil {
+		ret = element.(object.DiskSizeClause)
+	} else {
+		ret = NewDiskSizeClause(ctx, e.ProgramUnit())
+
+		// TODO
+
+		e.characterSetClause = ret
+		e.AddElement(ret)
+	}
 	return
 }
 
 func (e *ObjectComputerParagraph) GetDiskSizeClause() (ret object.DiskSizeClause) {
-	return
+	return e.diskSizeClause
 }
 
 func (e *ObjectComputerParagraph) SetMemorySizeClause(ctx *cobol85.MemorySizeClauseContext) (ret object.MemorySizeClause) {
@@ -68,7 +105,7 @@ func (e *ObjectComputerParagraph) SetMemorySizeClause(ctx *cobol85.MemorySizeCla
 }
 
 func (e *ObjectComputerParagraph) GetMemorySizeClause() (ret object.MemorySizeClause) {
-	return
+	return e.memorySizeClause
 }
 
 func (e *ObjectComputerParagraph) SetSegmentLimitClause(ctx *cobol85.SegmentLimitClauseContext) (ret object.SegmentLimitClause) {
@@ -76,5 +113,5 @@ func (e *ObjectComputerParagraph) SetSegmentLimitClause(ctx *cobol85.SegmentLimi
 }
 
 func (e *ObjectComputerParagraph) GetSegmentLimitClause() (ret object.SegmentLimitClause) {
-	return
+	return e.segmentLimitClause
 }
