@@ -1,6 +1,7 @@
 package data
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/data"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -11,9 +12,13 @@ type DataDivision struct {
 	ctx *cobol85.DataDivisionContext
 }
 
-func NewDataDivision(ctx *cobol85.DataDivisionContext, cobolDivision model.CobolDivision) data.DataDivision {
+func init() {
+	internal.RegisterNewDataDivisionFunc(NewDataDivision)
+}
+
+func NewDataDivision(ctx *cobol85.DataDivisionContext, programUnit model.ProgramUnit) data.DataDivision {
 	return &DataDivision{
-		CobolDivision: cobolDivision,
+		CobolDivision: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:           ctx,
 	}
 }

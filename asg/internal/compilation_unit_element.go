@@ -17,6 +17,6 @@ func NewCompilationUnitElement(ctx antlr.ParserRuleContext, compilationUnit mode
 	}
 }
 
-func (e *CompilationUnitElement) GetCompilationUnit() model.CompilationUnit {
+func (e *CompilationUnitElement) CompilationUnit() model.CompilationUnit {
 	return e.compilationUnit
 }

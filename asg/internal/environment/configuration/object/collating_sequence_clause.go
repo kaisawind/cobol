@@ -1,6 +1,7 @@
 package object
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -14,9 +15,9 @@ type CollatingSequenceClause struct {
 	national      string
 }
 
-func NewCollatingSequenceClause(ctx *cobol85.CollatingSequenceClauseContext, cobolDivisionElement model.CobolDivisionElement) object.CollatingSequenceClause {
+func NewCollatingSequenceClause(ctx *cobol85.CollatingSequenceClauseContext, programUnit model.ProgramUnit) object.CollatingSequenceClause {
 	return &CollatingSequenceClause{
-		CobolDivisionElement: cobolDivisionElement,
+		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

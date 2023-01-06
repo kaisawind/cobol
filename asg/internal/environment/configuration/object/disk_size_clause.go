@@ -1,6 +1,7 @@
 package object
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
@@ -14,9 +15,9 @@ type DiskSizeClause struct {
 	valueStmt valuestmt.ValueStmt
 }
 
-func NewDiskSizeClause(ctx *cobol85.DiskSizeClauseContext, cobolDivisionElement model.CobolDivisionElement) object.DiskSizeClause {
+func NewDiskSizeClause(ctx *cobol85.DiskSizeClauseContext, programUnit model.ProgramUnit) object.DiskSizeClause {
 	return &DiskSizeClause{
-		CobolDivisionElement: cobolDivisionElement,
+		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

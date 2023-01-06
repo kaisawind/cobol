@@ -1,6 +1,7 @@
 package configuration
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/internal/environment/configuration/object"
 	"github.com/kaisawind/cobol/asg/internal/environment/configuration/source"
 	"github.com/kaisawind/cobol/asg/model"
@@ -15,9 +16,9 @@ type ConfigurationSection struct {
 	sourceComputerParagraph source.SourceComputerParagraph
 }
 
-func NewConfigurationSection(ctx *cobol85.ConfigurationSectionContext, cobolDivisionElement model.CobolDivisionElement) configuration.ConfigurationSection {
+func NewConfigurationSection(ctx *cobol85.ConfigurationSectionContext, programUnit model.ProgramUnit) configuration.ConfigurationSection {
 	return &ConfigurationSection{
-		CobolDivisionElement: cobolDivisionElement,
+		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

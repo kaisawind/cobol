@@ -23,7 +23,7 @@ func NewCompilationUnit(name string, program *Program, tokens *antlr.CommonToken
 	return compilationUnit
 }
 
-func (e *CompilationUnit) RegistryElement(element model.Element) {
+func (e *CompilationUnit) RegisterElement(element model.Element) {
 	if element == nil || element.Context() == nil {
 		return
 	}

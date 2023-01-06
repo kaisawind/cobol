@@ -1,6 +1,7 @@
 package object
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
@@ -14,9 +15,9 @@ type MemorySizeClause struct {
 	valueStmt valuestmt.ValueStmt
 }
 
-func NewMemorySizeClause(ctx *cobol85.MemorySizeClauseContext, cobolDivisionElement model.CobolDivisionElement) object.MemorySizeClause {
+func NewMemorySizeClause(ctx *cobol85.MemorySizeClauseContext, programUnit model.ProgramUnit) object.MemorySizeClause {
 	return &MemorySizeClause{
-		CobolDivisionElement: cobolDivisionElement,
+		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

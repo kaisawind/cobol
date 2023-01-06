@@ -6,5 +6,5 @@ type Program interface {
 	GetFirstCompilationUnit() CompilationUnit
 	GetCompilationUnit(name string) CompilationUnit
 	GetCompilationUnits() []CompilationUnit
-	RegistryCompilationUnit(element CompilationUnit)
+	RegisterCompilationUnit(element CompilationUnit)
 }

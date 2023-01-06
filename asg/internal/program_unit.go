@@ -2,8 +2,6 @@ package internal
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	internalData "github.com/kaisawind/cobol/asg/internal/data"
-	internalEnv "github.com/kaisawind/cobol/asg/internal/environment"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/data"
 	"github.com/kaisawind/cobol/asg/model/environment"
@@ -37,8 +35,10 @@ func (e *ProgramUnit) SetDataDivision(ctx *cobol85.DataDivisionContext) (ret dat
 	if element != nil {
 		ret = element.(data.DataDivision)
 	} else {
-		ret = internalData.NewDataDivision(ctx, NewCobolDivision(ctx, e))
-		e.AddElement(ret)
+		if NewDataDivision != nil {
+			ret = NewDataDivision(ctx, e)
+			e.AddElement(ret)
+		}
 	}
 	return
 }
@@ -50,10 +50,12 @@ func (e *ProgramUnit) GetDataDivision() data.DataDivision {
 func (e *ProgramUnit) SetEnvironmentDivision(ctx *cobol85.EnvironmentDivisionContext) (ret environment.EnvironmentDivision) {
 	element := e.GetElement(ctx)
 	if element != nil {
-		ret = element.(data.DataDivision)
+		ret = element.(environment.EnvironmentDivision)
 	} else {
-		ret = internalEnv.NewEnvironmentDivision(ctx, NewCobolDivision(ctx, e))
-		e.AddElement(ret)
+		if NewEnvironmentDivision != nil {
+			ret = NewEnvironmentDivision(ctx, e)
+			e.AddElement(ret)
+		}
 	}
 	return
 }

@@ -12,12 +12,12 @@ type ProgramUnitElement struct {
 
 func NewProgramUnitElement(ctx antlr.ParserRuleContext, programUnit model.ProgramUnit) model.ProgramUnitElement {
 	return &ProgramUnitElement{
-		CompilationUnitElement: NewCompilationUnitElement(ctx, programUnit.GetCompilationUnit()),
+		CompilationUnitElement: NewCompilationUnitElement(ctx, programUnit.CompilationUnit()),
 		programUnit:            programUnit,
 	}
 }
 
-func (e *ProgramUnitElement) GetProgramUnit() model.ProgramUnit {
+func (e *ProgramUnitElement) ProgramUnit() model.ProgramUnit {
 	return e.programUnit
 }
 

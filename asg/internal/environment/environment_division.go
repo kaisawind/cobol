@@ -1,6 +1,7 @@
 package environment
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/environment"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -11,9 +12,13 @@ type EnvironmentDivision struct {
 	ctx *cobol85.EnvironmentDivisionContext
 }
 
-func NewEnvironmentDivision(ctx *cobol85.EnvironmentDivisionContext, cobolDivision model.CobolDivision) environment.EnvironmentDivision {
+func init() {
+	internal.RegisterNewEnvironmentDivisionFunc(NewEnvironmentDivision)
+}
+
+func NewEnvironmentDivision(ctx *cobol85.EnvironmentDivisionContext, programUnit model.ProgramUnit) environment.EnvironmentDivision {
 	return &EnvironmentDivision{
-		CobolDivision: cobolDivision,
+		CobolDivision: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:           ctx,
 	}
 }

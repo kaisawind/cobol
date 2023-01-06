@@ -1,6 +1,7 @@
 package object
 
 import (
+	"github.com/kaisawind/cobol/asg/internal"
 	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -13,9 +14,9 @@ type SegmentLimitClause struct {
 	integerLiteral model.IntegerLiteral
 }
 
-func NewSegmentLimitClause(ctx *cobol85.SegmentLimitClauseContext, cobolDivisionElement model.CobolDivisionElement) object.SegmentLimitClause {
+func NewSegmentLimitClause(ctx *cobol85.SegmentLimitClauseContext, programUnit model.ProgramUnit) object.SegmentLimitClause {
 	return &SegmentLimitClause{
-		CobolDivisionElement: cobolDivisionElement,
+		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

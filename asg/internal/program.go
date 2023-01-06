@@ -49,7 +49,7 @@ func (e *Program) GetCompilationUnits() []model.CompilationUnit {
 	return e.compilationUnits
 }
 
-func (e *Program) RegistryCompilationUnit(element model.CompilationUnit) {
+func (e *Program) RegisterCompilationUnit(element model.CompilationUnit) {
 	name := strings.ToLower(element.Name())
 	e.compilationUnits = append(e.compilationUnits, element)
 	e.names = append(e.names, name)
