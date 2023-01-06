@@ -5,7 +5,8 @@ import "github.com/kaisawind/cobol/asg/model"
 type CallType int
 
 const (
-	COMMUNICATION_DESCRIPTION_ENTRY_CALL CallType = iota
+	DEFAULT_CALL CallType = iota
+	COMMUNICATION_DESCRIPTION_ENTRY_CALL
 	DATA_DESCRIPTION_ENTRY_CALL
 	ENVIRONMENT_CALL
 	FILE_CONTROL_ENTRY_CALL
@@ -26,4 +27,6 @@ type Call interface {
 	model.CobolDivisionElement
 
 	Name() string
+	Type() CallType
+	Unwrap() Call
 }

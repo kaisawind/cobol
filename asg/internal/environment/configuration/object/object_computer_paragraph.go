@@ -44,7 +44,7 @@ func (e *ObjectComputerParagraph) SetCharacterSetClause(ctx *cobol85.CharacterSe
 	return
 }
 
-func (e *ObjectComputerParagraph) GetCharacterSetClause() (ret object.CharacterSetClause) {
+func (e *ObjectComputerParagraph) GetCharacterSetClause() object.CharacterSetClause {
 	return e.characterSetClause
 }
 
@@ -77,7 +77,7 @@ func (e *ObjectComputerParagraph) SetCollatingSequenceClause(ctx *cobol85.Collat
 	return
 }
 
-func (e *ObjectComputerParagraph) GetCollatingSequenceClause() (ret object.CollatingSequenceClause) {
+func (e *ObjectComputerParagraph) GetCollatingSequenceClause() object.CollatingSequenceClause {
 	return e.collatingSequenceClause
 }
 
@@ -96,7 +96,7 @@ func (e *ObjectComputerParagraph) SetDiskSizeClause(ctx *cobol85.DiskSizeClauseC
 	return
 }
 
-func (e *ObjectComputerParagraph) GetDiskSizeClause() (ret object.DiskSizeClause) {
+func (e *ObjectComputerParagraph) GetDiskSizeClause() object.DiskSizeClause {
 	return e.diskSizeClause
 }
 
@@ -104,7 +104,7 @@ func (e *ObjectComputerParagraph) SetMemorySizeClause(ctx *cobol85.MemorySizeCla
 	return
 }
 
-func (e *ObjectComputerParagraph) GetMemorySizeClause() (ret object.MemorySizeClause) {
+func (e *ObjectComputerParagraph) GetMemorySizeClause() object.MemorySizeClause {
 	return e.memorySizeClause
 }
 
@@ -112,6 +112,6 @@ func (e *ObjectComputerParagraph) SetSegmentLimitClause(ctx *cobol85.SegmentLimi
 	return
 }
 
-func (e *ObjectComputerParagraph) GetSegmentLimitClause() (ret object.SegmentLimitClause) {
+func (e *ObjectComputerParagraph) GetSegmentLimitClause() object.SegmentLimitClause {
 	return e.segmentLimitClause
 }
