@@ -20,3 +20,11 @@ func NewProgramUnitElement(ctx antlr.ParserRuleContext, programUnit model.Progra
 func (e *ProgramUnitElement) GetProgramUnit() model.ProgramUnit {
 	return e.programUnit
 }
+
+func (e *ProgramUnitElement) GetElement(ctx antlr.Tree) model.Element {
+	return e.Program().GetRegistry().GetElement(ctx)
+}
+
+func (e *ProgramUnitElement) AddElement(element model.Element) {
+	e.Program().GetRegistry().AddElement(element)
+}
