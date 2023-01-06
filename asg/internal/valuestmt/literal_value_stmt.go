@@ -1,0 +1,17 @@
+package valuestmt
+
+import (
+	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/model/valuestmt"
+	"github.com/kaisawind/cobol/gen/cobol85"
+)
+
+type LiteralValueStmt struct {
+	valuestmt.ValueStmt
+}
+
+func NewLiteralValueStmt(ctx *cobol85.LiteralContext, programUnit model.ProgramUnit) valuestmt.LiteralValueStmt {
+	return &LiteralValueStmt{
+		ValueStmt: NewValueStmt(ctx, programUnit),
+	}
+}
