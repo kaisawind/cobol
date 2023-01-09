@@ -1,20 +1,20 @@
 package valuestmt
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type Argument struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx *cobol85.ArgumentContext
 }
 
-func NewArgument(ctx *cobol85.ArgumentContext, programUnit model.ProgramUnit) valuestmt.Argument {
+func NewArgument(ctx *cobol85.ArgumentContext, programUnit element.ProgramUnit) valuestmt.Argument {
 	return &Argument{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

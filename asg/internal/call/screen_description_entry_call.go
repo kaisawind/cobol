@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/screen"
 )
@@ -18,7 +18,7 @@ func NewScreenDescriptionEntryCall(
 	ctx antlr.ParserRuleContext,
 	name string,
 	screenDescriptionEntry screen.ScreenDescriptionEntry,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.ScreenDescriptionEntryCall {
 	return &ScreenDescriptionEntryCall{
 		Call:                   NewCall(ctx, name, programUnit),

@@ -1,23 +1,23 @@
 package object
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type CollatingSequenceClause struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx           *cobol85.CollatingSequenceClauseContext
 	alphabetNames []string
 	alphanumeric  string
 	national      string
 }
 
-func NewCollatingSequenceClause(ctx *cobol85.CollatingSequenceClauseContext, programUnit model.ProgramUnit) object.CollatingSequenceClause {
+func NewCollatingSequenceClause(ctx *cobol85.CollatingSequenceClauseContext, programUnit element.ProgramUnit) object.CollatingSequenceClause {
 	return &CollatingSequenceClause{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

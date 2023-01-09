@@ -2,23 +2,23 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
 	"github.com/kaisawind/cobol/asg/model/call"
+	"github.com/kaisawind/cobol/asg/model/element"
 )
 
 type CallDelegate struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	delegate call.Call
 }
 
 func init() {
-	internal.RegisterNewCallDelegateFunc(NewCallDelegate)
+	instances.RegisterNewCallDelegateFunc(NewCallDelegate)
 }
 
-func NewCallDelegate(ctx antlr.ParserRuleContext, delegate call.Call, programUnit model.ProgramUnit) call.Call {
+func NewCallDelegate(ctx antlr.ParserRuleContext, delegate call.Call, programUnit element.ProgramUnit) call.Call {
 	return &CallDelegate{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		delegate:             delegate,
 	}
 }

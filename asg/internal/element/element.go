@@ -1,23 +1,23 @@
-package internal
+package element
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/model/element"
 )
 
 type Element struct {
 	ctx     antlr.ParserRuleContext
-	program model.Program
+	program element.Program
 }
 
-func NewElement(ctx antlr.ParserRuleContext, program model.Program) model.Element {
+func NewElement(ctx antlr.ParserRuleContext, program element.Program) element.Element {
 	return &Element{
 		ctx:     ctx,
 		program: program,
 	}
 }
 
-func (e *Element) Parent() (parent model.Element) {
+func (e *Element) Parent() (parent element.Element) {
 	registry := e.program.GetRegistry()
 	current := e.ctx.(antlr.Tree)
 	for {
@@ -33,7 +33,7 @@ func (e *Element) Parent() (parent model.Element) {
 	return parent
 }
 
-func (e *Element) Children() (elements []model.Element) {
+func (e *Element) Children() (elements []element.Element) {
 	registry := e.program.GetRegistry()
 	for _, v := range e.ctx.GetChildren() {
 		element := registry.GetElement(v)
@@ -48,6 +48,6 @@ func (e *Element) Context() antlr.ParserRuleContext {
 	return e.ctx
 }
 
-func (e *Element) Program() model.Program {
+func (e *Element) Program() element.Program {
 	return e.program
 }

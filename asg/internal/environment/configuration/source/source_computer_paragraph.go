@@ -1,22 +1,22 @@
 package source
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/source"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type SourceComputerParagraph struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx           *cobol85.SourceComputerParagraphContext
 	name          string
 	debuggingMode bool
 }
 
-func NewSourceComputerParagraph(ctx *cobol85.SourceComputerParagraphContext, name string, programUnit model.ProgramUnit) source.SourceComputerParagraph {
+func NewSourceComputerParagraph(ctx *cobol85.SourceComputerParagraphContext, name string, programUnit element.ProgramUnit) source.SourceComputerParagraph {
 	return &SourceComputerParagraph{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 		name:                 name,
 	}

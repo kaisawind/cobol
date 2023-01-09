@@ -1,23 +1,23 @@
 package object
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type MemorySizeClause struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx       *cobol85.MemorySizeClauseContext
 	unit      object.MemorySizeClauseUnit
 	valueStmt valuestmt.ValueStmt
 }
 
-func NewMemorySizeClause(ctx *cobol85.MemorySizeClauseContext, programUnit model.ProgramUnit) object.MemorySizeClause {
+func NewMemorySizeClause(ctx *cobol85.MemorySizeClauseContext, programUnit element.ProgramUnit) object.MemorySizeClause {
 	return &MemorySizeClause{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

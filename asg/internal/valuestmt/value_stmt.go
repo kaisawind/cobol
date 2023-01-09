@@ -2,20 +2,20 @@ package valuestmt
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 )
 
 type ValueStmt struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx        antlr.ParserRuleContext
 	valueStmts []valuestmt.ValueStmt
 }
 
-func NewValueStmt(ctx antlr.ParserRuleContext, programUnit model.ProgramUnit) valuestmt.ValueStmt {
+func NewValueStmt(ctx antlr.ParserRuleContext, programUnit element.ProgramUnit) valuestmt.ValueStmt {
 	return &ValueStmt{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 		valueStmts:           []valuestmt.ValueStmt{},
 	}

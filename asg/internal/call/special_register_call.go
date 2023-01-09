@@ -1,7 +1,7 @@
 package call
 
 import (
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
@@ -16,7 +16,7 @@ type SpecialRegisterCall struct {
 func NewSpecialRegisterCall(
 	ctx *cobol85.SpecialRegisterContext,
 	name string,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.SpecialRegisterCall {
 	return &SpecialRegisterCall{
 		Call:     NewCall(ctx, "", programUnit),

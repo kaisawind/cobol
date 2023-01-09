@@ -1,9 +1,9 @@
 package communication
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type CommunicationDescriptionEntry interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
 	Name() string
 }

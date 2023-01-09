@@ -1,9 +1,9 @@
 package procedure
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type Paragraph interface {
-	model.Scope
+	element.Scope
 
 	Name() string
 }

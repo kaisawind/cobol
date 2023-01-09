@@ -1,7 +1,7 @@
 package valuestmt
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type Subscript interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 }

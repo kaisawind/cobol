@@ -1,37 +1,37 @@
-package internal
+package element
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
 	"github.com/kaisawind/cobol/asg/model/data/workingstorage"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type ProgramUnitElement struct {
-	model.CompilationUnitElement
-	programUnit model.ProgramUnit
+	element.CompilationUnitElement
+	programUnit element.ProgramUnit
 }
 
-func NewProgramUnitElement(ctx antlr.ParserRuleContext, programUnit model.ProgramUnit) model.ProgramUnitElement {
+func NewProgramUnitElement(ctx antlr.ParserRuleContext, programUnit element.ProgramUnit) element.ProgramUnitElement {
 	return &ProgramUnitElement{
 		CompilationUnitElement: NewCompilationUnitElement(ctx, programUnit.CompilationUnit()),
 		programUnit:            programUnit,
 	}
 }
 
-func (e *ProgramUnitElement) ProgramUnit() model.ProgramUnit {
+func (e *ProgramUnitElement) ProgramUnit() element.ProgramUnit {
 	return e.programUnit
 }
 
-func (e *ProgramUnitElement) GetElement(ctx antlr.Tree) model.Element {
+func (e *ProgramUnitElement) GetElement(ctx antlr.Tree) element.Element {
 	return e.Program().GetRegistry().GetElement(ctx)
 }
 
-func (e *ProgramUnitElement) AddElement(element model.Element) {
+func (e *ProgramUnitElement) AddElement(element element.Element) {
 	e.Program().GetRegistry().AddElement(element)
 }
 

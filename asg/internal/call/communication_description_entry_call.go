@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/communication"
 )
@@ -17,7 +17,7 @@ func NewCommunicationDescriptionEntryCall(
 	ctx antlr.ParserRuleContext,
 	name string,
 	communicationDescriptionEntry communication.CommunicationDescriptionEntry,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.CommunicationDescriptionEntryCall {
 	return &CommunicationDescriptionEntryCall{
 		Call:                          NewCall(ctx, name, programUnit),

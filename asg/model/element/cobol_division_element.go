@@ -1,4 +1,4 @@
-package model
+package element
 
 type CobolDivisionElement interface {
 	ProgramUnitElement

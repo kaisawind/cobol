@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
 )
@@ -18,7 +18,7 @@ func NewIndexCall(
 	ctx antlr.ParserRuleContext,
 	name string,
 	index datadescription.Index,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.IndexCall {
 	return &IndexCall{
 		Call:     NewCall(ctx, name, programUnit),

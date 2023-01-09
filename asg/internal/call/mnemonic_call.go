@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 )
 
@@ -15,7 +15,7 @@ type MnemonicCall struct {
 func NewMnemonicCall(
 	ctx antlr.ParserRuleContext,
 	name string,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.MnemonicCall {
 	return &MnemonicCall{
 		Call:     NewCall(ctx, name, programUnit),

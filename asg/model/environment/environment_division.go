@@ -1,7 +1,7 @@
 package environment
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type EnvironmentDivision interface {
-	model.CobolDivision
+	element.CobolDivision
 }

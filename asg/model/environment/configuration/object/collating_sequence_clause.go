@@ -1,9 +1,9 @@
 package object
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type CollatingSequenceClause interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
 	AddAlphabetName(name string)
 	GetAlphabetNames() []string

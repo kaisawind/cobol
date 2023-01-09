@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/environment/inputoutput/filecontrol"
 )
@@ -17,7 +17,7 @@ func NewFileControlEntryCall(
 	ctx antlr.ParserRuleContext,
 	name string,
 	fileControlEntry filecontrol.FileControlEntry,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.FileControlEntryCall {
 	return &FileControlEntryCall{
 		Call:             NewCall(ctx, name, programUnit),

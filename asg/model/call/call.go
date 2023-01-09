@@ -1,6 +1,6 @@
 package call
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type CallType int
 
@@ -24,7 +24,7 @@ const (
 )
 
 type Call interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
 	Name() string
 	Type() CallType

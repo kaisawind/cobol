@@ -1,7 +1,7 @@
 package call
 
 import (
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -18,7 +18,7 @@ func NewTableCall(
 	ctx *cobol85.TableCallContext,
 	name string,
 	dataDescriptionEntry datadescription.DataDescriptionEntry,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.TableCall {
 	return &TableCall{
 		DataDescriptionEntryCall: NewDataDescriptionEntryCall(ctx, name, dataDescriptionEntry, programUnit),

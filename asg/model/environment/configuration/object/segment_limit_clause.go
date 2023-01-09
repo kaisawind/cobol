@@ -1,10 +1,12 @@
 package object
 
-import "github.com/kaisawind/cobol/asg/model"
+import (
+	"github.com/kaisawind/cobol/asg/model/element"
+)
 
 type SegmentLimitClause interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
-	SetIntegerLiteral(integerLiteral model.IntegerLiteral)
-	GetIntegerLiteral() model.IntegerLiteral
+	SetIntegerLiteral(integerLiteral element.IntegerLiteral)
+	GetIntegerLiteral() element.IntegerLiteral
 }

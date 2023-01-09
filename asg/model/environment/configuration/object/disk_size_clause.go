@@ -1,7 +1,7 @@
 package object
 
 import (
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 )
 
@@ -13,7 +13,7 @@ const (
 )
 
 type DiskSizeClause interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
 	SetUnit(unit DiskSizeClauseUnit)
 	GetUnit() DiskSizeClauseUnit

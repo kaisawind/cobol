@@ -1,7 +1,7 @@
 package filecontrol
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type FileControlEntry interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 }

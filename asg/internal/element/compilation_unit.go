@@ -1,19 +1,19 @@
-package internal
+package element
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type CompilationUnit struct {
-	model.Element
+	element.Element
 	ctx    *cobol85.CompilationUnitContext
 	name   string
 	tokens *antlr.CommonTokenStream
 }
 
-func NewCompilationUnit(name string, program *Program, tokens *antlr.CommonTokenStream, ctx *cobol85.CompilationUnitContext) model.CompilationUnit {
+func NewCompilationUnit(name string, program *Program, tokens *antlr.CommonTokenStream, ctx *cobol85.CompilationUnitContext) element.CompilationUnit {
 	compilationUnit := &CompilationUnit{
 		Element: NewElement(ctx, program),
 		ctx:     ctx,
@@ -23,7 +23,7 @@ func NewCompilationUnit(name string, program *Program, tokens *antlr.CommonToken
 	return compilationUnit
 }
 
-func (e *CompilationUnit) RegisterElement(element model.Element) {
+func (e *CompilationUnit) RegisterElement(element element.Element) {
 	if element == nil || element.Context() == nil {
 		return
 	}

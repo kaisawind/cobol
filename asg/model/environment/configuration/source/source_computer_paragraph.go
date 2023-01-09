@@ -1,7 +1,7 @@
 package source
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type SourceComputerParagraph interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 }

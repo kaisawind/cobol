@@ -1,20 +1,20 @@
 package object
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type CharacterSetClause struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx *cobol85.CharacterSetClauseContext
 }
 
-func NewCharacterSetClause(ctx *cobol85.CharacterSetClauseContext, programUnit model.ProgramUnit) object.CharacterSetClause {
+func NewCharacterSetClause(ctx *cobol85.CharacterSetClauseContext, programUnit element.ProgramUnit) object.CharacterSetClause {
 	return &CharacterSetClause{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

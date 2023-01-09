@@ -1,30 +1,30 @@
 package object
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type SegmentLimitClause struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx *cobol85.SegmentLimitClauseContext
 
-	integerLiteral model.IntegerLiteral
+	integerLiteral element.IntegerLiteral
 }
 
-func NewSegmentLimitClause(ctx *cobol85.SegmentLimitClauseContext, programUnit model.ProgramUnit) object.SegmentLimitClause {
+func NewSegmentLimitClause(ctx *cobol85.SegmentLimitClauseContext, programUnit element.ProgramUnit) object.SegmentLimitClause {
 	return &SegmentLimitClause{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }
 
-func (e *SegmentLimitClause) SetIntegerLiteral(integerLiteral model.IntegerLiteral) {
+func (e *SegmentLimitClause) SetIntegerLiteral(integerLiteral element.IntegerLiteral) {
 	e.integerLiteral = integerLiteral
 }
 
-func (e *SegmentLimitClause) GetIntegerLiteral() model.IntegerLiteral {
+func (e *SegmentLimitClause) GetIntegerLiteral() element.IntegerLiteral {
 	return e.integerLiteral
 }

@@ -1,9 +1,9 @@
 package screen
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type ScreenDescriptionEntry interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
 	Name() string
 }

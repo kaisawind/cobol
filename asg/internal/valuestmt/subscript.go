@@ -1,20 +1,20 @@
 package valuestmt
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type Subscript struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx *cobol85.SubscriptContext
 }
 
-func NewSubscript(ctx *cobol85.SubscriptContext, programUnit model.ProgramUnit) valuestmt.Subscript {
+func NewSubscript(ctx *cobol85.SubscriptContext, programUnit element.ProgramUnit) valuestmt.Subscript {
 	return &Subscript{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 	}
 }

@@ -1,15 +1,15 @@
 package object
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment/configuration/object"
 	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type ObjectComputerParagraph struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	ctx  *cobol85.ObjectComputerParagraphContext
 	name string
 
@@ -20,9 +20,9 @@ type ObjectComputerParagraph struct {
 	segmentLimitClause      object.SegmentLimitClause
 }
 
-func NewObjectComputerParagraph(ctx *cobol85.ObjectComputerParagraphContext, name string, programUnit model.ProgramUnit) object.ObjectComputerParagraph {
+func NewObjectComputerParagraph(ctx *cobol85.ObjectComputerParagraphContext, name string, programUnit element.ProgramUnit) object.ObjectComputerParagraph {
 	return &ObjectComputerParagraph{
-		CobolDivisionElement: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivisionElement(ctx, programUnit),
 		ctx:                  ctx,
 		name:                 name,
 	}

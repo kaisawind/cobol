@@ -2,19 +2,19 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
 	"github.com/kaisawind/cobol/asg/model/call"
+	"github.com/kaisawind/cobol/asg/model/element"
 )
 
 type Call struct {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 	name string
 }
 
-func NewCall(ctx antlr.ParserRuleContext, name string, programUnit model.ProgramUnit) call.Call {
+func NewCall(ctx antlr.ParserRuleContext, name string, programUnit element.ProgramUnit) call.Call {
 	return &Call{
-		CobolDivisionElement: internal.NewCobolDivision(ctx, programUnit),
+		CobolDivisionElement: instances.NewCobolDivision(ctx, programUnit),
 		name:                 name,
 	}
 }

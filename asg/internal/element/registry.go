@@ -1,21 +1,21 @@
-package internal
+package element
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/model/element"
 )
 
 type Registry struct {
-	elements map[antlr.Tree]model.Element
+	elements map[antlr.Tree]element.Element
 }
 
-func NewRegistry() model.Registry {
+func NewRegistry() element.Registry {
 	return &Registry{
-		elements: map[antlr.Tree]model.Element{},
+		elements: map[antlr.Tree]element.Element{},
 	}
 }
 
-func (e *Registry) AddElement(element model.Element) {
+func (e *Registry) AddElement(element element.Element) {
 	if element == nil {
 		return
 	}
@@ -30,6 +30,6 @@ func (e *Registry) AddElement(element model.Element) {
 	}
 }
 
-func (e *Registry) GetElement(ctx antlr.Tree) model.Element {
+func (e *Registry) GetElement(ctx antlr.Tree) element.Element {
 	return e.elements[ctx]
 }

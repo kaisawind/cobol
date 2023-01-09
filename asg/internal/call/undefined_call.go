@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 )
 
@@ -12,7 +12,7 @@ type UndefinedCall struct {
 	callType call.CallType
 }
 
-func NewUndefinedCall(ctx antlr.ParserRuleContext, name string, programUnit model.ProgramUnit) call.Call {
+func NewUndefinedCall(ctx antlr.ParserRuleContext, name string, programUnit element.ProgramUnit) call.Call {
 	return &UndefinedCall{
 		Call:     NewCall(ctx, name, programUnit),
 		callType: call.UNDEFINED_CALL,

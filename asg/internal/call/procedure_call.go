@@ -2,7 +2,7 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/procedure"
 )
@@ -18,7 +18,7 @@ func NewProcedureCall(
 	ctx antlr.ParserRuleContext,
 	name string,
 	paragraph procedure.Paragraph,
-	programUnit model.ProgramUnit,
+	programUnit element.ProgramUnit,
 ) call.ProcedureCall {
 	return &ProcedureCall{
 		Call: NewCall(ctx, name, programUnit),

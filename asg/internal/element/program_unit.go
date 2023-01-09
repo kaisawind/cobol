@@ -1,32 +1,33 @@
-package internal
+package element
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
 	"github.com/kaisawind/cobol/asg/model/data"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/asg/model/environment"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type ProgramUnit struct {
-	model.CompilationUnitElement
+	element.CompilationUnitElement
 	ctx                 *cobol85.ProgramUnitContext
 	dataDivision        data.DataDivision
 	environmentDivision environment.EnvironmentDivision
 }
 
-func NewProgramUnit(ctx *cobol85.ProgramUnitContext, compilationUnit model.CompilationUnit) model.ProgramUnit {
+func NewProgramUnit(ctx *cobol85.ProgramUnitContext, compilationUnit element.CompilationUnit) element.ProgramUnit {
 	return &ProgramUnit{
 		CompilationUnitElement: NewCompilationUnitElement(ctx, compilationUnit),
 		ctx:                    ctx,
 	}
 }
 
-func (e *ProgramUnit) GetElement(ctx antlr.Tree) model.Element {
+func (e *ProgramUnit) GetElement(ctx antlr.Tree) element.Element {
 	return e.Program().GetRegistry().GetElement(ctx)
 }
 
-func (e *ProgramUnit) AddElement(element model.Element) {
+func (e *ProgramUnit) AddElement(element element.Element) {
 	e.Program().GetRegistry().AddElement(element)
 }
 
@@ -35,8 +36,8 @@ func (e *ProgramUnit) SetDataDivision(ctx *cobol85.DataDivisionContext) (ret dat
 	if element != nil {
 		ret = element.(data.DataDivision)
 	} else {
-		if NewDataDivision != nil {
-			ret = NewDataDivision(ctx, e)
+		if instances.NewDataDivision != nil {
+			ret = instances.NewDataDivision(ctx, e)
 			e.AddElement(ret)
 		}
 	}
@@ -52,8 +53,8 @@ func (e *ProgramUnit) SetEnvironmentDivision(ctx *cobol85.EnvironmentDivisionCon
 	if element != nil {
 		ret = element.(environment.EnvironmentDivision)
 	} else {
-		if NewEnvironmentDivision != nil {
-			ret = NewEnvironmentDivision(ctx, e)
+		if instances.NewEnvironmentDivision != nil {
+			ret = instances.NewEnvironmentDivision(ctx, e)
 			e.AddElement(ret)
 		}
 	}

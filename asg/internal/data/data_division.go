@@ -1,24 +1,24 @@
 package data
 
 import (
-	"github.com/kaisawind/cobol/asg/internal"
-	"github.com/kaisawind/cobol/asg/model"
+	"github.com/kaisawind/cobol/asg/instances"
 	"github.com/kaisawind/cobol/asg/model/data"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type DataDivision struct {
-	model.CobolDivision
+	element.CobolDivision
 	ctx *cobol85.DataDivisionContext
 }
 
 func init() {
-	internal.RegisterNewDataDivisionFunc(NewDataDivision)
+	instances.RegisterNewDataDivisionFunc(NewDataDivision)
 }
 
-func NewDataDivision(ctx *cobol85.DataDivisionContext, programUnit model.ProgramUnit) data.DataDivision {
+func NewDataDivision(ctx *cobol85.DataDivisionContext, programUnit element.ProgramUnit) data.DataDivision {
 	return &DataDivision{
-		CobolDivision: internal.NewCobolDivisionElement(ctx, programUnit),
+		CobolDivision: instances.NewCobolDivision(ctx, programUnit),
 		ctx:           ctx,
 	}
 }

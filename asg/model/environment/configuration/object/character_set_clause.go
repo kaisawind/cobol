@@ -1,7 +1,7 @@
 package object
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type CharacterSetClause interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 }

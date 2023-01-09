@@ -1,9 +1,9 @@
 package datadescription
 
-import "github.com/kaisawind/cobol/asg/model"
+import "github.com/kaisawind/cobol/asg/model/element"
 
 type DataDescriptionEntry interface {
-	model.CobolDivisionElement
+	element.CobolDivisionElement
 
 	Name() string
 }
