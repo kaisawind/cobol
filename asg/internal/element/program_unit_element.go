@@ -2,6 +2,7 @@ package element
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/instances"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
 	"github.com/kaisawind/cobol/asg/model/data/workingstorage"
@@ -229,12 +230,13 @@ func (e *ProgramUnitElement) CreateDataDescriptionEntryCall(ctx antlr.ParserRule
 		ret = element.(call.Call)
 	} else {
 		name := util.DetermineName(ctx)
+		ret = instances.NewDataDescriptionEntryCall(ctx)
 	}
 	return
 }
 
 func (e *ProgramUnitElement) GetIndex(name string) datadescription.Index {
-
+	e.ProgramUnit()
 }
 
 func (e *ProgramUnitElement) WorkingStorageSection() workingstorage.WorkingStorageSection {

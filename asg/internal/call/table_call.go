@@ -1,9 +1,9 @@
 package call
 
 import (
-	"github.com/kaisawind/cobol/asg/internal/element"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
+	"github.com/kaisawind/cobol/asg/model/element"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 

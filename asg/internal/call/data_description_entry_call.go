@@ -2,9 +2,10 @@ package call
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/internal/element"
+	"github.com/kaisawind/cobol/asg/instances"
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
+	"github.com/kaisawind/cobol/asg/model/element"
 )
 
 type DataDescriptionEntryCall struct {
@@ -12,6 +13,10 @@ type DataDescriptionEntryCall struct {
 
 	dataDescriptionEntry datadescription.DataDescriptionEntry
 	callType             call.CallType
+}
+
+func init() {
+	instances.RegisterNewDataDescriptionEntryCallFunc(NewDataDescriptionEntryCall)
 }
 
 func NewDataDescriptionEntryCall(
