@@ -22,7 +22,7 @@ func (v *ProgramUnitVisitor) VisitDataDivision(ctx *cobol85.DataDivisionContext)
 	element := v.GetElement(ctx)
 	if element == nil {
 		unit := model.NewDataDivision(ctx)
-		programUnit := v.GetProgramUnit(ctx)
+		programUnit := model.GetElement[*model.ProgramUnit](ctx, v.program)
 		v.AddElement(unit)
 		programUnit.SetDataDivision(unit)
 	}
@@ -33,7 +33,7 @@ func (v *ProgramUnitVisitor) VisitEnvironmentDivision(ctx *cobol85.EnvironmentDi
 	element := v.GetElement(ctx)
 	if element == nil {
 		unit := model.NewEnvironmentDivision(ctx)
-		programUnit := v.GetProgramUnit(ctx)
+		programUnit := model.GetElement[*model.ProgramUnit](ctx, v.program)
 		v.AddElement(unit)
 		programUnit.SetEnvironmentDivision(unit)
 	}
@@ -44,7 +44,7 @@ func (v *ProgramUnitVisitor) VisitIdentificationDivision(ctx *cobol85.Identifica
 	element := v.GetElement(ctx)
 	if element == nil {
 		unit := model.NewIdentificationDivision(ctx)
-		programUnit := v.GetProgramUnit(ctx)
+		programUnit := model.GetElement[*model.ProgramUnit](ctx, v.program)
 		v.AddElement(unit)
 		programUnit.SetIdentificationDivision(unit)
 	}
@@ -55,7 +55,7 @@ func (v *ProgramUnitVisitor) VisitProcedureDivision(ctx *cobol85.ProcedureDivisi
 	element := v.GetElement(ctx)
 	if element == nil {
 		unit := model.NewProcedureDivision(ctx)
-		programUnit := v.GetProgramUnit(ctx)
+		programUnit := model.GetElement[*model.ProgramUnit](ctx, v.program)
 		v.AddElement(unit)
 		programUnit.SetProcedureDivision(unit)
 	}

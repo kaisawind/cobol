@@ -6,10 +6,32 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 )
 
+type ElementType interface {
+	*DataDivision | *ProgramUnit | *CompilationUnit
+}
+
 type Program struct {
 	registry         *Registry
 	compilationUnits []*CompilationUnit
 	names            []string
+}
+
+func GetElement[T ElementType](ctx antlr.Tree, program *Program) (parent T) {
+	registry := program.Registry()
+	current := ctx
+	for {
+		if parent != nil || current == nil {
+			break
+		}
+		current = current.GetParent()
+		element := registry.GetElement(current)
+		if element != nil {
+			if parent, ok := element.(T); ok {
+				return parent
+			}
+		}
+	}
+	return
 }
 
 func NewProgram() *Program {

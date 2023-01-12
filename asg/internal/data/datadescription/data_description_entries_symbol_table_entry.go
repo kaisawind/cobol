@@ -1,3 +1,0 @@
-package datadescription
-
-type DataDescriptionEntriesSymbolTableEntry interface{}
