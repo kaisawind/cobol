@@ -6,15 +6,13 @@ import (
 )
 
 type CompilationUnit struct {
-	Element
-	ctx          *cobol85.CompilationUnitContext
+	ctx          cobol85.ICompilationUnitContext
 	name         string
 	programUnits []*ProgramUnit
 }
 
-func NewCompilationUnit(ctx *cobol85.CompilationUnitContext, name string) *CompilationUnit {
+func NewCompilationUnit(ctx cobol85.ICompilationUnitContext, name string) *CompilationUnit {
 	compilationUnit := &CompilationUnit{
-		Element:      NewBaseElement(ctx),
 		ctx:          ctx,
 		name:         name,
 		programUnits: []*ProgramUnit{},
@@ -31,7 +29,7 @@ func (e *CompilationUnit) Context() antlr.ParserRuleContext {
 }
 
 func (e *CompilationUnit) CompilationUnitContext() *cobol85.CompilationUnitContext {
-	return e.ctx
+	return e.ctx.(*cobol85.CompilationUnitContext)
 }
 
 func (e *CompilationUnit) AddProgramUnit(unit *ProgramUnit) {

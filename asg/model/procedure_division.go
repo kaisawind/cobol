@@ -1,13 +1,20 @@
 package model
 
-import "github.com/kaisawind/cobol/gen/cobol85"
+import (
+	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/gen/cobol85"
+)
 
 type ProcedureDivision struct {
-	Element
+	ctx cobol85.IProcedureDivisionContext
 }
 
-func NewProcedureDivision(ctx *cobol85.ProcedureDivisionContext) *ProcedureDivision {
+func NewProcedureDivision(ctx cobol85.IProcedureDivisionContext) *ProcedureDivision {
 	return &ProcedureDivision{
-		Element: NewBaseElement(ctx),
+		ctx: ctx,
 	}
+}
+
+func (e *ProcedureDivision) Context() antlr.ParserRuleContext {
+	return e.ctx
 }

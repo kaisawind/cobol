@@ -1,19 +1,26 @@
 package model
 
-import "github.com/kaisawind/cobol/gen/cobol85"
+import (
+	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/gen/cobol85"
+)
 
 type ProgramUnit struct {
-	Element
+	ctx                    cobol85.IProgramUnitContext
 	dataDivision           *DataDivision
 	environmentDivision    *EnvironmentDivision
 	identificationDivision *IdentificationDivision
 	procedureDivision      *ProcedureDivision
 }
 
-func NewProgramUnit(ctx *cobol85.ProgramUnitContext) *ProgramUnit {
+func NewProgramUnit(ctx cobol85.IProgramUnitContext) *ProgramUnit {
 	return &ProgramUnit{
-		Element: NewBaseElement(ctx),
+		ctx: ctx,
 	}
+}
+
+func (e *ProgramUnit) Context() antlr.ParserRuleContext {
+	return e.ctx
 }
 
 func (e *ProgramUnit) SetDataDivision(dataDivision *DataDivision) {

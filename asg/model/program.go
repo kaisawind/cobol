@@ -4,10 +4,11 @@ import (
 	"strings"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/model/data/communication"
 )
 
 type ElementType interface {
-	*DataDivision | *ProgramUnit | *CompilationUnit
+	*DataDivision | *ProgramUnit | *CompilationUnit | *communication.CommunicationDescriptionEntryInput
 }
 
 type Program struct {
