@@ -17,24 +17,6 @@ type Program struct {
 	names            []string
 }
 
-func GetElement[T ElementType](ctx antlr.Tree, program *Program) (parent T) {
-	registry := program.Registry()
-	current := ctx
-	for {
-		if parent != nil || current == nil {
-			break
-		}
-		current = current.GetParent()
-		element := registry.GetElement(current)
-		if element != nil {
-			if parent, ok := element.(T); ok {
-				return parent
-			}
-		}
-	}
-	return
-}
-
 func NewProgram() *Program {
 	return &Program{
 		registry: NewRegistry(),

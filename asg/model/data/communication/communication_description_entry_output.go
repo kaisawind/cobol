@@ -6,17 +6,23 @@ import (
 )
 
 type CommunicationDescriptionEntryOutput struct {
-	ctx cobol85.ICommunicationDescriptionEntryFormat3Context
+	ctx  cobol85.ICommunicationDescriptionEntryFormat3Context
+	name string
 }
 
-func NewCommunicationDescriptionEntryOutput(ctx cobol85.ICommunicationDescriptionEntryFormat3Context) *CommunicationDescriptionEntryOutput {
+func NewCommunicationDescriptionEntryOutput(ctx cobol85.ICommunicationDescriptionEntryFormat3Context, name string) *CommunicationDescriptionEntryOutput {
 	return &CommunicationDescriptionEntryOutput{
-		ctx: ctx,
+		ctx:  ctx,
+		name: name,
 	}
 }
 
 func (e *CommunicationDescriptionEntryOutput) Context() antlr.ParserRuleContext {
 	return e.ctx
+}
+
+func (e *CommunicationDescriptionEntryOutput) Name() string {
+	return e.name
 }
 
 func (e *CommunicationDescriptionEntryOutput) Type() CDEType {

@@ -10,4 +10,5 @@ const (
 
 type CommunicationDescriptionEntry interface {
 	Type() CDEType
+	Name() string
 }
