@@ -1,6 +1,8 @@
 package util
 
 import (
+	"strings"
+
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
@@ -134,4 +136,8 @@ func DetermineName(ctx antlr.Tree) (name string) {
 	default:
 	}
 	return
+}
+
+func Symbol(name string) string {
+	return strings.ToUpper(name)
 }
