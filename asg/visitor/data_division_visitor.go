@@ -40,7 +40,7 @@ func (v *DataDivisionVisitor) VisitCommunicationSection(ctx *cobol85.Communicati
 
 							dataDescName := clause.DataDescName()
 							if v.GetElement(dataDescName) == nil {
-								dataDescCall := model.CreateCall(v.program, dataDescName)
+								dataDescCall := v.program.CreateCall(dataDescName)
 								clauseElement.SetDataDescCall(dataDescCall)
 							}
 
@@ -71,6 +71,7 @@ func (v *DataDivisionVisitor) VisitCommunicationSection(ctx *cobol85.Communicati
 				}
 			} else {
 				// wrong
+				panic("CommunicationDescriptionEntry error")
 			}
 		}
 		dataDivision := model.GetParent[*model.DataDivision](v.program, ctx)

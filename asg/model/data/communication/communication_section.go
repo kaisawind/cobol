@@ -2,18 +2,21 @@ package communication
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/model/data/datadescription"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type CommunicationSection struct {
-	ctx     cobol85.ICommunicationSectionContext
-	entries []CommunicationDescriptionEntry
+	datadescription.BaseDataDescriptionEntry
+	ctx                             cobol85.ICommunicationSectionContext
+	communicationDescriptionEntries []CommunicationDescriptionEntry
 }
 
 func NewCommunicationSection(ctx cobol85.ICommunicationSectionContext) *CommunicationSection {
 	return &CommunicationSection{
-		ctx:     ctx,
-		entries: []CommunicationDescriptionEntry{},
+		BaseDataDescriptionEntry:        *datadescription.NewBaseDataDescriptionEntry(),
+		ctx:                             ctx,
+		communicationDescriptionEntries: []CommunicationDescriptionEntry{},
 	}
 }
 
@@ -22,5 +25,9 @@ func (e *CommunicationSection) Context() antlr.ParserRuleContext {
 }
 
 func (e *CommunicationSection) AddCommunicationDescriptionEntry(entry CommunicationDescriptionEntry) {
-	e.entries = append(e.entries, entry)
+	e.communicationDescriptionEntries = append(e.communicationDescriptionEntries, entry)
+}
+
+func (e *CommunicationSection) GetCommunicationDescriptionEntries() []CommunicationDescriptionEntry {
+	return e.communicationDescriptionEntries
 }

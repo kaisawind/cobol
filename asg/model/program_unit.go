@@ -7,9 +7,9 @@ import (
 
 type ProgramUnit struct {
 	ctx                    cobol85.IProgramUnitContext
+	identificationDivision *IdentificationDivision
 	dataDivision           *DataDivision
 	environmentDivision    *EnvironmentDivision
-	identificationDivision *IdentificationDivision
 	procedureDivision      *ProcedureDivision
 }
 

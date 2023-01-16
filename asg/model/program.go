@@ -11,38 +11,50 @@ type ElementType interface {
 	*DataDivision | *ProgramUnit | *CompilationUnit | *communication.CommunicationDescriptionEntryInput
 }
 
-type Program struct {
+type program struct {
 	registry         *Registry
 	compilationUnits []*CompilationUnit
 	names            []string
 }
 
-func NewProgram() *Program {
-	return &Program{
-		registry: NewRegistry(),
+func newProgram() *program {
+	return &program{
+		registry:         NewRegistry(),
+		compilationUnits: []*CompilationUnit{},
+		names:            []string{},
 	}
 }
 
-func (e *Program) Registry() *Registry {
+type Program struct {
+	*programCall
+}
+
+func NewProgram() *Program {
+	return &Program{
+		programCall: newProgramCall(),
+	}
+}
+
+func (e *program) Registry() *Registry {
 	return e.registry
 }
 
-func (e *Program) AddElement(element Element) {
+func (e *program) AddElement(element Element) {
 	e.Registry().AddElement(element)
 }
 
-func (e *Program) GetElement(ctx antlr.ParserRuleContext) Element {
+func (e *program) GetElement(ctx antlr.ParserRuleContext) Element {
 	return e.Registry().GetElement(ctx)
 }
 
-func (e *Program) GetFirstCompilationUnit() *CompilationUnit {
+func (e *program) GetFirstCompilationUnit() *CompilationUnit {
 	if len(e.compilationUnits) == 0 {
 		return nil
 	}
 	return e.compilationUnits[0]
 }
 
-func (e *Program) GetCompilationUnit(name string) *CompilationUnit {
+func (e *program) GetCompilationUnit(name string) *CompilationUnit {
 	name = strings.ToLower(name)
 	for k, v := range e.names {
 		if v == name {
@@ -56,12 +68,34 @@ func (e *Program) GetCompilationUnit(name string) *CompilationUnit {
 	return nil
 }
 
-func (e *Program) GetCompilationUnits() []*CompilationUnit {
+func (e *program) GetCompilationUnits() []*CompilationUnit {
 	return e.compilationUnits
 }
 
-func (e *Program) AddCompilationUnit(element *CompilationUnit) {
+func (e *program) AddCompilationUnit(element *CompilationUnit) {
 	name := strings.ToLower(element.Name())
 	e.compilationUnits = append(e.compilationUnits, element)
 	e.names = append(e.names, name)
+}
+
+func (e *program) GetProgramUnit(ctx antlr.Tree) *ProgramUnit {
+	return getParent[*ProgramUnit](e, ctx)
+}
+
+func getParent[T ElementType](program *program, ctx antlr.Tree) (parent T) {
+	registry := program.Registry()
+	current := ctx
+	for {
+		if parent != nil || current == nil {
+			break
+		}
+		current = current.GetParent()
+		element := registry.GetElement(current)
+		if element != nil {
+			if parent, ok := element.(T); ok {
+				return parent
+			}
+		}
+	}
+	return
 }

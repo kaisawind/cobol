@@ -7,24 +7,17 @@ import (
 )
 
 type WorkingStorageSection struct {
-	ctx     cobol85.IWorkingStorageSectionContext
-	entries []datadescription.DataDescriptionEntry
+	datadescription.BaseDataDescriptionEntry
+	ctx cobol85.IWorkingStorageSectionContext
 }
 
 func NewWorkingStorageSection(ctx cobol85.IWorkingStorageSectionContext) *WorkingStorageSection {
 	return &WorkingStorageSection{
-		ctx: ctx,
+		BaseDataDescriptionEntry: *datadescription.NewBaseDataDescriptionEntry(),
+		ctx:                      ctx,
 	}
 }
 
 func (e *WorkingStorageSection) Context() antlr.ParserRuleContext {
 	return e.ctx
-}
-
-func (e *WorkingStorageSection) AddCommunicationDescriptionEntry(entry datadescription.DataDescriptionEntry) {
-	e.entries = append(e.entries, entry)
-}
-
-func (e *WorkingStorageSection) GetCommunicationDescriptionEntries() []datadescription.DataDescriptionEntry {
-	return e.entries
 }

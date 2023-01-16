@@ -1,5 +1,7 @@
 package call
 
+import "github.com/antlr/antlr4/runtime/Go/antlr/v4"
+
 type CallType int
 
 const (
@@ -21,6 +23,7 @@ const (
 )
 
 type Call interface {
+	Context() antlr.ParserRuleContext
 	Type() CallType
 	Name() string
 }
