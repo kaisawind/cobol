@@ -26,12 +26,12 @@ func newProgram() *program {
 }
 
 type Program struct {
-	*programCall
+	*program
 }
 
 func NewProgram() *Program {
 	return &Program{
-		programCall: newProgramCall(),
+		program: newProgram(),
 	}
 }
 

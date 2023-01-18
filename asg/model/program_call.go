@@ -5,78 +5,222 @@ import (
 	"github.com/kaisawind/cobol/asg/model/call"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
 	"github.com/kaisawind/cobol/asg/model/procedure"
+	"github.com/kaisawind/cobol/asg/model/valuestmt"
 	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
-type programCall struct {
-	*program
-}
-
-func newProgramCall() *programCall {
-	return &programCall{
-		program: newProgram(),
-	}
-}
-
-func (e *programCall) CreateCall(ctx antlr.ParserRuleContext) (ret call.Call) {
-	switch t := ctx.(type) {
-	case cobol85.IDataDescNameContext,
-		cobol85.IConditionNameContext,
-		cobol85.IDataNameContext:
-		ret = e.CreateDataDescriptionEntryCall(t)
-	case cobol85.IClassNameContext,
-		cobol85.ICobolWordContext,
-		cobol85.IAlphabetNameContext,
-		cobol85.IAssignmentNameContext,
-		cobol85.ILibraryNameContext,
-		cobol85.ILocalNameContext:
-		element := e.GetElement(ctx)
-		if element != nil {
-			ret, _ = element.(call.Call)
-		} else {
-			ret = e.CreateUndefinedCall(ctx)
+func (e *program) CreateCall(ctxs ...antlr.ParserRuleContext) (ret call.Call) {
+	for _, ctx := range ctxs {
+		if ret != nil {
+			break
 		}
+		if ctx == nil {
+			continue
+		}
+		switch t := ctx.(type) {
+		case cobol85.IIdentifierContext:
+			ret = e.CreateIdentifierCall(t)
+		case cobol85.IDataDescNameContext,
+			cobol85.IConditionNameContext,
+			cobol85.IDataNameContext:
+			ret = e.CreateDataDescriptionEntryCall(t)
+		case cobol85.IClassNameContext,
+			cobol85.ICobolWordContext,
+			cobol85.IAlphabetNameContext,
+			cobol85.IAssignmentNameContext,
+			cobol85.ILibraryNameContext,
+			cobol85.ILocalNameContext:
+			element := e.GetElement(t)
+			if element != nil {
+				ret, _ = element.(call.Call)
+			} else {
+				ret = e.CreateUndefinedCall(t)
+			}
 
+		}
 	}
 	return
 }
 
-func (e *programCall) CreateIdentifierCall(ictx cobol85.IIdentifierContext) (ret call.Call) {
+func (e *program) CreateIdentifierCall(ictx cobol85.IIdentifierContext) (ret call.Call) {
 	ctx := ictx.(*cobol85.IdentifierContext)
 
 	if cctx := ctx.QualifiedDataName(); cctx != nil {
-		ret = e.CreateQualifiedDataNameCall(cctx)
+		c := e.CreateQualifiedDataNameCall(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else if cctx := ctx.TableCall(); cctx != nil {
-
+		c := e.CreateTableCall(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else if cctx := ctx.FunctionCall(); cctx != nil {
-
+		c := e.CreateFunctionCall(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else if cctx := ctx.SpecialRegister(); cctx != nil {
-
+		c := e.CreateSpecialRegisterCall(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else {
 		ret = e.CreateDataDescriptionEntryCall(ctx)
 	}
 	return
 }
 
-func (e *programCall) CreateQualifiedDataNameCall(ictx cobol85.IQualifiedDataNameContext) (ret call.Call) {
+func (e *program) CreateSpecialRegisterCall(ictx cobol85.ISpecialRegisterContext) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+	ctx := ictx.(*cobol85.SpecialRegisterContext)
+	var typ call.SpecialRegisterType
+	switch {
+	case ctx.ADDRESS() != nil:
+		typ = call.ADDRESS_OF
+	case ctx.DATE() != nil:
+		typ = call.DATE
+	case ctx.DAY() != nil:
+		typ = call.DAY
+	case ctx.DAY_OF_WEEK() != nil:
+		typ = call.DAY_OF_WEEK
+	case ctx.DEBUG_CONTENTS() != nil:
+		typ = call.DEBUG_CONTENTS
+	case ctx.DEBUG_ITEM() != nil:
+		typ = call.DEBUG_ITEM
+	case ctx.DEBUG_LINE() != nil:
+		typ = call.DEBUG_LINE
+	case ctx.DEBUG_NAME() != nil:
+		typ = call.DEBUG_NAME
+	case ctx.DEBUG_SUB_1() != nil:
+		typ = call.DEBUG_SUB_1
+	case ctx.DEBUG_SUB_2() != nil:
+		typ = call.DEBUG_SUB_2
+	case ctx.DEBUG_SUB_3() != nil:
+		typ = call.DEBUG_SUB_3
+	case ctx.LENGTH() != nil:
+		typ = call.LENGTH_OF
+	case ctx.LINAGE_COUNTER() != nil:
+		typ = call.LINAGE_COUNTER
+	case ctx.LINE_COUNTER() != nil:
+		typ = call.LINE_COUNTER
+	case ctx.PAGE_COUNTER() != nil:
+		typ = call.ADDRESS_OF
+	case ctx.RETURN_CODE() != nil:
+		typ = call.RETURN_CODE
+	case ctx.SHIFT_IN() != nil:
+		typ = call.SHIFT_IN
+	case ctx.SHIFT_OUT() != nil:
+		typ = call.SHIFT_OUT
+	case ctx.SORT_CONTROL() != nil:
+		typ = call.SORT_CONTROL
+	case ctx.SORT_CORE_SIZE() != nil:
+		typ = call.SORT_CORE_SIZE
+	case ctx.SORT_FILE_SIZE() != nil:
+		typ = call.SORT_FILE_SIZE
+	case ctx.SORT_MESSAGE() != nil:
+		typ = call.SORT_MESSAGE
+	case ctx.SORT_MODE_SIZE() != nil:
+		typ = call.SORT_MODE_SIZE
+	case ctx.SORT_RETURN() != nil:
+		typ = call.SORT_RETURN
+	case ctx.TALLY() != nil:
+		typ = call.TALLY
+	case ctx.TIME() != nil:
+		typ = call.TIME
+	case ctx.WHEN_COMPILED() != nil:
+		typ = call.WHEN_COMPILED
+	default:
+	}
+
+	specialRegisterCall := call.NewSpecialRegisterCall(ctx, typ)
+
+	if cctx := ctx.Identifier(); cctx != nil {
+		c := e.CreateIdentifierCall(cctx)
+		specialRegisterCall.SetIdentifierCall(c)
+	}
+	ret = specialRegisterCall
+	e.AddElement(ret)
+	return
+}
+
+func (e *program) CreateFunctionCall(ictx cobol85.IFunctionCallContext) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+
+	name := util.DetermineName(ictx)
+	ret = call.NewFunctionCall(ictx, name)
+	e.AddElement(ret)
+	return
+}
+
+func (e *program) CreateTableCall(ictx cobol85.ITableCallContext) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+
+	ctx := ictx.(*cobol85.TableCallContext)
+
+	entries := e.GetDataDescriptionEntries(ctx)
+
+	if len(entries) == 0 {
+		ret = e.CreateUndefinedCall(ctx)
+	} else {
+		entry := entries[0]
+		name := util.DetermineName(ctx)
+		tableCall := call.NewTableCall(ctx, name, entry)
+		for _, v := range ctx.AllSubscript() {
+			var subscript *valuestmt.Subscript
+			element1 := e.GetElement(v)
+			if element1 == nil {
+				cctx := v.(*cobol85.SubscriptContext)
+				subscript = valuestmt.NewSubscript(v)
+				subscriptValueStmt := e.CreateValueStmt(cctx.IntegerLiteral(), cctx.QualifiedDataName(), cctx.IndexName(), cctx.ArithmeticExpression())
+				subscript.SetSubscriptValueStmt(subscriptValueStmt)
+				tableCall.AddSubscript(subscript)
+				e.AddElement(subscript)
+			}
+		}
+		ret = tableCall
+		entry.AddCall(ret)
+		e.AddElement(ret)
+	}
+
+	return
+}
+
+func (e *program) CreateQualifiedDataNameCall(ictx cobol85.IQualifiedDataNameContext) (ret call.Call) {
 	ctx := ictx.(*cobol85.QualifiedDataNameContext)
 
 	if cctx := ctx.QualifiedDataNameFormat1(); cctx != nil {
-
+		c := e.CreateQualifiedDataNameFormat1Call(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else if cctx := ctx.QualifiedDataNameFormat2(); cctx != nil {
-
+		c := e.CreateQualifiedDataNameFormat2Call(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else if cctx := ctx.QualifiedDataNameFormat3(); cctx != nil {
-
+		c := e.CreateQualifiedDataNameFormat3Call(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else if cctx := ctx.QualifiedDataNameFormat4(); cctx != nil {
-
+		c := e.CreateQualifiedDataNameFormat4Call(cctx)
+		ret = call.NewCallDelegate(cctx, c)
+		e.AddElement(ret)
 	} else {
 		ret = e.CreateDataDescriptionEntryCall(ctx)
 	}
 	return
 }
 
-func (e *programCall) QualifiedInDataCompare(ctxs []cobol85.IQualifiedInDataContext, entry datadescription.DataDescriptionEntry) (ret bool) {
+func (e *program) CompareQualifiedInData(ctxs []cobol85.IQualifiedInDataContext, entry datadescription.DataDescriptionEntry) (ret bool) {
 	ret = true
 	parent := entry.GetDataDescriptionEntryGroup()
 	for _, ctx := range ctxs {
@@ -97,7 +241,7 @@ func (e *programCall) QualifiedInDataCompare(ctxs []cobol85.IQualifiedInDataCont
 	return
 }
 
-func (e *programCall) CreateQualifiedDataNameFormat1Call(ictx cobol85.IQualifiedDataNameFormat1Context) (ret call.Call) {
+func (e *program) CreateQualifiedDataNameFormat1Call(ictx cobol85.IQualifiedDataNameFormat1Context) (ret call.Call) {
 	ctx := ictx.(*cobol85.QualifiedDataNameFormat1Context)
 
 	datas := ctx.AllQualifiedInData()
@@ -106,7 +250,7 @@ func (e *programCall) CreateQualifiedDataNameFormat1Call(ictx cobol85.IQualified
 		var validEntry datadescription.DataDescriptionEntry
 		entries := e.GetDataDescriptionEntries(ctx)
 		for _, entry := range entries {
-			if e.QualifiedInDataCompare(datas, entry) {
+			if e.CompareQualifiedInData(datas, entry) {
 				validEntry = entry
 				break
 			}
@@ -127,7 +271,7 @@ func (e *programCall) CreateQualifiedDataNameFormat1Call(ictx cobol85.IQualified
 	return
 }
 
-func (e *programCall) CreateQualifiedDataNameFormat2Call(ictx cobol85.IQualifiedDataNameFormat2Context) (ret call.Call) {
+func (e *program) CreateQualifiedDataNameFormat2Call(ictx cobol85.IQualifiedDataNameFormat2Context) (ret call.Call) {
 	ctx := ictx.(*cobol85.QualifiedDataNameFormat2Context)
 	paragraphName := util.DetermineName(ctx)
 	section := e.GetSection(ctx.InSection())
@@ -145,7 +289,17 @@ func (e *programCall) CreateQualifiedDataNameFormat2Call(ictx cobol85.IQualified
 	return
 }
 
-func (e *programCall) GetSection(ctx antlr.ParserRuleContext) (ret *procedure.Section) {
+func (e *program) CreateQualifiedDataNameFormat3Call(ictx cobol85.IQualifiedDataNameFormat3Context) (ret call.Call) {
+	ctx := ictx.(*cobol85.QualifiedDataNameFormat3Context)
+	return e.CreateCall(ctx.TextName())
+}
+
+func (e *program) CreateQualifiedDataNameFormat4Call(ictx cobol85.IQualifiedDataNameFormat4Context) (ret call.Call) {
+	ctx := ictx.(*cobol85.QualifiedDataNameFormat4Context)
+	return e.CreateUndefinedCall(ctx)
+}
+
+func (e *program) GetSection(ctx antlr.ParserRuleContext) (ret *procedure.Section) {
 	programUnit := e.GetProgramUnit(ctx)
 	if programUnit == nil {
 		return
@@ -158,7 +312,7 @@ func (e *programCall) GetSection(ctx antlr.ParserRuleContext) (ret *procedure.Se
 	return
 }
 
-func (e *programCall) GetDataDescriptionEntries(ctx antlr.ParserRuleContext) (entries []datadescription.DataDescriptionEntry) {
+func (e *program) GetDataDescriptionEntries(ctx antlr.ParserRuleContext) (entries []datadescription.DataDescriptionEntry) {
 	name := util.DetermineName(ctx)
 	programUnit := e.GetProgramUnit(ctx)
 	if programUnit == nil || programUnit.dataDivision == nil {
@@ -194,7 +348,7 @@ func (e *programCall) GetDataDescriptionEntries(ctx antlr.ParserRuleContext) (en
 	return
 }
 
-func (e *programCall) CreateDataDescriptionEntryCall(ctx antlr.ParserRuleContext) (ret call.Call) {
+func (e *program) CreateDataDescriptionEntryCall(ctx antlr.ParserRuleContext) (ret call.Call) {
 	element := e.GetElement(ctx)
 	if element != nil {
 		ret, _ = element.(call.Call)
@@ -217,7 +371,7 @@ func (e *programCall) CreateDataDescriptionEntryCall(ctx antlr.ParserRuleContext
 	return
 }
 
-func (e *programCall) CreateDataDescriptionEntryCallWithName(ctx antlr.ParserRuleContext, name string, entry datadescription.DataDescriptionEntry) (ret *call.DataDescriptionEntryCall) {
+func (e *program) CreateDataDescriptionEntryCallWithName(ctx antlr.ParserRuleContext, name string, entry datadescription.DataDescriptionEntry) (ret *call.DataDescriptionEntryCall) {
 	element := e.GetElement(ctx)
 	if element != nil {
 		ret, _ = element.(*call.DataDescriptionEntryCall)
@@ -231,7 +385,7 @@ func (e *programCall) CreateDataDescriptionEntryCallWithName(ctx antlr.ParserRul
 	return
 }
 
-func (e *programCall) CreateUndefinedCall(ctx antlr.ParserRuleContext) (ret call.Call) {
+func (e *program) CreateUndefinedCall(ctx antlr.ParserRuleContext) (ret call.Call) {
 	element := e.GetElement(ctx)
 	if element != nil {
 		ret, _ = element.(call.Call)
@@ -240,11 +394,11 @@ func (e *programCall) CreateUndefinedCall(ctx antlr.ParserRuleContext) (ret call
 
 	name := util.DetermineName(ctx)
 	ret = call.NewUndefinedCall(ctx, name)
-	e.program.AddElement(ret)
+	e.AddElement(ret)
 	return
 }
 
-func (e *programCall) CreateIndexCall(ctx antlr.ParserRuleContext) (ret *call.IndexCall) {
+func (e *program) CreateIndexCall(ctx antlr.ParserRuleContext) (ret *call.IndexCall) {
 	element := e.GetElement(ctx)
 	if element != nil {
 		ret, _ = element.(*call.IndexCall)
@@ -265,7 +419,7 @@ func (e *programCall) CreateIndexCall(ctx antlr.ParserRuleContext) (ret *call.In
 	return
 }
 
-func (e *programCall) GetIndex(ctx antlr.ParserRuleContext) (ret *datadescription.Index) {
+func (e *program) GetIndex(ctx antlr.ParserRuleContext) (ret *datadescription.Index) {
 	name := util.DetermineName(ctx)
 	programUnit := e.GetProgramUnit(ctx)
 	if programUnit == nil || programUnit.dataDivision == nil {
