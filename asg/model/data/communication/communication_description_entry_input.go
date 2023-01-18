@@ -1,30 +1,19 @@
 package communication
 
 import (
-	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/gen/cobol85"
 )
 
 type CommunicationDescriptionEntryInput struct {
-	ctx  cobol85.ICommunicationDescriptionEntryFormat1Context
-	name string
+	BaseCommunicationDescriptionEntry
 
 	symbolicQueueClause *SymbolicQueueClause
 }
 
 func NewCommunicationDescriptionEntryInput(ctx cobol85.ICommunicationDescriptionEntryFormat1Context, name string) *CommunicationDescriptionEntryInput {
 	return &CommunicationDescriptionEntryInput{
-		ctx:  ctx,
-		name: name,
+		BaseCommunicationDescriptionEntry: *NewBaseCommunicationDescriptionEntry(ctx, name),
 	}
-}
-
-func (e *CommunicationDescriptionEntryInput) Context() antlr.ParserRuleContext {
-	return e.ctx
-}
-
-func (e *CommunicationDescriptionEntryInput) Name() string {
-	return e.name
 }
 
 func (e *CommunicationDescriptionEntryInput) Type() CDEType {

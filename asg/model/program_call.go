@@ -3,8 +3,8 @@ package model
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/asg/model/call"
+	"github.com/kaisawind/cobol/asg/model/data/communication"
 	"github.com/kaisawind/cobol/asg/model/data/datadescription"
-	"github.com/kaisawind/cobol/asg/model/procedure"
 	"github.com/kaisawind/cobol/asg/model/valuestmt"
 	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -21,6 +21,8 @@ func (e *program) CreateCall(ctxs ...antlr.ParserRuleContext) (ret call.Call) {
 		switch t := ctx.(type) {
 		case cobol85.IIdentifierContext:
 			ret = e.CreateIdentifierCall(t)
+		case cobol85.ICdNameContext:
+			ret = e.CreateCdNameCall(t)
 		case cobol85.IDataDescNameContext,
 			cobol85.IConditionNameContext,
 			cobol85.IDataNameContext:
@@ -31,15 +33,66 @@ func (e *program) CreateCall(ctxs ...antlr.ParserRuleContext) (ret call.Call) {
 			cobol85.IAssignmentNameContext,
 			cobol85.ILibraryNameContext,
 			cobol85.ILocalNameContext:
-			element := e.GetElement(t)
-			if element != nil {
-				ret, _ = element.(call.Call)
-			} else {
-				ret = e.CreateUndefinedCall(t)
-			}
+			ret = e.CreateUndefinedCall(t)
+		case cobol85.IEnvironmentNameContext:
+			ret = e.CreateEnvironmentNameCall(t)
 
+		case cobol85.IFileNameContext:
 		}
 	}
+	return
+}
+
+func (e *program) CreateFileNameContextCall(ictx cobol85.IFileNameContext) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+
+	ret = call.NewEnvironmentCall(ictx, util.DetermineName(ictx))
+	e.AddElement(ret)
+	return
+}
+
+func (e *program) CreateEnvironmentNameCall(ictx cobol85.IEnvironmentNameContext) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+
+	ret = call.NewEnvironmentCall(ictx, util.DetermineName(ictx))
+	e.AddElement(ret)
+	return
+}
+
+func (e *program) CreateCdNameCall(ictx cobol85.ICdNameContext) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+
+	communicationDescriptionEntry := e.GetCommunicationDescriptionEntry(ictx)
+	if communicationDescriptionEntry == nil {
+		ret = e.CreateUndefinedCall(ictx)
+	} else {
+		ret = e.CreateCommunicationDescriptionEntryCall(ictx, communicationDescriptionEntry)
+	}
+	return
+}
+
+func (e *program) CreateCommunicationDescriptionEntryCall(ictx cobol85.ICdNameContext, entry communication.CommunicationDescriptionEntry) (ret call.Call) {
+	element := e.GetElement(ictx)
+	if element != nil {
+		ret, _ = element.(call.Call)
+		return
+	}
+	name := util.DetermineName(ictx)
+	ret = call.NewCommunicationDescriptionEntryCall(ictx, name, entry)
+	entry.AddCall(ret)
+	e.AddElement(ret)
 	return
 }
 
@@ -299,55 +352,6 @@ func (e *program) CreateQualifiedDataNameFormat4Call(ictx cobol85.IQualifiedData
 	return e.CreateUndefinedCall(ctx)
 }
 
-func (e *program) GetSection(ctx antlr.ParserRuleContext) (ret *procedure.Section) {
-	programUnit := e.GetProgramUnit(ctx)
-	if programUnit == nil {
-		return
-	}
-	procedureDivision := programUnit.GetProcedureDivision()
-	if procedureDivision == nil {
-		return
-	}
-	ret = procedureDivision.GetSection(util.DetermineName(ctx))
-	return
-}
-
-func (e *program) GetDataDescriptionEntries(ctx antlr.ParserRuleContext) (entries []datadescription.DataDescriptionEntry) {
-	name := util.DetermineName(ctx)
-	programUnit := e.GetProgramUnit(ctx)
-	if programUnit == nil || programUnit.dataDivision == nil {
-		return
-	}
-	dataDivision := programUnit.dataDivision
-
-	workingStorageSection := dataDivision.GetWorkingStorageSection()
-	communicationSection := dataDivision.GetCommunicationSection()
-	fileSection := dataDivision.GetFileSection()
-	localStorageSection := dataDivision.GetLocalStorageSection()
-	linkageSection := dataDivision.GetLinkageSection()
-
-	if workingStorageSection != nil {
-		entries = append(entries, workingStorageSection.GetDataDescriptionEntriesByName(name)...)
-	}
-
-	if communicationSection != nil {
-		entries = append(entries, communicationSection.GetDataDescriptionEntriesByName(name)...)
-	}
-
-	if fileSection != nil {
-		entries = append(entries, fileSection.GetDataDescriptionEntriesByName(name)...)
-	}
-
-	if localStorageSection != nil {
-		entries = append(entries, localStorageSection.GetDataDescriptionEntriesByName(name)...)
-	}
-
-	if linkageSection != nil {
-		entries = append(entries, linkageSection.GetDataDescriptionEntriesByName(name)...)
-	}
-	return
-}
-
 func (e *program) CreateDataDescriptionEntryCall(ctx antlr.ParserRuleContext) (ret call.Call) {
 	element := e.GetElement(ctx)
 	if element != nil {
@@ -415,35 +419,6 @@ func (e *program) CreateIndexCall(ctx antlr.ParserRuleContext) (ret *call.IndexC
 		// link call and index
 		index.AddIndexCall(ret)
 		e.AddElement(ret)
-	}
-	return
-}
-
-func (e *program) GetIndex(ctx antlr.ParserRuleContext) (ret *datadescription.Index) {
-	name := util.DetermineName(ctx)
-	programUnit := e.GetProgramUnit(ctx)
-	if programUnit == nil || programUnit.dataDivision == nil {
-		return
-	}
-	workingStorageSection := programUnit.dataDivision.GetWorkingStorageSection()
-	if workingStorageSection == nil {
-		return
-	}
-
-	for _, entry := range workingStorageSection.GetDataDescriptionEntries() {
-		if entry.Type() == datadescription.GROUP {
-			dataDescriptionEntryGroup := entry.(*datadescription.DataDescriptionEntryGroup)
-			for _, clause := range dataDescriptionEntryGroup.GetOccursClauses() {
-				occursIndexed := clause.GetOccursIndexed()
-				if occursIndexed != nil {
-					index := occursIndexed.GetIndex(name)
-					if index != nil {
-						ret = index
-						return
-					}
-				}
-			}
-		}
 	}
 	return
 }
