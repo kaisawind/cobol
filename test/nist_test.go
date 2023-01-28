@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/util"
 	"github.com/kaisawind/cobol/document"
 	"github.com/kaisawind/cobol/format"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -85,7 +86,7 @@ FOR:
 			cpp.RemoveErrorListeners()
 			cpp.AddErrorListener(listener)
 
-			_ = antlr.TreesStringTree(cpp.StartRule(), []string{}, cpp)
+			tree := util.TreesStringTree(cpp.StartRule(), cpp.GetRuleNames(), 0)
 
 			for _, err := range listener.GetErrors() {
 				t.Error(err)
@@ -93,6 +94,8 @@ FOR:
 			if len(listener.GetErrors()) != 0 {
 				t.FailNow()
 			}
+			treePath := filepath + ".tree"
+			_ = os.WriteFile(treePath, []byte(tree), os.ModePerm)
 		})
 	}
 }
