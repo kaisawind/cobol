@@ -6,6 +6,7 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/constant"
 	"github.com/kaisawind/cobol/gen/cobol85"
+	"github.com/kaisawind/cobol/pb"
 )
 
 func DetermineName(ctx antlr.Tree) (name string) {
@@ -177,4 +178,38 @@ func TreesStringTree(tree antlr.Tree, ruleNames []string, depth int) string {
 	}
 	res += ")"
 	return res
+}
+
+func CreateCall(ctx antlr.ParserRuleContext) (ret *pb.Call) {
+	switch t := ctx.(type) {
+	case cobol85.ICobolWordContext:
+		ret = &pb.Call{
+			OneOf: &pb.Call_Undefined{
+				Undefined: &pb.UndefinedCall{
+					Name: DetermineName(t),
+				},
+			},
+		}
+	}
+	return
+}
+
+func CreateValueStmt(ctx antlr.ParserRuleContext) (ret *pb.ValueStmt) {
+	switch t := ctx.(type) {
+	case cobol85.IIntegerLiteralContext:
+		ret = &pb.ValueStmt{
+			OneOf: &pb.ValueStmt_IntegerLiteral{
+				IntegerLiteral: &pb.IntegerLiteral{
+					Value: t.GetText(),
+				},
+			},
+		}
+	case cobol85.ICobolWordContext:
+		ret = &pb.ValueStmt{
+			OneOf: &pb.ValueStmt_Call{
+				Call: CreateCall(t),
+			},
+		}
+	}
+	return
 }

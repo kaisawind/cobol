@@ -81,7 +81,7 @@ message ConfigurationSection {
 message ObjectComputerParagraph {
     string name = 1;
     CharacterSetClause character_set_clause = 2;
-    CollatingSequenceClause _collating_sequence_clause = 3;
+    CollatingSequenceClause collating_sequence_clause = 3;
     DiskSizeClause disk_size_clause = 4;
     MemorySizeClause memory_size_clause = 5;
     SegmentLimitClause segment_limit_clause = 6;
@@ -107,7 +107,10 @@ message DiskSizeClause {
 }
 
 message ValueStmt {
-
+    oneof one_of {
+        IntegerLiteral integer_literal = 1;
+        Call call = 2;
+    }
 }
 
 message MemorySizeClause {
@@ -179,8 +182,14 @@ message AlternateRecordKeyClause {
     Call data_call = 2;
 }
 
-message Call {
+message UndefinedCall {
+    string name = 1;
+}
 
+message Call {
+    oneof one_of {
+        UndefinedCall undefined = 1;
+    }
 }
 
 message AssignClause {

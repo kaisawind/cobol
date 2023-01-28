@@ -122,7 +122,7 @@ func (v *IdentificationDivisionVisitor) Visit(tree antlr.ParseTree) any {
 	return tree.Accept(v)
 }
 
-func (v *IdentificationDivisionVisitor) VisitIdentificationDivisionBody(ctx *cobol85.IdentificationDivisionBodyContext) interface{} {
+func (v *IdentificationDivisionVisitor) VisitIdentificationDivisionBody(ctx *cobol85.IdentificationDivisionBodyContext) any {
 	return v.VisitChildren(ctx)
 }
 

@@ -22,7 +22,9 @@ func (v *ProgramUnitVisitor) VisitDataDivision(ctx *cobol85.DataDivisionContext)
 }
 
 func (v *ProgramUnitVisitor) VisitEnvironmentDivision(ctx *cobol85.EnvironmentDivisionContext) any {
-	return v.VisitChildren(ctx)
+	v.programUnit.EnvironmentDivision = &pb.EnvironmentDivision{}
+	vr := NewEnvironmentDivisionVisitor(v.programUnit.EnvironmentDivision)
+	return vr.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitIdentificationDivision(ctx *cobol85.IdentificationDivisionContext) any {
