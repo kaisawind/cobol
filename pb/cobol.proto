@@ -115,10 +115,10 @@ message ValueStmt {
 
 message MemorySizeClause {
     enum Unit {
-		CHARACTERS = 0;
+        CHARACTERS = 0;
         MODULES = 1; 
         WORDS = 2;
-	}
+    }
     Unit unit = 1;
     ValueStmt value_stmt = 2;
 }
@@ -169,11 +169,11 @@ message FileControlEntryCall {
 
 message AccessModeClause {
     enum Mode {
-		DYNAMIC = 0;
+        DYNAMIC = 0;
         EXCLUSIVE = 1;
         RANDOM = 2;
         SEQUENTIAL = 3;
-	}
+    }
     Mode mode = 1;
 }
 
@@ -194,7 +194,7 @@ message Call {
 
 message AssignClause {
     enum Type {
-		CALL = 0;
+        CALL = 0;
         DISK =  1;
         DISPLAY = 2;
         KEYBOARD = 3;
@@ -204,7 +204,7 @@ message AssignClause {
         REMOTE = 7;
         TAPE = 8;
         VIRTUAL = 9;
-	}
+    }
 
     Type type = 1;
     ValueStmt to_value_stmt = 2;
@@ -212,12 +212,12 @@ message AssignClause {
 
 message FileDescriptionEntry {
     enum Type {
-		COMMUNICATION_SECTION = 0;
+        COMMUNICATION_SECTION = 0;
         FILE_DESCRIPTION_ENTRY = 1;
         LINKAGE_SECTION = 2;
         LOCAL_STORAGE_SECTION = 3;
         WORKING_STORAGE_SECTION = 4;
-	}
+    }
     Type type = 1;
     Call file_call = 2;
     FileControlEntry file_control_entry = 3;
@@ -236,9 +236,9 @@ message FileDescriptionEntry {
 
 message BlockContainsClause {
     enum Unit {
-		CHARACTERS = 0;
+        CHARACTERS = 0;
         RECORDS = 1;
-	}
+    }
     IntegerLiteral from = 1;
     IntegerLiteral to = 2;
     Unit unit = 3;
@@ -262,10 +262,10 @@ message GlobalClause {
 
 message LabelRecordsClause {
     enum Type {
-		DATA_NAMES = 0;
+        DATA_NAMES = 0;
         OMITTED = 1;
         STANDARD = 2;
-	}
+    }
     Type type = 1;
     repeated Call data_calls = 2;
 }
@@ -304,17 +304,17 @@ message FileStatusClause {
 
 message OrganizationClause {
     enum Mode {
-		INDEXED = 0;
+        INDEXED = 0;
         RELATIVE = 1;
         SEQUENTIAL = 2;
-	}
+    }
 
-	enum Type {
-		BINARY = 0;
+    enum Type {
+        BINARY = 0;
         LINE = 1;
         RECORD = 2;
         RECORD_BINARY = 3;
-	}
+    }
 
     Mode mode = 1;
     Type type = 2;
@@ -330,10 +330,10 @@ message PasswordClause {
 
 message RecordDelimiterClause {
     enum Type {
-		ASSIGNMENT = 0;
+        ASSIGNMENT = 0;
         IMPLICIT = 1;
         STANDARD_1 = 2;
-	}
+    }
     Type type = 1;
     ValueStmt value_stmt = 2;
 }
@@ -395,9 +395,9 @@ message RerunEveryClock {
 
 message RerunEveryOf {
     enum Type {
-		REEL = 0;
+        REEL = 0;
         UNIT = 1;
-	}
+    }
     Type type = 1;
     Call file_call = 2;
 }
@@ -408,10 +408,10 @@ message RerunEveryRecords {
 
 message SameClause {
     enum Form {
-		RECORD = 0;
+        RECORD = 0;
         SORT = 1;
         SORT_MERGE = 2;
-	}
+    }
     repeated Call file_calls = 1;
     Form form = 2;
 }
@@ -443,9 +443,9 @@ message MnemonicName {
 
 message ClassClause {
     enum Type {
-		ALPHA_NUMERIC = 0;
+        ALPHA_NUMERIC = 0;
         NATIONAL = 1;
-	}
+    }
     Call class_call = 1;
     Type type = 2;
     repeated ClassThrough class_throughs = 3;
@@ -458,13 +458,13 @@ message ClassThrough {
 
 message Literal {
     enum Type {
-		BOOLEAN = 0;
+        BOOLEAN = 0;
         CICS_DFH_RESP = 1;
         CICS_DFH_VALUE = 2;
         FIGURATIVE_CONSTANT = 3;
         NON_NUMERIC = 4;
         NUMERIC = 5;
-	}
+    }
     Type type = 1;
     oneof one_of {
         NumericLiteral numeric_literal = 2;
@@ -476,7 +476,7 @@ message Literal {
 
 message FigurativeConstant {
     enum Type {
-		ALL = 0;
+        ALL = 0;
         HIGH_VALUE = 1;
         HIGH_VALUES = 2;
         LOW_VALUE = 3;
@@ -490,7 +490,7 @@ message FigurativeConstant {
         ZERO = 11;
         ZEROES = 12;
         ZEROS = 13;
-	}
+    }
     Type type = 1;
     Literal literal = 2;
 }
@@ -501,9 +501,9 @@ message BooleanLiteral {
 
 message NumericLiteral {
     enum Type {
-		FLOAT = 0;
+        FLOAT = 0;
         INTEGER = 1;
-	}
+    }
     Type type = 1;
     string value = 2;
 }
@@ -519,9 +519,9 @@ message DecimalPointClause {
 
 message DefaultDisplaySignClause {
     enum Type {
-		LEADING = 0;
+        LEADING = 0;
         TRAILING = 1;
-	}
+    }
 
     Type type = 1;
 }
@@ -536,9 +536,9 @@ message ReserveNetworkClause {
 
 message SymbolicCharactersClause {
     enum Type {
-		ALPHA_NUMERIC = 0;
+        ALPHA_NUMERIC = 0;
         NATIONAL = 1;
-	}
+    }
     Type type = 1;
 }
 
@@ -560,12 +560,12 @@ message WorkingStorageSection {
 
 message DataDescriptionEntryContainer {
     enum Type {
-		COMMUNICATION_SECTION = 0;
+        COMMUNICATION_SECTION = 0;
         FILE_DESCRIPTION_ENTRY = 1;
         LINKAGE_SECTION = 2;
         LOCAL_STORAGE_SECTION = 3;
         WORKING_STORAGE_SECTION = 4;
-	}
+    }
     Type type = 1;
 }
 
@@ -600,12 +600,12 @@ message LocalStorageSection {
 
 message LinkageSection {
     enum Type {
-		COMMUNICATION_SECTION = 0;
+        COMMUNICATION_SECTION = 0;
         FILE_DESCRIPTION_ENTRY = 1;
         LINKAGE_SECTION = 2;
         LOCAL_STORAGE_SECTION = 3;
         WORKING_STORAGE_SECTION = 4;
-	}
+    }
     Type type = 1;
 }
 
@@ -615,12 +615,12 @@ message FileSection {
 
 message CommunicationSection {
     enum Type {
-		COMMUNICATION_SECTION = 0;
+        COMMUNICATION_SECTION = 0;
         FILE_DESCRIPTION_ENTRY = 1;
         LINKAGE_SECTION = 2;
         LOCAL_STORAGE_SECTION = 3;
         WORKING_STORAGE_SECTION = 4;
-	}
+    }
     repeated CommunicationDescriptionEntry communication_description_entries = 1;
     Type type = 2;
 }
