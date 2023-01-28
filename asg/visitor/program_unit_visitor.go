@@ -2,77 +2,40 @@ package visitor
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/model"
 	"github.com/kaisawind/cobol/gen/cobol85"
+	"github.com/kaisawind/cobol/pb"
 )
 
 type ProgramUnitVisitor struct {
-	*Visitor
-	compilationUnit *model.CompilationUnit
+	cobol85.BaseCobol85Visitor
+	programUnit *pb.ProgramUnit
 }
 
-func NewProgramUnitVisitor(compilationUnit *model.CompilationUnit, program *model.Program) *ProgramUnitVisitor {
+func NewProgramUnitVisitor(programUnit *pb.ProgramUnit) *ProgramUnitVisitor {
 	return &ProgramUnitVisitor{
-		Visitor:         NewVisitor(program),
-		compilationUnit: compilationUnit,
+		programUnit: programUnit,
 	}
 }
 
 func (v *ProgramUnitVisitor) VisitDataDivision(ctx *cobol85.DataDivisionContext) any {
-	element := v.GetElement(ctx)
-	if element == nil {
-		unit := model.NewDataDivision(ctx)
-		programUnit := model.GetParent[*model.ProgramUnit](v.program, ctx)
-		v.AddElement(unit)
-		programUnit.SetDataDivision(unit)
-	}
 	return v.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitEnvironmentDivision(ctx *cobol85.EnvironmentDivisionContext) any {
-	element := v.GetElement(ctx)
-	if element == nil {
-		unit := model.NewEnvironmentDivision(ctx)
-		programUnit := model.GetParent[*model.ProgramUnit](v.program, ctx)
-		v.AddElement(unit)
-		programUnit.SetEnvironmentDivision(unit)
-	}
 	return v.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitIdentificationDivision(ctx *cobol85.IdentificationDivisionContext) any {
-	element := v.GetElement(ctx)
-	if element == nil {
-		unit := model.NewIdentificationDivision(ctx)
-		programUnit := model.GetParent[*model.ProgramUnit](v.program, ctx)
-		v.AddElement(unit)
-		programUnit.SetIdentificationDivision(unit)
-	}
-	return v.VisitChildren(ctx)
+	v.programUnit.IdentificationDivision = &pb.IdentificationDivision{}
+	vr := NewIdentificationDivisionVisitor(v.programUnit.IdentificationDivision)
+	return vr.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitProcedureDivision(ctx *cobol85.ProcedureDivisionContext) any {
-	element := v.GetElement(ctx)
-	if element == nil {
-		unit := model.NewProcedureDivision(ctx)
-		programUnit := model.GetParent[*model.ProgramUnit](v.program, ctx)
-		v.AddElement(unit)
-		programUnit.SetProcedureDivision(unit)
-	}
 	return v.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitProgramUnit(ctx *cobol85.ProgramUnitContext) any {
-	element := v.GetElement(ctx)
-	if element == nil {
-		unit := model.NewProgramUnit(ctx)
-		v.AddElement(unit)
-		v.compilationUnit.AddProgramUnit(unit)
-	}
-	return v.VisitChildren(ctx)
-}
-
-func (v *ProgramUnitVisitor) VisitCompilationUnit(ctx *cobol85.CompilationUnitContext) any {
 	return v.VisitChildren(ctx)
 }
 

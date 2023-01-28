@@ -10,7 +10,8 @@ message Program {
 }
 
 message CompilationUnit {
-    repeated ProgramUnit program_units = 1;
+    string name = 1;
+    repeated ProgramUnit program_units = 2;
 }
 
 message ProgramUnit {

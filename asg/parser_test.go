@@ -8,7 +8,7 @@ import (
 )
 
 func TestAnalyzeFile(t *testing.T) {
-	opts := options.NewOptions().SetFormat(format.TANDEM)
+	opts := options.NewOptions().SetFormat(format.FIXED)
 	program := AnalyzeFile("./testdata/HelloWorld.cbl", opts)
 	t.Log(program)
 }
