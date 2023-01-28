@@ -1,6 +1,0 @@
-      *> HEADER,CLBRY,K3FCB
-           SELECT PRINT-FILE ASSIGN TO
-           XXXXX055.
-           SELECT DUMMY-TEST-FILE ASSIGN TO
-           XXXXP002.
-      *> END-OF,K3FCB

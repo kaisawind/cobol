@@ -1,5 +1,0 @@
-      *> HEADER,CLBRY,K101A
-                   .
-           02 TST-FLD-1 PICTURE 9(5).
-           02 FILLER    PICTURE X(115).
-      *> END-OF,K101A

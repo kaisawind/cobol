@@ -1,7 +1,0 @@
-      *> HEADER,CLBRY,K1W04
-       01  GRP-001.
-           02 WRK-DS-05V00 PIC S9(5)
-                    VALUE
-                         IS
-                                  ZERO.
-      *> END-OF,K1W04

@@ -1,9 +1,0 @@
-      *> HEADER,CLBRY,K1FDA
-           LABEL RECORDS STANDARD
-           VALUE OF
-           XXXXX074
-           IS
-           XXXXX075
-      *>     XXXXX069
-           DATA RECORD IS TST-TEST.
-      *> END-OF,K1FDA

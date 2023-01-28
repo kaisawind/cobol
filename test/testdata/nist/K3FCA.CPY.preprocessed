@@ -1,8 +1,0 @@
-      *> HEADER,CLBRY,K3FCA
-           SELECT TEST-FILE ASSIGN TO
-           XXXXP001.
-           SELECT TEST-FILE2 ASSIGN TO
-           XXXXP002.
-           SELECT PRINT-FILE ASSIGN TO
-           XXXXX055.
-      *> END-OF,K3FCA

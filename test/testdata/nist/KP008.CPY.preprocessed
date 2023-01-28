@@ -1,5 +1,0 @@
-      *> HEADER,CLBRY,KP008
-           PERFORM FAIL.
-           THIS IS GARBAGE.
-           SUBTRACT 1 FROM ERROR-COUNTER.
-      *> END-OF,KP008
