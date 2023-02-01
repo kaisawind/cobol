@@ -443,33 +443,32 @@ message FileSection {
 }
 
 message FileDescriptionEntry {
-    enum Type {
-        COMMUNICATION_SECTION = 0;
-        FILE_DESCRIPTION_ENTRY = 1;
-        LINKAGE_SECTION = 2;
-        LOCAL_STORAGE_SECTION = 3;
-        WORKING_STORAGE_SECTION = 4;
-    }
-    Type type = 1;
-    FileName file_name = 4;
-    BlockContainsClause block_contains_clause = 5;
-    CodeSetClause code_set_clause = 6;
-    DataRecordsClause data_records_clause = 7;
-    ExternalClause external_clause = 8;
-    GlobalClause global_clause = 9;
-    LabelRecordsClause label_records_clause = 10;
-    LinageClause linage_clause = 11;
-    RecordContainsClause record_contains_clause = 12;
-    ReportClause report_clause = 13;
-    ValueOfClause value_of_clause = 14;
+    FileName file_name = 1;
+    ExternalClause external_clause = 2;
+    GlobalClause global_clause = 3;
+    BlockContainsClause block_contains_clause = 4;
+    RecordContainsClause record_contains_clause = 5;
+    LabelRecordsClause label_records_clause = 6;
+    ValueOfClause value_of_clause = 7;
+    DataRecordsClause data_records_clause = 8;
+    LinageClause linage_clause = 9;
+    CodeSetClause code_set_clause = 10;
+    ReportClause report_clause = 11;
+    repeated DataDescriptionEntry data_description_entries = 12;
+}
+
+message ModeStatement {
+    CobolWord cobol_word = 1;
+}
+
+message RecordingModeClause {
+    ModeStatement mode_statement = 1;
 }
 
 message ExternalClause {
-    bool external = 1;
 }
 
 message GlobalClause {
-    bool global = 1;
 }
 
 message BlockContainsClause {
@@ -490,13 +489,17 @@ message RecordContainsClause {
 }
 
 message LabelRecordsClause {
-    enum Type {
-        DATA_NAMES = 0;
-        OMITTED = 1;
-        STANDARD = 2;
+    message DataNames {
+        repeated DataName data_names = 1;
     }
-    Type type = 1;
-    repeated DataName data_names = 2;
+    enum Type {
+        OMITTED = 0;
+        STANDARD = 1;
+    }
+    oneof one_of {
+        Type type = 1;
+        DataNames data_names = 2;
+    }
 }
 
 message ValueOfClause {
@@ -536,18 +539,266 @@ message ReportClause {
 }
 
 message WorkingStorageSection {
-    DataDescriptionEntryContainer.Type container_type = 1;
+    repeated DataDescriptionEntry data_description_entries = 1;
 }
 
-message DataDescriptionEntryContainer {
+message DataDescriptionEntry {
+    message Format1 {
+        DataName data_name = 1;
+        DataRedefinesClause data_redefines_clause = 2;
+        DataIntegerStringClause data_integer_string_clause = 3;
+        DataExternalClause data_external_clause = 4;
+        DataGlobalClause data_global_clause = 5;
+        DataTypeDefClause data_type_def_clause = 6;
+        DataThreadLocalClause data_thread_local_clause = 7;
+        DataPictureClause data_picture_clause = 8;
+        DataCommonOwnLocalClause data_common_own_local_clause = 9;
+        DataTypeClause data_type_clause = 10;
+        DataUsingClause data_using_clause = 11;
+        DataUsageClause data_usage_clause = 12;
+        DataValueClause data_value_clause = 13;
+        DataReceivedByClause data_received_by_clause = 14;
+        DataOccursClause data_occurs_clause = 15;
+        DataSignClause data_sign_clause = 16;
+        DataSynchronizedClause data_synchronized_clause = 17;
+        DataJustifiedClause data_justified_clause = 18;
+        DataBlankWhenZeroClause data_blank_when_zero_clause = 19;
+        DataWithLowerBoundsClause data_with_lower_bounds_clause = 20;
+        DataAlignedClause data_aligned_clause = 21;
+        DataRecordAreaClause data_record_area_clause = 22;
+    }
+    message Format2 {
+        DataName data_name = 1;
+        DataRenamesClause data_renames_clause = 2;
+    }
+    message Format3 {
+        ConditionName condition_name = 1;
+        DataValueClause data_value_clause = 2;
+    }
+    message ExecSql {
+        
+    }
+    oneof one_of {
+        Format1 f1 = 1; 
+        Format2 f2 = 2; 
+        Format3 f3 = 3; 
+        ExecSql f4 = 4; 
+    }
+}
+
+message DataRenamesClause {
+    QualifiedDataName from = 1;
+    QualifiedDataName to = 2;
+}
+
+message DataRedefinesClause {
+    DataName data_name = 1;
+}
+
+message DataIntegerStringClause {
+
+}
+
+message DataExternalClause {
+    Literal literal = 1;
+}
+
+message DataGlobalClause {
+
+}
+
+message DataTypeDefClause {
+
+}
+
+message DataThreadLocalClause {
+
+}
+
+message DataPictureClause {
+    PictureString picture_string = 1;
+}
+
+message PictureString {
+    repeated PictureChars chars = 1;
+}
+
+message PictureChars {
     enum Type {
-        COMMUNICATION_SECTION = 0;
-        FILE_DESCRIPTION_ENTRY = 1;
-        LINKAGE_SECTION = 2;
-        LOCAL_STORAGE_SECTION = 3;
-        WORKING_STORAGE_SECTION = 4;
+        DOLLARCHAR = 0;
+        IDENTIFIER = 1;
+        NUMERICLITERAL = 2;
+        SLASHCHAR = 3;
+        COMMACHAR = 4;
+        DOT = 5;
+        COLONCHAR = 6;
+        ASTERISKCHAR = 7;
+        DOUBLEASTERISKCHAR = 8;
+        LPARENCHAR = 9;
+        RPARENCHAR = 10;
+        PLUSCHAR = 11;
+        MINUSCHAR = 12;
+        LESSTHANCHAR = 13;
+        MORETHANCHAR = 14;
+    }
+    oneof one_of {
+        Type type = 1;
+        IntegerLiteral integer_literal = 2;
+    }
+}
+
+message PictureCardinality {
+    IntegerLiteral integer_literal = 1;
+}
+
+message DataCommonOwnLocalClause {
+    enum Type {
+        COMMON = 0;
+        OWN = 1;
+        LOCAL = 2;
     }
     Type type = 1;
+}
+
+message DataTypeClause {
+    enum Type {
+        SHORT_DATE = 0;
+        LONG_DATE = 1;
+        NUMERIC_DATE = 2;
+        NUMERIC_TIME = 3;
+        LONG_TIME = 4;
+    }
+    enum Mode {
+        CLOB = 0;
+        BLOB = 1;
+        DBCLOB = 2;
+    }
+    message Lob {
+        Mode mode = 1;
+        IntegerLiteral integer_literal = 2;
+    }
+    oneof one_of {
+        Type type = 1;
+        Lob lob = 2;
+    }
+}
+
+message DataUsingClause {
+    enum Type {
+        LANGUAGE = 0;
+        CONVENTION = 1;
+    }
+    Type type = 1;
+    oneof one_of {
+        CobolWord cobol_word = 2;
+        DataName data_name = 3;
+    }
+}
+
+message DataUsageClause {
+    enum Type {
+        BINARY = 0;
+        BINARY_TRUNCATED = 1;
+        BINARY_EXTENDED = 2;
+        BIT = 3;
+        COMP = 4;
+        COMP_1 = 5;
+        COMP_2 = 6;
+        COMP_3 = 7;
+        COMP_4 = 8;
+        COMP_5 = 9;
+        COMPUTATIONAL = 10;
+        COMPUTATIONAL_1 = 11;
+        COMPUTATIONAL_2 = 12;
+        COMPUTATIONAL_3 = 13;
+        COMPUTATIONAL_4 = 14;
+        COMPUTATIONAL_5 = 15;
+        CONTROL_POINT = 16;
+        DATE = 17;
+        DISPLAY = 18;
+        DISPLAY_1 = 19;
+        DOUBLE = 20;
+        EVENT = 21;
+        FUNCTION_POINTER = 22;
+        INDEX = 23;
+        KANJI = 24;
+        LOCK = 25;
+        NATIONAL = 26;
+        PACKED_DECIMAL = 27;
+        POINTER = 28;
+        PROCEDURE_POINTER = 29;
+        REAL = 30;
+        SQL = 31;
+        TASK = 32;
+    }
+    Type type = 1;
+}
+
+message DataValueClause {
+    oneof from {
+        Literal literal_from = 1;
+        CobolWord cobol_word_from = 2;
+    }
+    oneof to {
+        Literal literal_to = 3;
+        CobolWord cobol_word_to = 4;
+    }
+}
+
+message DataReceivedByClause {
+    enum Type {
+        CONTENT = 0;
+        REFERENCE = 1;
+        REF = 2;
+    }
+    Type type = 1;
+}
+
+message DataOccursClause {
+    oneof occurs {
+        Identifier identifier = 1;
+        IntegerLiteral integer_literal = 2;
+    }
+    IntegerLiteral to = 3;
+    QualifiedDataName qualified_data_name = 4;
+    repeated QualifiedDataName sorts = 5;
+    repeated IndexName index_names = 6;
+}
+
+message DataSignClause {
+    enum Type {
+        LEADING = 0;
+        TRAILING = 1;
+    }
+    Type type = 1;
+}
+
+message DataSynchronizedClause {
+    enum Type {
+        LEFT = 0;
+        RIGHT = 1;
+    }
+    Type type = 1;
+}
+
+message DataJustifiedClause {
+    bool right = 1;
+}
+
+message DataBlankWhenZeroClause {
+
+}
+
+message DataWithLowerBoundsClause {
+
+}
+
+message DataAlignedClause {
+
+}
+
+message DataRecordAreaClause {
+
 }
 
 message ScreenSection {
@@ -575,35 +826,21 @@ message LibraryDescriptionEntry {
 }
 
 message LocalStorageSection {
-    DataDescriptionEntryContainer.Type container_type = 1;
-    string name = 2;
+    repeated DataDescriptionEntry data_description_entries = 1;
+    LocalName local_name = 2;
 }
 
 message LinkageSection {
-    enum Type {
-        COMMUNICATION_SECTION = 0;
-        FILE_DESCRIPTION_ENTRY = 1;
-        LINKAGE_SECTION = 2;
-        LOCAL_STORAGE_SECTION = 3;
-        WORKING_STORAGE_SECTION = 4;
-    }
-    Type type = 1;
+    repeated DataDescriptionEntry data_description_entries = 1;
 }
 
 message CommunicationSection {
-    enum Type {
-        COMMUNICATION_SECTION = 0;
-        FILE_DESCRIPTION_ENTRY = 1;
-        LINKAGE_SECTION = 2;
-        LOCAL_STORAGE_SECTION = 3;
-        WORKING_STORAGE_SECTION = 4;
-    }
     repeated CommunicationDescriptionEntry communication_description_entries = 1;
-    Type type = 2;
+    repeated DataDescriptionEntry data_description_entries = 2;
 }
 
 message CommunicationDescriptionEntry {
-
+    // TODO:
 }
 
 message DataBaseSection {
@@ -611,7 +848,9 @@ message DataBaseSection {
 }
 
 message DataBaseSectionEntry {
-
+    IntegerLiteral integer_literal = 1;
+    Literal literal = 2;
+    Literal invoke = 3;
 }
 
 message ProcedureDivision {
