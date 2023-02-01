@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/util"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/asg/visitor"
 	"github.com/kaisawind/cobol/document"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -40,7 +40,7 @@ func AnalyzeCompilationUnit(filename string, program *pb.Program, opts ...option
 
 	ctx := cpp.StartRule()
 
-	tree := util.TreesStringTree(ctx, cpp.GetRuleNames(), 0)
+	tree := conv.TreesStringTree(ctx, cpp.GetRuleNames(), 0)
 	os.WriteFile(filename+".tree", []byte(tree), os.ModePerm)
 
 	vr := visitor.NewCompilationUnitVisitor(name, program)

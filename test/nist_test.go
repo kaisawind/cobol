@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/util"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/document"
 	"github.com/kaisawind/cobol/format"
 	"github.com/kaisawind/cobol/gen/cobol85"
@@ -86,7 +86,7 @@ FOR:
 			cpp.RemoveErrorListeners()
 			cpp.AddErrorListener(listener)
 
-			tree := util.TreesStringTree(cpp.StartRule(), cpp.GetRuleNames(), 0)
+			tree := conv.TreesStringTree(cpp.StartRule(), cpp.GetRuleNames(), 0)
 
 			for _, err := range listener.GetErrors() {
 				t.Error(err)

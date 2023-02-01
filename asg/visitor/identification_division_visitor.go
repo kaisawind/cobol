@@ -2,7 +2,7 @@ package visitor
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/util"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/constant"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
@@ -35,9 +35,24 @@ func (v *IdentificationDivisionVisitor) VisitProgramIdParagraph(ctx *cobol85.Pro
 	default:
 		attribute = pb.ProgramIdParagraph_COMMON
 	}
+	nameCtx := ctx.ProgramName().(*cobol85.ProgramNameContext)
+	programName := &pb.ProgramName{}
+	if ictx := nameCtx.NONNUMERICLITERAL(); ictx != nil {
+		programName.OneOf = &pb.ProgramName_NonNumericLiteral{
+			NonNumericLiteral: &pb.NonNumericLiteral{
+				Value: ictx.GetText(),
+			},
+		}
+	} else if ictx := nameCtx.CobolWord(); ictx != nil {
+		programName.OneOf = &pb.ProgramName_CobolWord{
+			CobolWord: &pb.CobolWord{
+				Value: ictx.GetText(),
+			},
+		}
+	}
 	v.division.ProgramIdParagraph = &pb.ProgramIdParagraph{
-		Name:      ctx.ProgramName().GetText(),
-		Attribute: attribute,
+		ProgramName: programName,
+		Attribute:   attribute,
 	}
 	return v.VisitChildren(ctx)
 }
@@ -46,7 +61,7 @@ func (v *IdentificationDivisionVisitor) VisitAuthorParagraph(ctx *cobol85.Author
 	text := ""
 	if ictx := ctx.CommentEntry(); ictx != nil {
 		cctx := ictx.(*cobol85.CommentEntryContext)
-		text = util.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
+		text = conv.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
 	}
 	v.division.AuthorParagraph = &pb.AuthorParagraph{
 		Author: text,
@@ -58,7 +73,7 @@ func (v *IdentificationDivisionVisitor) VisitInstallationParagraph(ctx *cobol85.
 	text := ""
 	if ictx := ctx.CommentEntry(); ictx != nil {
 		cctx := ictx.(*cobol85.CommentEntryContext)
-		text = util.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
+		text = conv.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
 	}
 	v.division.InstallationParagraph = &pb.InstallationParagraph{
 		Installation: text,
@@ -70,7 +85,7 @@ func (v *IdentificationDivisionVisitor) VisitDateWrittenParagraph(ctx *cobol85.D
 	text := ""
 	if ictx := ctx.CommentEntry(); ictx != nil {
 		cctx := ictx.(*cobol85.CommentEntryContext)
-		text = util.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
+		text = conv.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
 	}
 	v.division.DateWrittenParagraph = &pb.DateWrittenParagraph{
 		DateWritten: text,
@@ -82,7 +97,7 @@ func (v *IdentificationDivisionVisitor) VisitDateCompiledParagraph(ctx *cobol85.
 	text := ""
 	if ictx := ctx.CommentEntry(); ictx != nil {
 		cctx := ictx.(*cobol85.CommentEntryContext)
-		text = util.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
+		text = conv.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
 	}
 	v.division.DateCompiledParagraph = &pb.DateCompiledParagraph{
 		DateCompiled: text,
@@ -94,7 +109,7 @@ func (v *IdentificationDivisionVisitor) VisitSecurityParagraph(ctx *cobol85.Secu
 	text := ""
 	if ictx := ctx.CommentEntry(); ictx != nil {
 		cctx := ictx.(*cobol85.CommentEntryContext)
-		text = util.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
+		text = conv.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
 	}
 	v.division.SecurityParagraph = &pb.SecurityParagraph{
 		Security: text,
@@ -106,7 +121,7 @@ func (v *IdentificationDivisionVisitor) VisitRemarksParagraph(ctx *cobol85.Remar
 	text := ""
 	if ictx := ctx.CommentEntry(); ictx != nil {
 		cctx := ictx.(*cobol85.CommentEntryContext)
-		text = util.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
+		text = conv.GetUntaggedText(cctx.AllCOMMENTENTRYLINE(), constant.COMMENT_ENTRY_TAG, constant.EXEC_END_TAG)
 	}
 	v.division.RemarksParagraph = &pb.RemarksParagraph{
 		Remarks: text,

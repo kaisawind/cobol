@@ -98,7 +98,6 @@ func normalizesLines(source *LinkedLine) (target *LinkedLine) {
 var (
 	triggersStart = []*regexp.Regexp{
 		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT)),
-		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT)),
 		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.INSTALLATION, constant.CHAR_DOT)),
 		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT)),
 		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.DATE_COMPILED, constant.CHAR_DOT)),
@@ -118,8 +117,7 @@ var (
 		regexp.MustCompile(fmt.Sprintf(`^%s\s*\%s`, constant.REMARKS, constant.CHAR_DOT)),
 	}
 	triggersGroup = regexp.MustCompile(fmt.Sprintf(
-		`([ \\t]*)(%s|%s|%s|%s|%s|%s|%s)(.+)`,
-		fmt.Sprintf(`%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT),
+		`([ \\t]*)(%s|%s|%s|%s|%s|%s)(.+)`,
 		fmt.Sprintf(`%s\s*\%s`, constant.AUTHOR, constant.CHAR_DOT),
 		fmt.Sprintf(`%s\s*\%s`, constant.INSTALLATION, constant.CHAR_DOT),
 		fmt.Sprintf(`%s\s*\%s`, constant.DATE_WRITTEN, constant.CHAR_DOT),
