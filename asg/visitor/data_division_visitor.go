@@ -2,6 +2,7 @@ package visitor
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/visitor/data"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -19,55 +20,55 @@ func NewDataDivisionVisitor(division *pb.DataDivision) *DataDivisionVisitor {
 
 func (v *DataDivisionVisitor) VisitLinkageSection(ctx *cobol85.LinkageSectionContext) interface{} {
 	section := &pb.LinkageSection{}
-	vr := NewLinkageSectionVisitor(section)
+	vr := data.NewLinkageSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitCommunicationSection(ctx *cobol85.CommunicationSectionContext) interface{} {
 	section := &pb.CommunicationSection{}
-	vr := NewCommunicationSectionVisitor(section)
+	vr := data.NewCommunicationSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitDataBaseSection(ctx *cobol85.DataBaseSectionContext) interface{} {
 	section := &pb.DataBaseSection{}
-	vr := NewDataBaseSectionVisitor(section)
+	vr := data.NewDataBaseSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitLocalStorageSection(ctx *cobol85.LocalStorageSectionContext) interface{} {
 	section := &pb.LocalStorageSection{}
-	vr := NewLocalStorageSectionVisitor(section)
+	vr := data.NewLocalStorageSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitProgramLibrarySection(ctx *cobol85.ProgramLibrarySectionContext) interface{} {
 	section := &pb.ProgramLibrarySection{}
-	vr := NewProgramLibrarySectionVisitor(section)
+	vr := data.NewProgramLibrarySectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitReportSection(ctx *cobol85.ReportSectionContext) interface{} {
 	section := &pb.ReportSection{}
-	vr := NewReportSectionVisitor(section)
+	vr := data.NewReportSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitScreenSection(ctx *cobol85.ScreenSectionContext) interface{} {
 	section := &pb.ScreenSection{}
-	vr := NewScreenSectionVisitor(section)
+	vr := data.NewScreenSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitWorkingStorageSection(ctx *cobol85.WorkingStorageSectionContext) interface{} {
 	section := &pb.WorkingStorageSection{}
-	vr := NewWorkingStorageSectionVisitor(section)
+	vr := data.NewWorkingStorageSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitFileSection(ctx *cobol85.FileSectionContext) interface{} {
 	section := &pb.FileSection{}
-	vr := NewFileSectionVisitor(section)
+	vr := data.NewFileSectionVisitor(section)
 	return vr.VisitChildren(ctx)
 }
 

@@ -1,4 +1,4 @@
-package visitor
+package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
