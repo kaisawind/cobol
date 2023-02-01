@@ -242,6 +242,94 @@ func (v *InputOutputSectionVisitor) VisitFileControlParagraph(ctx *cobol85.FileC
 }
 
 func (v *InputOutputSectionVisitor) VisitIoControlParagraph(ctx *cobol85.IoControlParagraphContext) interface{} {
+	iop := &pb.IoControlParagraph{
+		FileName: conv.FileName(ctx.FileName()),
+	}
+	v.section.IoControlParagraph = iop
+	for _, v := range ctx.AllIoControlClause() {
+		vCtx := v.(*cobol85.IoControlClauseContext)
+		if ictx := vCtx.CommitmentControlClause(); ictx != nil {
+			cctx := ictx.(*cobol85.CommitmentControlClauseContext)
+			iop.CommitmentControlClause = &pb.CommitmentControlClause{
+				FileName: conv.FileName(cctx.FileName()),
+			}
+		} else if ictx := vCtx.RerunClause(); ictx != nil {
+			cctx := ictx.(*cobol85.RerunClauseContext)
+			iop.RerunClause = &pb.RerunClause{}
+			if irc := cctx.AssignmentName(); irc != nil {
+				iop.RerunClause.OnValue = &pb.RerunClause_AssignmentName{
+					AssignmentName: conv.AssignmentName(irc),
+				}
+			} else if irc := cctx.FileName(); irc != nil {
+				iop.RerunClause.OnValue = &pb.RerunClause_FileName{
+					FileName: conv.FileName(irc),
+				}
+			}
+
+			if irc := cctx.RerunEveryClock(); irc != nil {
+				rctx := irc.(*cobol85.RerunEveryClockContext)
+				iop.RerunClause.OneOf = &pb.RerunClause_RerunEveryClock{
+					RerunEveryClock: &pb.RerunEveryClock{
+						ClockUnits: conv.IntegerLiteral(rctx.IntegerLiteral()),
+					},
+				}
+			} else if irc := cctx.RerunEveryOf(); irc != nil {
+				rctx := irc.(*cobol85.RerunEveryOfContext)
+				var typ pb.RerunEveryOf_Type
+				switch {
+				case rctx.REEL() != nil:
+					typ = pb.RerunEveryOf_REEL
+				case rctx.UNIT() != nil:
+					typ = pb.RerunEveryOf_UNIT
+				}
+				iop.RerunClause.OneOf = &pb.RerunClause_RerunEveryOf{
+					RerunEveryOf: &pb.RerunEveryOf{
+						FileName: conv.FileName(rctx.FileName()),
+						Type:     typ,
+					},
+				}
+			} else if irc := cctx.RerunEveryRecords(); irc != nil {
+				rctx := irc.(*cobol85.RerunEveryRecordsContext)
+				iop.RerunClause.OneOf = &pb.RerunClause_RerunEveryRecords{
+					RerunEveryRecords: &pb.RerunEveryRecords{
+						Records: conv.IntegerLiteral(rctx.IntegerLiteral()),
+					},
+				}
+			}
+		} else if ictx := vCtx.SameClause(); ictx != nil {
+			cctx := ictx.(*cobol85.SameClauseContext)
+			var filenames []*pb.FileName
+			for _, vv := range cctx.AllFileName() {
+				filenames = append(filenames, conv.FileName(vv))
+			}
+			var form pb.SameClause_Form
+			switch {
+			case cctx.RECORD() != nil:
+				form = pb.SameClause_RECORD
+			case cctx.SORT() != nil:
+				form = pb.SameClause_SORT
+			case cctx.SORT_MERGE() != nil:
+				form = pb.SameClause_SORT_MERGE
+			}
+			iop.SameClauses = append(iop.SameClauses, &pb.SameClause{
+				FileNames: filenames,
+				Form:      form,
+			})
+		} else if ictx := vCtx.MultipleFileClause(); ictx != nil {
+			cctx := ictx.(*cobol85.MultipleFileClauseContext)
+			mfp := []*pb.MultipleFilePosition{}
+			for _, vv := range cctx.AllMultipleFilePosition() {
+				vvCtx := vv.(*cobol85.MultipleFilePositionContext)
+				mfp = append(mfp, &pb.MultipleFilePosition{
+					FileName: conv.FileName(vvCtx.FileName()),
+					Position: conv.IntegerLiteral(vvCtx.IntegerLiteral()),
+				})
+			}
+			iop.MultipleFileClause = &pb.MultipleFileClause{
+				MultipleFilePositions: mfp,
+			}
+		}
+	}
 	return v.VisitChildren(ctx)
 }
 

@@ -18,6 +18,12 @@ func NewEnvironmentDivisionVisitor(division *pb.EnvironmentDivision) *Environmen
 	}
 }
 
+func (v *EnvironmentDivisionVisitor) VisitSpecialNamesParagraph(ctx *cobol85.SpecialNamesParagraphContext) interface{} {
+	v.division.SpecialNamesParagraph = &pb.SpecialNamesParagraph{}
+	vr := environment.NewSpecialNamesParagraphVisitor(v.division.SpecialNamesParagraph)
+	return vr.VisitChildren(ctx)
+}
+
 func (v *EnvironmentDivisionVisitor) VisitInputOutputSection(ctx *cobol85.InputOutputSectionContext) interface{} {
 	v.division.InputOutputSection = &pb.InputOutputSection{}
 	vr := environment.NewInputOutputSectionVisitor(v.division.InputOutputSection)

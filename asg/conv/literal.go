@@ -6,6 +6,9 @@ import (
 )
 
 func BooleanLiteral(in cobol85.IBooleanLiteralContext) *pb.BooleanLiteral {
+	if in == nil {
+		return nil
+	}
 	ctx := in.(*cobol85.BooleanLiteralContext)
 	return &pb.BooleanLiteral{
 		Value: ctx.TRUE() != nil,

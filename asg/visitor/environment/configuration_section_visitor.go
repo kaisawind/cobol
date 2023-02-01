@@ -21,9 +21,7 @@ func NewConfigurationSectionVisitor(section *pb.ConfigurationSection) *Configura
 func (v *ConfigurationSectionVisitor) VisitSegmentLimitClause(ctx *cobol85.SegmentLimitClauseContext) interface{} {
 	var integerLiteral *pb.IntegerLiteral
 	if ictx := ctx.IntegerLiteral(); ictx != nil {
-		integerLiteral = &pb.IntegerLiteral{
-			Value: ictx.GetText(),
-		}
+		integerLiteral = conv.IntegerLiteral(ictx)
 	}
 	v.section.ObjectComputerParagraph.SegmentLimitClause = &pb.SegmentLimitClause{
 		SegmentLimit: integerLiteral,
@@ -37,35 +35,19 @@ func (v *ConfigurationSectionVisitor) VisitCharacterSetClause(ctx *cobol85.Chara
 }
 
 func (v *ConfigurationSectionVisitor) VisitCollatingSequenceClause(ctx *cobol85.CollatingSequenceClauseContext) interface{} {
-	names := []*pb.AlphabetName{}
-	for _, ictx := range ctx.AllAlphabetName() {
-		names = append(names, &pb.AlphabetName{
-			CobolWord: &pb.CobolWord{
-				Value: conv.DetermineName(ictx),
-			},
-		})
+	csc := &pb.CollatingSequenceClause{}
+	for _, v := range ctx.AllAlphabetName() {
+		csc.AlphabetNames = append(csc.AlphabetNames, conv.AlphabetName(v))
 	}
-	alphanumeric := ""
 	if ictx := ctx.CollatingSequenceClauseAlphanumeric(); ictx != nil {
-		alphanumeric = conv.DetermineName(ictx)
+		cctx := ictx.(*cobol85.CollatingSequenceClauseAlphanumericContext)
+		csc.Alphanumeric = conv.AlphabetName(cctx.AlphabetName())
 	}
-	national := ""
 	if ictx := ctx.CollatingSequenceClauseNational(); ictx != nil {
-		national = conv.DetermineName(ictx)
+		cctx := ictx.(*cobol85.CollatingSequenceClauseNationalContext)
+		csc.National = conv.AlphabetName(cctx.AlphabetName())
 	}
-	v.section.ObjectComputerParagraph.CollatingSequenceClause = &pb.CollatingSequenceClause{
-		National: &pb.AlphabetName{
-			CobolWord: &pb.CobolWord{
-				Value: national,
-			},
-		},
-		AlphabetNames: names,
-		Alphanumeric: &pb.AlphabetName{
-			CobolWord: &pb.CobolWord{
-				Value: alphanumeric,
-			},
-		},
-	}
+	v.section.ObjectComputerParagraph.CollatingSequenceClause = csc
 	return v.VisitChildren(ctx)
 }
 
@@ -82,15 +64,11 @@ func (v *ConfigurationSectionVisitor) VisitDiskSizeClause(ctx *cobol85.DiskSizeC
 	}
 	if ictx := ctx.IntegerLiteral(); ictx != nil {
 		diskSizeClause.DiskSize = &pb.DiskSizeClause_IntegerLiteral{
-			IntegerLiteral: &pb.IntegerLiteral{
-				Value: ictx.GetText(),
-			},
+			IntegerLiteral: conv.IntegerLiteral(ictx),
 		}
 	} else if ictx := ctx.CobolWord(); ictx != nil {
 		diskSizeClause.DiskSize = &pb.DiskSizeClause_CobolWord{
-			CobolWord: &pb.CobolWord{
-				Value: ictx.GetText(),
-			},
+			CobolWord: conv.CobolWord(ictx),
 		}
 	}
 	v.section.ObjectComputerParagraph.DiskSizeClause = diskSizeClause
@@ -113,15 +91,11 @@ func (v *ConfigurationSectionVisitor) VisitMemorySizeClause(ctx *cobol85.MemoryS
 	}
 	if ictx := ctx.IntegerLiteral(); ictx != nil {
 		memorySizeClause.MemorySize = &pb.MemorySizeClause_IntegerLiteral{
-			IntegerLiteral: &pb.IntegerLiteral{
-				Value: ictx.GetText(),
-			},
+			IntegerLiteral: conv.IntegerLiteral(ictx),
 		}
 	} else if ictx := ctx.CobolWord(); ictx != nil {
 		memorySizeClause.MemorySize = &pb.MemorySizeClause_CobolWord{
-			CobolWord: &pb.CobolWord{
-				Value: ictx.GetText(),
-			},
+			CobolWord: conv.CobolWord(ictx),
 		}
 	}
 	v.section.ObjectComputerParagraph.MemorySizeClause = memorySizeClause
@@ -134,26 +108,14 @@ func (v *ConfigurationSectionVisitor) VisitObjectComputerClause(ctx *cobol85.Obj
 
 func (v *ConfigurationSectionVisitor) VisitObjectComputerParagraph(ctx *cobol85.ObjectComputerParagraphContext) interface{} {
 	v.section.ObjectComputerParagraph = &pb.ObjectComputerParagraph{
-		ComputerName: &pb.ComputerName{
-			SystemName: &pb.SystemName{
-				CobolWord: &pb.CobolWord{
-					Value: conv.DetermineName(ctx),
-				},
-			},
-		},
+		ComputerName: conv.ComputerName(ctx.ComputerName()),
 	}
 	return v.VisitChildren(ctx)
 }
 
 func (v *ConfigurationSectionVisitor) VisitSourceComputerParagraph(ctx *cobol85.SourceComputerParagraphContext) interface{} {
 	v.section.SourceComputerParagraph = &pb.SourceComputerParagraph{
-		ComputerName: &pb.ComputerName{
-			SystemName: &pb.SystemName{
-				CobolWord: &pb.CobolWord{
-					Value: conv.DetermineName(ctx),
-				},
-			},
-		},
+		ComputerName:  conv.ComputerName(ctx.ComputerName()),
 		DebuggingMode: ctx.DEBUGGING() != nil,
 	}
 	return v.VisitChildren(ctx)

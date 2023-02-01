@@ -5,6 +5,40 @@ import (
 	"github.com/kaisawind/cobol/pb"
 )
 
+func FunctionName(in cobol85.IFunctionNameContext) *pb.FunctionName {
+	return &pb.FunctionName{
+		Value: in.GetText(),
+	}
+}
+
+func ClassName(in cobol85.IClassNameContext) *pb.ClassName {
+	ctx := in.(*cobol85.ClassNameContext)
+	return &pb.ClassName{
+		CobolWord: CobolWord(ctx.CobolWord()),
+	}
+}
+
+func MnemonicName(in cobol85.IMnemonicNameContext) *pb.MnemonicName {
+	ctx := in.(*cobol85.MnemonicNameContext)
+	return &pb.MnemonicName{
+		CobolWord: CobolWord(ctx.CobolWord()),
+	}
+}
+
+func AlphabetName(in cobol85.IAlphabetNameContext) *pb.AlphabetName {
+	ctx := in.(*cobol85.AlphabetNameContext)
+	return &pb.AlphabetName{
+		CobolWord: CobolWord(ctx.CobolWord()),
+	}
+}
+
+func ComputerName(in cobol85.IComputerNameContext) *pb.ComputerName {
+	ctx := in.(*cobol85.ComputerNameContext)
+	return &pb.ComputerName{
+		SystemName: SystemName(ctx.SystemName()),
+	}
+}
+
 func SystemName(in cobol85.ISystemNameContext) *pb.SystemName {
 	ctx := in.(*cobol85.SystemNameContext)
 	return &pb.SystemName{
