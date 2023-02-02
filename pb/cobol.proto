@@ -455,6 +455,7 @@ message FileDescriptionEntry {
     CodeSetClause code_set_clause = 10;
     ReportClause report_clause = 11;
     repeated DataDescriptionEntry data_description_entries = 12;
+    RecordingModeClause recording_mode_clause = 13;
 }
 
 message ModeStatement {
@@ -519,8 +520,10 @@ message DataRecordsClause {
 }
 
 message DataNameOrIntegerLiteral {
-    DataName data_name = 1;
-    IntegerLiteral integer_literal = 2;
+    oneof one_of {
+        DataName data_name = 1;
+        IntegerLiteral integer_literal = 2;
+    }
 }
 
 message LinageClause {
@@ -582,7 +585,7 @@ message DataDescriptionEntry {
         Format1 f1 = 1; 
         Format2 f2 = 2; 
         Format3 f3 = 3; 
-        ExecSql f4 = 4; 
+        ExecSql exec_sql = 4; 
     }
 }
 
@@ -734,15 +737,18 @@ message DataUsageClause {
     Type type = 1;
 }
 
-message DataValueClause {
+message DataValueInterval {
     oneof from {
         Literal literal_from = 1;
         CobolWord cobol_word_from = 2;
     }
     oneof to {
         Literal literal_to = 3;
-        CobolWord cobol_word_to = 4;
     }
+}
+
+message DataValueClause {
+    repeated DataValueInterval data_value_interval = 1;
 }
 
 message DataReceivedByClause {
@@ -759,10 +765,16 @@ message DataOccursClause {
         Identifier identifier = 1;
         IntegerLiteral integer_literal = 2;
     }
+    message Sort {
+        repeated QualifiedDataName qualified_data_names = 1;
+    }
+    message Indexed {
+        repeated IndexName index_names = 1;
+    }
     IntegerLiteral to = 3;
-    QualifiedDataName qualified_data_name = 4;
-    repeated QualifiedDataName sorts = 5;
-    repeated IndexName index_names = 6;
+    QualifiedDataName depending_on = 4;
+    repeated Sort sorts = 5;
+    repeated Indexed indexes = 6;
 }
 
 message DataSignClause {
@@ -1086,11 +1098,11 @@ message ProgramName {
 }
 
 message RecordName {
-    // TODO:
+    QualifiedDataName qualified_data_name = 1;
 }
 
 message ReportName {
-    // TODO:
+    QualifiedDataName qualified_data_name = 1;
 }
 
 message RoutingName {

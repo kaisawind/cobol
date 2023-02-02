@@ -18,7 +18,9 @@ func NewProgramUnitVisitor(programUnit *pb.ProgramUnit) *ProgramUnitVisitor {
 }
 
 func (v *ProgramUnitVisitor) VisitDataDivision(ctx *cobol85.DataDivisionContext) any {
-	return v.VisitChildren(ctx)
+	v.programUnit.DataDivision = &pb.DataDivision{}
+	vr := NewDataDivisionVisitor(v.programUnit.DataDivision)
+	return vr.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitEnvironmentDivision(ctx *cobol85.EnvironmentDivisionContext) any {

@@ -2,6 +2,7 @@ package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -18,6 +19,12 @@ func NewCommunicationSectionVisitor(section *pb.CommunicationSection) *Communica
 }
 
 func (v *CommunicationSectionVisitor) VisitCommunicationSection(ctx *cobol85.CommunicationSectionContext) any {
+	for _, ictx := range ctx.AllDataDescriptionEntry() {
+		v.section.DataDescriptionEntries = append(v.section.DataDescriptionEntries, conv.DataDescriptionEntry(ictx))
+	}
+	for range ctx.AllCommunicationDescriptionEntry() {
+		// TODO:
+	}
 	return v.VisitChildren(ctx)
 }
 

@@ -124,6 +124,13 @@ func TextName(in cobol85.ITextNameContext) *pb.TextName {
 	}
 }
 
+func ReportName(in cobol85.IReportNameContext) *pb.ReportName {
+	ctx := in.(*cobol85.ReportNameContext)
+	return &pb.ReportName{
+		QualifiedDataName: QualifiedDataName(ctx.QualifiedDataName()),
+	}
+}
+
 func LibraryName(in cobol85.ILibraryNameContext) *pb.LibraryName {
 	ctx := in.(*cobol85.LibraryNameContext)
 	return &pb.LibraryName{
