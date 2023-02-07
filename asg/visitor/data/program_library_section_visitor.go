@@ -66,7 +66,7 @@ func (v *ProgramLibrarySectionVisitor) VisitProgramLibrarySection(ctx *cobol85.P
 			entry.LibraryName = conv.LibraryName(cformat.LibraryName())
 			imp := &pb.LibraryDescriptionEntry_Import{}
 			if cformat.LibraryIsGlobalClause() != nil {
-				imp.IsGlobalClause = &pb.IsGlobalClause{}
+				imp.GlobalClause = &pb.GlobalClause{}
 			}
 			if cformat.LibraryIsCommonClause() != nil {
 				imp.IsCommonClause = &pb.IsCommonClause{}

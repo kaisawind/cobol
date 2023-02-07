@@ -826,7 +826,169 @@ message ReportSection {
 }
 
 message ReportDescription {
-    // TODO:
+    ReportDescriptionEntry report_description_entry = 1;
+    repeated ReportGroupDescriptionEntry report_group_description_entries = 2;
+}
+
+message ReportDescriptionEntry {
+    ReportName report_name = 1;
+    GlobalClause global_clause = 2;
+    PageLimitClause page_limit_clause = 3;
+    HeadingClause heading_clause = 4;
+    FirstDetailClause first_detail_clause = 5;
+    LastDetailClause last_detail_clause = 6;
+    FootingClause footing_clause = 7;
+}
+
+message PageLimitClause {
+    IntegerLiteral page = 1;
+}
+
+message HeadingClause {
+    IntegerLiteral heading = 1;
+}
+
+message FirstDetailClause {
+    IntegerLiteral first_detail = 1;
+}
+
+message LastDetailClause {
+    IntegerLiteral last_detail = 1;
+}
+
+message FootingClause {
+    IntegerLiteral footing = 1;
+}
+
+message ReportGroupDescriptionEntry {
+    message Vertical {
+        LineNumberClause line_number_clause = 3;
+        NextGroupClause next_group_clause = 4;
+        TypeClause type_clause = 5;
+        UsageClause usage_clause = 6;
+    }
+    message Single {
+        LineNumberClause line_number_clause = 3;
+        UsageClause usage_clause = 6;
+    }
+    message Printable {
+        PictureClause picture_clause = 3;
+        UsageClause usage_clause = 4;
+        SignClause sign_clause = 5;
+        JustifiedClause justified_clause = 6;
+        BlankWhenZeroClause blank_when_zero_clause = 7;
+        LineNumberClause line_number_clause = 8;
+        ColumnNumberClause column_number_clause = 9;
+        IndicateClause IndicateClause = 10;
+        SourceClause source_clause = 11;
+        ValueClause value_clause = 12;
+        SumClause SumClause = 13;
+        ResetClause reset_clause = 14;
+    }
+
+    IntegerLiteral integer_literal = 1;
+    DataName data_name = 2;
+    oneof one_of {
+        Vertical vertical = 3;
+        Single single = 4;
+        Printable printable = 5;
+    }
+}
+
+message ResetClause {
+    oneof one_of {
+        bool final = 1;
+        DataName data_name = 2;
+    }
+}
+
+message SumClause {
+    repeated Identifier sums = 1;
+    repeated DataName upons = 2;
+}
+
+message ValueClause {
+    Literal value = 1;
+}
+
+message SourceClause {
+    Identifier source = 1;
+}
+
+message IndicateClause {
+
+}
+
+message ColumnNumberClause {
+    IntegerLiteral column_number = 1;
+}
+
+message BlankWhenZeroClause {
+
+}
+
+message JustifiedClause {
+    bool right = 1;
+}
+
+message SignClause {
+    enum Type {
+        LEADING = 0;
+        TRAILING = 1;
+    }
+    Type type = 1;
+}
+
+message PictureClause {
+    PictureString picture_string = 1;
+}
+
+message LineNumberClause {
+    oneof one_of {
+        IntegerLiteral next_page = 1;
+        IntegerLiteral plus = 2;
+    }
+}
+
+message NextGroupClause {
+    oneof one_of {
+        IntegerLiteral next_group = 1;
+        bool next_page = 2;
+        IntegerLiteral plus = 3;
+    }
+}
+
+message TypeClause {
+    message ReportHeading {}
+    message PageHeading {}
+    message ControlHeading {
+        oneof one_of {
+            bool final = 1;
+            DataName data_name = 2;
+        }
+    }
+    message Detail {}
+    message ControlFooting {
+        oneof one_of {
+            bool final = 1;
+            DataName data_name = 2;
+        }
+    }
+    message PageFooting {}
+    message ReportFooting {}
+    oneof type {
+        ReportHeading report_heading = 1;
+        PageHeading page_heading = 2;
+        ControlHeading control_heading = 3;
+        Detail detail = 4;
+        ControlFooting control_footing = 5;
+        PageFooting page_footing = 6;
+        ReportFooting report_footing = 7;
+    }
+}
+
+message UsageClause {
+
 }
 
 message ProgramLibrarySection {
@@ -835,7 +997,7 @@ message ProgramLibrarySection {
 
 message LibraryDescriptionEntry {
     message Import {
-        IsGlobalClause is_global_clause = 1;
+        GlobalClause global_clause = 1;
         IsCommonClause is_common_clause = 2;
         AttributeClause2 attribute_clause = 3;
         ProcedureClause2 procedure_clause = 4;
@@ -849,9 +1011,6 @@ message LibraryDescriptionEntry {
         Import import = 2;
         Export export = 3;
     }
-}
-
-message IsGlobalClause {
 }
 
 message IsCommonClause {

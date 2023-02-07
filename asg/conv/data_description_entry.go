@@ -39,83 +39,10 @@ func DataDescriptionEntry(in cobol85.IDataDescriptionEntryContext) (out *pb.Data
 		for range cctx.AllDataThreadLocalClause() {
 			f1.DataThreadLocalClause = &pb.DataThreadLocalClause{}
 		}
-		ps := &pb.PictureString{}
 		for _, v := range cctx.AllDataPictureClause() {
 			pcCtx := v.(*cobol85.DataPictureClauseContext)
-			psCtx := pcCtx.PictureString().(*cobol85.PictureStringContext)
-			for _, vv := range psCtx.AllPictureChars() {
-				picCharCtx := vv.(*cobol85.PictureCharsContext)
-				picChar := &pb.PictureChars{}
-				switch {
-				case picCharCtx.DOLLARCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_DOLLARCHAR,
-					}
-				case picCharCtx.IDENTIFIER() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_IDENTIFIER,
-					}
-				case picCharCtx.NUMERICLITERAL() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_NUMERICLITERAL,
-					}
-				case picCharCtx.SLASHCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_SLASHCHAR,
-					}
-				case picCharCtx.COMMACHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_COMMACHAR,
-					}
-				case picCharCtx.DOT() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_DOT,
-					}
-				case picCharCtx.COLONCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_COLONCHAR,
-					}
-				case picCharCtx.ASTERISKCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_ASTERISKCHAR,
-					}
-				case picCharCtx.DOUBLEASTERISKCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_DOUBLEASTERISKCHAR,
-					}
-				case picCharCtx.LPARENCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_LPARENCHAR,
-					}
-				case picCharCtx.RPARENCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_RPARENCHAR,
-					}
-				case picCharCtx.PLUSCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_PLUSCHAR,
-					}
-				case picCharCtx.MINUSCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_MINUSCHAR,
-					}
-				case picCharCtx.LESSTHANCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_LESSTHANCHAR,
-					}
-				case picCharCtx.MORETHANCHAR() != nil:
-					picChar.OneOf = &pb.PictureChars_Type_{
-						Type: pb.PictureChars_MORETHANCHAR,
-					}
-				case picCharCtx.IntegerLiteral() != nil:
-					picChar.OneOf = &pb.PictureChars_IntegerLiteral{
-						IntegerLiteral: IntegerLiteral(picCharCtx.IntegerLiteral()),
-					}
-				}
-				ps.Chars = append(ps.Chars, picChar)
-			}
 			f1.DataPictureClause = &pb.DataPictureClause{
-				PictureString: ps,
+				PictureString: PictureString(pcCtx.PictureString()),
 			}
 		}
 		for _, v := range cctx.AllDataCommonOwnLocalClause() {
@@ -461,6 +388,83 @@ func DataValueInterval(in cobol85.IDataValueIntervalContext) (out *pb.DataValueI
 				LiteralTo: Literal(toCtx.Literal()),
 			}
 		}
+	}
+	return
+}
+
+func PictureString(in cobol85.IPictureStringContext) (out *pb.PictureString) {
+	ctx := in.(*cobol85.PictureStringContext)
+	out = &pb.PictureString{}
+	for _, vv := range ctx.AllPictureChars() {
+		picCharCtx := vv.(*cobol85.PictureCharsContext)
+		picChar := &pb.PictureChars{}
+		switch {
+		case picCharCtx.DOLLARCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_DOLLARCHAR,
+			}
+		case picCharCtx.IDENTIFIER() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_IDENTIFIER,
+			}
+		case picCharCtx.NUMERICLITERAL() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_NUMERICLITERAL,
+			}
+		case picCharCtx.SLASHCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_SLASHCHAR,
+			}
+		case picCharCtx.COMMACHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_COMMACHAR,
+			}
+		case picCharCtx.DOT() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_DOT,
+			}
+		case picCharCtx.COLONCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_COLONCHAR,
+			}
+		case picCharCtx.ASTERISKCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_ASTERISKCHAR,
+			}
+		case picCharCtx.DOUBLEASTERISKCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_DOUBLEASTERISKCHAR,
+			}
+		case picCharCtx.LPARENCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_LPARENCHAR,
+			}
+		case picCharCtx.RPARENCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_RPARENCHAR,
+			}
+		case picCharCtx.PLUSCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_PLUSCHAR,
+			}
+		case picCharCtx.MINUSCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_MINUSCHAR,
+			}
+		case picCharCtx.LESSTHANCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_LESSTHANCHAR,
+			}
+		case picCharCtx.MORETHANCHAR() != nil:
+			picChar.OneOf = &pb.PictureChars_Type_{
+				Type: pb.PictureChars_MORETHANCHAR,
+			}
+		case picCharCtx.IntegerLiteral() != nil:
+			picChar.OneOf = &pb.PictureChars_IntegerLiteral{
+				IntegerLiteral: IntegerLiteral(picCharCtx.IntegerLiteral()),
+			}
+		}
+		out.Chars = append(out.Chars, picChar)
 	}
 	return
 }

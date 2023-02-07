@@ -2,6 +2,7 @@ package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -18,6 +19,16 @@ func NewReportSectionVisitor(section *pb.ReportSection) *ReportSectionVisitor {
 }
 
 func (v *ReportSectionVisitor) VisitReportSection(ctx *cobol85.ReportSectionContext) any {
+	for _, ictx := range ctx.AllReportDescription() {
+		cctx := ictx.(*cobol85.ReportDescriptionContext)
+		rd := &pb.ReportDescription{
+			ReportDescriptionEntry: conv.ReportDescriptionEntry(cctx.ReportDescriptionEntry()),
+		}
+		for _, g := range cctx.AllReportGroupDescriptionEntry() {
+			rd.ReportGroupDescriptionEntries = append(rd.ReportGroupDescriptionEntries, conv.ReportGroupDescriptionEntry(g))
+		}
+		v.section.ReportDescriptions = append(v.section.ReportDescriptions, rd)
+	}
 	return v.VisitChildren(ctx)
 }
 

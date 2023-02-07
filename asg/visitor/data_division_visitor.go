@@ -57,7 +57,7 @@ func (v *DataDivisionVisitor) VisitReportSection(ctx *cobol85.ReportSectionConte
 	section := &pb.ReportSection{}
 	v.division.ReportSection = section
 	vr := data.NewReportSectionVisitor(section)
-	return vr.VisitChildren(ctx)
+	return vr.Visit(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitScreenSection(ctx *cobol85.ScreenSectionContext) interface{} {
