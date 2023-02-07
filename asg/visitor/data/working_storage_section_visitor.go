@@ -2,6 +2,7 @@ package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -18,6 +19,9 @@ func NewWorkingStorageSectionVisitor(section *pb.WorkingStorageSection) *Working
 }
 
 func (v *WorkingStorageSectionVisitor) VisitWorkingStorageSection(ctx *cobol85.WorkingStorageSectionContext) any {
+	for _, ictx := range ctx.AllDataDescriptionEntry() {
+		v.section.DataDescriptionEntries = append(v.section.DataDescriptionEntries, conv.DataDescriptionEntry(ictx))
+	}
 	return v.VisitChildren(ctx)
 }
 

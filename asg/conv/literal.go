@@ -67,7 +67,9 @@ func FigurativeConstant(in cobol85.IFigurativeConstantContext) (out *pb.Figurati
 	case ctx.ZEROS() != nil:
 		out.Type = pb.FigurativeConstant_ZEROS
 	}
-	out.Literal = Literal(ctx.Literal())
+	if ctx.Literal() != nil {
+		out.Literal = Literal(ctx.Literal())
+	}
 	return
 }
 

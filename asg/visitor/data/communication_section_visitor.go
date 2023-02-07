@@ -22,8 +22,8 @@ func (v *CommunicationSectionVisitor) VisitCommunicationSection(ctx *cobol85.Com
 	for _, ictx := range ctx.AllDataDescriptionEntry() {
 		v.section.DataDescriptionEntries = append(v.section.DataDescriptionEntries, conv.DataDescriptionEntry(ictx))
 	}
-	for range ctx.AllCommunicationDescriptionEntry() {
-		// TODO:
+	for _, ictx := range ctx.AllCommunicationDescriptionEntry() {
+		v.section.CommunicationDescriptionEntries = append(v.section.CommunicationDescriptionEntries, conv.CommunicationDescriptionEntry(ictx))
 	}
 	return v.VisitChildren(ctx)
 }

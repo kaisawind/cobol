@@ -2,6 +2,7 @@ package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -18,6 +19,12 @@ func NewLocalStorageSectionVisitor(section *pb.LocalStorageSection) *LocalStorag
 }
 
 func (v *LocalStorageSectionVisitor) VisitLocalStorageSection(ctx *cobol85.LocalStorageSectionContext) any {
+	for _, ictx := range ctx.AllDataDescriptionEntry() {
+		v.section.DataDescriptionEntries = append(v.section.DataDescriptionEntries, conv.DataDescriptionEntry(ictx))
+	}
+	if ictx := ctx.LocalName(); ictx != nil {
+		v.section.LocalName = conv.LocalName(ictx)
+	}
 	return v.VisitChildren(ctx)
 }
 

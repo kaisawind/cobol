@@ -834,7 +834,73 @@ message ProgramLibrarySection {
 }
 
 message LibraryDescriptionEntry {
-    // TODO:
+    message Import {
+        IsGlobalClause is_global_clause = 1;
+        IsCommonClause is_common_clause = 2;
+        AttributeClause2 attribute_clause = 3;
+        ProcedureClause2 procedure_clause = 4;
+    }
+    message Export {
+        AttributeClause1 attribute_clause = 1;
+        ProcedureClause1 procedure_clause = 2;
+    }
+    LibraryName library_name = 1;
+    oneof one_of {
+        Import import = 2;
+        Export export = 3;
+    }
+}
+
+message IsGlobalClause {
+}
+
+message IsCommonClause {
+}
+
+message AttributeClause1 {
+    enum Sharing {
+        DONTCARE = 0;
+        PRIVATE = 1;
+        SHAREDBYRUNUNIT = 2;
+        SHAREDBYALL = 3;
+    }
+    Sharing sharing = 1;
+}
+
+message AttributeClause2 {
+    enum LibAccess {
+        BYFUNCTION = 0;
+        BYTITLE = 1;
+    }
+    Literal function_name = 1;
+    LibAccess lib_access = 2;
+    Literal lib_parameter = 3;
+    Literal title = 4;
+}
+
+message ProcedureClause1 {
+    ProgramName program_name = 1;
+    Literal for = 2;
+}
+
+message ProcedureClause2 {
+    ProgramName program_name = 1;
+    Literal for = 2;
+    message WithName {
+        oneof one_of {
+            LocalName local_name = 1;
+            FileName file_name = 2;
+        } 
+    }
+    repeated WithName with_names = 3;
+    message UsingName {
+        oneof one_of {
+            DataName data_name = 1;
+            FileName file_name = 2;
+        }
+    }
+    repeated UsingName using_names = 5;
+    DataName giving = 7;
 }
 
 message LocalStorageSection {
@@ -852,7 +918,97 @@ message CommunicationSection {
 }
 
 message CommunicationDescriptionEntry {
-    // TODO:
+    message Input {  
+        SymbolicQueueClause symbolic_queue_clause = 2;
+        SymbolicSubQueueClause symbolic_sub_queue_clause = 3;
+        MessageDateClause message_date_clause = 4;
+        MessageTimeClause message_time_clause = 5;
+        SymbolicSourceClause symbolic_source_clause = 6;
+        TextLengthClause text_length_clause = 7;
+        EndKeyClause end_key_clause = 8;
+        StatusKeyClause status_key_clause = 9;
+        MessageCountClause message_count_clause = 10;
+        DataDescName data_desc_name = 11;
+    }
+    message Output {
+        DestinationCountClause destination_count_clause = 1;
+        TextLengthClause text_length_clause = 2;
+        StatusKeyClause status_key_clause = 3;
+        DestinationTableClause destination_table_clause = 4;
+        ErrorKeyClause errorKeyClause = 5;
+        SymbolicDestinationClause symbolic_destination_clause = 6;
+    }
+    message Io {
+        MessageDateClause message_date_clause = 4;
+        MessageTimeClause message_time_clause = 5;
+        SymbolicTerminalClause symbolic_terminal_clause = 3;
+        TextLengthClause text_length_clause = 2;
+        EndKeyClause end_key_clause = 8;
+        StatusKeyClause status_key_clause = 9;
+    }
+    CdName cd_name = 1;
+    oneof one_of {
+        Input input = 2;
+        Output output = 3;
+        Io io = 4;
+    }
+}
+
+message SymbolicTerminalClause {
+    DataDescName data_desc_name = 1;
+}
+
+message SymbolicDestinationClause {
+    DataDescName data_desc_name = 1;
+}
+
+message ErrorKeyClause {
+    DataDescName data_desc_name = 1;
+}
+
+message DestinationTableClause {
+    IntegerLiteral times = 1;
+    repeated IndexName indexes = 2;
+}
+
+message DestinationCountClause {
+    DataDescName data_desc_name = 1;
+}
+
+message SymbolicQueueClause {
+    DataDescName data_desc_name = 1;
+}
+
+message SymbolicSubQueueClause {
+    DataDescName data_desc_name = 1;
+}
+
+message MessageDateClause {
+    DataDescName data_desc_name = 1;
+}
+
+message MessageTimeClause {
+    DataDescName data_desc_name = 1;
+}
+
+message SymbolicSourceClause {
+    DataDescName data_desc_name = 1;
+}
+
+message TextLengthClause {
+    DataDescName data_desc_name = 1;
+}
+
+message EndKeyClause {
+    DataDescName data_desc_name = 1;
+}
+
+message StatusKeyClause {
+    DataDescName data_desc_name = 1;
+}
+
+message MessageCountClause {
+    DataDescName data_desc_name = 1;
 }
 
 message DataBaseSection {

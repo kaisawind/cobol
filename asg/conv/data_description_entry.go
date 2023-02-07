@@ -10,9 +10,11 @@ func DataDescriptionEntry(in cobol85.IDataDescriptionEntryContext) (out *pb.Data
 	out = &pb.DataDescriptionEntry{}
 	if ictx := ctx.DataDescriptionEntryFormat1(); ictx != nil {
 		cctx := ictx.(*cobol85.DataDescriptionEntryFormat1Context)
-		f1 := &pb.DataDescriptionEntry_Format1{
-			DataName: DataName(cctx.DataName()),
+		f1 := &pb.DataDescriptionEntry_Format1{}
+		if cctx.DataName() != nil {
+			f1.DataName = DataName(cctx.DataName())
 		}
+
 		for _, v := range cctx.AllDataRedefinesClause() {
 			clauseCtx := v.(*cobol85.DataRedefinesClauseContext)
 			f1.DataRedefinesClause = &pb.DataRedefinesClause{

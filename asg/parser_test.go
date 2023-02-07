@@ -1,6 +1,7 @@
 package asg
 
 import (
+	"os"
 	"testing"
 
 	"github.com/kaisawind/cobol/format"
@@ -18,4 +19,5 @@ func TestAnalyzeFile(t *testing.T) {
 		t.FailNow()
 	}
 	t.Log(string(buf))
+	os.WriteFile("./testdata/HelloWorld.json", buf, os.ModePerm)
 }

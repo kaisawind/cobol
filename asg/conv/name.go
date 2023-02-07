@@ -59,6 +59,43 @@ func CobolWord(in cobol85.ICobolWordContext) *pb.CobolWord {
 	}
 }
 
+func CdName(in cobol85.ICdNameContext) *pb.CdName {
+	ctx := in.(*cobol85.CdNameContext)
+	return &pb.CdName{
+		CobolWord: CobolWord(ctx.CobolWord()),
+	}
+}
+
+func DataDescName(in cobol85.IDataDescNameContext) *pb.DataDescName {
+	return &pb.DataDescName{
+		Value: in.GetText(),
+	}
+}
+
+func ProgramName(in cobol85.IProgramNameContext) (out *pb.ProgramName) {
+	ctx := in.(*cobol85.ProgramNameContext)
+	out = &pb.ProgramName{}
+	if ictx := ctx.NONNUMERICLITERAL(); ictx != nil {
+		out.OneOf = &pb.ProgramName_NonNumericLiteral{
+			NonNumericLiteral: &pb.NonNumericLiteral{
+				Value: ictx.GetText(),
+			},
+		}
+	} else if ictx := ctx.CobolWord(); ictx != nil {
+		out.OneOf = &pb.ProgramName_CobolWord{
+			CobolWord: CobolWord(ictx),
+		}
+	}
+	return
+}
+
+func LocalName(in cobol85.ILocalNameContext) *pb.LocalName {
+	ctx := in.(*cobol85.LocalNameContext)
+	return &pb.LocalName{
+		CobolWord: CobolWord(ctx.CobolWord()),
+	}
+}
+
 func DataName(in cobol85.IDataNameContext) *pb.DataName {
 	ctx := in.(*cobol85.DataNameContext)
 	return &pb.DataName{

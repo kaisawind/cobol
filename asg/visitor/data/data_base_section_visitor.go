@@ -2,6 +2,7 @@ package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -18,6 +19,20 @@ func NewDataBaseSectionVisitor(section *pb.DataBaseSection) *DataBaseSectionVisi
 }
 
 func (v *DataBaseSectionVisitor) VisitDataBaseSection(ctx *cobol85.DataBaseSectionContext) any {
+	for _, ictx := range ctx.AllDataBaseSectionEntry() {
+		cctx := ictx.(*cobol85.DataBaseSectionEntryContext)
+		entry := &pb.DataBaseSectionEntry{
+			IntegerLiteral: conv.IntegerLiteral(cctx.IntegerLiteral()),
+		}
+		for _, literal := range cctx.AllLiteral() {
+			if entry.Literal == nil {
+				entry.Literal = conv.Literal(literal)
+			} else {
+				entry.Invoke = conv.Literal(literal)
+			}
+		}
+		v.section.DataBaseSectionEntries = append(v.section.DataBaseSectionEntries, entry)
+	}
 	return v.VisitChildren(ctx)
 }
 
