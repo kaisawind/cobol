@@ -5030,6 +5030,998 @@
                                 }
                             ]
                         }
+                    },
+                    "procedureDivision": {
+                        "paragraphs": {},
+                        "procedureSections": [
+                            {
+                                "paragraphs": {
+                                    "paragraphs": [
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "CM101M-INIT"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "LOG-INIT"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "LOG-MSG"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "LOG-MSG-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISABLE-CM-INQUE-1"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "GET-INITIAL-TIME"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "LOOK-FOR-LATE-TRANSMISSIONS"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "GET-TIME-DIFFERENCE"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "CHECK-FOR-15"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "15-SECONDS-HAVE-ELAPSED"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "STATUS-TESTS-INIT"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "REC-STATUS-TEST-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "REC-STATUS-DELETE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "REC-STATUS-WRITE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "REC-STATUS-TEST-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "REC-STATUS-DELETE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "REC-STATUS-WRITE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ACCPT-STATUS-TEST-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ACCPT-STATUS-DELETE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ACCPT-STATUS-WRITE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ACCPT-STATUS-TEST-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ACCPT-STATUS-DELETE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ACCPT-STATUS-WRITE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-TEST-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-DELETE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-WRITE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-TEST-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-DELETE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-WRITE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-TEST-03"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-DELETE-03"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-WRITE-03"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-TEST-04"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-DELETE-04"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "ENABL-STATUS-WRITE-04"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-TEST-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-DELETE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-WRITE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-TEST-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-DELETE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-WRITE-02"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-TEST-03"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-DELETE-03"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DISAB-STATUS-WRITE-03"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "RENAB-STATUS-TEST-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "RENAB-STATUS-DELETE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "RENAB-STATUS-WRITE-01"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "CLOSE-FILES"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "PASS"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "FAIL"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DE-LETE"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "PRINT-DETAIL"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "END-ROUTINE"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "PARA-Z"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "END-ROUTINE-1"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "END-ROUTINE-2"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "END-ROUTINE-3"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "END-ROUTINE-4"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "BLANK-LINE-PRINT"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "WRITE-LINE"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "INCREMENT-POLL-COUNT"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "DELAY-FOR-30-SECS"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "LOG-HEADER"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "paragraphName": {
+                                                "cobolWord": {
+                                                    "value": "HEAD-ROUTINE"
+                                                }
+                                            },
+                                            "sentences": {
+                                                "sentences": [
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {},
+                                                    {}
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
                     }
                 }
             ]

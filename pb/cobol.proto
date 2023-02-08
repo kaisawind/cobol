@@ -1369,7 +1369,450 @@ message DataBaseSectionEntry {
 }
 
 message ProcedureDivision {
+    message ByReference {
+        oneof one_of {
+            Identifier identifier = 1;
+            FileName file_name = 2;
+            bool any = 3;
+        }
+    }
+    message ByReferencePhrase {
+        repeated ByReference references = 1;
+    }
+    message ByValue {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            bool any = 3;
+        }
+    }
+    message ByValuePhrase {
+        repeated ByValue values = 1;
+    }
+    message UsingParameter {
+        oneof one_of {
+            ByReferencePhrase by_reference_phrase = 1;
+            ByValuePhrase by_value_phrase = 2;
+        }
+    }
+    message GivingClause {
+        enum Type {
+            GIVING = 0;
+            RETURNING = 1;
+        }
+        Type type = 1;
+        DataName data_name = 2;
+    }
+    message UsingClause {
+        enum Type {
+            USING = 0;
+            CHAINING = 1;
+        }
+        Type type = 1;
+        repeated UsingParameter using_parameters = 2;
+    }
+    UsingClause using_clause = 1;
+    GivingClause giving_clause = 2;
+    repeated Declarative declaratives = 3;
+    Paragraphs paragraphs = 4;
+    repeated ProcedureSection procedure_sections = 5;
+}
 
+message ProcedureSection {
+    ProcedureSectionHeader procedure_section_header = 1;
+    Paragraphs paragraphs = 2;
+}
+
+message Declarative {
+    ProcedureSectionHeader procedure_section_header = 1;  
+    UseStatement use_statement = 2;
+    Paragraphs paragraphs = 3;
+}
+
+message ProcedureSectionHeader {
+    SectionName section_name = 1;
+    IntegerLiteral integer_literal = 2;
+}
+
+message Paragraphs {
+    Sentences sentences = 1;
+    repeated Paragraph paragraphs = 2;
+}
+
+message Paragraph {
+    ParagraphName paragraph_name = 1;
+    oneof one_of {
+        bool altered_go_to = 2;
+        Sentences sentences = 3;
+    }
+}
+
+message Sentences {
+    repeated Sentence sentences = 1;
+}
+
+message Sentence {
+    repeated Statement statements = 1;
+}
+
+message Statement {
+    oneof one_of {
+        AcceptStatement accept_statement = 1;
+        AddStatement AddStatement = 2;
+        AlterStatement alterStatement = 3;
+        CallStatement callStatement = 4;
+        CancelStatement cancelStatement = 5;
+        CloseStatement closeStatement = 6;
+        ComputeStatement computeStatement = 7;
+        ContinueStatement continueStatement = 8;
+        DeleteStatement deleteStatement = 9;
+        DisableStatement disableStatement = 10;
+        DisplayStatement displayStatement = 11;
+        DivideStatement divideStatement = 12;
+        EnableStatement enableStatement = 13;
+        EntryStatement entryStatement = 14;
+        EvaluateStatement evaluateStatement = 15;
+        ExhibitStatement exhibitStatement = 16;
+        ExecCicsStatement execCicsStatement = 17;
+        ExecSqlStatement execSqlStatement = 18;
+        ExecSqlImsStatement execSqlImsStatement = 19;
+        ExitStatement exitStatement = 20;
+        GenerateStatement generateStatement = 21;
+        GobackStatement gobackStatement = 22;
+        GoToStatement goToStatement = 23;
+        IfStatement ifStatement = 24;
+        InitializeStatement initializeStatement = 25;
+        InitiateStatement initiateStatement = 26;
+        InspectStatement inspectStatement = 27;
+        MergeStatement mergeStatement = 28;
+        MoveStatement moveStatement = 29;
+        MultiplyStatement multiplyStatement = 30;
+        NextSentenceStatement nextSentenceStatement = 31;
+        OpenStatement openStatement = 32;
+        PerformStatement performStatement = 33;
+        PurgeStatement purgeStatement = 34;
+        ReadStatement readStatement = 35;
+        ReceiveStatement receiveStatement = 36;
+        ReleaseStatement releaseStatement = 37;
+        ReturnStatement returnStatement = 38;
+        RewriteStatement rewriteStatement = 39;
+        SearchStatement searchStatement = 40;
+        SendStatement sendStatement = 41;
+        SetStatement setStatement = 42;
+        SortStatement sortStatement = 43;
+        StartStatement startStatement = 44;
+        StopStatement stopStatement = 45;
+        StringStatement stringStatement = 46;
+        SubtractStatement subtractStatement = 47;
+        TerminateStatement terminateStatement = 48;
+        UnstringStatement unstringStatement = 49;
+        WriteStatement writeStatement = 50;
+    }
+}
+
+message WriteStatement {
+    // TODO:
+}
+
+message UnstringStatement {
+    // TODO:
+}
+
+message TerminateStatement {
+    // TODO:
+}
+
+message SubtractStatement {
+    // TODO:
+}
+
+message StringStatement {
+    // TODO:
+}
+
+message StopStatement {
+    // TODO:
+}
+
+message StartStatement {
+    // TODO:
+}
+
+message SortStatement {
+    // TODO:
+}
+
+message SetStatement {
+    // TODO:
+}
+
+message SendStatement {
+    // TODO:
+}
+
+message SearchStatement {
+    // TODO:
+}
+
+message RewriteStatement {
+    // TODO:
+}
+
+message ReturnStatement {
+    // TODO:
+}
+
+message ReleaseStatement {
+    // TODO:
+}
+
+message ReceiveStatement {
+    // TODO:
+}
+
+message ReadStatement {
+    // TODO:
+}
+
+message PurgeStatement {
+    // TODO:
+}
+
+message PerformStatement {
+    // TODO:
+}
+
+message OpenStatement {
+    // TODO:
+}
+
+message NextSentenceStatement {
+    // TODO:
+}
+
+message MultiplyStatement {
+    // TODO:
+}
+
+message MoveStatement {
+    // TODO:
+}
+
+message MergeStatement {
+    // TODO:
+}
+
+message InspectStatement {
+    // TODO:
+}
+
+message InitiateStatement {
+    // TODO:
+}
+
+message InitializeStatement {
+    // TODO:
+}
+
+message IfStatement {
+    // TODO:
+}
+
+message GoToStatement {
+    // TODO:
+}
+
+message GobackStatement {
+    // TODO:
+}
+
+message GenerateStatement {
+    // TODO:
+}
+
+message ExitStatement {
+    // TODO:
+}
+
+message ExecSqlImsStatement {
+    // TODO:
+}
+
+message ExecSqlStatement {
+    // TODO:
+}
+
+message ExecCicsStatement {
+    // TODO:
+}
+
+message ExhibitStatement {
+    // TODO:
+}
+
+message EvaluateStatement {
+    // TODO:
+}
+
+message EntryStatement {
+    // TODO:
+}
+
+message EnableStatement {
+    // TODO:
+}
+
+message DivideStatement {
+    // TODO:
+}
+
+message DisplayStatement {
+    // TODO:
+}
+
+message DisableStatement {
+    // TODO:
+}
+
+message DeleteStatement {
+    // TODO:
+}
+
+message ContinueStatement {
+    // TODO:
+}
+
+message ComputeStatement {
+    // TODO:
+}
+
+message CloseStatement {
+    // TODO:
+}
+
+message CancelStatement {
+    // TODO:
+}
+
+message CallStatement {
+    // TODO:
+}
+
+message AlterStatement {
+    // TODO:
+}
+
+message AddStatement {
+    message AddFrom {
+        oneof one_of {
+            Identifier Identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message AddToGiving {
+        oneof one_of {
+            Identifier Identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message To {
+        repeated AddFrom froms = 1;
+        repeated Identifier tos = 2;
+    }
+    message ToGiving {
+        repeated AddFrom froms = 1;
+        repeated AddToGiving tos = 2;
+        repeated Identifier givings = 3;
+    }
+    message Corresponding {
+        Identifier corresponding = 1;
+        Identifier to = 2;
+    }
+    oneof one_of {
+        To to = 1;
+        ToGiving to_giving = 2;
+        Corresponding corresponding = 3;
+    }
+    OnExceptionClause on_exception_clause = 98;
+    NotOnExceptionClause not_on_exception_clause = 99;
+}
+
+message AcceptStatement {
+    message FromDate {
+        enum Type {
+            DATE = 0;
+            DAY = 1;
+            DAY_OF_WEEK = 2;
+            TIME = 3;
+            TIMER = 4;
+            TODAYS_DATE = 5;
+            TODAYS_NAME = 6;
+            YEAR = 7;
+            YYYYMMDD = 8;
+            YYYYDDD = 9;
+        }
+        Type type = 1;
+    }
+    message FromEscapeKey {
+
+    }
+    message FromMnemonic {
+        MnemonicName mnemonic_name = 1;
+    }
+    message MessageCount {
+
+    }
+    Identifier identifier = 1;
+    oneof one_of {
+        FromDate from_date = 2;
+        FromEscapeKey from_escape_key = 3;
+        FromMnemonic from_mnemonic = 4;
+        MessageCount message_count = 5;
+    }
+    OnExceptionClause on_exception_clause = 98;
+    NotOnExceptionClause not_on_exception_clause = 99;
+}
+
+message OnExceptionClause {
+    repeated Statement statements = 1;
+}
+
+message NotOnExceptionClause {
+    repeated Statement statements = 1;
+}
+
+// use statement ----------------------------------
+
+message UseStatement {
+    oneof use {
+        UseAfterClause use_after_clause = 1; 
+        UseDebugClause use_debug_clause = 2;
+    }
+}
+
+message UseDebugClause {
+    oneof on {
+        bool all_procedures = 1;
+        Identifier Identifier = 2;
+        ProcedureName procedureName = 3;
+        FileName fileName = 4;
+    }
+}
+
+message UseAfterClause {
+    enum Type {
+        INPUT = 0;
+        OUTPUT = 1;
+        I_O = 2;
+        EXTEND = 3;
+    }
+    message FileNames {
+        repeated FileName file_names = 1;
+    }
+    oneof on {
+        Type type = 1;
+        FileNames file_names = 2;
+    }
 }
 
 // arithmetic expression ----------------------------------

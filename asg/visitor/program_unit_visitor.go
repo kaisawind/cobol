@@ -36,7 +36,9 @@ func (v *ProgramUnitVisitor) VisitIdentificationDivision(ctx *cobol85.Identifica
 }
 
 func (v *ProgramUnitVisitor) VisitProcedureDivision(ctx *cobol85.ProcedureDivisionContext) any {
-	return v.VisitChildren(ctx)
+	v.programUnit.ProcedureDivision = &pb.ProcedureDivision{}
+	vr := NewProcedureDivisionVisitor(v.programUnit.ProcedureDivision)
+	return vr.VisitChildren(ctx)
 }
 
 func (v *ProgramUnitVisitor) VisitProgramUnit(ctx *cobol85.ProgramUnitContext) any {
