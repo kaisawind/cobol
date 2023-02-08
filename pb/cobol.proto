@@ -818,7 +818,195 @@ message ScreenSection {
 }
 
 message ScreenDescriptionEntry {
-    // TODO:
+    oneof integer_literal {
+        bool filler = 1;
+        ScreenName screen_name = 2;
+    }
+    BlankClause blank_clause = 3;
+    BellClause bell_clause = 4;
+    BlinkClause blink_clause = 5;
+    EraseClause erase_clause = 6;
+    LightClause light_clause = 7;
+    GridClause grid_clause = 8;
+    ReverseVideoClause reverse_video_clause = 9;
+    UnderlineClause underline_clause = 10;
+    SizeClause size_clause = 11;
+    LineClause line_clause = 12;
+    ColumnClause column_clause = 13;
+    ForegroundColorClause foreground_color_clause = 14;
+    BackgroundColorClause background_color_clause = 15;
+    ControlClause control_clause = 16;
+    ValueClause value_clause = 17;
+    PictureClause picture_clause = 18;
+    FromClause from_clause = 19;
+    UsingClause using_clause = 20;
+    UsageClause usage_clause = 21;
+    SignClause sign_clause = 22;
+    BlankWhenZeroClause blank_when_zero_clause = 23;
+    JustifiedClause justified_clause = 24;
+    AutoClause auto_clause = 25;
+    SecureClause secure_clause = 26;
+    RequiredClause required_clause = 27;
+    PromptClause prompt_clause = 28;
+    FullClause full_clause = 29;
+    ZeroFillClause zero_fill_clause = 30;
+}
+
+message ZeroFillClause {
+
+}
+
+message FullClause {
+    enum Type {
+        FULL = 0;
+        LENGTH_CHECK = 1;
+    }
+    Type type = 1;
+}
+
+message PromptClause {
+    oneof prompt {
+        Identifier identifier = 1;
+        Literal literal = 2;
+    }
+    IntegerLiteral times = 3;
+}
+
+message RequiredClause {
+    enum Type {
+        REQUIRED = 0;
+        EMPTY_CHECK = 1;
+    }
+    Type type = 1;
+}
+
+message SecureClause {
+    enum Type {
+        SECURE = 0;
+        NO_ECHO = 1;
+    }
+    Type type = 1;
+}
+
+message AutoClause {
+    enum Type {
+        AUTO = 0;
+        AUTO_SKIP = 1;
+    }
+    Type type = 1;
+}
+
+message UsingClause {
+    Identifier using = 1;
+}
+message FromClause {
+    oneof from {
+        Identifier identifier = 1;
+        Literal literal = 2;
+    }
+    Identifier to = 3;
+}
+
+message BlankClause {
+    enum Type {
+        SCREEN = 0;
+        LINE = 1;
+    }
+    Type type = 1;
+}
+
+message BellClause {
+    enum Type {
+        BELL = 0;
+        BEEP = 1;
+    }
+    Type type = 1;
+}
+
+message BlinkClause {
+
+}
+
+message EraseClause {
+    enum Type {
+        EOL = 0;
+        EOS = 1;
+    }
+    Type type = 1;
+}
+
+message LightClause {
+    enum Type {
+        HIGHLIGHT = 0;
+        LOWLIGHT = 1;
+    }
+    Type type = 1;
+}
+
+message GridClause {
+    enum Type {
+        GRID = 0;
+        LEFTLINE = 1;
+        OVERLINE = 2;
+    }
+    Type type = 1;
+}
+
+message ReverseVideoClause {
+
+}
+
+message UnderlineClause {
+
+}
+
+message SizeClause {
+    oneof size {
+        Identifier identifier = 1;
+        IntegerLiteral integer_literal = 2;
+    }
+}
+
+message LineClause {
+    enum Type {
+        PLUS = 0;
+        MINUS = 1;
+    }
+    Type type = 1;
+    oneof line {
+        Identifier identifier = 2;
+        IntegerLiteral integer_literal = 3;
+    }
+}
+
+message ColumnClause {
+    enum Type {
+        PLUS = 0;
+        MINUS = 1;
+    }
+    Type type = 1;
+    oneof column {
+        Identifier identifier = 2;
+        IntegerLiteral integer_literal = 3;
+    }
+}
+
+message ForegroundColorClause {
+    oneof foreground_color {
+        Identifier identifier = 1;
+        IntegerLiteral integer_literal = 2;
+    }
+}
+
+message BackgroundColorClause {
+    oneof background_color {
+        Identifier identifier = 1;
+        IntegerLiteral integer_literal = 2;
+    }
+}
+
+message ControlClause {
+    Identifier control = 1;
 }
 
 message ReportSection {

@@ -2,6 +2,7 @@ package data
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/pb"
 )
@@ -18,6 +19,9 @@ func NewScreenSectionVisitor(section *pb.ScreenSection) *ScreenSectionVisitor {
 }
 
 func (v *ScreenSectionVisitor) VisitScreenSection(ctx *cobol85.ScreenSectionContext) any {
+	for _, ictx := range ctx.AllScreenDescriptionEntry() {
+		v.section.ScreenDescriptionEntries = append(v.section.ScreenDescriptionEntries, conv.ScreenDescriptionEntry(ictx))
+	}
 	return v.VisitChildren(ctx)
 }
 

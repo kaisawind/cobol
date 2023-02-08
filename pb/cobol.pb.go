@@ -1429,6 +1429,515 @@ func (DataSynchronizedClause_Type) EnumDescriptor() ([]byte, []int) {
 	return file_cobol_proto_rawDescGZIP(), []int{94, 0}
 }
 
+type FullClause_Type int32
+
+const (
+	FullClause_FULL         FullClause_Type = 0
+	FullClause_LENGTH_CHECK FullClause_Type = 1
+)
+
+// Enum value maps for FullClause_Type.
+var (
+	FullClause_Type_name = map[int32]string{
+		0: "FULL",
+		1: "LENGTH_CHECK",
+	}
+	FullClause_Type_value = map[string]int32{
+		"FULL":         0,
+		"LENGTH_CHECK": 1,
+	}
+)
+
+func (x FullClause_Type) Enum() *FullClause_Type {
+	p := new(FullClause_Type)
+	*p = x
+	return p
+}
+
+func (x FullClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (FullClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[26].Descriptor()
+}
+
+func (FullClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[26]
+}
+
+func (x FullClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use FullClause_Type.Descriptor instead.
+func (FullClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{103, 0}
+}
+
+type RequiredClause_Type int32
+
+const (
+	RequiredClause_REQUIRED    RequiredClause_Type = 0
+	RequiredClause_EMPTY_CHECK RequiredClause_Type = 1
+)
+
+// Enum value maps for RequiredClause_Type.
+var (
+	RequiredClause_Type_name = map[int32]string{
+		0: "REQUIRED",
+		1: "EMPTY_CHECK",
+	}
+	RequiredClause_Type_value = map[string]int32{
+		"REQUIRED":    0,
+		"EMPTY_CHECK": 1,
+	}
+)
+
+func (x RequiredClause_Type) Enum() *RequiredClause_Type {
+	p := new(RequiredClause_Type)
+	*p = x
+	return p
+}
+
+func (x RequiredClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RequiredClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[27].Descriptor()
+}
+
+func (RequiredClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[27]
+}
+
+func (x RequiredClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RequiredClause_Type.Descriptor instead.
+func (RequiredClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{105, 0}
+}
+
+type SecureClause_Type int32
+
+const (
+	SecureClause_SECURE  SecureClause_Type = 0
+	SecureClause_NO_ECHO SecureClause_Type = 1
+)
+
+// Enum value maps for SecureClause_Type.
+var (
+	SecureClause_Type_name = map[int32]string{
+		0: "SECURE",
+		1: "NO_ECHO",
+	}
+	SecureClause_Type_value = map[string]int32{
+		"SECURE":  0,
+		"NO_ECHO": 1,
+	}
+)
+
+func (x SecureClause_Type) Enum() *SecureClause_Type {
+	p := new(SecureClause_Type)
+	*p = x
+	return p
+}
+
+func (x SecureClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SecureClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[28].Descriptor()
+}
+
+func (SecureClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[28]
+}
+
+func (x SecureClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SecureClause_Type.Descriptor instead.
+func (SecureClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{106, 0}
+}
+
+type AutoClause_Type int32
+
+const (
+	AutoClause_AUTO      AutoClause_Type = 0
+	AutoClause_AUTO_SKIP AutoClause_Type = 1
+)
+
+// Enum value maps for AutoClause_Type.
+var (
+	AutoClause_Type_name = map[int32]string{
+		0: "AUTO",
+		1: "AUTO_SKIP",
+	}
+	AutoClause_Type_value = map[string]int32{
+		"AUTO":      0,
+		"AUTO_SKIP": 1,
+	}
+)
+
+func (x AutoClause_Type) Enum() *AutoClause_Type {
+	p := new(AutoClause_Type)
+	*p = x
+	return p
+}
+
+func (x AutoClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AutoClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[29].Descriptor()
+}
+
+func (AutoClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[29]
+}
+
+func (x AutoClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AutoClause_Type.Descriptor instead.
+func (AutoClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{107, 0}
+}
+
+type BlankClause_Type int32
+
+const (
+	BlankClause_SCREEN BlankClause_Type = 0
+	BlankClause_LINE   BlankClause_Type = 1
+)
+
+// Enum value maps for BlankClause_Type.
+var (
+	BlankClause_Type_name = map[int32]string{
+		0: "SCREEN",
+		1: "LINE",
+	}
+	BlankClause_Type_value = map[string]int32{
+		"SCREEN": 0,
+		"LINE":   1,
+	}
+)
+
+func (x BlankClause_Type) Enum() *BlankClause_Type {
+	p := new(BlankClause_Type)
+	*p = x
+	return p
+}
+
+func (x BlankClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (BlankClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[30].Descriptor()
+}
+
+func (BlankClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[30]
+}
+
+func (x BlankClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use BlankClause_Type.Descriptor instead.
+func (BlankClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{110, 0}
+}
+
+type BellClause_Type int32
+
+const (
+	BellClause_BELL BellClause_Type = 0
+	BellClause_BEEP BellClause_Type = 1
+)
+
+// Enum value maps for BellClause_Type.
+var (
+	BellClause_Type_name = map[int32]string{
+		0: "BELL",
+		1: "BEEP",
+	}
+	BellClause_Type_value = map[string]int32{
+		"BELL": 0,
+		"BEEP": 1,
+	}
+)
+
+func (x BellClause_Type) Enum() *BellClause_Type {
+	p := new(BellClause_Type)
+	*p = x
+	return p
+}
+
+func (x BellClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (BellClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[31].Descriptor()
+}
+
+func (BellClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[31]
+}
+
+func (x BellClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use BellClause_Type.Descriptor instead.
+func (BellClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{111, 0}
+}
+
+type EraseClause_Type int32
+
+const (
+	EraseClause_EOL EraseClause_Type = 0
+	EraseClause_EOS EraseClause_Type = 1
+)
+
+// Enum value maps for EraseClause_Type.
+var (
+	EraseClause_Type_name = map[int32]string{
+		0: "EOL",
+		1: "EOS",
+	}
+	EraseClause_Type_value = map[string]int32{
+		"EOL": 0,
+		"EOS": 1,
+	}
+)
+
+func (x EraseClause_Type) Enum() *EraseClause_Type {
+	p := new(EraseClause_Type)
+	*p = x
+	return p
+}
+
+func (x EraseClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EraseClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[32].Descriptor()
+}
+
+func (EraseClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[32]
+}
+
+func (x EraseClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EraseClause_Type.Descriptor instead.
+func (EraseClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{113, 0}
+}
+
+type LightClause_Type int32
+
+const (
+	LightClause_HIGHLIGHT LightClause_Type = 0
+	LightClause_LOWLIGHT  LightClause_Type = 1
+)
+
+// Enum value maps for LightClause_Type.
+var (
+	LightClause_Type_name = map[int32]string{
+		0: "HIGHLIGHT",
+		1: "LOWLIGHT",
+	}
+	LightClause_Type_value = map[string]int32{
+		"HIGHLIGHT": 0,
+		"LOWLIGHT":  1,
+	}
+)
+
+func (x LightClause_Type) Enum() *LightClause_Type {
+	p := new(LightClause_Type)
+	*p = x
+	return p
+}
+
+func (x LightClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (LightClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[33].Descriptor()
+}
+
+func (LightClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[33]
+}
+
+func (x LightClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use LightClause_Type.Descriptor instead.
+func (LightClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{114, 0}
+}
+
+type GridClause_Type int32
+
+const (
+	GridClause_GRID     GridClause_Type = 0
+	GridClause_LEFTLINE GridClause_Type = 1
+	GridClause_OVERLINE GridClause_Type = 2
+)
+
+// Enum value maps for GridClause_Type.
+var (
+	GridClause_Type_name = map[int32]string{
+		0: "GRID",
+		1: "LEFTLINE",
+		2: "OVERLINE",
+	}
+	GridClause_Type_value = map[string]int32{
+		"GRID":     0,
+		"LEFTLINE": 1,
+		"OVERLINE": 2,
+	}
+)
+
+func (x GridClause_Type) Enum() *GridClause_Type {
+	p := new(GridClause_Type)
+	*p = x
+	return p
+}
+
+func (x GridClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (GridClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[34].Descriptor()
+}
+
+func (GridClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[34]
+}
+
+func (x GridClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use GridClause_Type.Descriptor instead.
+func (GridClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{115, 0}
+}
+
+type LineClause_Type int32
+
+const (
+	LineClause_PLUS  LineClause_Type = 0
+	LineClause_MINUS LineClause_Type = 1
+)
+
+// Enum value maps for LineClause_Type.
+var (
+	LineClause_Type_name = map[int32]string{
+		0: "PLUS",
+		1: "MINUS",
+	}
+	LineClause_Type_value = map[string]int32{
+		"PLUS":  0,
+		"MINUS": 1,
+	}
+)
+
+func (x LineClause_Type) Enum() *LineClause_Type {
+	p := new(LineClause_Type)
+	*p = x
+	return p
+}
+
+func (x LineClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (LineClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[35].Descriptor()
+}
+
+func (LineClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[35]
+}
+
+func (x LineClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use LineClause_Type.Descriptor instead.
+func (LineClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{119, 0}
+}
+
+type ColumnClause_Type int32
+
+const (
+	ColumnClause_PLUS  ColumnClause_Type = 0
+	ColumnClause_MINUS ColumnClause_Type = 1
+)
+
+// Enum value maps for ColumnClause_Type.
+var (
+	ColumnClause_Type_name = map[int32]string{
+		0: "PLUS",
+		1: "MINUS",
+	}
+	ColumnClause_Type_value = map[string]int32{
+		"PLUS":  0,
+		"MINUS": 1,
+	}
+)
+
+func (x ColumnClause_Type) Enum() *ColumnClause_Type {
+	p := new(ColumnClause_Type)
+	*p = x
+	return p
+}
+
+func (x ColumnClause_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ColumnClause_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[36].Descriptor()
+}
+
+func (ColumnClause_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[36]
+}
+
+func (x ColumnClause_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ColumnClause_Type.Descriptor instead.
+func (ColumnClause_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{120, 0}
+}
+
 type SignClause_Type int32
 
 const (
@@ -1459,11 +1968,11 @@ func (x SignClause_Type) String() string {
 }
 
 func (SignClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[26].Descriptor()
+	return file_cobol_proto_enumTypes[37].Descriptor()
 }
 
 func (SignClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[26]
+	return &file_cobol_proto_enumTypes[37]
 }
 
 func (x SignClause_Type) Number() protoreflect.EnumNumber {
@@ -1472,7 +1981,7 @@ func (x SignClause_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SignClause_Type.Descriptor instead.
 func (SignClause_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{119, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{141, 0}
 }
 
 type AttributeClause1_Sharing int32
@@ -1511,11 +2020,11 @@ func (x AttributeClause1_Sharing) String() string {
 }
 
 func (AttributeClause1_Sharing) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[27].Descriptor()
+	return file_cobol_proto_enumTypes[38].Descriptor()
 }
 
 func (AttributeClause1_Sharing) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[27]
+	return &file_cobol_proto_enumTypes[38]
 }
 
 func (x AttributeClause1_Sharing) Number() protoreflect.EnumNumber {
@@ -1524,7 +2033,7 @@ func (x AttributeClause1_Sharing) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AttributeClause1_Sharing.Descriptor instead.
 func (AttributeClause1_Sharing) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{128, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{150, 0}
 }
 
 type AttributeClause2_LibAccess int32
@@ -1557,11 +2066,11 @@ func (x AttributeClause2_LibAccess) String() string {
 }
 
 func (AttributeClause2_LibAccess) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[28].Descriptor()
+	return file_cobol_proto_enumTypes[39].Descriptor()
 }
 
 func (AttributeClause2_LibAccess) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[28]
+	return &file_cobol_proto_enumTypes[39]
 }
 
 func (x AttributeClause2_LibAccess) Number() protoreflect.EnumNumber {
@@ -1570,7 +2079,7 @@ func (x AttributeClause2_LibAccess) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AttributeClause2_LibAccess.Descriptor instead.
 func (AttributeClause2_LibAccess) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{129, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{151, 0}
 }
 
 type Literal_Type int32
@@ -1615,11 +2124,11 @@ func (x Literal_Type) String() string {
 }
 
 func (Literal_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[29].Descriptor()
+	return file_cobol_proto_enumTypes[40].Descriptor()
 }
 
 func (Literal_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[29]
+	return &file_cobol_proto_enumTypes[40]
 }
 
 func (x Literal_Type) Number() protoreflect.EnumNumber {
@@ -1628,7 +2137,7 @@ func (x Literal_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Literal_Type.Descriptor instead.
 func (Literal_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{204, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{226, 0}
 }
 
 type NumericLiteral_Type int32
@@ -1661,11 +2170,11 @@ func (x NumericLiteral_Type) String() string {
 }
 
 func (NumericLiteral_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[30].Descriptor()
+	return file_cobol_proto_enumTypes[41].Descriptor()
 }
 
 func (NumericLiteral_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[30]
+	return &file_cobol_proto_enumTypes[41]
 }
 
 func (x NumericLiteral_Type) Number() protoreflect.EnumNumber {
@@ -1674,7 +2183,7 @@ func (x NumericLiteral_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NumericLiteral_Type.Descriptor instead.
 func (NumericLiteral_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{206, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{228, 0}
 }
 
 type FigurativeConstant_Type int32
@@ -1743,11 +2252,11 @@ func (x FigurativeConstant_Type) String() string {
 }
 
 func (FigurativeConstant_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[31].Descriptor()
+	return file_cobol_proto_enumTypes[42].Descriptor()
 }
 
 func (FigurativeConstant_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[31]
+	return &file_cobol_proto_enumTypes[42]
 }
 
 func (x FigurativeConstant_Type) Number() protoreflect.EnumNumber {
@@ -1756,7 +2265,7 @@ func (x FigurativeConstant_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use FigurativeConstant_Type.Descriptor instead.
 func (FigurativeConstant_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{208, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{230, 0}
 }
 
 type Program struct {
@@ -7897,6 +8406,40 @@ type ScreenDescriptionEntry struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to IntegerLiteral:
+	//
+	//	*ScreenDescriptionEntry_Filler
+	//	*ScreenDescriptionEntry_ScreenName
+	IntegerLiteral        isScreenDescriptionEntry_IntegerLiteral `protobuf_oneof:"integer_literal"`
+	BlankClause           *BlankClause                            `protobuf:"bytes,3,opt,name=blank_clause,json=blankClause,proto3" json:"blank_clause,omitempty"`
+	BellClause            *BellClause                             `protobuf:"bytes,4,opt,name=bell_clause,json=bellClause,proto3" json:"bell_clause,omitempty"`
+	BlinkClause           *BlinkClause                            `protobuf:"bytes,5,opt,name=blink_clause,json=blinkClause,proto3" json:"blink_clause,omitempty"`
+	EraseClause           *EraseClause                            `protobuf:"bytes,6,opt,name=erase_clause,json=eraseClause,proto3" json:"erase_clause,omitempty"`
+	LightClause           *LightClause                            `protobuf:"bytes,7,opt,name=light_clause,json=lightClause,proto3" json:"light_clause,omitempty"`
+	GridClause            *GridClause                             `protobuf:"bytes,8,opt,name=grid_clause,json=gridClause,proto3" json:"grid_clause,omitempty"`
+	ReverseVideoClause    *ReverseVideoClause                     `protobuf:"bytes,9,opt,name=reverse_video_clause,json=reverseVideoClause,proto3" json:"reverse_video_clause,omitempty"`
+	UnderlineClause       *UnderlineClause                        `protobuf:"bytes,10,opt,name=underline_clause,json=underlineClause,proto3" json:"underline_clause,omitempty"`
+	SizeClause            *SizeClause                             `protobuf:"bytes,11,opt,name=size_clause,json=sizeClause,proto3" json:"size_clause,omitempty"`
+	LineClause            *LineClause                             `protobuf:"bytes,12,opt,name=line_clause,json=lineClause,proto3" json:"line_clause,omitempty"`
+	ColumnClause          *ColumnClause                           `protobuf:"bytes,13,opt,name=column_clause,json=columnClause,proto3" json:"column_clause,omitempty"`
+	ForegroundColorClause *ForegroundColorClause                  `protobuf:"bytes,14,opt,name=foreground_color_clause,json=foregroundColorClause,proto3" json:"foreground_color_clause,omitempty"`
+	BackgroundColorClause *BackgroundColorClause                  `protobuf:"bytes,15,opt,name=background_color_clause,json=backgroundColorClause,proto3" json:"background_color_clause,omitempty"`
+	ControlClause         *ControlClause                          `protobuf:"bytes,16,opt,name=control_clause,json=controlClause,proto3" json:"control_clause,omitempty"`
+	ValueClause           *ValueClause                            `protobuf:"bytes,17,opt,name=value_clause,json=valueClause,proto3" json:"value_clause,omitempty"`
+	PictureClause         *PictureClause                          `protobuf:"bytes,18,opt,name=picture_clause,json=pictureClause,proto3" json:"picture_clause,omitempty"`
+	FromClause            *FromClause                             `protobuf:"bytes,19,opt,name=from_clause,json=fromClause,proto3" json:"from_clause,omitempty"`
+	UsingClause           *UsingClause                            `protobuf:"bytes,20,opt,name=using_clause,json=usingClause,proto3" json:"using_clause,omitempty"`
+	UsageClause           *UsageClause                            `protobuf:"bytes,21,opt,name=usage_clause,json=usageClause,proto3" json:"usage_clause,omitempty"`
+	SignClause            *SignClause                             `protobuf:"bytes,22,opt,name=sign_clause,json=signClause,proto3" json:"sign_clause,omitempty"`
+	BlankWhenZeroClause   *BlankWhenZeroClause                    `protobuf:"bytes,23,opt,name=blank_when_zero_clause,json=blankWhenZeroClause,proto3" json:"blank_when_zero_clause,omitempty"`
+	JustifiedClause       *JustifiedClause                        `protobuf:"bytes,24,opt,name=justified_clause,json=justifiedClause,proto3" json:"justified_clause,omitempty"`
+	AutoClause            *AutoClause                             `protobuf:"bytes,25,opt,name=auto_clause,json=autoClause,proto3" json:"auto_clause,omitempty"`
+	SecureClause          *SecureClause                           `protobuf:"bytes,26,opt,name=secure_clause,json=secureClause,proto3" json:"secure_clause,omitempty"`
+	RequiredClause        *RequiredClause                         `protobuf:"bytes,27,opt,name=required_clause,json=requiredClause,proto3" json:"required_clause,omitempty"`
+	PromptClause          *PromptClause                           `protobuf:"bytes,28,opt,name=prompt_clause,json=promptClause,proto3" json:"prompt_clause,omitempty"`
+	FullClause            *FullClause                             `protobuf:"bytes,29,opt,name=full_clause,json=fullClause,proto3" json:"full_clause,omitempty"`
+	ZeroFillClause        *ZeroFillClause                         `protobuf:"bytes,30,opt,name=zero_fill_clause,json=zeroFillClause,proto3" json:"zero_fill_clause,omitempty"`
 }
 
 func (x *ScreenDescriptionEntry) Reset() {
@@ -7931,6 +8474,1507 @@ func (*ScreenDescriptionEntry) Descriptor() ([]byte, []int) {
 	return file_cobol_proto_rawDescGZIP(), []int{101}
 }
 
+func (m *ScreenDescriptionEntry) GetIntegerLiteral() isScreenDescriptionEntry_IntegerLiteral {
+	if m != nil {
+		return m.IntegerLiteral
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetFiller() bool {
+	if x, ok := x.GetIntegerLiteral().(*ScreenDescriptionEntry_Filler); ok {
+		return x.Filler
+	}
+	return false
+}
+
+func (x *ScreenDescriptionEntry) GetScreenName() *ScreenName {
+	if x, ok := x.GetIntegerLiteral().(*ScreenDescriptionEntry_ScreenName); ok {
+		return x.ScreenName
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetBlankClause() *BlankClause {
+	if x != nil {
+		return x.BlankClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetBellClause() *BellClause {
+	if x != nil {
+		return x.BellClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetBlinkClause() *BlinkClause {
+	if x != nil {
+		return x.BlinkClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetEraseClause() *EraseClause {
+	if x != nil {
+		return x.EraseClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetLightClause() *LightClause {
+	if x != nil {
+		return x.LightClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetGridClause() *GridClause {
+	if x != nil {
+		return x.GridClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetReverseVideoClause() *ReverseVideoClause {
+	if x != nil {
+		return x.ReverseVideoClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetUnderlineClause() *UnderlineClause {
+	if x != nil {
+		return x.UnderlineClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetSizeClause() *SizeClause {
+	if x != nil {
+		return x.SizeClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetLineClause() *LineClause {
+	if x != nil {
+		return x.LineClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetColumnClause() *ColumnClause {
+	if x != nil {
+		return x.ColumnClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetForegroundColorClause() *ForegroundColorClause {
+	if x != nil {
+		return x.ForegroundColorClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetBackgroundColorClause() *BackgroundColorClause {
+	if x != nil {
+		return x.BackgroundColorClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetControlClause() *ControlClause {
+	if x != nil {
+		return x.ControlClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetValueClause() *ValueClause {
+	if x != nil {
+		return x.ValueClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetPictureClause() *PictureClause {
+	if x != nil {
+		return x.PictureClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetFromClause() *FromClause {
+	if x != nil {
+		return x.FromClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetUsingClause() *UsingClause {
+	if x != nil {
+		return x.UsingClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetUsageClause() *UsageClause {
+	if x != nil {
+		return x.UsageClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetSignClause() *SignClause {
+	if x != nil {
+		return x.SignClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetBlankWhenZeroClause() *BlankWhenZeroClause {
+	if x != nil {
+		return x.BlankWhenZeroClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetJustifiedClause() *JustifiedClause {
+	if x != nil {
+		return x.JustifiedClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetAutoClause() *AutoClause {
+	if x != nil {
+		return x.AutoClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetSecureClause() *SecureClause {
+	if x != nil {
+		return x.SecureClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetRequiredClause() *RequiredClause {
+	if x != nil {
+		return x.RequiredClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetPromptClause() *PromptClause {
+	if x != nil {
+		return x.PromptClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetFullClause() *FullClause {
+	if x != nil {
+		return x.FullClause
+	}
+	return nil
+}
+
+func (x *ScreenDescriptionEntry) GetZeroFillClause() *ZeroFillClause {
+	if x != nil {
+		return x.ZeroFillClause
+	}
+	return nil
+}
+
+type isScreenDescriptionEntry_IntegerLiteral interface {
+	isScreenDescriptionEntry_IntegerLiteral()
+}
+
+type ScreenDescriptionEntry_Filler struct {
+	Filler bool `protobuf:"varint,1,opt,name=filler,proto3,oneof"`
+}
+
+type ScreenDescriptionEntry_ScreenName struct {
+	ScreenName *ScreenName `protobuf:"bytes,2,opt,name=screen_name,json=screenName,proto3,oneof"`
+}
+
+func (*ScreenDescriptionEntry_Filler) isScreenDescriptionEntry_IntegerLiteral() {}
+
+func (*ScreenDescriptionEntry_ScreenName) isScreenDescriptionEntry_IntegerLiteral() {}
+
+type ZeroFillClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ZeroFillClause) Reset() {
+	*x = ZeroFillClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[102]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ZeroFillClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZeroFillClause) ProtoMessage() {}
+
+func (x *ZeroFillClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[102]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZeroFillClause.ProtoReflect.Descriptor instead.
+func (*ZeroFillClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{102}
+}
+
+type FullClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type FullClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.FullClause_Type" json:"type,omitempty"`
+}
+
+func (x *FullClause) Reset() {
+	*x = FullClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[103]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FullClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FullClause) ProtoMessage() {}
+
+func (x *FullClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[103]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FullClause.ProtoReflect.Descriptor instead.
+func (*FullClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *FullClause) GetType() FullClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return FullClause_FULL
+}
+
+type PromptClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Prompt:
+	//
+	//	*PromptClause_Identifier
+	//	*PromptClause_Literal
+	Prompt isPromptClause_Prompt `protobuf_oneof:"prompt"`
+	Times  *IntegerLiteral       `protobuf:"bytes,3,opt,name=times,proto3" json:"times,omitempty"`
+}
+
+func (x *PromptClause) Reset() {
+	*x = PromptClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[104]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PromptClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PromptClause) ProtoMessage() {}
+
+func (x *PromptClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[104]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PromptClause.ProtoReflect.Descriptor instead.
+func (*PromptClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{104}
+}
+
+func (m *PromptClause) GetPrompt() isPromptClause_Prompt {
+	if m != nil {
+		return m.Prompt
+	}
+	return nil
+}
+
+func (x *PromptClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetPrompt().(*PromptClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *PromptClause) GetLiteral() *Literal {
+	if x, ok := x.GetPrompt().(*PromptClause_Literal); ok {
+		return x.Literal
+	}
+	return nil
+}
+
+func (x *PromptClause) GetTimes() *IntegerLiteral {
+	if x != nil {
+		return x.Times
+	}
+	return nil
+}
+
+type isPromptClause_Prompt interface {
+	isPromptClause_Prompt()
+}
+
+type PromptClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,1,opt,name=identifier,proto3,oneof"`
+}
+
+type PromptClause_Literal struct {
+	Literal *Literal `protobuf:"bytes,2,opt,name=literal,proto3,oneof"`
+}
+
+func (*PromptClause_Identifier) isPromptClause_Prompt() {}
+
+func (*PromptClause_Literal) isPromptClause_Prompt() {}
+
+type RequiredClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type RequiredClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.RequiredClause_Type" json:"type,omitempty"`
+}
+
+func (x *RequiredClause) Reset() {
+	*x = RequiredClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[105]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RequiredClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequiredClause) ProtoMessage() {}
+
+func (x *RequiredClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[105]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequiredClause.ProtoReflect.Descriptor instead.
+func (*RequiredClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *RequiredClause) GetType() RequiredClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return RequiredClause_REQUIRED
+}
+
+type SecureClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type SecureClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.SecureClause_Type" json:"type,omitempty"`
+}
+
+func (x *SecureClause) Reset() {
+	*x = SecureClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[106]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SecureClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SecureClause) ProtoMessage() {}
+
+func (x *SecureClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[106]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SecureClause.ProtoReflect.Descriptor instead.
+func (*SecureClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *SecureClause) GetType() SecureClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return SecureClause_SECURE
+}
+
+type AutoClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type AutoClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.AutoClause_Type" json:"type,omitempty"`
+}
+
+func (x *AutoClause) Reset() {
+	*x = AutoClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[107]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AutoClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AutoClause) ProtoMessage() {}
+
+func (x *AutoClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[107]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AutoClause.ProtoReflect.Descriptor instead.
+func (*AutoClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *AutoClause) GetType() AutoClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return AutoClause_AUTO
+}
+
+type UsingClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Using *Identifier `protobuf:"bytes,1,opt,name=using,proto3" json:"using,omitempty"`
+}
+
+func (x *UsingClause) Reset() {
+	*x = UsingClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[108]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UsingClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UsingClause) ProtoMessage() {}
+
+func (x *UsingClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[108]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UsingClause.ProtoReflect.Descriptor instead.
+func (*UsingClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{108}
+}
+
+func (x *UsingClause) GetUsing() *Identifier {
+	if x != nil {
+		return x.Using
+	}
+	return nil
+}
+
+type FromClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to From:
+	//
+	//	*FromClause_Identifier
+	//	*FromClause_Literal
+	From isFromClause_From `protobuf_oneof:"from"`
+	To   *Identifier       `protobuf:"bytes,3,opt,name=to,proto3" json:"to,omitempty"`
+}
+
+func (x *FromClause) Reset() {
+	*x = FromClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[109]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FromClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FromClause) ProtoMessage() {}
+
+func (x *FromClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[109]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FromClause.ProtoReflect.Descriptor instead.
+func (*FromClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{109}
+}
+
+func (m *FromClause) GetFrom() isFromClause_From {
+	if m != nil {
+		return m.From
+	}
+	return nil
+}
+
+func (x *FromClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetFrom().(*FromClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *FromClause) GetLiteral() *Literal {
+	if x, ok := x.GetFrom().(*FromClause_Literal); ok {
+		return x.Literal
+	}
+	return nil
+}
+
+func (x *FromClause) GetTo() *Identifier {
+	if x != nil {
+		return x.To
+	}
+	return nil
+}
+
+type isFromClause_From interface {
+	isFromClause_From()
+}
+
+type FromClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,1,opt,name=identifier,proto3,oneof"`
+}
+
+type FromClause_Literal struct {
+	Literal *Literal `protobuf:"bytes,2,opt,name=literal,proto3,oneof"`
+}
+
+func (*FromClause_Identifier) isFromClause_From() {}
+
+func (*FromClause_Literal) isFromClause_From() {}
+
+type BlankClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type BlankClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.BlankClause_Type" json:"type,omitempty"`
+}
+
+func (x *BlankClause) Reset() {
+	*x = BlankClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[110]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BlankClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BlankClause) ProtoMessage() {}
+
+func (x *BlankClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[110]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BlankClause.ProtoReflect.Descriptor instead.
+func (*BlankClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{110}
+}
+
+func (x *BlankClause) GetType() BlankClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return BlankClause_SCREEN
+}
+
+type BellClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type BellClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.BellClause_Type" json:"type,omitempty"`
+}
+
+func (x *BellClause) Reset() {
+	*x = BellClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[111]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BellClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BellClause) ProtoMessage() {}
+
+func (x *BellClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[111]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BellClause.ProtoReflect.Descriptor instead.
+func (*BellClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *BellClause) GetType() BellClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return BellClause_BELL
+}
+
+type BlinkClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *BlinkClause) Reset() {
+	*x = BlinkClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[112]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BlinkClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BlinkClause) ProtoMessage() {}
+
+func (x *BlinkClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[112]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BlinkClause.ProtoReflect.Descriptor instead.
+func (*BlinkClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{112}
+}
+
+type EraseClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type EraseClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.EraseClause_Type" json:"type,omitempty"`
+}
+
+func (x *EraseClause) Reset() {
+	*x = EraseClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[113]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EraseClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EraseClause) ProtoMessage() {}
+
+func (x *EraseClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[113]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EraseClause.ProtoReflect.Descriptor instead.
+func (*EraseClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *EraseClause) GetType() EraseClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return EraseClause_EOL
+}
+
+type LightClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type LightClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.LightClause_Type" json:"type,omitempty"`
+}
+
+func (x *LightClause) Reset() {
+	*x = LightClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[114]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LightClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LightClause) ProtoMessage() {}
+
+func (x *LightClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[114]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LightClause.ProtoReflect.Descriptor instead.
+func (*LightClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{114}
+}
+
+func (x *LightClause) GetType() LightClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return LightClause_HIGHLIGHT
+}
+
+type GridClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type GridClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.GridClause_Type" json:"type,omitempty"`
+}
+
+func (x *GridClause) Reset() {
+	*x = GridClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[115]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GridClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GridClause) ProtoMessage() {}
+
+func (x *GridClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[115]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GridClause.ProtoReflect.Descriptor instead.
+func (*GridClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *GridClause) GetType() GridClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return GridClause_GRID
+}
+
+type ReverseVideoClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ReverseVideoClause) Reset() {
+	*x = ReverseVideoClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[116]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReverseVideoClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReverseVideoClause) ProtoMessage() {}
+
+func (x *ReverseVideoClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[116]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReverseVideoClause.ProtoReflect.Descriptor instead.
+func (*ReverseVideoClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{116}
+}
+
+type UnderlineClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *UnderlineClause) Reset() {
+	*x = UnderlineClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[117]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UnderlineClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnderlineClause) ProtoMessage() {}
+
+func (x *UnderlineClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[117]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnderlineClause.ProtoReflect.Descriptor instead.
+func (*UnderlineClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{117}
+}
+
+type SizeClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Size:
+	//
+	//	*SizeClause_Identifier
+	//	*SizeClause_IntegerLiteral
+	Size isSizeClause_Size `protobuf_oneof:"size"`
+}
+
+func (x *SizeClause) Reset() {
+	*x = SizeClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[118]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SizeClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SizeClause) ProtoMessage() {}
+
+func (x *SizeClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[118]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SizeClause.ProtoReflect.Descriptor instead.
+func (*SizeClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{118}
+}
+
+func (m *SizeClause) GetSize() isSizeClause_Size {
+	if m != nil {
+		return m.Size
+	}
+	return nil
+}
+
+func (x *SizeClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetSize().(*SizeClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *SizeClause) GetIntegerLiteral() *IntegerLiteral {
+	if x, ok := x.GetSize().(*SizeClause_IntegerLiteral); ok {
+		return x.IntegerLiteral
+	}
+	return nil
+}
+
+type isSizeClause_Size interface {
+	isSizeClause_Size()
+}
+
+type SizeClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,1,opt,name=identifier,proto3,oneof"`
+}
+
+type SizeClause_IntegerLiteral struct {
+	IntegerLiteral *IntegerLiteral `protobuf:"bytes,2,opt,name=integer_literal,json=integerLiteral,proto3,oneof"`
+}
+
+func (*SizeClause_Identifier) isSizeClause_Size() {}
+
+func (*SizeClause_IntegerLiteral) isSizeClause_Size() {}
+
+type LineClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type LineClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.LineClause_Type" json:"type,omitempty"`
+	// Types that are assignable to Line:
+	//
+	//	*LineClause_Identifier
+	//	*LineClause_IntegerLiteral
+	Line isLineClause_Line `protobuf_oneof:"line"`
+}
+
+func (x *LineClause) Reset() {
+	*x = LineClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[119]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LineClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LineClause) ProtoMessage() {}
+
+func (x *LineClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[119]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LineClause.ProtoReflect.Descriptor instead.
+func (*LineClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *LineClause) GetType() LineClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return LineClause_PLUS
+}
+
+func (m *LineClause) GetLine() isLineClause_Line {
+	if m != nil {
+		return m.Line
+	}
+	return nil
+}
+
+func (x *LineClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetLine().(*LineClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *LineClause) GetIntegerLiteral() *IntegerLiteral {
+	if x, ok := x.GetLine().(*LineClause_IntegerLiteral); ok {
+		return x.IntegerLiteral
+	}
+	return nil
+}
+
+type isLineClause_Line interface {
+	isLineClause_Line()
+}
+
+type LineClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,2,opt,name=identifier,proto3,oneof"`
+}
+
+type LineClause_IntegerLiteral struct {
+	IntegerLiteral *IntegerLiteral `protobuf:"bytes,3,opt,name=integer_literal,json=integerLiteral,proto3,oneof"`
+}
+
+func (*LineClause_Identifier) isLineClause_Line() {}
+
+func (*LineClause_IntegerLiteral) isLineClause_Line() {}
+
+type ColumnClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type ColumnClause_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.ColumnClause_Type" json:"type,omitempty"`
+	// Types that are assignable to Column:
+	//
+	//	*ColumnClause_Identifier
+	//	*ColumnClause_IntegerLiteral
+	Column isColumnClause_Column `protobuf_oneof:"column"`
+}
+
+func (x *ColumnClause) Reset() {
+	*x = ColumnClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[120]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ColumnClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ColumnClause) ProtoMessage() {}
+
+func (x *ColumnClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[120]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ColumnClause.ProtoReflect.Descriptor instead.
+func (*ColumnClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *ColumnClause) GetType() ColumnClause_Type {
+	if x != nil {
+		return x.Type
+	}
+	return ColumnClause_PLUS
+}
+
+func (m *ColumnClause) GetColumn() isColumnClause_Column {
+	if m != nil {
+		return m.Column
+	}
+	return nil
+}
+
+func (x *ColumnClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetColumn().(*ColumnClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *ColumnClause) GetIntegerLiteral() *IntegerLiteral {
+	if x, ok := x.GetColumn().(*ColumnClause_IntegerLiteral); ok {
+		return x.IntegerLiteral
+	}
+	return nil
+}
+
+type isColumnClause_Column interface {
+	isColumnClause_Column()
+}
+
+type ColumnClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,2,opt,name=identifier,proto3,oneof"`
+}
+
+type ColumnClause_IntegerLiteral struct {
+	IntegerLiteral *IntegerLiteral `protobuf:"bytes,3,opt,name=integer_literal,json=integerLiteral,proto3,oneof"`
+}
+
+func (*ColumnClause_Identifier) isColumnClause_Column() {}
+
+func (*ColumnClause_IntegerLiteral) isColumnClause_Column() {}
+
+type ForegroundColorClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to ForegroundColor:
+	//
+	//	*ForegroundColorClause_Identifier
+	//	*ForegroundColorClause_IntegerLiteral
+	ForegroundColor isForegroundColorClause_ForegroundColor `protobuf_oneof:"foreground_color"`
+}
+
+func (x *ForegroundColorClause) Reset() {
+	*x = ForegroundColorClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[121]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ForegroundColorClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForegroundColorClause) ProtoMessage() {}
+
+func (x *ForegroundColorClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[121]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForegroundColorClause.ProtoReflect.Descriptor instead.
+func (*ForegroundColorClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{121}
+}
+
+func (m *ForegroundColorClause) GetForegroundColor() isForegroundColorClause_ForegroundColor {
+	if m != nil {
+		return m.ForegroundColor
+	}
+	return nil
+}
+
+func (x *ForegroundColorClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetForegroundColor().(*ForegroundColorClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *ForegroundColorClause) GetIntegerLiteral() *IntegerLiteral {
+	if x, ok := x.GetForegroundColor().(*ForegroundColorClause_IntegerLiteral); ok {
+		return x.IntegerLiteral
+	}
+	return nil
+}
+
+type isForegroundColorClause_ForegroundColor interface {
+	isForegroundColorClause_ForegroundColor()
+}
+
+type ForegroundColorClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,1,opt,name=identifier,proto3,oneof"`
+}
+
+type ForegroundColorClause_IntegerLiteral struct {
+	IntegerLiteral *IntegerLiteral `protobuf:"bytes,2,opt,name=integer_literal,json=integerLiteral,proto3,oneof"`
+}
+
+func (*ForegroundColorClause_Identifier) isForegroundColorClause_ForegroundColor() {}
+
+func (*ForegroundColorClause_IntegerLiteral) isForegroundColorClause_ForegroundColor() {}
+
+type BackgroundColorClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to BackgroundColor:
+	//
+	//	*BackgroundColorClause_Identifier
+	//	*BackgroundColorClause_IntegerLiteral
+	BackgroundColor isBackgroundColorClause_BackgroundColor `protobuf_oneof:"background_color"`
+}
+
+func (x *BackgroundColorClause) Reset() {
+	*x = BackgroundColorClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[122]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BackgroundColorClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BackgroundColorClause) ProtoMessage() {}
+
+func (x *BackgroundColorClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[122]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BackgroundColorClause.ProtoReflect.Descriptor instead.
+func (*BackgroundColorClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{122}
+}
+
+func (m *BackgroundColorClause) GetBackgroundColor() isBackgroundColorClause_BackgroundColor {
+	if m != nil {
+		return m.BackgroundColor
+	}
+	return nil
+}
+
+func (x *BackgroundColorClause) GetIdentifier() *Identifier {
+	if x, ok := x.GetBackgroundColor().(*BackgroundColorClause_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *BackgroundColorClause) GetIntegerLiteral() *IntegerLiteral {
+	if x, ok := x.GetBackgroundColor().(*BackgroundColorClause_IntegerLiteral); ok {
+		return x.IntegerLiteral
+	}
+	return nil
+}
+
+type isBackgroundColorClause_BackgroundColor interface {
+	isBackgroundColorClause_BackgroundColor()
+}
+
+type BackgroundColorClause_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,1,opt,name=identifier,proto3,oneof"`
+}
+
+type BackgroundColorClause_IntegerLiteral struct {
+	IntegerLiteral *IntegerLiteral `protobuf:"bytes,2,opt,name=integer_literal,json=integerLiteral,proto3,oneof"`
+}
+
+func (*BackgroundColorClause_Identifier) isBackgroundColorClause_BackgroundColor() {}
+
+func (*BackgroundColorClause_IntegerLiteral) isBackgroundColorClause_BackgroundColor() {}
+
+type ControlClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Control *Identifier `protobuf:"bytes,1,opt,name=control,proto3" json:"control,omitempty"`
+}
+
+func (x *ControlClause) Reset() {
+	*x = ControlClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[123]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ControlClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ControlClause) ProtoMessage() {}
+
+func (x *ControlClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[123]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ControlClause.ProtoReflect.Descriptor instead.
+func (*ControlClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{123}
+}
+
+func (x *ControlClause) GetControl() *Identifier {
+	if x != nil {
+		return x.Control
+	}
+	return nil
+}
+
 type ReportSection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -7942,7 +9986,7 @@ type ReportSection struct {
 func (x *ReportSection) Reset() {
 	*x = ReportSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[102]
+		mi := &file_cobol_proto_msgTypes[124]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7955,7 +9999,7 @@ func (x *ReportSection) String() string {
 func (*ReportSection) ProtoMessage() {}
 
 func (x *ReportSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[102]
+	mi := &file_cobol_proto_msgTypes[124]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7968,7 +10012,7 @@ func (x *ReportSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportSection.ProtoReflect.Descriptor instead.
 func (*ReportSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{102}
+	return file_cobol_proto_rawDescGZIP(), []int{124}
 }
 
 func (x *ReportSection) GetReportDescriptions() []*ReportDescription {
@@ -7990,7 +10034,7 @@ type ReportDescription struct {
 func (x *ReportDescription) Reset() {
 	*x = ReportDescription{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[103]
+		mi := &file_cobol_proto_msgTypes[125]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8003,7 +10047,7 @@ func (x *ReportDescription) String() string {
 func (*ReportDescription) ProtoMessage() {}
 
 func (x *ReportDescription) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[103]
+	mi := &file_cobol_proto_msgTypes[125]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8016,7 +10060,7 @@ func (x *ReportDescription) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportDescription.ProtoReflect.Descriptor instead.
 func (*ReportDescription) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{103}
+	return file_cobol_proto_rawDescGZIP(), []int{125}
 }
 
 func (x *ReportDescription) GetReportDescriptionEntry() *ReportDescriptionEntry {
@@ -8050,7 +10094,7 @@ type ReportDescriptionEntry struct {
 func (x *ReportDescriptionEntry) Reset() {
 	*x = ReportDescriptionEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[104]
+		mi := &file_cobol_proto_msgTypes[126]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8063,7 +10107,7 @@ func (x *ReportDescriptionEntry) String() string {
 func (*ReportDescriptionEntry) ProtoMessage() {}
 
 func (x *ReportDescriptionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[104]
+	mi := &file_cobol_proto_msgTypes[126]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8076,7 +10120,7 @@ func (x *ReportDescriptionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportDescriptionEntry.ProtoReflect.Descriptor instead.
 func (*ReportDescriptionEntry) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{104}
+	return file_cobol_proto_rawDescGZIP(), []int{126}
 }
 
 func (x *ReportDescriptionEntry) GetReportName() *ReportName {
@@ -8139,7 +10183,7 @@ type PageLimitClause struct {
 func (x *PageLimitClause) Reset() {
 	*x = PageLimitClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[105]
+		mi := &file_cobol_proto_msgTypes[127]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8152,7 +10196,7 @@ func (x *PageLimitClause) String() string {
 func (*PageLimitClause) ProtoMessage() {}
 
 func (x *PageLimitClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[105]
+	mi := &file_cobol_proto_msgTypes[127]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8165,7 +10209,7 @@ func (x *PageLimitClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PageLimitClause.ProtoReflect.Descriptor instead.
 func (*PageLimitClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{105}
+	return file_cobol_proto_rawDescGZIP(), []int{127}
 }
 
 func (x *PageLimitClause) GetPage() *IntegerLiteral {
@@ -8186,7 +10230,7 @@ type HeadingClause struct {
 func (x *HeadingClause) Reset() {
 	*x = HeadingClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[106]
+		mi := &file_cobol_proto_msgTypes[128]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8199,7 +10243,7 @@ func (x *HeadingClause) String() string {
 func (*HeadingClause) ProtoMessage() {}
 
 func (x *HeadingClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[106]
+	mi := &file_cobol_proto_msgTypes[128]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8212,7 +10256,7 @@ func (x *HeadingClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeadingClause.ProtoReflect.Descriptor instead.
 func (*HeadingClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{106}
+	return file_cobol_proto_rawDescGZIP(), []int{128}
 }
 
 func (x *HeadingClause) GetHeading() *IntegerLiteral {
@@ -8233,7 +10277,7 @@ type FirstDetailClause struct {
 func (x *FirstDetailClause) Reset() {
 	*x = FirstDetailClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[107]
+		mi := &file_cobol_proto_msgTypes[129]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8246,7 +10290,7 @@ func (x *FirstDetailClause) String() string {
 func (*FirstDetailClause) ProtoMessage() {}
 
 func (x *FirstDetailClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[107]
+	mi := &file_cobol_proto_msgTypes[129]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8259,7 +10303,7 @@ func (x *FirstDetailClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FirstDetailClause.ProtoReflect.Descriptor instead.
 func (*FirstDetailClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{107}
+	return file_cobol_proto_rawDescGZIP(), []int{129}
 }
 
 func (x *FirstDetailClause) GetFirstDetail() *IntegerLiteral {
@@ -8280,7 +10324,7 @@ type LastDetailClause struct {
 func (x *LastDetailClause) Reset() {
 	*x = LastDetailClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[108]
+		mi := &file_cobol_proto_msgTypes[130]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8293,7 +10337,7 @@ func (x *LastDetailClause) String() string {
 func (*LastDetailClause) ProtoMessage() {}
 
 func (x *LastDetailClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[108]
+	mi := &file_cobol_proto_msgTypes[130]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8306,7 +10350,7 @@ func (x *LastDetailClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LastDetailClause.ProtoReflect.Descriptor instead.
 func (*LastDetailClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{108}
+	return file_cobol_proto_rawDescGZIP(), []int{130}
 }
 
 func (x *LastDetailClause) GetLastDetail() *IntegerLiteral {
@@ -8327,7 +10371,7 @@ type FootingClause struct {
 func (x *FootingClause) Reset() {
 	*x = FootingClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[109]
+		mi := &file_cobol_proto_msgTypes[131]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8340,7 +10384,7 @@ func (x *FootingClause) String() string {
 func (*FootingClause) ProtoMessage() {}
 
 func (x *FootingClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[109]
+	mi := &file_cobol_proto_msgTypes[131]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8353,7 +10397,7 @@ func (x *FootingClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FootingClause.ProtoReflect.Descriptor instead.
 func (*FootingClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{109}
+	return file_cobol_proto_rawDescGZIP(), []int{131}
 }
 
 func (x *FootingClause) GetFooting() *IntegerLiteral {
@@ -8381,7 +10425,7 @@ type ReportGroupDescriptionEntry struct {
 func (x *ReportGroupDescriptionEntry) Reset() {
 	*x = ReportGroupDescriptionEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[110]
+		mi := &file_cobol_proto_msgTypes[132]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8394,7 +10438,7 @@ func (x *ReportGroupDescriptionEntry) String() string {
 func (*ReportGroupDescriptionEntry) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[110]
+	mi := &file_cobol_proto_msgTypes[132]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8407,7 +10451,7 @@ func (x *ReportGroupDescriptionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportGroupDescriptionEntry.ProtoReflect.Descriptor instead.
 func (*ReportGroupDescriptionEntry) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{110}
+	return file_cobol_proto_rawDescGZIP(), []int{132}
 }
 
 func (x *ReportGroupDescriptionEntry) GetIntegerLiteral() *IntegerLiteral {
@@ -8489,7 +10533,7 @@ type ResetClause struct {
 func (x *ResetClause) Reset() {
 	*x = ResetClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[111]
+		mi := &file_cobol_proto_msgTypes[133]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8502,7 +10546,7 @@ func (x *ResetClause) String() string {
 func (*ResetClause) ProtoMessage() {}
 
 func (x *ResetClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[111]
+	mi := &file_cobol_proto_msgTypes[133]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8515,7 +10559,7 @@ func (x *ResetClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetClause.ProtoReflect.Descriptor instead.
 func (*ResetClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{111}
+	return file_cobol_proto_rawDescGZIP(), []int{133}
 }
 
 func (m *ResetClause) GetOneOf() isResetClause_OneOf {
@@ -8567,7 +10611,7 @@ type SumClause struct {
 func (x *SumClause) Reset() {
 	*x = SumClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[112]
+		mi := &file_cobol_proto_msgTypes[134]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8580,7 +10624,7 @@ func (x *SumClause) String() string {
 func (*SumClause) ProtoMessage() {}
 
 func (x *SumClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[112]
+	mi := &file_cobol_proto_msgTypes[134]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8593,7 +10637,7 @@ func (x *SumClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SumClause.ProtoReflect.Descriptor instead.
 func (*SumClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{112}
+	return file_cobol_proto_rawDescGZIP(), []int{134}
 }
 
 func (x *SumClause) GetSums() []*Identifier {
@@ -8621,7 +10665,7 @@ type ValueClause struct {
 func (x *ValueClause) Reset() {
 	*x = ValueClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[113]
+		mi := &file_cobol_proto_msgTypes[135]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8634,7 +10678,7 @@ func (x *ValueClause) String() string {
 func (*ValueClause) ProtoMessage() {}
 
 func (x *ValueClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[113]
+	mi := &file_cobol_proto_msgTypes[135]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8647,7 +10691,7 @@ func (x *ValueClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValueClause.ProtoReflect.Descriptor instead.
 func (*ValueClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{113}
+	return file_cobol_proto_rawDescGZIP(), []int{135}
 }
 
 func (x *ValueClause) GetValue() *Literal {
@@ -8668,7 +10712,7 @@ type SourceClause struct {
 func (x *SourceClause) Reset() {
 	*x = SourceClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[114]
+		mi := &file_cobol_proto_msgTypes[136]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8681,7 +10725,7 @@ func (x *SourceClause) String() string {
 func (*SourceClause) ProtoMessage() {}
 
 func (x *SourceClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[114]
+	mi := &file_cobol_proto_msgTypes[136]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8694,7 +10738,7 @@ func (x *SourceClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SourceClause.ProtoReflect.Descriptor instead.
 func (*SourceClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{114}
+	return file_cobol_proto_rawDescGZIP(), []int{136}
 }
 
 func (x *SourceClause) GetSource() *Identifier {
@@ -8713,7 +10757,7 @@ type IndicateClause struct {
 func (x *IndicateClause) Reset() {
 	*x = IndicateClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[115]
+		mi := &file_cobol_proto_msgTypes[137]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8726,7 +10770,7 @@ func (x *IndicateClause) String() string {
 func (*IndicateClause) ProtoMessage() {}
 
 func (x *IndicateClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[115]
+	mi := &file_cobol_proto_msgTypes[137]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8739,7 +10783,7 @@ func (x *IndicateClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IndicateClause.ProtoReflect.Descriptor instead.
 func (*IndicateClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{115}
+	return file_cobol_proto_rawDescGZIP(), []int{137}
 }
 
 type ColumnNumberClause struct {
@@ -8753,7 +10797,7 @@ type ColumnNumberClause struct {
 func (x *ColumnNumberClause) Reset() {
 	*x = ColumnNumberClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[116]
+		mi := &file_cobol_proto_msgTypes[138]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8766,7 +10810,7 @@ func (x *ColumnNumberClause) String() string {
 func (*ColumnNumberClause) ProtoMessage() {}
 
 func (x *ColumnNumberClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[116]
+	mi := &file_cobol_proto_msgTypes[138]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8779,7 +10823,7 @@ func (x *ColumnNumberClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ColumnNumberClause.ProtoReflect.Descriptor instead.
 func (*ColumnNumberClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{116}
+	return file_cobol_proto_rawDescGZIP(), []int{138}
 }
 
 func (x *ColumnNumberClause) GetColumnNumber() *IntegerLiteral {
@@ -8798,7 +10842,7 @@ type BlankWhenZeroClause struct {
 func (x *BlankWhenZeroClause) Reset() {
 	*x = BlankWhenZeroClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[117]
+		mi := &file_cobol_proto_msgTypes[139]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8811,7 +10855,7 @@ func (x *BlankWhenZeroClause) String() string {
 func (*BlankWhenZeroClause) ProtoMessage() {}
 
 func (x *BlankWhenZeroClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[117]
+	mi := &file_cobol_proto_msgTypes[139]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8824,7 +10868,7 @@ func (x *BlankWhenZeroClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlankWhenZeroClause.ProtoReflect.Descriptor instead.
 func (*BlankWhenZeroClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{117}
+	return file_cobol_proto_rawDescGZIP(), []int{139}
 }
 
 type JustifiedClause struct {
@@ -8838,7 +10882,7 @@ type JustifiedClause struct {
 func (x *JustifiedClause) Reset() {
 	*x = JustifiedClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[118]
+		mi := &file_cobol_proto_msgTypes[140]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8851,7 +10895,7 @@ func (x *JustifiedClause) String() string {
 func (*JustifiedClause) ProtoMessage() {}
 
 func (x *JustifiedClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[118]
+	mi := &file_cobol_proto_msgTypes[140]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8864,7 +10908,7 @@ func (x *JustifiedClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JustifiedClause.ProtoReflect.Descriptor instead.
 func (*JustifiedClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{118}
+	return file_cobol_proto_rawDescGZIP(), []int{140}
 }
 
 func (x *JustifiedClause) GetRight() bool {
@@ -8885,7 +10929,7 @@ type SignClause struct {
 func (x *SignClause) Reset() {
 	*x = SignClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[119]
+		mi := &file_cobol_proto_msgTypes[141]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8898,7 +10942,7 @@ func (x *SignClause) String() string {
 func (*SignClause) ProtoMessage() {}
 
 func (x *SignClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[119]
+	mi := &file_cobol_proto_msgTypes[141]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8911,7 +10955,7 @@ func (x *SignClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignClause.ProtoReflect.Descriptor instead.
 func (*SignClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{119}
+	return file_cobol_proto_rawDescGZIP(), []int{141}
 }
 
 func (x *SignClause) GetType() SignClause_Type {
@@ -8932,7 +10976,7 @@ type PictureClause struct {
 func (x *PictureClause) Reset() {
 	*x = PictureClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[120]
+		mi := &file_cobol_proto_msgTypes[142]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8945,7 +10989,7 @@ func (x *PictureClause) String() string {
 func (*PictureClause) ProtoMessage() {}
 
 func (x *PictureClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[120]
+	mi := &file_cobol_proto_msgTypes[142]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8958,7 +11002,7 @@ func (x *PictureClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PictureClause.ProtoReflect.Descriptor instead.
 func (*PictureClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{120}
+	return file_cobol_proto_rawDescGZIP(), []int{142}
 }
 
 func (x *PictureClause) GetPictureString() *PictureString {
@@ -8983,7 +11027,7 @@ type LineNumberClause struct {
 func (x *LineNumberClause) Reset() {
 	*x = LineNumberClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[121]
+		mi := &file_cobol_proto_msgTypes[143]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8996,7 +11040,7 @@ func (x *LineNumberClause) String() string {
 func (*LineNumberClause) ProtoMessage() {}
 
 func (x *LineNumberClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[121]
+	mi := &file_cobol_proto_msgTypes[143]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9009,7 +11053,7 @@ func (x *LineNumberClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LineNumberClause.ProtoReflect.Descriptor instead.
 func (*LineNumberClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{121}
+	return file_cobol_proto_rawDescGZIP(), []int{143}
 }
 
 func (m *LineNumberClause) GetOneOf() isLineNumberClause_OneOf {
@@ -9065,7 +11109,7 @@ type NextGroupClause struct {
 func (x *NextGroupClause) Reset() {
 	*x = NextGroupClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[122]
+		mi := &file_cobol_proto_msgTypes[144]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9078,7 +11122,7 @@ func (x *NextGroupClause) String() string {
 func (*NextGroupClause) ProtoMessage() {}
 
 func (x *NextGroupClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[122]
+	mi := &file_cobol_proto_msgTypes[144]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9091,7 +11135,7 @@ func (x *NextGroupClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NextGroupClause.ProtoReflect.Descriptor instead.
 func (*NextGroupClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{122}
+	return file_cobol_proto_rawDescGZIP(), []int{144}
 }
 
 func (m *NextGroupClause) GetOneOf() isNextGroupClause_OneOf {
@@ -9164,7 +11208,7 @@ type TypeClause struct {
 func (x *TypeClause) Reset() {
 	*x = TypeClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[123]
+		mi := &file_cobol_proto_msgTypes[145]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9177,7 +11221,7 @@ func (x *TypeClause) String() string {
 func (*TypeClause) ProtoMessage() {}
 
 func (x *TypeClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[123]
+	mi := &file_cobol_proto_msgTypes[145]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9190,7 +11234,7 @@ func (x *TypeClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause.ProtoReflect.Descriptor instead.
 func (*TypeClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123}
+	return file_cobol_proto_rawDescGZIP(), []int{145}
 }
 
 func (m *TypeClause) GetType() isTypeClause_Type {
@@ -9304,7 +11348,7 @@ type UsageClause struct {
 func (x *UsageClause) Reset() {
 	*x = UsageClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[124]
+		mi := &file_cobol_proto_msgTypes[146]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9317,7 +11361,7 @@ func (x *UsageClause) String() string {
 func (*UsageClause) ProtoMessage() {}
 
 func (x *UsageClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[124]
+	mi := &file_cobol_proto_msgTypes[146]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9330,7 +11374,7 @@ func (x *UsageClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UsageClause.ProtoReflect.Descriptor instead.
 func (*UsageClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{124}
+	return file_cobol_proto_rawDescGZIP(), []int{146}
 }
 
 type ProgramLibrarySection struct {
@@ -9344,7 +11388,7 @@ type ProgramLibrarySection struct {
 func (x *ProgramLibrarySection) Reset() {
 	*x = ProgramLibrarySection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[125]
+		mi := &file_cobol_proto_msgTypes[147]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9357,7 +11401,7 @@ func (x *ProgramLibrarySection) String() string {
 func (*ProgramLibrarySection) ProtoMessage() {}
 
 func (x *ProgramLibrarySection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[125]
+	mi := &file_cobol_proto_msgTypes[147]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9370,7 +11414,7 @@ func (x *ProgramLibrarySection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProgramLibrarySection.ProtoReflect.Descriptor instead.
 func (*ProgramLibrarySection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{125}
+	return file_cobol_proto_rawDescGZIP(), []int{147}
 }
 
 func (x *ProgramLibrarySection) GetLibraryDescriptionEntries() []*LibraryDescriptionEntry {
@@ -9396,7 +11440,7 @@ type LibraryDescriptionEntry struct {
 func (x *LibraryDescriptionEntry) Reset() {
 	*x = LibraryDescriptionEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[126]
+		mi := &file_cobol_proto_msgTypes[148]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9409,7 +11453,7 @@ func (x *LibraryDescriptionEntry) String() string {
 func (*LibraryDescriptionEntry) ProtoMessage() {}
 
 func (x *LibraryDescriptionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[126]
+	mi := &file_cobol_proto_msgTypes[148]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9422,7 +11466,7 @@ func (x *LibraryDescriptionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LibraryDescriptionEntry.ProtoReflect.Descriptor instead.
 func (*LibraryDescriptionEntry) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{126}
+	return file_cobol_proto_rawDescGZIP(), []int{148}
 }
 
 func (x *LibraryDescriptionEntry) GetLibraryName() *LibraryName {
@@ -9478,7 +11522,7 @@ type IsCommonClause struct {
 func (x *IsCommonClause) Reset() {
 	*x = IsCommonClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[127]
+		mi := &file_cobol_proto_msgTypes[149]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9491,7 +11535,7 @@ func (x *IsCommonClause) String() string {
 func (*IsCommonClause) ProtoMessage() {}
 
 func (x *IsCommonClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[127]
+	mi := &file_cobol_proto_msgTypes[149]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9504,7 +11548,7 @@ func (x *IsCommonClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IsCommonClause.ProtoReflect.Descriptor instead.
 func (*IsCommonClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{127}
+	return file_cobol_proto_rawDescGZIP(), []int{149}
 }
 
 type AttributeClause1 struct {
@@ -9518,7 +11562,7 @@ type AttributeClause1 struct {
 func (x *AttributeClause1) Reset() {
 	*x = AttributeClause1{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[128]
+		mi := &file_cobol_proto_msgTypes[150]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9531,7 +11575,7 @@ func (x *AttributeClause1) String() string {
 func (*AttributeClause1) ProtoMessage() {}
 
 func (x *AttributeClause1) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[128]
+	mi := &file_cobol_proto_msgTypes[150]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9544,7 +11588,7 @@ func (x *AttributeClause1) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttributeClause1.ProtoReflect.Descriptor instead.
 func (*AttributeClause1) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{128}
+	return file_cobol_proto_rawDescGZIP(), []int{150}
 }
 
 func (x *AttributeClause1) GetSharing() AttributeClause1_Sharing {
@@ -9568,7 +11612,7 @@ type AttributeClause2 struct {
 func (x *AttributeClause2) Reset() {
 	*x = AttributeClause2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[129]
+		mi := &file_cobol_proto_msgTypes[151]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9581,7 +11625,7 @@ func (x *AttributeClause2) String() string {
 func (*AttributeClause2) ProtoMessage() {}
 
 func (x *AttributeClause2) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[129]
+	mi := &file_cobol_proto_msgTypes[151]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9594,7 +11638,7 @@ func (x *AttributeClause2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttributeClause2.ProtoReflect.Descriptor instead.
 func (*AttributeClause2) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{129}
+	return file_cobol_proto_rawDescGZIP(), []int{151}
 }
 
 func (x *AttributeClause2) GetFunctionName() *Literal {
@@ -9637,7 +11681,7 @@ type ProcedureClause1 struct {
 func (x *ProcedureClause1) Reset() {
 	*x = ProcedureClause1{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[130]
+		mi := &file_cobol_proto_msgTypes[152]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9650,7 +11694,7 @@ func (x *ProcedureClause1) String() string {
 func (*ProcedureClause1) ProtoMessage() {}
 
 func (x *ProcedureClause1) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[130]
+	mi := &file_cobol_proto_msgTypes[152]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9663,7 +11707,7 @@ func (x *ProcedureClause1) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureClause1.ProtoReflect.Descriptor instead.
 func (*ProcedureClause1) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{130}
+	return file_cobol_proto_rawDescGZIP(), []int{152}
 }
 
 func (x *ProcedureClause1) GetProgramName() *ProgramName {
@@ -9695,7 +11739,7 @@ type ProcedureClause2 struct {
 func (x *ProcedureClause2) Reset() {
 	*x = ProcedureClause2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[131]
+		mi := &file_cobol_proto_msgTypes[153]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9708,7 +11752,7 @@ func (x *ProcedureClause2) String() string {
 func (*ProcedureClause2) ProtoMessage() {}
 
 func (x *ProcedureClause2) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[131]
+	mi := &file_cobol_proto_msgTypes[153]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9721,7 +11765,7 @@ func (x *ProcedureClause2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureClause2.ProtoReflect.Descriptor instead.
 func (*ProcedureClause2) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{131}
+	return file_cobol_proto_rawDescGZIP(), []int{153}
 }
 
 func (x *ProcedureClause2) GetProgramName() *ProgramName {
@@ -9771,7 +11815,7 @@ type LocalStorageSection struct {
 func (x *LocalStorageSection) Reset() {
 	*x = LocalStorageSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[132]
+		mi := &file_cobol_proto_msgTypes[154]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9784,7 +11828,7 @@ func (x *LocalStorageSection) String() string {
 func (*LocalStorageSection) ProtoMessage() {}
 
 func (x *LocalStorageSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[132]
+	mi := &file_cobol_proto_msgTypes[154]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9797,7 +11841,7 @@ func (x *LocalStorageSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalStorageSection.ProtoReflect.Descriptor instead.
 func (*LocalStorageSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{132}
+	return file_cobol_proto_rawDescGZIP(), []int{154}
 }
 
 func (x *LocalStorageSection) GetDataDescriptionEntries() []*DataDescriptionEntry {
@@ -9825,7 +11869,7 @@ type LinkageSection struct {
 func (x *LinkageSection) Reset() {
 	*x = LinkageSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[133]
+		mi := &file_cobol_proto_msgTypes[155]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9838,7 +11882,7 @@ func (x *LinkageSection) String() string {
 func (*LinkageSection) ProtoMessage() {}
 
 func (x *LinkageSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[133]
+	mi := &file_cobol_proto_msgTypes[155]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9851,7 +11895,7 @@ func (x *LinkageSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LinkageSection.ProtoReflect.Descriptor instead.
 func (*LinkageSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{133}
+	return file_cobol_proto_rawDescGZIP(), []int{155}
 }
 
 func (x *LinkageSection) GetDataDescriptionEntries() []*DataDescriptionEntry {
@@ -9873,7 +11917,7 @@ type CommunicationSection struct {
 func (x *CommunicationSection) Reset() {
 	*x = CommunicationSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[134]
+		mi := &file_cobol_proto_msgTypes[156]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9886,7 +11930,7 @@ func (x *CommunicationSection) String() string {
 func (*CommunicationSection) ProtoMessage() {}
 
 func (x *CommunicationSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[134]
+	mi := &file_cobol_proto_msgTypes[156]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9899,7 +11943,7 @@ func (x *CommunicationSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommunicationSection.ProtoReflect.Descriptor instead.
 func (*CommunicationSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{134}
+	return file_cobol_proto_rawDescGZIP(), []int{156}
 }
 
 func (x *CommunicationSection) GetCommunicationDescriptionEntries() []*CommunicationDescriptionEntry {
@@ -9933,7 +11977,7 @@ type CommunicationDescriptionEntry struct {
 func (x *CommunicationDescriptionEntry) Reset() {
 	*x = CommunicationDescriptionEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[135]
+		mi := &file_cobol_proto_msgTypes[157]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9946,7 +11990,7 @@ func (x *CommunicationDescriptionEntry) String() string {
 func (*CommunicationDescriptionEntry) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[135]
+	mi := &file_cobol_proto_msgTypes[157]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9959,7 +12003,7 @@ func (x *CommunicationDescriptionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommunicationDescriptionEntry.ProtoReflect.Descriptor instead.
 func (*CommunicationDescriptionEntry) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{135}
+	return file_cobol_proto_rawDescGZIP(), []int{157}
 }
 
 func (x *CommunicationDescriptionEntry) GetCdName() *CdName {
@@ -10030,7 +12074,7 @@ type SymbolicTerminalClause struct {
 func (x *SymbolicTerminalClause) Reset() {
 	*x = SymbolicTerminalClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[136]
+		mi := &file_cobol_proto_msgTypes[158]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10043,7 +12087,7 @@ func (x *SymbolicTerminalClause) String() string {
 func (*SymbolicTerminalClause) ProtoMessage() {}
 
 func (x *SymbolicTerminalClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[136]
+	mi := &file_cobol_proto_msgTypes[158]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10056,7 +12100,7 @@ func (x *SymbolicTerminalClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicTerminalClause.ProtoReflect.Descriptor instead.
 func (*SymbolicTerminalClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{136}
+	return file_cobol_proto_rawDescGZIP(), []int{158}
 }
 
 func (x *SymbolicTerminalClause) GetDataDescName() *DataDescName {
@@ -10077,7 +12121,7 @@ type SymbolicDestinationClause struct {
 func (x *SymbolicDestinationClause) Reset() {
 	*x = SymbolicDestinationClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[137]
+		mi := &file_cobol_proto_msgTypes[159]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10090,7 +12134,7 @@ func (x *SymbolicDestinationClause) String() string {
 func (*SymbolicDestinationClause) ProtoMessage() {}
 
 func (x *SymbolicDestinationClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[137]
+	mi := &file_cobol_proto_msgTypes[159]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10103,7 +12147,7 @@ func (x *SymbolicDestinationClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicDestinationClause.ProtoReflect.Descriptor instead.
 func (*SymbolicDestinationClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{137}
+	return file_cobol_proto_rawDescGZIP(), []int{159}
 }
 
 func (x *SymbolicDestinationClause) GetDataDescName() *DataDescName {
@@ -10124,7 +12168,7 @@ type ErrorKeyClause struct {
 func (x *ErrorKeyClause) Reset() {
 	*x = ErrorKeyClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[138]
+		mi := &file_cobol_proto_msgTypes[160]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10137,7 +12181,7 @@ func (x *ErrorKeyClause) String() string {
 func (*ErrorKeyClause) ProtoMessage() {}
 
 func (x *ErrorKeyClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[138]
+	mi := &file_cobol_proto_msgTypes[160]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10150,7 +12194,7 @@ func (x *ErrorKeyClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ErrorKeyClause.ProtoReflect.Descriptor instead.
 func (*ErrorKeyClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{138}
+	return file_cobol_proto_rawDescGZIP(), []int{160}
 }
 
 func (x *ErrorKeyClause) GetDataDescName() *DataDescName {
@@ -10172,7 +12216,7 @@ type DestinationTableClause struct {
 func (x *DestinationTableClause) Reset() {
 	*x = DestinationTableClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[139]
+		mi := &file_cobol_proto_msgTypes[161]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10185,7 +12229,7 @@ func (x *DestinationTableClause) String() string {
 func (*DestinationTableClause) ProtoMessage() {}
 
 func (x *DestinationTableClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[139]
+	mi := &file_cobol_proto_msgTypes[161]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10198,7 +12242,7 @@ func (x *DestinationTableClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DestinationTableClause.ProtoReflect.Descriptor instead.
 func (*DestinationTableClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{139}
+	return file_cobol_proto_rawDescGZIP(), []int{161}
 }
 
 func (x *DestinationTableClause) GetTimes() *IntegerLiteral {
@@ -10226,7 +12270,7 @@ type DestinationCountClause struct {
 func (x *DestinationCountClause) Reset() {
 	*x = DestinationCountClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[140]
+		mi := &file_cobol_proto_msgTypes[162]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10239,7 +12283,7 @@ func (x *DestinationCountClause) String() string {
 func (*DestinationCountClause) ProtoMessage() {}
 
 func (x *DestinationCountClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[140]
+	mi := &file_cobol_proto_msgTypes[162]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10252,7 +12296,7 @@ func (x *DestinationCountClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DestinationCountClause.ProtoReflect.Descriptor instead.
 func (*DestinationCountClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{140}
+	return file_cobol_proto_rawDescGZIP(), []int{162}
 }
 
 func (x *DestinationCountClause) GetDataDescName() *DataDescName {
@@ -10273,7 +12317,7 @@ type SymbolicQueueClause struct {
 func (x *SymbolicQueueClause) Reset() {
 	*x = SymbolicQueueClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[141]
+		mi := &file_cobol_proto_msgTypes[163]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10286,7 +12330,7 @@ func (x *SymbolicQueueClause) String() string {
 func (*SymbolicQueueClause) ProtoMessage() {}
 
 func (x *SymbolicQueueClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[141]
+	mi := &file_cobol_proto_msgTypes[163]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10299,7 +12343,7 @@ func (x *SymbolicQueueClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicQueueClause.ProtoReflect.Descriptor instead.
 func (*SymbolicQueueClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{141}
+	return file_cobol_proto_rawDescGZIP(), []int{163}
 }
 
 func (x *SymbolicQueueClause) GetDataDescName() *DataDescName {
@@ -10320,7 +12364,7 @@ type SymbolicSubQueueClause struct {
 func (x *SymbolicSubQueueClause) Reset() {
 	*x = SymbolicSubQueueClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[142]
+		mi := &file_cobol_proto_msgTypes[164]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10333,7 +12377,7 @@ func (x *SymbolicSubQueueClause) String() string {
 func (*SymbolicSubQueueClause) ProtoMessage() {}
 
 func (x *SymbolicSubQueueClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[142]
+	mi := &file_cobol_proto_msgTypes[164]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10346,7 +12390,7 @@ func (x *SymbolicSubQueueClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicSubQueueClause.ProtoReflect.Descriptor instead.
 func (*SymbolicSubQueueClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{142}
+	return file_cobol_proto_rawDescGZIP(), []int{164}
 }
 
 func (x *SymbolicSubQueueClause) GetDataDescName() *DataDescName {
@@ -10367,7 +12411,7 @@ type MessageDateClause struct {
 func (x *MessageDateClause) Reset() {
 	*x = MessageDateClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[143]
+		mi := &file_cobol_proto_msgTypes[165]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10380,7 +12424,7 @@ func (x *MessageDateClause) String() string {
 func (*MessageDateClause) ProtoMessage() {}
 
 func (x *MessageDateClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[143]
+	mi := &file_cobol_proto_msgTypes[165]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10393,7 +12437,7 @@ func (x *MessageDateClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MessageDateClause.ProtoReflect.Descriptor instead.
 func (*MessageDateClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{143}
+	return file_cobol_proto_rawDescGZIP(), []int{165}
 }
 
 func (x *MessageDateClause) GetDataDescName() *DataDescName {
@@ -10414,7 +12458,7 @@ type MessageTimeClause struct {
 func (x *MessageTimeClause) Reset() {
 	*x = MessageTimeClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[144]
+		mi := &file_cobol_proto_msgTypes[166]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10427,7 +12471,7 @@ func (x *MessageTimeClause) String() string {
 func (*MessageTimeClause) ProtoMessage() {}
 
 func (x *MessageTimeClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[144]
+	mi := &file_cobol_proto_msgTypes[166]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10440,7 +12484,7 @@ func (x *MessageTimeClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MessageTimeClause.ProtoReflect.Descriptor instead.
 func (*MessageTimeClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{144}
+	return file_cobol_proto_rawDescGZIP(), []int{166}
 }
 
 func (x *MessageTimeClause) GetDataDescName() *DataDescName {
@@ -10461,7 +12505,7 @@ type SymbolicSourceClause struct {
 func (x *SymbolicSourceClause) Reset() {
 	*x = SymbolicSourceClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[145]
+		mi := &file_cobol_proto_msgTypes[167]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10474,7 +12518,7 @@ func (x *SymbolicSourceClause) String() string {
 func (*SymbolicSourceClause) ProtoMessage() {}
 
 func (x *SymbolicSourceClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[145]
+	mi := &file_cobol_proto_msgTypes[167]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10487,7 +12531,7 @@ func (x *SymbolicSourceClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicSourceClause.ProtoReflect.Descriptor instead.
 func (*SymbolicSourceClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{145}
+	return file_cobol_proto_rawDescGZIP(), []int{167}
 }
 
 func (x *SymbolicSourceClause) GetDataDescName() *DataDescName {
@@ -10508,7 +12552,7 @@ type TextLengthClause struct {
 func (x *TextLengthClause) Reset() {
 	*x = TextLengthClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[146]
+		mi := &file_cobol_proto_msgTypes[168]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10521,7 +12565,7 @@ func (x *TextLengthClause) String() string {
 func (*TextLengthClause) ProtoMessage() {}
 
 func (x *TextLengthClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[146]
+	mi := &file_cobol_proto_msgTypes[168]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10534,7 +12578,7 @@ func (x *TextLengthClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TextLengthClause.ProtoReflect.Descriptor instead.
 func (*TextLengthClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{146}
+	return file_cobol_proto_rawDescGZIP(), []int{168}
 }
 
 func (x *TextLengthClause) GetDataDescName() *DataDescName {
@@ -10555,7 +12599,7 @@ type EndKeyClause struct {
 func (x *EndKeyClause) Reset() {
 	*x = EndKeyClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[147]
+		mi := &file_cobol_proto_msgTypes[169]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10568,7 +12612,7 @@ func (x *EndKeyClause) String() string {
 func (*EndKeyClause) ProtoMessage() {}
 
 func (x *EndKeyClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[147]
+	mi := &file_cobol_proto_msgTypes[169]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10581,7 +12625,7 @@ func (x *EndKeyClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EndKeyClause.ProtoReflect.Descriptor instead.
 func (*EndKeyClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{147}
+	return file_cobol_proto_rawDescGZIP(), []int{169}
 }
 
 func (x *EndKeyClause) GetDataDescName() *DataDescName {
@@ -10602,7 +12646,7 @@ type StatusKeyClause struct {
 func (x *StatusKeyClause) Reset() {
 	*x = StatusKeyClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[148]
+		mi := &file_cobol_proto_msgTypes[170]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10615,7 +12659,7 @@ func (x *StatusKeyClause) String() string {
 func (*StatusKeyClause) ProtoMessage() {}
 
 func (x *StatusKeyClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[148]
+	mi := &file_cobol_proto_msgTypes[170]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10628,7 +12672,7 @@ func (x *StatusKeyClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusKeyClause.ProtoReflect.Descriptor instead.
 func (*StatusKeyClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{148}
+	return file_cobol_proto_rawDescGZIP(), []int{170}
 }
 
 func (x *StatusKeyClause) GetDataDescName() *DataDescName {
@@ -10649,7 +12693,7 @@ type MessageCountClause struct {
 func (x *MessageCountClause) Reset() {
 	*x = MessageCountClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[149]
+		mi := &file_cobol_proto_msgTypes[171]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10662,7 +12706,7 @@ func (x *MessageCountClause) String() string {
 func (*MessageCountClause) ProtoMessage() {}
 
 func (x *MessageCountClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[149]
+	mi := &file_cobol_proto_msgTypes[171]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10675,7 +12719,7 @@ func (x *MessageCountClause) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MessageCountClause.ProtoReflect.Descriptor instead.
 func (*MessageCountClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{149}
+	return file_cobol_proto_rawDescGZIP(), []int{171}
 }
 
 func (x *MessageCountClause) GetDataDescName() *DataDescName {
@@ -10696,7 +12740,7 @@ type DataBaseSection struct {
 func (x *DataBaseSection) Reset() {
 	*x = DataBaseSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[150]
+		mi := &file_cobol_proto_msgTypes[172]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10709,7 +12753,7 @@ func (x *DataBaseSection) String() string {
 func (*DataBaseSection) ProtoMessage() {}
 
 func (x *DataBaseSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[150]
+	mi := &file_cobol_proto_msgTypes[172]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10722,7 +12766,7 @@ func (x *DataBaseSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataBaseSection.ProtoReflect.Descriptor instead.
 func (*DataBaseSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{150}
+	return file_cobol_proto_rawDescGZIP(), []int{172}
 }
 
 func (x *DataBaseSection) GetDataBaseSectionEntries() []*DataBaseSectionEntry {
@@ -10745,7 +12789,7 @@ type DataBaseSectionEntry struct {
 func (x *DataBaseSectionEntry) Reset() {
 	*x = DataBaseSectionEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[151]
+		mi := &file_cobol_proto_msgTypes[173]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10758,7 +12802,7 @@ func (x *DataBaseSectionEntry) String() string {
 func (*DataBaseSectionEntry) ProtoMessage() {}
 
 func (x *DataBaseSectionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[151]
+	mi := &file_cobol_proto_msgTypes[173]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10771,7 +12815,7 @@ func (x *DataBaseSectionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataBaseSectionEntry.ProtoReflect.Descriptor instead.
 func (*DataBaseSectionEntry) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{151}
+	return file_cobol_proto_rawDescGZIP(), []int{173}
 }
 
 func (x *DataBaseSectionEntry) GetIntegerLiteral() *IntegerLiteral {
@@ -10804,7 +12848,7 @@ type ProcedureDivision struct {
 func (x *ProcedureDivision) Reset() {
 	*x = ProcedureDivision{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[152]
+		mi := &file_cobol_proto_msgTypes[174]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10817,7 +12861,7 @@ func (x *ProcedureDivision) String() string {
 func (*ProcedureDivision) ProtoMessage() {}
 
 func (x *ProcedureDivision) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[152]
+	mi := &file_cobol_proto_msgTypes[174]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10830,7 +12874,7 @@ func (x *ProcedureDivision) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureDivision.ProtoReflect.Descriptor instead.
 func (*ProcedureDivision) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{152}
+	return file_cobol_proto_rawDescGZIP(), []int{174}
 }
 
 type ArithmeticExpression struct {
@@ -10842,7 +12886,7 @@ type ArithmeticExpression struct {
 func (x *ArithmeticExpression) Reset() {
 	*x = ArithmeticExpression{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[153]
+		mi := &file_cobol_proto_msgTypes[175]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10855,7 +12899,7 @@ func (x *ArithmeticExpression) String() string {
 func (*ArithmeticExpression) ProtoMessage() {}
 
 func (x *ArithmeticExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[153]
+	mi := &file_cobol_proto_msgTypes[175]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10868,7 +12912,7 @@ func (x *ArithmeticExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ArithmeticExpression.ProtoReflect.Descriptor instead.
 func (*ArithmeticExpression) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{153}
+	return file_cobol_proto_rawDescGZIP(), []int{175}
 }
 
 type Identifier struct {
@@ -10888,7 +12932,7 @@ type Identifier struct {
 func (x *Identifier) Reset() {
 	*x = Identifier{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[154]
+		mi := &file_cobol_proto_msgTypes[176]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10901,7 +12945,7 @@ func (x *Identifier) String() string {
 func (*Identifier) ProtoMessage() {}
 
 func (x *Identifier) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[154]
+	mi := &file_cobol_proto_msgTypes[176]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10914,7 +12958,7 @@ func (x *Identifier) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Identifier.ProtoReflect.Descriptor instead.
 func (*Identifier) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{154}
+	return file_cobol_proto_rawDescGZIP(), []int{176}
 }
 
 func (m *Identifier) GetOneOf() isIdentifier_OneOf {
@@ -10993,7 +13037,7 @@ type TableCall struct {
 func (x *TableCall) Reset() {
 	*x = TableCall{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[155]
+		mi := &file_cobol_proto_msgTypes[177]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11006,7 +13050,7 @@ func (x *TableCall) String() string {
 func (*TableCall) ProtoMessage() {}
 
 func (x *TableCall) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[155]
+	mi := &file_cobol_proto_msgTypes[177]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11019,7 +13063,7 @@ func (x *TableCall) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TableCall.ProtoReflect.Descriptor instead.
 func (*TableCall) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{155}
+	return file_cobol_proto_rawDescGZIP(), []int{177}
 }
 
 func (x *TableCall) GetQualifiedDataName() *QualifiedDataName {
@@ -11056,7 +13100,7 @@ type FunctionCall struct {
 func (x *FunctionCall) Reset() {
 	*x = FunctionCall{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[156]
+		mi := &file_cobol_proto_msgTypes[178]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11069,7 +13113,7 @@ func (x *FunctionCall) String() string {
 func (*FunctionCall) ProtoMessage() {}
 
 func (x *FunctionCall) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[156]
+	mi := &file_cobol_proto_msgTypes[178]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11082,7 +13126,7 @@ func (x *FunctionCall) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionCall.ProtoReflect.Descriptor instead.
 func (*FunctionCall) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{156}
+	return file_cobol_proto_rawDescGZIP(), []int{178}
 }
 
 func (x *FunctionCall) GetFunctionName() *FunctionName {
@@ -11118,7 +13162,7 @@ type ReferenceModifier struct {
 func (x *ReferenceModifier) Reset() {
 	*x = ReferenceModifier{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[157]
+		mi := &file_cobol_proto_msgTypes[179]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11131,7 +13175,7 @@ func (x *ReferenceModifier) String() string {
 func (*ReferenceModifier) ProtoMessage() {}
 
 func (x *ReferenceModifier) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[157]
+	mi := &file_cobol_proto_msgTypes[179]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11144,7 +13188,7 @@ func (x *ReferenceModifier) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReferenceModifier.ProtoReflect.Descriptor instead.
 func (*ReferenceModifier) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{157}
+	return file_cobol_proto_rawDescGZIP(), []int{179}
 }
 
 func (x *ReferenceModifier) GetCharacterPosition() *CharacterPosition {
@@ -11172,7 +13216,7 @@ type CharacterPosition struct {
 func (x *CharacterPosition) Reset() {
 	*x = CharacterPosition{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[158]
+		mi := &file_cobol_proto_msgTypes[180]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11185,7 +13229,7 @@ func (x *CharacterPosition) String() string {
 func (*CharacterPosition) ProtoMessage() {}
 
 func (x *CharacterPosition) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[158]
+	mi := &file_cobol_proto_msgTypes[180]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11198,7 +13242,7 @@ func (x *CharacterPosition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CharacterPosition.ProtoReflect.Descriptor instead.
 func (*CharacterPosition) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{158}
+	return file_cobol_proto_rawDescGZIP(), []int{180}
 }
 
 func (x *CharacterPosition) GetArithmeticExpression() *ArithmeticExpression {
@@ -11219,7 +13263,7 @@ type Length struct {
 func (x *Length) Reset() {
 	*x = Length{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[159]
+		mi := &file_cobol_proto_msgTypes[181]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11232,7 +13276,7 @@ func (x *Length) String() string {
 func (*Length) ProtoMessage() {}
 
 func (x *Length) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[159]
+	mi := &file_cobol_proto_msgTypes[181]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11245,7 +13289,7 @@ func (x *Length) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Length.ProtoReflect.Descriptor instead.
 func (*Length) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{159}
+	return file_cobol_proto_rawDescGZIP(), []int{181}
 }
 
 func (x *Length) GetArithmeticExpression() *ArithmeticExpression {
@@ -11273,7 +13317,7 @@ type Subscript struct {
 func (x *Subscript) Reset() {
 	*x = Subscript{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[160]
+		mi := &file_cobol_proto_msgTypes[182]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11286,7 +13330,7 @@ func (x *Subscript) String() string {
 func (*Subscript) ProtoMessage() {}
 
 func (x *Subscript) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[160]
+	mi := &file_cobol_proto_msgTypes[182]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11299,7 +13343,7 @@ func (x *Subscript) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Subscript.ProtoReflect.Descriptor instead.
 func (*Subscript) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{160}
+	return file_cobol_proto_rawDescGZIP(), []int{182}
 }
 
 func (m *Subscript) GetOneOf() isSubscript_OneOf {
@@ -11396,7 +13440,7 @@ type Argument struct {
 func (x *Argument) Reset() {
 	*x = Argument{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[161]
+		mi := &file_cobol_proto_msgTypes[183]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11409,7 +13453,7 @@ func (x *Argument) String() string {
 func (*Argument) ProtoMessage() {}
 
 func (x *Argument) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[161]
+	mi := &file_cobol_proto_msgTypes[183]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11422,7 +13466,7 @@ func (x *Argument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Argument.ProtoReflect.Descriptor instead.
 func (*Argument) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{161}
+	return file_cobol_proto_rawDescGZIP(), []int{183}
 }
 
 func (m *Argument) GetOneOf() isArgument_OneOf {
@@ -11513,7 +13557,7 @@ type QualifiedDataNameIntegerLiteral struct {
 func (x *QualifiedDataNameIntegerLiteral) Reset() {
 	*x = QualifiedDataNameIntegerLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[162]
+		mi := &file_cobol_proto_msgTypes[184]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11526,7 +13570,7 @@ func (x *QualifiedDataNameIntegerLiteral) String() string {
 func (*QualifiedDataNameIntegerLiteral) ProtoMessage() {}
 
 func (x *QualifiedDataNameIntegerLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[162]
+	mi := &file_cobol_proto_msgTypes[184]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11539,7 +13583,7 @@ func (x *QualifiedDataNameIntegerLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameIntegerLiteral.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameIntegerLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{162}
+	return file_cobol_proto_rawDescGZIP(), []int{184}
 }
 
 func (x *QualifiedDataNameIntegerLiteral) GetQualifiedDataName() *QualifiedDataName {
@@ -11568,7 +13612,7 @@ type IndexNameIntegerLiteral struct {
 func (x *IndexNameIntegerLiteral) Reset() {
 	*x = IndexNameIntegerLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[163]
+		mi := &file_cobol_proto_msgTypes[185]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11581,7 +13625,7 @@ func (x *IndexNameIntegerLiteral) String() string {
 func (*IndexNameIntegerLiteral) ProtoMessage() {}
 
 func (x *IndexNameIntegerLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[163]
+	mi := &file_cobol_proto_msgTypes[185]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11594,7 +13638,7 @@ func (x *IndexNameIntegerLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IndexNameIntegerLiteral.ProtoReflect.Descriptor instead.
 func (*IndexNameIntegerLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{163}
+	return file_cobol_proto_rawDescGZIP(), []int{185}
 }
 
 func (x *IndexNameIntegerLiteral) GetIndexName() *IndexName {
@@ -11628,7 +13672,7 @@ type QualifiedDataName struct {
 func (x *QualifiedDataName) Reset() {
 	*x = QualifiedDataName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[164]
+		mi := &file_cobol_proto_msgTypes[186]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11641,7 +13685,7 @@ func (x *QualifiedDataName) String() string {
 func (*QualifiedDataName) ProtoMessage() {}
 
 func (x *QualifiedDataName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[164]
+	mi := &file_cobol_proto_msgTypes[186]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11654,7 +13698,7 @@ func (x *QualifiedDataName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataName.ProtoReflect.Descriptor instead.
 func (*QualifiedDataName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{164}
+	return file_cobol_proto_rawDescGZIP(), []int{186}
 }
 
 func (m *QualifiedDataName) GetOneOf() isQualifiedDataName_OneOf {
@@ -11738,7 +13782,7 @@ type QualifiedDataNameFormat1 struct {
 func (x *QualifiedDataNameFormat1) Reset() {
 	*x = QualifiedDataNameFormat1{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[165]
+		mi := &file_cobol_proto_msgTypes[187]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11751,7 +13795,7 @@ func (x *QualifiedDataNameFormat1) String() string {
 func (*QualifiedDataNameFormat1) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat1) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[165]
+	mi := &file_cobol_proto_msgTypes[187]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11764,7 +13808,7 @@ func (x *QualifiedDataNameFormat1) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat1.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat1) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{165}
+	return file_cobol_proto_rawDescGZIP(), []int{187}
 }
 
 func (m *QualifiedDataNameFormat1) GetOneOf() isQualifiedDataNameFormat1_OneOf {
@@ -11837,7 +13881,7 @@ type QualifiedDataNameFormat2 struct {
 func (x *QualifiedDataNameFormat2) Reset() {
 	*x = QualifiedDataNameFormat2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[166]
+		mi := &file_cobol_proto_msgTypes[188]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11850,7 +13894,7 @@ func (x *QualifiedDataNameFormat2) String() string {
 func (*QualifiedDataNameFormat2) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat2) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[166]
+	mi := &file_cobol_proto_msgTypes[188]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11863,7 +13907,7 @@ func (x *QualifiedDataNameFormat2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat2.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat2) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{166}
+	return file_cobol_proto_rawDescGZIP(), []int{188}
 }
 
 func (x *QualifiedDataNameFormat2) GetParagraphName() *ParagraphName {
@@ -11892,7 +13936,7 @@ type QualifiedDataNameFormat3 struct {
 func (x *QualifiedDataNameFormat3) Reset() {
 	*x = QualifiedDataNameFormat3{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[167]
+		mi := &file_cobol_proto_msgTypes[189]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11905,7 +13949,7 @@ func (x *QualifiedDataNameFormat3) String() string {
 func (*QualifiedDataNameFormat3) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat3) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[167]
+	mi := &file_cobol_proto_msgTypes[189]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11918,7 +13962,7 @@ func (x *QualifiedDataNameFormat3) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat3.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat3) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{167}
+	return file_cobol_proto_rawDescGZIP(), []int{189}
 }
 
 func (x *QualifiedDataNameFormat3) GetTextName() *TextName {
@@ -11946,7 +13990,7 @@ type QualifiedDataNameFormat4 struct {
 func (x *QualifiedDataNameFormat4) Reset() {
 	*x = QualifiedDataNameFormat4{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[168]
+		mi := &file_cobol_proto_msgTypes[190]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11959,7 +14003,7 @@ func (x *QualifiedDataNameFormat4) String() string {
 func (*QualifiedDataNameFormat4) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat4) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[168]
+	mi := &file_cobol_proto_msgTypes[190]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11972,7 +14016,7 @@ func (x *QualifiedDataNameFormat4) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat4.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat4) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{168}
+	return file_cobol_proto_rawDescGZIP(), []int{190}
 }
 
 func (x *QualifiedDataNameFormat4) GetInFile() *InFile {
@@ -11993,7 +14037,7 @@ type InData struct {
 func (x *InData) Reset() {
 	*x = InData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[169]
+		mi := &file_cobol_proto_msgTypes[191]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12006,7 +14050,7 @@ func (x *InData) String() string {
 func (*InData) ProtoMessage() {}
 
 func (x *InData) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[169]
+	mi := &file_cobol_proto_msgTypes[191]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12019,7 +14063,7 @@ func (x *InData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InData.ProtoReflect.Descriptor instead.
 func (*InData) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{169}
+	return file_cobol_proto_rawDescGZIP(), []int{191}
 }
 
 func (x *InData) GetDataName() *DataName {
@@ -12040,7 +14084,7 @@ type InFile struct {
 func (x *InFile) Reset() {
 	*x = InFile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[170]
+		mi := &file_cobol_proto_msgTypes[192]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12053,7 +14097,7 @@ func (x *InFile) String() string {
 func (*InFile) ProtoMessage() {}
 
 func (x *InFile) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[170]
+	mi := &file_cobol_proto_msgTypes[192]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12066,7 +14110,7 @@ func (x *InFile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InFile.ProtoReflect.Descriptor instead.
 func (*InFile) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{170}
+	return file_cobol_proto_rawDescGZIP(), []int{192}
 }
 
 func (x *InFile) GetFileName() *FileName {
@@ -12087,7 +14131,7 @@ type InMnemonic struct {
 func (x *InMnemonic) Reset() {
 	*x = InMnemonic{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[171]
+		mi := &file_cobol_proto_msgTypes[193]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12100,7 +14144,7 @@ func (x *InMnemonic) String() string {
 func (*InMnemonic) ProtoMessage() {}
 
 func (x *InMnemonic) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[171]
+	mi := &file_cobol_proto_msgTypes[193]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12113,7 +14157,7 @@ func (x *InMnemonic) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InMnemonic.ProtoReflect.Descriptor instead.
 func (*InMnemonic) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{171}
+	return file_cobol_proto_rawDescGZIP(), []int{193}
 }
 
 func (x *InMnemonic) GetMnemonicName() *MnemonicName {
@@ -12134,7 +14178,7 @@ type InSection struct {
 func (x *InSection) Reset() {
 	*x = InSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[172]
+		mi := &file_cobol_proto_msgTypes[194]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12147,7 +14191,7 @@ func (x *InSection) String() string {
 func (*InSection) ProtoMessage() {}
 
 func (x *InSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[172]
+	mi := &file_cobol_proto_msgTypes[194]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12160,7 +14204,7 @@ func (x *InSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InSection.ProtoReflect.Descriptor instead.
 func (*InSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{172}
+	return file_cobol_proto_rawDescGZIP(), []int{194}
 }
 
 func (x *InSection) GetSectionName() *SectionName {
@@ -12181,7 +14225,7 @@ type InLibrary struct {
 func (x *InLibrary) Reset() {
 	*x = InLibrary{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[173]
+		mi := &file_cobol_proto_msgTypes[195]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12194,7 +14238,7 @@ func (x *InLibrary) String() string {
 func (*InLibrary) ProtoMessage() {}
 
 func (x *InLibrary) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[173]
+	mi := &file_cobol_proto_msgTypes[195]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12207,7 +14251,7 @@ func (x *InLibrary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InLibrary.ProtoReflect.Descriptor instead.
 func (*InLibrary) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{173}
+	return file_cobol_proto_rawDescGZIP(), []int{195}
 }
 
 func (x *InLibrary) GetLibraryName() *LibraryName {
@@ -12228,7 +14272,7 @@ type InTable struct {
 func (x *InTable) Reset() {
 	*x = InTable{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[174]
+		mi := &file_cobol_proto_msgTypes[196]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12241,7 +14285,7 @@ func (x *InTable) String() string {
 func (*InTable) ProtoMessage() {}
 
 func (x *InTable) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[174]
+	mi := &file_cobol_proto_msgTypes[196]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12254,7 +14298,7 @@ func (x *InTable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InTable.ProtoReflect.Descriptor instead.
 func (*InTable) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{174}
+	return file_cobol_proto_rawDescGZIP(), []int{196}
 }
 
 func (x *InTable) GetTableCall() *TableCall {
@@ -12275,7 +14319,7 @@ type AlphabetName struct {
 func (x *AlphabetName) Reset() {
 	*x = AlphabetName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[175]
+		mi := &file_cobol_proto_msgTypes[197]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12288,7 +14332,7 @@ func (x *AlphabetName) String() string {
 func (*AlphabetName) ProtoMessage() {}
 
 func (x *AlphabetName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[175]
+	mi := &file_cobol_proto_msgTypes[197]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12301,7 +14345,7 @@ func (x *AlphabetName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlphabetName.ProtoReflect.Descriptor instead.
 func (*AlphabetName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{175}
+	return file_cobol_proto_rawDescGZIP(), []int{197}
 }
 
 func (x *AlphabetName) GetCobolWord() *CobolWord {
@@ -12322,7 +14366,7 @@ type AssignmentName struct {
 func (x *AssignmentName) Reset() {
 	*x = AssignmentName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[176]
+		mi := &file_cobol_proto_msgTypes[198]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12335,7 +14379,7 @@ func (x *AssignmentName) String() string {
 func (*AssignmentName) ProtoMessage() {}
 
 func (x *AssignmentName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[176]
+	mi := &file_cobol_proto_msgTypes[198]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12348,7 +14392,7 @@ func (x *AssignmentName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssignmentName.ProtoReflect.Descriptor instead.
 func (*AssignmentName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{176}
+	return file_cobol_proto_rawDescGZIP(), []int{198}
 }
 
 func (x *AssignmentName) GetSystemName() *SystemName {
@@ -12369,7 +14413,7 @@ type BasisName struct {
 func (x *BasisName) Reset() {
 	*x = BasisName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[177]
+		mi := &file_cobol_proto_msgTypes[199]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12382,7 +14426,7 @@ func (x *BasisName) String() string {
 func (*BasisName) ProtoMessage() {}
 
 func (x *BasisName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[177]
+	mi := &file_cobol_proto_msgTypes[199]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12395,7 +14439,7 @@ func (x *BasisName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BasisName.ProtoReflect.Descriptor instead.
 func (*BasisName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{177}
+	return file_cobol_proto_rawDescGZIP(), []int{199}
 }
 
 func (x *BasisName) GetProgramName() *ProgramName {
@@ -12416,7 +14460,7 @@ type CdName struct {
 func (x *CdName) Reset() {
 	*x = CdName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[178]
+		mi := &file_cobol_proto_msgTypes[200]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12429,7 +14473,7 @@ func (x *CdName) String() string {
 func (*CdName) ProtoMessage() {}
 
 func (x *CdName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[178]
+	mi := &file_cobol_proto_msgTypes[200]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12442,7 +14486,7 @@ func (x *CdName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CdName.ProtoReflect.Descriptor instead.
 func (*CdName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{178}
+	return file_cobol_proto_rawDescGZIP(), []int{200}
 }
 
 func (x *CdName) GetCobolWord() *CobolWord {
@@ -12463,7 +14507,7 @@ type ClassName struct {
 func (x *ClassName) Reset() {
 	*x = ClassName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[179]
+		mi := &file_cobol_proto_msgTypes[201]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12476,7 +14520,7 @@ func (x *ClassName) String() string {
 func (*ClassName) ProtoMessage() {}
 
 func (x *ClassName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[179]
+	mi := &file_cobol_proto_msgTypes[201]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12489,7 +14533,7 @@ func (x *ClassName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClassName.ProtoReflect.Descriptor instead.
 func (*ClassName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{179}
+	return file_cobol_proto_rawDescGZIP(), []int{201}
 }
 
 func (x *ClassName) GetCobolWord() *CobolWord {
@@ -12510,7 +14554,7 @@ type ComputerName struct {
 func (x *ComputerName) Reset() {
 	*x = ComputerName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[180]
+		mi := &file_cobol_proto_msgTypes[202]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12523,7 +14567,7 @@ func (x *ComputerName) String() string {
 func (*ComputerName) ProtoMessage() {}
 
 func (x *ComputerName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[180]
+	mi := &file_cobol_proto_msgTypes[202]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12536,7 +14580,7 @@ func (x *ComputerName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ComputerName.ProtoReflect.Descriptor instead.
 func (*ComputerName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{180}
+	return file_cobol_proto_rawDescGZIP(), []int{202}
 }
 
 func (x *ComputerName) GetSystemName() *SystemName {
@@ -12557,7 +14601,7 @@ type ConditionName struct {
 func (x *ConditionName) Reset() {
 	*x = ConditionName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[181]
+		mi := &file_cobol_proto_msgTypes[203]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12570,7 +14614,7 @@ func (x *ConditionName) String() string {
 func (*ConditionName) ProtoMessage() {}
 
 func (x *ConditionName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[181]
+	mi := &file_cobol_proto_msgTypes[203]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12583,7 +14627,7 @@ func (x *ConditionName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConditionName.ProtoReflect.Descriptor instead.
 func (*ConditionName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{181}
+	return file_cobol_proto_rawDescGZIP(), []int{203}
 }
 
 func (x *ConditionName) GetCobolWord() *CobolWord {
@@ -12604,7 +14648,7 @@ type DataName struct {
 func (x *DataName) Reset() {
 	*x = DataName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[182]
+		mi := &file_cobol_proto_msgTypes[204]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12617,7 +14661,7 @@ func (x *DataName) String() string {
 func (*DataName) ProtoMessage() {}
 
 func (x *DataName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[182]
+	mi := &file_cobol_proto_msgTypes[204]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12630,7 +14674,7 @@ func (x *DataName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataName.ProtoReflect.Descriptor instead.
 func (*DataName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{182}
+	return file_cobol_proto_rawDescGZIP(), []int{204}
 }
 
 func (x *DataName) GetCobolWord() *CobolWord {
@@ -12651,7 +14695,7 @@ type DataDescName struct {
 func (x *DataDescName) Reset() {
 	*x = DataDescName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[183]
+		mi := &file_cobol_proto_msgTypes[205]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12664,7 +14708,7 @@ func (x *DataDescName) String() string {
 func (*DataDescName) ProtoMessage() {}
 
 func (x *DataDescName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[183]
+	mi := &file_cobol_proto_msgTypes[205]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12677,7 +14721,7 @@ func (x *DataDescName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataDescName.ProtoReflect.Descriptor instead.
 func (*DataDescName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{183}
+	return file_cobol_proto_rawDescGZIP(), []int{205}
 }
 
 func (x *DataDescName) GetValue() string {
@@ -12698,7 +14742,7 @@ type EnvironmentName struct {
 func (x *EnvironmentName) Reset() {
 	*x = EnvironmentName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[184]
+		mi := &file_cobol_proto_msgTypes[206]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12711,7 +14755,7 @@ func (x *EnvironmentName) String() string {
 func (*EnvironmentName) ProtoMessage() {}
 
 func (x *EnvironmentName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[184]
+	mi := &file_cobol_proto_msgTypes[206]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12724,7 +14768,7 @@ func (x *EnvironmentName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnvironmentName.ProtoReflect.Descriptor instead.
 func (*EnvironmentName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{184}
+	return file_cobol_proto_rawDescGZIP(), []int{206}
 }
 
 func (x *EnvironmentName) GetSystemName() *SystemName {
@@ -12745,7 +14789,7 @@ type FileName struct {
 func (x *FileName) Reset() {
 	*x = FileName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[185]
+		mi := &file_cobol_proto_msgTypes[207]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12758,7 +14802,7 @@ func (x *FileName) String() string {
 func (*FileName) ProtoMessage() {}
 
 func (x *FileName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[185]
+	mi := &file_cobol_proto_msgTypes[207]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12771,7 +14815,7 @@ func (x *FileName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileName.ProtoReflect.Descriptor instead.
 func (*FileName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{185}
+	return file_cobol_proto_rawDescGZIP(), []int{207}
 }
 
 func (x *FileName) GetCobolWord() *CobolWord {
@@ -12792,7 +14836,7 @@ type FunctionName struct {
 func (x *FunctionName) Reset() {
 	*x = FunctionName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[186]
+		mi := &file_cobol_proto_msgTypes[208]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12805,7 +14849,7 @@ func (x *FunctionName) String() string {
 func (*FunctionName) ProtoMessage() {}
 
 func (x *FunctionName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[186]
+	mi := &file_cobol_proto_msgTypes[208]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12818,7 +14862,7 @@ func (x *FunctionName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionName.ProtoReflect.Descriptor instead.
 func (*FunctionName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{186}
+	return file_cobol_proto_rawDescGZIP(), []int{208}
 }
 
 func (x *FunctionName) GetValue() string {
@@ -12839,7 +14883,7 @@ type IndexName struct {
 func (x *IndexName) Reset() {
 	*x = IndexName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[187]
+		mi := &file_cobol_proto_msgTypes[209]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12852,7 +14896,7 @@ func (x *IndexName) String() string {
 func (*IndexName) ProtoMessage() {}
 
 func (x *IndexName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[187]
+	mi := &file_cobol_proto_msgTypes[209]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12865,7 +14909,7 @@ func (x *IndexName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IndexName.ProtoReflect.Descriptor instead.
 func (*IndexName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{187}
+	return file_cobol_proto_rawDescGZIP(), []int{209}
 }
 
 func (x *IndexName) GetCobolWord() *CobolWord {
@@ -12886,7 +14930,7 @@ type LanguageName struct {
 func (x *LanguageName) Reset() {
 	*x = LanguageName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[188]
+		mi := &file_cobol_proto_msgTypes[210]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12899,7 +14943,7 @@ func (x *LanguageName) String() string {
 func (*LanguageName) ProtoMessage() {}
 
 func (x *LanguageName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[188]
+	mi := &file_cobol_proto_msgTypes[210]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12912,7 +14956,7 @@ func (x *LanguageName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LanguageName.ProtoReflect.Descriptor instead.
 func (*LanguageName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{188}
+	return file_cobol_proto_rawDescGZIP(), []int{210}
 }
 
 func (x *LanguageName) GetSystemName() *SystemName {
@@ -12933,7 +14977,7 @@ type LibraryName struct {
 func (x *LibraryName) Reset() {
 	*x = LibraryName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[189]
+		mi := &file_cobol_proto_msgTypes[211]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12946,7 +14990,7 @@ func (x *LibraryName) String() string {
 func (*LibraryName) ProtoMessage() {}
 
 func (x *LibraryName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[189]
+	mi := &file_cobol_proto_msgTypes[211]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12959,7 +15003,7 @@ func (x *LibraryName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LibraryName.ProtoReflect.Descriptor instead.
 func (*LibraryName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{189}
+	return file_cobol_proto_rawDescGZIP(), []int{211}
 }
 
 func (x *LibraryName) GetCobolWord() *CobolWord {
@@ -12980,7 +15024,7 @@ type LocalName struct {
 func (x *LocalName) Reset() {
 	*x = LocalName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[190]
+		mi := &file_cobol_proto_msgTypes[212]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12993,7 +15037,7 @@ func (x *LocalName) String() string {
 func (*LocalName) ProtoMessage() {}
 
 func (x *LocalName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[190]
+	mi := &file_cobol_proto_msgTypes[212]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13006,7 +15050,7 @@ func (x *LocalName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalName.ProtoReflect.Descriptor instead.
 func (*LocalName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{190}
+	return file_cobol_proto_rawDescGZIP(), []int{212}
 }
 
 func (x *LocalName) GetCobolWord() *CobolWord {
@@ -13027,7 +15071,7 @@ type MnemonicName struct {
 func (x *MnemonicName) Reset() {
 	*x = MnemonicName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[191]
+		mi := &file_cobol_proto_msgTypes[213]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13040,7 +15084,7 @@ func (x *MnemonicName) String() string {
 func (*MnemonicName) ProtoMessage() {}
 
 func (x *MnemonicName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[191]
+	mi := &file_cobol_proto_msgTypes[213]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13053,7 +15097,7 @@ func (x *MnemonicName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MnemonicName.ProtoReflect.Descriptor instead.
 func (*MnemonicName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{191}
+	return file_cobol_proto_rawDescGZIP(), []int{213}
 }
 
 func (x *MnemonicName) GetCobolWord() *CobolWord {
@@ -13078,7 +15122,7 @@ type ParagraphName struct {
 func (x *ParagraphName) Reset() {
 	*x = ParagraphName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[192]
+		mi := &file_cobol_proto_msgTypes[214]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13091,7 +15135,7 @@ func (x *ParagraphName) String() string {
 func (*ParagraphName) ProtoMessage() {}
 
 func (x *ParagraphName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[192]
+	mi := &file_cobol_proto_msgTypes[214]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13104,7 +15148,7 @@ func (x *ParagraphName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParagraphName.ProtoReflect.Descriptor instead.
 func (*ParagraphName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{192}
+	return file_cobol_proto_rawDescGZIP(), []int{214}
 }
 
 func (m *ParagraphName) GetOneOf() isParagraphName_OneOf {
@@ -13159,7 +15203,7 @@ type ProcedureName struct {
 func (x *ProcedureName) Reset() {
 	*x = ProcedureName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[193]
+		mi := &file_cobol_proto_msgTypes[215]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13172,7 +15216,7 @@ func (x *ProcedureName) String() string {
 func (*ProcedureName) ProtoMessage() {}
 
 func (x *ProcedureName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[193]
+	mi := &file_cobol_proto_msgTypes[215]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13185,7 +15229,7 @@ func (x *ProcedureName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureName.ProtoReflect.Descriptor instead.
 func (*ProcedureName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{193}
+	return file_cobol_proto_rawDescGZIP(), []int{215}
 }
 
 func (m *ProcedureName) GetOneOf() isProcedureName_OneOf {
@@ -13240,7 +15284,7 @@ type ProgramName struct {
 func (x *ProgramName) Reset() {
 	*x = ProgramName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[194]
+		mi := &file_cobol_proto_msgTypes[216]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13253,7 +15297,7 @@ func (x *ProgramName) String() string {
 func (*ProgramName) ProtoMessage() {}
 
 func (x *ProgramName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[194]
+	mi := &file_cobol_proto_msgTypes[216]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13266,7 +15310,7 @@ func (x *ProgramName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProgramName.ProtoReflect.Descriptor instead.
 func (*ProgramName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{194}
+	return file_cobol_proto_rawDescGZIP(), []int{216}
 }
 
 func (m *ProgramName) GetOneOf() isProgramName_OneOf {
@@ -13317,7 +15361,7 @@ type RecordName struct {
 func (x *RecordName) Reset() {
 	*x = RecordName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[195]
+		mi := &file_cobol_proto_msgTypes[217]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13330,7 +15374,7 @@ func (x *RecordName) String() string {
 func (*RecordName) ProtoMessage() {}
 
 func (x *RecordName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[195]
+	mi := &file_cobol_proto_msgTypes[217]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13343,7 +15387,7 @@ func (x *RecordName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordName.ProtoReflect.Descriptor instead.
 func (*RecordName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{195}
+	return file_cobol_proto_rawDescGZIP(), []int{217}
 }
 
 func (x *RecordName) GetQualifiedDataName() *QualifiedDataName {
@@ -13364,7 +15408,7 @@ type ReportName struct {
 func (x *ReportName) Reset() {
 	*x = ReportName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[196]
+		mi := &file_cobol_proto_msgTypes[218]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13377,7 +15421,7 @@ func (x *ReportName) String() string {
 func (*ReportName) ProtoMessage() {}
 
 func (x *ReportName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[196]
+	mi := &file_cobol_proto_msgTypes[218]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13390,7 +15434,7 @@ func (x *ReportName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportName.ProtoReflect.Descriptor instead.
 func (*ReportName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{196}
+	return file_cobol_proto_rawDescGZIP(), []int{218}
 }
 
 func (x *ReportName) GetQualifiedDataName() *QualifiedDataName {
@@ -13411,7 +15455,7 @@ type RoutingName struct {
 func (x *RoutingName) Reset() {
 	*x = RoutingName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[197]
+		mi := &file_cobol_proto_msgTypes[219]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13424,7 +15468,7 @@ func (x *RoutingName) String() string {
 func (*RoutingName) ProtoMessage() {}
 
 func (x *RoutingName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[197]
+	mi := &file_cobol_proto_msgTypes[219]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13437,7 +15481,7 @@ func (x *RoutingName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoutingName.ProtoReflect.Descriptor instead.
 func (*RoutingName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{197}
+	return file_cobol_proto_rawDescGZIP(), []int{219}
 }
 
 func (x *RoutingName) GetCobolWord() *CobolWord {
@@ -13458,7 +15502,7 @@ type ScreenName struct {
 func (x *ScreenName) Reset() {
 	*x = ScreenName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[198]
+		mi := &file_cobol_proto_msgTypes[220]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13471,7 +15515,7 @@ func (x *ScreenName) String() string {
 func (*ScreenName) ProtoMessage() {}
 
 func (x *ScreenName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[198]
+	mi := &file_cobol_proto_msgTypes[220]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13484,7 +15528,7 @@ func (x *ScreenName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScreenName.ProtoReflect.Descriptor instead.
 func (*ScreenName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{198}
+	return file_cobol_proto_rawDescGZIP(), []int{220}
 }
 
 func (x *ScreenName) GetCobolWord() *CobolWord {
@@ -13509,7 +15553,7 @@ type SectionName struct {
 func (x *SectionName) Reset() {
 	*x = SectionName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[199]
+		mi := &file_cobol_proto_msgTypes[221]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13522,7 +15566,7 @@ func (x *SectionName) String() string {
 func (*SectionName) ProtoMessage() {}
 
 func (x *SectionName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[199]
+	mi := &file_cobol_proto_msgTypes[221]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13535,7 +15579,7 @@ func (x *SectionName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SectionName.ProtoReflect.Descriptor instead.
 func (*SectionName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{199}
+	return file_cobol_proto_rawDescGZIP(), []int{221}
 }
 
 func (m *SectionName) GetOneOf() isSectionName_OneOf {
@@ -13586,7 +15630,7 @@ type SystemName struct {
 func (x *SystemName) Reset() {
 	*x = SystemName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[200]
+		mi := &file_cobol_proto_msgTypes[222]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13599,7 +15643,7 @@ func (x *SystemName) String() string {
 func (*SystemName) ProtoMessage() {}
 
 func (x *SystemName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[200]
+	mi := &file_cobol_proto_msgTypes[222]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13612,7 +15656,7 @@ func (x *SystemName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SystemName.ProtoReflect.Descriptor instead.
 func (*SystemName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{200}
+	return file_cobol_proto_rawDescGZIP(), []int{222}
 }
 
 func (x *SystemName) GetCobolWord() *CobolWord {
@@ -13633,7 +15677,7 @@ type SymbolicCharacter struct {
 func (x *SymbolicCharacter) Reset() {
 	*x = SymbolicCharacter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[201]
+		mi := &file_cobol_proto_msgTypes[223]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13646,7 +15690,7 @@ func (x *SymbolicCharacter) String() string {
 func (*SymbolicCharacter) ProtoMessage() {}
 
 func (x *SymbolicCharacter) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[201]
+	mi := &file_cobol_proto_msgTypes[223]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13659,7 +15703,7 @@ func (x *SymbolicCharacter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicCharacter.ProtoReflect.Descriptor instead.
 func (*SymbolicCharacter) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{201}
+	return file_cobol_proto_rawDescGZIP(), []int{223}
 }
 
 func (x *SymbolicCharacter) GetCobolWord() *CobolWord {
@@ -13680,7 +15724,7 @@ type TextName struct {
 func (x *TextName) Reset() {
 	*x = TextName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[202]
+		mi := &file_cobol_proto_msgTypes[224]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13693,7 +15737,7 @@ func (x *TextName) String() string {
 func (*TextName) ProtoMessage() {}
 
 func (x *TextName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[202]
+	mi := &file_cobol_proto_msgTypes[224]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13706,7 +15750,7 @@ func (x *TextName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TextName.ProtoReflect.Descriptor instead.
 func (*TextName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{202}
+	return file_cobol_proto_rawDescGZIP(), []int{224}
 }
 
 func (x *TextName) GetCobolWord() *CobolWord {
@@ -13727,7 +15771,7 @@ type CobolWord struct {
 func (x *CobolWord) Reset() {
 	*x = CobolWord{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[203]
+		mi := &file_cobol_proto_msgTypes[225]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13740,7 +15784,7 @@ func (x *CobolWord) String() string {
 func (*CobolWord) ProtoMessage() {}
 
 func (x *CobolWord) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[203]
+	mi := &file_cobol_proto_msgTypes[225]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13753,7 +15797,7 @@ func (x *CobolWord) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CobolWord.ProtoReflect.Descriptor instead.
 func (*CobolWord) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{203}
+	return file_cobol_proto_rawDescGZIP(), []int{225}
 }
 
 func (x *CobolWord) GetValue() string {
@@ -13781,7 +15825,7 @@ type Literal struct {
 func (x *Literal) Reset() {
 	*x = Literal{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[204]
+		mi := &file_cobol_proto_msgTypes[226]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13794,7 +15838,7 @@ func (x *Literal) String() string {
 func (*Literal) ProtoMessage() {}
 
 func (x *Literal) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[204]
+	mi := &file_cobol_proto_msgTypes[226]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13807,7 +15851,7 @@ func (x *Literal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Literal.ProtoReflect.Descriptor instead.
 func (*Literal) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{204}
+	return file_cobol_proto_rawDescGZIP(), []int{226}
 }
 
 func (x *Literal) GetType() Literal_Type {
@@ -13891,7 +15935,7 @@ type BooleanLiteral struct {
 func (x *BooleanLiteral) Reset() {
 	*x = BooleanLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[205]
+		mi := &file_cobol_proto_msgTypes[227]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13904,7 +15948,7 @@ func (x *BooleanLiteral) String() string {
 func (*BooleanLiteral) ProtoMessage() {}
 
 func (x *BooleanLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[205]
+	mi := &file_cobol_proto_msgTypes[227]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13917,7 +15961,7 @@ func (x *BooleanLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BooleanLiteral.ProtoReflect.Descriptor instead.
 func (*BooleanLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{205}
+	return file_cobol_proto_rawDescGZIP(), []int{227}
 }
 
 func (x *BooleanLiteral) GetValue() bool {
@@ -13939,7 +15983,7 @@ type NumericLiteral struct {
 func (x *NumericLiteral) Reset() {
 	*x = NumericLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[206]
+		mi := &file_cobol_proto_msgTypes[228]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13952,7 +15996,7 @@ func (x *NumericLiteral) String() string {
 func (*NumericLiteral) ProtoMessage() {}
 
 func (x *NumericLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[206]
+	mi := &file_cobol_proto_msgTypes[228]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13965,7 +16009,7 @@ func (x *NumericLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NumericLiteral.ProtoReflect.Descriptor instead.
 func (*NumericLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{206}
+	return file_cobol_proto_rawDescGZIP(), []int{228}
 }
 
 func (x *NumericLiteral) GetType() NumericLiteral_Type {
@@ -13993,7 +16037,7 @@ type IntegerLiteral struct {
 func (x *IntegerLiteral) Reset() {
 	*x = IntegerLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[207]
+		mi := &file_cobol_proto_msgTypes[229]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14006,7 +16050,7 @@ func (x *IntegerLiteral) String() string {
 func (*IntegerLiteral) ProtoMessage() {}
 
 func (x *IntegerLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[207]
+	mi := &file_cobol_proto_msgTypes[229]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14019,7 +16063,7 @@ func (x *IntegerLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntegerLiteral.ProtoReflect.Descriptor instead.
 func (*IntegerLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{207}
+	return file_cobol_proto_rawDescGZIP(), []int{229}
 }
 
 func (x *IntegerLiteral) GetValue() string {
@@ -14041,7 +16085,7 @@ type FigurativeConstant struct {
 func (x *FigurativeConstant) Reset() {
 	*x = FigurativeConstant{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[208]
+		mi := &file_cobol_proto_msgTypes[230]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14054,7 +16098,7 @@ func (x *FigurativeConstant) String() string {
 func (*FigurativeConstant) ProtoMessage() {}
 
 func (x *FigurativeConstant) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[208]
+	mi := &file_cobol_proto_msgTypes[230]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14067,7 +16111,7 @@ func (x *FigurativeConstant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FigurativeConstant.ProtoReflect.Descriptor instead.
 func (*FigurativeConstant) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{208}
+	return file_cobol_proto_rawDescGZIP(), []int{230}
 }
 
 func (x *FigurativeConstant) GetType() FigurativeConstant_Type {
@@ -14093,7 +16137,7 @@ type SpecialRegister struct {
 func (x *SpecialRegister) Reset() {
 	*x = SpecialRegister{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[209]
+		mi := &file_cobol_proto_msgTypes[231]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14106,7 +16150,7 @@ func (x *SpecialRegister) String() string {
 func (*SpecialRegister) ProtoMessage() {}
 
 func (x *SpecialRegister) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[209]
+	mi := &file_cobol_proto_msgTypes[231]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14119,7 +16163,7 @@ func (x *SpecialRegister) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpecialRegister.ProtoReflect.Descriptor instead.
 func (*SpecialRegister) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{209}
+	return file_cobol_proto_rawDescGZIP(), []int{231}
 }
 
 type NonNumericLiteral struct {
@@ -14133,7 +16177,7 @@ type NonNumericLiteral struct {
 func (x *NonNumericLiteral) Reset() {
 	*x = NonNumericLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[210]
+		mi := &file_cobol_proto_msgTypes[232]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14146,7 +16190,7 @@ func (x *NonNumericLiteral) String() string {
 func (*NonNumericLiteral) ProtoMessage() {}
 
 func (x *NonNumericLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[210]
+	mi := &file_cobol_proto_msgTypes[232]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14159,7 +16203,7 @@ func (x *NonNumericLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NonNumericLiteral.ProtoReflect.Descriptor instead.
 func (*NonNumericLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{210}
+	return file_cobol_proto_rawDescGZIP(), []int{232}
 }
 
 func (x *NonNumericLiteral) GetValue() string {
@@ -14180,7 +16224,7 @@ type StringLiteral struct {
 func (x *StringLiteral) Reset() {
 	*x = StringLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[211]
+		mi := &file_cobol_proto_msgTypes[233]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14193,7 +16237,7 @@ func (x *StringLiteral) String() string {
 func (*StringLiteral) ProtoMessage() {}
 
 func (x *StringLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[211]
+	mi := &file_cobol_proto_msgTypes[233]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14206,7 +16250,7 @@ func (x *StringLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StringLiteral.ProtoReflect.Descriptor instead.
 func (*StringLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{211}
+	return file_cobol_proto_rawDescGZIP(), []int{233}
 }
 
 func (x *StringLiteral) GetValue() string {
@@ -14227,7 +16271,7 @@ type DbcsLiteral struct {
 func (x *DbcsLiteral) Reset() {
 	*x = DbcsLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[212]
+		mi := &file_cobol_proto_msgTypes[234]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14240,7 +16284,7 @@ func (x *DbcsLiteral) String() string {
 func (*DbcsLiteral) ProtoMessage() {}
 
 func (x *DbcsLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[212]
+	mi := &file_cobol_proto_msgTypes[234]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14253,7 +16297,7 @@ func (x *DbcsLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DbcsLiteral.ProtoReflect.Descriptor instead.
 func (*DbcsLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{212}
+	return file_cobol_proto_rawDescGZIP(), []int{234}
 }
 
 func (x *DbcsLiteral) GetValue() string {
@@ -14274,7 +16318,7 @@ type HexNumber struct {
 func (x *HexNumber) Reset() {
 	*x = HexNumber{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[213]
+		mi := &file_cobol_proto_msgTypes[235]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14287,7 +16331,7 @@ func (x *HexNumber) String() string {
 func (*HexNumber) ProtoMessage() {}
 
 func (x *HexNumber) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[213]
+	mi := &file_cobol_proto_msgTypes[235]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14300,7 +16344,7 @@ func (x *HexNumber) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HexNumber.ProtoReflect.Descriptor instead.
 func (*HexNumber) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{213}
+	return file_cobol_proto_rawDescGZIP(), []int{235}
 }
 
 func (x *HexNumber) GetValue() string {
@@ -14321,7 +16365,7 @@ type NullTerminated struct {
 func (x *NullTerminated) Reset() {
 	*x = NullTerminated{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[214]
+		mi := &file_cobol_proto_msgTypes[236]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14334,7 +16378,7 @@ func (x *NullTerminated) String() string {
 func (*NullTerminated) ProtoMessage() {}
 
 func (x *NullTerminated) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[214]
+	mi := &file_cobol_proto_msgTypes[236]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14347,7 +16391,7 @@ func (x *NullTerminated) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NullTerminated.ProtoReflect.Descriptor instead.
 func (*NullTerminated) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{214}
+	return file_cobol_proto_rawDescGZIP(), []int{236}
 }
 
 func (x *NullTerminated) GetValue() string {
@@ -14368,7 +16412,7 @@ type AlphabetClause_Also struct {
 func (x *AlphabetClause_Also) Reset() {
 	*x = AlphabetClause_Also{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[215]
+		mi := &file_cobol_proto_msgTypes[237]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14381,7 +16425,7 @@ func (x *AlphabetClause_Also) String() string {
 func (*AlphabetClause_Also) ProtoMessage() {}
 
 func (x *AlphabetClause_Also) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[215]
+	mi := &file_cobol_proto_msgTypes[237]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14417,7 +16461,7 @@ type AlphabetClause_AlphabetLiteral struct {
 func (x *AlphabetClause_AlphabetLiteral) Reset() {
 	*x = AlphabetClause_AlphabetLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[216]
+		mi := &file_cobol_proto_msgTypes[238]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14430,7 +16474,7 @@ func (x *AlphabetClause_AlphabetLiteral) String() string {
 func (*AlphabetClause_AlphabetLiteral) ProtoMessage() {}
 
 func (x *AlphabetClause_AlphabetLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[216]
+	mi := &file_cobol_proto_msgTypes[238]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14478,7 +16522,7 @@ type AlphabetClause_AlphabetLiterals struct {
 func (x *AlphabetClause_AlphabetLiterals) Reset() {
 	*x = AlphabetClause_AlphabetLiterals{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[217]
+		mi := &file_cobol_proto_msgTypes[239]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14491,7 +16535,7 @@ func (x *AlphabetClause_AlphabetLiterals) String() string {
 func (*AlphabetClause_AlphabetLiterals) ProtoMessage() {}
 
 func (x *AlphabetClause_AlphabetLiterals) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[217]
+	mi := &file_cobol_proto_msgTypes[239]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14530,7 +16574,7 @@ type AlphabetClause_Alphanumeric struct {
 func (x *AlphabetClause_Alphanumeric) Reset() {
 	*x = AlphabetClause_Alphanumeric{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[218]
+		mi := &file_cobol_proto_msgTypes[240]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14543,7 +16587,7 @@ func (x *AlphabetClause_Alphanumeric) String() string {
 func (*AlphabetClause_Alphanumeric) ProtoMessage() {}
 
 func (x *AlphabetClause_Alphanumeric) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[218]
+	mi := &file_cobol_proto_msgTypes[240]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14621,7 +16665,7 @@ type AlphabetClause_National struct {
 func (x *AlphabetClause_National) Reset() {
 	*x = AlphabetClause_National{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[219]
+		mi := &file_cobol_proto_msgTypes[241]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14634,7 +16678,7 @@ func (x *AlphabetClause_National) String() string {
 func (*AlphabetClause_National) ProtoMessage() {}
 
 func (x *AlphabetClause_National) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[219]
+	mi := &file_cobol_proto_msgTypes[241]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14675,7 +16719,7 @@ type LabelRecordsClause_DataNames struct {
 func (x *LabelRecordsClause_DataNames) Reset() {
 	*x = LabelRecordsClause_DataNames{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[220]
+		mi := &file_cobol_proto_msgTypes[242]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14688,7 +16732,7 @@ func (x *LabelRecordsClause_DataNames) String() string {
 func (*LabelRecordsClause_DataNames) ProtoMessage() {}
 
 func (x *LabelRecordsClause_DataNames) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[220]
+	mi := &file_cobol_proto_msgTypes[242]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14743,7 +16787,7 @@ type DataDescriptionEntry_Format1 struct {
 func (x *DataDescriptionEntry_Format1) Reset() {
 	*x = DataDescriptionEntry_Format1{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[221]
+		mi := &file_cobol_proto_msgTypes[243]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14756,7 +16800,7 @@ func (x *DataDescriptionEntry_Format1) String() string {
 func (*DataDescriptionEntry_Format1) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_Format1) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[221]
+	mi := &file_cobol_proto_msgTypes[243]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14938,7 +16982,7 @@ type DataDescriptionEntry_Format2 struct {
 func (x *DataDescriptionEntry_Format2) Reset() {
 	*x = DataDescriptionEntry_Format2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[222]
+		mi := &file_cobol_proto_msgTypes[244]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14951,7 +16995,7 @@ func (x *DataDescriptionEntry_Format2) String() string {
 func (*DataDescriptionEntry_Format2) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_Format2) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[222]
+	mi := &file_cobol_proto_msgTypes[244]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14993,7 +17037,7 @@ type DataDescriptionEntry_Format3 struct {
 func (x *DataDescriptionEntry_Format3) Reset() {
 	*x = DataDescriptionEntry_Format3{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[223]
+		mi := &file_cobol_proto_msgTypes[245]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15006,7 +17050,7 @@ func (x *DataDescriptionEntry_Format3) String() string {
 func (*DataDescriptionEntry_Format3) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_Format3) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[223]
+	mi := &file_cobol_proto_msgTypes[245]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15045,7 +17089,7 @@ type DataDescriptionEntry_ExecSql struct {
 func (x *DataDescriptionEntry_ExecSql) Reset() {
 	*x = DataDescriptionEntry_ExecSql{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[224]
+		mi := &file_cobol_proto_msgTypes[246]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15058,7 +17102,7 @@ func (x *DataDescriptionEntry_ExecSql) String() string {
 func (*DataDescriptionEntry_ExecSql) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_ExecSql) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[224]
+	mi := &file_cobol_proto_msgTypes[246]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15086,7 +17130,7 @@ type DataTypeClause_Lob struct {
 func (x *DataTypeClause_Lob) Reset() {
 	*x = DataTypeClause_Lob{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[225]
+		mi := &file_cobol_proto_msgTypes[247]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15099,7 +17143,7 @@ func (x *DataTypeClause_Lob) String() string {
 func (*DataTypeClause_Lob) ProtoMessage() {}
 
 func (x *DataTypeClause_Lob) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[225]
+	mi := &file_cobol_proto_msgTypes[247]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15140,7 +17184,7 @@ type DataOccursClause_Sort struct {
 func (x *DataOccursClause_Sort) Reset() {
 	*x = DataOccursClause_Sort{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[226]
+		mi := &file_cobol_proto_msgTypes[248]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15153,7 +17197,7 @@ func (x *DataOccursClause_Sort) String() string {
 func (*DataOccursClause_Sort) ProtoMessage() {}
 
 func (x *DataOccursClause_Sort) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[226]
+	mi := &file_cobol_proto_msgTypes[248]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15187,7 +17231,7 @@ type DataOccursClause_Indexed struct {
 func (x *DataOccursClause_Indexed) Reset() {
 	*x = DataOccursClause_Indexed{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[227]
+		mi := &file_cobol_proto_msgTypes[249]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15200,7 +17244,7 @@ func (x *DataOccursClause_Indexed) String() string {
 func (*DataOccursClause_Indexed) ProtoMessage() {}
 
 func (x *DataOccursClause_Indexed) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[227]
+	mi := &file_cobol_proto_msgTypes[249]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15237,7 +17281,7 @@ type ReportGroupDescriptionEntry_Vertical struct {
 func (x *ReportGroupDescriptionEntry_Vertical) Reset() {
 	*x = ReportGroupDescriptionEntry_Vertical{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[228]
+		mi := &file_cobol_proto_msgTypes[250]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15250,7 +17294,7 @@ func (x *ReportGroupDescriptionEntry_Vertical) String() string {
 func (*ReportGroupDescriptionEntry_Vertical) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry_Vertical) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[228]
+	mi := &file_cobol_proto_msgTypes[250]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15263,7 +17307,7 @@ func (x *ReportGroupDescriptionEntry_Vertical) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ReportGroupDescriptionEntry_Vertical.ProtoReflect.Descriptor instead.
 func (*ReportGroupDescriptionEntry_Vertical) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{110, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{132, 0}
 }
 
 func (x *ReportGroupDescriptionEntry_Vertical) GetLineNumberClause() *LineNumberClause {
@@ -15306,7 +17350,7 @@ type ReportGroupDescriptionEntry_Single struct {
 func (x *ReportGroupDescriptionEntry_Single) Reset() {
 	*x = ReportGroupDescriptionEntry_Single{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[229]
+		mi := &file_cobol_proto_msgTypes[251]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15319,7 +17363,7 @@ func (x *ReportGroupDescriptionEntry_Single) String() string {
 func (*ReportGroupDescriptionEntry_Single) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry_Single) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[229]
+	mi := &file_cobol_proto_msgTypes[251]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15332,7 +17376,7 @@ func (x *ReportGroupDescriptionEntry_Single) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ReportGroupDescriptionEntry_Single.ProtoReflect.Descriptor instead.
 func (*ReportGroupDescriptionEntry_Single) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{110, 1}
+	return file_cobol_proto_rawDescGZIP(), []int{132, 1}
 }
 
 func (x *ReportGroupDescriptionEntry_Single) GetLineNumberClause() *LineNumberClause {
@@ -15371,7 +17415,7 @@ type ReportGroupDescriptionEntry_Printable struct {
 func (x *ReportGroupDescriptionEntry_Printable) Reset() {
 	*x = ReportGroupDescriptionEntry_Printable{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[230]
+		mi := &file_cobol_proto_msgTypes[252]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15384,7 +17428,7 @@ func (x *ReportGroupDescriptionEntry_Printable) String() string {
 func (*ReportGroupDescriptionEntry_Printable) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry_Printable) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[230]
+	mi := &file_cobol_proto_msgTypes[252]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15397,7 +17441,7 @@ func (x *ReportGroupDescriptionEntry_Printable) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use ReportGroupDescriptionEntry_Printable.ProtoReflect.Descriptor instead.
 func (*ReportGroupDescriptionEntry_Printable) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{110, 2}
+	return file_cobol_proto_rawDescGZIP(), []int{132, 2}
 }
 
 func (x *ReportGroupDescriptionEntry_Printable) GetPictureClause() *PictureClause {
@@ -15493,7 +17537,7 @@ type TypeClause_ReportHeading struct {
 func (x *TypeClause_ReportHeading) Reset() {
 	*x = TypeClause_ReportHeading{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[231]
+		mi := &file_cobol_proto_msgTypes[253]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15506,7 +17550,7 @@ func (x *TypeClause_ReportHeading) String() string {
 func (*TypeClause_ReportHeading) ProtoMessage() {}
 
 func (x *TypeClause_ReportHeading) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[231]
+	mi := &file_cobol_proto_msgTypes[253]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15519,7 +17563,7 @@ func (x *TypeClause_ReportHeading) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_ReportHeading.ProtoReflect.Descriptor instead.
 func (*TypeClause_ReportHeading) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 0}
 }
 
 type TypeClause_PageHeading struct {
@@ -15531,7 +17575,7 @@ type TypeClause_PageHeading struct {
 func (x *TypeClause_PageHeading) Reset() {
 	*x = TypeClause_PageHeading{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[232]
+		mi := &file_cobol_proto_msgTypes[254]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15544,7 +17588,7 @@ func (x *TypeClause_PageHeading) String() string {
 func (*TypeClause_PageHeading) ProtoMessage() {}
 
 func (x *TypeClause_PageHeading) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[232]
+	mi := &file_cobol_proto_msgTypes[254]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15557,7 +17601,7 @@ func (x *TypeClause_PageHeading) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_PageHeading.ProtoReflect.Descriptor instead.
 func (*TypeClause_PageHeading) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 1}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 1}
 }
 
 type TypeClause_ControlHeading struct {
@@ -15575,7 +17619,7 @@ type TypeClause_ControlHeading struct {
 func (x *TypeClause_ControlHeading) Reset() {
 	*x = TypeClause_ControlHeading{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[233]
+		mi := &file_cobol_proto_msgTypes[255]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15588,7 +17632,7 @@ func (x *TypeClause_ControlHeading) String() string {
 func (*TypeClause_ControlHeading) ProtoMessage() {}
 
 func (x *TypeClause_ControlHeading) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[233]
+	mi := &file_cobol_proto_msgTypes[255]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15601,7 +17645,7 @@ func (x *TypeClause_ControlHeading) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_ControlHeading.ProtoReflect.Descriptor instead.
 func (*TypeClause_ControlHeading) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 2}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 2}
 }
 
 func (m *TypeClause_ControlHeading) GetOneOf() isTypeClause_ControlHeading_OneOf {
@@ -15650,7 +17694,7 @@ type TypeClause_Detail struct {
 func (x *TypeClause_Detail) Reset() {
 	*x = TypeClause_Detail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[234]
+		mi := &file_cobol_proto_msgTypes[256]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15663,7 +17707,7 @@ func (x *TypeClause_Detail) String() string {
 func (*TypeClause_Detail) ProtoMessage() {}
 
 func (x *TypeClause_Detail) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[234]
+	mi := &file_cobol_proto_msgTypes[256]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15676,7 +17720,7 @@ func (x *TypeClause_Detail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_Detail.ProtoReflect.Descriptor instead.
 func (*TypeClause_Detail) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 3}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 3}
 }
 
 type TypeClause_ControlFooting struct {
@@ -15694,7 +17738,7 @@ type TypeClause_ControlFooting struct {
 func (x *TypeClause_ControlFooting) Reset() {
 	*x = TypeClause_ControlFooting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[235]
+		mi := &file_cobol_proto_msgTypes[257]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15707,7 +17751,7 @@ func (x *TypeClause_ControlFooting) String() string {
 func (*TypeClause_ControlFooting) ProtoMessage() {}
 
 func (x *TypeClause_ControlFooting) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[235]
+	mi := &file_cobol_proto_msgTypes[257]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15720,7 +17764,7 @@ func (x *TypeClause_ControlFooting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_ControlFooting.ProtoReflect.Descriptor instead.
 func (*TypeClause_ControlFooting) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 4}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 4}
 }
 
 func (m *TypeClause_ControlFooting) GetOneOf() isTypeClause_ControlFooting_OneOf {
@@ -15769,7 +17813,7 @@ type TypeClause_PageFooting struct {
 func (x *TypeClause_PageFooting) Reset() {
 	*x = TypeClause_PageFooting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[236]
+		mi := &file_cobol_proto_msgTypes[258]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15782,7 +17826,7 @@ func (x *TypeClause_PageFooting) String() string {
 func (*TypeClause_PageFooting) ProtoMessage() {}
 
 func (x *TypeClause_PageFooting) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[236]
+	mi := &file_cobol_proto_msgTypes[258]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15795,7 +17839,7 @@ func (x *TypeClause_PageFooting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_PageFooting.ProtoReflect.Descriptor instead.
 func (*TypeClause_PageFooting) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 5}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 5}
 }
 
 type TypeClause_ReportFooting struct {
@@ -15807,7 +17851,7 @@ type TypeClause_ReportFooting struct {
 func (x *TypeClause_ReportFooting) Reset() {
 	*x = TypeClause_ReportFooting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[237]
+		mi := &file_cobol_proto_msgTypes[259]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15820,7 +17864,7 @@ func (x *TypeClause_ReportFooting) String() string {
 func (*TypeClause_ReportFooting) ProtoMessage() {}
 
 func (x *TypeClause_ReportFooting) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[237]
+	mi := &file_cobol_proto_msgTypes[259]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15833,7 +17877,7 @@ func (x *TypeClause_ReportFooting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TypeClause_ReportFooting.ProtoReflect.Descriptor instead.
 func (*TypeClause_ReportFooting) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{123, 6}
+	return file_cobol_proto_rawDescGZIP(), []int{145, 6}
 }
 
 type LibraryDescriptionEntry_Import struct {
@@ -15850,7 +17894,7 @@ type LibraryDescriptionEntry_Import struct {
 func (x *LibraryDescriptionEntry_Import) Reset() {
 	*x = LibraryDescriptionEntry_Import{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[238]
+		mi := &file_cobol_proto_msgTypes[260]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15863,7 +17907,7 @@ func (x *LibraryDescriptionEntry_Import) String() string {
 func (*LibraryDescriptionEntry_Import) ProtoMessage() {}
 
 func (x *LibraryDescriptionEntry_Import) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[238]
+	mi := &file_cobol_proto_msgTypes[260]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15876,7 +17920,7 @@ func (x *LibraryDescriptionEntry_Import) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LibraryDescriptionEntry_Import.ProtoReflect.Descriptor instead.
 func (*LibraryDescriptionEntry_Import) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{126, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{148, 0}
 }
 
 func (x *LibraryDescriptionEntry_Import) GetGlobalClause() *GlobalClause {
@@ -15919,7 +17963,7 @@ type LibraryDescriptionEntry_Export struct {
 func (x *LibraryDescriptionEntry_Export) Reset() {
 	*x = LibraryDescriptionEntry_Export{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[239]
+		mi := &file_cobol_proto_msgTypes[261]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15932,7 +17976,7 @@ func (x *LibraryDescriptionEntry_Export) String() string {
 func (*LibraryDescriptionEntry_Export) ProtoMessage() {}
 
 func (x *LibraryDescriptionEntry_Export) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[239]
+	mi := &file_cobol_proto_msgTypes[261]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15945,7 +17989,7 @@ func (x *LibraryDescriptionEntry_Export) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LibraryDescriptionEntry_Export.ProtoReflect.Descriptor instead.
 func (*LibraryDescriptionEntry_Export) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{126, 1}
+	return file_cobol_proto_rawDescGZIP(), []int{148, 1}
 }
 
 func (x *LibraryDescriptionEntry_Export) GetAttributeClause() *AttributeClause1 {
@@ -15977,7 +18021,7 @@ type ProcedureClause2_WithName struct {
 func (x *ProcedureClause2_WithName) Reset() {
 	*x = ProcedureClause2_WithName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[240]
+		mi := &file_cobol_proto_msgTypes[262]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -15990,7 +18034,7 @@ func (x *ProcedureClause2_WithName) String() string {
 func (*ProcedureClause2_WithName) ProtoMessage() {}
 
 func (x *ProcedureClause2_WithName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[240]
+	mi := &file_cobol_proto_msgTypes[262]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16003,7 +18047,7 @@ func (x *ProcedureClause2_WithName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureClause2_WithName.ProtoReflect.Descriptor instead.
 func (*ProcedureClause2_WithName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{131, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{153, 0}
 }
 
 func (m *ProcedureClause2_WithName) GetOneOf() isProcedureClause2_WithName_OneOf {
@@ -16058,7 +18102,7 @@ type ProcedureClause2_UsingName struct {
 func (x *ProcedureClause2_UsingName) Reset() {
 	*x = ProcedureClause2_UsingName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[241]
+		mi := &file_cobol_proto_msgTypes[263]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -16071,7 +18115,7 @@ func (x *ProcedureClause2_UsingName) String() string {
 func (*ProcedureClause2_UsingName) ProtoMessage() {}
 
 func (x *ProcedureClause2_UsingName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[241]
+	mi := &file_cobol_proto_msgTypes[263]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16084,7 +18128,7 @@ func (x *ProcedureClause2_UsingName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureClause2_UsingName.ProtoReflect.Descriptor instead.
 func (*ProcedureClause2_UsingName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{131, 1}
+	return file_cobol_proto_rawDescGZIP(), []int{153, 1}
 }
 
 func (m *ProcedureClause2_UsingName) GetOneOf() isProcedureClause2_UsingName_OneOf {
@@ -16144,7 +18188,7 @@ type CommunicationDescriptionEntry_Input struct {
 func (x *CommunicationDescriptionEntry_Input) Reset() {
 	*x = CommunicationDescriptionEntry_Input{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[242]
+		mi := &file_cobol_proto_msgTypes[264]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -16157,7 +18201,7 @@ func (x *CommunicationDescriptionEntry_Input) String() string {
 func (*CommunicationDescriptionEntry_Input) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry_Input) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[242]
+	mi := &file_cobol_proto_msgTypes[264]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16170,7 +18214,7 @@ func (x *CommunicationDescriptionEntry_Input) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CommunicationDescriptionEntry_Input.ProtoReflect.Descriptor instead.
 func (*CommunicationDescriptionEntry_Input) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{135, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{157, 0}
 }
 
 func (x *CommunicationDescriptionEntry_Input) GetSymbolicQueueClause() *SymbolicQueueClause {
@@ -16259,7 +18303,7 @@ type CommunicationDescriptionEntry_Output struct {
 func (x *CommunicationDescriptionEntry_Output) Reset() {
 	*x = CommunicationDescriptionEntry_Output{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[243]
+		mi := &file_cobol_proto_msgTypes[265]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -16272,7 +18316,7 @@ func (x *CommunicationDescriptionEntry_Output) String() string {
 func (*CommunicationDescriptionEntry_Output) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry_Output) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[243]
+	mi := &file_cobol_proto_msgTypes[265]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16285,7 +18329,7 @@ func (x *CommunicationDescriptionEntry_Output) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CommunicationDescriptionEntry_Output.ProtoReflect.Descriptor instead.
 func (*CommunicationDescriptionEntry_Output) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{135, 1}
+	return file_cobol_proto_rawDescGZIP(), []int{157, 1}
 }
 
 func (x *CommunicationDescriptionEntry_Output) GetDestinationCountClause() *DestinationCountClause {
@@ -16346,7 +18390,7 @@ type CommunicationDescriptionEntry_Io struct {
 func (x *CommunicationDescriptionEntry_Io) Reset() {
 	*x = CommunicationDescriptionEntry_Io{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[244]
+		mi := &file_cobol_proto_msgTypes[266]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -16359,7 +18403,7 @@ func (x *CommunicationDescriptionEntry_Io) String() string {
 func (*CommunicationDescriptionEntry_Io) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry_Io) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[244]
+	mi := &file_cobol_proto_msgTypes[266]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16372,7 +18416,7 @@ func (x *CommunicationDescriptionEntry_Io) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommunicationDescriptionEntry_Io.ProtoReflect.Descriptor instead.
 func (*CommunicationDescriptionEntry_Io) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{135, 2}
+	return file_cobol_proto_rawDescGZIP(), []int{157, 2}
 }
 
 func (x *CommunicationDescriptionEntry_Io) GetMessageDateClause() *MessageDateClause {
@@ -17641,9 +19685,252 @@ var file_cobol_proto_rawDesc = []byte{
 	0x03, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x44,
 	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52,
 	0x18, 0x73, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
-	0x6f, 0x6e, 0x45, 0x6e, 0x74, 0x72, 0x69, 0x65, 0x73, 0x22, 0x18, 0x0a, 0x16, 0x53, 0x63, 0x72,
-	0x65, 0x65, 0x6e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e,
-	0x74, 0x72, 0x79, 0x22, 0x57, 0x0a, 0x0d, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x65, 0x63,
+	0x6f, 0x6e, 0x45, 0x6e, 0x74, 0x72, 0x69, 0x65, 0x73, 0x22, 0xbe, 0x0d, 0x0a, 0x16, 0x53, 0x63,
+	0x72, 0x65, 0x65, 0x6e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x45,
+	0x6e, 0x74, 0x72, 0x79, 0x12, 0x18, 0x0a, 0x06, 0x66, 0x69, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x08, 0x48, 0x00, 0x52, 0x06, 0x66, 0x69, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x31,
+	0x0a, 0x0b, 0x73, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x4e,
+	0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x0a, 0x73, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x4e, 0x61, 0x6d,
+	0x65, 0x12, 0x32, 0x0a, 0x0c, 0x62, 0x6c, 0x61, 0x6e, 0x6b, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x42, 0x6c, 0x61,
+	0x6e, 0x6b, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0b, 0x62, 0x6c, 0x61, 0x6e, 0x6b, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x62, 0x65, 0x6c, 0x6c, 0x5f, 0x63, 0x6c,
+	0x61, 0x75, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e,
+	0x42, 0x65, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0a, 0x62, 0x65, 0x6c, 0x6c,
+	0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x0c, 0x62, 0x6c, 0x69, 0x6e, 0x6b, 0x5f,
+	0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70,
+	0x62, 0x2e, 0x42, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0b, 0x62,
+	0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x0c, 0x65, 0x72,
+	0x61, 0x73, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x45, 0x72, 0x61, 0x73, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x52, 0x0b, 0x65, 0x72, 0x61, 0x73, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x32,
+	0x0a, 0x0c, 0x6c, 0x69, 0x67, 0x68, 0x74, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x07,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0b, 0x6c, 0x69, 0x67, 0x68, 0x74, 0x43, 0x6c, 0x61, 0x75,
+	0x73, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x67, 0x72, 0x69, 0x64, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x72, 0x69,
+	0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0a, 0x67, 0x72, 0x69, 0x64, 0x43, 0x6c, 0x61,
+	0x75, 0x73, 0x65, 0x12, 0x48, 0x0a, 0x14, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x5f, 0x76,
+	0x69, 0x64, 0x65, 0x6f, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x09, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x16, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x56, 0x69,
+	0x64, 0x65, 0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x12, 0x72, 0x65, 0x76, 0x65, 0x72,
+	0x73, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x3e, 0x0a,
+	0x10, 0x75, 0x6e, 0x64, 0x65, 0x72, 0x6c, 0x69, 0x6e, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x6e, 0x64,
+	0x65, 0x72, 0x6c, 0x69, 0x6e, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0f, 0x75, 0x6e,
+	0x64, 0x65, 0x72, 0x6c, 0x69, 0x6e, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2f, 0x0a,
+	0x0b, 0x73, 0x69, 0x7a, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x0b, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x69, 0x7a, 0x65, 0x43, 0x6c, 0x61, 0x75,
+	0x73, 0x65, 0x52, 0x0a, 0x73, 0x69, 0x7a, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2f,
+	0x0a, 0x0b, 0x6c, 0x69, 0x6e, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x0c, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x6e, 0x65, 0x43, 0x6c, 0x61,
+	0x75, 0x73, 0x65, 0x52, 0x0a, 0x6c, 0x69, 0x6e, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12,
+	0x35, 0x0a, 0x0d, 0x63, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x18, 0x0d, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6c, 0x75,
+	0x6d, 0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0c, 0x63, 0x6f, 0x6c, 0x75, 0x6d, 0x6e,
+	0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x51, 0x0a, 0x17, 0x66, 0x6f, 0x72, 0x65, 0x67, 0x72,
+	0x6f, 0x75, 0x6e, 0x64, 0x5f, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x6f, 0x72,
+	0x65, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x43, 0x6c, 0x61, 0x75,
+	0x73, 0x65, 0x52, 0x15, 0x66, 0x6f, 0x72, 0x65, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x43, 0x6f,
+	0x6c, 0x6f, 0x72, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x51, 0x0a, 0x17, 0x62, 0x61, 0x63,
+	0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x5f, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x5f, 0x63, 0x6c,
+	0x61, 0x75, 0x73, 0x65, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x70, 0x62, 0x2e,
+	0x42, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x15, 0x62, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e,
+	0x64, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x38, 0x0a, 0x0e,
+	0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x10,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x0c, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f,
+	0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x11, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70,
+	0x62, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0b, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x38, 0x0a, 0x0e, 0x70, 0x69,
+	0x63, 0x74, 0x75, 0x72, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x12, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0d, 0x70, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43, 0x6c,
+	0x61, 0x75, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x66, 0x72, 0x6f, 0x6d, 0x5f, 0x63, 0x6c, 0x61,
+	0x75, 0x73, 0x65, 0x18, 0x13, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x46,
+	0x72, 0x6f, 0x6d, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0a, 0x66, 0x72, 0x6f, 0x6d, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x0c, 0x75, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x63,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62,
+	0x2e, 0x55, 0x73, 0x69, 0x6e, 0x67, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0b, 0x75, 0x73,
+	0x69, 0x6e, 0x67, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x0c, 0x75, 0x73, 0x61,
+	0x67, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x15, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x52, 0x0b, 0x75, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2f, 0x0a,
+	0x0b, 0x73, 0x69, 0x67, 0x6e, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x16, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x43, 0x6c, 0x61, 0x75,
+	0x73, 0x65, 0x52, 0x0a, 0x73, 0x69, 0x67, 0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x4c,
+	0x0a, 0x16, 0x62, 0x6c, 0x61, 0x6e, 0x6b, 0x5f, 0x77, 0x68, 0x65, 0x6e, 0x5f, 0x7a, 0x65, 0x72,
+	0x6f, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x17, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17,
+	0x2e, 0x70, 0x62, 0x2e, 0x42, 0x6c, 0x61, 0x6e, 0x6b, 0x57, 0x68, 0x65, 0x6e, 0x5a, 0x65, 0x72,
+	0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x13, 0x62, 0x6c, 0x61, 0x6e, 0x6b, 0x57, 0x68,
+	0x65, 0x6e, 0x5a, 0x65, 0x72, 0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x10,
+	0x6a, 0x75, 0x73, 0x74, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x18, 0x18, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x4a, 0x75, 0x73, 0x74,
+	0x69, 0x66, 0x69, 0x65, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0f, 0x6a, 0x75, 0x73,
+	0x74, 0x69, 0x66, 0x69, 0x65, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x0b,
+	0x61, 0x75, 0x74, 0x6f, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x19, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x75, 0x74, 0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x52, 0x0a, 0x61, 0x75, 0x74, 0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x35, 0x0a,
+	0x0d, 0x73, 0x65, 0x63, 0x75, 0x72, 0x65, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x1a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x65, 0x63, 0x75, 0x72, 0x65,
+	0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0c, 0x73, 0x65, 0x63, 0x75, 0x72, 0x65, 0x43, 0x6c,
+	0x61, 0x75, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x0f, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64,
+	0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x1b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e,
+	0x70, 0x62, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x52, 0x0e, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x12, 0x35, 0x0a, 0x0d, 0x70, 0x72, 0x6f, 0x6d, 0x70, 0x74, 0x5f, 0x63, 0x6c, 0x61, 0x75,
+	0x73, 0x65, 0x18, 0x1c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x72,
+	0x6f, 0x6d, 0x70, 0x74, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0c, 0x70, 0x72, 0x6f, 0x6d,
+	0x70, 0x74, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x66, 0x75, 0x6c, 0x6c,
+	0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x1d, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e,
+	0x70, 0x62, 0x2e, 0x46, 0x75, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0a, 0x66,
+	0x75, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x10, 0x7a, 0x65, 0x72,
+	0x6f, 0x5f, 0x66, 0x69, 0x6c, 0x6c, 0x5f, 0x63, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x18, 0x1e, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x5a, 0x65, 0x72, 0x6f, 0x46, 0x69, 0x6c,
+	0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x52, 0x0e, 0x7a, 0x65, 0x72, 0x6f, 0x46, 0x69, 0x6c,
+	0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x42, 0x11, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x22, 0x10, 0x0a, 0x0e, 0x5a, 0x65,
+	0x72, 0x6f, 0x46, 0x69, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x22, 0x59, 0x0a, 0x0a,
+	0x46, 0x75, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x04, 0x74, 0x79,
+	0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x75,
+	0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74,
+	0x79, 0x70, 0x65, 0x22, 0x22, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x46,
+	0x55, 0x4c, 0x4c, 0x10, 0x00, 0x12, 0x10, 0x0a, 0x0c, 0x4c, 0x45, 0x4e, 0x47, 0x54, 0x48, 0x5f,
+	0x43, 0x48, 0x45, 0x43, 0x4b, 0x10, 0x01, 0x22, 0x9d, 0x01, 0x0a, 0x0c, 0x50, 0x72, 0x6f, 0x6d,
+	0x70, 0x74, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e,
+	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70,
+	0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a,
+	0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x27, 0x0a, 0x07, 0x6c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70, 0x62,
+	0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x07, 0x6c, 0x69, 0x74, 0x65,
+	0x72, 0x61, 0x6c, 0x12, 0x28, 0x0a, 0x05, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c,
+	0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x52, 0x05, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x42, 0x08, 0x0a,
+	0x06, 0x70, 0x72, 0x6f, 0x6d, 0x70, 0x74, 0x22, 0x64, 0x0a, 0x0e, 0x52, 0x65, 0x71, 0x75, 0x69,
+	0x72, 0x65, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2b, 0x0a, 0x04, 0x74, 0x79, 0x70,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x17, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x71,
+	0x75, 0x69, 0x72, 0x65, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65,
+	0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x25, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0c,
+	0x0a, 0x08, 0x52, 0x45, 0x51, 0x55, 0x49, 0x52, 0x45, 0x44, 0x10, 0x00, 0x12, 0x0f, 0x0a, 0x0b,
+	0x45, 0x4d, 0x50, 0x54, 0x59, 0x5f, 0x43, 0x48, 0x45, 0x43, 0x4b, 0x10, 0x01, 0x22, 0x5a, 0x0a,
+	0x0c, 0x53, 0x65, 0x63, 0x75, 0x72, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x29, 0x0a,
+	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x15, 0x2e, 0x70, 0x62,
+	0x2e, 0x53, 0x65, 0x63, 0x75, 0x72, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79,
+	0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x1f, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x0a, 0x0a, 0x06, 0x53, 0x45, 0x43, 0x55, 0x52, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07,
+	0x4e, 0x4f, 0x5f, 0x45, 0x43, 0x48, 0x4f, 0x10, 0x01, 0x22, 0x56, 0x0a, 0x0a, 0x41, 0x75, 0x74,
+	0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x75, 0x74, 0x6f, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65,
+	0x22, 0x1f, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x41, 0x55, 0x54, 0x4f,
+	0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x41, 0x55, 0x54, 0x4f, 0x5f, 0x53, 0x4b, 0x49, 0x50, 0x10,
+	0x01, 0x22, 0x33, 0x0a, 0x0b, 0x55, 0x73, 0x69, 0x6e, 0x67, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x12, 0x24, 0x0a, 0x05, 0x75, 0x73, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52,
+	0x05, 0x75, 0x73, 0x69, 0x6e, 0x67, 0x22, 0x8f, 0x01, 0x0a, 0x0a, 0x46, 0x72, 0x6f, 0x6d, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
+	0x69, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49,
+	0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65,
+	0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x27, 0x0a, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72,
+	0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c,
+	0x12, 0x1e, 0x0a, 0x02, 0x74, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70,
+	0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x02, 0x74, 0x6f,
+	0x42, 0x06, 0x0a, 0x04, 0x66, 0x72, 0x6f, 0x6d, 0x22, 0x55, 0x0a, 0x0b, 0x42, 0x6c, 0x61, 0x6e,
+	0x6b, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x28, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x14, 0x2e, 0x70, 0x62, 0x2e, 0x42, 0x6c, 0x61, 0x6e, 0x6b,
+	0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70,
+	0x65, 0x22, 0x1c, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x43, 0x52,
+	0x45, 0x45, 0x4e, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4c, 0x49, 0x4e, 0x45, 0x10, 0x01, 0x22,
+	0x51, 0x0a, 0x0a, 0x42, 0x65, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x27, 0x0a,
+	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x70, 0x62,
+	0x2e, 0x42, 0x65, 0x6c, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65,
+	0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x1a, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08,
+	0x0a, 0x04, 0x42, 0x45, 0x4c, 0x4c, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x42, 0x45, 0x45, 0x50,
+	0x10, 0x01, 0x22, 0x0d, 0x0a, 0x0b, 0x42, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x61, 0x75, 0x73,
+	0x65, 0x22, 0x51, 0x0a, 0x0b, 0x45, 0x72, 0x61, 0x73, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x12, 0x28, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x14,
+	0x2e, 0x70, 0x62, 0x2e, 0x45, 0x72, 0x61, 0x73, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e,
+	0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x18, 0x0a, 0x04, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x07, 0x0a, 0x03, 0x45, 0x4f, 0x4c, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x45,
+	0x4f, 0x53, 0x10, 0x01, 0x22, 0x5c, 0x0a, 0x0b, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x43, 0x6c, 0x61,
+	0x75, 0x73, 0x65, 0x12, 0x28, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0e, 0x32, 0x14, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x43, 0x6c, 0x61, 0x75,
+	0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x23, 0x0a,
+	0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0d, 0x0a, 0x09, 0x48, 0x49, 0x47, 0x48, 0x4c, 0x49, 0x47,
+	0x48, 0x54, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x4c, 0x4f, 0x57, 0x4c, 0x49, 0x47, 0x48, 0x54,
+	0x10, 0x01, 0x22, 0x63, 0x0a, 0x0a, 0x47, 0x72, 0x69, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x12, 0x27, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13,
+	0x2e, 0x70, 0x62, 0x2e, 0x47, 0x72, 0x69, 0x64, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54,
+	0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x2c, 0x0a, 0x04, 0x54, 0x79, 0x70,
+	0x65, 0x12, 0x08, 0x0a, 0x04, 0x47, 0x52, 0x49, 0x44, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x4c,
+	0x45, 0x46, 0x54, 0x4c, 0x49, 0x4e, 0x45, 0x10, 0x01, 0x12, 0x0c, 0x0a, 0x08, 0x4f, 0x56, 0x45,
+	0x52, 0x4c, 0x49, 0x4e, 0x45, 0x10, 0x02, 0x22, 0x14, 0x0a, 0x12, 0x52, 0x65, 0x76, 0x65, 0x72,
+	0x73, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x22, 0x11, 0x0a,
+	0x0f, 0x55, 0x6e, 0x64, 0x65, 0x72, 0x6c, 0x69, 0x6e, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x22, 0x85, 0x01, 0x0a, 0x0a, 0x53, 0x69, 0x7a, 0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12,
+	0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
+	0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65,
+	0x72, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74,
+	0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00,
+	0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c,
+	0x42, 0x06, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x22, 0xcb, 0x01, 0x0a, 0x0a, 0x4c, 0x69, 0x6e,
+	0x65, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x6e, 0x65, 0x43,
+	0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65,
+	0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69,
+	0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69,
+	0x65, 0x72, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62,
+	0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48,
+	0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x22, 0x1b, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x50, 0x4c, 0x55,
+	0x53, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x4d, 0x49, 0x4e, 0x55, 0x53, 0x10, 0x01, 0x42, 0x06,
+	0x0a, 0x04, 0x6c, 0x69, 0x6e, 0x65, 0x22, 0xd1, 0x01, 0x0a, 0x0c, 0x43, 0x6f, 0x6c, 0x75, 0x6d,
+	0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x29, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6c, 0x75, 0x6d,
+	0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79,
+	0x70, 0x65, 0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e,
+	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69,
+	0x66, 0x69, 0x65, 0x72, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f,
+	0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e,
+	0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65,
+	0x72, 0x61, 0x6c, 0x22, 0x1b, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x50,
+	0x4c, 0x55, 0x53, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x4d, 0x49, 0x4e, 0x55, 0x53, 0x10, 0x01,
+	0x42, 0x08, 0x0a, 0x06, 0x63, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x22, 0x9c, 0x01, 0x0a, 0x15, 0x46,
+	0x6f, 0x72, 0x65, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x43, 0x6c,
+	0x61, 0x75, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69,
+	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64,
+	0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e,
+	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65,
+	0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65,
+	0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x42, 0x12, 0x0a, 0x10, 0x66, 0x6f, 0x72, 0x65, 0x67, 0x72, 0x6f,
+	0x75, 0x6e, 0x64, 0x5f, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x22, 0x9c, 0x01, 0x0a, 0x15, 0x42, 0x61,
+	0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x43, 0x6c, 0x61,
+	0x75, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65,
+	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65,
+	0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74,
+	0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72,
+	0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12,
+	0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72,
+	0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74,
+	0x65, 0x72, 0x61, 0x6c, 0x42, 0x12, 0x0a, 0x10, 0x62, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75,
+	0x6e, 0x64, 0x5f, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x22, 0x39, 0x0a, 0x0d, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x28, 0x0a, 0x07, 0x63, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e,
+	0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x22, 0x57, 0x0a, 0x0d, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x65, 0x63,
 	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x46, 0x0a, 0x13, 0x72, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x5f, 0x64,
 	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x44, 0x65, 0x73,
@@ -18668,8 +20955,8 @@ func file_cobol_proto_rawDescGZIP() []byte {
 	return file_cobol_proto_rawDescData
 }
 
-var file_cobol_proto_enumTypes = make([]protoimpl.EnumInfo, 32)
-var file_cobol_proto_msgTypes = make([]protoimpl.MessageInfo, 245)
+var file_cobol_proto_enumTypes = make([]protoimpl.EnumInfo, 43)
+var file_cobol_proto_msgTypes = make([]protoimpl.MessageInfo, 267)
 var file_cobol_proto_goTypes = []interface{}{
 	(ProgramIdParagraph_Attribute)(0),             // 0: pb.ProgramIdParagraph.Attribute
 	(MemorySizeClause_Unit)(0),                    // 1: pb.MemorySizeClause.Unit
@@ -18697,726 +20984,817 @@ var file_cobol_proto_goTypes = []interface{}{
 	(DataReceivedByClause_Type)(0),                // 23: pb.DataReceivedByClause.Type
 	(DataSignClause_Type)(0),                      // 24: pb.DataSignClause.Type
 	(DataSynchronizedClause_Type)(0),              // 25: pb.DataSynchronizedClause.Type
-	(SignClause_Type)(0),                          // 26: pb.SignClause.Type
-	(AttributeClause1_Sharing)(0),                 // 27: pb.AttributeClause1.Sharing
-	(AttributeClause2_LibAccess)(0),               // 28: pb.AttributeClause2.LibAccess
-	(Literal_Type)(0),                             // 29: pb.Literal.Type
-	(NumericLiteral_Type)(0),                      // 30: pb.NumericLiteral.Type
-	(FigurativeConstant_Type)(0),                  // 31: pb.FigurativeConstant.Type
-	(*Program)(nil),                               // 32: pb.Program
-	(*CompilationUnit)(nil),                       // 33: pb.CompilationUnit
-	(*ProgramUnit)(nil),                           // 34: pb.ProgramUnit
-	(*IdentificationDivision)(nil),                // 35: pb.IdentificationDivision
-	(*ProgramIdParagraph)(nil),                    // 36: pb.ProgramIdParagraph
-	(*AuthorParagraph)(nil),                       // 37: pb.AuthorParagraph
-	(*DateCompiledParagraph)(nil),                 // 38: pb.DateCompiledParagraph
-	(*DateWrittenParagraph)(nil),                  // 39: pb.DateWrittenParagraph
-	(*InstallationParagraph)(nil),                 // 40: pb.InstallationParagraph
-	(*RemarksParagraph)(nil),                      // 41: pb.RemarksParagraph
-	(*SecurityParagraph)(nil),                     // 42: pb.SecurityParagraph
-	(*EnvironmentDivision)(nil),                   // 43: pb.EnvironmentDivision
-	(*ConfigurationSection)(nil),                  // 44: pb.ConfigurationSection
-	(*SourceComputerParagraph)(nil),               // 45: pb.SourceComputerParagraph
-	(*ObjectComputerParagraph)(nil),               // 46: pb.ObjectComputerParagraph
-	(*MemorySizeClause)(nil),                      // 47: pb.MemorySizeClause
-	(*DiskSizeClause)(nil),                        // 48: pb.DiskSizeClause
-	(*CollatingSequenceClause)(nil),               // 49: pb.CollatingSequenceClause
-	(*SegmentLimitClause)(nil),                    // 50: pb.SegmentLimitClause
-	(*CharacterSetClause)(nil),                    // 51: pb.CharacterSetClause
-	(*SpecialNamesParagraph)(nil),                 // 52: pb.SpecialNamesParagraph
-	(*AlphabetClause)(nil),                        // 53: pb.AlphabetClause
-	(*ChannelClause)(nil),                         // 54: pb.ChannelClause
-	(*ClassClause)(nil),                           // 55: pb.ClassClause
-	(*ClassClauseThrough)(nil),                    // 56: pb.ClassClauseThrough
-	(*CurrencySignClause)(nil),                    // 57: pb.CurrencySignClause
-	(*DecimalPointClause)(nil),                    // 58: pb.DecimalPointClause
-	(*DefaultDisplaySignClause)(nil),              // 59: pb.DefaultDisplaySignClause
-	(*OdtClause)(nil),                             // 60: pb.OdtClause
-	(*ReserveNetworkClause)(nil),                  // 61: pb.ReserveNetworkClause
-	(*SymbolicCharactersClause)(nil),              // 62: pb.SymbolicCharactersClause
-	(*InputOutputSection)(nil),                    // 63: pb.InputOutputSection
-	(*FileControlParagraph)(nil),                  // 64: pb.FileControlParagraph
-	(*FileControlEntry)(nil),                      // 65: pb.FileControlEntry
-	(*SelectClause)(nil),                          // 66: pb.SelectClause
-	(*AssignClause)(nil),                          // 67: pb.AssignClause
-	(*ReserveClause)(nil),                         // 68: pb.ReserveClause
-	(*OrganizationClause)(nil),                    // 69: pb.OrganizationClause
-	(*PaddingCharacterClause)(nil),                // 70: pb.PaddingCharacterClause
-	(*RecordDelimiterClause)(nil),                 // 71: pb.RecordDelimiterClause
-	(*AccessModeClause)(nil),                      // 72: pb.AccessModeClause
-	(*RecordKeyClause)(nil),                       // 73: pb.RecordKeyClause
-	(*AlternateRecordKeyClause)(nil),              // 74: pb.AlternateRecordKeyClause
-	(*PasswordClause)(nil),                        // 75: pb.PasswordClause
-	(*FileStatusClause)(nil),                      // 76: pb.FileStatusClause
-	(*RelativeKeyClause)(nil),                     // 77: pb.RelativeKeyClause
-	(*IoControlParagraph)(nil),                    // 78: pb.IoControlParagraph
-	(*RerunClause)(nil),                           // 79: pb.RerunClause
-	(*RerunEveryRecords)(nil),                     // 80: pb.RerunEveryRecords
-	(*RerunEveryOf)(nil),                          // 81: pb.RerunEveryOf
-	(*RerunEveryClock)(nil),                       // 82: pb.RerunEveryClock
-	(*SameClause)(nil),                            // 83: pb.SameClause
-	(*MultipleFileClause)(nil),                    // 84: pb.MultipleFileClause
-	(*MultipleFilePosition)(nil),                  // 85: pb.MultipleFilePosition
-	(*CommitmentControlClause)(nil),               // 86: pb.CommitmentControlClause
-	(*DataDivision)(nil),                          // 87: pb.DataDivision
-	(*FileSection)(nil),                           // 88: pb.FileSection
-	(*FileDescriptionEntry)(nil),                  // 89: pb.FileDescriptionEntry
-	(*ModeStatement)(nil),                         // 90: pb.ModeStatement
-	(*RecordingModeClause)(nil),                   // 91: pb.RecordingModeClause
-	(*ExternalClause)(nil),                        // 92: pb.ExternalClause
-	(*GlobalClause)(nil),                          // 93: pb.GlobalClause
-	(*BlockContainsClause)(nil),                   // 94: pb.BlockContainsClause
-	(*RecordContainsClause)(nil),                  // 95: pb.RecordContainsClause
-	(*LabelRecordsClause)(nil),                    // 96: pb.LabelRecordsClause
-	(*ValueOfClause)(nil),                         // 97: pb.ValueOfClause
-	(*ValuePair)(nil),                             // 98: pb.ValuePair
-	(*DataRecordsClause)(nil),                     // 99: pb.DataRecordsClause
-	(*DataNameOrIntegerLiteral)(nil),              // 100: pb.DataNameOrIntegerLiteral
-	(*LinageClause)(nil),                          // 101: pb.LinageClause
-	(*CodeSetClause)(nil),                         // 102: pb.CodeSetClause
-	(*ReportClause)(nil),                          // 103: pb.ReportClause
-	(*WorkingStorageSection)(nil),                 // 104: pb.WorkingStorageSection
-	(*DataDescriptionEntry)(nil),                  // 105: pb.DataDescriptionEntry
-	(*DataRenamesClause)(nil),                     // 106: pb.DataRenamesClause
-	(*DataRedefinesClause)(nil),                   // 107: pb.DataRedefinesClause
-	(*DataIntegerStringClause)(nil),               // 108: pb.DataIntegerStringClause
-	(*DataExternalClause)(nil),                    // 109: pb.DataExternalClause
-	(*DataGlobalClause)(nil),                      // 110: pb.DataGlobalClause
-	(*DataTypeDefClause)(nil),                     // 111: pb.DataTypeDefClause
-	(*DataThreadLocalClause)(nil),                 // 112: pb.DataThreadLocalClause
-	(*DataPictureClause)(nil),                     // 113: pb.DataPictureClause
-	(*PictureString)(nil),                         // 114: pb.PictureString
-	(*PictureChars)(nil),                          // 115: pb.PictureChars
-	(*PictureCardinality)(nil),                    // 116: pb.PictureCardinality
-	(*DataCommonOwnLocalClause)(nil),              // 117: pb.DataCommonOwnLocalClause
-	(*DataTypeClause)(nil),                        // 118: pb.DataTypeClause
-	(*DataUsingClause)(nil),                       // 119: pb.DataUsingClause
-	(*DataUsageClause)(nil),                       // 120: pb.DataUsageClause
-	(*DataValueInterval)(nil),                     // 121: pb.DataValueInterval
-	(*DataValueClause)(nil),                       // 122: pb.DataValueClause
-	(*DataReceivedByClause)(nil),                  // 123: pb.DataReceivedByClause
-	(*DataOccursClause)(nil),                      // 124: pb.DataOccursClause
-	(*DataSignClause)(nil),                        // 125: pb.DataSignClause
-	(*DataSynchronizedClause)(nil),                // 126: pb.DataSynchronizedClause
-	(*DataJustifiedClause)(nil),                   // 127: pb.DataJustifiedClause
-	(*DataBlankWhenZeroClause)(nil),               // 128: pb.DataBlankWhenZeroClause
-	(*DataWithLowerBoundsClause)(nil),             // 129: pb.DataWithLowerBoundsClause
-	(*DataAlignedClause)(nil),                     // 130: pb.DataAlignedClause
-	(*DataRecordAreaClause)(nil),                  // 131: pb.DataRecordAreaClause
-	(*ScreenSection)(nil),                         // 132: pb.ScreenSection
-	(*ScreenDescriptionEntry)(nil),                // 133: pb.ScreenDescriptionEntry
-	(*ReportSection)(nil),                         // 134: pb.ReportSection
-	(*ReportDescription)(nil),                     // 135: pb.ReportDescription
-	(*ReportDescriptionEntry)(nil),                // 136: pb.ReportDescriptionEntry
-	(*PageLimitClause)(nil),                       // 137: pb.PageLimitClause
-	(*HeadingClause)(nil),                         // 138: pb.HeadingClause
-	(*FirstDetailClause)(nil),                     // 139: pb.FirstDetailClause
-	(*LastDetailClause)(nil),                      // 140: pb.LastDetailClause
-	(*FootingClause)(nil),                         // 141: pb.FootingClause
-	(*ReportGroupDescriptionEntry)(nil),           // 142: pb.ReportGroupDescriptionEntry
-	(*ResetClause)(nil),                           // 143: pb.ResetClause
-	(*SumClause)(nil),                             // 144: pb.SumClause
-	(*ValueClause)(nil),                           // 145: pb.ValueClause
-	(*SourceClause)(nil),                          // 146: pb.SourceClause
-	(*IndicateClause)(nil),                        // 147: pb.IndicateClause
-	(*ColumnNumberClause)(nil),                    // 148: pb.ColumnNumberClause
-	(*BlankWhenZeroClause)(nil),                   // 149: pb.BlankWhenZeroClause
-	(*JustifiedClause)(nil),                       // 150: pb.JustifiedClause
-	(*SignClause)(nil),                            // 151: pb.SignClause
-	(*PictureClause)(nil),                         // 152: pb.PictureClause
-	(*LineNumberClause)(nil),                      // 153: pb.LineNumberClause
-	(*NextGroupClause)(nil),                       // 154: pb.NextGroupClause
-	(*TypeClause)(nil),                            // 155: pb.TypeClause
-	(*UsageClause)(nil),                           // 156: pb.UsageClause
-	(*ProgramLibrarySection)(nil),                 // 157: pb.ProgramLibrarySection
-	(*LibraryDescriptionEntry)(nil),               // 158: pb.LibraryDescriptionEntry
-	(*IsCommonClause)(nil),                        // 159: pb.IsCommonClause
-	(*AttributeClause1)(nil),                      // 160: pb.AttributeClause1
-	(*AttributeClause2)(nil),                      // 161: pb.AttributeClause2
-	(*ProcedureClause1)(nil),                      // 162: pb.ProcedureClause1
-	(*ProcedureClause2)(nil),                      // 163: pb.ProcedureClause2
-	(*LocalStorageSection)(nil),                   // 164: pb.LocalStorageSection
-	(*LinkageSection)(nil),                        // 165: pb.LinkageSection
-	(*CommunicationSection)(nil),                  // 166: pb.CommunicationSection
-	(*CommunicationDescriptionEntry)(nil),         // 167: pb.CommunicationDescriptionEntry
-	(*SymbolicTerminalClause)(nil),                // 168: pb.SymbolicTerminalClause
-	(*SymbolicDestinationClause)(nil),             // 169: pb.SymbolicDestinationClause
-	(*ErrorKeyClause)(nil),                        // 170: pb.ErrorKeyClause
-	(*DestinationTableClause)(nil),                // 171: pb.DestinationTableClause
-	(*DestinationCountClause)(nil),                // 172: pb.DestinationCountClause
-	(*SymbolicQueueClause)(nil),                   // 173: pb.SymbolicQueueClause
-	(*SymbolicSubQueueClause)(nil),                // 174: pb.SymbolicSubQueueClause
-	(*MessageDateClause)(nil),                     // 175: pb.MessageDateClause
-	(*MessageTimeClause)(nil),                     // 176: pb.MessageTimeClause
-	(*SymbolicSourceClause)(nil),                  // 177: pb.SymbolicSourceClause
-	(*TextLengthClause)(nil),                      // 178: pb.TextLengthClause
-	(*EndKeyClause)(nil),                          // 179: pb.EndKeyClause
-	(*StatusKeyClause)(nil),                       // 180: pb.StatusKeyClause
-	(*MessageCountClause)(nil),                    // 181: pb.MessageCountClause
-	(*DataBaseSection)(nil),                       // 182: pb.DataBaseSection
-	(*DataBaseSectionEntry)(nil),                  // 183: pb.DataBaseSectionEntry
-	(*ProcedureDivision)(nil),                     // 184: pb.ProcedureDivision
-	(*ArithmeticExpression)(nil),                  // 185: pb.ArithmeticExpression
-	(*Identifier)(nil),                            // 186: pb.Identifier
-	(*TableCall)(nil),                             // 187: pb.TableCall
-	(*FunctionCall)(nil),                          // 188: pb.FunctionCall
-	(*ReferenceModifier)(nil),                     // 189: pb.ReferenceModifier
-	(*CharacterPosition)(nil),                     // 190: pb.CharacterPosition
-	(*Length)(nil),                                // 191: pb.Length
-	(*Subscript)(nil),                             // 192: pb.Subscript
-	(*Argument)(nil),                              // 193: pb.Argument
-	(*QualifiedDataNameIntegerLiteral)(nil),       // 194: pb.QualifiedDataNameIntegerLiteral
-	(*IndexNameIntegerLiteral)(nil),               // 195: pb.IndexNameIntegerLiteral
-	(*QualifiedDataName)(nil),                     // 196: pb.QualifiedDataName
-	(*QualifiedDataNameFormat1)(nil),              // 197: pb.QualifiedDataNameFormat1
-	(*QualifiedDataNameFormat2)(nil),              // 198: pb.QualifiedDataNameFormat2
-	(*QualifiedDataNameFormat3)(nil),              // 199: pb.QualifiedDataNameFormat3
-	(*QualifiedDataNameFormat4)(nil),              // 200: pb.QualifiedDataNameFormat4
-	(*InData)(nil),                                // 201: pb.InData
-	(*InFile)(nil),                                // 202: pb.InFile
-	(*InMnemonic)(nil),                            // 203: pb.InMnemonic
-	(*InSection)(nil),                             // 204: pb.InSection
-	(*InLibrary)(nil),                             // 205: pb.InLibrary
-	(*InTable)(nil),                               // 206: pb.InTable
-	(*AlphabetName)(nil),                          // 207: pb.AlphabetName
-	(*AssignmentName)(nil),                        // 208: pb.AssignmentName
-	(*BasisName)(nil),                             // 209: pb.BasisName
-	(*CdName)(nil),                                // 210: pb.CdName
-	(*ClassName)(nil),                             // 211: pb.ClassName
-	(*ComputerName)(nil),                          // 212: pb.ComputerName
-	(*ConditionName)(nil),                         // 213: pb.ConditionName
-	(*DataName)(nil),                              // 214: pb.DataName
-	(*DataDescName)(nil),                          // 215: pb.DataDescName
-	(*EnvironmentName)(nil),                       // 216: pb.EnvironmentName
-	(*FileName)(nil),                              // 217: pb.FileName
-	(*FunctionName)(nil),                          // 218: pb.FunctionName
-	(*IndexName)(nil),                             // 219: pb.IndexName
-	(*LanguageName)(nil),                          // 220: pb.LanguageName
-	(*LibraryName)(nil),                           // 221: pb.LibraryName
-	(*LocalName)(nil),                             // 222: pb.LocalName
-	(*MnemonicName)(nil),                          // 223: pb.MnemonicName
-	(*ParagraphName)(nil),                         // 224: pb.ParagraphName
-	(*ProcedureName)(nil),                         // 225: pb.ProcedureName
-	(*ProgramName)(nil),                           // 226: pb.ProgramName
-	(*RecordName)(nil),                            // 227: pb.RecordName
-	(*ReportName)(nil),                            // 228: pb.ReportName
-	(*RoutingName)(nil),                           // 229: pb.RoutingName
-	(*ScreenName)(nil),                            // 230: pb.ScreenName
-	(*SectionName)(nil),                           // 231: pb.SectionName
-	(*SystemName)(nil),                            // 232: pb.SystemName
-	(*SymbolicCharacter)(nil),                     // 233: pb.SymbolicCharacter
-	(*TextName)(nil),                              // 234: pb.TextName
-	(*CobolWord)(nil),                             // 235: pb.CobolWord
-	(*Literal)(nil),                               // 236: pb.Literal
-	(*BooleanLiteral)(nil),                        // 237: pb.BooleanLiteral
-	(*NumericLiteral)(nil),                        // 238: pb.NumericLiteral
-	(*IntegerLiteral)(nil),                        // 239: pb.IntegerLiteral
-	(*FigurativeConstant)(nil),                    // 240: pb.FigurativeConstant
-	(*SpecialRegister)(nil),                       // 241: pb.SpecialRegister
-	(*NonNumericLiteral)(nil),                     // 242: pb.NonNumericLiteral
-	(*StringLiteral)(nil),                         // 243: pb.StringLiteral
-	(*DbcsLiteral)(nil),                           // 244: pb.DbcsLiteral
-	(*HexNumber)(nil),                             // 245: pb.HexNumber
-	(*NullTerminated)(nil),                        // 246: pb.NullTerminated
-	(*AlphabetClause_Also)(nil),                   // 247: pb.AlphabetClause.Also
-	(*AlphabetClause_AlphabetLiteral)(nil),        // 248: pb.AlphabetClause.AlphabetLiteral
-	(*AlphabetClause_AlphabetLiterals)(nil),       // 249: pb.AlphabetClause.AlphabetLiterals
-	(*AlphabetClause_Alphanumeric)(nil),           // 250: pb.AlphabetClause.Alphanumeric
-	(*AlphabetClause_National)(nil),               // 251: pb.AlphabetClause.National
-	(*LabelRecordsClause_DataNames)(nil),          // 252: pb.LabelRecordsClause.DataNames
-	(*DataDescriptionEntry_Format1)(nil),          // 253: pb.DataDescriptionEntry.Format1
-	(*DataDescriptionEntry_Format2)(nil),          // 254: pb.DataDescriptionEntry.Format2
-	(*DataDescriptionEntry_Format3)(nil),          // 255: pb.DataDescriptionEntry.Format3
-	(*DataDescriptionEntry_ExecSql)(nil),          // 256: pb.DataDescriptionEntry.ExecSql
-	(*DataTypeClause_Lob)(nil),                    // 257: pb.DataTypeClause.Lob
-	(*DataOccursClause_Sort)(nil),                 // 258: pb.DataOccursClause.Sort
-	(*DataOccursClause_Indexed)(nil),              // 259: pb.DataOccursClause.Indexed
-	(*ReportGroupDescriptionEntry_Vertical)(nil),  // 260: pb.ReportGroupDescriptionEntry.Vertical
-	(*ReportGroupDescriptionEntry_Single)(nil),    // 261: pb.ReportGroupDescriptionEntry.Single
-	(*ReportGroupDescriptionEntry_Printable)(nil), // 262: pb.ReportGroupDescriptionEntry.Printable
-	(*TypeClause_ReportHeading)(nil),              // 263: pb.TypeClause.ReportHeading
-	(*TypeClause_PageHeading)(nil),                // 264: pb.TypeClause.PageHeading
-	(*TypeClause_ControlHeading)(nil),             // 265: pb.TypeClause.ControlHeading
-	(*TypeClause_Detail)(nil),                     // 266: pb.TypeClause.Detail
-	(*TypeClause_ControlFooting)(nil),             // 267: pb.TypeClause.ControlFooting
-	(*TypeClause_PageFooting)(nil),                // 268: pb.TypeClause.PageFooting
-	(*TypeClause_ReportFooting)(nil),              // 269: pb.TypeClause.ReportFooting
-	(*LibraryDescriptionEntry_Import)(nil),        // 270: pb.LibraryDescriptionEntry.Import
-	(*LibraryDescriptionEntry_Export)(nil),        // 271: pb.LibraryDescriptionEntry.Export
-	(*ProcedureClause2_WithName)(nil),             // 272: pb.ProcedureClause2.WithName
-	(*ProcedureClause2_UsingName)(nil),            // 273: pb.ProcedureClause2.UsingName
-	(*CommunicationDescriptionEntry_Input)(nil),   // 274: pb.CommunicationDescriptionEntry.Input
-	(*CommunicationDescriptionEntry_Output)(nil),  // 275: pb.CommunicationDescriptionEntry.Output
-	(*CommunicationDescriptionEntry_Io)(nil),      // 276: pb.CommunicationDescriptionEntry.Io
+	(FullClause_Type)(0),                          // 26: pb.FullClause.Type
+	(RequiredClause_Type)(0),                      // 27: pb.RequiredClause.Type
+	(SecureClause_Type)(0),                        // 28: pb.SecureClause.Type
+	(AutoClause_Type)(0),                          // 29: pb.AutoClause.Type
+	(BlankClause_Type)(0),                         // 30: pb.BlankClause.Type
+	(BellClause_Type)(0),                          // 31: pb.BellClause.Type
+	(EraseClause_Type)(0),                         // 32: pb.EraseClause.Type
+	(LightClause_Type)(0),                         // 33: pb.LightClause.Type
+	(GridClause_Type)(0),                          // 34: pb.GridClause.Type
+	(LineClause_Type)(0),                          // 35: pb.LineClause.Type
+	(ColumnClause_Type)(0),                        // 36: pb.ColumnClause.Type
+	(SignClause_Type)(0),                          // 37: pb.SignClause.Type
+	(AttributeClause1_Sharing)(0),                 // 38: pb.AttributeClause1.Sharing
+	(AttributeClause2_LibAccess)(0),               // 39: pb.AttributeClause2.LibAccess
+	(Literal_Type)(0),                             // 40: pb.Literal.Type
+	(NumericLiteral_Type)(0),                      // 41: pb.NumericLiteral.Type
+	(FigurativeConstant_Type)(0),                  // 42: pb.FigurativeConstant.Type
+	(*Program)(nil),                               // 43: pb.Program
+	(*CompilationUnit)(nil),                       // 44: pb.CompilationUnit
+	(*ProgramUnit)(nil),                           // 45: pb.ProgramUnit
+	(*IdentificationDivision)(nil),                // 46: pb.IdentificationDivision
+	(*ProgramIdParagraph)(nil),                    // 47: pb.ProgramIdParagraph
+	(*AuthorParagraph)(nil),                       // 48: pb.AuthorParagraph
+	(*DateCompiledParagraph)(nil),                 // 49: pb.DateCompiledParagraph
+	(*DateWrittenParagraph)(nil),                  // 50: pb.DateWrittenParagraph
+	(*InstallationParagraph)(nil),                 // 51: pb.InstallationParagraph
+	(*RemarksParagraph)(nil),                      // 52: pb.RemarksParagraph
+	(*SecurityParagraph)(nil),                     // 53: pb.SecurityParagraph
+	(*EnvironmentDivision)(nil),                   // 54: pb.EnvironmentDivision
+	(*ConfigurationSection)(nil),                  // 55: pb.ConfigurationSection
+	(*SourceComputerParagraph)(nil),               // 56: pb.SourceComputerParagraph
+	(*ObjectComputerParagraph)(nil),               // 57: pb.ObjectComputerParagraph
+	(*MemorySizeClause)(nil),                      // 58: pb.MemorySizeClause
+	(*DiskSizeClause)(nil),                        // 59: pb.DiskSizeClause
+	(*CollatingSequenceClause)(nil),               // 60: pb.CollatingSequenceClause
+	(*SegmentLimitClause)(nil),                    // 61: pb.SegmentLimitClause
+	(*CharacterSetClause)(nil),                    // 62: pb.CharacterSetClause
+	(*SpecialNamesParagraph)(nil),                 // 63: pb.SpecialNamesParagraph
+	(*AlphabetClause)(nil),                        // 64: pb.AlphabetClause
+	(*ChannelClause)(nil),                         // 65: pb.ChannelClause
+	(*ClassClause)(nil),                           // 66: pb.ClassClause
+	(*ClassClauseThrough)(nil),                    // 67: pb.ClassClauseThrough
+	(*CurrencySignClause)(nil),                    // 68: pb.CurrencySignClause
+	(*DecimalPointClause)(nil),                    // 69: pb.DecimalPointClause
+	(*DefaultDisplaySignClause)(nil),              // 70: pb.DefaultDisplaySignClause
+	(*OdtClause)(nil),                             // 71: pb.OdtClause
+	(*ReserveNetworkClause)(nil),                  // 72: pb.ReserveNetworkClause
+	(*SymbolicCharactersClause)(nil),              // 73: pb.SymbolicCharactersClause
+	(*InputOutputSection)(nil),                    // 74: pb.InputOutputSection
+	(*FileControlParagraph)(nil),                  // 75: pb.FileControlParagraph
+	(*FileControlEntry)(nil),                      // 76: pb.FileControlEntry
+	(*SelectClause)(nil),                          // 77: pb.SelectClause
+	(*AssignClause)(nil),                          // 78: pb.AssignClause
+	(*ReserveClause)(nil),                         // 79: pb.ReserveClause
+	(*OrganizationClause)(nil),                    // 80: pb.OrganizationClause
+	(*PaddingCharacterClause)(nil),                // 81: pb.PaddingCharacterClause
+	(*RecordDelimiterClause)(nil),                 // 82: pb.RecordDelimiterClause
+	(*AccessModeClause)(nil),                      // 83: pb.AccessModeClause
+	(*RecordKeyClause)(nil),                       // 84: pb.RecordKeyClause
+	(*AlternateRecordKeyClause)(nil),              // 85: pb.AlternateRecordKeyClause
+	(*PasswordClause)(nil),                        // 86: pb.PasswordClause
+	(*FileStatusClause)(nil),                      // 87: pb.FileStatusClause
+	(*RelativeKeyClause)(nil),                     // 88: pb.RelativeKeyClause
+	(*IoControlParagraph)(nil),                    // 89: pb.IoControlParagraph
+	(*RerunClause)(nil),                           // 90: pb.RerunClause
+	(*RerunEveryRecords)(nil),                     // 91: pb.RerunEveryRecords
+	(*RerunEveryOf)(nil),                          // 92: pb.RerunEveryOf
+	(*RerunEveryClock)(nil),                       // 93: pb.RerunEveryClock
+	(*SameClause)(nil),                            // 94: pb.SameClause
+	(*MultipleFileClause)(nil),                    // 95: pb.MultipleFileClause
+	(*MultipleFilePosition)(nil),                  // 96: pb.MultipleFilePosition
+	(*CommitmentControlClause)(nil),               // 97: pb.CommitmentControlClause
+	(*DataDivision)(nil),                          // 98: pb.DataDivision
+	(*FileSection)(nil),                           // 99: pb.FileSection
+	(*FileDescriptionEntry)(nil),                  // 100: pb.FileDescriptionEntry
+	(*ModeStatement)(nil),                         // 101: pb.ModeStatement
+	(*RecordingModeClause)(nil),                   // 102: pb.RecordingModeClause
+	(*ExternalClause)(nil),                        // 103: pb.ExternalClause
+	(*GlobalClause)(nil),                          // 104: pb.GlobalClause
+	(*BlockContainsClause)(nil),                   // 105: pb.BlockContainsClause
+	(*RecordContainsClause)(nil),                  // 106: pb.RecordContainsClause
+	(*LabelRecordsClause)(nil),                    // 107: pb.LabelRecordsClause
+	(*ValueOfClause)(nil),                         // 108: pb.ValueOfClause
+	(*ValuePair)(nil),                             // 109: pb.ValuePair
+	(*DataRecordsClause)(nil),                     // 110: pb.DataRecordsClause
+	(*DataNameOrIntegerLiteral)(nil),              // 111: pb.DataNameOrIntegerLiteral
+	(*LinageClause)(nil),                          // 112: pb.LinageClause
+	(*CodeSetClause)(nil),                         // 113: pb.CodeSetClause
+	(*ReportClause)(nil),                          // 114: pb.ReportClause
+	(*WorkingStorageSection)(nil),                 // 115: pb.WorkingStorageSection
+	(*DataDescriptionEntry)(nil),                  // 116: pb.DataDescriptionEntry
+	(*DataRenamesClause)(nil),                     // 117: pb.DataRenamesClause
+	(*DataRedefinesClause)(nil),                   // 118: pb.DataRedefinesClause
+	(*DataIntegerStringClause)(nil),               // 119: pb.DataIntegerStringClause
+	(*DataExternalClause)(nil),                    // 120: pb.DataExternalClause
+	(*DataGlobalClause)(nil),                      // 121: pb.DataGlobalClause
+	(*DataTypeDefClause)(nil),                     // 122: pb.DataTypeDefClause
+	(*DataThreadLocalClause)(nil),                 // 123: pb.DataThreadLocalClause
+	(*DataPictureClause)(nil),                     // 124: pb.DataPictureClause
+	(*PictureString)(nil),                         // 125: pb.PictureString
+	(*PictureChars)(nil),                          // 126: pb.PictureChars
+	(*PictureCardinality)(nil),                    // 127: pb.PictureCardinality
+	(*DataCommonOwnLocalClause)(nil),              // 128: pb.DataCommonOwnLocalClause
+	(*DataTypeClause)(nil),                        // 129: pb.DataTypeClause
+	(*DataUsingClause)(nil),                       // 130: pb.DataUsingClause
+	(*DataUsageClause)(nil),                       // 131: pb.DataUsageClause
+	(*DataValueInterval)(nil),                     // 132: pb.DataValueInterval
+	(*DataValueClause)(nil),                       // 133: pb.DataValueClause
+	(*DataReceivedByClause)(nil),                  // 134: pb.DataReceivedByClause
+	(*DataOccursClause)(nil),                      // 135: pb.DataOccursClause
+	(*DataSignClause)(nil),                        // 136: pb.DataSignClause
+	(*DataSynchronizedClause)(nil),                // 137: pb.DataSynchronizedClause
+	(*DataJustifiedClause)(nil),                   // 138: pb.DataJustifiedClause
+	(*DataBlankWhenZeroClause)(nil),               // 139: pb.DataBlankWhenZeroClause
+	(*DataWithLowerBoundsClause)(nil),             // 140: pb.DataWithLowerBoundsClause
+	(*DataAlignedClause)(nil),                     // 141: pb.DataAlignedClause
+	(*DataRecordAreaClause)(nil),                  // 142: pb.DataRecordAreaClause
+	(*ScreenSection)(nil),                         // 143: pb.ScreenSection
+	(*ScreenDescriptionEntry)(nil),                // 144: pb.ScreenDescriptionEntry
+	(*ZeroFillClause)(nil),                        // 145: pb.ZeroFillClause
+	(*FullClause)(nil),                            // 146: pb.FullClause
+	(*PromptClause)(nil),                          // 147: pb.PromptClause
+	(*RequiredClause)(nil),                        // 148: pb.RequiredClause
+	(*SecureClause)(nil),                          // 149: pb.SecureClause
+	(*AutoClause)(nil),                            // 150: pb.AutoClause
+	(*UsingClause)(nil),                           // 151: pb.UsingClause
+	(*FromClause)(nil),                            // 152: pb.FromClause
+	(*BlankClause)(nil),                           // 153: pb.BlankClause
+	(*BellClause)(nil),                            // 154: pb.BellClause
+	(*BlinkClause)(nil),                           // 155: pb.BlinkClause
+	(*EraseClause)(nil),                           // 156: pb.EraseClause
+	(*LightClause)(nil),                           // 157: pb.LightClause
+	(*GridClause)(nil),                            // 158: pb.GridClause
+	(*ReverseVideoClause)(nil),                    // 159: pb.ReverseVideoClause
+	(*UnderlineClause)(nil),                       // 160: pb.UnderlineClause
+	(*SizeClause)(nil),                            // 161: pb.SizeClause
+	(*LineClause)(nil),                            // 162: pb.LineClause
+	(*ColumnClause)(nil),                          // 163: pb.ColumnClause
+	(*ForegroundColorClause)(nil),                 // 164: pb.ForegroundColorClause
+	(*BackgroundColorClause)(nil),                 // 165: pb.BackgroundColorClause
+	(*ControlClause)(nil),                         // 166: pb.ControlClause
+	(*ReportSection)(nil),                         // 167: pb.ReportSection
+	(*ReportDescription)(nil),                     // 168: pb.ReportDescription
+	(*ReportDescriptionEntry)(nil),                // 169: pb.ReportDescriptionEntry
+	(*PageLimitClause)(nil),                       // 170: pb.PageLimitClause
+	(*HeadingClause)(nil),                         // 171: pb.HeadingClause
+	(*FirstDetailClause)(nil),                     // 172: pb.FirstDetailClause
+	(*LastDetailClause)(nil),                      // 173: pb.LastDetailClause
+	(*FootingClause)(nil),                         // 174: pb.FootingClause
+	(*ReportGroupDescriptionEntry)(nil),           // 175: pb.ReportGroupDescriptionEntry
+	(*ResetClause)(nil),                           // 176: pb.ResetClause
+	(*SumClause)(nil),                             // 177: pb.SumClause
+	(*ValueClause)(nil),                           // 178: pb.ValueClause
+	(*SourceClause)(nil),                          // 179: pb.SourceClause
+	(*IndicateClause)(nil),                        // 180: pb.IndicateClause
+	(*ColumnNumberClause)(nil),                    // 181: pb.ColumnNumberClause
+	(*BlankWhenZeroClause)(nil),                   // 182: pb.BlankWhenZeroClause
+	(*JustifiedClause)(nil),                       // 183: pb.JustifiedClause
+	(*SignClause)(nil),                            // 184: pb.SignClause
+	(*PictureClause)(nil),                         // 185: pb.PictureClause
+	(*LineNumberClause)(nil),                      // 186: pb.LineNumberClause
+	(*NextGroupClause)(nil),                       // 187: pb.NextGroupClause
+	(*TypeClause)(nil),                            // 188: pb.TypeClause
+	(*UsageClause)(nil),                           // 189: pb.UsageClause
+	(*ProgramLibrarySection)(nil),                 // 190: pb.ProgramLibrarySection
+	(*LibraryDescriptionEntry)(nil),               // 191: pb.LibraryDescriptionEntry
+	(*IsCommonClause)(nil),                        // 192: pb.IsCommonClause
+	(*AttributeClause1)(nil),                      // 193: pb.AttributeClause1
+	(*AttributeClause2)(nil),                      // 194: pb.AttributeClause2
+	(*ProcedureClause1)(nil),                      // 195: pb.ProcedureClause1
+	(*ProcedureClause2)(nil),                      // 196: pb.ProcedureClause2
+	(*LocalStorageSection)(nil),                   // 197: pb.LocalStorageSection
+	(*LinkageSection)(nil),                        // 198: pb.LinkageSection
+	(*CommunicationSection)(nil),                  // 199: pb.CommunicationSection
+	(*CommunicationDescriptionEntry)(nil),         // 200: pb.CommunicationDescriptionEntry
+	(*SymbolicTerminalClause)(nil),                // 201: pb.SymbolicTerminalClause
+	(*SymbolicDestinationClause)(nil),             // 202: pb.SymbolicDestinationClause
+	(*ErrorKeyClause)(nil),                        // 203: pb.ErrorKeyClause
+	(*DestinationTableClause)(nil),                // 204: pb.DestinationTableClause
+	(*DestinationCountClause)(nil),                // 205: pb.DestinationCountClause
+	(*SymbolicQueueClause)(nil),                   // 206: pb.SymbolicQueueClause
+	(*SymbolicSubQueueClause)(nil),                // 207: pb.SymbolicSubQueueClause
+	(*MessageDateClause)(nil),                     // 208: pb.MessageDateClause
+	(*MessageTimeClause)(nil),                     // 209: pb.MessageTimeClause
+	(*SymbolicSourceClause)(nil),                  // 210: pb.SymbolicSourceClause
+	(*TextLengthClause)(nil),                      // 211: pb.TextLengthClause
+	(*EndKeyClause)(nil),                          // 212: pb.EndKeyClause
+	(*StatusKeyClause)(nil),                       // 213: pb.StatusKeyClause
+	(*MessageCountClause)(nil),                    // 214: pb.MessageCountClause
+	(*DataBaseSection)(nil),                       // 215: pb.DataBaseSection
+	(*DataBaseSectionEntry)(nil),                  // 216: pb.DataBaseSectionEntry
+	(*ProcedureDivision)(nil),                     // 217: pb.ProcedureDivision
+	(*ArithmeticExpression)(nil),                  // 218: pb.ArithmeticExpression
+	(*Identifier)(nil),                            // 219: pb.Identifier
+	(*TableCall)(nil),                             // 220: pb.TableCall
+	(*FunctionCall)(nil),                          // 221: pb.FunctionCall
+	(*ReferenceModifier)(nil),                     // 222: pb.ReferenceModifier
+	(*CharacterPosition)(nil),                     // 223: pb.CharacterPosition
+	(*Length)(nil),                                // 224: pb.Length
+	(*Subscript)(nil),                             // 225: pb.Subscript
+	(*Argument)(nil),                              // 226: pb.Argument
+	(*QualifiedDataNameIntegerLiteral)(nil),       // 227: pb.QualifiedDataNameIntegerLiteral
+	(*IndexNameIntegerLiteral)(nil),               // 228: pb.IndexNameIntegerLiteral
+	(*QualifiedDataName)(nil),                     // 229: pb.QualifiedDataName
+	(*QualifiedDataNameFormat1)(nil),              // 230: pb.QualifiedDataNameFormat1
+	(*QualifiedDataNameFormat2)(nil),              // 231: pb.QualifiedDataNameFormat2
+	(*QualifiedDataNameFormat3)(nil),              // 232: pb.QualifiedDataNameFormat3
+	(*QualifiedDataNameFormat4)(nil),              // 233: pb.QualifiedDataNameFormat4
+	(*InData)(nil),                                // 234: pb.InData
+	(*InFile)(nil),                                // 235: pb.InFile
+	(*InMnemonic)(nil),                            // 236: pb.InMnemonic
+	(*InSection)(nil),                             // 237: pb.InSection
+	(*InLibrary)(nil),                             // 238: pb.InLibrary
+	(*InTable)(nil),                               // 239: pb.InTable
+	(*AlphabetName)(nil),                          // 240: pb.AlphabetName
+	(*AssignmentName)(nil),                        // 241: pb.AssignmentName
+	(*BasisName)(nil),                             // 242: pb.BasisName
+	(*CdName)(nil),                                // 243: pb.CdName
+	(*ClassName)(nil),                             // 244: pb.ClassName
+	(*ComputerName)(nil),                          // 245: pb.ComputerName
+	(*ConditionName)(nil),                         // 246: pb.ConditionName
+	(*DataName)(nil),                              // 247: pb.DataName
+	(*DataDescName)(nil),                          // 248: pb.DataDescName
+	(*EnvironmentName)(nil),                       // 249: pb.EnvironmentName
+	(*FileName)(nil),                              // 250: pb.FileName
+	(*FunctionName)(nil),                          // 251: pb.FunctionName
+	(*IndexName)(nil),                             // 252: pb.IndexName
+	(*LanguageName)(nil),                          // 253: pb.LanguageName
+	(*LibraryName)(nil),                           // 254: pb.LibraryName
+	(*LocalName)(nil),                             // 255: pb.LocalName
+	(*MnemonicName)(nil),                          // 256: pb.MnemonicName
+	(*ParagraphName)(nil),                         // 257: pb.ParagraphName
+	(*ProcedureName)(nil),                         // 258: pb.ProcedureName
+	(*ProgramName)(nil),                           // 259: pb.ProgramName
+	(*RecordName)(nil),                            // 260: pb.RecordName
+	(*ReportName)(nil),                            // 261: pb.ReportName
+	(*RoutingName)(nil),                           // 262: pb.RoutingName
+	(*ScreenName)(nil),                            // 263: pb.ScreenName
+	(*SectionName)(nil),                           // 264: pb.SectionName
+	(*SystemName)(nil),                            // 265: pb.SystemName
+	(*SymbolicCharacter)(nil),                     // 266: pb.SymbolicCharacter
+	(*TextName)(nil),                              // 267: pb.TextName
+	(*CobolWord)(nil),                             // 268: pb.CobolWord
+	(*Literal)(nil),                               // 269: pb.Literal
+	(*BooleanLiteral)(nil),                        // 270: pb.BooleanLiteral
+	(*NumericLiteral)(nil),                        // 271: pb.NumericLiteral
+	(*IntegerLiteral)(nil),                        // 272: pb.IntegerLiteral
+	(*FigurativeConstant)(nil),                    // 273: pb.FigurativeConstant
+	(*SpecialRegister)(nil),                       // 274: pb.SpecialRegister
+	(*NonNumericLiteral)(nil),                     // 275: pb.NonNumericLiteral
+	(*StringLiteral)(nil),                         // 276: pb.StringLiteral
+	(*DbcsLiteral)(nil),                           // 277: pb.DbcsLiteral
+	(*HexNumber)(nil),                             // 278: pb.HexNumber
+	(*NullTerminated)(nil),                        // 279: pb.NullTerminated
+	(*AlphabetClause_Also)(nil),                   // 280: pb.AlphabetClause.Also
+	(*AlphabetClause_AlphabetLiteral)(nil),        // 281: pb.AlphabetClause.AlphabetLiteral
+	(*AlphabetClause_AlphabetLiterals)(nil),       // 282: pb.AlphabetClause.AlphabetLiterals
+	(*AlphabetClause_Alphanumeric)(nil),           // 283: pb.AlphabetClause.Alphanumeric
+	(*AlphabetClause_National)(nil),               // 284: pb.AlphabetClause.National
+	(*LabelRecordsClause_DataNames)(nil),          // 285: pb.LabelRecordsClause.DataNames
+	(*DataDescriptionEntry_Format1)(nil),          // 286: pb.DataDescriptionEntry.Format1
+	(*DataDescriptionEntry_Format2)(nil),          // 287: pb.DataDescriptionEntry.Format2
+	(*DataDescriptionEntry_Format3)(nil),          // 288: pb.DataDescriptionEntry.Format3
+	(*DataDescriptionEntry_ExecSql)(nil),          // 289: pb.DataDescriptionEntry.ExecSql
+	(*DataTypeClause_Lob)(nil),                    // 290: pb.DataTypeClause.Lob
+	(*DataOccursClause_Sort)(nil),                 // 291: pb.DataOccursClause.Sort
+	(*DataOccursClause_Indexed)(nil),              // 292: pb.DataOccursClause.Indexed
+	(*ReportGroupDescriptionEntry_Vertical)(nil),  // 293: pb.ReportGroupDescriptionEntry.Vertical
+	(*ReportGroupDescriptionEntry_Single)(nil),    // 294: pb.ReportGroupDescriptionEntry.Single
+	(*ReportGroupDescriptionEntry_Printable)(nil), // 295: pb.ReportGroupDescriptionEntry.Printable
+	(*TypeClause_ReportHeading)(nil),              // 296: pb.TypeClause.ReportHeading
+	(*TypeClause_PageHeading)(nil),                // 297: pb.TypeClause.PageHeading
+	(*TypeClause_ControlHeading)(nil),             // 298: pb.TypeClause.ControlHeading
+	(*TypeClause_Detail)(nil),                     // 299: pb.TypeClause.Detail
+	(*TypeClause_ControlFooting)(nil),             // 300: pb.TypeClause.ControlFooting
+	(*TypeClause_PageFooting)(nil),                // 301: pb.TypeClause.PageFooting
+	(*TypeClause_ReportFooting)(nil),              // 302: pb.TypeClause.ReportFooting
+	(*LibraryDescriptionEntry_Import)(nil),        // 303: pb.LibraryDescriptionEntry.Import
+	(*LibraryDescriptionEntry_Export)(nil),        // 304: pb.LibraryDescriptionEntry.Export
+	(*ProcedureClause2_WithName)(nil),             // 305: pb.ProcedureClause2.WithName
+	(*ProcedureClause2_UsingName)(nil),            // 306: pb.ProcedureClause2.UsingName
+	(*CommunicationDescriptionEntry_Input)(nil),   // 307: pb.CommunicationDescriptionEntry.Input
+	(*CommunicationDescriptionEntry_Output)(nil),  // 308: pb.CommunicationDescriptionEntry.Output
+	(*CommunicationDescriptionEntry_Io)(nil),      // 309: pb.CommunicationDescriptionEntry.Io
 }
 var file_cobol_proto_depIdxs = []int32{
-	33,  // 0: pb.Program.compilation_units:type_name -> pb.CompilationUnit
-	34,  // 1: pb.CompilationUnit.program_units:type_name -> pb.ProgramUnit
-	35,  // 2: pb.ProgramUnit.identification_division:type_name -> pb.IdentificationDivision
-	43,  // 3: pb.ProgramUnit.environment_division:type_name -> pb.EnvironmentDivision
-	87,  // 4: pb.ProgramUnit.data_division:type_name -> pb.DataDivision
-	184, // 5: pb.ProgramUnit.procedure_division:type_name -> pb.ProcedureDivision
-	36,  // 6: pb.IdentificationDivision.program_id_paragraph:type_name -> pb.ProgramIdParagraph
-	37,  // 7: pb.IdentificationDivision.author_paragraph:type_name -> pb.AuthorParagraph
-	38,  // 8: pb.IdentificationDivision.date_compiled_paragraph:type_name -> pb.DateCompiledParagraph
-	39,  // 9: pb.IdentificationDivision.date_written_paragraph:type_name -> pb.DateWrittenParagraph
-	40,  // 10: pb.IdentificationDivision.installation_paragraph:type_name -> pb.InstallationParagraph
-	41,  // 11: pb.IdentificationDivision.remarks_paragraph:type_name -> pb.RemarksParagraph
-	42,  // 12: pb.IdentificationDivision.security_paragraph:type_name -> pb.SecurityParagraph
-	226, // 13: pb.ProgramIdParagraph.program_name:type_name -> pb.ProgramName
+	44,  // 0: pb.Program.compilation_units:type_name -> pb.CompilationUnit
+	45,  // 1: pb.CompilationUnit.program_units:type_name -> pb.ProgramUnit
+	46,  // 2: pb.ProgramUnit.identification_division:type_name -> pb.IdentificationDivision
+	54,  // 3: pb.ProgramUnit.environment_division:type_name -> pb.EnvironmentDivision
+	98,  // 4: pb.ProgramUnit.data_division:type_name -> pb.DataDivision
+	217, // 5: pb.ProgramUnit.procedure_division:type_name -> pb.ProcedureDivision
+	47,  // 6: pb.IdentificationDivision.program_id_paragraph:type_name -> pb.ProgramIdParagraph
+	48,  // 7: pb.IdentificationDivision.author_paragraph:type_name -> pb.AuthorParagraph
+	49,  // 8: pb.IdentificationDivision.date_compiled_paragraph:type_name -> pb.DateCompiledParagraph
+	50,  // 9: pb.IdentificationDivision.date_written_paragraph:type_name -> pb.DateWrittenParagraph
+	51,  // 10: pb.IdentificationDivision.installation_paragraph:type_name -> pb.InstallationParagraph
+	52,  // 11: pb.IdentificationDivision.remarks_paragraph:type_name -> pb.RemarksParagraph
+	53,  // 12: pb.IdentificationDivision.security_paragraph:type_name -> pb.SecurityParagraph
+	259, // 13: pb.ProgramIdParagraph.program_name:type_name -> pb.ProgramName
 	0,   // 14: pb.ProgramIdParagraph.attribute:type_name -> pb.ProgramIdParagraph.Attribute
-	44,  // 15: pb.EnvironmentDivision.configuration_section:type_name -> pb.ConfigurationSection
-	63,  // 16: pb.EnvironmentDivision.input_output_section:type_name -> pb.InputOutputSection
-	52,  // 17: pb.EnvironmentDivision.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
-	46,  // 18: pb.ConfigurationSection.object_computer_paragraph:type_name -> pb.ObjectComputerParagraph
-	45,  // 19: pb.ConfigurationSection.source_computer_paragraph:type_name -> pb.SourceComputerParagraph
-	52,  // 20: pb.ConfigurationSection.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
-	212, // 21: pb.SourceComputerParagraph.computer_name:type_name -> pb.ComputerName
-	212, // 22: pb.ObjectComputerParagraph.computer_name:type_name -> pb.ComputerName
-	47,  // 23: pb.ObjectComputerParagraph.memory_size_clause:type_name -> pb.MemorySizeClause
-	48,  // 24: pb.ObjectComputerParagraph.disk_size_clause:type_name -> pb.DiskSizeClause
-	49,  // 25: pb.ObjectComputerParagraph.collating_sequence_clause:type_name -> pb.CollatingSequenceClause
-	50,  // 26: pb.ObjectComputerParagraph.segment_limit_clause:type_name -> pb.SegmentLimitClause
-	51,  // 27: pb.ObjectComputerParagraph.character_set_clause:type_name -> pb.CharacterSetClause
+	55,  // 15: pb.EnvironmentDivision.configuration_section:type_name -> pb.ConfigurationSection
+	74,  // 16: pb.EnvironmentDivision.input_output_section:type_name -> pb.InputOutputSection
+	63,  // 17: pb.EnvironmentDivision.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
+	57,  // 18: pb.ConfigurationSection.object_computer_paragraph:type_name -> pb.ObjectComputerParagraph
+	56,  // 19: pb.ConfigurationSection.source_computer_paragraph:type_name -> pb.SourceComputerParagraph
+	63,  // 20: pb.ConfigurationSection.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
+	245, // 21: pb.SourceComputerParagraph.computer_name:type_name -> pb.ComputerName
+	245, // 22: pb.ObjectComputerParagraph.computer_name:type_name -> pb.ComputerName
+	58,  // 23: pb.ObjectComputerParagraph.memory_size_clause:type_name -> pb.MemorySizeClause
+	59,  // 24: pb.ObjectComputerParagraph.disk_size_clause:type_name -> pb.DiskSizeClause
+	60,  // 25: pb.ObjectComputerParagraph.collating_sequence_clause:type_name -> pb.CollatingSequenceClause
+	61,  // 26: pb.ObjectComputerParagraph.segment_limit_clause:type_name -> pb.SegmentLimitClause
+	62,  // 27: pb.ObjectComputerParagraph.character_set_clause:type_name -> pb.CharacterSetClause
 	1,   // 28: pb.MemorySizeClause.unit:type_name -> pb.MemorySizeClause.Unit
-	239, // 29: pb.MemorySizeClause.integer_literal:type_name -> pb.IntegerLiteral
-	235, // 30: pb.MemorySizeClause.cobol_word:type_name -> pb.CobolWord
+	272, // 29: pb.MemorySizeClause.integer_literal:type_name -> pb.IntegerLiteral
+	268, // 30: pb.MemorySizeClause.cobol_word:type_name -> pb.CobolWord
 	2,   // 31: pb.DiskSizeClause.unit:type_name -> pb.DiskSizeClause.Unit
-	239, // 32: pb.DiskSizeClause.integer_literal:type_name -> pb.IntegerLiteral
-	235, // 33: pb.DiskSizeClause.cobol_word:type_name -> pb.CobolWord
-	207, // 34: pb.CollatingSequenceClause.national:type_name -> pb.AlphabetName
-	207, // 35: pb.CollatingSequenceClause.alphanumeric:type_name -> pb.AlphabetName
-	207, // 36: pb.CollatingSequenceClause.alphabet_names:type_name -> pb.AlphabetName
-	239, // 37: pb.SegmentLimitClause.segment_limit:type_name -> pb.IntegerLiteral
-	53,  // 38: pb.SpecialNamesParagraph.alphabet_clauses:type_name -> pb.AlphabetClause
-	54,  // 39: pb.SpecialNamesParagraph.channel_clause:type_name -> pb.ChannelClause
-	55,  // 40: pb.SpecialNamesParagraph.class_clause:type_name -> pb.ClassClause
-	57,  // 41: pb.SpecialNamesParagraph.currency_sign_clause:type_name -> pb.CurrencySignClause
-	58,  // 42: pb.SpecialNamesParagraph.decimal_point_clause:type_name -> pb.DecimalPointClause
-	59,  // 43: pb.SpecialNamesParagraph.default_display_sign_clause:type_name -> pb.DefaultDisplaySignClause
-	60,  // 44: pb.SpecialNamesParagraph.odt_clause:type_name -> pb.OdtClause
-	61,  // 45: pb.SpecialNamesParagraph.reserve_network_clause:type_name -> pb.ReserveNetworkClause
-	62,  // 46: pb.SpecialNamesParagraph.symbolic_characters_clause:type_name -> pb.SymbolicCharactersClause
-	207, // 47: pb.AlphabetClause.alphabet_name:type_name -> pb.AlphabetName
-	250, // 48: pb.AlphabetClause.alphanumeric:type_name -> pb.AlphabetClause.Alphanumeric
-	251, // 49: pb.AlphabetClause.national:type_name -> pb.AlphabetClause.National
-	239, // 50: pb.ChannelClause.Channel:type_name -> pb.IntegerLiteral
-	223, // 51: pb.ChannelClause.mnemonic_name:type_name -> pb.MnemonicName
-	211, // 52: pb.ClassClause.class_name:type_name -> pb.ClassName
+	272, // 32: pb.DiskSizeClause.integer_literal:type_name -> pb.IntegerLiteral
+	268, // 33: pb.DiskSizeClause.cobol_word:type_name -> pb.CobolWord
+	240, // 34: pb.CollatingSequenceClause.national:type_name -> pb.AlphabetName
+	240, // 35: pb.CollatingSequenceClause.alphanumeric:type_name -> pb.AlphabetName
+	240, // 36: pb.CollatingSequenceClause.alphabet_names:type_name -> pb.AlphabetName
+	272, // 37: pb.SegmentLimitClause.segment_limit:type_name -> pb.IntegerLiteral
+	64,  // 38: pb.SpecialNamesParagraph.alphabet_clauses:type_name -> pb.AlphabetClause
+	65,  // 39: pb.SpecialNamesParagraph.channel_clause:type_name -> pb.ChannelClause
+	66,  // 40: pb.SpecialNamesParagraph.class_clause:type_name -> pb.ClassClause
+	68,  // 41: pb.SpecialNamesParagraph.currency_sign_clause:type_name -> pb.CurrencySignClause
+	69,  // 42: pb.SpecialNamesParagraph.decimal_point_clause:type_name -> pb.DecimalPointClause
+	70,  // 43: pb.SpecialNamesParagraph.default_display_sign_clause:type_name -> pb.DefaultDisplaySignClause
+	71,  // 44: pb.SpecialNamesParagraph.odt_clause:type_name -> pb.OdtClause
+	72,  // 45: pb.SpecialNamesParagraph.reserve_network_clause:type_name -> pb.ReserveNetworkClause
+	73,  // 46: pb.SpecialNamesParagraph.symbolic_characters_clause:type_name -> pb.SymbolicCharactersClause
+	240, // 47: pb.AlphabetClause.alphabet_name:type_name -> pb.AlphabetName
+	283, // 48: pb.AlphabetClause.alphanumeric:type_name -> pb.AlphabetClause.Alphanumeric
+	284, // 49: pb.AlphabetClause.national:type_name -> pb.AlphabetClause.National
+	272, // 50: pb.ChannelClause.Channel:type_name -> pb.IntegerLiteral
+	256, // 51: pb.ChannelClause.mnemonic_name:type_name -> pb.MnemonicName
+	244, // 52: pb.ClassClause.class_name:type_name -> pb.ClassName
 	5,   // 53: pb.ClassClause.type:type_name -> pb.ClassClause.Type
-	56,  // 54: pb.ClassClause.class_throughs:type_name -> pb.ClassClauseThrough
-	186, // 55: pb.ClassClauseThrough.identifier_from:type_name -> pb.Identifier
-	236, // 56: pb.ClassClauseThrough.literal_from:type_name -> pb.Literal
-	186, // 57: pb.ClassClauseThrough.identifier_to:type_name -> pb.Identifier
-	236, // 58: pb.ClassClauseThrough.literal_to:type_name -> pb.Literal
-	236, // 59: pb.CurrencySignClause.currency_literal:type_name -> pb.Literal
-	236, // 60: pb.CurrencySignClause.picture_symbol_literal:type_name -> pb.Literal
+	67,  // 54: pb.ClassClause.class_throughs:type_name -> pb.ClassClauseThrough
+	219, // 55: pb.ClassClauseThrough.identifier_from:type_name -> pb.Identifier
+	269, // 56: pb.ClassClauseThrough.literal_from:type_name -> pb.Literal
+	219, // 57: pb.ClassClauseThrough.identifier_to:type_name -> pb.Identifier
+	269, // 58: pb.ClassClauseThrough.literal_to:type_name -> pb.Literal
+	269, // 59: pb.CurrencySignClause.currency_literal:type_name -> pb.Literal
+	269, // 60: pb.CurrencySignClause.picture_symbol_literal:type_name -> pb.Literal
 	6,   // 61: pb.DefaultDisplaySignClause.type:type_name -> pb.DefaultDisplaySignClause.Type
-	223, // 62: pb.OdtClause.mnemonic_name:type_name -> pb.MnemonicName
+	256, // 62: pb.OdtClause.mnemonic_name:type_name -> pb.MnemonicName
 	7,   // 63: pb.SymbolicCharactersClause.type:type_name -> pb.SymbolicCharactersClause.Type
-	64,  // 64: pb.InputOutputSection.file_control_paragraph:type_name -> pb.FileControlParagraph
-	78,  // 65: pb.InputOutputSection.io_control_paragraph:type_name -> pb.IoControlParagraph
-	65,  // 66: pb.FileControlParagraph.file_control_entries:type_name -> pb.FileControlEntry
-	217, // 67: pb.FileControlEntry.file_name:type_name -> pb.FileName
-	66,  // 68: pb.FileControlEntry.select_clause:type_name -> pb.SelectClause
-	74,  // 69: pb.FileControlEntry.alternate_record_key_clause:type_name -> pb.AlternateRecordKeyClause
-	67,  // 70: pb.FileControlEntry.assign_clause:type_name -> pb.AssignClause
-	76,  // 71: pb.FileControlEntry.file_status_clause:type_name -> pb.FileStatusClause
-	69,  // 72: pb.FileControlEntry.organization_clause:type_name -> pb.OrganizationClause
-	70,  // 73: pb.FileControlEntry.padding_character_clause:type_name -> pb.PaddingCharacterClause
-	75,  // 74: pb.FileControlEntry.password_clause:type_name -> pb.PasswordClause
-	71,  // 75: pb.FileControlEntry.record_delimiter_clause:type_name -> pb.RecordDelimiterClause
-	73,  // 76: pb.FileControlEntry.record_key_clause:type_name -> pb.RecordKeyClause
-	77,  // 77: pb.FileControlEntry.relative_key_clause:type_name -> pb.RelativeKeyClause
-	68,  // 78: pb.FileControlEntry.reserve_clause:type_name -> pb.ReserveClause
-	72,  // 79: pb.FileControlEntry.access_mode_clause:type_name -> pb.AccessModeClause
-	217, // 80: pb.SelectClause.file_name:type_name -> pb.FileName
+	75,  // 64: pb.InputOutputSection.file_control_paragraph:type_name -> pb.FileControlParagraph
+	89,  // 65: pb.InputOutputSection.io_control_paragraph:type_name -> pb.IoControlParagraph
+	76,  // 66: pb.FileControlParagraph.file_control_entries:type_name -> pb.FileControlEntry
+	250, // 67: pb.FileControlEntry.file_name:type_name -> pb.FileName
+	77,  // 68: pb.FileControlEntry.select_clause:type_name -> pb.SelectClause
+	85,  // 69: pb.FileControlEntry.alternate_record_key_clause:type_name -> pb.AlternateRecordKeyClause
+	78,  // 70: pb.FileControlEntry.assign_clause:type_name -> pb.AssignClause
+	87,  // 71: pb.FileControlEntry.file_status_clause:type_name -> pb.FileStatusClause
+	80,  // 72: pb.FileControlEntry.organization_clause:type_name -> pb.OrganizationClause
+	81,  // 73: pb.FileControlEntry.padding_character_clause:type_name -> pb.PaddingCharacterClause
+	86,  // 74: pb.FileControlEntry.password_clause:type_name -> pb.PasswordClause
+	82,  // 75: pb.FileControlEntry.record_delimiter_clause:type_name -> pb.RecordDelimiterClause
+	84,  // 76: pb.FileControlEntry.record_key_clause:type_name -> pb.RecordKeyClause
+	88,  // 77: pb.FileControlEntry.relative_key_clause:type_name -> pb.RelativeKeyClause
+	79,  // 78: pb.FileControlEntry.reserve_clause:type_name -> pb.ReserveClause
+	83,  // 79: pb.FileControlEntry.access_mode_clause:type_name -> pb.AccessModeClause
+	250, // 80: pb.SelectClause.file_name:type_name -> pb.FileName
 	8,   // 81: pb.AssignClause.type:type_name -> pb.AssignClause.Type
-	208, // 82: pb.AssignClause.assignment_name:type_name -> pb.AssignmentName
-	236, // 83: pb.AssignClause.literal:type_name -> pb.Literal
-	239, // 84: pb.ReserveClause.value:type_name -> pb.IntegerLiteral
+	241, // 82: pb.AssignClause.assignment_name:type_name -> pb.AssignmentName
+	269, // 83: pb.AssignClause.literal:type_name -> pb.Literal
+	272, // 84: pb.ReserveClause.value:type_name -> pb.IntegerLiteral
 	9,   // 85: pb.OrganizationClause.mode:type_name -> pb.OrganizationClause.Mode
 	10,  // 86: pb.OrganizationClause.type:type_name -> pb.OrganizationClause.Type
-	196, // 87: pb.PaddingCharacterClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	236, // 88: pb.PaddingCharacterClause.literal:type_name -> pb.Literal
+	229, // 87: pb.PaddingCharacterClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	269, // 88: pb.PaddingCharacterClause.literal:type_name -> pb.Literal
 	11,  // 89: pb.RecordDelimiterClause.type:type_name -> pb.RecordDelimiterClause.Type
-	208, // 90: pb.RecordDelimiterClause.assignment_name:type_name -> pb.AssignmentName
+	241, // 90: pb.RecordDelimiterClause.assignment_name:type_name -> pb.AssignmentName
 	12,  // 91: pb.AccessModeClause.mode:type_name -> pb.AccessModeClause.Mode
-	75,  // 92: pb.RecordKeyClause.password_clause:type_name -> pb.PasswordClause
-	196, // 93: pb.RecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	75,  // 94: pb.AlternateRecordKeyClause.password_clause:type_name -> pb.PasswordClause
-	196, // 95: pb.AlternateRecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	214, // 96: pb.PasswordClause.data_name:type_name -> pb.DataName
-	196, // 97: pb.FileStatusClause.qualified_data_name_1:type_name -> pb.QualifiedDataName
-	196, // 98: pb.FileStatusClause.qualified_data_name_2:type_name -> pb.QualifiedDataName
-	196, // 99: pb.RelativeKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	217, // 100: pb.IoControlParagraph.file_name:type_name -> pb.FileName
-	86,  // 101: pb.IoControlParagraph.commitment_control_clause:type_name -> pb.CommitmentControlClause
-	84,  // 102: pb.IoControlParagraph.multiple_file_clause:type_name -> pb.MultipleFileClause
-	79,  // 103: pb.IoControlParagraph.rerun_clause:type_name -> pb.RerunClause
-	83,  // 104: pb.IoControlParagraph.same_clauses:type_name -> pb.SameClause
-	208, // 105: pb.RerunClause.assignment_name:type_name -> pb.AssignmentName
-	217, // 106: pb.RerunClause.file_name:type_name -> pb.FileName
-	82,  // 107: pb.RerunClause.rerun_every_clock:type_name -> pb.RerunEveryClock
-	81,  // 108: pb.RerunClause.rerun_every_of:type_name -> pb.RerunEveryOf
-	80,  // 109: pb.RerunClause.rerun_every_records:type_name -> pb.RerunEveryRecords
-	239, // 110: pb.RerunEveryRecords.records:type_name -> pb.IntegerLiteral
+	86,  // 92: pb.RecordKeyClause.password_clause:type_name -> pb.PasswordClause
+	229, // 93: pb.RecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	86,  // 94: pb.AlternateRecordKeyClause.password_clause:type_name -> pb.PasswordClause
+	229, // 95: pb.AlternateRecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	247, // 96: pb.PasswordClause.data_name:type_name -> pb.DataName
+	229, // 97: pb.FileStatusClause.qualified_data_name_1:type_name -> pb.QualifiedDataName
+	229, // 98: pb.FileStatusClause.qualified_data_name_2:type_name -> pb.QualifiedDataName
+	229, // 99: pb.RelativeKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	250, // 100: pb.IoControlParagraph.file_name:type_name -> pb.FileName
+	97,  // 101: pb.IoControlParagraph.commitment_control_clause:type_name -> pb.CommitmentControlClause
+	95,  // 102: pb.IoControlParagraph.multiple_file_clause:type_name -> pb.MultipleFileClause
+	90,  // 103: pb.IoControlParagraph.rerun_clause:type_name -> pb.RerunClause
+	94,  // 104: pb.IoControlParagraph.same_clauses:type_name -> pb.SameClause
+	241, // 105: pb.RerunClause.assignment_name:type_name -> pb.AssignmentName
+	250, // 106: pb.RerunClause.file_name:type_name -> pb.FileName
+	93,  // 107: pb.RerunClause.rerun_every_clock:type_name -> pb.RerunEveryClock
+	92,  // 108: pb.RerunClause.rerun_every_of:type_name -> pb.RerunEveryOf
+	91,  // 109: pb.RerunClause.rerun_every_records:type_name -> pb.RerunEveryRecords
+	272, // 110: pb.RerunEveryRecords.records:type_name -> pb.IntegerLiteral
 	13,  // 111: pb.RerunEveryOf.type:type_name -> pb.RerunEveryOf.Type
-	217, // 112: pb.RerunEveryOf.file_name:type_name -> pb.FileName
-	239, // 113: pb.RerunEveryClock.clock_units:type_name -> pb.IntegerLiteral
-	217, // 114: pb.SameClause.file_names:type_name -> pb.FileName
+	250, // 112: pb.RerunEveryOf.file_name:type_name -> pb.FileName
+	272, // 113: pb.RerunEveryClock.clock_units:type_name -> pb.IntegerLiteral
+	250, // 114: pb.SameClause.file_names:type_name -> pb.FileName
 	14,  // 115: pb.SameClause.form:type_name -> pb.SameClause.Form
-	85,  // 116: pb.MultipleFileClause.multiple_file_positions:type_name -> pb.MultipleFilePosition
-	239, // 117: pb.MultipleFilePosition.position:type_name -> pb.IntegerLiteral
-	217, // 118: pb.MultipleFilePosition.file_name:type_name -> pb.FileName
-	217, // 119: pb.CommitmentControlClause.file_name:type_name -> pb.FileName
-	166, // 120: pb.DataDivision.communication_section:type_name -> pb.CommunicationSection
-	182, // 121: pb.DataDivision.data_base_section:type_name -> pb.DataBaseSection
-	88,  // 122: pb.DataDivision.file_section:type_name -> pb.FileSection
-	165, // 123: pb.DataDivision.linkage_section:type_name -> pb.LinkageSection
-	164, // 124: pb.DataDivision.local_storage_section:type_name -> pb.LocalStorageSection
-	157, // 125: pb.DataDivision.program_library_section:type_name -> pb.ProgramLibrarySection
-	134, // 126: pb.DataDivision.report_section:type_name -> pb.ReportSection
-	132, // 127: pb.DataDivision.ScreenSection:type_name -> pb.ScreenSection
-	104, // 128: pb.DataDivision.working_storage_section:type_name -> pb.WorkingStorageSection
-	89,  // 129: pb.FileSection.file_description_entries:type_name -> pb.FileDescriptionEntry
-	217, // 130: pb.FileDescriptionEntry.file_name:type_name -> pb.FileName
-	92,  // 131: pb.FileDescriptionEntry.external_clause:type_name -> pb.ExternalClause
-	93,  // 132: pb.FileDescriptionEntry.global_clause:type_name -> pb.GlobalClause
-	94,  // 133: pb.FileDescriptionEntry.block_contains_clause:type_name -> pb.BlockContainsClause
-	95,  // 134: pb.FileDescriptionEntry.record_contains_clause:type_name -> pb.RecordContainsClause
-	96,  // 135: pb.FileDescriptionEntry.label_records_clause:type_name -> pb.LabelRecordsClause
-	97,  // 136: pb.FileDescriptionEntry.value_of_clause:type_name -> pb.ValueOfClause
-	99,  // 137: pb.FileDescriptionEntry.data_records_clause:type_name -> pb.DataRecordsClause
-	101, // 138: pb.FileDescriptionEntry.linage_clause:type_name -> pb.LinageClause
-	102, // 139: pb.FileDescriptionEntry.code_set_clause:type_name -> pb.CodeSetClause
-	103, // 140: pb.FileDescriptionEntry.report_clause:type_name -> pb.ReportClause
-	105, // 141: pb.FileDescriptionEntry.data_description_entries:type_name -> pb.DataDescriptionEntry
-	91,  // 142: pb.FileDescriptionEntry.recording_mode_clause:type_name -> pb.RecordingModeClause
-	235, // 143: pb.ModeStatement.cobol_word:type_name -> pb.CobolWord
-	90,  // 144: pb.RecordingModeClause.mode_statement:type_name -> pb.ModeStatement
-	239, // 145: pb.BlockContainsClause.from:type_name -> pb.IntegerLiteral
-	239, // 146: pb.BlockContainsClause.to:type_name -> pb.IntegerLiteral
+	96,  // 116: pb.MultipleFileClause.multiple_file_positions:type_name -> pb.MultipleFilePosition
+	272, // 117: pb.MultipleFilePosition.position:type_name -> pb.IntegerLiteral
+	250, // 118: pb.MultipleFilePosition.file_name:type_name -> pb.FileName
+	250, // 119: pb.CommitmentControlClause.file_name:type_name -> pb.FileName
+	199, // 120: pb.DataDivision.communication_section:type_name -> pb.CommunicationSection
+	215, // 121: pb.DataDivision.data_base_section:type_name -> pb.DataBaseSection
+	99,  // 122: pb.DataDivision.file_section:type_name -> pb.FileSection
+	198, // 123: pb.DataDivision.linkage_section:type_name -> pb.LinkageSection
+	197, // 124: pb.DataDivision.local_storage_section:type_name -> pb.LocalStorageSection
+	190, // 125: pb.DataDivision.program_library_section:type_name -> pb.ProgramLibrarySection
+	167, // 126: pb.DataDivision.report_section:type_name -> pb.ReportSection
+	143, // 127: pb.DataDivision.ScreenSection:type_name -> pb.ScreenSection
+	115, // 128: pb.DataDivision.working_storage_section:type_name -> pb.WorkingStorageSection
+	100, // 129: pb.FileSection.file_description_entries:type_name -> pb.FileDescriptionEntry
+	250, // 130: pb.FileDescriptionEntry.file_name:type_name -> pb.FileName
+	103, // 131: pb.FileDescriptionEntry.external_clause:type_name -> pb.ExternalClause
+	104, // 132: pb.FileDescriptionEntry.global_clause:type_name -> pb.GlobalClause
+	105, // 133: pb.FileDescriptionEntry.block_contains_clause:type_name -> pb.BlockContainsClause
+	106, // 134: pb.FileDescriptionEntry.record_contains_clause:type_name -> pb.RecordContainsClause
+	107, // 135: pb.FileDescriptionEntry.label_records_clause:type_name -> pb.LabelRecordsClause
+	108, // 136: pb.FileDescriptionEntry.value_of_clause:type_name -> pb.ValueOfClause
+	110, // 137: pb.FileDescriptionEntry.data_records_clause:type_name -> pb.DataRecordsClause
+	112, // 138: pb.FileDescriptionEntry.linage_clause:type_name -> pb.LinageClause
+	113, // 139: pb.FileDescriptionEntry.code_set_clause:type_name -> pb.CodeSetClause
+	114, // 140: pb.FileDescriptionEntry.report_clause:type_name -> pb.ReportClause
+	116, // 141: pb.FileDescriptionEntry.data_description_entries:type_name -> pb.DataDescriptionEntry
+	102, // 142: pb.FileDescriptionEntry.recording_mode_clause:type_name -> pb.RecordingModeClause
+	268, // 143: pb.ModeStatement.cobol_word:type_name -> pb.CobolWord
+	101, // 144: pb.RecordingModeClause.mode_statement:type_name -> pb.ModeStatement
+	272, // 145: pb.BlockContainsClause.from:type_name -> pb.IntegerLiteral
+	272, // 146: pb.BlockContainsClause.to:type_name -> pb.IntegerLiteral
 	15,  // 147: pb.BlockContainsClause.unit:type_name -> pb.BlockContainsClause.Unit
-	239, // 148: pb.RecordContainsClause.from:type_name -> pb.IntegerLiteral
-	239, // 149: pb.RecordContainsClause.to:type_name -> pb.IntegerLiteral
-	196, // 150: pb.RecordContainsClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	272, // 148: pb.RecordContainsClause.from:type_name -> pb.IntegerLiteral
+	272, // 149: pb.RecordContainsClause.to:type_name -> pb.IntegerLiteral
+	229, // 150: pb.RecordContainsClause.qualified_data_name:type_name -> pb.QualifiedDataName
 	16,  // 151: pb.LabelRecordsClause.type:type_name -> pb.LabelRecordsClause.Type
-	252, // 152: pb.LabelRecordsClause.data_names:type_name -> pb.LabelRecordsClause.DataNames
-	98,  // 153: pb.ValueOfClause.value_pairs:type_name -> pb.ValuePair
-	232, // 154: pb.ValuePair.system_name:type_name -> pb.SystemName
-	196, // 155: pb.ValuePair.qualified_data_name:type_name -> pb.QualifiedDataName
-	236, // 156: pb.ValuePair.literal:type_name -> pb.Literal
-	214, // 157: pb.DataRecordsClause.data_names:type_name -> pb.DataName
-	214, // 158: pb.DataNameOrIntegerLiteral.data_name:type_name -> pb.DataName
-	239, // 159: pb.DataNameOrIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
-	100, // 160: pb.LinageClause.footing_at:type_name -> pb.DataNameOrIntegerLiteral
-	100, // 161: pb.LinageClause.lines_at_bottom:type_name -> pb.DataNameOrIntegerLiteral
-	100, // 162: pb.LinageClause.lines_at_top:type_name -> pb.DataNameOrIntegerLiteral
-	100, // 163: pb.LinageClause.number_of_lines:type_name -> pb.DataNameOrIntegerLiteral
-	207, // 164: pb.CodeSetClause.alphabet_name:type_name -> pb.AlphabetName
-	228, // 165: pb.ReportClause.report_names:type_name -> pb.ReportName
-	105, // 166: pb.WorkingStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	253, // 167: pb.DataDescriptionEntry.f1:type_name -> pb.DataDescriptionEntry.Format1
-	254, // 168: pb.DataDescriptionEntry.f2:type_name -> pb.DataDescriptionEntry.Format2
-	255, // 169: pb.DataDescriptionEntry.f3:type_name -> pb.DataDescriptionEntry.Format3
-	256, // 170: pb.DataDescriptionEntry.exec_sql:type_name -> pb.DataDescriptionEntry.ExecSql
-	196, // 171: pb.DataRenamesClause.from:type_name -> pb.QualifiedDataName
-	196, // 172: pb.DataRenamesClause.to:type_name -> pb.QualifiedDataName
-	214, // 173: pb.DataRedefinesClause.data_name:type_name -> pb.DataName
-	236, // 174: pb.DataExternalClause.literal:type_name -> pb.Literal
-	114, // 175: pb.DataPictureClause.picture_string:type_name -> pb.PictureString
-	115, // 176: pb.PictureString.chars:type_name -> pb.PictureChars
+	285, // 152: pb.LabelRecordsClause.data_names:type_name -> pb.LabelRecordsClause.DataNames
+	109, // 153: pb.ValueOfClause.value_pairs:type_name -> pb.ValuePair
+	265, // 154: pb.ValuePair.system_name:type_name -> pb.SystemName
+	229, // 155: pb.ValuePair.qualified_data_name:type_name -> pb.QualifiedDataName
+	269, // 156: pb.ValuePair.literal:type_name -> pb.Literal
+	247, // 157: pb.DataRecordsClause.data_names:type_name -> pb.DataName
+	247, // 158: pb.DataNameOrIntegerLiteral.data_name:type_name -> pb.DataName
+	272, // 159: pb.DataNameOrIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
+	111, // 160: pb.LinageClause.footing_at:type_name -> pb.DataNameOrIntegerLiteral
+	111, // 161: pb.LinageClause.lines_at_bottom:type_name -> pb.DataNameOrIntegerLiteral
+	111, // 162: pb.LinageClause.lines_at_top:type_name -> pb.DataNameOrIntegerLiteral
+	111, // 163: pb.LinageClause.number_of_lines:type_name -> pb.DataNameOrIntegerLiteral
+	240, // 164: pb.CodeSetClause.alphabet_name:type_name -> pb.AlphabetName
+	261, // 165: pb.ReportClause.report_names:type_name -> pb.ReportName
+	116, // 166: pb.WorkingStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	286, // 167: pb.DataDescriptionEntry.f1:type_name -> pb.DataDescriptionEntry.Format1
+	287, // 168: pb.DataDescriptionEntry.f2:type_name -> pb.DataDescriptionEntry.Format2
+	288, // 169: pb.DataDescriptionEntry.f3:type_name -> pb.DataDescriptionEntry.Format3
+	289, // 170: pb.DataDescriptionEntry.exec_sql:type_name -> pb.DataDescriptionEntry.ExecSql
+	229, // 171: pb.DataRenamesClause.from:type_name -> pb.QualifiedDataName
+	229, // 172: pb.DataRenamesClause.to:type_name -> pb.QualifiedDataName
+	247, // 173: pb.DataRedefinesClause.data_name:type_name -> pb.DataName
+	269, // 174: pb.DataExternalClause.literal:type_name -> pb.Literal
+	125, // 175: pb.DataPictureClause.picture_string:type_name -> pb.PictureString
+	126, // 176: pb.PictureString.chars:type_name -> pb.PictureChars
 	17,  // 177: pb.PictureChars.type:type_name -> pb.PictureChars.Type
-	239, // 178: pb.PictureChars.integer_literal:type_name -> pb.IntegerLiteral
-	239, // 179: pb.PictureCardinality.integer_literal:type_name -> pb.IntegerLiteral
+	272, // 178: pb.PictureChars.integer_literal:type_name -> pb.IntegerLiteral
+	272, // 179: pb.PictureCardinality.integer_literal:type_name -> pb.IntegerLiteral
 	18,  // 180: pb.DataCommonOwnLocalClause.type:type_name -> pb.DataCommonOwnLocalClause.Type
 	19,  // 181: pb.DataTypeClause.type:type_name -> pb.DataTypeClause.Type
-	257, // 182: pb.DataTypeClause.lob:type_name -> pb.DataTypeClause.Lob
+	290, // 182: pb.DataTypeClause.lob:type_name -> pb.DataTypeClause.Lob
 	21,  // 183: pb.DataUsingClause.type:type_name -> pb.DataUsingClause.Type
-	235, // 184: pb.DataUsingClause.cobol_word:type_name -> pb.CobolWord
-	214, // 185: pb.DataUsingClause.data_name:type_name -> pb.DataName
+	268, // 184: pb.DataUsingClause.cobol_word:type_name -> pb.CobolWord
+	247, // 185: pb.DataUsingClause.data_name:type_name -> pb.DataName
 	22,  // 186: pb.DataUsageClause.type:type_name -> pb.DataUsageClause.Type
-	236, // 187: pb.DataValueInterval.literal_from:type_name -> pb.Literal
-	235, // 188: pb.DataValueInterval.cobol_word_from:type_name -> pb.CobolWord
-	236, // 189: pb.DataValueInterval.literal_to:type_name -> pb.Literal
-	121, // 190: pb.DataValueClause.data_value_interval:type_name -> pb.DataValueInterval
+	269, // 187: pb.DataValueInterval.literal_from:type_name -> pb.Literal
+	268, // 188: pb.DataValueInterval.cobol_word_from:type_name -> pb.CobolWord
+	269, // 189: pb.DataValueInterval.literal_to:type_name -> pb.Literal
+	132, // 190: pb.DataValueClause.data_value_interval:type_name -> pb.DataValueInterval
 	23,  // 191: pb.DataReceivedByClause.type:type_name -> pb.DataReceivedByClause.Type
-	186, // 192: pb.DataOccursClause.identifier:type_name -> pb.Identifier
-	239, // 193: pb.DataOccursClause.integer_literal:type_name -> pb.IntegerLiteral
-	239, // 194: pb.DataOccursClause.to:type_name -> pb.IntegerLiteral
-	196, // 195: pb.DataOccursClause.depending_on:type_name -> pb.QualifiedDataName
-	258, // 196: pb.DataOccursClause.sorts:type_name -> pb.DataOccursClause.Sort
-	259, // 197: pb.DataOccursClause.indexes:type_name -> pb.DataOccursClause.Indexed
+	219, // 192: pb.DataOccursClause.identifier:type_name -> pb.Identifier
+	272, // 193: pb.DataOccursClause.integer_literal:type_name -> pb.IntegerLiteral
+	272, // 194: pb.DataOccursClause.to:type_name -> pb.IntegerLiteral
+	229, // 195: pb.DataOccursClause.depending_on:type_name -> pb.QualifiedDataName
+	291, // 196: pb.DataOccursClause.sorts:type_name -> pb.DataOccursClause.Sort
+	292, // 197: pb.DataOccursClause.indexes:type_name -> pb.DataOccursClause.Indexed
 	24,  // 198: pb.DataSignClause.type:type_name -> pb.DataSignClause.Type
 	25,  // 199: pb.DataSynchronizedClause.type:type_name -> pb.DataSynchronizedClause.Type
-	133, // 200: pb.ScreenSection.screen_description_entries:type_name -> pb.ScreenDescriptionEntry
-	135, // 201: pb.ReportSection.report_descriptions:type_name -> pb.ReportDescription
-	136, // 202: pb.ReportDescription.report_description_entry:type_name -> pb.ReportDescriptionEntry
-	142, // 203: pb.ReportDescription.report_group_description_entries:type_name -> pb.ReportGroupDescriptionEntry
-	228, // 204: pb.ReportDescriptionEntry.report_name:type_name -> pb.ReportName
-	93,  // 205: pb.ReportDescriptionEntry.global_clause:type_name -> pb.GlobalClause
-	137, // 206: pb.ReportDescriptionEntry.page_limit_clause:type_name -> pb.PageLimitClause
-	138, // 207: pb.ReportDescriptionEntry.heading_clause:type_name -> pb.HeadingClause
-	139, // 208: pb.ReportDescriptionEntry.first_detail_clause:type_name -> pb.FirstDetailClause
-	140, // 209: pb.ReportDescriptionEntry.last_detail_clause:type_name -> pb.LastDetailClause
-	141, // 210: pb.ReportDescriptionEntry.footing_clause:type_name -> pb.FootingClause
-	239, // 211: pb.PageLimitClause.page:type_name -> pb.IntegerLiteral
-	239, // 212: pb.HeadingClause.heading:type_name -> pb.IntegerLiteral
-	239, // 213: pb.FirstDetailClause.first_detail:type_name -> pb.IntegerLiteral
-	239, // 214: pb.LastDetailClause.last_detail:type_name -> pb.IntegerLiteral
-	239, // 215: pb.FootingClause.footing:type_name -> pb.IntegerLiteral
-	239, // 216: pb.ReportGroupDescriptionEntry.integer_literal:type_name -> pb.IntegerLiteral
-	214, // 217: pb.ReportGroupDescriptionEntry.data_name:type_name -> pb.DataName
-	260, // 218: pb.ReportGroupDescriptionEntry.vertical:type_name -> pb.ReportGroupDescriptionEntry.Vertical
-	261, // 219: pb.ReportGroupDescriptionEntry.single:type_name -> pb.ReportGroupDescriptionEntry.Single
-	262, // 220: pb.ReportGroupDescriptionEntry.printable:type_name -> pb.ReportGroupDescriptionEntry.Printable
-	214, // 221: pb.ResetClause.data_name:type_name -> pb.DataName
-	186, // 222: pb.SumClause.sums:type_name -> pb.Identifier
-	214, // 223: pb.SumClause.upons:type_name -> pb.DataName
-	236, // 224: pb.ValueClause.value:type_name -> pb.Literal
-	186, // 225: pb.SourceClause.source:type_name -> pb.Identifier
-	239, // 226: pb.ColumnNumberClause.column_number:type_name -> pb.IntegerLiteral
-	26,  // 227: pb.SignClause.type:type_name -> pb.SignClause.Type
-	114, // 228: pb.PictureClause.picture_string:type_name -> pb.PictureString
-	239, // 229: pb.LineNumberClause.next_page:type_name -> pb.IntegerLiteral
-	239, // 230: pb.LineNumberClause.plus:type_name -> pb.IntegerLiteral
-	239, // 231: pb.NextGroupClause.next_group:type_name -> pb.IntegerLiteral
-	239, // 232: pb.NextGroupClause.plus:type_name -> pb.IntegerLiteral
-	263, // 233: pb.TypeClause.report_heading:type_name -> pb.TypeClause.ReportHeading
-	264, // 234: pb.TypeClause.page_heading:type_name -> pb.TypeClause.PageHeading
-	265, // 235: pb.TypeClause.control_heading:type_name -> pb.TypeClause.ControlHeading
-	266, // 236: pb.TypeClause.detail:type_name -> pb.TypeClause.Detail
-	267, // 237: pb.TypeClause.control_footing:type_name -> pb.TypeClause.ControlFooting
-	268, // 238: pb.TypeClause.page_footing:type_name -> pb.TypeClause.PageFooting
-	269, // 239: pb.TypeClause.report_footing:type_name -> pb.TypeClause.ReportFooting
-	158, // 240: pb.ProgramLibrarySection.library_description_entries:type_name -> pb.LibraryDescriptionEntry
-	221, // 241: pb.LibraryDescriptionEntry.library_name:type_name -> pb.LibraryName
-	270, // 242: pb.LibraryDescriptionEntry.import:type_name -> pb.LibraryDescriptionEntry.Import
-	271, // 243: pb.LibraryDescriptionEntry.export:type_name -> pb.LibraryDescriptionEntry.Export
-	27,  // 244: pb.AttributeClause1.sharing:type_name -> pb.AttributeClause1.Sharing
-	236, // 245: pb.AttributeClause2.function_name:type_name -> pb.Literal
-	28,  // 246: pb.AttributeClause2.lib_access:type_name -> pb.AttributeClause2.LibAccess
-	236, // 247: pb.AttributeClause2.lib_parameter:type_name -> pb.Literal
-	236, // 248: pb.AttributeClause2.title:type_name -> pb.Literal
-	226, // 249: pb.ProcedureClause1.program_name:type_name -> pb.ProgramName
-	236, // 250: pb.ProcedureClause1.for:type_name -> pb.Literal
-	226, // 251: pb.ProcedureClause2.program_name:type_name -> pb.ProgramName
-	236, // 252: pb.ProcedureClause2.for:type_name -> pb.Literal
-	272, // 253: pb.ProcedureClause2.with_names:type_name -> pb.ProcedureClause2.WithName
-	273, // 254: pb.ProcedureClause2.using_names:type_name -> pb.ProcedureClause2.UsingName
-	214, // 255: pb.ProcedureClause2.giving:type_name -> pb.DataName
-	105, // 256: pb.LocalStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	222, // 257: pb.LocalStorageSection.local_name:type_name -> pb.LocalName
-	105, // 258: pb.LinkageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	167, // 259: pb.CommunicationSection.communication_description_entries:type_name -> pb.CommunicationDescriptionEntry
-	105, // 260: pb.CommunicationSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	210, // 261: pb.CommunicationDescriptionEntry.cd_name:type_name -> pb.CdName
-	274, // 262: pb.CommunicationDescriptionEntry.input:type_name -> pb.CommunicationDescriptionEntry.Input
-	275, // 263: pb.CommunicationDescriptionEntry.output:type_name -> pb.CommunicationDescriptionEntry.Output
-	276, // 264: pb.CommunicationDescriptionEntry.io:type_name -> pb.CommunicationDescriptionEntry.Io
-	215, // 265: pb.SymbolicTerminalClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 266: pb.SymbolicDestinationClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 267: pb.ErrorKeyClause.data_desc_name:type_name -> pb.DataDescName
-	239, // 268: pb.DestinationTableClause.times:type_name -> pb.IntegerLiteral
-	219, // 269: pb.DestinationTableClause.indexes:type_name -> pb.IndexName
-	215, // 270: pb.DestinationCountClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 271: pb.SymbolicQueueClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 272: pb.SymbolicSubQueueClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 273: pb.MessageDateClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 274: pb.MessageTimeClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 275: pb.SymbolicSourceClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 276: pb.TextLengthClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 277: pb.EndKeyClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 278: pb.StatusKeyClause.data_desc_name:type_name -> pb.DataDescName
-	215, // 279: pb.MessageCountClause.data_desc_name:type_name -> pb.DataDescName
-	183, // 280: pb.DataBaseSection.data_base_section_entries:type_name -> pb.DataBaseSectionEntry
-	239, // 281: pb.DataBaseSectionEntry.integer_literal:type_name -> pb.IntegerLiteral
-	236, // 282: pb.DataBaseSectionEntry.literal:type_name -> pb.Literal
-	236, // 283: pb.DataBaseSectionEntry.invoke:type_name -> pb.Literal
-	196, // 284: pb.Identifier.qualified_data_name:type_name -> pb.QualifiedDataName
-	187, // 285: pb.Identifier.table_call:type_name -> pb.TableCall
-	188, // 286: pb.Identifier.function_call:type_name -> pb.FunctionCall
-	241, // 287: pb.Identifier.special_register:type_name -> pb.SpecialRegister
-	196, // 288: pb.TableCall.qualified_data_name:type_name -> pb.QualifiedDataName
-	192, // 289: pb.TableCall.subscripts:type_name -> pb.Subscript
-	189, // 290: pb.TableCall.reference_modifier:type_name -> pb.ReferenceModifier
-	218, // 291: pb.FunctionCall.function_name:type_name -> pb.FunctionName
-	193, // 292: pb.FunctionCall.arguments:type_name -> pb.Argument
-	189, // 293: pb.FunctionCall.reference_modifier:type_name -> pb.ReferenceModifier
-	190, // 294: pb.ReferenceModifier.character_position:type_name -> pb.CharacterPosition
-	191, // 295: pb.ReferenceModifier.length:type_name -> pb.Length
-	185, // 296: pb.CharacterPosition.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	185, // 297: pb.Length.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	239, // 298: pb.Subscript.integer_literal:type_name -> pb.IntegerLiteral
-	194, // 299: pb.Subscript.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
-	195, // 300: pb.Subscript.index_name:type_name -> pb.IndexNameIntegerLiteral
-	185, // 301: pb.Subscript.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	236, // 302: pb.Argument.literal:type_name -> pb.Literal
-	186, // 303: pb.Argument.identifier:type_name -> pb.Identifier
-	194, // 304: pb.Argument.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
-	195, // 305: pb.Argument.index_name:type_name -> pb.IndexNameIntegerLiteral
-	185, // 306: pb.Argument.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	196, // 307: pb.QualifiedDataNameIntegerLiteral.qualified_data_name:type_name -> pb.QualifiedDataName
-	239, // 308: pb.QualifiedDataNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
-	219, // 309: pb.IndexNameIntegerLiteral.index_name:type_name -> pb.IndexName
-	239, // 310: pb.IndexNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
-	197, // 311: pb.QualifiedDataName.f1:type_name -> pb.QualifiedDataNameFormat1
-	198, // 312: pb.QualifiedDataName.f2:type_name -> pb.QualifiedDataNameFormat2
-	199, // 313: pb.QualifiedDataName.f3:type_name -> pb.QualifiedDataNameFormat3
-	200, // 314: pb.QualifiedDataName.f4:type_name -> pb.QualifiedDataNameFormat4
-	214, // 315: pb.QualifiedDataNameFormat1.data_name:type_name -> pb.DataName
-	213, // 316: pb.QualifiedDataNameFormat1.condition_name:type_name -> pb.ConditionName
-	201, // 317: pb.QualifiedDataNameFormat1.in_datas:type_name -> pb.InData
-	206, // 318: pb.QualifiedDataNameFormat1.in_tables:type_name -> pb.InTable
-	202, // 319: pb.QualifiedDataNameFormat1.in_file:type_name -> pb.InFile
-	224, // 320: pb.QualifiedDataNameFormat2.paragraph_name:type_name -> pb.ParagraphName
-	204, // 321: pb.QualifiedDataNameFormat2.in_section:type_name -> pb.InSection
-	234, // 322: pb.QualifiedDataNameFormat3.text_name:type_name -> pb.TextName
-	205, // 323: pb.QualifiedDataNameFormat3.in_library:type_name -> pb.InLibrary
-	202, // 324: pb.QualifiedDataNameFormat4.in_file:type_name -> pb.InFile
-	214, // 325: pb.InData.data_name:type_name -> pb.DataName
-	217, // 326: pb.InFile.file_name:type_name -> pb.FileName
-	223, // 327: pb.InMnemonic.mnemonic_name:type_name -> pb.MnemonicName
-	231, // 328: pb.InSection.section_name:type_name -> pb.SectionName
-	221, // 329: pb.InLibrary.library_name:type_name -> pb.LibraryName
-	187, // 330: pb.InTable.table_call:type_name -> pb.TableCall
-	235, // 331: pb.AlphabetName.cobol_word:type_name -> pb.CobolWord
-	232, // 332: pb.AssignmentName.system_name:type_name -> pb.SystemName
-	226, // 333: pb.BasisName.program_name:type_name -> pb.ProgramName
-	235, // 334: pb.CdName.cobol_word:type_name -> pb.CobolWord
-	235, // 335: pb.ClassName.cobol_word:type_name -> pb.CobolWord
-	232, // 336: pb.ComputerName.system_name:type_name -> pb.SystemName
-	235, // 337: pb.ConditionName.cobol_word:type_name -> pb.CobolWord
-	235, // 338: pb.DataName.cobol_word:type_name -> pb.CobolWord
-	232, // 339: pb.EnvironmentName.system_name:type_name -> pb.SystemName
-	235, // 340: pb.FileName.cobol_word:type_name -> pb.CobolWord
-	235, // 341: pb.IndexName.cobol_word:type_name -> pb.CobolWord
-	232, // 342: pb.LanguageName.system_name:type_name -> pb.SystemName
-	235, // 343: pb.LibraryName.cobol_word:type_name -> pb.CobolWord
-	235, // 344: pb.LocalName.cobol_word:type_name -> pb.CobolWord
-	235, // 345: pb.MnemonicName.cobol_word:type_name -> pb.CobolWord
-	235, // 346: pb.ParagraphName.cobol_word:type_name -> pb.CobolWord
-	239, // 347: pb.ParagraphName.integer_literal:type_name -> pb.IntegerLiteral
-	224, // 348: pb.ProcedureName.paragraph_name:type_name -> pb.ParagraphName
-	231, // 349: pb.ProcedureName.section_name:type_name -> pb.SectionName
-	242, // 350: pb.ProgramName.non_numeric_literal:type_name -> pb.NonNumericLiteral
-	235, // 351: pb.ProgramName.cobol_word:type_name -> pb.CobolWord
-	196, // 352: pb.RecordName.qualified_data_name:type_name -> pb.QualifiedDataName
-	196, // 353: pb.ReportName.qualified_data_name:type_name -> pb.QualifiedDataName
-	235, // 354: pb.RoutingName.cobol_word:type_name -> pb.CobolWord
-	235, // 355: pb.ScreenName.cobol_word:type_name -> pb.CobolWord
-	235, // 356: pb.SectionName.cobol_word:type_name -> pb.CobolWord
-	239, // 357: pb.SectionName.integer_literal:type_name -> pb.IntegerLiteral
-	235, // 358: pb.SystemName.cobol_word:type_name -> pb.CobolWord
-	235, // 359: pb.SymbolicCharacter.cobol_word:type_name -> pb.CobolWord
-	235, // 360: pb.TextName.cobol_word:type_name -> pb.CobolWord
-	29,  // 361: pb.Literal.type:type_name -> pb.Literal.Type
-	238, // 362: pb.Literal.numeric_literal:type_name -> pb.NumericLiteral
-	237, // 363: pb.Literal.boolean_literal:type_name -> pb.BooleanLiteral
-	242, // 364: pb.Literal.non_numeric_literal:type_name -> pb.NonNumericLiteral
-	240, // 365: pb.Literal.figurative_constant:type_name -> pb.FigurativeConstant
-	30,  // 366: pb.NumericLiteral.type:type_name -> pb.NumericLiteral.Type
-	31,  // 367: pb.FigurativeConstant.type:type_name -> pb.FigurativeConstant.Type
-	236, // 368: pb.FigurativeConstant.literal:type_name -> pb.Literal
-	236, // 369: pb.AlphabetClause.Also.alsos:type_name -> pb.Literal
-	236, // 370: pb.AlphabetClause.AlphabetLiteral.literal:type_name -> pb.Literal
-	236, // 371: pb.AlphabetClause.AlphabetLiteral.through:type_name -> pb.Literal
-	247, // 372: pb.AlphabetClause.AlphabetLiteral.alsos:type_name -> pb.AlphabetClause.Also
-	248, // 373: pb.AlphabetClause.AlphabetLiterals.values:type_name -> pb.AlphabetClause.AlphabetLiteral
-	3,   // 374: pb.AlphabetClause.Alphanumeric.type:type_name -> pb.AlphabetClause.Alphanumeric.Type
-	235, // 375: pb.AlphabetClause.Alphanumeric.cobol_word:type_name -> pb.CobolWord
-	249, // 376: pb.AlphabetClause.Alphanumeric.values:type_name -> pb.AlphabetClause.AlphabetLiterals
-	4,   // 377: pb.AlphabetClause.National.type:type_name -> pb.AlphabetClause.National.Type
-	236, // 378: pb.AlphabetClause.National.ccs_version:type_name -> pb.Literal
-	214, // 379: pb.LabelRecordsClause.DataNames.data_names:type_name -> pb.DataName
-	214, // 380: pb.DataDescriptionEntry.Format1.data_name:type_name -> pb.DataName
-	107, // 381: pb.DataDescriptionEntry.Format1.data_redefines_clause:type_name -> pb.DataRedefinesClause
-	108, // 382: pb.DataDescriptionEntry.Format1.data_integer_string_clause:type_name -> pb.DataIntegerStringClause
-	109, // 383: pb.DataDescriptionEntry.Format1.data_external_clause:type_name -> pb.DataExternalClause
-	110, // 384: pb.DataDescriptionEntry.Format1.data_global_clause:type_name -> pb.DataGlobalClause
-	111, // 385: pb.DataDescriptionEntry.Format1.data_type_def_clause:type_name -> pb.DataTypeDefClause
-	112, // 386: pb.DataDescriptionEntry.Format1.data_thread_local_clause:type_name -> pb.DataThreadLocalClause
-	113, // 387: pb.DataDescriptionEntry.Format1.data_picture_clause:type_name -> pb.DataPictureClause
-	117, // 388: pb.DataDescriptionEntry.Format1.data_common_own_local_clause:type_name -> pb.DataCommonOwnLocalClause
-	118, // 389: pb.DataDescriptionEntry.Format1.data_type_clause:type_name -> pb.DataTypeClause
-	119, // 390: pb.DataDescriptionEntry.Format1.data_using_clause:type_name -> pb.DataUsingClause
-	120, // 391: pb.DataDescriptionEntry.Format1.data_usage_clause:type_name -> pb.DataUsageClause
-	122, // 392: pb.DataDescriptionEntry.Format1.data_value_clause:type_name -> pb.DataValueClause
-	123, // 393: pb.DataDescriptionEntry.Format1.data_received_by_clause:type_name -> pb.DataReceivedByClause
-	124, // 394: pb.DataDescriptionEntry.Format1.data_occurs_clause:type_name -> pb.DataOccursClause
-	125, // 395: pb.DataDescriptionEntry.Format1.data_sign_clause:type_name -> pb.DataSignClause
-	126, // 396: pb.DataDescriptionEntry.Format1.data_synchronized_clause:type_name -> pb.DataSynchronizedClause
-	127, // 397: pb.DataDescriptionEntry.Format1.data_justified_clause:type_name -> pb.DataJustifiedClause
-	128, // 398: pb.DataDescriptionEntry.Format1.data_blank_when_zero_clause:type_name -> pb.DataBlankWhenZeroClause
-	129, // 399: pb.DataDescriptionEntry.Format1.data_with_lower_bounds_clause:type_name -> pb.DataWithLowerBoundsClause
-	130, // 400: pb.DataDescriptionEntry.Format1.data_aligned_clause:type_name -> pb.DataAlignedClause
-	131, // 401: pb.DataDescriptionEntry.Format1.data_record_area_clause:type_name -> pb.DataRecordAreaClause
-	214, // 402: pb.DataDescriptionEntry.Format2.data_name:type_name -> pb.DataName
-	106, // 403: pb.DataDescriptionEntry.Format2.data_renames_clause:type_name -> pb.DataRenamesClause
-	213, // 404: pb.DataDescriptionEntry.Format3.condition_name:type_name -> pb.ConditionName
-	122, // 405: pb.DataDescriptionEntry.Format3.data_value_clause:type_name -> pb.DataValueClause
-	20,  // 406: pb.DataTypeClause.Lob.mode:type_name -> pb.DataTypeClause.Mode
-	239, // 407: pb.DataTypeClause.Lob.integer_literal:type_name -> pb.IntegerLiteral
-	196, // 408: pb.DataOccursClause.Sort.qualified_data_names:type_name -> pb.QualifiedDataName
-	219, // 409: pb.DataOccursClause.Indexed.index_names:type_name -> pb.IndexName
-	153, // 410: pb.ReportGroupDescriptionEntry.Vertical.line_number_clause:type_name -> pb.LineNumberClause
-	154, // 411: pb.ReportGroupDescriptionEntry.Vertical.next_group_clause:type_name -> pb.NextGroupClause
-	155, // 412: pb.ReportGroupDescriptionEntry.Vertical.type_clause:type_name -> pb.TypeClause
-	156, // 413: pb.ReportGroupDescriptionEntry.Vertical.usage_clause:type_name -> pb.UsageClause
-	153, // 414: pb.ReportGroupDescriptionEntry.Single.line_number_clause:type_name -> pb.LineNumberClause
-	156, // 415: pb.ReportGroupDescriptionEntry.Single.usage_clause:type_name -> pb.UsageClause
-	152, // 416: pb.ReportGroupDescriptionEntry.Printable.picture_clause:type_name -> pb.PictureClause
-	156, // 417: pb.ReportGroupDescriptionEntry.Printable.usage_clause:type_name -> pb.UsageClause
-	151, // 418: pb.ReportGroupDescriptionEntry.Printable.sign_clause:type_name -> pb.SignClause
-	150, // 419: pb.ReportGroupDescriptionEntry.Printable.justified_clause:type_name -> pb.JustifiedClause
-	149, // 420: pb.ReportGroupDescriptionEntry.Printable.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
-	153, // 421: pb.ReportGroupDescriptionEntry.Printable.line_number_clause:type_name -> pb.LineNumberClause
-	148, // 422: pb.ReportGroupDescriptionEntry.Printable.column_number_clause:type_name -> pb.ColumnNumberClause
-	147, // 423: pb.ReportGroupDescriptionEntry.Printable.IndicateClause:type_name -> pb.IndicateClause
-	146, // 424: pb.ReportGroupDescriptionEntry.Printable.source_clause:type_name -> pb.SourceClause
-	145, // 425: pb.ReportGroupDescriptionEntry.Printable.value_clause:type_name -> pb.ValueClause
-	144, // 426: pb.ReportGroupDescriptionEntry.Printable.SumClause:type_name -> pb.SumClause
-	143, // 427: pb.ReportGroupDescriptionEntry.Printable.reset_clause:type_name -> pb.ResetClause
-	214, // 428: pb.TypeClause.ControlHeading.data_name:type_name -> pb.DataName
-	214, // 429: pb.TypeClause.ControlFooting.data_name:type_name -> pb.DataName
-	93,  // 430: pb.LibraryDescriptionEntry.Import.global_clause:type_name -> pb.GlobalClause
-	159, // 431: pb.LibraryDescriptionEntry.Import.is_common_clause:type_name -> pb.IsCommonClause
-	161, // 432: pb.LibraryDescriptionEntry.Import.attribute_clause:type_name -> pb.AttributeClause2
-	163, // 433: pb.LibraryDescriptionEntry.Import.procedure_clause:type_name -> pb.ProcedureClause2
-	160, // 434: pb.LibraryDescriptionEntry.Export.attribute_clause:type_name -> pb.AttributeClause1
-	162, // 435: pb.LibraryDescriptionEntry.Export.procedure_clause:type_name -> pb.ProcedureClause1
-	222, // 436: pb.ProcedureClause2.WithName.local_name:type_name -> pb.LocalName
-	217, // 437: pb.ProcedureClause2.WithName.file_name:type_name -> pb.FileName
-	214, // 438: pb.ProcedureClause2.UsingName.data_name:type_name -> pb.DataName
-	217, // 439: pb.ProcedureClause2.UsingName.file_name:type_name -> pb.FileName
-	173, // 440: pb.CommunicationDescriptionEntry.Input.symbolic_queue_clause:type_name -> pb.SymbolicQueueClause
-	174, // 441: pb.CommunicationDescriptionEntry.Input.symbolic_sub_queue_clause:type_name -> pb.SymbolicSubQueueClause
-	175, // 442: pb.CommunicationDescriptionEntry.Input.message_date_clause:type_name -> pb.MessageDateClause
-	176, // 443: pb.CommunicationDescriptionEntry.Input.message_time_clause:type_name -> pb.MessageTimeClause
-	177, // 444: pb.CommunicationDescriptionEntry.Input.symbolic_source_clause:type_name -> pb.SymbolicSourceClause
-	178, // 445: pb.CommunicationDescriptionEntry.Input.text_length_clause:type_name -> pb.TextLengthClause
-	179, // 446: pb.CommunicationDescriptionEntry.Input.end_key_clause:type_name -> pb.EndKeyClause
-	180, // 447: pb.CommunicationDescriptionEntry.Input.status_key_clause:type_name -> pb.StatusKeyClause
-	181, // 448: pb.CommunicationDescriptionEntry.Input.message_count_clause:type_name -> pb.MessageCountClause
-	215, // 449: pb.CommunicationDescriptionEntry.Input.data_desc_name:type_name -> pb.DataDescName
-	172, // 450: pb.CommunicationDescriptionEntry.Output.destination_count_clause:type_name -> pb.DestinationCountClause
-	178, // 451: pb.CommunicationDescriptionEntry.Output.text_length_clause:type_name -> pb.TextLengthClause
-	180, // 452: pb.CommunicationDescriptionEntry.Output.status_key_clause:type_name -> pb.StatusKeyClause
-	171, // 453: pb.CommunicationDescriptionEntry.Output.destination_table_clause:type_name -> pb.DestinationTableClause
-	170, // 454: pb.CommunicationDescriptionEntry.Output.errorKeyClause:type_name -> pb.ErrorKeyClause
-	169, // 455: pb.CommunicationDescriptionEntry.Output.symbolic_destination_clause:type_name -> pb.SymbolicDestinationClause
-	175, // 456: pb.CommunicationDescriptionEntry.Io.message_date_clause:type_name -> pb.MessageDateClause
-	176, // 457: pb.CommunicationDescriptionEntry.Io.message_time_clause:type_name -> pb.MessageTimeClause
-	168, // 458: pb.CommunicationDescriptionEntry.Io.symbolic_terminal_clause:type_name -> pb.SymbolicTerminalClause
-	178, // 459: pb.CommunicationDescriptionEntry.Io.text_length_clause:type_name -> pb.TextLengthClause
-	179, // 460: pb.CommunicationDescriptionEntry.Io.end_key_clause:type_name -> pb.EndKeyClause
-	180, // 461: pb.CommunicationDescriptionEntry.Io.status_key_clause:type_name -> pb.StatusKeyClause
-	462, // [462:462] is the sub-list for method output_type
-	462, // [462:462] is the sub-list for method input_type
-	462, // [462:462] is the sub-list for extension type_name
-	462, // [462:462] is the sub-list for extension extendee
-	0,   // [0:462] is the sub-list for field type_name
+	144, // 200: pb.ScreenSection.screen_description_entries:type_name -> pb.ScreenDescriptionEntry
+	263, // 201: pb.ScreenDescriptionEntry.screen_name:type_name -> pb.ScreenName
+	153, // 202: pb.ScreenDescriptionEntry.blank_clause:type_name -> pb.BlankClause
+	154, // 203: pb.ScreenDescriptionEntry.bell_clause:type_name -> pb.BellClause
+	155, // 204: pb.ScreenDescriptionEntry.blink_clause:type_name -> pb.BlinkClause
+	156, // 205: pb.ScreenDescriptionEntry.erase_clause:type_name -> pb.EraseClause
+	157, // 206: pb.ScreenDescriptionEntry.light_clause:type_name -> pb.LightClause
+	158, // 207: pb.ScreenDescriptionEntry.grid_clause:type_name -> pb.GridClause
+	159, // 208: pb.ScreenDescriptionEntry.reverse_video_clause:type_name -> pb.ReverseVideoClause
+	160, // 209: pb.ScreenDescriptionEntry.underline_clause:type_name -> pb.UnderlineClause
+	161, // 210: pb.ScreenDescriptionEntry.size_clause:type_name -> pb.SizeClause
+	162, // 211: pb.ScreenDescriptionEntry.line_clause:type_name -> pb.LineClause
+	163, // 212: pb.ScreenDescriptionEntry.column_clause:type_name -> pb.ColumnClause
+	164, // 213: pb.ScreenDescriptionEntry.foreground_color_clause:type_name -> pb.ForegroundColorClause
+	165, // 214: pb.ScreenDescriptionEntry.background_color_clause:type_name -> pb.BackgroundColorClause
+	166, // 215: pb.ScreenDescriptionEntry.control_clause:type_name -> pb.ControlClause
+	178, // 216: pb.ScreenDescriptionEntry.value_clause:type_name -> pb.ValueClause
+	185, // 217: pb.ScreenDescriptionEntry.picture_clause:type_name -> pb.PictureClause
+	152, // 218: pb.ScreenDescriptionEntry.from_clause:type_name -> pb.FromClause
+	151, // 219: pb.ScreenDescriptionEntry.using_clause:type_name -> pb.UsingClause
+	189, // 220: pb.ScreenDescriptionEntry.usage_clause:type_name -> pb.UsageClause
+	184, // 221: pb.ScreenDescriptionEntry.sign_clause:type_name -> pb.SignClause
+	182, // 222: pb.ScreenDescriptionEntry.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
+	183, // 223: pb.ScreenDescriptionEntry.justified_clause:type_name -> pb.JustifiedClause
+	150, // 224: pb.ScreenDescriptionEntry.auto_clause:type_name -> pb.AutoClause
+	149, // 225: pb.ScreenDescriptionEntry.secure_clause:type_name -> pb.SecureClause
+	148, // 226: pb.ScreenDescriptionEntry.required_clause:type_name -> pb.RequiredClause
+	147, // 227: pb.ScreenDescriptionEntry.prompt_clause:type_name -> pb.PromptClause
+	146, // 228: pb.ScreenDescriptionEntry.full_clause:type_name -> pb.FullClause
+	145, // 229: pb.ScreenDescriptionEntry.zero_fill_clause:type_name -> pb.ZeroFillClause
+	26,  // 230: pb.FullClause.type:type_name -> pb.FullClause.Type
+	219, // 231: pb.PromptClause.identifier:type_name -> pb.Identifier
+	269, // 232: pb.PromptClause.literal:type_name -> pb.Literal
+	272, // 233: pb.PromptClause.times:type_name -> pb.IntegerLiteral
+	27,  // 234: pb.RequiredClause.type:type_name -> pb.RequiredClause.Type
+	28,  // 235: pb.SecureClause.type:type_name -> pb.SecureClause.Type
+	29,  // 236: pb.AutoClause.type:type_name -> pb.AutoClause.Type
+	219, // 237: pb.UsingClause.using:type_name -> pb.Identifier
+	219, // 238: pb.FromClause.identifier:type_name -> pb.Identifier
+	269, // 239: pb.FromClause.literal:type_name -> pb.Literal
+	219, // 240: pb.FromClause.to:type_name -> pb.Identifier
+	30,  // 241: pb.BlankClause.type:type_name -> pb.BlankClause.Type
+	31,  // 242: pb.BellClause.type:type_name -> pb.BellClause.Type
+	32,  // 243: pb.EraseClause.type:type_name -> pb.EraseClause.Type
+	33,  // 244: pb.LightClause.type:type_name -> pb.LightClause.Type
+	34,  // 245: pb.GridClause.type:type_name -> pb.GridClause.Type
+	219, // 246: pb.SizeClause.identifier:type_name -> pb.Identifier
+	272, // 247: pb.SizeClause.integer_literal:type_name -> pb.IntegerLiteral
+	35,  // 248: pb.LineClause.type:type_name -> pb.LineClause.Type
+	219, // 249: pb.LineClause.identifier:type_name -> pb.Identifier
+	272, // 250: pb.LineClause.integer_literal:type_name -> pb.IntegerLiteral
+	36,  // 251: pb.ColumnClause.type:type_name -> pb.ColumnClause.Type
+	219, // 252: pb.ColumnClause.identifier:type_name -> pb.Identifier
+	272, // 253: pb.ColumnClause.integer_literal:type_name -> pb.IntegerLiteral
+	219, // 254: pb.ForegroundColorClause.identifier:type_name -> pb.Identifier
+	272, // 255: pb.ForegroundColorClause.integer_literal:type_name -> pb.IntegerLiteral
+	219, // 256: pb.BackgroundColorClause.identifier:type_name -> pb.Identifier
+	272, // 257: pb.BackgroundColorClause.integer_literal:type_name -> pb.IntegerLiteral
+	219, // 258: pb.ControlClause.control:type_name -> pb.Identifier
+	168, // 259: pb.ReportSection.report_descriptions:type_name -> pb.ReportDescription
+	169, // 260: pb.ReportDescription.report_description_entry:type_name -> pb.ReportDescriptionEntry
+	175, // 261: pb.ReportDescription.report_group_description_entries:type_name -> pb.ReportGroupDescriptionEntry
+	261, // 262: pb.ReportDescriptionEntry.report_name:type_name -> pb.ReportName
+	104, // 263: pb.ReportDescriptionEntry.global_clause:type_name -> pb.GlobalClause
+	170, // 264: pb.ReportDescriptionEntry.page_limit_clause:type_name -> pb.PageLimitClause
+	171, // 265: pb.ReportDescriptionEntry.heading_clause:type_name -> pb.HeadingClause
+	172, // 266: pb.ReportDescriptionEntry.first_detail_clause:type_name -> pb.FirstDetailClause
+	173, // 267: pb.ReportDescriptionEntry.last_detail_clause:type_name -> pb.LastDetailClause
+	174, // 268: pb.ReportDescriptionEntry.footing_clause:type_name -> pb.FootingClause
+	272, // 269: pb.PageLimitClause.page:type_name -> pb.IntegerLiteral
+	272, // 270: pb.HeadingClause.heading:type_name -> pb.IntegerLiteral
+	272, // 271: pb.FirstDetailClause.first_detail:type_name -> pb.IntegerLiteral
+	272, // 272: pb.LastDetailClause.last_detail:type_name -> pb.IntegerLiteral
+	272, // 273: pb.FootingClause.footing:type_name -> pb.IntegerLiteral
+	272, // 274: pb.ReportGroupDescriptionEntry.integer_literal:type_name -> pb.IntegerLiteral
+	247, // 275: pb.ReportGroupDescriptionEntry.data_name:type_name -> pb.DataName
+	293, // 276: pb.ReportGroupDescriptionEntry.vertical:type_name -> pb.ReportGroupDescriptionEntry.Vertical
+	294, // 277: pb.ReportGroupDescriptionEntry.single:type_name -> pb.ReportGroupDescriptionEntry.Single
+	295, // 278: pb.ReportGroupDescriptionEntry.printable:type_name -> pb.ReportGroupDescriptionEntry.Printable
+	247, // 279: pb.ResetClause.data_name:type_name -> pb.DataName
+	219, // 280: pb.SumClause.sums:type_name -> pb.Identifier
+	247, // 281: pb.SumClause.upons:type_name -> pb.DataName
+	269, // 282: pb.ValueClause.value:type_name -> pb.Literal
+	219, // 283: pb.SourceClause.source:type_name -> pb.Identifier
+	272, // 284: pb.ColumnNumberClause.column_number:type_name -> pb.IntegerLiteral
+	37,  // 285: pb.SignClause.type:type_name -> pb.SignClause.Type
+	125, // 286: pb.PictureClause.picture_string:type_name -> pb.PictureString
+	272, // 287: pb.LineNumberClause.next_page:type_name -> pb.IntegerLiteral
+	272, // 288: pb.LineNumberClause.plus:type_name -> pb.IntegerLiteral
+	272, // 289: pb.NextGroupClause.next_group:type_name -> pb.IntegerLiteral
+	272, // 290: pb.NextGroupClause.plus:type_name -> pb.IntegerLiteral
+	296, // 291: pb.TypeClause.report_heading:type_name -> pb.TypeClause.ReportHeading
+	297, // 292: pb.TypeClause.page_heading:type_name -> pb.TypeClause.PageHeading
+	298, // 293: pb.TypeClause.control_heading:type_name -> pb.TypeClause.ControlHeading
+	299, // 294: pb.TypeClause.detail:type_name -> pb.TypeClause.Detail
+	300, // 295: pb.TypeClause.control_footing:type_name -> pb.TypeClause.ControlFooting
+	301, // 296: pb.TypeClause.page_footing:type_name -> pb.TypeClause.PageFooting
+	302, // 297: pb.TypeClause.report_footing:type_name -> pb.TypeClause.ReportFooting
+	191, // 298: pb.ProgramLibrarySection.library_description_entries:type_name -> pb.LibraryDescriptionEntry
+	254, // 299: pb.LibraryDescriptionEntry.library_name:type_name -> pb.LibraryName
+	303, // 300: pb.LibraryDescriptionEntry.import:type_name -> pb.LibraryDescriptionEntry.Import
+	304, // 301: pb.LibraryDescriptionEntry.export:type_name -> pb.LibraryDescriptionEntry.Export
+	38,  // 302: pb.AttributeClause1.sharing:type_name -> pb.AttributeClause1.Sharing
+	269, // 303: pb.AttributeClause2.function_name:type_name -> pb.Literal
+	39,  // 304: pb.AttributeClause2.lib_access:type_name -> pb.AttributeClause2.LibAccess
+	269, // 305: pb.AttributeClause2.lib_parameter:type_name -> pb.Literal
+	269, // 306: pb.AttributeClause2.title:type_name -> pb.Literal
+	259, // 307: pb.ProcedureClause1.program_name:type_name -> pb.ProgramName
+	269, // 308: pb.ProcedureClause1.for:type_name -> pb.Literal
+	259, // 309: pb.ProcedureClause2.program_name:type_name -> pb.ProgramName
+	269, // 310: pb.ProcedureClause2.for:type_name -> pb.Literal
+	305, // 311: pb.ProcedureClause2.with_names:type_name -> pb.ProcedureClause2.WithName
+	306, // 312: pb.ProcedureClause2.using_names:type_name -> pb.ProcedureClause2.UsingName
+	247, // 313: pb.ProcedureClause2.giving:type_name -> pb.DataName
+	116, // 314: pb.LocalStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	255, // 315: pb.LocalStorageSection.local_name:type_name -> pb.LocalName
+	116, // 316: pb.LinkageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	200, // 317: pb.CommunicationSection.communication_description_entries:type_name -> pb.CommunicationDescriptionEntry
+	116, // 318: pb.CommunicationSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	243, // 319: pb.CommunicationDescriptionEntry.cd_name:type_name -> pb.CdName
+	307, // 320: pb.CommunicationDescriptionEntry.input:type_name -> pb.CommunicationDescriptionEntry.Input
+	308, // 321: pb.CommunicationDescriptionEntry.output:type_name -> pb.CommunicationDescriptionEntry.Output
+	309, // 322: pb.CommunicationDescriptionEntry.io:type_name -> pb.CommunicationDescriptionEntry.Io
+	248, // 323: pb.SymbolicTerminalClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 324: pb.SymbolicDestinationClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 325: pb.ErrorKeyClause.data_desc_name:type_name -> pb.DataDescName
+	272, // 326: pb.DestinationTableClause.times:type_name -> pb.IntegerLiteral
+	252, // 327: pb.DestinationTableClause.indexes:type_name -> pb.IndexName
+	248, // 328: pb.DestinationCountClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 329: pb.SymbolicQueueClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 330: pb.SymbolicSubQueueClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 331: pb.MessageDateClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 332: pb.MessageTimeClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 333: pb.SymbolicSourceClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 334: pb.TextLengthClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 335: pb.EndKeyClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 336: pb.StatusKeyClause.data_desc_name:type_name -> pb.DataDescName
+	248, // 337: pb.MessageCountClause.data_desc_name:type_name -> pb.DataDescName
+	216, // 338: pb.DataBaseSection.data_base_section_entries:type_name -> pb.DataBaseSectionEntry
+	272, // 339: pb.DataBaseSectionEntry.integer_literal:type_name -> pb.IntegerLiteral
+	269, // 340: pb.DataBaseSectionEntry.literal:type_name -> pb.Literal
+	269, // 341: pb.DataBaseSectionEntry.invoke:type_name -> pb.Literal
+	229, // 342: pb.Identifier.qualified_data_name:type_name -> pb.QualifiedDataName
+	220, // 343: pb.Identifier.table_call:type_name -> pb.TableCall
+	221, // 344: pb.Identifier.function_call:type_name -> pb.FunctionCall
+	274, // 345: pb.Identifier.special_register:type_name -> pb.SpecialRegister
+	229, // 346: pb.TableCall.qualified_data_name:type_name -> pb.QualifiedDataName
+	225, // 347: pb.TableCall.subscripts:type_name -> pb.Subscript
+	222, // 348: pb.TableCall.reference_modifier:type_name -> pb.ReferenceModifier
+	251, // 349: pb.FunctionCall.function_name:type_name -> pb.FunctionName
+	226, // 350: pb.FunctionCall.arguments:type_name -> pb.Argument
+	222, // 351: pb.FunctionCall.reference_modifier:type_name -> pb.ReferenceModifier
+	223, // 352: pb.ReferenceModifier.character_position:type_name -> pb.CharacterPosition
+	224, // 353: pb.ReferenceModifier.length:type_name -> pb.Length
+	218, // 354: pb.CharacterPosition.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	218, // 355: pb.Length.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	272, // 356: pb.Subscript.integer_literal:type_name -> pb.IntegerLiteral
+	227, // 357: pb.Subscript.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
+	228, // 358: pb.Subscript.index_name:type_name -> pb.IndexNameIntegerLiteral
+	218, // 359: pb.Subscript.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	269, // 360: pb.Argument.literal:type_name -> pb.Literal
+	219, // 361: pb.Argument.identifier:type_name -> pb.Identifier
+	227, // 362: pb.Argument.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
+	228, // 363: pb.Argument.index_name:type_name -> pb.IndexNameIntegerLiteral
+	218, // 364: pb.Argument.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	229, // 365: pb.QualifiedDataNameIntegerLiteral.qualified_data_name:type_name -> pb.QualifiedDataName
+	272, // 366: pb.QualifiedDataNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
+	252, // 367: pb.IndexNameIntegerLiteral.index_name:type_name -> pb.IndexName
+	272, // 368: pb.IndexNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
+	230, // 369: pb.QualifiedDataName.f1:type_name -> pb.QualifiedDataNameFormat1
+	231, // 370: pb.QualifiedDataName.f2:type_name -> pb.QualifiedDataNameFormat2
+	232, // 371: pb.QualifiedDataName.f3:type_name -> pb.QualifiedDataNameFormat3
+	233, // 372: pb.QualifiedDataName.f4:type_name -> pb.QualifiedDataNameFormat4
+	247, // 373: pb.QualifiedDataNameFormat1.data_name:type_name -> pb.DataName
+	246, // 374: pb.QualifiedDataNameFormat1.condition_name:type_name -> pb.ConditionName
+	234, // 375: pb.QualifiedDataNameFormat1.in_datas:type_name -> pb.InData
+	239, // 376: pb.QualifiedDataNameFormat1.in_tables:type_name -> pb.InTable
+	235, // 377: pb.QualifiedDataNameFormat1.in_file:type_name -> pb.InFile
+	257, // 378: pb.QualifiedDataNameFormat2.paragraph_name:type_name -> pb.ParagraphName
+	237, // 379: pb.QualifiedDataNameFormat2.in_section:type_name -> pb.InSection
+	267, // 380: pb.QualifiedDataNameFormat3.text_name:type_name -> pb.TextName
+	238, // 381: pb.QualifiedDataNameFormat3.in_library:type_name -> pb.InLibrary
+	235, // 382: pb.QualifiedDataNameFormat4.in_file:type_name -> pb.InFile
+	247, // 383: pb.InData.data_name:type_name -> pb.DataName
+	250, // 384: pb.InFile.file_name:type_name -> pb.FileName
+	256, // 385: pb.InMnemonic.mnemonic_name:type_name -> pb.MnemonicName
+	264, // 386: pb.InSection.section_name:type_name -> pb.SectionName
+	254, // 387: pb.InLibrary.library_name:type_name -> pb.LibraryName
+	220, // 388: pb.InTable.table_call:type_name -> pb.TableCall
+	268, // 389: pb.AlphabetName.cobol_word:type_name -> pb.CobolWord
+	265, // 390: pb.AssignmentName.system_name:type_name -> pb.SystemName
+	259, // 391: pb.BasisName.program_name:type_name -> pb.ProgramName
+	268, // 392: pb.CdName.cobol_word:type_name -> pb.CobolWord
+	268, // 393: pb.ClassName.cobol_word:type_name -> pb.CobolWord
+	265, // 394: pb.ComputerName.system_name:type_name -> pb.SystemName
+	268, // 395: pb.ConditionName.cobol_word:type_name -> pb.CobolWord
+	268, // 396: pb.DataName.cobol_word:type_name -> pb.CobolWord
+	265, // 397: pb.EnvironmentName.system_name:type_name -> pb.SystemName
+	268, // 398: pb.FileName.cobol_word:type_name -> pb.CobolWord
+	268, // 399: pb.IndexName.cobol_word:type_name -> pb.CobolWord
+	265, // 400: pb.LanguageName.system_name:type_name -> pb.SystemName
+	268, // 401: pb.LibraryName.cobol_word:type_name -> pb.CobolWord
+	268, // 402: pb.LocalName.cobol_word:type_name -> pb.CobolWord
+	268, // 403: pb.MnemonicName.cobol_word:type_name -> pb.CobolWord
+	268, // 404: pb.ParagraphName.cobol_word:type_name -> pb.CobolWord
+	272, // 405: pb.ParagraphName.integer_literal:type_name -> pb.IntegerLiteral
+	257, // 406: pb.ProcedureName.paragraph_name:type_name -> pb.ParagraphName
+	264, // 407: pb.ProcedureName.section_name:type_name -> pb.SectionName
+	275, // 408: pb.ProgramName.non_numeric_literal:type_name -> pb.NonNumericLiteral
+	268, // 409: pb.ProgramName.cobol_word:type_name -> pb.CobolWord
+	229, // 410: pb.RecordName.qualified_data_name:type_name -> pb.QualifiedDataName
+	229, // 411: pb.ReportName.qualified_data_name:type_name -> pb.QualifiedDataName
+	268, // 412: pb.RoutingName.cobol_word:type_name -> pb.CobolWord
+	268, // 413: pb.ScreenName.cobol_word:type_name -> pb.CobolWord
+	268, // 414: pb.SectionName.cobol_word:type_name -> pb.CobolWord
+	272, // 415: pb.SectionName.integer_literal:type_name -> pb.IntegerLiteral
+	268, // 416: pb.SystemName.cobol_word:type_name -> pb.CobolWord
+	268, // 417: pb.SymbolicCharacter.cobol_word:type_name -> pb.CobolWord
+	268, // 418: pb.TextName.cobol_word:type_name -> pb.CobolWord
+	40,  // 419: pb.Literal.type:type_name -> pb.Literal.Type
+	271, // 420: pb.Literal.numeric_literal:type_name -> pb.NumericLiteral
+	270, // 421: pb.Literal.boolean_literal:type_name -> pb.BooleanLiteral
+	275, // 422: pb.Literal.non_numeric_literal:type_name -> pb.NonNumericLiteral
+	273, // 423: pb.Literal.figurative_constant:type_name -> pb.FigurativeConstant
+	41,  // 424: pb.NumericLiteral.type:type_name -> pb.NumericLiteral.Type
+	42,  // 425: pb.FigurativeConstant.type:type_name -> pb.FigurativeConstant.Type
+	269, // 426: pb.FigurativeConstant.literal:type_name -> pb.Literal
+	269, // 427: pb.AlphabetClause.Also.alsos:type_name -> pb.Literal
+	269, // 428: pb.AlphabetClause.AlphabetLiteral.literal:type_name -> pb.Literal
+	269, // 429: pb.AlphabetClause.AlphabetLiteral.through:type_name -> pb.Literal
+	280, // 430: pb.AlphabetClause.AlphabetLiteral.alsos:type_name -> pb.AlphabetClause.Also
+	281, // 431: pb.AlphabetClause.AlphabetLiterals.values:type_name -> pb.AlphabetClause.AlphabetLiteral
+	3,   // 432: pb.AlphabetClause.Alphanumeric.type:type_name -> pb.AlphabetClause.Alphanumeric.Type
+	268, // 433: pb.AlphabetClause.Alphanumeric.cobol_word:type_name -> pb.CobolWord
+	282, // 434: pb.AlphabetClause.Alphanumeric.values:type_name -> pb.AlphabetClause.AlphabetLiterals
+	4,   // 435: pb.AlphabetClause.National.type:type_name -> pb.AlphabetClause.National.Type
+	269, // 436: pb.AlphabetClause.National.ccs_version:type_name -> pb.Literal
+	247, // 437: pb.LabelRecordsClause.DataNames.data_names:type_name -> pb.DataName
+	247, // 438: pb.DataDescriptionEntry.Format1.data_name:type_name -> pb.DataName
+	118, // 439: pb.DataDescriptionEntry.Format1.data_redefines_clause:type_name -> pb.DataRedefinesClause
+	119, // 440: pb.DataDescriptionEntry.Format1.data_integer_string_clause:type_name -> pb.DataIntegerStringClause
+	120, // 441: pb.DataDescriptionEntry.Format1.data_external_clause:type_name -> pb.DataExternalClause
+	121, // 442: pb.DataDescriptionEntry.Format1.data_global_clause:type_name -> pb.DataGlobalClause
+	122, // 443: pb.DataDescriptionEntry.Format1.data_type_def_clause:type_name -> pb.DataTypeDefClause
+	123, // 444: pb.DataDescriptionEntry.Format1.data_thread_local_clause:type_name -> pb.DataThreadLocalClause
+	124, // 445: pb.DataDescriptionEntry.Format1.data_picture_clause:type_name -> pb.DataPictureClause
+	128, // 446: pb.DataDescriptionEntry.Format1.data_common_own_local_clause:type_name -> pb.DataCommonOwnLocalClause
+	129, // 447: pb.DataDescriptionEntry.Format1.data_type_clause:type_name -> pb.DataTypeClause
+	130, // 448: pb.DataDescriptionEntry.Format1.data_using_clause:type_name -> pb.DataUsingClause
+	131, // 449: pb.DataDescriptionEntry.Format1.data_usage_clause:type_name -> pb.DataUsageClause
+	133, // 450: pb.DataDescriptionEntry.Format1.data_value_clause:type_name -> pb.DataValueClause
+	134, // 451: pb.DataDescriptionEntry.Format1.data_received_by_clause:type_name -> pb.DataReceivedByClause
+	135, // 452: pb.DataDescriptionEntry.Format1.data_occurs_clause:type_name -> pb.DataOccursClause
+	136, // 453: pb.DataDescriptionEntry.Format1.data_sign_clause:type_name -> pb.DataSignClause
+	137, // 454: pb.DataDescriptionEntry.Format1.data_synchronized_clause:type_name -> pb.DataSynchronizedClause
+	138, // 455: pb.DataDescriptionEntry.Format1.data_justified_clause:type_name -> pb.DataJustifiedClause
+	139, // 456: pb.DataDescriptionEntry.Format1.data_blank_when_zero_clause:type_name -> pb.DataBlankWhenZeroClause
+	140, // 457: pb.DataDescriptionEntry.Format1.data_with_lower_bounds_clause:type_name -> pb.DataWithLowerBoundsClause
+	141, // 458: pb.DataDescriptionEntry.Format1.data_aligned_clause:type_name -> pb.DataAlignedClause
+	142, // 459: pb.DataDescriptionEntry.Format1.data_record_area_clause:type_name -> pb.DataRecordAreaClause
+	247, // 460: pb.DataDescriptionEntry.Format2.data_name:type_name -> pb.DataName
+	117, // 461: pb.DataDescriptionEntry.Format2.data_renames_clause:type_name -> pb.DataRenamesClause
+	246, // 462: pb.DataDescriptionEntry.Format3.condition_name:type_name -> pb.ConditionName
+	133, // 463: pb.DataDescriptionEntry.Format3.data_value_clause:type_name -> pb.DataValueClause
+	20,  // 464: pb.DataTypeClause.Lob.mode:type_name -> pb.DataTypeClause.Mode
+	272, // 465: pb.DataTypeClause.Lob.integer_literal:type_name -> pb.IntegerLiteral
+	229, // 466: pb.DataOccursClause.Sort.qualified_data_names:type_name -> pb.QualifiedDataName
+	252, // 467: pb.DataOccursClause.Indexed.index_names:type_name -> pb.IndexName
+	186, // 468: pb.ReportGroupDescriptionEntry.Vertical.line_number_clause:type_name -> pb.LineNumberClause
+	187, // 469: pb.ReportGroupDescriptionEntry.Vertical.next_group_clause:type_name -> pb.NextGroupClause
+	188, // 470: pb.ReportGroupDescriptionEntry.Vertical.type_clause:type_name -> pb.TypeClause
+	189, // 471: pb.ReportGroupDescriptionEntry.Vertical.usage_clause:type_name -> pb.UsageClause
+	186, // 472: pb.ReportGroupDescriptionEntry.Single.line_number_clause:type_name -> pb.LineNumberClause
+	189, // 473: pb.ReportGroupDescriptionEntry.Single.usage_clause:type_name -> pb.UsageClause
+	185, // 474: pb.ReportGroupDescriptionEntry.Printable.picture_clause:type_name -> pb.PictureClause
+	189, // 475: pb.ReportGroupDescriptionEntry.Printable.usage_clause:type_name -> pb.UsageClause
+	184, // 476: pb.ReportGroupDescriptionEntry.Printable.sign_clause:type_name -> pb.SignClause
+	183, // 477: pb.ReportGroupDescriptionEntry.Printable.justified_clause:type_name -> pb.JustifiedClause
+	182, // 478: pb.ReportGroupDescriptionEntry.Printable.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
+	186, // 479: pb.ReportGroupDescriptionEntry.Printable.line_number_clause:type_name -> pb.LineNumberClause
+	181, // 480: pb.ReportGroupDescriptionEntry.Printable.column_number_clause:type_name -> pb.ColumnNumberClause
+	180, // 481: pb.ReportGroupDescriptionEntry.Printable.IndicateClause:type_name -> pb.IndicateClause
+	179, // 482: pb.ReportGroupDescriptionEntry.Printable.source_clause:type_name -> pb.SourceClause
+	178, // 483: pb.ReportGroupDescriptionEntry.Printable.value_clause:type_name -> pb.ValueClause
+	177, // 484: pb.ReportGroupDescriptionEntry.Printable.SumClause:type_name -> pb.SumClause
+	176, // 485: pb.ReportGroupDescriptionEntry.Printable.reset_clause:type_name -> pb.ResetClause
+	247, // 486: pb.TypeClause.ControlHeading.data_name:type_name -> pb.DataName
+	247, // 487: pb.TypeClause.ControlFooting.data_name:type_name -> pb.DataName
+	104, // 488: pb.LibraryDescriptionEntry.Import.global_clause:type_name -> pb.GlobalClause
+	192, // 489: pb.LibraryDescriptionEntry.Import.is_common_clause:type_name -> pb.IsCommonClause
+	194, // 490: pb.LibraryDescriptionEntry.Import.attribute_clause:type_name -> pb.AttributeClause2
+	196, // 491: pb.LibraryDescriptionEntry.Import.procedure_clause:type_name -> pb.ProcedureClause2
+	193, // 492: pb.LibraryDescriptionEntry.Export.attribute_clause:type_name -> pb.AttributeClause1
+	195, // 493: pb.LibraryDescriptionEntry.Export.procedure_clause:type_name -> pb.ProcedureClause1
+	255, // 494: pb.ProcedureClause2.WithName.local_name:type_name -> pb.LocalName
+	250, // 495: pb.ProcedureClause2.WithName.file_name:type_name -> pb.FileName
+	247, // 496: pb.ProcedureClause2.UsingName.data_name:type_name -> pb.DataName
+	250, // 497: pb.ProcedureClause2.UsingName.file_name:type_name -> pb.FileName
+	206, // 498: pb.CommunicationDescriptionEntry.Input.symbolic_queue_clause:type_name -> pb.SymbolicQueueClause
+	207, // 499: pb.CommunicationDescriptionEntry.Input.symbolic_sub_queue_clause:type_name -> pb.SymbolicSubQueueClause
+	208, // 500: pb.CommunicationDescriptionEntry.Input.message_date_clause:type_name -> pb.MessageDateClause
+	209, // 501: pb.CommunicationDescriptionEntry.Input.message_time_clause:type_name -> pb.MessageTimeClause
+	210, // 502: pb.CommunicationDescriptionEntry.Input.symbolic_source_clause:type_name -> pb.SymbolicSourceClause
+	211, // 503: pb.CommunicationDescriptionEntry.Input.text_length_clause:type_name -> pb.TextLengthClause
+	212, // 504: pb.CommunicationDescriptionEntry.Input.end_key_clause:type_name -> pb.EndKeyClause
+	213, // 505: pb.CommunicationDescriptionEntry.Input.status_key_clause:type_name -> pb.StatusKeyClause
+	214, // 506: pb.CommunicationDescriptionEntry.Input.message_count_clause:type_name -> pb.MessageCountClause
+	248, // 507: pb.CommunicationDescriptionEntry.Input.data_desc_name:type_name -> pb.DataDescName
+	205, // 508: pb.CommunicationDescriptionEntry.Output.destination_count_clause:type_name -> pb.DestinationCountClause
+	211, // 509: pb.CommunicationDescriptionEntry.Output.text_length_clause:type_name -> pb.TextLengthClause
+	213, // 510: pb.CommunicationDescriptionEntry.Output.status_key_clause:type_name -> pb.StatusKeyClause
+	204, // 511: pb.CommunicationDescriptionEntry.Output.destination_table_clause:type_name -> pb.DestinationTableClause
+	203, // 512: pb.CommunicationDescriptionEntry.Output.errorKeyClause:type_name -> pb.ErrorKeyClause
+	202, // 513: pb.CommunicationDescriptionEntry.Output.symbolic_destination_clause:type_name -> pb.SymbolicDestinationClause
+	208, // 514: pb.CommunicationDescriptionEntry.Io.message_date_clause:type_name -> pb.MessageDateClause
+	209, // 515: pb.CommunicationDescriptionEntry.Io.message_time_clause:type_name -> pb.MessageTimeClause
+	201, // 516: pb.CommunicationDescriptionEntry.Io.symbolic_terminal_clause:type_name -> pb.SymbolicTerminalClause
+	211, // 517: pb.CommunicationDescriptionEntry.Io.text_length_clause:type_name -> pb.TextLengthClause
+	212, // 518: pb.CommunicationDescriptionEntry.Io.end_key_clause:type_name -> pb.EndKeyClause
+	213, // 519: pb.CommunicationDescriptionEntry.Io.status_key_clause:type_name -> pb.StatusKeyClause
+	520, // [520:520] is the sub-list for method output_type
+	520, // [520:520] is the sub-list for method input_type
+	520, // [520:520] is the sub-list for extension type_name
+	520, // [520:520] is the sub-list for extension extendee
+	0,   // [0:520] is the sub-list for field type_name
 }
 
 func init() { file_cobol_proto_init() }
@@ -20650,7 +23028,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportSection); i {
+			switch v := v.(*ZeroFillClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20662,7 +23040,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportDescription); i {
+			switch v := v.(*FullClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20674,7 +23052,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportDescriptionEntry); i {
+			switch v := v.(*PromptClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20686,7 +23064,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PageLimitClause); i {
+			switch v := v.(*RequiredClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20698,7 +23076,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HeadingClause); i {
+			switch v := v.(*SecureClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20710,7 +23088,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FirstDetailClause); i {
+			switch v := v.(*AutoClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20722,7 +23100,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LastDetailClause); i {
+			switch v := v.(*UsingClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20734,7 +23112,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FootingClause); i {
+			switch v := v.(*FromClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20746,7 +23124,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry); i {
+			switch v := v.(*BlankClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20758,7 +23136,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResetClause); i {
+			switch v := v.(*BellClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20770,7 +23148,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SumClause); i {
+			switch v := v.(*BlinkClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20782,7 +23160,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ValueClause); i {
+			switch v := v.(*EraseClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20794,7 +23172,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SourceClause); i {
+			switch v := v.(*LightClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20806,7 +23184,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IndicateClause); i {
+			switch v := v.(*GridClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20818,7 +23196,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ColumnNumberClause); i {
+			switch v := v.(*ReverseVideoClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20830,7 +23208,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BlankWhenZeroClause); i {
+			switch v := v.(*UnderlineClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20842,7 +23220,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JustifiedClause); i {
+			switch v := v.(*SizeClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20854,7 +23232,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SignClause); i {
+			switch v := v.(*LineClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20866,7 +23244,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PictureClause); i {
+			switch v := v.(*ColumnClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20878,7 +23256,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LineNumberClause); i {
+			switch v := v.(*ForegroundColorClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20890,7 +23268,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NextGroupClause); i {
+			switch v := v.(*BackgroundColorClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20902,7 +23280,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause); i {
+			switch v := v.(*ControlClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20914,7 +23292,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UsageClause); i {
+			switch v := v.(*ReportSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20926,7 +23304,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProgramLibrarySection); i {
+			switch v := v.(*ReportDescription); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20938,7 +23316,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryDescriptionEntry); i {
+			switch v := v.(*ReportDescriptionEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20950,7 +23328,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IsCommonClause); i {
+			switch v := v.(*PageLimitClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20962,7 +23340,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AttributeClause1); i {
+			switch v := v.(*HeadingClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20974,7 +23352,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AttributeClause2); i {
+			switch v := v.(*FirstDetailClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20986,7 +23364,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureClause1); i {
+			switch v := v.(*LastDetailClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -20998,7 +23376,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[131].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureClause2); i {
+			switch v := v.(*FootingClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21010,7 +23388,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[132].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LocalStorageSection); i {
+			switch v := v.(*ReportGroupDescriptionEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21022,7 +23400,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[133].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LinkageSection); i {
+			switch v := v.(*ResetClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21034,7 +23412,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[134].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationSection); i {
+			switch v := v.(*SumClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21046,7 +23424,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[135].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationDescriptionEntry); i {
+			switch v := v.(*ValueClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21058,7 +23436,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[136].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicTerminalClause); i {
+			switch v := v.(*SourceClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21070,7 +23448,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[137].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicDestinationClause); i {
+			switch v := v.(*IndicateClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21082,7 +23460,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[138].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ErrorKeyClause); i {
+			switch v := v.(*ColumnNumberClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21094,7 +23472,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[139].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DestinationTableClause); i {
+			switch v := v.(*BlankWhenZeroClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21106,7 +23484,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[140].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DestinationCountClause); i {
+			switch v := v.(*JustifiedClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21118,7 +23496,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[141].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicQueueClause); i {
+			switch v := v.(*SignClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21130,7 +23508,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[142].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicSubQueueClause); i {
+			switch v := v.(*PictureClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21142,7 +23520,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[143].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MessageDateClause); i {
+			switch v := v.(*LineNumberClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21154,7 +23532,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[144].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MessageTimeClause); i {
+			switch v := v.(*NextGroupClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21166,7 +23544,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[145].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicSourceClause); i {
+			switch v := v.(*TypeClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21178,7 +23556,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[146].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TextLengthClause); i {
+			switch v := v.(*UsageClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21190,7 +23568,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[147].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EndKeyClause); i {
+			switch v := v.(*ProgramLibrarySection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21202,7 +23580,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[148].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StatusKeyClause); i {
+			switch v := v.(*LibraryDescriptionEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21214,7 +23592,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[149].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MessageCountClause); i {
+			switch v := v.(*IsCommonClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21226,7 +23604,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[150].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataBaseSection); i {
+			switch v := v.(*AttributeClause1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21238,7 +23616,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[151].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataBaseSectionEntry); i {
+			switch v := v.(*AttributeClause2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21250,7 +23628,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[152].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision); i {
+			switch v := v.(*ProcedureClause1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21262,7 +23640,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[153].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ArithmeticExpression); i {
+			switch v := v.(*ProcedureClause2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21274,7 +23652,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[154].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Identifier); i {
+			switch v := v.(*LocalStorageSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21286,7 +23664,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[155].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TableCall); i {
+			switch v := v.(*LinkageSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21298,7 +23676,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[156].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FunctionCall); i {
+			switch v := v.(*CommunicationSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21310,7 +23688,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[157].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReferenceModifier); i {
+			switch v := v.(*CommunicationDescriptionEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21322,7 +23700,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[158].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CharacterPosition); i {
+			switch v := v.(*SymbolicTerminalClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21334,7 +23712,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[159].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Length); i {
+			switch v := v.(*SymbolicDestinationClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21346,7 +23724,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[160].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Subscript); i {
+			switch v := v.(*ErrorKeyClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21358,7 +23736,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[161].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Argument); i {
+			switch v := v.(*DestinationTableClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21370,7 +23748,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[162].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameIntegerLiteral); i {
+			switch v := v.(*DestinationCountClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21382,7 +23760,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[163].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IndexNameIntegerLiteral); i {
+			switch v := v.(*SymbolicQueueClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21394,7 +23772,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[164].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataName); i {
+			switch v := v.(*SymbolicSubQueueClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21406,7 +23784,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[165].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat1); i {
+			switch v := v.(*MessageDateClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21418,7 +23796,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[166].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat2); i {
+			switch v := v.(*MessageTimeClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21430,7 +23808,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[167].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat3); i {
+			switch v := v.(*SymbolicSourceClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21442,7 +23820,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[168].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat4); i {
+			switch v := v.(*TextLengthClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21454,7 +23832,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[169].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InData); i {
+			switch v := v.(*EndKeyClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21466,7 +23844,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[170].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InFile); i {
+			switch v := v.(*StatusKeyClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21478,7 +23856,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[171].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InMnemonic); i {
+			switch v := v.(*MessageCountClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21490,7 +23868,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[172].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InSection); i {
+			switch v := v.(*DataBaseSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21502,7 +23880,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[173].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InLibrary); i {
+			switch v := v.(*DataBaseSectionEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21514,7 +23892,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[174].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InTable); i {
+			switch v := v.(*ProcedureDivision); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21526,7 +23904,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[175].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetName); i {
+			switch v := v.(*ArithmeticExpression); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21538,7 +23916,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[176].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AssignmentName); i {
+			switch v := v.(*Identifier); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21550,7 +23928,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[177].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BasisName); i {
+			switch v := v.(*TableCall); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21562,7 +23940,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[178].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CdName); i {
+			switch v := v.(*FunctionCall); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21574,7 +23952,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[179].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ClassName); i {
+			switch v := v.(*ReferenceModifier); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21586,7 +23964,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[180].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ComputerName); i {
+			switch v := v.(*CharacterPosition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21598,7 +23976,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[181].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConditionName); i {
+			switch v := v.(*Length); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21610,7 +23988,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[182].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataName); i {
+			switch v := v.(*Subscript); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21622,7 +24000,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[183].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescName); i {
+			switch v := v.(*Argument); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21634,7 +24012,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[184].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnvironmentName); i {
+			switch v := v.(*QualifiedDataNameIntegerLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21646,7 +24024,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[185].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FileName); i {
+			switch v := v.(*IndexNameIntegerLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21658,7 +24036,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[186].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FunctionName); i {
+			switch v := v.(*QualifiedDataName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21670,7 +24048,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[187].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IndexName); i {
+			switch v := v.(*QualifiedDataNameFormat1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21682,7 +24060,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[188].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LanguageName); i {
+			switch v := v.(*QualifiedDataNameFormat2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21694,7 +24072,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[189].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryName); i {
+			switch v := v.(*QualifiedDataNameFormat3); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21706,7 +24084,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[190].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LocalName); i {
+			switch v := v.(*QualifiedDataNameFormat4); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21718,7 +24096,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[191].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MnemonicName); i {
+			switch v := v.(*InData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21730,7 +24108,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[192].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ParagraphName); i {
+			switch v := v.(*InFile); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21742,7 +24120,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[193].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureName); i {
+			switch v := v.(*InMnemonic); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21754,7 +24132,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[194].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProgramName); i {
+			switch v := v.(*InSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21766,7 +24144,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[195].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordName); i {
+			switch v := v.(*InLibrary); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21778,7 +24156,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[196].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportName); i {
+			switch v := v.(*InTable); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21790,7 +24168,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[197].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RoutingName); i {
+			switch v := v.(*AlphabetName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21802,7 +24180,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[198].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ScreenName); i {
+			switch v := v.(*AssignmentName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21814,7 +24192,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[199].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SectionName); i {
+			switch v := v.(*BasisName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21826,7 +24204,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[200].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SystemName); i {
+			switch v := v.(*CdName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21838,7 +24216,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[201].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicCharacter); i {
+			switch v := v.(*ClassName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21850,7 +24228,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[202].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TextName); i {
+			switch v := v.(*ComputerName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21862,7 +24240,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[203].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CobolWord); i {
+			switch v := v.(*ConditionName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21874,7 +24252,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[204].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Literal); i {
+			switch v := v.(*DataName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21886,7 +24264,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[205].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BooleanLiteral); i {
+			switch v := v.(*DataDescName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21898,7 +24276,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[206].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NumericLiteral); i {
+			switch v := v.(*EnvironmentName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21910,7 +24288,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[207].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IntegerLiteral); i {
+			switch v := v.(*FileName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21922,7 +24300,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[208].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FigurativeConstant); i {
+			switch v := v.(*FunctionName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21934,7 +24312,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[209].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SpecialRegister); i {
+			switch v := v.(*IndexName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21946,7 +24324,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[210].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NonNumericLiteral); i {
+			switch v := v.(*LanguageName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21958,7 +24336,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[211].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StringLiteral); i {
+			switch v := v.(*LibraryName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21970,7 +24348,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[212].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DbcsLiteral); i {
+			switch v := v.(*LocalName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21982,7 +24360,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[213].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HexNumber); i {
+			switch v := v.(*MnemonicName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -21994,7 +24372,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[214].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NullTerminated); i {
+			switch v := v.(*ParagraphName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22006,7 +24384,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[215].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_Also); i {
+			switch v := v.(*ProcedureName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22018,7 +24396,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[216].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_AlphabetLiteral); i {
+			switch v := v.(*ProgramName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22030,7 +24408,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[217].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_AlphabetLiterals); i {
+			switch v := v.(*RecordName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22042,7 +24420,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[218].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_Alphanumeric); i {
+			switch v := v.(*ReportName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22054,7 +24432,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[219].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_National); i {
+			switch v := v.(*RoutingName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22066,7 +24444,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[220].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LabelRecordsClause_DataNames); i {
+			switch v := v.(*ScreenName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22078,7 +24456,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[221].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_Format1); i {
+			switch v := v.(*SectionName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22090,7 +24468,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[222].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_Format2); i {
+			switch v := v.(*SystemName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22102,7 +24480,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[223].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_Format3); i {
+			switch v := v.(*SymbolicCharacter); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22114,7 +24492,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[224].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_ExecSql); i {
+			switch v := v.(*TextName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22126,7 +24504,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[225].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataTypeClause_Lob); i {
+			switch v := v.(*CobolWord); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22138,7 +24516,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[226].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataOccursClause_Sort); i {
+			switch v := v.(*Literal); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22150,7 +24528,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[227].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataOccursClause_Indexed); i {
+			switch v := v.(*BooleanLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22162,7 +24540,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[228].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry_Vertical); i {
+			switch v := v.(*NumericLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22174,7 +24552,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[229].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry_Single); i {
+			switch v := v.(*IntegerLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22186,7 +24564,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[230].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry_Printable); i {
+			switch v := v.(*FigurativeConstant); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22198,7 +24576,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[231].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ReportHeading); i {
+			switch v := v.(*SpecialRegister); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22210,7 +24588,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[232].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_PageHeading); i {
+			switch v := v.(*NonNumericLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22222,7 +24600,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[233].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ControlHeading); i {
+			switch v := v.(*StringLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22234,7 +24612,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[234].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_Detail); i {
+			switch v := v.(*DbcsLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22246,7 +24624,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[235].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ControlFooting); i {
+			switch v := v.(*HexNumber); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22258,7 +24636,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[236].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_PageFooting); i {
+			switch v := v.(*NullTerminated); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22270,7 +24648,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[237].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ReportFooting); i {
+			switch v := v.(*AlphabetClause_Also); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22282,7 +24660,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[238].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryDescriptionEntry_Import); i {
+			switch v := v.(*AlphabetClause_AlphabetLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22294,7 +24672,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[239].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryDescriptionEntry_Export); i {
+			switch v := v.(*AlphabetClause_AlphabetLiterals); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22306,7 +24684,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[240].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureClause2_WithName); i {
+			switch v := v.(*AlphabetClause_Alphanumeric); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22318,7 +24696,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[241].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureClause2_UsingName); i {
+			switch v := v.(*AlphabetClause_National); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22330,7 +24708,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[242].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationDescriptionEntry_Input); i {
+			switch v := v.(*LabelRecordsClause_DataNames); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22342,7 +24720,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[243].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationDescriptionEntry_Output); i {
+			switch v := v.(*DataDescriptionEntry_Format1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -22354,6 +24732,270 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[244].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataDescriptionEntry_Format2); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[245].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataDescriptionEntry_Format3); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[246].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataDescriptionEntry_ExecSql); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[247].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataTypeClause_Lob); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[248].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataOccursClause_Sort); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[249].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataOccursClause_Indexed); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[250].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportGroupDescriptionEntry_Vertical); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[251].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportGroupDescriptionEntry_Single); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[252].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportGroupDescriptionEntry_Printable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[253].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_ReportHeading); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[254].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_PageHeading); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[255].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_ControlHeading); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[256].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_Detail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[257].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_ControlFooting); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[258].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_PageFooting); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[259].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TypeClause_ReportFooting); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[260].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LibraryDescriptionEntry_Import); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[261].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LibraryDescriptionEntry_Export); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[262].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureClause2_WithName); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[263].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureClause2_UsingName); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[264].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CommunicationDescriptionEntry_Input); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[265].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CommunicationDescriptionEntry_Output); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[266].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CommunicationDescriptionEntry_Io); i {
 			case 0:
 				return &v.state
@@ -22439,25 +25081,57 @@ func file_cobol_proto_init() {
 		(*DataOccursClause_Identifier)(nil),
 		(*DataOccursClause_IntegerLiteral)(nil),
 	}
-	file_cobol_proto_msgTypes[110].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[101].OneofWrappers = []interface{}{
+		(*ScreenDescriptionEntry_Filler)(nil),
+		(*ScreenDescriptionEntry_ScreenName)(nil),
+	}
+	file_cobol_proto_msgTypes[104].OneofWrappers = []interface{}{
+		(*PromptClause_Identifier)(nil),
+		(*PromptClause_Literal)(nil),
+	}
+	file_cobol_proto_msgTypes[109].OneofWrappers = []interface{}{
+		(*FromClause_Identifier)(nil),
+		(*FromClause_Literal)(nil),
+	}
+	file_cobol_proto_msgTypes[118].OneofWrappers = []interface{}{
+		(*SizeClause_Identifier)(nil),
+		(*SizeClause_IntegerLiteral)(nil),
+	}
+	file_cobol_proto_msgTypes[119].OneofWrappers = []interface{}{
+		(*LineClause_Identifier)(nil),
+		(*LineClause_IntegerLiteral)(nil),
+	}
+	file_cobol_proto_msgTypes[120].OneofWrappers = []interface{}{
+		(*ColumnClause_Identifier)(nil),
+		(*ColumnClause_IntegerLiteral)(nil),
+	}
+	file_cobol_proto_msgTypes[121].OneofWrappers = []interface{}{
+		(*ForegroundColorClause_Identifier)(nil),
+		(*ForegroundColorClause_IntegerLiteral)(nil),
+	}
+	file_cobol_proto_msgTypes[122].OneofWrappers = []interface{}{
+		(*BackgroundColorClause_Identifier)(nil),
+		(*BackgroundColorClause_IntegerLiteral)(nil),
+	}
+	file_cobol_proto_msgTypes[132].OneofWrappers = []interface{}{
 		(*ReportGroupDescriptionEntry_Vertical_)(nil),
 		(*ReportGroupDescriptionEntry_Single_)(nil),
 		(*ReportGroupDescriptionEntry_Printable_)(nil),
 	}
-	file_cobol_proto_msgTypes[111].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[133].OneofWrappers = []interface{}{
 		(*ResetClause_Final)(nil),
 		(*ResetClause_DataName)(nil),
 	}
-	file_cobol_proto_msgTypes[121].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[143].OneofWrappers = []interface{}{
 		(*LineNumberClause_NextPage)(nil),
 		(*LineNumberClause_Plus)(nil),
 	}
-	file_cobol_proto_msgTypes[122].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[144].OneofWrappers = []interface{}{
 		(*NextGroupClause_NextGroup)(nil),
 		(*NextGroupClause_NextPage)(nil),
 		(*NextGroupClause_Plus)(nil),
 	}
-	file_cobol_proto_msgTypes[123].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[145].OneofWrappers = []interface{}{
 		(*TypeClause_ReportHeading_)(nil),
 		(*TypeClause_PageHeading_)(nil),
 		(*TypeClause_ControlHeading_)(nil),
@@ -22466,85 +25140,85 @@ func file_cobol_proto_init() {
 		(*TypeClause_PageFooting_)(nil),
 		(*TypeClause_ReportFooting_)(nil),
 	}
-	file_cobol_proto_msgTypes[126].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[148].OneofWrappers = []interface{}{
 		(*LibraryDescriptionEntry_Import_)(nil),
 		(*LibraryDescriptionEntry_Export_)(nil),
 	}
-	file_cobol_proto_msgTypes[135].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[157].OneofWrappers = []interface{}{
 		(*CommunicationDescriptionEntry_Input_)(nil),
 		(*CommunicationDescriptionEntry_Output_)(nil),
 		(*CommunicationDescriptionEntry_Io_)(nil),
 	}
-	file_cobol_proto_msgTypes[154].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[176].OneofWrappers = []interface{}{
 		(*Identifier_QualifiedDataName)(nil),
 		(*Identifier_TableCall)(nil),
 		(*Identifier_FunctionCall)(nil),
 		(*Identifier_SpecialRegister)(nil),
 	}
-	file_cobol_proto_msgTypes[160].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[182].OneofWrappers = []interface{}{
 		(*Subscript_All)(nil),
 		(*Subscript_IntegerLiteral)(nil),
 		(*Subscript_QualifiedDataName)(nil),
 		(*Subscript_IndexName)(nil),
 		(*Subscript_ArithmeticExpression)(nil),
 	}
-	file_cobol_proto_msgTypes[161].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[183].OneofWrappers = []interface{}{
 		(*Argument_Literal)(nil),
 		(*Argument_Identifier)(nil),
 		(*Argument_QualifiedDataName)(nil),
 		(*Argument_IndexName)(nil),
 		(*Argument_ArithmeticExpression)(nil),
 	}
-	file_cobol_proto_msgTypes[164].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[186].OneofWrappers = []interface{}{
 		(*QualifiedDataName_F1)(nil),
 		(*QualifiedDataName_F2)(nil),
 		(*QualifiedDataName_F3)(nil),
 		(*QualifiedDataName_F4)(nil),
 	}
-	file_cobol_proto_msgTypes[165].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[187].OneofWrappers = []interface{}{
 		(*QualifiedDataNameFormat1_DataName)(nil),
 		(*QualifiedDataNameFormat1_ConditionName)(nil),
 	}
-	file_cobol_proto_msgTypes[192].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[214].OneofWrappers = []interface{}{
 		(*ParagraphName_CobolWord)(nil),
 		(*ParagraphName_IntegerLiteral)(nil),
 	}
-	file_cobol_proto_msgTypes[193].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[215].OneofWrappers = []interface{}{
 		(*ProcedureName_ParagraphName)(nil),
 		(*ProcedureName_SectionName)(nil),
 	}
-	file_cobol_proto_msgTypes[194].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[216].OneofWrappers = []interface{}{
 		(*ProgramName_NonNumericLiteral)(nil),
 		(*ProgramName_CobolWord)(nil),
 	}
-	file_cobol_proto_msgTypes[199].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[221].OneofWrappers = []interface{}{
 		(*SectionName_CobolWord)(nil),
 		(*SectionName_IntegerLiteral)(nil),
 	}
-	file_cobol_proto_msgTypes[204].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[226].OneofWrappers = []interface{}{
 		(*Literal_NumericLiteral)(nil),
 		(*Literal_BooleanLiteral)(nil),
 		(*Literal_NonNumericLiteral)(nil),
 		(*Literal_FigurativeConstant)(nil),
 	}
-	file_cobol_proto_msgTypes[218].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[240].OneofWrappers = []interface{}{
 		(*AlphabetClause_Alphanumeric_Type_)(nil),
 		(*AlphabetClause_Alphanumeric_CobolWord)(nil),
 		(*AlphabetClause_Alphanumeric_Values)(nil),
 	}
-	file_cobol_proto_msgTypes[233].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[255].OneofWrappers = []interface{}{
 		(*TypeClause_ControlHeading_Final)(nil),
 		(*TypeClause_ControlHeading_DataName)(nil),
 	}
-	file_cobol_proto_msgTypes[235].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[257].OneofWrappers = []interface{}{
 		(*TypeClause_ControlFooting_Final)(nil),
 		(*TypeClause_ControlFooting_DataName)(nil),
 	}
-	file_cobol_proto_msgTypes[240].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[262].OneofWrappers = []interface{}{
 		(*ProcedureClause2_WithName_LocalName)(nil),
 		(*ProcedureClause2_WithName_FileName)(nil),
 	}
-	file_cobol_proto_msgTypes[241].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[263].OneofWrappers = []interface{}{
 		(*ProcedureClause2_UsingName_DataName)(nil),
 		(*ProcedureClause2_UsingName_FileName)(nil),
 	}
@@ -22553,8 +25227,8 @@ func file_cobol_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_cobol_proto_rawDesc,
-			NumEnums:      32,
-			NumMessages:   245,
+			NumEnums:      43,
+			NumMessages:   267,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

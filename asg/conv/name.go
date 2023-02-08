@@ -5,6 +5,13 @@ import (
 	"github.com/kaisawind/cobol/pb"
 )
 
+func ScreenName(in cobol85.IScreenNameContext) *pb.ScreenName {
+	ctx := in.(*cobol85.ScreenNameContext)
+	return &pb.ScreenName{
+		CobolWord: CobolWord(ctx.CobolWord()),
+	}
+}
+
 func FunctionName(in cobol85.IFunctionNameContext) *pb.FunctionName {
 	return &pb.FunctionName{
 		Value: in.GetText(),

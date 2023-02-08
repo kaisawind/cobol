@@ -64,7 +64,7 @@ func (v *DataDivisionVisitor) VisitScreenSection(ctx *cobol85.ScreenSectionConte
 	section := &pb.ScreenSection{}
 	v.division.ScreenSection = section
 	vr := data.NewScreenSectionVisitor(section)
-	return vr.VisitChildren(ctx)
+	return vr.Visit(ctx)
 }
 
 func (v *DataDivisionVisitor) VisitWorkingStorageSection(ctx *cobol85.WorkingStorageSectionContext) interface{} {
