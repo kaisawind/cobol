@@ -12,6 +12,21 @@ func ScreenName(in cobol85.IScreenNameContext) *pb.ScreenName {
 	}
 }
 
+func ProcedureName(in cobol85.IProcedureNameContext) (out *pb.ProcedureName) {
+	ctx := in.(*cobol85.ProcedureNameContext)
+	out = &pb.ProcedureName{}
+	if ctx.ParagraphName() != nil {
+		out.OneOf = &pb.ProcedureName_ParagraphName{
+			ParagraphName: ParagraphName(ctx.ParagraphName()),
+		}
+	} else if ctx.SectionName() != nil {
+		out.OneOf = &pb.ProcedureName_SectionName{
+			SectionName: SectionName(ctx.SectionName()),
+		}
+	}
+	return
+}
+
 func FunctionName(in cobol85.IFunctionNameContext) *pb.FunctionName {
 	return &pb.FunctionName{
 		Value: in.GetText(),

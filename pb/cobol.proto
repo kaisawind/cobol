@@ -1790,13 +1790,17 @@ message UseStatement {
     }
 }
 
-message UseDebugClause {
+message UseDebugOn {
     oneof on {
         bool all_procedures = 1;
         Identifier Identifier = 2;
         ProcedureName procedureName = 3;
         FileName fileName = 4;
     }
+}
+
+message UseDebugClause {
+    repeated UseDebugOn ons = 1;
 }
 
 message UseAfterClause {
