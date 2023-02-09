@@ -1595,7 +1595,23 @@ message MultiplyStatement {
 }
 
 message MoveStatement {
-    // TODO:
+    oneof one_of {
+        MoveToStatement move_to = 1;
+        MoveCorrespondingToStatement move_corresponding_to = 2;
+    }
+}
+
+message MoveToStatement {
+    oneof sending_area {
+        Identifier Identifier = 1;
+        Literal Literal = 2;
+    }
+    repeated Identifier to = 3;
+}
+
+message MoveCorrespondingToStatement {
+    Identifier sending_area = 1;
+    repeated Identifier to = 3;
 }
 
 message MergeStatement {

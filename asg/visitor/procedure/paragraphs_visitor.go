@@ -12,6 +12,9 @@ type ParagraphsVisitor struct {
 }
 
 func NewParagraphsVisitor(paragraphs *pb.Paragraphs) *ParagraphsVisitor {
+	if paragraphs.Sentences == nil {
+		paragraphs.Sentences = &pb.Sentences{}
+	}
 	return &ParagraphsVisitor{
 		paragraphs: paragraphs,
 	}
@@ -26,9 +29,6 @@ func (v *ParagraphsVisitor) VisitParagraph(ctx *cobol85.ParagraphContext) any {
 
 func (v *ParagraphsVisitor) VisitSentence(ctx *cobol85.SentenceContext) any {
 	sentence := &pb.Sentence{}
-	if v.paragraphs.Sentences == nil {
-		v.paragraphs.Sentences = &pb.Sentences{}
-	}
 	v.paragraphs.Sentences.Sentences = append(v.paragraphs.Sentences.Sentences, sentence)
 	vr := NewSentenceVisitor(sentence)
 	return vr.Visit(ctx)

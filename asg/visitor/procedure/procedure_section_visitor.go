@@ -25,7 +25,7 @@ func (v *ProcedureSectionVisitor) VisitProcedureSectionHeader(ctx *cobol85.Proce
 func (v *ProcedureSectionVisitor) VisitParagraphs(ctx *cobol85.ParagraphsContext) any {
 	v.section.Paragraphs = &pb.Paragraphs{}
 	vr := NewParagraphsVisitor(v.section.Paragraphs)
-	return vr.VisitChildren(ctx)
+	return vr.Visit(ctx)
 }
 
 func (v *ProcedureSectionVisitor) VisitProcedureSection(ctx *cobol85.ProcedureSectionContext) any {
