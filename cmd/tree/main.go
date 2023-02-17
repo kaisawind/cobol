@@ -6,7 +6,9 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
+	"time"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/asg/conv"
@@ -17,9 +19,10 @@ import (
 )
 
 var (
-	formatFlag = flag.String("format", "FIXED", "cobol file format, FIXED, TANDEM, VARIABLE")
-	pathFlag   = flag.String("path", ".", "cobol files path")
-	suffixFlag = flag.String("suffix", ".CBL", "cobol cbl")
+	formatFlag   = flag.String("format", "FIXED", "cobol file format, FIXED, TANDEM, VARIABLE")
+	pathFlag     = flag.String("path", ".", "cobol files path")
+	suffixFlag   = flag.String("suffix", ".CBL,src,COB", "cobol cbl, separated by commas")
+	copyPathFlag = flag.String("copyPath", "", "cobol copy book directory")
 )
 
 func main() {
@@ -56,18 +59,32 @@ func TreesStringTree(path string, f format.Format) {
 	if strings.HasSuffix(path, ".tree") {
 		return
 	}
-	suffix := *suffixFlag
-	if suffix != "" && !strings.HasSuffix(path, suffix) {
+	suffixes := strings.Split(*suffixFlag, ",")
+	has := false
+	for _, v := range suffixes {
+		trimed := strings.TrimSpace(v)
+		r := regexp.MustCompile(fmt.Sprintf(`(?i)%s$`, trimed))
+		if r.MatchString(path) {
+			has = true
+			break
+		}
+	}
+	if !has {
 		return
 	}
-	fmt.Fprintln(os.Stdout, path)
+
+	start := time.Now()
 	buff, err := os.ReadFile(path)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%s", err)
 		return
 	}
 
-	opts := options.NewOptions().SetFormat(f)
+	copyPath := *copyPathFlag
+	if copyPath == "" {
+		copyPath = filepath.Dir(path)
+	}
+	opts := options.NewOptions().SetFormat(f).AddCopyBookDirectory(copyPath)
 	processed := document.Parse(string(buff), opts)
 
 	is := antlr.NewInputStream(processed)
@@ -78,15 +95,17 @@ func TreesStringTree(path string, f format.Format) {
 	l := NewErrorListener()
 	lexer.AddErrorListener(l)
 
-	errs := l.GetErrors()
-	if len(errs) != 0 {
-		os.WriteFile(path+".error", []byte(strings.Join(errs, "\n")), os.ModePerm)
-	}
-
 	ctx := cpp.StartRule()
 
 	tree := conv.TreesStringTree(ctx, cpp.GetRuleNames(), 0)
 	os.WriteFile(path+".tree", []byte(tree), os.ModePerm)
+	stop := time.Now()
+	diff := stop.Sub(start)
+	errs := l.GetErrors()
+	if len(errs) != 0 {
+		os.WriteFile(path+".error", []byte(strings.Join(errs, "\n")), os.ModePerm)
+	}
+	fmt.Fprintf(os.Stdout, "%s %s %d\n", path, diff, len(errs))
 }
 
 type ErrorListener struct {
