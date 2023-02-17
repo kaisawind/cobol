@@ -25,6 +25,11 @@ var (
 	copyPathFlag = flag.String("copyPath", "", "cobol copy book directory")
 )
 
+var (
+	begin = time.Now() // 开始时间
+	count = 0          // 开始计数
+)
+
 func main() {
 	flag.Parse()
 
@@ -53,6 +58,7 @@ func main() {
 			return err
 		})
 	}
+	fmt.Fprintf(os.Stdout, "%d takes %s", count, time.Since(begin))
 }
 
 func TreesStringTree(path string, f format.Format) {
@@ -99,13 +105,15 @@ func TreesStringTree(path string, f format.Format) {
 
 	tree := conv.TreesStringTree(ctx, cpp.GetRuleNames(), 0)
 	os.WriteFile(path+".tree", []byte(tree), os.ModePerm)
-	stop := time.Now()
-	diff := stop.Sub(start)
 	errs := l.GetErrors()
 	if len(errs) != 0 {
 		os.WriteFile(path+".error", []byte(strings.Join(errs, "\n")), os.ModePerm)
 	}
-	fmt.Fprintf(os.Stdout, "%s %s %d\n", path, diff, len(errs))
+	fmt.Fprintf(os.Stdout, "%s %s %d\n", path, time.Since(start), len(errs))
+	count++
+	if count%10 == 0 {
+		fmt.Fprintf(os.Stdout, "%d takes %s", count, time.Since(begin))
+	}
 }
 
 type ErrorListener struct {
