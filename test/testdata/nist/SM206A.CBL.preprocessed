@@ -433,7 +433,7 @@
       *> HEADER,CLBRY,KP003
        PST-TEST-003.
            MOVE    +0009 TO WRK-DS-05V00-O005-00-3  IN GRP-003 (3).
-           ADD     +0000-3 TO WRK-DS-09V00-90-3.
+           ADD     +2 TO WRK-DS-09V00-90-3.
            SUBTRACT -3 FROM WRK-DS-05V00-O005-00-3 IN GRP-002 (3).
        PST-EXIT-003-X.
       *> END-OF,KP003
