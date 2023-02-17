@@ -10,11 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/kaisawind/cobol/asg/conv"
 	"github.com/kaisawind/cobol/document"
 	"github.com/kaisawind/cobol/format"
-	"github.com/kaisawind/cobol/gen/cobol85"
 	"github.com/kaisawind/cobol/options"
 )
 
@@ -49,11 +46,11 @@ func main() {
 		return
 	}
 	if !fi.IsDir() {
-		TreesStringTree(rootPath, f)
+		Process(rootPath, f)
 	} else {
 		filepath.WalkDir(rootPath, func(path string, d fs.DirEntry, err error) error {
 			if !d.IsDir() {
-				TreesStringTree(path, f)
+				Process(path, f)
 			}
 			return err
 		})
@@ -61,8 +58,8 @@ func main() {
 	fmt.Fprintf(os.Stdout, "%d takes %s\n", count, time.Since(begin))
 }
 
-func TreesStringTree(path string, f format.Format) {
-	if strings.HasSuffix(path, ".tree") {
+func Process(path string, f format.Format) {
+	if strings.HasSuffix(path, ".preprocessed") {
 		return
 	}
 	suffixes := strings.Split(*suffixFlag, ",")
@@ -90,51 +87,13 @@ func TreesStringTree(path string, f format.Format) {
 	if copyPath == "" {
 		copyPath = filepath.Dir(path)
 	}
-	processed := string(buff)
-	if !strings.HasSuffix(path, ".preprocessed") {
-		opts := options.NewOptions().SetFormat(f).AddCopyBookDirectory(copyPath)
-		processed = document.Parse(processed, opts)
-	}
+	opts := options.NewOptions().SetFormat(f).AddCopyBookDirectory(copyPath)
+	processed := document.Parse(string(buff), opts)
 
-	is := antlr.NewInputStream(processed)
-	lexer := cobol85.NewCobol85Lexer(is)
-	cts := antlr.NewCommonTokenStream(lexer, antlr.LexerDefaultTokenChannel)
-	cpp := cobol85.NewCobol85Parser(cts)
-
-	l := NewErrorListener()
-	lexer.AddErrorListener(l)
-
-	ctx := cpp.StartRule()
-
-	tree := conv.TreesStringTree(ctx, cpp.GetRuleNames(), 0)
-	os.WriteFile(path+".tree", []byte(tree), os.ModePerm)
-	errs := l.GetErrors()
-	if len(errs) != 0 {
-		os.WriteFile(path+".error", []byte(strings.Join(errs, "\n")), os.ModePerm)
-	}
-	fmt.Fprintf(os.Stdout, "%s %s %d\n", path, time.Since(start), len(errs))
+	os.WriteFile(path+".preprocessed", []byte(processed), os.ModePerm)
+	fmt.Fprintf(os.Stdout, "%s %s\n", path, time.Since(start))
 	count++
 	if count%10 == 0 {
 		fmt.Fprintf(os.Stdout, "%d takes %s\n", count, time.Since(begin))
 	}
-}
-
-type ErrorListener struct {
-	antlr.DefaultErrorListener
-	errs []string
-}
-
-func NewErrorListener() *ErrorListener {
-	return &ErrorListener{
-		errs: []string{},
-	}
-}
-
-func (l *ErrorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {
-	err := fmt.Sprintf("syntax error in line %d : %d %s", line, column, msg)
-	l.errs = append(l.errs, err)
-}
-
-func (l *ErrorListener) GetErrors() []string {
-	return l.errs
 }
