@@ -188,7 +188,8 @@ func (s *DobfListener) VisitTerminal(node antlr.TerminalNode) {
 	tok := node.GetSymbol()
 	tt := tok.GetTokenType()
 	if tt != cobol85.Cobol85ParserCOMMENTENTRYLINE &&
-		tt != cobol85.Cobol85ParserCOMMENTLINE {
+		tt != cobol85.Cobol85ParserCOMMENTLINE &&
+		tt != cobol85.Cobol85ParserEOF {
 		text := strings.TrimSpace(tok.GetText())
 		if tt == cobol85.Cobol85ParserDOT_FS ||
 			tt == cobol85.Cobol85ParserDOT {
