@@ -80,6 +80,12 @@ func (s *BaseCobol85PreprocessorListener) EnterCopyLibrary(ctx *CopyLibraryConte
 // ExitCopyLibrary is called when production copyLibrary is exited.
 func (s *BaseCobol85PreprocessorListener) ExitCopyLibrary(ctx *CopyLibraryContext) {}
 
+// EnterPrefixingPhrase is called when production prefixingPhrase is entered.
+func (s *BaseCobol85PreprocessorListener) EnterPrefixingPhrase(ctx *PrefixingPhraseContext) {}
+
+// ExitPrefixingPhrase is called when production prefixingPhrase is exited.
+func (s *BaseCobol85PreprocessorListener) ExitPrefixingPhrase(ctx *PrefixingPhraseContext) {}
+
 // EnterReplacingPhrase is called when production replacingPhrase is entered.
 func (s *BaseCobol85PreprocessorListener) EnterReplacingPhrase(ctx *ReplacingPhraseContext) {}
 
@@ -181,6 +187,12 @@ func (s *BaseCobol85PreprocessorListener) EnterCobolWord(ctx *CobolWordContext) 
 
 // ExitCobolWord is called when production cobolWord is exited.
 func (s *BaseCobol85PreprocessorListener) ExitCobolWord(ctx *CobolWordContext) {}
+
+// EnterPrefixWord is called when production prefixWord is entered.
+func (s *BaseCobol85PreprocessorListener) EnterPrefixWord(ctx *PrefixWordContext) {}
+
+// ExitPrefixWord is called when production prefixWord is exited.
+func (s *BaseCobol85PreprocessorListener) ExitPrefixWord(ctx *PrefixWordContext) {}
 
 // EnterLiteral is called when production literal is entered.
 func (s *BaseCobol85PreprocessorListener) EnterLiteral(ctx *LiteralContext) {}

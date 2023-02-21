@@ -8,33 +8,45 @@ import (
 )
 
 type Context struct {
-	stores Stores
-	buffer string
+	replaces   ReplaceStores
+	prefixings []string
+	buffer     string
 }
 
 func NewContext() *Context {
 	return &Context{
-		stores: Stores{},
-		buffer: "",
+		replaces:   ReplaceStores{},
+		prefixings: []string{},
+		buffer:     "",
 	}
 }
 
-func (ctx *Context) Store(ctxs []preprocessor.IReplaceClauseContext) {
+func (ctx *Context) StoreReplace(ctxs []preprocessor.IReplaceClauseContext) {
 	for _, v := range ctxs {
 		rcc, ok := v.(*preprocessor.ReplaceClauseContext)
 		if ok {
-			ctx.stores = append(ctx.stores, NewStore(rcc.Replaceable(), rcc.Replacement()))
+			ctx.replaces = append(ctx.replaces, NewReplaceStore(rcc.Replaceable(), rcc.Replacement()))
 		}
 	}
 }
 
 func (ctx *Context) Replace(cts *antlr.CommonTokenStream) {
-	if len(ctx.stores) == 0 {
+	if len(ctx.replaces) == 0 {
 		return
 	}
-	sort.Sort(ctx.stores)
-	for _, store := range ctx.stores {
+	sort.Sort(ctx.replaces)
+	for _, store := range ctx.replaces {
 		ctx.buffer = store.Replace(ctx.buffer, cts)
+	}
+}
+
+func (ctx *Context) StorePrefixing(str string) {
+	ctx.prefixings = append(ctx.prefixings, str)
+}
+
+func (ctx *Context) Prefixing(cts *antlr.CommonTokenStream) {
+	if len(ctx.prefixings) == 0 {
+		return
 	}
 }
 

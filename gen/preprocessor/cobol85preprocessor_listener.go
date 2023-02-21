@@ -37,6 +37,9 @@ type Cobol85PreprocessorListener interface {
 	// EnterCopyLibrary is called when entering the copyLibrary production.
 	EnterCopyLibrary(c *CopyLibraryContext)
 
+	// EnterPrefixingPhrase is called when entering the prefixingPhrase production.
+	EnterPrefixingPhrase(c *PrefixingPhraseContext)
+
 	// EnterReplacingPhrase is called when entering the replacingPhrase production.
 	EnterReplacingPhrase(c *ReplacingPhraseContext)
 
@@ -88,6 +91,9 @@ type Cobol85PreprocessorListener interface {
 	// EnterCobolWord is called when entering the cobolWord production.
 	EnterCobolWord(c *CobolWordContext)
 
+	// EnterPrefixWord is called when entering the prefixWord production.
+	EnterPrefixWord(c *PrefixWordContext)
+
 	// EnterLiteral is called when entering the literal production.
 	EnterLiteral(c *LiteralContext)
 
@@ -126,6 +132,9 @@ type Cobol85PreprocessorListener interface {
 
 	// ExitCopyLibrary is called when exiting the copyLibrary production.
 	ExitCopyLibrary(c *CopyLibraryContext)
+
+	// ExitPrefixingPhrase is called when exiting the prefixingPhrase production.
+	ExitPrefixingPhrase(c *PrefixingPhraseContext)
 
 	// ExitReplacingPhrase is called when exiting the replacingPhrase production.
 	ExitReplacingPhrase(c *ReplacingPhraseContext)
@@ -177,6 +186,9 @@ type Cobol85PreprocessorListener interface {
 
 	// ExitCobolWord is called when exiting the cobolWord production.
 	ExitCobolWord(c *CobolWordContext)
+
+	// ExitPrefixWord is called when exiting the prefixWord production.
+	ExitPrefixWord(c *PrefixWordContext)
 
 	// ExitLiteral is called when exiting the literal production.
 	ExitLiteral(c *LiteralContext)

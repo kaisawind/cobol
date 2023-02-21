@@ -258,6 +258,7 @@ copyStatement:
 		NEWLINE* (
 			directoryPhrase
 			| familyPhrase
+			| prefixingPhrase // TODO
 			| replacingPhrase
 			| SUPPRESS
 		)
@@ -268,6 +269,8 @@ copySource: (literal | cobolWord | filename) (
 	)?;
 
 copyLibrary: literal | cobolWord;
+
+prefixingPhrase: PREFIXING NEWLINE* prefixWord;
 
 replacingPhrase:
 	REPLACING NEWLINE* replaceClause (NEWLINE+ replaceClause)*;
@@ -325,6 +328,8 @@ charDataLine: (
 	)+;
 
 cobolWord: IDENTIFIER | charDataKeyword;
+
+prefixWord: PREFIX;
 
 literal: NONNUMERICLITERAL | NUMERICLITERAL;
 
@@ -816,6 +821,7 @@ PFD: P F D;
 PPTDBG: P P T D B G;
 PGMN: P G M N;
 PGMNAME: P G M N A M E;
+PREFIXING: P R E F I X I N G;
 PROCESS: P R O C E S S;
 PROLOG: P R O L O G;
 QUOTE: Q U O T E;
@@ -901,6 +907,7 @@ fragment STRINGLITERAL:
 
 IDENTIFIER: [a-zA-Z0-9]+ ([-_]+ [a-zA-Z0-9]+)*;
 FILENAME: [a-zA-Z0-9]+ '.' [a-zA-Z0-9]+;
+PREFIX: [a-zA-Z0-9]+ [-_a-zA-Z0-9]+;
 
 // whitespace, line breaks, comments, ...
 NEWLINE: '\r'? '\n';

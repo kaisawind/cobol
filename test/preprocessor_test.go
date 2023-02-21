@@ -167,3 +167,11 @@ func TestExtension(t *testing.T) {
 		t.FailNow()
 	}
 }
+
+func TestPrefix(tt *testing.T) {
+	rootdir := "./testdata/cobol/preprocessor/copy/copyprefix"
+	filepath := path.Join(rootdir, "lbea0000.cbl")
+	opts := options.NewOptions().AddCopyBookDirectory(rootdir).SetFormat(dir2format(rootdir))
+	processed := document.ParseFile(filepath, opts)
+	os.WriteFile(filepath+".preprocessed", []byte(processed), os.ModePerm)
+}

@@ -8,19 +8,19 @@ import (
 	"github.com/kaisawind/cobol/gen/preprocessor"
 )
 
-type Store struct {
+type ReplaceStore struct {
 	replaceable preprocessor.IReplaceableContext
 	replacement preprocessor.IReplacementContext
 }
 
-func NewStore(replaceable preprocessor.IReplaceableContext, replacement preprocessor.IReplacementContext) *Store {
-	return &Store{
+func NewReplaceStore(replaceable preprocessor.IReplaceableContext, replacement preprocessor.IReplacementContext) *ReplaceStore {
+	return &ReplaceStore{
 		replaceable: replaceable,
 		replacement: replacement,
 	}
 }
 
-func (s *Store) GetRegex(replaceable string) (ret string) {
+func (s *ReplaceStore) GetRegex(replaceable string) (ret string) {
 	if replaceable != "" {
 		parts := strings.Fields(replaceable)
 		regexParts := []string{}
@@ -33,7 +33,7 @@ func (s *Store) GetRegex(replaceable string) (ret string) {
 	return
 }
 
-func (s *Store) Replace(new string, cts *antlr.CommonTokenStream) (ret string) {
+func (s *ReplaceStore) Replace(new string, cts *antlr.CommonTokenStream) (ret string) {
 	replaceableText := s.getReplaceableText(s.replaceable, cts)
 	replacementText := s.getReplacementText(s.replacement, cts)
 	if replaceableText != "" && replacementText != "" {
@@ -45,7 +45,7 @@ func (s *Store) Replace(new string, cts *antlr.CommonTokenStream) (ret string) {
 	return
 }
 
-func (s *Store) getReplaceableText(ictx preprocessor.IReplaceableContext, cts *antlr.CommonTokenStream) (ret string) {
+func (s *ReplaceStore) getReplaceableText(ictx preprocessor.IReplaceableContext, cts *antlr.CommonTokenStream) (ret string) {
 	ctx, ok := ictx.(*preprocessor.ReplaceableContext)
 	if ok {
 		if cctx := ctx.PseudoText(); cctx != nil {
@@ -61,7 +61,7 @@ func (s *Store) getReplaceableText(ictx preprocessor.IReplaceableContext, cts *a
 	return
 }
 
-func (s *Store) getReplacementText(ictx preprocessor.IReplacementContext, cts *antlr.CommonTokenStream) (ret string) {
+func (s *ReplaceStore) getReplacementText(ictx preprocessor.IReplacementContext, cts *antlr.CommonTokenStream) (ret string) {
 	ctx, ok := ictx.(*preprocessor.ReplacementContext)
 	if ok {
 		if cctx := ctx.PseudoText(); cctx != nil {
@@ -77,7 +77,7 @@ func (s *Store) getReplacementText(ictx preprocessor.IReplacementContext, cts *a
 	return
 }
 
-func (s *Store) extractPseudoText(ctx preprocessor.IPseudoTextContext, cts *antlr.CommonTokenStream) string {
+func (s *ReplaceStore) extractPseudoText(ctx preprocessor.IPseudoTextContext, cts *antlr.CommonTokenStream) string {
 	pseudoText := GetTextWithHiddenTokens(ctx, cts)
 
 	pseudoText = regexp.MustCompile("^==").ReplaceAllString(pseudoText, "")
@@ -86,18 +86,18 @@ func (s *Store) extractPseudoText(ctx preprocessor.IPseudoTextContext, cts *antl
 	return pseudoText
 }
 
-type Stores []*Store
+type ReplaceStores []*ReplaceStore
 
-func (ss Stores) Len() int {
+func (ss ReplaceStores) Len() int {
 	return len(ss)
 }
 
-func (ss Stores) Less(i, j int) bool {
+func (ss ReplaceStores) Less(i, j int) bool {
 	iText := ss[i].replaceable.GetText()
 	jText := ss[j].replaceable.GetText()
 	return len(iText) > len(jText)
 }
 
-func (ss Stores) Swap(i, j int) {
+func (ss ReplaceStores) Swap(i, j int) {
 	ss[i], ss[j] = ss[j], ss[i]
 }

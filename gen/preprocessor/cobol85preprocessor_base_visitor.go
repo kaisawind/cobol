@@ -47,6 +47,10 @@ func (v *BaseCobol85PreprocessorVisitor) VisitCopyLibrary(ctx *CopyLibraryContex
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseCobol85PreprocessorVisitor) VisitPrefixingPhrase(ctx *PrefixingPhraseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseCobol85PreprocessorVisitor) VisitReplacingPhrase(ctx *ReplacingPhraseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -112,6 +116,10 @@ func (v *BaseCobol85PreprocessorVisitor) VisitCharDataLine(ctx *CharDataLineCont
 }
 
 func (v *BaseCobol85PreprocessorVisitor) VisitCobolWord(ctx *CobolWordContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseCobol85PreprocessorVisitor) VisitPrefixWord(ctx *PrefixWordContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

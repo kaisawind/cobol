@@ -8,6 +8,7 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/kaisawind/cobol/constant"
 	"github.com/kaisawind/cobol/copybook"
+	"github.com/kaisawind/cobol/format"
 	"github.com/kaisawind/cobol/gen/preprocessor"
 	"github.com/kaisawind/cobol/line"
 	"github.com/kaisawind/cobol/options"
@@ -63,7 +64,27 @@ func (s *PreprocessorListener) getCopyBook(ctx preprocessor.ICopySourceContext, 
 	return ParseFile(filename, opts)
 }
 
-func (s *PreprocessorListener) buildLines(prefix, text string) (ret string) {
+func (s *PreprocessorListener) buildCommentLines(f format.Format, text string) (ret string) {
+	prefix := line.LinePrefix(f) + constant.COMMENT_TAG
+	scan := bufio.NewScanner(strings.NewReader(text))
+	first := true
+	for scan.Scan() {
+		if !first {
+			ret += constant.CHAR_NEWLINE
+		}
+		line := scan.Text()
+		if f != format.TANDEM && len(line) > 6 {
+			line = prefix + constant.CHAR_WHITESPACE + line[7:]
+		} else {
+			line = prefix + constant.CHAR_WHITESPACE + line
+		}
+		ret += line
+		first = false
+	}
+	return
+}
+
+func (s *PreprocessorListener) buildExecLines(prefix, text string) (ret string) {
 	scan := bufio.NewScanner(strings.NewReader(text))
 	first := true
 	re := regexp.MustCompile("(?i)(end-exec)")
@@ -105,7 +126,17 @@ func (s *PreprocessorListener) ExitCopyStatement(ctx *preprocessor.CopyStatement
 	for _, iPhrase := range ctx.AllReplacingPhrase() {
 		phrase, ok := iPhrase.(*preprocessor.ReplacingPhraseContext)
 		if ok {
-			s.Context().Store(phrase.AllReplaceClause())
+			s.Context().StoreReplace(phrase.AllReplaceClause())
+		}
+	}
+
+	// prefixing phrase
+	for _, iPhrase := range ctx.AllPrefixingPhrase() {
+		phrase, ok := iPhrase.(*preprocessor.PrefixingPhraseContext)
+		if ok {
+			if prefix := phrase.PrefixWord(); prefix != nil {
+				s.Context().StorePrefixing(prefix.GetText())
+			}
 		}
 	}
 
@@ -114,6 +145,12 @@ func (s *PreprocessorListener) ExitCopyStatement(ctx *preprocessor.CopyStatement
 	if content != "" {
 		s.Context().Write(content + constant.CHAR_NEWLINE)
 		s.Context().Replace(s.cts)
+		s.Context().Prefixing(s.cts)
+	} else {
+		prefix := GetHiddenTokensToLeft(s.cts, ctx.GetSourceInterval().Start)
+		text := prefix + GetTextWithHiddenTokens(ctx, s.cts)
+		content = s.buildCommentLines(s.opts.Format, text)
+		s.Context().Write(content)
 	}
 
 	content = s.Context().Read()
@@ -143,7 +180,7 @@ func (s *PreprocessorListener) ExitExecCicsStatement(ctx *preprocessor.ExecCicsS
 
 	text := GetTextWithHiddenTokens(ctx, s.cts)
 	linePrefix := line.LinePrefix(s.opts.Format) + constant.EXEC_CICS_TAG
-	content := s.buildLines(linePrefix, text)
+	content := s.buildExecLines(linePrefix, text)
 	s.Context().Write(content)
 
 	content = s.Context().Read()
@@ -163,7 +200,7 @@ func (s *PreprocessorListener) ExitExecSqlImsStatement(ctx *preprocessor.ExecSql
 
 	text := GetTextWithHiddenTokens(ctx, s.cts)
 	linePrefix := line.LinePrefix(s.opts.Format) + constant.EXEC_SQLIMS_TAG
-	content := s.buildLines(linePrefix, text)
+	content := s.buildExecLines(linePrefix, text)
 	s.Context().Write(content)
 
 	content = s.Context().Read()
@@ -184,7 +221,7 @@ func (s *PreprocessorListener) ExitExecSqlStatement(ctx *preprocessor.ExecSqlSta
 
 	text := GetTextWithHiddenTokens(ctx, s.cts)
 	linePrefix := line.LinePrefix(s.opts.Format) + constant.EXEC_SQL_TAG
-	content := s.buildLines(linePrefix, text)
+	content := s.buildExecLines(linePrefix, text)
 	s.Context().Write(content)
 
 	content = s.Context().Read()
@@ -200,7 +237,7 @@ func (s *PreprocessorListener) EnterReplaceArea(ctx *preprocessor.ReplaceAreaCon
 // ExitReplaceArea is called when production replaceArea is exited.
 func (s *PreprocessorListener) ExitReplaceArea(ctx *preprocessor.ReplaceAreaContext) {
 	if cctx, ok := ctx.ReplaceByStatement().(*preprocessor.ReplaceByStatementContext); ok {
-		s.Context().Store(cctx.AllReplaceClause())
+		s.Context().StoreReplace(cctx.AllReplaceClause())
 		s.Context().Replace(s.cts)
 
 		content := s.Context().Read()

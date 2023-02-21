@@ -37,6 +37,9 @@ type Cobol85PreprocessorVisitor interface {
 	// Visit a parse tree produced by Cobol85PreprocessorParser#copyLibrary.
 	VisitCopyLibrary(ctx *CopyLibraryContext) interface{}
 
+	// Visit a parse tree produced by Cobol85PreprocessorParser#prefixingPhrase.
+	VisitPrefixingPhrase(ctx *PrefixingPhraseContext) interface{}
+
 	// Visit a parse tree produced by Cobol85PreprocessorParser#replacingPhrase.
 	VisitReplacingPhrase(ctx *ReplacingPhraseContext) interface{}
 
@@ -87,6 +90,9 @@ type Cobol85PreprocessorVisitor interface {
 
 	// Visit a parse tree produced by Cobol85PreprocessorParser#cobolWord.
 	VisitCobolWord(ctx *CobolWordContext) interface{}
+
+	// Visit a parse tree produced by Cobol85PreprocessorParser#prefixWord.
+	VisitPrefixWord(ctx *PrefixWordContext) interface{}
 
 	// Visit a parse tree produced by Cobol85PreprocessorParser#literal.
 	VisitLiteral(ctx *LiteralContext) interface{}
