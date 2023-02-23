@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"strings"
 
@@ -13,13 +14,18 @@ import (
 )
 
 func main() {
-	buff := make([]byte, 1024*1024*2)
-	n, err := os.Stdin.Read(buff)
+	f, err := os.OpenFile("./dobf.log", os.O_CREATE|os.O_RDWR|os.O_APPEND, os.ModePerm)
 	if err != nil {
+		return
+	}
+	defer f.Close()
+	buff, err := io.ReadAll(os.Stdin)
+	if err != nil {
+		f.WriteString(err.Error() + "\n")
 		fmt.Fprintf(os.Stderr, "%s", err.Error())
 		return
 	}
-	processed := string(buff[:n])
+	processed := string(buff)
 	is := antlr.NewInputStream(processed)
 	lexer := cobol85.NewCobol85Lexer(is)
 	cts := antlr.NewCommonTokenStream(lexer, antlr.LexerDefaultTokenChannel)
@@ -33,10 +39,17 @@ func main() {
 	}
 	buff, err = json.Marshal(output)
 	if err != nil {
+		f.WriteString(err.Error() + "\n")
 		fmt.Fprintf(os.Stderr, "%s", err.Error())
 		return
 	}
-	fmt.Fprintf(os.Stdout, "%s", string(buff))
+	n, err := fmt.Fprintf(os.Stdout, "%s", string(buff))
+	if err != nil {
+		f.WriteString(err.Error() + "\n")
+		fmt.Fprintf(os.Stderr, "%s", err.Error())
+		return
+	}
+	f.WriteString(fmt.Sprintf("%d - %d - %d\n", len(processed), len(buff), n))
 }
 
 type Tok struct {
