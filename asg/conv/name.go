@@ -40,6 +40,13 @@ func ClassName(in cobol85.IClassNameContext) *pb.ClassName {
 	}
 }
 
+func EnvironmentName(in cobol85.IEnvironmentNameContext) *pb.EnvironmentName {
+	ctx := in.(*cobol85.EnvironmentNameContext)
+	return &pb.EnvironmentName{
+		SystemName: SystemName(ctx.SystemName()),
+	}
+}
+
 func MnemonicName(in cobol85.IMnemonicNameContext) *pb.MnemonicName {
 	ctx := in.(*cobol85.MnemonicNameContext)
 	return &pb.MnemonicName{
