@@ -20,6 +20,70 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type RelationalOperator int32
+
+const (
+	RelationalOperator_EQUAL              RelationalOperator = 0 // =
+	RelationalOperator_NOT_EQUAL          RelationalOperator = 1 // !=
+	RelationalOperator_MORE_THAN_OR_EQUAL RelationalOperator = 2 // >=
+	RelationalOperator_LESS_THAN_OR_EQUAL RelationalOperator = 3 // <=
+	RelationalOperator_GREATER_THAN       RelationalOperator = 4 // >
+	RelationalOperator_NOT_GREATER_THAN   RelationalOperator = 5 // !>
+	RelationalOperator_LESS_THAN          RelationalOperator = 6 // <
+	RelationalOperator_NOT_LESS_THAN      RelationalOperator = 7 // !<
+)
+
+// Enum value maps for RelationalOperator.
+var (
+	RelationalOperator_name = map[int32]string{
+		0: "EQUAL",
+		1: "NOT_EQUAL",
+		2: "MORE_THAN_OR_EQUAL",
+		3: "LESS_THAN_OR_EQUAL",
+		4: "GREATER_THAN",
+		5: "NOT_GREATER_THAN",
+		6: "LESS_THAN",
+		7: "NOT_LESS_THAN",
+	}
+	RelationalOperator_value = map[string]int32{
+		"EQUAL":              0,
+		"NOT_EQUAL":          1,
+		"MORE_THAN_OR_EQUAL": 2,
+		"LESS_THAN_OR_EQUAL": 3,
+		"GREATER_THAN":       4,
+		"NOT_GREATER_THAN":   5,
+		"LESS_THAN":          6,
+		"NOT_LESS_THAN":      7,
+	}
+)
+
+func (x RelationalOperator) Enum() *RelationalOperator {
+	p := new(RelationalOperator)
+	*p = x
+	return p
+}
+
+func (x RelationalOperator) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RelationalOperator) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[0].Descriptor()
+}
+
+func (RelationalOperator) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[0]
+}
+
+func (x RelationalOperator) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RelationalOperator.Descriptor instead.
+func (RelationalOperator) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{0}
+}
+
 type ProgramIdParagraph_Attribute int32
 
 const (
@@ -59,11 +123,11 @@ func (x ProgramIdParagraph_Attribute) String() string {
 }
 
 func (ProgramIdParagraph_Attribute) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[0].Descriptor()
+	return file_cobol_proto_enumTypes[1].Descriptor()
 }
 
 func (ProgramIdParagraph_Attribute) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[0]
+	return &file_cobol_proto_enumTypes[1]
 }
 
 func (x ProgramIdParagraph_Attribute) Number() protoreflect.EnumNumber {
@@ -108,11 +172,11 @@ func (x MemorySizeClause_Unit) String() string {
 }
 
 func (MemorySizeClause_Unit) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[1].Descriptor()
+	return file_cobol_proto_enumTypes[2].Descriptor()
 }
 
 func (MemorySizeClause_Unit) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[1]
+	return &file_cobol_proto_enumTypes[2]
 }
 
 func (x MemorySizeClause_Unit) Number() protoreflect.EnumNumber {
@@ -154,11 +218,11 @@ func (x DiskSizeClause_Unit) String() string {
 }
 
 func (DiskSizeClause_Unit) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[2].Descriptor()
+	return file_cobol_proto_enumTypes[3].Descriptor()
 }
 
 func (DiskSizeClause_Unit) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[2]
+	return &file_cobol_proto_enumTypes[3]
 }
 
 func (x DiskSizeClause_Unit) Number() protoreflect.EnumNumber {
@@ -209,11 +273,11 @@ func (x AlphabetClause_Alphanumeric_Type) String() string {
 }
 
 func (AlphabetClause_Alphanumeric_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[3].Descriptor()
+	return file_cobol_proto_enumTypes[4].Descriptor()
 }
 
 func (AlphabetClause_Alphanumeric_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[3]
+	return &file_cobol_proto_enumTypes[4]
 }
 
 func (x AlphabetClause_Alphanumeric_Type) Number() protoreflect.EnumNumber {
@@ -255,11 +319,11 @@ func (x AlphabetClause_National_Type) String() string {
 }
 
 func (AlphabetClause_National_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[4].Descriptor()
+	return file_cobol_proto_enumTypes[5].Descriptor()
 }
 
 func (AlphabetClause_National_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[4]
+	return &file_cobol_proto_enumTypes[5]
 }
 
 func (x AlphabetClause_National_Type) Number() protoreflect.EnumNumber {
@@ -301,11 +365,11 @@ func (x ClassClause_Type) String() string {
 }
 
 func (ClassClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[5].Descriptor()
+	return file_cobol_proto_enumTypes[6].Descriptor()
 }
 
 func (ClassClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[5]
+	return &file_cobol_proto_enumTypes[6]
 }
 
 func (x ClassClause_Type) Number() protoreflect.EnumNumber {
@@ -347,11 +411,11 @@ func (x DefaultDisplaySignClause_Type) String() string {
 }
 
 func (DefaultDisplaySignClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[6].Descriptor()
+	return file_cobol_proto_enumTypes[7].Descriptor()
 }
 
 func (DefaultDisplaySignClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[6]
+	return &file_cobol_proto_enumTypes[7]
 }
 
 func (x DefaultDisplaySignClause_Type) Number() protoreflect.EnumNumber {
@@ -393,11 +457,11 @@ func (x SymbolicCharactersClause_Type) String() string {
 }
 
 func (SymbolicCharactersClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[7].Descriptor()
+	return file_cobol_proto_enumTypes[8].Descriptor()
 }
 
 func (SymbolicCharactersClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[7]
+	return &file_cobol_proto_enumTypes[8]
 }
 
 func (x SymbolicCharactersClause_Type) Number() protoreflect.EnumNumber {
@@ -460,11 +524,11 @@ func (x AssignClause_Type) String() string {
 }
 
 func (AssignClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[8].Descriptor()
+	return file_cobol_proto_enumTypes[9].Descriptor()
 }
 
 func (AssignClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[8]
+	return &file_cobol_proto_enumTypes[9]
 }
 
 func (x AssignClause_Type) Number() protoreflect.EnumNumber {
@@ -509,11 +573,11 @@ func (x OrganizationClause_Mode) String() string {
 }
 
 func (OrganizationClause_Mode) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[9].Descriptor()
+	return file_cobol_proto_enumTypes[10].Descriptor()
 }
 
 func (OrganizationClause_Mode) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[9]
+	return &file_cobol_proto_enumTypes[10]
 }
 
 func (x OrganizationClause_Mode) Number() protoreflect.EnumNumber {
@@ -561,11 +625,11 @@ func (x OrganizationClause_Type) String() string {
 }
 
 func (OrganizationClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[10].Descriptor()
+	return file_cobol_proto_enumTypes[11].Descriptor()
 }
 
 func (OrganizationClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[10]
+	return &file_cobol_proto_enumTypes[11]
 }
 
 func (x OrganizationClause_Type) Number() protoreflect.EnumNumber {
@@ -610,11 +674,11 @@ func (x RecordDelimiterClause_Type) String() string {
 }
 
 func (RecordDelimiterClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[11].Descriptor()
+	return file_cobol_proto_enumTypes[12].Descriptor()
 }
 
 func (RecordDelimiterClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[11]
+	return &file_cobol_proto_enumTypes[12]
 }
 
 func (x RecordDelimiterClause_Type) Number() protoreflect.EnumNumber {
@@ -662,11 +726,11 @@ func (x AccessModeClause_Mode) String() string {
 }
 
 func (AccessModeClause_Mode) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[12].Descriptor()
+	return file_cobol_proto_enumTypes[13].Descriptor()
 }
 
 func (AccessModeClause_Mode) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[12]
+	return &file_cobol_proto_enumTypes[13]
 }
 
 func (x AccessModeClause_Mode) Number() protoreflect.EnumNumber {
@@ -708,11 +772,11 @@ func (x RerunEveryOf_Type) String() string {
 }
 
 func (RerunEveryOf_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[13].Descriptor()
+	return file_cobol_proto_enumTypes[14].Descriptor()
 }
 
 func (RerunEveryOf_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[13]
+	return &file_cobol_proto_enumTypes[14]
 }
 
 func (x RerunEveryOf_Type) Number() protoreflect.EnumNumber {
@@ -757,11 +821,11 @@ func (x SameClause_Form) String() string {
 }
 
 func (SameClause_Form) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[14].Descriptor()
+	return file_cobol_proto_enumTypes[15].Descriptor()
 }
 
 func (SameClause_Form) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[14]
+	return &file_cobol_proto_enumTypes[15]
 }
 
 func (x SameClause_Form) Number() protoreflect.EnumNumber {
@@ -803,11 +867,11 @@ func (x BlockContainsClause_Unit) String() string {
 }
 
 func (BlockContainsClause_Unit) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[15].Descriptor()
+	return file_cobol_proto_enumTypes[16].Descriptor()
 }
 
 func (BlockContainsClause_Unit) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[15]
+	return &file_cobol_proto_enumTypes[16]
 }
 
 func (x BlockContainsClause_Unit) Number() protoreflect.EnumNumber {
@@ -849,11 +913,11 @@ func (x LabelRecordsClause_Type) String() string {
 }
 
 func (LabelRecordsClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[16].Descriptor()
+	return file_cobol_proto_enumTypes[17].Descriptor()
 }
 
 func (LabelRecordsClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[16]
+	return &file_cobol_proto_enumTypes[17]
 }
 
 func (x LabelRecordsClause_Type) Number() protoreflect.EnumNumber {
@@ -934,11 +998,11 @@ func (x PictureChars_Type) String() string {
 }
 
 func (PictureChars_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[17].Descriptor()
+	return file_cobol_proto_enumTypes[18].Descriptor()
 }
 
 func (PictureChars_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[17]
+	return &file_cobol_proto_enumTypes[18]
 }
 
 func (x PictureChars_Type) Number() protoreflect.EnumNumber {
@@ -983,11 +1047,11 @@ func (x DataCommonOwnLocalClause_Type) String() string {
 }
 
 func (DataCommonOwnLocalClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[18].Descriptor()
+	return file_cobol_proto_enumTypes[19].Descriptor()
 }
 
 func (DataCommonOwnLocalClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[18]
+	return &file_cobol_proto_enumTypes[19]
 }
 
 func (x DataCommonOwnLocalClause_Type) Number() protoreflect.EnumNumber {
@@ -1038,11 +1102,11 @@ func (x DataTypeClause_Type) String() string {
 }
 
 func (DataTypeClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[19].Descriptor()
+	return file_cobol_proto_enumTypes[20].Descriptor()
 }
 
 func (DataTypeClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[19]
+	return &file_cobol_proto_enumTypes[20]
 }
 
 func (x DataTypeClause_Type) Number() protoreflect.EnumNumber {
@@ -1087,11 +1151,11 @@ func (x DataTypeClause_Mode) String() string {
 }
 
 func (DataTypeClause_Mode) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[20].Descriptor()
+	return file_cobol_proto_enumTypes[21].Descriptor()
 }
 
 func (DataTypeClause_Mode) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[20]
+	return &file_cobol_proto_enumTypes[21]
 }
 
 func (x DataTypeClause_Mode) Number() protoreflect.EnumNumber {
@@ -1133,11 +1197,11 @@ func (x DataUsingClause_Type) String() string {
 }
 
 func (DataUsingClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[21].Descriptor()
+	return file_cobol_proto_enumTypes[22].Descriptor()
 }
 
 func (DataUsingClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[21]
+	return &file_cobol_proto_enumTypes[22]
 }
 
 func (x DataUsingClause_Type) Number() protoreflect.EnumNumber {
@@ -1272,11 +1336,11 @@ func (x DataUsageClause_Type) String() string {
 }
 
 func (DataUsageClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[22].Descriptor()
+	return file_cobol_proto_enumTypes[23].Descriptor()
 }
 
 func (DataUsageClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[22]
+	return &file_cobol_proto_enumTypes[23]
 }
 
 func (x DataUsageClause_Type) Number() protoreflect.EnumNumber {
@@ -1321,11 +1385,11 @@ func (x DataReceivedByClause_Type) String() string {
 }
 
 func (DataReceivedByClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[23].Descriptor()
+	return file_cobol_proto_enumTypes[24].Descriptor()
 }
 
 func (DataReceivedByClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[23]
+	return &file_cobol_proto_enumTypes[24]
 }
 
 func (x DataReceivedByClause_Type) Number() protoreflect.EnumNumber {
@@ -1367,11 +1431,11 @@ func (x DataSignClause_Type) String() string {
 }
 
 func (DataSignClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[24].Descriptor()
+	return file_cobol_proto_enumTypes[25].Descriptor()
 }
 
 func (DataSignClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[24]
+	return &file_cobol_proto_enumTypes[25]
 }
 
 func (x DataSignClause_Type) Number() protoreflect.EnumNumber {
@@ -1413,11 +1477,11 @@ func (x DataSynchronizedClause_Type) String() string {
 }
 
 func (DataSynchronizedClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[25].Descriptor()
+	return file_cobol_proto_enumTypes[26].Descriptor()
 }
 
 func (DataSynchronizedClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[25]
+	return &file_cobol_proto_enumTypes[26]
 }
 
 func (x DataSynchronizedClause_Type) Number() protoreflect.EnumNumber {
@@ -1459,11 +1523,11 @@ func (x FullClause_Type) String() string {
 }
 
 func (FullClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[26].Descriptor()
+	return file_cobol_proto_enumTypes[27].Descriptor()
 }
 
 func (FullClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[26]
+	return &file_cobol_proto_enumTypes[27]
 }
 
 func (x FullClause_Type) Number() protoreflect.EnumNumber {
@@ -1505,11 +1569,11 @@ func (x RequiredClause_Type) String() string {
 }
 
 func (RequiredClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[27].Descriptor()
+	return file_cobol_proto_enumTypes[28].Descriptor()
 }
 
 func (RequiredClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[27]
+	return &file_cobol_proto_enumTypes[28]
 }
 
 func (x RequiredClause_Type) Number() protoreflect.EnumNumber {
@@ -1551,11 +1615,11 @@ func (x SecureClause_Type) String() string {
 }
 
 func (SecureClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[28].Descriptor()
+	return file_cobol_proto_enumTypes[29].Descriptor()
 }
 
 func (SecureClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[28]
+	return &file_cobol_proto_enumTypes[29]
 }
 
 func (x SecureClause_Type) Number() protoreflect.EnumNumber {
@@ -1597,11 +1661,11 @@ func (x AutoClause_Type) String() string {
 }
 
 func (AutoClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[29].Descriptor()
+	return file_cobol_proto_enumTypes[30].Descriptor()
 }
 
 func (AutoClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[29]
+	return &file_cobol_proto_enumTypes[30]
 }
 
 func (x AutoClause_Type) Number() protoreflect.EnumNumber {
@@ -1643,11 +1707,11 @@ func (x BlankClause_Type) String() string {
 }
 
 func (BlankClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[30].Descriptor()
+	return file_cobol_proto_enumTypes[31].Descriptor()
 }
 
 func (BlankClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[30]
+	return &file_cobol_proto_enumTypes[31]
 }
 
 func (x BlankClause_Type) Number() protoreflect.EnumNumber {
@@ -1689,11 +1753,11 @@ func (x BellClause_Type) String() string {
 }
 
 func (BellClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[31].Descriptor()
+	return file_cobol_proto_enumTypes[32].Descriptor()
 }
 
 func (BellClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[31]
+	return &file_cobol_proto_enumTypes[32]
 }
 
 func (x BellClause_Type) Number() protoreflect.EnumNumber {
@@ -1735,11 +1799,11 @@ func (x EraseClause_Type) String() string {
 }
 
 func (EraseClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[32].Descriptor()
+	return file_cobol_proto_enumTypes[33].Descriptor()
 }
 
 func (EraseClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[32]
+	return &file_cobol_proto_enumTypes[33]
 }
 
 func (x EraseClause_Type) Number() protoreflect.EnumNumber {
@@ -1781,11 +1845,11 @@ func (x LightClause_Type) String() string {
 }
 
 func (LightClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[33].Descriptor()
+	return file_cobol_proto_enumTypes[34].Descriptor()
 }
 
 func (LightClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[33]
+	return &file_cobol_proto_enumTypes[34]
 }
 
 func (x LightClause_Type) Number() protoreflect.EnumNumber {
@@ -1830,11 +1894,11 @@ func (x GridClause_Type) String() string {
 }
 
 func (GridClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[34].Descriptor()
+	return file_cobol_proto_enumTypes[35].Descriptor()
 }
 
 func (GridClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[34]
+	return &file_cobol_proto_enumTypes[35]
 }
 
 func (x GridClause_Type) Number() protoreflect.EnumNumber {
@@ -1876,11 +1940,11 @@ func (x LineClause_Type) String() string {
 }
 
 func (LineClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[35].Descriptor()
+	return file_cobol_proto_enumTypes[36].Descriptor()
 }
 
 func (LineClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[35]
+	return &file_cobol_proto_enumTypes[36]
 }
 
 func (x LineClause_Type) Number() protoreflect.EnumNumber {
@@ -1922,11 +1986,11 @@ func (x ColumnClause_Type) String() string {
 }
 
 func (ColumnClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[36].Descriptor()
+	return file_cobol_proto_enumTypes[37].Descriptor()
 }
 
 func (ColumnClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[36]
+	return &file_cobol_proto_enumTypes[37]
 }
 
 func (x ColumnClause_Type) Number() protoreflect.EnumNumber {
@@ -1968,11 +2032,11 @@ func (x SignClause_Type) String() string {
 }
 
 func (SignClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[37].Descriptor()
+	return file_cobol_proto_enumTypes[38].Descriptor()
 }
 
 func (SignClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[37]
+	return &file_cobol_proto_enumTypes[38]
 }
 
 func (x SignClause_Type) Number() protoreflect.EnumNumber {
@@ -2020,11 +2084,11 @@ func (x AttributeClause1_Sharing) String() string {
 }
 
 func (AttributeClause1_Sharing) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[38].Descriptor()
+	return file_cobol_proto_enumTypes[39].Descriptor()
 }
 
 func (AttributeClause1_Sharing) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[38]
+	return &file_cobol_proto_enumTypes[39]
 }
 
 func (x AttributeClause1_Sharing) Number() protoreflect.EnumNumber {
@@ -2066,11 +2130,11 @@ func (x AttributeClause2_LibAccess) String() string {
 }
 
 func (AttributeClause2_LibAccess) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[39].Descriptor()
+	return file_cobol_proto_enumTypes[40].Descriptor()
 }
 
 func (AttributeClause2_LibAccess) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[39]
+	return &file_cobol_proto_enumTypes[40]
 }
 
 func (x AttributeClause2_LibAccess) Number() protoreflect.EnumNumber {
@@ -2112,11 +2176,11 @@ func (x ProcedureDivision_GivingClause_Type) String() string {
 }
 
 func (ProcedureDivision_GivingClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[40].Descriptor()
+	return file_cobol_proto_enumTypes[41].Descriptor()
 }
 
 func (ProcedureDivision_GivingClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[40]
+	return &file_cobol_proto_enumTypes[41]
 }
 
 func (x ProcedureDivision_GivingClause_Type) Number() protoreflect.EnumNumber {
@@ -2158,11 +2222,11 @@ func (x ProcedureDivision_UsingClause_Type) String() string {
 }
 
 func (ProcedureDivision_UsingClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[41].Descriptor()
+	return file_cobol_proto_enumTypes[42].Descriptor()
 }
 
 func (ProcedureDivision_UsingClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[41]
+	return &file_cobol_proto_enumTypes[42]
 }
 
 func (x ProcedureDivision_UsingClause_Type) Number() protoreflect.EnumNumber {
@@ -2228,11 +2292,11 @@ func (x AcceptStatement_FromDate_Type) String() string {
 }
 
 func (AcceptStatement_FromDate_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[42].Descriptor()
+	return file_cobol_proto_enumTypes[43].Descriptor()
 }
 
 func (AcceptStatement_FromDate_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[42]
+	return &file_cobol_proto_enumTypes[43]
 }
 
 func (x AcceptStatement_FromDate_Type) Number() protoreflect.EnumNumber {
@@ -2280,11 +2344,11 @@ func (x UseAfterClause_Type) String() string {
 }
 
 func (UseAfterClause_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[43].Descriptor()
+	return file_cobol_proto_enumTypes[44].Descriptor()
 }
 
 func (UseAfterClause_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[43]
+	return &file_cobol_proto_enumTypes[44]
 }
 
 func (x UseAfterClause_Type) Number() protoreflect.EnumNumber {
@@ -2294,6 +2358,205 @@ func (x UseAfterClause_Type) Number() protoreflect.EnumNumber {
 // Deprecated: Use UseAfterClause_Type.Descriptor instead.
 func (UseAfterClause_Type) EnumDescriptor() ([]byte, []int) {
 	return file_cobol_proto_rawDescGZIP(), []int{246, 0}
+}
+
+type AndOrCondition_AndOr int32
+
+const (
+	AndOrCondition_AND AndOrCondition_AndOr = 0
+	AndOrCondition_OR  AndOrCondition_AndOr = 1
+)
+
+// Enum value maps for AndOrCondition_AndOr.
+var (
+	AndOrCondition_AndOr_name = map[int32]string{
+		0: "AND",
+		1: "OR",
+	}
+	AndOrCondition_AndOr_value = map[string]int32{
+		"AND": 0,
+		"OR":  1,
+	}
+)
+
+func (x AndOrCondition_AndOr) Enum() *AndOrCondition_AndOr {
+	p := new(AndOrCondition_AndOr)
+	*p = x
+	return p
+}
+
+func (x AndOrCondition_AndOr) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AndOrCondition_AndOr) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[45].Descriptor()
+}
+
+func (AndOrCondition_AndOr) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[45]
+}
+
+func (x AndOrCondition_AndOr) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AndOrCondition_AndOr.Descriptor instead.
+func (AndOrCondition_AndOr) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{255, 0}
+}
+
+type ClassCondition_Type int32
+
+const (
+	ClassCondition_NUMERIC          ClassCondition_Type = 0
+	ClassCondition_ALPHABETIC       ClassCondition_Type = 1
+	ClassCondition_ALPHABETIC_LOWER ClassCondition_Type = 2
+	ClassCondition_ALPHABETIC_UPPER ClassCondition_Type = 3
+	ClassCondition_DBCS             ClassCondition_Type = 4
+	ClassCondition_KANJI            ClassCondition_Type = 5
+)
+
+// Enum value maps for ClassCondition_Type.
+var (
+	ClassCondition_Type_name = map[int32]string{
+		0: "NUMERIC",
+		1: "ALPHABETIC",
+		2: "ALPHABETIC_LOWER",
+		3: "ALPHABETIC_UPPER",
+		4: "DBCS",
+		5: "KANJI",
+	}
+	ClassCondition_Type_value = map[string]int32{
+		"NUMERIC":          0,
+		"ALPHABETIC":       1,
+		"ALPHABETIC_LOWER": 2,
+		"ALPHABETIC_UPPER": 3,
+		"DBCS":             4,
+		"KANJI":            5,
+	}
+)
+
+func (x ClassCondition_Type) Enum() *ClassCondition_Type {
+	p := new(ClassCondition_Type)
+	*p = x
+	return p
+}
+
+func (x ClassCondition_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ClassCondition_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[46].Descriptor()
+}
+
+func (ClassCondition_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[46]
+}
+
+func (x ClassCondition_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ClassCondition_Type.Descriptor instead.
+func (ClassCondition_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{258, 0}
+}
+
+type RelationSignCondition_Type int32
+
+const (
+	RelationSignCondition_POSITIVE RelationSignCondition_Type = 0
+	RelationSignCondition_NEGATIVE RelationSignCondition_Type = 1
+	RelationSignCondition_ZERO     RelationSignCondition_Type = 2
+)
+
+// Enum value maps for RelationSignCondition_Type.
+var (
+	RelationSignCondition_Type_name = map[int32]string{
+		0: "POSITIVE",
+		1: "NEGATIVE",
+		2: "ZERO",
+	}
+	RelationSignCondition_Type_value = map[string]int32{
+		"POSITIVE": 0,
+		"NEGATIVE": 1,
+		"ZERO":     2,
+	}
+)
+
+func (x RelationSignCondition_Type) Enum() *RelationSignCondition_Type {
+	p := new(RelationSignCondition_Type)
+	*p = x
+	return p
+}
+
+func (x RelationSignCondition_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RelationSignCondition_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[47].Descriptor()
+}
+
+func (RelationSignCondition_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[47]
+}
+
+func (x RelationSignCondition_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RelationSignCondition_Type.Descriptor instead.
+func (RelationSignCondition_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{261, 0}
+}
+
+type RelationCombinedCondition_AndOr int32
+
+const (
+	RelationCombinedCondition_AND RelationCombinedCondition_AndOr = 0
+	RelationCombinedCondition_OR  RelationCombinedCondition_AndOr = 1
+)
+
+// Enum value maps for RelationCombinedCondition_AndOr.
+var (
+	RelationCombinedCondition_AndOr_name = map[int32]string{
+		0: "AND",
+		1: "OR",
+	}
+	RelationCombinedCondition_AndOr_value = map[string]int32{
+		"AND": 0,
+		"OR":  1,
+	}
+)
+
+func (x RelationCombinedCondition_AndOr) Enum() *RelationCombinedCondition_AndOr {
+	p := new(RelationCombinedCondition_AndOr)
+	*p = x
+	return p
+}
+
+func (x RelationCombinedCondition_AndOr) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RelationCombinedCondition_AndOr) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[48].Descriptor()
+}
+
+func (RelationCombinedCondition_AndOr) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[48]
+}
+
+func (x RelationCombinedCondition_AndOr) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RelationCombinedCondition_AndOr.Descriptor instead.
+func (RelationCombinedCondition_AndOr) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{264, 0}
 }
 
 type Literal_Type int32
@@ -2338,11 +2601,11 @@ func (x Literal_Type) String() string {
 }
 
 func (Literal_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[44].Descriptor()
+	return file_cobol_proto_enumTypes[49].Descriptor()
 }
 
 func (Literal_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[44]
+	return &file_cobol_proto_enumTypes[49]
 }
 
 func (x Literal_Type) Number() protoreflect.EnumNumber {
@@ -2351,7 +2614,7 @@ func (x Literal_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Literal_Type.Descriptor instead.
 func (Literal_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{298, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{316, 0}
 }
 
 type NumericLiteral_Type int32
@@ -2384,11 +2647,11 @@ func (x NumericLiteral_Type) String() string {
 }
 
 func (NumericLiteral_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[45].Descriptor()
+	return file_cobol_proto_enumTypes[50].Descriptor()
 }
 
 func (NumericLiteral_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[45]
+	return &file_cobol_proto_enumTypes[50]
 }
 
 func (x NumericLiteral_Type) Number() protoreflect.EnumNumber {
@@ -2397,7 +2660,7 @@ func (x NumericLiteral_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NumericLiteral_Type.Descriptor instead.
 func (NumericLiteral_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{300, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{318, 0}
 }
 
 type FigurativeConstant_Type int32
@@ -2466,11 +2729,11 @@ func (x FigurativeConstant_Type) String() string {
 }
 
 func (FigurativeConstant_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_cobol_proto_enumTypes[46].Descriptor()
+	return file_cobol_proto_enumTypes[51].Descriptor()
 }
 
 func (FigurativeConstant_Type) Type() protoreflect.EnumType {
-	return &file_cobol_proto_enumTypes[46]
+	return &file_cobol_proto_enumTypes[51]
 }
 
 func (x FigurativeConstant_Type) Number() protoreflect.EnumNumber {
@@ -2479,7 +2742,128 @@ func (x FigurativeConstant_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use FigurativeConstant_Type.Descriptor instead.
 func (FigurativeConstant_Type) EnumDescriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{302, 0}
+	return file_cobol_proto_rawDescGZIP(), []int{320, 0}
+}
+
+type SpecialRegister_Type int32
+
+const (
+	SpecialRegister_ADDRESS_OF     SpecialRegister_Type = 0
+	SpecialRegister_DATE           SpecialRegister_Type = 1
+	SpecialRegister_DAY            SpecialRegister_Type = 2
+	SpecialRegister_DAY_OF_WEEK    SpecialRegister_Type = 3
+	SpecialRegister_DEBUG_CONTENTS SpecialRegister_Type = 4
+	SpecialRegister_DEBUG_ITEM     SpecialRegister_Type = 5
+	SpecialRegister_DEBUG_LINE     SpecialRegister_Type = 6
+	SpecialRegister_DEBUG_NAME     SpecialRegister_Type = 7
+	SpecialRegister_DEBUG_SUB_1    SpecialRegister_Type = 8
+	SpecialRegister_DEBUG_SUB_2    SpecialRegister_Type = 9
+	SpecialRegister_DEBUG_SUB_3    SpecialRegister_Type = 10
+	SpecialRegister_LENGTH_OF      SpecialRegister_Type = 11
+	SpecialRegister_LINAGE_COUNTER SpecialRegister_Type = 12
+	SpecialRegister_LINE_COUNTER   SpecialRegister_Type = 13
+	SpecialRegister_PAGE_COUNTER   SpecialRegister_Type = 14
+	SpecialRegister_RETURN_CODE    SpecialRegister_Type = 15
+	SpecialRegister_SHIFT_IN       SpecialRegister_Type = 16
+	SpecialRegister_SHIFT_OUT      SpecialRegister_Type = 17
+	SpecialRegister_SORT_CONTROL   SpecialRegister_Type = 18
+	SpecialRegister_SORT_CORE_SIZE SpecialRegister_Type = 19
+	SpecialRegister_SORT_FILE_SIZE SpecialRegister_Type = 20
+	SpecialRegister_SORT_MESSAGE   SpecialRegister_Type = 21
+	SpecialRegister_SORT_MODE_SIZE SpecialRegister_Type = 22
+	SpecialRegister_SORT_RETURN    SpecialRegister_Type = 23
+	SpecialRegister_TALLY          SpecialRegister_Type = 24
+	SpecialRegister_TIME           SpecialRegister_Type = 25
+	SpecialRegister_WHEN_COMPILED  SpecialRegister_Type = 26
+)
+
+// Enum value maps for SpecialRegister_Type.
+var (
+	SpecialRegister_Type_name = map[int32]string{
+		0:  "ADDRESS_OF",
+		1:  "DATE",
+		2:  "DAY",
+		3:  "DAY_OF_WEEK",
+		4:  "DEBUG_CONTENTS",
+		5:  "DEBUG_ITEM",
+		6:  "DEBUG_LINE",
+		7:  "DEBUG_NAME",
+		8:  "DEBUG_SUB_1",
+		9:  "DEBUG_SUB_2",
+		10: "DEBUG_SUB_3",
+		11: "LENGTH_OF",
+		12: "LINAGE_COUNTER",
+		13: "LINE_COUNTER",
+		14: "PAGE_COUNTER",
+		15: "RETURN_CODE",
+		16: "SHIFT_IN",
+		17: "SHIFT_OUT",
+		18: "SORT_CONTROL",
+		19: "SORT_CORE_SIZE",
+		20: "SORT_FILE_SIZE",
+		21: "SORT_MESSAGE",
+		22: "SORT_MODE_SIZE",
+		23: "SORT_RETURN",
+		24: "TALLY",
+		25: "TIME",
+		26: "WHEN_COMPILED",
+	}
+	SpecialRegister_Type_value = map[string]int32{
+		"ADDRESS_OF":     0,
+		"DATE":           1,
+		"DAY":            2,
+		"DAY_OF_WEEK":    3,
+		"DEBUG_CONTENTS": 4,
+		"DEBUG_ITEM":     5,
+		"DEBUG_LINE":     6,
+		"DEBUG_NAME":     7,
+		"DEBUG_SUB_1":    8,
+		"DEBUG_SUB_2":    9,
+		"DEBUG_SUB_3":    10,
+		"LENGTH_OF":      11,
+		"LINAGE_COUNTER": 12,
+		"LINE_COUNTER":   13,
+		"PAGE_COUNTER":   14,
+		"RETURN_CODE":    15,
+		"SHIFT_IN":       16,
+		"SHIFT_OUT":      17,
+		"SORT_CONTROL":   18,
+		"SORT_CORE_SIZE": 19,
+		"SORT_FILE_SIZE": 20,
+		"SORT_MESSAGE":   21,
+		"SORT_MODE_SIZE": 22,
+		"SORT_RETURN":    23,
+		"TALLY":          24,
+		"TIME":           25,
+		"WHEN_COMPILED":  26,
+	}
+)
+
+func (x SpecialRegister_Type) Enum() *SpecialRegister_Type {
+	p := new(SpecialRegister_Type)
+	*p = x
+	return p
+}
+
+func (x SpecialRegister_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SpecialRegister_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_cobol_proto_enumTypes[52].Descriptor()
+}
+
+func (SpecialRegister_Type) Type() protoreflect.EnumType {
+	return &file_cobol_proto_enumTypes[52]
+}
+
+func (x SpecialRegister_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SpecialRegister_Type.Descriptor instead.
+func (SpecialRegister_Type) EnumDescriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{321, 0}
 }
 
 type Program struct {
@@ -16881,100 +17265,6 @@ func (*AcceptStatement_FromMnemonic_) isAcceptStatement_OneOf() {}
 
 func (*AcceptStatement_MessageCount_) isAcceptStatement_OneOf() {}
 
-type OnExceptionClause struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Statements []*Statement `protobuf:"bytes,1,rep,name=statements,proto3" json:"statements,omitempty"`
-}
-
-func (x *OnExceptionClause) Reset() {
-	*x = OnExceptionClause{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[239]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *OnExceptionClause) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*OnExceptionClause) ProtoMessage() {}
-
-func (x *OnExceptionClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[239]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use OnExceptionClause.ProtoReflect.Descriptor instead.
-func (*OnExceptionClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{239}
-}
-
-func (x *OnExceptionClause) GetStatements() []*Statement {
-	if x != nil {
-		return x.Statements
-	}
-	return nil
-}
-
-type NotOnExceptionClause struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Statements []*Statement `protobuf:"bytes,1,rep,name=statements,proto3" json:"statements,omitempty"`
-}
-
-func (x *NotOnExceptionClause) Reset() {
-	*x = NotOnExceptionClause{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[240]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *NotOnExceptionClause) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*NotOnExceptionClause) ProtoMessage() {}
-
-func (x *NotOnExceptionClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[240]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use NotOnExceptionClause.ProtoReflect.Descriptor instead.
-func (*NotOnExceptionClause) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{240}
-}
-
-func (x *NotOnExceptionClause) GetStatements() []*Statement {
-	if x != nil {
-		return x.Statements
-	}
-	return nil
-}
-
 type OnSizeErrorPhrase struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -16986,7 +17276,7 @@ type OnSizeErrorPhrase struct {
 func (x *OnSizeErrorPhrase) Reset() {
 	*x = OnSizeErrorPhrase{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[241]
+		mi := &file_cobol_proto_msgTypes[239]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -16999,7 +17289,7 @@ func (x *OnSizeErrorPhrase) String() string {
 func (*OnSizeErrorPhrase) ProtoMessage() {}
 
 func (x *OnSizeErrorPhrase) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[241]
+	mi := &file_cobol_proto_msgTypes[239]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17012,7 +17302,7 @@ func (x *OnSizeErrorPhrase) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnSizeErrorPhrase.ProtoReflect.Descriptor instead.
 func (*OnSizeErrorPhrase) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{241}
+	return file_cobol_proto_rawDescGZIP(), []int{239}
 }
 
 func (x *OnSizeErrorPhrase) GetStatements() []*Statement {
@@ -17033,7 +17323,7 @@ type NotOnSizeErrorPhrase struct {
 func (x *NotOnSizeErrorPhrase) Reset() {
 	*x = NotOnSizeErrorPhrase{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[242]
+		mi := &file_cobol_proto_msgTypes[240]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17046,7 +17336,7 @@ func (x *NotOnSizeErrorPhrase) String() string {
 func (*NotOnSizeErrorPhrase) ProtoMessage() {}
 
 func (x *NotOnSizeErrorPhrase) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[242]
+	mi := &file_cobol_proto_msgTypes[240]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17059,10 +17349,104 @@ func (x *NotOnSizeErrorPhrase) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotOnSizeErrorPhrase.ProtoReflect.Descriptor instead.
 func (*NotOnSizeErrorPhrase) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{242}
+	return file_cobol_proto_rawDescGZIP(), []int{240}
 }
 
 func (x *NotOnSizeErrorPhrase) GetStatements() []*Statement {
+	if x != nil {
+		return x.Statements
+	}
+	return nil
+}
+
+type OnExceptionClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Statements []*Statement `protobuf:"bytes,1,rep,name=statements,proto3" json:"statements,omitempty"`
+}
+
+func (x *OnExceptionClause) Reset() {
+	*x = OnExceptionClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[241]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *OnExceptionClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OnExceptionClause) ProtoMessage() {}
+
+func (x *OnExceptionClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[241]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OnExceptionClause.ProtoReflect.Descriptor instead.
+func (*OnExceptionClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{241}
+}
+
+func (x *OnExceptionClause) GetStatements() []*Statement {
+	if x != nil {
+		return x.Statements
+	}
+	return nil
+}
+
+type NotOnExceptionClause struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Statements []*Statement `protobuf:"bytes,1,rep,name=statements,proto3" json:"statements,omitempty"`
+}
+
+func (x *NotOnExceptionClause) Reset() {
+	*x = NotOnExceptionClause{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[242]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NotOnExceptionClause) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NotOnExceptionClause) ProtoMessage() {}
+
+func (x *NotOnExceptionClause) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[242]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NotOnExceptionClause.ProtoReflect.Descriptor instead.
+func (*NotOnExceptionClause) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{242}
+}
+
+func (x *NotOnExceptionClause) GetStatements() []*Statement {
 	if x != nil {
 		return x.Statements
 	}
@@ -17391,6 +17775,9 @@ type ArithmeticExpression struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
+
+	MultDivs  *MultDivs    `protobuf:"bytes,1,opt,name=mult_divs,json=multDivs,proto3" json:"mult_divs,omitempty"`
+	PlusMinus []*PlusMinus `protobuf:"bytes,2,rep,name=plus_minus,json=plusMinus,proto3" json:"plus_minus,omitempty"`
 }
 
 func (x *ArithmeticExpression) Reset() {
@@ -17425,6 +17812,1228 @@ func (*ArithmeticExpression) Descriptor() ([]byte, []int) {
 	return file_cobol_proto_rawDescGZIP(), []int{247}
 }
 
+func (x *ArithmeticExpression) GetMultDivs() *MultDivs {
+	if x != nil {
+		return x.MultDivs
+	}
+	return nil
+}
+
+func (x *ArithmeticExpression) GetPlusMinus() []*PlusMinus {
+	if x != nil {
+		return x.PlusMinus
+	}
+	return nil
+}
+
+type PlusMinus struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	MultDivs *MultDivs `protobuf:"bytes,1,opt,name=mult_divs,json=multDivs,proto3" json:"mult_divs,omitempty"`
+}
+
+func (x *PlusMinus) Reset() {
+	*x = PlusMinus{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[248]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PlusMinus) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlusMinus) ProtoMessage() {}
+
+func (x *PlusMinus) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[248]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlusMinus.ProtoReflect.Descriptor instead.
+func (*PlusMinus) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{248}
+}
+
+func (x *PlusMinus) GetMultDivs() *MultDivs {
+	if x != nil {
+		return x.MultDivs
+	}
+	return nil
+}
+
+type MultDivs struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Powers  *Powers    `protobuf:"bytes,1,opt,name=powers,proto3" json:"powers,omitempty"`
+	MultDiv []*MultDiv `protobuf:"bytes,2,rep,name=mult_div,json=multDiv,proto3" json:"mult_div,omitempty"`
+}
+
+func (x *MultDivs) Reset() {
+	*x = MultDivs{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[249]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MultDivs) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MultDivs) ProtoMessage() {}
+
+func (x *MultDivs) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[249]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MultDivs.ProtoReflect.Descriptor instead.
+func (*MultDivs) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{249}
+}
+
+func (x *MultDivs) GetPowers() *Powers {
+	if x != nil {
+		return x.Powers
+	}
+	return nil
+}
+
+func (x *MultDivs) GetMultDiv() []*MultDiv {
+	if x != nil {
+		return x.MultDiv
+	}
+	return nil
+}
+
+type MultDiv struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Powers *Powers `protobuf:"bytes,1,opt,name=powers,proto3" json:"powers,omitempty"`
+}
+
+func (x *MultDiv) Reset() {
+	*x = MultDiv{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[250]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MultDiv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MultDiv) ProtoMessage() {}
+
+func (x *MultDiv) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[250]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MultDiv.ProtoReflect.Descriptor instead.
+func (*MultDiv) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{250}
+}
+
+func (x *MultDiv) GetPowers() *Powers {
+	if x != nil {
+		return x.Powers
+	}
+	return nil
+}
+
+type Powers struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Basis  *Basis   `protobuf:"bytes,1,opt,name=basis,proto3" json:"basis,omitempty"`
+	Powers []*Power `protobuf:"bytes,2,rep,name=powers,proto3" json:"powers,omitempty"`
+}
+
+func (x *Powers) Reset() {
+	*x = Powers{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[251]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Powers) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Powers) ProtoMessage() {}
+
+func (x *Powers) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[251]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Powers.ProtoReflect.Descriptor instead.
+func (*Powers) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{251}
+}
+
+func (x *Powers) GetBasis() *Basis {
+	if x != nil {
+		return x.Basis
+	}
+	return nil
+}
+
+func (x *Powers) GetPowers() []*Power {
+	if x != nil {
+		return x.Powers
+	}
+	return nil
+}
+
+type Power struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Basis *Basis `protobuf:"bytes,1,opt,name=basis,proto3" json:"basis,omitempty"`
+}
+
+func (x *Power) Reset() {
+	*x = Power{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[252]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Power) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Power) ProtoMessage() {}
+
+func (x *Power) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[252]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Power.ProtoReflect.Descriptor instead.
+func (*Power) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{252}
+}
+
+func (x *Power) GetBasis() *Basis {
+	if x != nil {
+		return x.Basis
+	}
+	return nil
+}
+
+type Basis struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to OneOf:
+	//
+	//	*Basis_ArithmeticExpression
+	//	*Basis_Identifier
+	//	*Basis_Literal
+	OneOf isBasis_OneOf `protobuf_oneof:"one_of"`
+}
+
+func (x *Basis) Reset() {
+	*x = Basis{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[253]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Basis) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Basis) ProtoMessage() {}
+
+func (x *Basis) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[253]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Basis.ProtoReflect.Descriptor instead.
+func (*Basis) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{253}
+}
+
+func (m *Basis) GetOneOf() isBasis_OneOf {
+	if m != nil {
+		return m.OneOf
+	}
+	return nil
+}
+
+func (x *Basis) GetArithmeticExpression() *ArithmeticExpression {
+	if x, ok := x.GetOneOf().(*Basis_ArithmeticExpression); ok {
+		return x.ArithmeticExpression
+	}
+	return nil
+}
+
+func (x *Basis) GetIdentifier() *Identifier {
+	if x, ok := x.GetOneOf().(*Basis_Identifier); ok {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (x *Basis) GetLiteral() *Literal {
+	if x, ok := x.GetOneOf().(*Basis_Literal); ok {
+		return x.Literal
+	}
+	return nil
+}
+
+type isBasis_OneOf interface {
+	isBasis_OneOf()
+}
+
+type Basis_ArithmeticExpression struct {
+	ArithmeticExpression *ArithmeticExpression `protobuf:"bytes,1,opt,name=arithmetic_expression,json=arithmeticExpression,proto3,oneof"`
+}
+
+type Basis_Identifier struct {
+	Identifier *Identifier `protobuf:"bytes,2,opt,name=identifier,proto3,oneof"`
+}
+
+type Basis_Literal struct {
+	Literal *Literal `protobuf:"bytes,3,opt,name=literal,proto3,oneof"`
+}
+
+func (*Basis_ArithmeticExpression) isBasis_OneOf() {}
+
+func (*Basis_Identifier) isBasis_OneOf() {}
+
+func (*Basis_Literal) isBasis_OneOf() {}
+
+type Condition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	CombinableCondition *CombinableCondition `protobuf:"bytes,1,opt,name=combinable_condition,json=combinableCondition,proto3" json:"combinable_condition,omitempty"`
+	AndOrCondition      []*AndOrCondition    `protobuf:"bytes,2,rep,name=and_or_condition,json=andOrCondition,proto3" json:"and_or_condition,omitempty"`
+}
+
+func (x *Condition) Reset() {
+	*x = Condition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[254]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Condition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Condition) ProtoMessage() {}
+
+func (x *Condition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[254]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Condition.ProtoReflect.Descriptor instead.
+func (*Condition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{254}
+}
+
+func (x *Condition) GetCombinableCondition() *CombinableCondition {
+	if x != nil {
+		return x.CombinableCondition
+	}
+	return nil
+}
+
+func (x *Condition) GetAndOrCondition() []*AndOrCondition {
+	if x != nil {
+		return x.AndOrCondition
+	}
+	return nil
+}
+
+type AndOrCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AndOr               AndOrCondition_AndOr `protobuf:"varint,1,opt,name=and_or,json=andOr,proto3,enum=pb.AndOrCondition_AndOr" json:"and_or,omitempty"`
+	CombinableCondition *CombinableCondition `protobuf:"bytes,2,opt,name=combinable_condition,json=combinableCondition,proto3" json:"combinable_condition,omitempty"`
+	Abbreviations       []*Abbreviation      `protobuf:"bytes,3,rep,name=abbreviations,proto3" json:"abbreviations,omitempty"`
+}
+
+func (x *AndOrCondition) Reset() {
+	*x = AndOrCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[255]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AndOrCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AndOrCondition) ProtoMessage() {}
+
+func (x *AndOrCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[255]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AndOrCondition.ProtoReflect.Descriptor instead.
+func (*AndOrCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{255}
+}
+
+func (x *AndOrCondition) GetAndOr() AndOrCondition_AndOr {
+	if x != nil {
+		return x.AndOr
+	}
+	return AndOrCondition_AND
+}
+
+func (x *AndOrCondition) GetCombinableCondition() *CombinableCondition {
+	if x != nil {
+		return x.CombinableCondition
+	}
+	return nil
+}
+
+func (x *AndOrCondition) GetAbbreviations() []*Abbreviation {
+	if x != nil {
+		return x.Abbreviations
+	}
+	return nil
+}
+
+type CombinableCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Not             bool             `protobuf:"varint,1,opt,name=not,proto3" json:"not,omitempty"`
+	SimpleCondition *SimpleCondition `protobuf:"bytes,2,opt,name=simple_condition,json=simpleCondition,proto3" json:"simple_condition,omitempty"`
+}
+
+func (x *CombinableCondition) Reset() {
+	*x = CombinableCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[256]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CombinableCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CombinableCondition) ProtoMessage() {}
+
+func (x *CombinableCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[256]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CombinableCondition.ProtoReflect.Descriptor instead.
+func (*CombinableCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{256}
+}
+
+func (x *CombinableCondition) GetNot() bool {
+	if x != nil {
+		return x.Not
+	}
+	return false
+}
+
+func (x *CombinableCondition) GetSimpleCondition() *SimpleCondition {
+	if x != nil {
+		return x.SimpleCondition
+	}
+	return nil
+}
+
+type SimpleCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to OneOf:
+	//
+	//	*SimpleCondition_Condition
+	//	*SimpleCondition_RelationCondition
+	//	*SimpleCondition_ClassCondition
+	//	*SimpleCondition_ConditionNameReference
+	OneOf isSimpleCondition_OneOf `protobuf_oneof:"one_of"`
+}
+
+func (x *SimpleCondition) Reset() {
+	*x = SimpleCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[257]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SimpleCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimpleCondition) ProtoMessage() {}
+
+func (x *SimpleCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[257]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimpleCondition.ProtoReflect.Descriptor instead.
+func (*SimpleCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{257}
+}
+
+func (m *SimpleCondition) GetOneOf() isSimpleCondition_OneOf {
+	if m != nil {
+		return m.OneOf
+	}
+	return nil
+}
+
+func (x *SimpleCondition) GetCondition() *Condition {
+	if x, ok := x.GetOneOf().(*SimpleCondition_Condition); ok {
+		return x.Condition
+	}
+	return nil
+}
+
+func (x *SimpleCondition) GetRelationCondition() *RelationCondition {
+	if x, ok := x.GetOneOf().(*SimpleCondition_RelationCondition); ok {
+		return x.RelationCondition
+	}
+	return nil
+}
+
+func (x *SimpleCondition) GetClassCondition() *ClassCondition {
+	if x, ok := x.GetOneOf().(*SimpleCondition_ClassCondition); ok {
+		return x.ClassCondition
+	}
+	return nil
+}
+
+func (x *SimpleCondition) GetConditionNameReference() *ConditionNameReference {
+	if x, ok := x.GetOneOf().(*SimpleCondition_ConditionNameReference); ok {
+		return x.ConditionNameReference
+	}
+	return nil
+}
+
+type isSimpleCondition_OneOf interface {
+	isSimpleCondition_OneOf()
+}
+
+type SimpleCondition_Condition struct {
+	Condition *Condition `protobuf:"bytes,1,opt,name=condition,proto3,oneof"`
+}
+
+type SimpleCondition_RelationCondition struct {
+	RelationCondition *RelationCondition `protobuf:"bytes,2,opt,name=relation_condition,json=relationCondition,proto3,oneof"`
+}
+
+type SimpleCondition_ClassCondition struct {
+	ClassCondition *ClassCondition `protobuf:"bytes,3,opt,name=class_condition,json=classCondition,proto3,oneof"`
+}
+
+type SimpleCondition_ConditionNameReference struct {
+	ConditionNameReference *ConditionNameReference `protobuf:"bytes,4,opt,name=condition_name_reference,json=conditionNameReference,proto3,oneof"`
+}
+
+func (*SimpleCondition_Condition) isSimpleCondition_OneOf() {}
+
+func (*SimpleCondition_RelationCondition) isSimpleCondition_OneOf() {}
+
+func (*SimpleCondition_ClassCondition) isSimpleCondition_OneOf() {}
+
+func (*SimpleCondition_ConditionNameReference) isSimpleCondition_OneOf() {}
+
+type ClassCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Identifier *Identifier `protobuf:"bytes,1,opt,name=identifier,proto3" json:"identifier,omitempty"`
+	// Types that are assignable to Type:
+	//
+	//	*ClassCondition_Value
+	//	*ClassCondition_ClassName
+	Type isClassCondition_Type `protobuf_oneof:"type"`
+}
+
+func (x *ClassCondition) Reset() {
+	*x = ClassCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[258]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ClassCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClassCondition) ProtoMessage() {}
+
+func (x *ClassCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[258]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClassCondition.ProtoReflect.Descriptor instead.
+func (*ClassCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{258}
+}
+
+func (x *ClassCondition) GetIdentifier() *Identifier {
+	if x != nil {
+		return x.Identifier
+	}
+	return nil
+}
+
+func (m *ClassCondition) GetType() isClassCondition_Type {
+	if m != nil {
+		return m.Type
+	}
+	return nil
+}
+
+func (x *ClassCondition) GetValue() ClassCondition_Type {
+	if x, ok := x.GetType().(*ClassCondition_Value); ok {
+		return x.Value
+	}
+	return ClassCondition_NUMERIC
+}
+
+func (x *ClassCondition) GetClassName() *ClassName {
+	if x, ok := x.GetType().(*ClassCondition_ClassName); ok {
+		return x.ClassName
+	}
+	return nil
+}
+
+type isClassCondition_Type interface {
+	isClassCondition_Type()
+}
+
+type ClassCondition_Value struct {
+	Value ClassCondition_Type `protobuf:"varint,2,opt,name=value,proto3,enum=pb.ClassCondition_Type,oneof"`
+}
+
+type ClassCondition_ClassName struct {
+	ClassName *ClassName `protobuf:"bytes,3,opt,name=class_name,json=className,proto3,oneof"`
+}
+
+func (*ClassCondition_Value) isClassCondition_Type() {}
+
+func (*ClassCondition_ClassName) isClassCondition_Type() {}
+
+type ConditionNameReference struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ConditionName *ConditionName `protobuf:"bytes,1,opt,name=condition_name,json=conditionName,proto3" json:"condition_name,omitempty"`
+	// Types that are assignable to In:
+	//
+	//	*ConditionNameReference_InSubscript_
+	//	*ConditionNameReference_InMnemonic
+	In isConditionNameReference_In `protobuf_oneof:"in"`
+}
+
+func (x *ConditionNameReference) Reset() {
+	*x = ConditionNameReference{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[259]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ConditionNameReference) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConditionNameReference) ProtoMessage() {}
+
+func (x *ConditionNameReference) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[259]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConditionNameReference.ProtoReflect.Descriptor instead.
+func (*ConditionNameReference) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{259}
+}
+
+func (x *ConditionNameReference) GetConditionName() *ConditionName {
+	if x != nil {
+		return x.ConditionName
+	}
+	return nil
+}
+
+func (m *ConditionNameReference) GetIn() isConditionNameReference_In {
+	if m != nil {
+		return m.In
+	}
+	return nil
+}
+
+func (x *ConditionNameReference) GetInSubscript() *ConditionNameReference_InSubscript {
+	if x, ok := x.GetIn().(*ConditionNameReference_InSubscript_); ok {
+		return x.InSubscript
+	}
+	return nil
+}
+
+func (x *ConditionNameReference) GetInMnemonic() *InMnemonic {
+	if x, ok := x.GetIn().(*ConditionNameReference_InMnemonic); ok {
+		return x.InMnemonic
+	}
+	return nil
+}
+
+type isConditionNameReference_In interface {
+	isConditionNameReference_In()
+}
+
+type ConditionNameReference_InSubscript_ struct {
+	InSubscript *ConditionNameReference_InSubscript `protobuf:"bytes,2,opt,name=in_subscript,json=inSubscript,proto3,oneof"`
+}
+
+type ConditionNameReference_InMnemonic struct {
+	InMnemonic *InMnemonic `protobuf:"bytes,3,opt,name=in_mnemonic,json=inMnemonic,proto3,oneof"`
+}
+
+func (*ConditionNameReference_InSubscript_) isConditionNameReference_In() {}
+
+func (*ConditionNameReference_InMnemonic) isConditionNameReference_In() {}
+
+type RelationCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Condition:
+	//
+	//	*RelationCondition_RelationSignCondition
+	//	*RelationCondition_RelationArithmeticComparison
+	//	*RelationCondition_RelationCombinedComparison
+	Condition isRelationCondition_Condition `protobuf_oneof:"condition"`
+}
+
+func (x *RelationCondition) Reset() {
+	*x = RelationCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[260]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RelationCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RelationCondition) ProtoMessage() {}
+
+func (x *RelationCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[260]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RelationCondition.ProtoReflect.Descriptor instead.
+func (*RelationCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{260}
+}
+
+func (m *RelationCondition) GetCondition() isRelationCondition_Condition {
+	if m != nil {
+		return m.Condition
+	}
+	return nil
+}
+
+func (x *RelationCondition) GetRelationSignCondition() *RelationSignCondition {
+	if x, ok := x.GetCondition().(*RelationCondition_RelationSignCondition); ok {
+		return x.RelationSignCondition
+	}
+	return nil
+}
+
+func (x *RelationCondition) GetRelationArithmeticComparison() *RelationArithmeticComparison {
+	if x, ok := x.GetCondition().(*RelationCondition_RelationArithmeticComparison); ok {
+		return x.RelationArithmeticComparison
+	}
+	return nil
+}
+
+func (x *RelationCondition) GetRelationCombinedComparison() *RelationCombinedComparison {
+	if x, ok := x.GetCondition().(*RelationCondition_RelationCombinedComparison); ok {
+		return x.RelationCombinedComparison
+	}
+	return nil
+}
+
+type isRelationCondition_Condition interface {
+	isRelationCondition_Condition()
+}
+
+type RelationCondition_RelationSignCondition struct {
+	RelationSignCondition *RelationSignCondition `protobuf:"bytes,1,opt,name=relation_sign_condition,json=relationSignCondition,proto3,oneof"`
+}
+
+type RelationCondition_RelationArithmeticComparison struct {
+	RelationArithmeticComparison *RelationArithmeticComparison `protobuf:"bytes,2,opt,name=relation_arithmetic_comparison,json=relationArithmeticComparison,proto3,oneof"`
+}
+
+type RelationCondition_RelationCombinedComparison struct {
+	RelationCombinedComparison *RelationCombinedComparison `protobuf:"bytes,3,opt,name=relation_combined_comparison,json=relationCombinedComparison,proto3,oneof"`
+}
+
+func (*RelationCondition_RelationSignCondition) isRelationCondition_Condition() {}
+
+func (*RelationCondition_RelationArithmeticComparison) isRelationCondition_Condition() {}
+
+func (*RelationCondition_RelationCombinedComparison) isRelationCondition_Condition() {}
+
+type RelationSignCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ArithmeticExpression *ArithmeticExpression      `protobuf:"bytes,1,opt,name=arithmetic_expression,json=arithmeticExpression,proto3" json:"arithmetic_expression,omitempty"`
+	Type                 RelationSignCondition_Type `protobuf:"varint,2,opt,name=type,proto3,enum=pb.RelationSignCondition_Type" json:"type,omitempty"`
+}
+
+func (x *RelationSignCondition) Reset() {
+	*x = RelationSignCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[261]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RelationSignCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RelationSignCondition) ProtoMessage() {}
+
+func (x *RelationSignCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[261]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RelationSignCondition.ProtoReflect.Descriptor instead.
+func (*RelationSignCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{261}
+}
+
+func (x *RelationSignCondition) GetArithmeticExpression() *ArithmeticExpression {
+	if x != nil {
+		return x.ArithmeticExpression
+	}
+	return nil
+}
+
+func (x *RelationSignCondition) GetType() RelationSignCondition_Type {
+	if x != nil {
+		return x.Type
+	}
+	return RelationSignCondition_POSITIVE
+}
+
+type RelationArithmeticComparison struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	LeftExpression     *ArithmeticExpression `protobuf:"bytes,1,opt,name=left_expression,json=leftExpression,proto3" json:"left_expression,omitempty"`
+	RelationalOperator RelationalOperator    `protobuf:"varint,2,opt,name=relational_operator,json=relationalOperator,proto3,enum=pb.RelationalOperator" json:"relational_operator,omitempty"`
+	RightExpression    *ArithmeticExpression `protobuf:"bytes,3,opt,name=right_expression,json=rightExpression,proto3" json:"right_expression,omitempty"`
+}
+
+func (x *RelationArithmeticComparison) Reset() {
+	*x = RelationArithmeticComparison{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[262]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RelationArithmeticComparison) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RelationArithmeticComparison) ProtoMessage() {}
+
+func (x *RelationArithmeticComparison) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[262]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RelationArithmeticComparison.ProtoReflect.Descriptor instead.
+func (*RelationArithmeticComparison) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{262}
+}
+
+func (x *RelationArithmeticComparison) GetLeftExpression() *ArithmeticExpression {
+	if x != nil {
+		return x.LeftExpression
+	}
+	return nil
+}
+
+func (x *RelationArithmeticComparison) GetRelationalOperator() RelationalOperator {
+	if x != nil {
+		return x.RelationalOperator
+	}
+	return RelationalOperator_EQUAL
+}
+
+func (x *RelationArithmeticComparison) GetRightExpression() *ArithmeticExpression {
+	if x != nil {
+		return x.RightExpression
+	}
+	return nil
+}
+
+type RelationCombinedComparison struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ArithmeticExpression      *ArithmeticExpression      `protobuf:"bytes,1,opt,name=arithmetic_expression,json=arithmeticExpression,proto3" json:"arithmetic_expression,omitempty"`
+	RelationalOperator        RelationalOperator         `protobuf:"varint,2,opt,name=relational_operator,json=relationalOperator,proto3,enum=pb.RelationalOperator" json:"relational_operator,omitempty"`
+	RelationCombinedCondition *RelationCombinedCondition `protobuf:"bytes,3,opt,name=relation_combined_condition,json=relationCombinedCondition,proto3" json:"relation_combined_condition,omitempty"`
+}
+
+func (x *RelationCombinedComparison) Reset() {
+	*x = RelationCombinedComparison{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[263]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RelationCombinedComparison) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RelationCombinedComparison) ProtoMessage() {}
+
+func (x *RelationCombinedComparison) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[263]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RelationCombinedComparison.ProtoReflect.Descriptor instead.
+func (*RelationCombinedComparison) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{263}
+}
+
+func (x *RelationCombinedComparison) GetArithmeticExpression() *ArithmeticExpression {
+	if x != nil {
+		return x.ArithmeticExpression
+	}
+	return nil
+}
+
+func (x *RelationCombinedComparison) GetRelationalOperator() RelationalOperator {
+	if x != nil {
+		return x.RelationalOperator
+	}
+	return RelationalOperator_EQUAL
+}
+
+func (x *RelationCombinedComparison) GetRelationCombinedCondition() *RelationCombinedCondition {
+	if x != nil {
+		return x.RelationCombinedCondition
+	}
+	return nil
+}
+
+type RelationCombinedCondition struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	LeftExpression   *ArithmeticExpression           `protobuf:"bytes,1,opt,name=left_expression,json=leftExpression,proto3" json:"left_expression,omitempty"`
+	AndOr            RelationCombinedCondition_AndOr `protobuf:"varint,2,opt,name=and_or,json=andOr,proto3,enum=pb.RelationCombinedCondition_AndOr" json:"and_or,omitempty"`
+	RightExpressions []*ArithmeticExpression         `protobuf:"bytes,3,rep,name=right_expressions,json=rightExpressions,proto3" json:"right_expressions,omitempty"`
+}
+
+func (x *RelationCombinedCondition) Reset() {
+	*x = RelationCombinedCondition{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[264]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RelationCombinedCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RelationCombinedCondition) ProtoMessage() {}
+
+func (x *RelationCombinedCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[264]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RelationCombinedCondition.ProtoReflect.Descriptor instead.
+func (*RelationCombinedCondition) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{264}
+}
+
+func (x *RelationCombinedCondition) GetLeftExpression() *ArithmeticExpression {
+	if x != nil {
+		return x.LeftExpression
+	}
+	return nil
+}
+
+func (x *RelationCombinedCondition) GetAndOr() RelationCombinedCondition_AndOr {
+	if x != nil {
+		return x.AndOr
+	}
+	return RelationCombinedCondition_AND
+}
+
+func (x *RelationCombinedCondition) GetRightExpressions() []*ArithmeticExpression {
+	if x != nil {
+		return x.RightExpressions
+	}
+	return nil
+}
+
+type Abbreviation struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RelationalOperator   RelationalOperator    `protobuf:"varint,1,opt,name=relational_operator,json=relationalOperator,proto3,enum=pb.RelationalOperator" json:"relational_operator,omitempty"`
+	ArithmeticExpression *ArithmeticExpression `protobuf:"bytes,2,opt,name=arithmetic_expression,json=arithmeticExpression,proto3" json:"arithmetic_expression,omitempty"`
+	Abbreviation         *Abbreviation         `protobuf:"bytes,3,opt,name=abbreviation,proto3" json:"abbreviation,omitempty"`
+}
+
+func (x *Abbreviation) Reset() {
+	*x = Abbreviation{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[265]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Abbreviation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Abbreviation) ProtoMessage() {}
+
+func (x *Abbreviation) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[265]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Abbreviation.ProtoReflect.Descriptor instead.
+func (*Abbreviation) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{265}
+}
+
+func (x *Abbreviation) GetRelationalOperator() RelationalOperator {
+	if x != nil {
+		return x.RelationalOperator
+	}
+	return RelationalOperator_EQUAL
+}
+
+func (x *Abbreviation) GetArithmeticExpression() *ArithmeticExpression {
+	if x != nil {
+		return x.ArithmeticExpression
+	}
+	return nil
+}
+
+func (x *Abbreviation) GetAbbreviation() *Abbreviation {
+	if x != nil {
+		return x.Abbreviation
+	}
+	return nil
+}
+
 type Identifier struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -17442,7 +19051,7 @@ type Identifier struct {
 func (x *Identifier) Reset() {
 	*x = Identifier{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[248]
+		mi := &file_cobol_proto_msgTypes[266]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17455,7 +19064,7 @@ func (x *Identifier) String() string {
 func (*Identifier) ProtoMessage() {}
 
 func (x *Identifier) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[248]
+	mi := &file_cobol_proto_msgTypes[266]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17468,7 +19077,7 @@ func (x *Identifier) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Identifier.ProtoReflect.Descriptor instead.
 func (*Identifier) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{248}
+	return file_cobol_proto_rawDescGZIP(), []int{266}
 }
 
 func (m *Identifier) GetOneOf() isIdentifier_OneOf {
@@ -17547,7 +19156,7 @@ type TableCall struct {
 func (x *TableCall) Reset() {
 	*x = TableCall{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[249]
+		mi := &file_cobol_proto_msgTypes[267]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17560,7 +19169,7 @@ func (x *TableCall) String() string {
 func (*TableCall) ProtoMessage() {}
 
 func (x *TableCall) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[249]
+	mi := &file_cobol_proto_msgTypes[267]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17573,7 +19182,7 @@ func (x *TableCall) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TableCall.ProtoReflect.Descriptor instead.
 func (*TableCall) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{249}
+	return file_cobol_proto_rawDescGZIP(), []int{267}
 }
 
 func (x *TableCall) GetQualifiedDataName() *QualifiedDataName {
@@ -17610,7 +19219,7 @@ type FunctionCall struct {
 func (x *FunctionCall) Reset() {
 	*x = FunctionCall{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[250]
+		mi := &file_cobol_proto_msgTypes[268]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17623,7 +19232,7 @@ func (x *FunctionCall) String() string {
 func (*FunctionCall) ProtoMessage() {}
 
 func (x *FunctionCall) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[250]
+	mi := &file_cobol_proto_msgTypes[268]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17636,7 +19245,7 @@ func (x *FunctionCall) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionCall.ProtoReflect.Descriptor instead.
 func (*FunctionCall) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{250}
+	return file_cobol_proto_rawDescGZIP(), []int{268}
 }
 
 func (x *FunctionCall) GetFunctionName() *FunctionName {
@@ -17672,7 +19281,7 @@ type ReferenceModifier struct {
 func (x *ReferenceModifier) Reset() {
 	*x = ReferenceModifier{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[251]
+		mi := &file_cobol_proto_msgTypes[269]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17685,7 +19294,7 @@ func (x *ReferenceModifier) String() string {
 func (*ReferenceModifier) ProtoMessage() {}
 
 func (x *ReferenceModifier) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[251]
+	mi := &file_cobol_proto_msgTypes[269]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17698,7 +19307,7 @@ func (x *ReferenceModifier) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReferenceModifier.ProtoReflect.Descriptor instead.
 func (*ReferenceModifier) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{251}
+	return file_cobol_proto_rawDescGZIP(), []int{269}
 }
 
 func (x *ReferenceModifier) GetCharacterPosition() *CharacterPosition {
@@ -17726,7 +19335,7 @@ type CharacterPosition struct {
 func (x *CharacterPosition) Reset() {
 	*x = CharacterPosition{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[252]
+		mi := &file_cobol_proto_msgTypes[270]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17739,7 +19348,7 @@ func (x *CharacterPosition) String() string {
 func (*CharacterPosition) ProtoMessage() {}
 
 func (x *CharacterPosition) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[252]
+	mi := &file_cobol_proto_msgTypes[270]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17752,7 +19361,7 @@ func (x *CharacterPosition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CharacterPosition.ProtoReflect.Descriptor instead.
 func (*CharacterPosition) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{252}
+	return file_cobol_proto_rawDescGZIP(), []int{270}
 }
 
 func (x *CharacterPosition) GetArithmeticExpression() *ArithmeticExpression {
@@ -17773,7 +19382,7 @@ type Length struct {
 func (x *Length) Reset() {
 	*x = Length{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[253]
+		mi := &file_cobol_proto_msgTypes[271]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17786,7 +19395,7 @@ func (x *Length) String() string {
 func (*Length) ProtoMessage() {}
 
 func (x *Length) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[253]
+	mi := &file_cobol_proto_msgTypes[271]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17799,7 +19408,7 @@ func (x *Length) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Length.ProtoReflect.Descriptor instead.
 func (*Length) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{253}
+	return file_cobol_proto_rawDescGZIP(), []int{271}
 }
 
 func (x *Length) GetArithmeticExpression() *ArithmeticExpression {
@@ -17827,7 +19436,7 @@ type Subscript struct {
 func (x *Subscript) Reset() {
 	*x = Subscript{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[254]
+		mi := &file_cobol_proto_msgTypes[272]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17840,7 +19449,7 @@ func (x *Subscript) String() string {
 func (*Subscript) ProtoMessage() {}
 
 func (x *Subscript) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[254]
+	mi := &file_cobol_proto_msgTypes[272]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17853,7 +19462,7 @@ func (x *Subscript) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Subscript.ProtoReflect.Descriptor instead.
 func (*Subscript) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{254}
+	return file_cobol_proto_rawDescGZIP(), []int{272}
 }
 
 func (m *Subscript) GetOneOf() isSubscript_OneOf {
@@ -17950,7 +19559,7 @@ type Argument struct {
 func (x *Argument) Reset() {
 	*x = Argument{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[255]
+		mi := &file_cobol_proto_msgTypes[273]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -17963,7 +19572,7 @@ func (x *Argument) String() string {
 func (*Argument) ProtoMessage() {}
 
 func (x *Argument) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[255]
+	mi := &file_cobol_proto_msgTypes[273]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17976,7 +19585,7 @@ func (x *Argument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Argument.ProtoReflect.Descriptor instead.
 func (*Argument) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{255}
+	return file_cobol_proto_rawDescGZIP(), []int{273}
 }
 
 func (m *Argument) GetOneOf() isArgument_OneOf {
@@ -18067,7 +19676,7 @@ type QualifiedDataNameIntegerLiteral struct {
 func (x *QualifiedDataNameIntegerLiteral) Reset() {
 	*x = QualifiedDataNameIntegerLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[256]
+		mi := &file_cobol_proto_msgTypes[274]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18080,7 +19689,7 @@ func (x *QualifiedDataNameIntegerLiteral) String() string {
 func (*QualifiedDataNameIntegerLiteral) ProtoMessage() {}
 
 func (x *QualifiedDataNameIntegerLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[256]
+	mi := &file_cobol_proto_msgTypes[274]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18093,7 +19702,7 @@ func (x *QualifiedDataNameIntegerLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameIntegerLiteral.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameIntegerLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{256}
+	return file_cobol_proto_rawDescGZIP(), []int{274}
 }
 
 func (x *QualifiedDataNameIntegerLiteral) GetQualifiedDataName() *QualifiedDataName {
@@ -18122,7 +19731,7 @@ type IndexNameIntegerLiteral struct {
 func (x *IndexNameIntegerLiteral) Reset() {
 	*x = IndexNameIntegerLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[257]
+		mi := &file_cobol_proto_msgTypes[275]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18135,7 +19744,7 @@ func (x *IndexNameIntegerLiteral) String() string {
 func (*IndexNameIntegerLiteral) ProtoMessage() {}
 
 func (x *IndexNameIntegerLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[257]
+	mi := &file_cobol_proto_msgTypes[275]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18148,7 +19757,7 @@ func (x *IndexNameIntegerLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IndexNameIntegerLiteral.ProtoReflect.Descriptor instead.
 func (*IndexNameIntegerLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{257}
+	return file_cobol_proto_rawDescGZIP(), []int{275}
 }
 
 func (x *IndexNameIntegerLiteral) GetIndexName() *IndexName {
@@ -18182,7 +19791,7 @@ type QualifiedDataName struct {
 func (x *QualifiedDataName) Reset() {
 	*x = QualifiedDataName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[258]
+		mi := &file_cobol_proto_msgTypes[276]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18195,7 +19804,7 @@ func (x *QualifiedDataName) String() string {
 func (*QualifiedDataName) ProtoMessage() {}
 
 func (x *QualifiedDataName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[258]
+	mi := &file_cobol_proto_msgTypes[276]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18208,7 +19817,7 @@ func (x *QualifiedDataName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataName.ProtoReflect.Descriptor instead.
 func (*QualifiedDataName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{258}
+	return file_cobol_proto_rawDescGZIP(), []int{276}
 }
 
 func (m *QualifiedDataName) GetOneOf() isQualifiedDataName_OneOf {
@@ -18292,7 +19901,7 @@ type QualifiedDataNameFormat1 struct {
 func (x *QualifiedDataNameFormat1) Reset() {
 	*x = QualifiedDataNameFormat1{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[259]
+		mi := &file_cobol_proto_msgTypes[277]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18305,7 +19914,7 @@ func (x *QualifiedDataNameFormat1) String() string {
 func (*QualifiedDataNameFormat1) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat1) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[259]
+	mi := &file_cobol_proto_msgTypes[277]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18318,7 +19927,7 @@ func (x *QualifiedDataNameFormat1) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat1.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat1) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{259}
+	return file_cobol_proto_rawDescGZIP(), []int{277}
 }
 
 func (m *QualifiedDataNameFormat1) GetOneOf() isQualifiedDataNameFormat1_OneOf {
@@ -18391,7 +20000,7 @@ type QualifiedDataNameFormat2 struct {
 func (x *QualifiedDataNameFormat2) Reset() {
 	*x = QualifiedDataNameFormat2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[260]
+		mi := &file_cobol_proto_msgTypes[278]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18404,7 +20013,7 @@ func (x *QualifiedDataNameFormat2) String() string {
 func (*QualifiedDataNameFormat2) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat2) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[260]
+	mi := &file_cobol_proto_msgTypes[278]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18417,7 +20026,7 @@ func (x *QualifiedDataNameFormat2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat2.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat2) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{260}
+	return file_cobol_proto_rawDescGZIP(), []int{278}
 }
 
 func (x *QualifiedDataNameFormat2) GetParagraphName() *ParagraphName {
@@ -18446,7 +20055,7 @@ type QualifiedDataNameFormat3 struct {
 func (x *QualifiedDataNameFormat3) Reset() {
 	*x = QualifiedDataNameFormat3{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[261]
+		mi := &file_cobol_proto_msgTypes[279]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18459,7 +20068,7 @@ func (x *QualifiedDataNameFormat3) String() string {
 func (*QualifiedDataNameFormat3) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat3) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[261]
+	mi := &file_cobol_proto_msgTypes[279]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18472,7 +20081,7 @@ func (x *QualifiedDataNameFormat3) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat3.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat3) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{261}
+	return file_cobol_proto_rawDescGZIP(), []int{279}
 }
 
 func (x *QualifiedDataNameFormat3) GetTextName() *TextName {
@@ -18500,7 +20109,7 @@ type QualifiedDataNameFormat4 struct {
 func (x *QualifiedDataNameFormat4) Reset() {
 	*x = QualifiedDataNameFormat4{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[262]
+		mi := &file_cobol_proto_msgTypes[280]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18513,7 +20122,7 @@ func (x *QualifiedDataNameFormat4) String() string {
 func (*QualifiedDataNameFormat4) ProtoMessage() {}
 
 func (x *QualifiedDataNameFormat4) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[262]
+	mi := &file_cobol_proto_msgTypes[280]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18526,7 +20135,7 @@ func (x *QualifiedDataNameFormat4) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualifiedDataNameFormat4.ProtoReflect.Descriptor instead.
 func (*QualifiedDataNameFormat4) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{262}
+	return file_cobol_proto_rawDescGZIP(), []int{280}
 }
 
 func (x *QualifiedDataNameFormat4) GetInFile() *InFile {
@@ -18547,7 +20156,7 @@ type InData struct {
 func (x *InData) Reset() {
 	*x = InData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[263]
+		mi := &file_cobol_proto_msgTypes[281]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18560,7 +20169,7 @@ func (x *InData) String() string {
 func (*InData) ProtoMessage() {}
 
 func (x *InData) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[263]
+	mi := &file_cobol_proto_msgTypes[281]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18573,7 +20182,7 @@ func (x *InData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InData.ProtoReflect.Descriptor instead.
 func (*InData) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{263}
+	return file_cobol_proto_rawDescGZIP(), []int{281}
 }
 
 func (x *InData) GetDataName() *DataName {
@@ -18594,7 +20203,7 @@ type InFile struct {
 func (x *InFile) Reset() {
 	*x = InFile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[264]
+		mi := &file_cobol_proto_msgTypes[282]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18607,7 +20216,7 @@ func (x *InFile) String() string {
 func (*InFile) ProtoMessage() {}
 
 func (x *InFile) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[264]
+	mi := &file_cobol_proto_msgTypes[282]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18620,7 +20229,7 @@ func (x *InFile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InFile.ProtoReflect.Descriptor instead.
 func (*InFile) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{264}
+	return file_cobol_proto_rawDescGZIP(), []int{282}
 }
 
 func (x *InFile) GetFileName() *FileName {
@@ -18641,7 +20250,7 @@ type InMnemonic struct {
 func (x *InMnemonic) Reset() {
 	*x = InMnemonic{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[265]
+		mi := &file_cobol_proto_msgTypes[283]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18654,7 +20263,7 @@ func (x *InMnemonic) String() string {
 func (*InMnemonic) ProtoMessage() {}
 
 func (x *InMnemonic) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[265]
+	mi := &file_cobol_proto_msgTypes[283]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18667,7 +20276,7 @@ func (x *InMnemonic) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InMnemonic.ProtoReflect.Descriptor instead.
 func (*InMnemonic) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{265}
+	return file_cobol_proto_rawDescGZIP(), []int{283}
 }
 
 func (x *InMnemonic) GetMnemonicName() *MnemonicName {
@@ -18688,7 +20297,7 @@ type InSection struct {
 func (x *InSection) Reset() {
 	*x = InSection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[266]
+		mi := &file_cobol_proto_msgTypes[284]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18701,7 +20310,7 @@ func (x *InSection) String() string {
 func (*InSection) ProtoMessage() {}
 
 func (x *InSection) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[266]
+	mi := &file_cobol_proto_msgTypes[284]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18714,7 +20323,7 @@ func (x *InSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InSection.ProtoReflect.Descriptor instead.
 func (*InSection) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{266}
+	return file_cobol_proto_rawDescGZIP(), []int{284}
 }
 
 func (x *InSection) GetSectionName() *SectionName {
@@ -18735,7 +20344,7 @@ type InLibrary struct {
 func (x *InLibrary) Reset() {
 	*x = InLibrary{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[267]
+		mi := &file_cobol_proto_msgTypes[285]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18748,7 +20357,7 @@ func (x *InLibrary) String() string {
 func (*InLibrary) ProtoMessage() {}
 
 func (x *InLibrary) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[267]
+	mi := &file_cobol_proto_msgTypes[285]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18761,7 +20370,7 @@ func (x *InLibrary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InLibrary.ProtoReflect.Descriptor instead.
 func (*InLibrary) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{267}
+	return file_cobol_proto_rawDescGZIP(), []int{285}
 }
 
 func (x *InLibrary) GetLibraryName() *LibraryName {
@@ -18782,7 +20391,7 @@ type InTable struct {
 func (x *InTable) Reset() {
 	*x = InTable{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[268]
+		mi := &file_cobol_proto_msgTypes[286]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18795,7 +20404,7 @@ func (x *InTable) String() string {
 func (*InTable) ProtoMessage() {}
 
 func (x *InTable) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[268]
+	mi := &file_cobol_proto_msgTypes[286]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18808,7 +20417,7 @@ func (x *InTable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InTable.ProtoReflect.Descriptor instead.
 func (*InTable) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{268}
+	return file_cobol_proto_rawDescGZIP(), []int{286}
 }
 
 func (x *InTable) GetTableCall() *TableCall {
@@ -18829,7 +20438,7 @@ type AlphabetName struct {
 func (x *AlphabetName) Reset() {
 	*x = AlphabetName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[269]
+		mi := &file_cobol_proto_msgTypes[287]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18842,7 +20451,7 @@ func (x *AlphabetName) String() string {
 func (*AlphabetName) ProtoMessage() {}
 
 func (x *AlphabetName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[269]
+	mi := &file_cobol_proto_msgTypes[287]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18855,7 +20464,7 @@ func (x *AlphabetName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlphabetName.ProtoReflect.Descriptor instead.
 func (*AlphabetName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{269}
+	return file_cobol_proto_rawDescGZIP(), []int{287}
 }
 
 func (x *AlphabetName) GetCobolWord() *CobolWord {
@@ -18876,7 +20485,7 @@ type AssignmentName struct {
 func (x *AssignmentName) Reset() {
 	*x = AssignmentName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[270]
+		mi := &file_cobol_proto_msgTypes[288]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18889,7 +20498,7 @@ func (x *AssignmentName) String() string {
 func (*AssignmentName) ProtoMessage() {}
 
 func (x *AssignmentName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[270]
+	mi := &file_cobol_proto_msgTypes[288]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18902,7 +20511,7 @@ func (x *AssignmentName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssignmentName.ProtoReflect.Descriptor instead.
 func (*AssignmentName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{270}
+	return file_cobol_proto_rawDescGZIP(), []int{288}
 }
 
 func (x *AssignmentName) GetSystemName() *SystemName {
@@ -18923,7 +20532,7 @@ type BasisName struct {
 func (x *BasisName) Reset() {
 	*x = BasisName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[271]
+		mi := &file_cobol_proto_msgTypes[289]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18936,7 +20545,7 @@ func (x *BasisName) String() string {
 func (*BasisName) ProtoMessage() {}
 
 func (x *BasisName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[271]
+	mi := &file_cobol_proto_msgTypes[289]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18949,7 +20558,7 @@ func (x *BasisName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BasisName.ProtoReflect.Descriptor instead.
 func (*BasisName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{271}
+	return file_cobol_proto_rawDescGZIP(), []int{289}
 }
 
 func (x *BasisName) GetProgramName() *ProgramName {
@@ -18970,7 +20579,7 @@ type CdName struct {
 func (x *CdName) Reset() {
 	*x = CdName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[272]
+		mi := &file_cobol_proto_msgTypes[290]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -18983,7 +20592,7 @@ func (x *CdName) String() string {
 func (*CdName) ProtoMessage() {}
 
 func (x *CdName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[272]
+	mi := &file_cobol_proto_msgTypes[290]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18996,7 +20605,7 @@ func (x *CdName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CdName.ProtoReflect.Descriptor instead.
 func (*CdName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{272}
+	return file_cobol_proto_rawDescGZIP(), []int{290}
 }
 
 func (x *CdName) GetCobolWord() *CobolWord {
@@ -19017,7 +20626,7 @@ type ClassName struct {
 func (x *ClassName) Reset() {
 	*x = ClassName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[273]
+		mi := &file_cobol_proto_msgTypes[291]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19030,7 +20639,7 @@ func (x *ClassName) String() string {
 func (*ClassName) ProtoMessage() {}
 
 func (x *ClassName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[273]
+	mi := &file_cobol_proto_msgTypes[291]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19043,7 +20652,7 @@ func (x *ClassName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClassName.ProtoReflect.Descriptor instead.
 func (*ClassName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{273}
+	return file_cobol_proto_rawDescGZIP(), []int{291}
 }
 
 func (x *ClassName) GetCobolWord() *CobolWord {
@@ -19064,7 +20673,7 @@ type ComputerName struct {
 func (x *ComputerName) Reset() {
 	*x = ComputerName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[274]
+		mi := &file_cobol_proto_msgTypes[292]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19077,7 +20686,7 @@ func (x *ComputerName) String() string {
 func (*ComputerName) ProtoMessage() {}
 
 func (x *ComputerName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[274]
+	mi := &file_cobol_proto_msgTypes[292]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19090,7 +20699,7 @@ func (x *ComputerName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ComputerName.ProtoReflect.Descriptor instead.
 func (*ComputerName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{274}
+	return file_cobol_proto_rawDescGZIP(), []int{292}
 }
 
 func (x *ComputerName) GetSystemName() *SystemName {
@@ -19111,7 +20720,7 @@ type ConditionName struct {
 func (x *ConditionName) Reset() {
 	*x = ConditionName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[275]
+		mi := &file_cobol_proto_msgTypes[293]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19124,7 +20733,7 @@ func (x *ConditionName) String() string {
 func (*ConditionName) ProtoMessage() {}
 
 func (x *ConditionName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[275]
+	mi := &file_cobol_proto_msgTypes[293]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19137,7 +20746,7 @@ func (x *ConditionName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConditionName.ProtoReflect.Descriptor instead.
 func (*ConditionName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{275}
+	return file_cobol_proto_rawDescGZIP(), []int{293}
 }
 
 func (x *ConditionName) GetCobolWord() *CobolWord {
@@ -19158,7 +20767,7 @@ type DataName struct {
 func (x *DataName) Reset() {
 	*x = DataName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[276]
+		mi := &file_cobol_proto_msgTypes[294]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19171,7 +20780,7 @@ func (x *DataName) String() string {
 func (*DataName) ProtoMessage() {}
 
 func (x *DataName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[276]
+	mi := &file_cobol_proto_msgTypes[294]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19184,7 +20793,7 @@ func (x *DataName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataName.ProtoReflect.Descriptor instead.
 func (*DataName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{276}
+	return file_cobol_proto_rawDescGZIP(), []int{294}
 }
 
 func (x *DataName) GetCobolWord() *CobolWord {
@@ -19205,7 +20814,7 @@ type DataDescName struct {
 func (x *DataDescName) Reset() {
 	*x = DataDescName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[277]
+		mi := &file_cobol_proto_msgTypes[295]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19218,7 +20827,7 @@ func (x *DataDescName) String() string {
 func (*DataDescName) ProtoMessage() {}
 
 func (x *DataDescName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[277]
+	mi := &file_cobol_proto_msgTypes[295]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19231,7 +20840,7 @@ func (x *DataDescName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataDescName.ProtoReflect.Descriptor instead.
 func (*DataDescName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{277}
+	return file_cobol_proto_rawDescGZIP(), []int{295}
 }
 
 func (x *DataDescName) GetValue() string {
@@ -19252,7 +20861,7 @@ type EnvironmentName struct {
 func (x *EnvironmentName) Reset() {
 	*x = EnvironmentName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[278]
+		mi := &file_cobol_proto_msgTypes[296]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19265,7 +20874,7 @@ func (x *EnvironmentName) String() string {
 func (*EnvironmentName) ProtoMessage() {}
 
 func (x *EnvironmentName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[278]
+	mi := &file_cobol_proto_msgTypes[296]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19278,7 +20887,7 @@ func (x *EnvironmentName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnvironmentName.ProtoReflect.Descriptor instead.
 func (*EnvironmentName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{278}
+	return file_cobol_proto_rawDescGZIP(), []int{296}
 }
 
 func (x *EnvironmentName) GetSystemName() *SystemName {
@@ -19299,7 +20908,7 @@ type FileName struct {
 func (x *FileName) Reset() {
 	*x = FileName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[279]
+		mi := &file_cobol_proto_msgTypes[297]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19312,7 +20921,7 @@ func (x *FileName) String() string {
 func (*FileName) ProtoMessage() {}
 
 func (x *FileName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[279]
+	mi := &file_cobol_proto_msgTypes[297]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19325,7 +20934,7 @@ func (x *FileName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileName.ProtoReflect.Descriptor instead.
 func (*FileName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{279}
+	return file_cobol_proto_rawDescGZIP(), []int{297}
 }
 
 func (x *FileName) GetCobolWord() *CobolWord {
@@ -19346,7 +20955,7 @@ type FunctionName struct {
 func (x *FunctionName) Reset() {
 	*x = FunctionName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[280]
+		mi := &file_cobol_proto_msgTypes[298]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19359,7 +20968,7 @@ func (x *FunctionName) String() string {
 func (*FunctionName) ProtoMessage() {}
 
 func (x *FunctionName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[280]
+	mi := &file_cobol_proto_msgTypes[298]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19372,7 +20981,7 @@ func (x *FunctionName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionName.ProtoReflect.Descriptor instead.
 func (*FunctionName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{280}
+	return file_cobol_proto_rawDescGZIP(), []int{298}
 }
 
 func (x *FunctionName) GetValue() string {
@@ -19393,7 +21002,7 @@ type IndexName struct {
 func (x *IndexName) Reset() {
 	*x = IndexName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[281]
+		mi := &file_cobol_proto_msgTypes[299]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19406,7 +21015,7 @@ func (x *IndexName) String() string {
 func (*IndexName) ProtoMessage() {}
 
 func (x *IndexName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[281]
+	mi := &file_cobol_proto_msgTypes[299]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19419,7 +21028,7 @@ func (x *IndexName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IndexName.ProtoReflect.Descriptor instead.
 func (*IndexName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{281}
+	return file_cobol_proto_rawDescGZIP(), []int{299}
 }
 
 func (x *IndexName) GetCobolWord() *CobolWord {
@@ -19440,7 +21049,7 @@ type LanguageName struct {
 func (x *LanguageName) Reset() {
 	*x = LanguageName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[282]
+		mi := &file_cobol_proto_msgTypes[300]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19453,7 +21062,7 @@ func (x *LanguageName) String() string {
 func (*LanguageName) ProtoMessage() {}
 
 func (x *LanguageName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[282]
+	mi := &file_cobol_proto_msgTypes[300]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19466,7 +21075,7 @@ func (x *LanguageName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LanguageName.ProtoReflect.Descriptor instead.
 func (*LanguageName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{282}
+	return file_cobol_proto_rawDescGZIP(), []int{300}
 }
 
 func (x *LanguageName) GetSystemName() *SystemName {
@@ -19487,7 +21096,7 @@ type LibraryName struct {
 func (x *LibraryName) Reset() {
 	*x = LibraryName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[283]
+		mi := &file_cobol_proto_msgTypes[301]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19500,7 +21109,7 @@ func (x *LibraryName) String() string {
 func (*LibraryName) ProtoMessage() {}
 
 func (x *LibraryName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[283]
+	mi := &file_cobol_proto_msgTypes[301]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19513,7 +21122,7 @@ func (x *LibraryName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LibraryName.ProtoReflect.Descriptor instead.
 func (*LibraryName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{283}
+	return file_cobol_proto_rawDescGZIP(), []int{301}
 }
 
 func (x *LibraryName) GetCobolWord() *CobolWord {
@@ -19534,7 +21143,7 @@ type LocalName struct {
 func (x *LocalName) Reset() {
 	*x = LocalName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[284]
+		mi := &file_cobol_proto_msgTypes[302]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19547,7 +21156,7 @@ func (x *LocalName) String() string {
 func (*LocalName) ProtoMessage() {}
 
 func (x *LocalName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[284]
+	mi := &file_cobol_proto_msgTypes[302]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19560,7 +21169,7 @@ func (x *LocalName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalName.ProtoReflect.Descriptor instead.
 func (*LocalName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{284}
+	return file_cobol_proto_rawDescGZIP(), []int{302}
 }
 
 func (x *LocalName) GetCobolWord() *CobolWord {
@@ -19581,7 +21190,7 @@ type MnemonicName struct {
 func (x *MnemonicName) Reset() {
 	*x = MnemonicName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[285]
+		mi := &file_cobol_proto_msgTypes[303]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19594,7 +21203,7 @@ func (x *MnemonicName) String() string {
 func (*MnemonicName) ProtoMessage() {}
 
 func (x *MnemonicName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[285]
+	mi := &file_cobol_proto_msgTypes[303]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19607,7 +21216,7 @@ func (x *MnemonicName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MnemonicName.ProtoReflect.Descriptor instead.
 func (*MnemonicName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{285}
+	return file_cobol_proto_rawDescGZIP(), []int{303}
 }
 
 func (x *MnemonicName) GetCobolWord() *CobolWord {
@@ -19632,7 +21241,7 @@ type ParagraphName struct {
 func (x *ParagraphName) Reset() {
 	*x = ParagraphName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[286]
+		mi := &file_cobol_proto_msgTypes[304]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19645,7 +21254,7 @@ func (x *ParagraphName) String() string {
 func (*ParagraphName) ProtoMessage() {}
 
 func (x *ParagraphName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[286]
+	mi := &file_cobol_proto_msgTypes[304]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19658,7 +21267,7 @@ func (x *ParagraphName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParagraphName.ProtoReflect.Descriptor instead.
 func (*ParagraphName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{286}
+	return file_cobol_proto_rawDescGZIP(), []int{304}
 }
 
 func (m *ParagraphName) GetOneOf() isParagraphName_OneOf {
@@ -19713,7 +21322,7 @@ type ProcedureName struct {
 func (x *ProcedureName) Reset() {
 	*x = ProcedureName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[287]
+		mi := &file_cobol_proto_msgTypes[305]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19726,7 +21335,7 @@ func (x *ProcedureName) String() string {
 func (*ProcedureName) ProtoMessage() {}
 
 func (x *ProcedureName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[287]
+	mi := &file_cobol_proto_msgTypes[305]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19739,7 +21348,7 @@ func (x *ProcedureName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureName.ProtoReflect.Descriptor instead.
 func (*ProcedureName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{287}
+	return file_cobol_proto_rawDescGZIP(), []int{305}
 }
 
 func (m *ProcedureName) GetOneOf() isProcedureName_OneOf {
@@ -19794,7 +21403,7 @@ type ProgramName struct {
 func (x *ProgramName) Reset() {
 	*x = ProgramName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[288]
+		mi := &file_cobol_proto_msgTypes[306]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19807,7 +21416,7 @@ func (x *ProgramName) String() string {
 func (*ProgramName) ProtoMessage() {}
 
 func (x *ProgramName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[288]
+	mi := &file_cobol_proto_msgTypes[306]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19820,7 +21429,7 @@ func (x *ProgramName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProgramName.ProtoReflect.Descriptor instead.
 func (*ProgramName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{288}
+	return file_cobol_proto_rawDescGZIP(), []int{306}
 }
 
 func (m *ProgramName) GetOneOf() isProgramName_OneOf {
@@ -19871,7 +21480,7 @@ type RecordName struct {
 func (x *RecordName) Reset() {
 	*x = RecordName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[289]
+		mi := &file_cobol_proto_msgTypes[307]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19884,7 +21493,7 @@ func (x *RecordName) String() string {
 func (*RecordName) ProtoMessage() {}
 
 func (x *RecordName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[289]
+	mi := &file_cobol_proto_msgTypes[307]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19897,7 +21506,7 @@ func (x *RecordName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordName.ProtoReflect.Descriptor instead.
 func (*RecordName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{289}
+	return file_cobol_proto_rawDescGZIP(), []int{307}
 }
 
 func (x *RecordName) GetQualifiedDataName() *QualifiedDataName {
@@ -19918,7 +21527,7 @@ type ReportName struct {
 func (x *ReportName) Reset() {
 	*x = ReportName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[290]
+		mi := &file_cobol_proto_msgTypes[308]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19931,7 +21540,7 @@ func (x *ReportName) String() string {
 func (*ReportName) ProtoMessage() {}
 
 func (x *ReportName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[290]
+	mi := &file_cobol_proto_msgTypes[308]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19944,7 +21553,7 @@ func (x *ReportName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportName.ProtoReflect.Descriptor instead.
 func (*ReportName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{290}
+	return file_cobol_proto_rawDescGZIP(), []int{308}
 }
 
 func (x *ReportName) GetQualifiedDataName() *QualifiedDataName {
@@ -19965,7 +21574,7 @@ type RoutingName struct {
 func (x *RoutingName) Reset() {
 	*x = RoutingName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[291]
+		mi := &file_cobol_proto_msgTypes[309]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -19978,7 +21587,7 @@ func (x *RoutingName) String() string {
 func (*RoutingName) ProtoMessage() {}
 
 func (x *RoutingName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[291]
+	mi := &file_cobol_proto_msgTypes[309]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19991,7 +21600,7 @@ func (x *RoutingName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoutingName.ProtoReflect.Descriptor instead.
 func (*RoutingName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{291}
+	return file_cobol_proto_rawDescGZIP(), []int{309}
 }
 
 func (x *RoutingName) GetCobolWord() *CobolWord {
@@ -20012,7 +21621,7 @@ type ScreenName struct {
 func (x *ScreenName) Reset() {
 	*x = ScreenName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[292]
+		mi := &file_cobol_proto_msgTypes[310]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20025,7 +21634,7 @@ func (x *ScreenName) String() string {
 func (*ScreenName) ProtoMessage() {}
 
 func (x *ScreenName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[292]
+	mi := &file_cobol_proto_msgTypes[310]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20038,7 +21647,7 @@ func (x *ScreenName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScreenName.ProtoReflect.Descriptor instead.
 func (*ScreenName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{292}
+	return file_cobol_proto_rawDescGZIP(), []int{310}
 }
 
 func (x *ScreenName) GetCobolWord() *CobolWord {
@@ -20063,7 +21672,7 @@ type SectionName struct {
 func (x *SectionName) Reset() {
 	*x = SectionName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[293]
+		mi := &file_cobol_proto_msgTypes[311]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20076,7 +21685,7 @@ func (x *SectionName) String() string {
 func (*SectionName) ProtoMessage() {}
 
 func (x *SectionName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[293]
+	mi := &file_cobol_proto_msgTypes[311]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20089,7 +21698,7 @@ func (x *SectionName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SectionName.ProtoReflect.Descriptor instead.
 func (*SectionName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{293}
+	return file_cobol_proto_rawDescGZIP(), []int{311}
 }
 
 func (m *SectionName) GetOneOf() isSectionName_OneOf {
@@ -20140,7 +21749,7 @@ type SystemName struct {
 func (x *SystemName) Reset() {
 	*x = SystemName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[294]
+		mi := &file_cobol_proto_msgTypes[312]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20153,7 +21762,7 @@ func (x *SystemName) String() string {
 func (*SystemName) ProtoMessage() {}
 
 func (x *SystemName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[294]
+	mi := &file_cobol_proto_msgTypes[312]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20166,7 +21775,7 @@ func (x *SystemName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SystemName.ProtoReflect.Descriptor instead.
 func (*SystemName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{294}
+	return file_cobol_proto_rawDescGZIP(), []int{312}
 }
 
 func (x *SystemName) GetCobolWord() *CobolWord {
@@ -20187,7 +21796,7 @@ type SymbolicCharacter struct {
 func (x *SymbolicCharacter) Reset() {
 	*x = SymbolicCharacter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[295]
+		mi := &file_cobol_proto_msgTypes[313]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20200,7 +21809,7 @@ func (x *SymbolicCharacter) String() string {
 func (*SymbolicCharacter) ProtoMessage() {}
 
 func (x *SymbolicCharacter) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[295]
+	mi := &file_cobol_proto_msgTypes[313]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20213,7 +21822,7 @@ func (x *SymbolicCharacter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SymbolicCharacter.ProtoReflect.Descriptor instead.
 func (*SymbolicCharacter) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{295}
+	return file_cobol_proto_rawDescGZIP(), []int{313}
 }
 
 func (x *SymbolicCharacter) GetCobolWord() *CobolWord {
@@ -20234,7 +21843,7 @@ type TextName struct {
 func (x *TextName) Reset() {
 	*x = TextName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[296]
+		mi := &file_cobol_proto_msgTypes[314]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20247,7 +21856,7 @@ func (x *TextName) String() string {
 func (*TextName) ProtoMessage() {}
 
 func (x *TextName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[296]
+	mi := &file_cobol_proto_msgTypes[314]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20260,7 +21869,7 @@ func (x *TextName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TextName.ProtoReflect.Descriptor instead.
 func (*TextName) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{296}
+	return file_cobol_proto_rawDescGZIP(), []int{314}
 }
 
 func (x *TextName) GetCobolWord() *CobolWord {
@@ -20281,7 +21890,7 @@ type CobolWord struct {
 func (x *CobolWord) Reset() {
 	*x = CobolWord{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[297]
+		mi := &file_cobol_proto_msgTypes[315]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20294,7 +21903,7 @@ func (x *CobolWord) String() string {
 func (*CobolWord) ProtoMessage() {}
 
 func (x *CobolWord) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[297]
+	mi := &file_cobol_proto_msgTypes[315]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20307,7 +21916,7 @@ func (x *CobolWord) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CobolWord.ProtoReflect.Descriptor instead.
 func (*CobolWord) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{297}
+	return file_cobol_proto_rawDescGZIP(), []int{315}
 }
 
 func (x *CobolWord) GetValue() string {
@@ -20335,7 +21944,7 @@ type Literal struct {
 func (x *Literal) Reset() {
 	*x = Literal{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[298]
+		mi := &file_cobol_proto_msgTypes[316]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20348,7 +21957,7 @@ func (x *Literal) String() string {
 func (*Literal) ProtoMessage() {}
 
 func (x *Literal) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[298]
+	mi := &file_cobol_proto_msgTypes[316]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20361,7 +21970,7 @@ func (x *Literal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Literal.ProtoReflect.Descriptor instead.
 func (*Literal) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{298}
+	return file_cobol_proto_rawDescGZIP(), []int{316}
 }
 
 func (x *Literal) GetType() Literal_Type {
@@ -20445,7 +22054,7 @@ type BooleanLiteral struct {
 func (x *BooleanLiteral) Reset() {
 	*x = BooleanLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[299]
+		mi := &file_cobol_proto_msgTypes[317]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20458,7 +22067,7 @@ func (x *BooleanLiteral) String() string {
 func (*BooleanLiteral) ProtoMessage() {}
 
 func (x *BooleanLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[299]
+	mi := &file_cobol_proto_msgTypes[317]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20471,7 +22080,7 @@ func (x *BooleanLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BooleanLiteral.ProtoReflect.Descriptor instead.
 func (*BooleanLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{299}
+	return file_cobol_proto_rawDescGZIP(), []int{317}
 }
 
 func (x *BooleanLiteral) GetValue() bool {
@@ -20493,7 +22102,7 @@ type NumericLiteral struct {
 func (x *NumericLiteral) Reset() {
 	*x = NumericLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[300]
+		mi := &file_cobol_proto_msgTypes[318]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20506,7 +22115,7 @@ func (x *NumericLiteral) String() string {
 func (*NumericLiteral) ProtoMessage() {}
 
 func (x *NumericLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[300]
+	mi := &file_cobol_proto_msgTypes[318]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20519,7 +22128,7 @@ func (x *NumericLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NumericLiteral.ProtoReflect.Descriptor instead.
 func (*NumericLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{300}
+	return file_cobol_proto_rawDescGZIP(), []int{318}
 }
 
 func (x *NumericLiteral) GetType() NumericLiteral_Type {
@@ -20547,7 +22156,7 @@ type IntegerLiteral struct {
 func (x *IntegerLiteral) Reset() {
 	*x = IntegerLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[301]
+		mi := &file_cobol_proto_msgTypes[319]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20560,7 +22169,7 @@ func (x *IntegerLiteral) String() string {
 func (*IntegerLiteral) ProtoMessage() {}
 
 func (x *IntegerLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[301]
+	mi := &file_cobol_proto_msgTypes[319]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20573,7 +22182,7 @@ func (x *IntegerLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntegerLiteral.ProtoReflect.Descriptor instead.
 func (*IntegerLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{301}
+	return file_cobol_proto_rawDescGZIP(), []int{319}
 }
 
 func (x *IntegerLiteral) GetValue() string {
@@ -20595,7 +22204,7 @@ type FigurativeConstant struct {
 func (x *FigurativeConstant) Reset() {
 	*x = FigurativeConstant{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[302]
+		mi := &file_cobol_proto_msgTypes[320]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20608,7 +22217,7 @@ func (x *FigurativeConstant) String() string {
 func (*FigurativeConstant) ProtoMessage() {}
 
 func (x *FigurativeConstant) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[302]
+	mi := &file_cobol_proto_msgTypes[320]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20621,7 +22230,7 @@ func (x *FigurativeConstant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FigurativeConstant.ProtoReflect.Descriptor instead.
 func (*FigurativeConstant) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{302}
+	return file_cobol_proto_rawDescGZIP(), []int{320}
 }
 
 func (x *FigurativeConstant) GetType() FigurativeConstant_Type {
@@ -20642,12 +22251,15 @@ type SpecialRegister struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
+
+	Type       SpecialRegister_Type `protobuf:"varint,1,opt,name=type,proto3,enum=pb.SpecialRegister_Type" json:"type,omitempty"`
+	Identifier *Identifier          `protobuf:"bytes,2,opt,name=identifier,proto3" json:"identifier,omitempty"`
 }
 
 func (x *SpecialRegister) Reset() {
 	*x = SpecialRegister{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[303]
+		mi := &file_cobol_proto_msgTypes[321]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20660,7 +22272,7 @@ func (x *SpecialRegister) String() string {
 func (*SpecialRegister) ProtoMessage() {}
 
 func (x *SpecialRegister) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[303]
+	mi := &file_cobol_proto_msgTypes[321]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20673,7 +22285,21 @@ func (x *SpecialRegister) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpecialRegister.ProtoReflect.Descriptor instead.
 func (*SpecialRegister) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{303}
+	return file_cobol_proto_rawDescGZIP(), []int{321}
+}
+
+func (x *SpecialRegister) GetType() SpecialRegister_Type {
+	if x != nil {
+		return x.Type
+	}
+	return SpecialRegister_ADDRESS_OF
+}
+
+func (x *SpecialRegister) GetIdentifier() *Identifier {
+	if x != nil {
+		return x.Identifier
+	}
+	return nil
 }
 
 type NonNumericLiteral struct {
@@ -20687,7 +22313,7 @@ type NonNumericLiteral struct {
 func (x *NonNumericLiteral) Reset() {
 	*x = NonNumericLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[304]
+		mi := &file_cobol_proto_msgTypes[322]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20700,7 +22326,7 @@ func (x *NonNumericLiteral) String() string {
 func (*NonNumericLiteral) ProtoMessage() {}
 
 func (x *NonNumericLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[304]
+	mi := &file_cobol_proto_msgTypes[322]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20713,7 +22339,7 @@ func (x *NonNumericLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NonNumericLiteral.ProtoReflect.Descriptor instead.
 func (*NonNumericLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{304}
+	return file_cobol_proto_rawDescGZIP(), []int{322}
 }
 
 func (x *NonNumericLiteral) GetValue() string {
@@ -20734,7 +22360,7 @@ type StringLiteral struct {
 func (x *StringLiteral) Reset() {
 	*x = StringLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[305]
+		mi := &file_cobol_proto_msgTypes[323]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20747,7 +22373,7 @@ func (x *StringLiteral) String() string {
 func (*StringLiteral) ProtoMessage() {}
 
 func (x *StringLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[305]
+	mi := &file_cobol_proto_msgTypes[323]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20760,7 +22386,7 @@ func (x *StringLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StringLiteral.ProtoReflect.Descriptor instead.
 func (*StringLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{305}
+	return file_cobol_proto_rawDescGZIP(), []int{323}
 }
 
 func (x *StringLiteral) GetValue() string {
@@ -20781,7 +22407,7 @@ type DbcsLiteral struct {
 func (x *DbcsLiteral) Reset() {
 	*x = DbcsLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[306]
+		mi := &file_cobol_proto_msgTypes[324]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20794,7 +22420,7 @@ func (x *DbcsLiteral) String() string {
 func (*DbcsLiteral) ProtoMessage() {}
 
 func (x *DbcsLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[306]
+	mi := &file_cobol_proto_msgTypes[324]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20807,7 +22433,7 @@ func (x *DbcsLiteral) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DbcsLiteral.ProtoReflect.Descriptor instead.
 func (*DbcsLiteral) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{306}
+	return file_cobol_proto_rawDescGZIP(), []int{324}
 }
 
 func (x *DbcsLiteral) GetValue() string {
@@ -20828,7 +22454,7 @@ type HexNumber struct {
 func (x *HexNumber) Reset() {
 	*x = HexNumber{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[307]
+		mi := &file_cobol_proto_msgTypes[325]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20841,7 +22467,7 @@ func (x *HexNumber) String() string {
 func (*HexNumber) ProtoMessage() {}
 
 func (x *HexNumber) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[307]
+	mi := &file_cobol_proto_msgTypes[325]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20854,7 +22480,7 @@ func (x *HexNumber) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HexNumber.ProtoReflect.Descriptor instead.
 func (*HexNumber) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{307}
+	return file_cobol_proto_rawDescGZIP(), []int{325}
 }
 
 func (x *HexNumber) GetValue() string {
@@ -20875,7 +22501,7 @@ type NullTerminated struct {
 func (x *NullTerminated) Reset() {
 	*x = NullTerminated{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[308]
+		mi := &file_cobol_proto_msgTypes[326]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20888,7 +22514,7 @@ func (x *NullTerminated) String() string {
 func (*NullTerminated) ProtoMessage() {}
 
 func (x *NullTerminated) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[308]
+	mi := &file_cobol_proto_msgTypes[326]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20901,7 +22527,7 @@ func (x *NullTerminated) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NullTerminated.ProtoReflect.Descriptor instead.
 func (*NullTerminated) Descriptor() ([]byte, []int) {
-	return file_cobol_proto_rawDescGZIP(), []int{308}
+	return file_cobol_proto_rawDescGZIP(), []int{326}
 }
 
 func (x *NullTerminated) GetValue() string {
@@ -20922,7 +22548,7 @@ type AlphabetClause_Also struct {
 func (x *AlphabetClause_Also) Reset() {
 	*x = AlphabetClause_Also{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[309]
+		mi := &file_cobol_proto_msgTypes[327]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20935,7 +22561,7 @@ func (x *AlphabetClause_Also) String() string {
 func (*AlphabetClause_Also) ProtoMessage() {}
 
 func (x *AlphabetClause_Also) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[309]
+	mi := &file_cobol_proto_msgTypes[327]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20971,7 +22597,7 @@ type AlphabetClause_AlphabetLiteral struct {
 func (x *AlphabetClause_AlphabetLiteral) Reset() {
 	*x = AlphabetClause_AlphabetLiteral{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[310]
+		mi := &file_cobol_proto_msgTypes[328]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -20984,7 +22610,7 @@ func (x *AlphabetClause_AlphabetLiteral) String() string {
 func (*AlphabetClause_AlphabetLiteral) ProtoMessage() {}
 
 func (x *AlphabetClause_AlphabetLiteral) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[310]
+	mi := &file_cobol_proto_msgTypes[328]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21032,7 +22658,7 @@ type AlphabetClause_AlphabetLiterals struct {
 func (x *AlphabetClause_AlphabetLiterals) Reset() {
 	*x = AlphabetClause_AlphabetLiterals{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[311]
+		mi := &file_cobol_proto_msgTypes[329]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21045,7 +22671,7 @@ func (x *AlphabetClause_AlphabetLiterals) String() string {
 func (*AlphabetClause_AlphabetLiterals) ProtoMessage() {}
 
 func (x *AlphabetClause_AlphabetLiterals) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[311]
+	mi := &file_cobol_proto_msgTypes[329]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21084,7 +22710,7 @@ type AlphabetClause_Alphanumeric struct {
 func (x *AlphabetClause_Alphanumeric) Reset() {
 	*x = AlphabetClause_Alphanumeric{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[312]
+		mi := &file_cobol_proto_msgTypes[330]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21097,7 +22723,7 @@ func (x *AlphabetClause_Alphanumeric) String() string {
 func (*AlphabetClause_Alphanumeric) ProtoMessage() {}
 
 func (x *AlphabetClause_Alphanumeric) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[312]
+	mi := &file_cobol_proto_msgTypes[330]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21175,7 +22801,7 @@ type AlphabetClause_National struct {
 func (x *AlphabetClause_National) Reset() {
 	*x = AlphabetClause_National{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[313]
+		mi := &file_cobol_proto_msgTypes[331]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21188,7 +22814,7 @@ func (x *AlphabetClause_National) String() string {
 func (*AlphabetClause_National) ProtoMessage() {}
 
 func (x *AlphabetClause_National) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[313]
+	mi := &file_cobol_proto_msgTypes[331]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21229,7 +22855,7 @@ type LabelRecordsClause_DataNames struct {
 func (x *LabelRecordsClause_DataNames) Reset() {
 	*x = LabelRecordsClause_DataNames{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[314]
+		mi := &file_cobol_proto_msgTypes[332]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21242,7 +22868,7 @@ func (x *LabelRecordsClause_DataNames) String() string {
 func (*LabelRecordsClause_DataNames) ProtoMessage() {}
 
 func (x *LabelRecordsClause_DataNames) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[314]
+	mi := &file_cobol_proto_msgTypes[332]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21297,7 +22923,7 @@ type DataDescriptionEntry_Format1 struct {
 func (x *DataDescriptionEntry_Format1) Reset() {
 	*x = DataDescriptionEntry_Format1{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[315]
+		mi := &file_cobol_proto_msgTypes[333]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21310,7 +22936,7 @@ func (x *DataDescriptionEntry_Format1) String() string {
 func (*DataDescriptionEntry_Format1) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_Format1) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[315]
+	mi := &file_cobol_proto_msgTypes[333]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21492,7 +23118,7 @@ type DataDescriptionEntry_Format2 struct {
 func (x *DataDescriptionEntry_Format2) Reset() {
 	*x = DataDescriptionEntry_Format2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[316]
+		mi := &file_cobol_proto_msgTypes[334]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21505,7 +23131,7 @@ func (x *DataDescriptionEntry_Format2) String() string {
 func (*DataDescriptionEntry_Format2) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_Format2) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[316]
+	mi := &file_cobol_proto_msgTypes[334]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21547,7 +23173,7 @@ type DataDescriptionEntry_Format3 struct {
 func (x *DataDescriptionEntry_Format3) Reset() {
 	*x = DataDescriptionEntry_Format3{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[317]
+		mi := &file_cobol_proto_msgTypes[335]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21560,7 +23186,7 @@ func (x *DataDescriptionEntry_Format3) String() string {
 func (*DataDescriptionEntry_Format3) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_Format3) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[317]
+	mi := &file_cobol_proto_msgTypes[335]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21599,7 +23225,7 @@ type DataDescriptionEntry_ExecSql struct {
 func (x *DataDescriptionEntry_ExecSql) Reset() {
 	*x = DataDescriptionEntry_ExecSql{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[318]
+		mi := &file_cobol_proto_msgTypes[336]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21612,7 +23238,7 @@ func (x *DataDescriptionEntry_ExecSql) String() string {
 func (*DataDescriptionEntry_ExecSql) ProtoMessage() {}
 
 func (x *DataDescriptionEntry_ExecSql) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[318]
+	mi := &file_cobol_proto_msgTypes[336]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21640,7 +23266,7 @@ type DataTypeClause_Lob struct {
 func (x *DataTypeClause_Lob) Reset() {
 	*x = DataTypeClause_Lob{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[319]
+		mi := &file_cobol_proto_msgTypes[337]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21653,7 +23279,7 @@ func (x *DataTypeClause_Lob) String() string {
 func (*DataTypeClause_Lob) ProtoMessage() {}
 
 func (x *DataTypeClause_Lob) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[319]
+	mi := &file_cobol_proto_msgTypes[337]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21694,7 +23320,7 @@ type DataOccursClause_Sort struct {
 func (x *DataOccursClause_Sort) Reset() {
 	*x = DataOccursClause_Sort{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[320]
+		mi := &file_cobol_proto_msgTypes[338]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21707,7 +23333,7 @@ func (x *DataOccursClause_Sort) String() string {
 func (*DataOccursClause_Sort) ProtoMessage() {}
 
 func (x *DataOccursClause_Sort) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[320]
+	mi := &file_cobol_proto_msgTypes[338]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21741,7 +23367,7 @@ type DataOccursClause_Indexed struct {
 func (x *DataOccursClause_Indexed) Reset() {
 	*x = DataOccursClause_Indexed{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[321]
+		mi := &file_cobol_proto_msgTypes[339]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21754,7 +23380,7 @@ func (x *DataOccursClause_Indexed) String() string {
 func (*DataOccursClause_Indexed) ProtoMessage() {}
 
 func (x *DataOccursClause_Indexed) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[321]
+	mi := &file_cobol_proto_msgTypes[339]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21791,7 +23417,7 @@ type ReportGroupDescriptionEntry_Vertical struct {
 func (x *ReportGroupDescriptionEntry_Vertical) Reset() {
 	*x = ReportGroupDescriptionEntry_Vertical{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[322]
+		mi := &file_cobol_proto_msgTypes[340]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21804,7 +23430,7 @@ func (x *ReportGroupDescriptionEntry_Vertical) String() string {
 func (*ReportGroupDescriptionEntry_Vertical) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry_Vertical) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[322]
+	mi := &file_cobol_proto_msgTypes[340]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21860,7 +23486,7 @@ type ReportGroupDescriptionEntry_Single struct {
 func (x *ReportGroupDescriptionEntry_Single) Reset() {
 	*x = ReportGroupDescriptionEntry_Single{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[323]
+		mi := &file_cobol_proto_msgTypes[341]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21873,7 +23499,7 @@ func (x *ReportGroupDescriptionEntry_Single) String() string {
 func (*ReportGroupDescriptionEntry_Single) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry_Single) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[323]
+	mi := &file_cobol_proto_msgTypes[341]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21925,7 +23551,7 @@ type ReportGroupDescriptionEntry_Printable struct {
 func (x *ReportGroupDescriptionEntry_Printable) Reset() {
 	*x = ReportGroupDescriptionEntry_Printable{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[324]
+		mi := &file_cobol_proto_msgTypes[342]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -21938,7 +23564,7 @@ func (x *ReportGroupDescriptionEntry_Printable) String() string {
 func (*ReportGroupDescriptionEntry_Printable) ProtoMessage() {}
 
 func (x *ReportGroupDescriptionEntry_Printable) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[324]
+	mi := &file_cobol_proto_msgTypes[342]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22047,7 +23673,7 @@ type TypeClause_ReportHeading struct {
 func (x *TypeClause_ReportHeading) Reset() {
 	*x = TypeClause_ReportHeading{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[325]
+		mi := &file_cobol_proto_msgTypes[343]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22060,7 +23686,7 @@ func (x *TypeClause_ReportHeading) String() string {
 func (*TypeClause_ReportHeading) ProtoMessage() {}
 
 func (x *TypeClause_ReportHeading) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[325]
+	mi := &file_cobol_proto_msgTypes[343]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22085,7 +23711,7 @@ type TypeClause_PageHeading struct {
 func (x *TypeClause_PageHeading) Reset() {
 	*x = TypeClause_PageHeading{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[326]
+		mi := &file_cobol_proto_msgTypes[344]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22098,7 +23724,7 @@ func (x *TypeClause_PageHeading) String() string {
 func (*TypeClause_PageHeading) ProtoMessage() {}
 
 func (x *TypeClause_PageHeading) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[326]
+	mi := &file_cobol_proto_msgTypes[344]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22129,7 +23755,7 @@ type TypeClause_ControlHeading struct {
 func (x *TypeClause_ControlHeading) Reset() {
 	*x = TypeClause_ControlHeading{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[327]
+		mi := &file_cobol_proto_msgTypes[345]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22142,7 +23768,7 @@ func (x *TypeClause_ControlHeading) String() string {
 func (*TypeClause_ControlHeading) ProtoMessage() {}
 
 func (x *TypeClause_ControlHeading) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[327]
+	mi := &file_cobol_proto_msgTypes[345]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22204,7 +23830,7 @@ type TypeClause_Detail struct {
 func (x *TypeClause_Detail) Reset() {
 	*x = TypeClause_Detail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[328]
+		mi := &file_cobol_proto_msgTypes[346]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22217,7 +23843,7 @@ func (x *TypeClause_Detail) String() string {
 func (*TypeClause_Detail) ProtoMessage() {}
 
 func (x *TypeClause_Detail) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[328]
+	mi := &file_cobol_proto_msgTypes[346]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22248,7 +23874,7 @@ type TypeClause_ControlFooting struct {
 func (x *TypeClause_ControlFooting) Reset() {
 	*x = TypeClause_ControlFooting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[329]
+		mi := &file_cobol_proto_msgTypes[347]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22261,7 +23887,7 @@ func (x *TypeClause_ControlFooting) String() string {
 func (*TypeClause_ControlFooting) ProtoMessage() {}
 
 func (x *TypeClause_ControlFooting) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[329]
+	mi := &file_cobol_proto_msgTypes[347]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22323,7 +23949,7 @@ type TypeClause_PageFooting struct {
 func (x *TypeClause_PageFooting) Reset() {
 	*x = TypeClause_PageFooting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[330]
+		mi := &file_cobol_proto_msgTypes[348]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22336,7 +23962,7 @@ func (x *TypeClause_PageFooting) String() string {
 func (*TypeClause_PageFooting) ProtoMessage() {}
 
 func (x *TypeClause_PageFooting) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[330]
+	mi := &file_cobol_proto_msgTypes[348]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22361,7 +23987,7 @@ type TypeClause_ReportFooting struct {
 func (x *TypeClause_ReportFooting) Reset() {
 	*x = TypeClause_ReportFooting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[331]
+		mi := &file_cobol_proto_msgTypes[349]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22374,7 +24000,7 @@ func (x *TypeClause_ReportFooting) String() string {
 func (*TypeClause_ReportFooting) ProtoMessage() {}
 
 func (x *TypeClause_ReportFooting) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[331]
+	mi := &file_cobol_proto_msgTypes[349]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22404,7 +24030,7 @@ type LibraryDescriptionEntry_Import struct {
 func (x *LibraryDescriptionEntry_Import) Reset() {
 	*x = LibraryDescriptionEntry_Import{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[332]
+		mi := &file_cobol_proto_msgTypes[350]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22417,7 +24043,7 @@ func (x *LibraryDescriptionEntry_Import) String() string {
 func (*LibraryDescriptionEntry_Import) ProtoMessage() {}
 
 func (x *LibraryDescriptionEntry_Import) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[332]
+	mi := &file_cobol_proto_msgTypes[350]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22473,7 +24099,7 @@ type LibraryDescriptionEntry_Export struct {
 func (x *LibraryDescriptionEntry_Export) Reset() {
 	*x = LibraryDescriptionEntry_Export{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[333]
+		mi := &file_cobol_proto_msgTypes[351]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22486,7 +24112,7 @@ func (x *LibraryDescriptionEntry_Export) String() string {
 func (*LibraryDescriptionEntry_Export) ProtoMessage() {}
 
 func (x *LibraryDescriptionEntry_Export) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[333]
+	mi := &file_cobol_proto_msgTypes[351]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22531,7 +24157,7 @@ type ProcedureClause2_WithName struct {
 func (x *ProcedureClause2_WithName) Reset() {
 	*x = ProcedureClause2_WithName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[334]
+		mi := &file_cobol_proto_msgTypes[352]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22544,7 +24170,7 @@ func (x *ProcedureClause2_WithName) String() string {
 func (*ProcedureClause2_WithName) ProtoMessage() {}
 
 func (x *ProcedureClause2_WithName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[334]
+	mi := &file_cobol_proto_msgTypes[352]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22612,7 +24238,7 @@ type ProcedureClause2_UsingName struct {
 func (x *ProcedureClause2_UsingName) Reset() {
 	*x = ProcedureClause2_UsingName{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[335]
+		mi := &file_cobol_proto_msgTypes[353]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22625,7 +24251,7 @@ func (x *ProcedureClause2_UsingName) String() string {
 func (*ProcedureClause2_UsingName) ProtoMessage() {}
 
 func (x *ProcedureClause2_UsingName) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[335]
+	mi := &file_cobol_proto_msgTypes[353]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22698,7 +24324,7 @@ type CommunicationDescriptionEntry_Input struct {
 func (x *CommunicationDescriptionEntry_Input) Reset() {
 	*x = CommunicationDescriptionEntry_Input{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[336]
+		mi := &file_cobol_proto_msgTypes[354]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22711,7 +24337,7 @@ func (x *CommunicationDescriptionEntry_Input) String() string {
 func (*CommunicationDescriptionEntry_Input) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry_Input) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[336]
+	mi := &file_cobol_proto_msgTypes[354]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22813,7 +24439,7 @@ type CommunicationDescriptionEntry_Output struct {
 func (x *CommunicationDescriptionEntry_Output) Reset() {
 	*x = CommunicationDescriptionEntry_Output{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[337]
+		mi := &file_cobol_proto_msgTypes[355]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22826,7 +24452,7 @@ func (x *CommunicationDescriptionEntry_Output) String() string {
 func (*CommunicationDescriptionEntry_Output) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry_Output) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[337]
+	mi := &file_cobol_proto_msgTypes[355]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22900,7 +24526,7 @@ type CommunicationDescriptionEntry_Io struct {
 func (x *CommunicationDescriptionEntry_Io) Reset() {
 	*x = CommunicationDescriptionEntry_Io{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[338]
+		mi := &file_cobol_proto_msgTypes[356]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -22913,7 +24539,7 @@ func (x *CommunicationDescriptionEntry_Io) String() string {
 func (*CommunicationDescriptionEntry_Io) ProtoMessage() {}
 
 func (x *CommunicationDescriptionEntry_Io) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[338]
+	mi := &file_cobol_proto_msgTypes[356]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22987,7 +24613,7 @@ type ProcedureDivision_ByReference struct {
 func (x *ProcedureDivision_ByReference) Reset() {
 	*x = ProcedureDivision_ByReference{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[339]
+		mi := &file_cobol_proto_msgTypes[357]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23000,7 +24626,7 @@ func (x *ProcedureDivision_ByReference) String() string {
 func (*ProcedureDivision_ByReference) ProtoMessage() {}
 
 func (x *ProcedureDivision_ByReference) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[339]
+	mi := &file_cobol_proto_msgTypes[357]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23077,7 +24703,7 @@ type ProcedureDivision_ByReferencePhrase struct {
 func (x *ProcedureDivision_ByReferencePhrase) Reset() {
 	*x = ProcedureDivision_ByReferencePhrase{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[340]
+		mi := &file_cobol_proto_msgTypes[358]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23090,7 +24716,7 @@ func (x *ProcedureDivision_ByReferencePhrase) String() string {
 func (*ProcedureDivision_ByReferencePhrase) ProtoMessage() {}
 
 func (x *ProcedureDivision_ByReferencePhrase) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[340]
+	mi := &file_cobol_proto_msgTypes[358]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23129,7 +24755,7 @@ type ProcedureDivision_ByValue struct {
 func (x *ProcedureDivision_ByValue) Reset() {
 	*x = ProcedureDivision_ByValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[341]
+		mi := &file_cobol_proto_msgTypes[359]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23142,7 +24768,7 @@ func (x *ProcedureDivision_ByValue) String() string {
 func (*ProcedureDivision_ByValue) ProtoMessage() {}
 
 func (x *ProcedureDivision_ByValue) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[341]
+	mi := &file_cobol_proto_msgTypes[359]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23219,7 +24845,7 @@ type ProcedureDivision_ByValuePhrase struct {
 func (x *ProcedureDivision_ByValuePhrase) Reset() {
 	*x = ProcedureDivision_ByValuePhrase{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[342]
+		mi := &file_cobol_proto_msgTypes[360]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23232,7 +24858,7 @@ func (x *ProcedureDivision_ByValuePhrase) String() string {
 func (*ProcedureDivision_ByValuePhrase) ProtoMessage() {}
 
 func (x *ProcedureDivision_ByValuePhrase) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[342]
+	mi := &file_cobol_proto_msgTypes[360]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23270,7 +24896,7 @@ type ProcedureDivision_UsingParameter struct {
 func (x *ProcedureDivision_UsingParameter) Reset() {
 	*x = ProcedureDivision_UsingParameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[343]
+		mi := &file_cobol_proto_msgTypes[361]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23283,7 +24909,7 @@ func (x *ProcedureDivision_UsingParameter) String() string {
 func (*ProcedureDivision_UsingParameter) ProtoMessage() {}
 
 func (x *ProcedureDivision_UsingParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[343]
+	mi := &file_cobol_proto_msgTypes[361]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23349,7 +24975,7 @@ type ProcedureDivision_GivingClause struct {
 func (x *ProcedureDivision_GivingClause) Reset() {
 	*x = ProcedureDivision_GivingClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[344]
+		mi := &file_cobol_proto_msgTypes[362]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23362,7 +24988,7 @@ func (x *ProcedureDivision_GivingClause) String() string {
 func (*ProcedureDivision_GivingClause) ProtoMessage() {}
 
 func (x *ProcedureDivision_GivingClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[344]
+	mi := &file_cobol_proto_msgTypes[362]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23404,7 +25030,7 @@ type ProcedureDivision_UsingClause struct {
 func (x *ProcedureDivision_UsingClause) Reset() {
 	*x = ProcedureDivision_UsingClause{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[345]
+		mi := &file_cobol_proto_msgTypes[363]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23417,7 +25043,7 @@ func (x *ProcedureDivision_UsingClause) String() string {
 func (*ProcedureDivision_UsingClause) ProtoMessage() {}
 
 func (x *ProcedureDivision_UsingClause) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[345]
+	mi := &file_cobol_proto_msgTypes[363]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23462,7 +25088,7 @@ type AddStatement_AddFrom struct {
 func (x *AddStatement_AddFrom) Reset() {
 	*x = AddStatement_AddFrom{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[346]
+		mi := &file_cobol_proto_msgTypes[364]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23475,7 +25101,7 @@ func (x *AddStatement_AddFrom) String() string {
 func (*AddStatement_AddFrom) ProtoMessage() {}
 
 func (x *AddStatement_AddFrom) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[346]
+	mi := &file_cobol_proto_msgTypes[364]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23543,7 +25169,7 @@ type AddStatement_AddToGiving struct {
 func (x *AddStatement_AddToGiving) Reset() {
 	*x = AddStatement_AddToGiving{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[347]
+		mi := &file_cobol_proto_msgTypes[365]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23556,7 +25182,7 @@ func (x *AddStatement_AddToGiving) String() string {
 func (*AddStatement_AddToGiving) ProtoMessage() {}
 
 func (x *AddStatement_AddToGiving) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[347]
+	mi := &file_cobol_proto_msgTypes[365]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23621,7 +25247,7 @@ type AddStatement_To struct {
 func (x *AddStatement_To) Reset() {
 	*x = AddStatement_To{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[348]
+		mi := &file_cobol_proto_msgTypes[366]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23634,7 +25260,7 @@ func (x *AddStatement_To) String() string {
 func (*AddStatement_To) ProtoMessage() {}
 
 func (x *AddStatement_To) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[348]
+	mi := &file_cobol_proto_msgTypes[366]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23677,7 +25303,7 @@ type AddStatement_ToGiving struct {
 func (x *AddStatement_ToGiving) Reset() {
 	*x = AddStatement_ToGiving{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[349]
+		mi := &file_cobol_proto_msgTypes[367]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23690,7 +25316,7 @@ func (x *AddStatement_ToGiving) String() string {
 func (*AddStatement_ToGiving) ProtoMessage() {}
 
 func (x *AddStatement_ToGiving) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[349]
+	mi := &file_cobol_proto_msgTypes[367]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23739,7 +25365,7 @@ type AddStatement_Corresponding struct {
 func (x *AddStatement_Corresponding) Reset() {
 	*x = AddStatement_Corresponding{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[350]
+		mi := &file_cobol_proto_msgTypes[368]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23752,7 +25378,7 @@ func (x *AddStatement_Corresponding) String() string {
 func (*AddStatement_Corresponding) ProtoMessage() {}
 
 func (x *AddStatement_Corresponding) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[350]
+	mi := &file_cobol_proto_msgTypes[368]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23793,7 +25419,7 @@ type AcceptStatement_FromDate struct {
 func (x *AcceptStatement_FromDate) Reset() {
 	*x = AcceptStatement_FromDate{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[351]
+		mi := &file_cobol_proto_msgTypes[369]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23806,7 +25432,7 @@ func (x *AcceptStatement_FromDate) String() string {
 func (*AcceptStatement_FromDate) ProtoMessage() {}
 
 func (x *AcceptStatement_FromDate) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[351]
+	mi := &file_cobol_proto_msgTypes[369]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23838,7 +25464,7 @@ type AcceptStatement_FromEscapeKey struct {
 func (x *AcceptStatement_FromEscapeKey) Reset() {
 	*x = AcceptStatement_FromEscapeKey{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[352]
+		mi := &file_cobol_proto_msgTypes[370]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23851,7 +25477,7 @@ func (x *AcceptStatement_FromEscapeKey) String() string {
 func (*AcceptStatement_FromEscapeKey) ProtoMessage() {}
 
 func (x *AcceptStatement_FromEscapeKey) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[352]
+	mi := &file_cobol_proto_msgTypes[370]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23878,7 +25504,7 @@ type AcceptStatement_FromMnemonic struct {
 func (x *AcceptStatement_FromMnemonic) Reset() {
 	*x = AcceptStatement_FromMnemonic{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[353]
+		mi := &file_cobol_proto_msgTypes[371]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23891,7 +25517,7 @@ func (x *AcceptStatement_FromMnemonic) String() string {
 func (*AcceptStatement_FromMnemonic) ProtoMessage() {}
 
 func (x *AcceptStatement_FromMnemonic) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[353]
+	mi := &file_cobol_proto_msgTypes[371]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23923,7 +25549,7 @@ type AcceptStatement_MessageCount struct {
 func (x *AcceptStatement_MessageCount) Reset() {
 	*x = AcceptStatement_MessageCount{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[354]
+		mi := &file_cobol_proto_msgTypes[372]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23936,7 +25562,7 @@ func (x *AcceptStatement_MessageCount) String() string {
 func (*AcceptStatement_MessageCount) ProtoMessage() {}
 
 func (x *AcceptStatement_MessageCount) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[354]
+	mi := &file_cobol_proto_msgTypes[372]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23963,7 +25589,7 @@ type UseAfterClause_FileNames struct {
 func (x *UseAfterClause_FileNames) Reset() {
 	*x = UseAfterClause_FileNames{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_cobol_proto_msgTypes[355]
+		mi := &file_cobol_proto_msgTypes[373]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -23976,7 +25602,7 @@ func (x *UseAfterClause_FileNames) String() string {
 func (*UseAfterClause_FileNames) ProtoMessage() {}
 
 func (x *UseAfterClause_FileNames) ProtoReflect() protoreflect.Message {
-	mi := &file_cobol_proto_msgTypes[355]
+	mi := &file_cobol_proto_msgTypes[373]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23995,6 +25621,116 @@ func (*UseAfterClause_FileNames) Descriptor() ([]byte, []int) {
 func (x *UseAfterClause_FileNames) GetFileNames() []*FileName {
 	if x != nil {
 		return x.FileNames
+	}
+	return nil
+}
+
+type ConditionNameReference_SubscriptReference struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Subscripts []*Subscript `protobuf:"bytes,2,rep,name=subscripts,proto3" json:"subscripts,omitempty"`
+}
+
+func (x *ConditionNameReference_SubscriptReference) Reset() {
+	*x = ConditionNameReference_SubscriptReference{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[374]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ConditionNameReference_SubscriptReference) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConditionNameReference_SubscriptReference) ProtoMessage() {}
+
+func (x *ConditionNameReference_SubscriptReference) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[374]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConditionNameReference_SubscriptReference.ProtoReflect.Descriptor instead.
+func (*ConditionNameReference_SubscriptReference) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{259, 0}
+}
+
+func (x *ConditionNameReference_SubscriptReference) GetSubscripts() []*Subscript {
+	if x != nil {
+		return x.Subscripts
+	}
+	return nil
+}
+
+type ConditionNameReference_InSubscript struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	InDatas []*InData                                    `protobuf:"bytes,1,rep,name=in_datas,json=inDatas,proto3" json:"in_datas,omitempty"`
+	InFile  *InFile                                      `protobuf:"bytes,2,opt,name=in_file,json=inFile,proto3" json:"in_file,omitempty"`
+	Refs    []*ConditionNameReference_SubscriptReference `protobuf:"bytes,3,rep,name=refs,proto3" json:"refs,omitempty"`
+}
+
+func (x *ConditionNameReference_InSubscript) Reset() {
+	*x = ConditionNameReference_InSubscript{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_cobol_proto_msgTypes[375]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ConditionNameReference_InSubscript) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConditionNameReference_InSubscript) ProtoMessage() {}
+
+func (x *ConditionNameReference_InSubscript) ProtoReflect() protoreflect.Message {
+	mi := &file_cobol_proto_msgTypes[375]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConditionNameReference_InSubscript.ProtoReflect.Descriptor instead.
+func (*ConditionNameReference_InSubscript) Descriptor() ([]byte, []int) {
+	return file_cobol_proto_rawDescGZIP(), []int{259, 1}
+}
+
+func (x *ConditionNameReference_InSubscript) GetInDatas() []*InData {
+	if x != nil {
+		return x.InDatas
+	}
+	return nil
+}
+
+func (x *ConditionNameReference_InSubscript) GetInFile() *InFile {
+	if x != nil {
+		return x.InFile
+	}
+	return nil
+}
+
+func (x *ConditionNameReference_InSubscript) GetRefs() []*ConditionNameReference_SubscriptReference {
+	if x != nil {
+		return x.Refs
 	}
 	return nil
 }
@@ -26657,20 +28393,20 @@ var file_cobol_proto_rawDesc = []byte{
 	0x61, 0x6d, 0x65, 0x52, 0x0c, 0x6d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d,
 	0x65, 0x1a, 0x0e, 0x0a, 0x0c, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x75, 0x6e,
 	0x74, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x42, 0x0a, 0x11, 0x4f,
-	0x6e, 0x45, 0x78, 0x63, 0x65, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65,
+	0x6e, 0x53, 0x69, 0x7a, 0x65, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x50, 0x68, 0x72, 0x61, 0x73, 0x65,
 	0x12, 0x2d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x01,
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d,
 	0x65, 0x6e, 0x74, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x22,
-	0x45, 0x0a, 0x14, 0x4e, 0x6f, 0x74, 0x4f, 0x6e, 0x45, 0x78, 0x63, 0x65, 0x70, 0x74, 0x69, 0x6f,
-	0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x65,
+	0x45, 0x0a, 0x14, 0x4e, 0x6f, 0x74, 0x4f, 0x6e, 0x53, 0x69, 0x7a, 0x65, 0x45, 0x72, 0x72, 0x6f,
+	0x72, 0x50, 0x68, 0x72, 0x61, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x65,
 	0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62,
 	0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x74,
-	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x22, 0x42, 0x0a, 0x11, 0x4f, 0x6e, 0x53, 0x69, 0x7a, 0x65,
-	0x45, 0x72, 0x72, 0x6f, 0x72, 0x50, 0x68, 0x72, 0x61, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73,
+	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x22, 0x42, 0x0a, 0x11, 0x4f, 0x6e, 0x45, 0x78, 0x63, 0x65,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x61, 0x75, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73,
 	0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x0a,
 	0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x22, 0x45, 0x0a, 0x14, 0x4e, 0x6f,
-	0x74, 0x4f, 0x6e, 0x53, 0x69, 0x7a, 0x65, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x50, 0x68, 0x72, 0x61,
+	0x74, 0x4f, 0x6e, 0x45, 0x78, 0x63, 0x65, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x61, 0x75,
 	0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x74, 0x61, 0x74,
 	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74,
@@ -26715,408 +28451,679 @@ var file_cobol_proto_rawDesc = []byte{
 	0x32, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x09, 0x0a, 0x05, 0x49, 0x4e, 0x50, 0x55, 0x54,
 	0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x4f, 0x55, 0x54, 0x50, 0x55, 0x54, 0x10, 0x01, 0x12, 0x07,
 	0x0a, 0x03, 0x49, 0x5f, 0x4f, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x45, 0x58, 0x54, 0x45, 0x4e,
-	0x44, 0x10, 0x03, 0x42, 0x04, 0x0a, 0x02, 0x6f, 0x6e, 0x22, 0x16, 0x0a, 0x14, 0x41, 0x72, 0x69,
+	0x44, 0x10, 0x03, 0x42, 0x04, 0x0a, 0x02, 0x6f, 0x6e, 0x22, 0x6f, 0x0a, 0x14, 0x41, 0x72, 0x69,
 	0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f,
-	0x6e, 0x22, 0x8a, 0x02, 0x0a, 0x0a, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
-	0x12, 0x47, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61,
-	0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e,
-	0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61,
-	0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65,
-	0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2e, 0x0a, 0x0a, 0x74, 0x61, 0x62,
-	0x6c, 0x65, 0x5f, 0x63, 0x61, 0x6c, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e,
-	0x70, 0x62, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x48, 0x00, 0x52, 0x09,
-	0x74, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x12, 0x37, 0x0a, 0x0d, 0x66, 0x75, 0x6e,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x61, 0x6c, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61,
-	0x6c, 0x6c, 0x48, 0x00, 0x52, 0x0c, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61,
-	0x6c, 0x6c, 0x12, 0x40, 0x0a, 0x10, 0x73, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x5f, 0x72, 0x65,
-	0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x70,
-	0x62, 0x2e, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65,
-	0x72, 0x48, 0x00, 0x52, 0x0f, 0x73, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x67, 0x69,
-	0x73, 0x74, 0x65, 0x72, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0xc7,
-	0x01, 0x0a, 0x09, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x12, 0x45, 0x0a, 0x13,
-	0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51,
-	0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65,
-	0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e,
-	0x61, 0x6d, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
-	0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x75, 0x62,
-	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x6e, 0x12, 0x29, 0x0a, 0x09, 0x6d, 0x75, 0x6c, 0x74, 0x5f, 0x64, 0x69, 0x76, 0x73, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x75, 0x6c, 0x74, 0x44, 0x69,
+	0x76, 0x73, 0x52, 0x08, 0x6d, 0x75, 0x6c, 0x74, 0x44, 0x69, 0x76, 0x73, 0x12, 0x2c, 0x0a, 0x0a,
+	0x70, 0x6c, 0x75, 0x73, 0x5f, 0x6d, 0x69, 0x6e, 0x75, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x6c, 0x75, 0x73, 0x4d, 0x69, 0x6e, 0x75, 0x73, 0x52,
+	0x09, 0x70, 0x6c, 0x75, 0x73, 0x4d, 0x69, 0x6e, 0x75, 0x73, 0x22, 0x36, 0x0a, 0x09, 0x50, 0x6c,
+	0x75, 0x73, 0x4d, 0x69, 0x6e, 0x75, 0x73, 0x12, 0x29, 0x0a, 0x09, 0x6d, 0x75, 0x6c, 0x74, 0x5f,
+	0x64, 0x69, 0x76, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e,
+	0x4d, 0x75, 0x6c, 0x74, 0x44, 0x69, 0x76, 0x73, 0x52, 0x08, 0x6d, 0x75, 0x6c, 0x74, 0x44, 0x69,
+	0x76, 0x73, 0x22, 0x56, 0x0a, 0x08, 0x4d, 0x75, 0x6c, 0x74, 0x44, 0x69, 0x76, 0x73, 0x12, 0x22,
+	0x0a, 0x06, 0x70, 0x6f, 0x77, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a,
+	0x2e, 0x70, 0x62, 0x2e, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x73, 0x52, 0x06, 0x70, 0x6f, 0x77, 0x65,
+	0x72, 0x73, 0x12, 0x26, 0x0a, 0x08, 0x6d, 0x75, 0x6c, 0x74, 0x5f, 0x64, 0x69, 0x76, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x75, 0x6c, 0x74, 0x44, 0x69,
+	0x76, 0x52, 0x07, 0x6d, 0x75, 0x6c, 0x74, 0x44, 0x69, 0x76, 0x22, 0x2d, 0x0a, 0x07, 0x4d, 0x75,
+	0x6c, 0x74, 0x44, 0x69, 0x76, 0x12, 0x22, 0x0a, 0x06, 0x70, 0x6f, 0x77, 0x65, 0x72, 0x73, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x6f, 0x77, 0x65, 0x72,
+	0x73, 0x52, 0x06, 0x70, 0x6f, 0x77, 0x65, 0x72, 0x73, 0x22, 0x4c, 0x0a, 0x06, 0x50, 0x6f, 0x77,
+	0x65, 0x72, 0x73, 0x12, 0x1f, 0x0a, 0x05, 0x62, 0x61, 0x73, 0x69, 0x73, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x09, 0x2e, 0x70, 0x62, 0x2e, 0x42, 0x61, 0x73, 0x69, 0x73, 0x52, 0x05, 0x62,
+	0x61, 0x73, 0x69, 0x73, 0x12, 0x21, 0x0a, 0x06, 0x70, 0x6f, 0x77, 0x65, 0x72, 0x73, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x52,
+	0x06, 0x70, 0x6f, 0x77, 0x65, 0x72, 0x73, 0x22, 0x28, 0x0a, 0x05, 0x50, 0x6f, 0x77, 0x65, 0x72,
+	0x12, 0x1f, 0x0a, 0x05, 0x62, 0x61, 0x73, 0x69, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x09, 0x2e, 0x70, 0x62, 0x2e, 0x42, 0x61, 0x73, 0x69, 0x73, 0x52, 0x05, 0x62, 0x61, 0x73, 0x69,
+	0x73, 0x22, 0xbd, 0x01, 0x0a, 0x05, 0x42, 0x61, 0x73, 0x69, 0x73, 0x12, 0x4f, 0x0a, 0x15, 0x61,
+	0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e,
+	0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74,
+	0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x30, 0x0a, 0x0a,
+	0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
+	0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x27,
+	0x0a, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x07,
+	0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f,
+	0x66, 0x22, 0x95, 0x01, 0x0a, 0x09, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x4a, 0x0a, 0x14, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x63, 0x6f,
+	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e,
+	0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x6f, 0x6e,
+	0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x13, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62,
+	0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x3c, 0x0a, 0x10, 0x61,
+	0x6e, 0x64, 0x5f, 0x6f, 0x72, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x6e, 0x64, 0x4f, 0x72,
+	0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0e, 0x61, 0x6e, 0x64, 0x4f, 0x72,
+	0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xdf, 0x01, 0x0a, 0x0e, 0x41, 0x6e,
+	0x64, 0x4f, 0x72, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2f, 0x0a, 0x06,
+	0x61, 0x6e, 0x64, 0x5f, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x70,
+	0x62, 0x2e, 0x41, 0x6e, 0x64, 0x4f, 0x72, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e,
+	0x2e, 0x41, 0x6e, 0x64, 0x4f, 0x72, 0x52, 0x05, 0x61, 0x6e, 0x64, 0x4f, 0x72, 0x12, 0x4a, 0x0a,
+	0x14, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x64,
+	0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x70, 0x62,
+	0x2e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x13, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62, 0x6c, 0x65,
+	0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x36, 0x0a, 0x0d, 0x61, 0x62, 0x62,
+	0x72, 0x65, 0x76, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x62, 0x62, 0x72, 0x65, 0x76, 0x69, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x0d, 0x61, 0x62, 0x62, 0x72, 0x65, 0x76, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x22, 0x18, 0x0a, 0x05, 0x41, 0x6e, 0x64, 0x4f, 0x72, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x4e,
+	0x44, 0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x4f, 0x52, 0x10, 0x01, 0x22, 0x67, 0x0a, 0x13, 0x43,
+	0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x10, 0x0a, 0x03, 0x6e, 0x6f, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
+	0x03, 0x6e, 0x6f, 0x74, 0x12, 0x3e, 0x0a, 0x10, 0x73, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x5f, 0x63,
+	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13,
+	0x2e, 0x70, 0x62, 0x2e, 0x53, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x0f, 0x73, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69,
+	0x74, 0x69, 0x6f, 0x6e, 0x22, 0xa9, 0x02, 0x0a, 0x0f, 0x53, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x43,
+	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2d, 0x0a, 0x09, 0x63, 0x6f, 0x6e, 0x64,
+	0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62,
+	0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6f,
+	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x46, 0x0a, 0x12, 0x72, 0x65, 0x6c, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x11, 0x72, 0x65,
+	0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x3d, 0x0a, 0x0f, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6c,
+	0x61, 0x73, 0x73, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x0e,
+	0x63, 0x6c, 0x61, 0x73, 0x73, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x56,
+	0x0a, 0x18, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
+	0x5f, 0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1a, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e,
+	0x61, 0x6d, 0x65, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x48, 0x00, 0x52, 0x16,
+	0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x66,
+	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66,
+	0x22, 0x8f, 0x02, 0x0a, 0x0e, 0x43, 0x6c, 0x61, 0x73, 0x73, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x2e, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65,
+	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65,
+	0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
+	0x69, 0x65, 0x72, 0x12, 0x2f, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0e, 0x32, 0x17, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6c, 0x61, 0x73, 0x73, 0x43, 0x6f, 0x6e,
+	0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x48, 0x00, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x12, 0x2e, 0x0a, 0x0a, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x5f, 0x6e, 0x61,
+	0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6c,
+	0x61, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6c, 0x61, 0x73, 0x73,
+	0x4e, 0x61, 0x6d, 0x65, 0x22, 0x64, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07,
+	0x4e, 0x55, 0x4d, 0x45, 0x52, 0x49, 0x43, 0x10, 0x00, 0x12, 0x0e, 0x0a, 0x0a, 0x41, 0x4c, 0x50,
+	0x48, 0x41, 0x42, 0x45, 0x54, 0x49, 0x43, 0x10, 0x01, 0x12, 0x14, 0x0a, 0x10, 0x41, 0x4c, 0x50,
+	0x48, 0x41, 0x42, 0x45, 0x54, 0x49, 0x43, 0x5f, 0x4c, 0x4f, 0x57, 0x45, 0x52, 0x10, 0x02, 0x12,
+	0x14, 0x0a, 0x10, 0x41, 0x4c, 0x50, 0x48, 0x41, 0x42, 0x45, 0x54, 0x49, 0x43, 0x5f, 0x55, 0x50,
+	0x50, 0x45, 0x52, 0x10, 0x03, 0x12, 0x08, 0x0a, 0x04, 0x44, 0x42, 0x43, 0x53, 0x10, 0x04, 0x12,
+	0x09, 0x0a, 0x05, 0x4b, 0x41, 0x4e, 0x4a, 0x49, 0x10, 0x05, 0x42, 0x06, 0x0a, 0x04, 0x74, 0x79,
+	0x70, 0x65, 0x22, 0xbc, 0x03, 0x0a, 0x16, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e,
+	0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x38, 0x0a,
+	0x0e, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x69,
+	0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0d, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x4b, 0x0a, 0x0c, 0x69, 0x6e, 0x5f, 0x73, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e,
+	0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65,
+	0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x53, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x48, 0x00, 0x52, 0x0b, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x12, 0x31, 0x0a, 0x0b, 0x69, 0x6e, 0x5f, 0x6d, 0x6e, 0x65, 0x6d, 0x6f,
+	0x6e, 0x69, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49,
+	0x6e, 0x4d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x6e, 0x4d,
+	0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x1a, 0x43, 0x0a, 0x12, 0x53, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x2d, 0x0a,
+	0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x1a, 0x9c, 0x01, 0x0a,
+	0x0b, 0x49, 0x6e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x12, 0x25, 0x0a, 0x08,
+	0x69, 0x6e, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0a,
+	0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x07, 0x69, 0x6e, 0x44, 0x61,
+	0x74, 0x61, 0x73, 0x12, 0x23, 0x0a, 0x07, 0x69, 0x6e, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x46, 0x69, 0x6c, 0x65,
+	0x52, 0x06, 0x69, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x41, 0x0a, 0x04, 0x72, 0x65, 0x66, 0x73,
+	0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6e, 0x64,
+	0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e,
+	0x63, 0x65, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x66, 0x65,
+	0x72, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x04, 0x72, 0x65, 0x66, 0x73, 0x42, 0x04, 0x0a, 0x02, 0x69,
+	0x6e, 0x22, 0xc3, 0x02, 0x0a, 0x11, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f,
+	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x53, 0x0a, 0x17, 0x72, 0x65, 0x6c, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x69, 0x67, 0x6e, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65,
+	0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x69, 0x67, 0x6e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x15, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53,
+	0x69, 0x67, 0x6e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x68, 0x0a, 0x1e,
+	0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65,
+	0x74, 0x69, 0x63, 0x5f, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x69, 0x73, 0x6f, 0x6e, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x43, 0x6f, 0x6d, 0x70,
+	0x61, 0x72, 0x69, 0x73, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x1c, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x43, 0x6f, 0x6d, 0x70,
+	0x61, 0x72, 0x69, 0x73, 0x6f, 0x6e, 0x12, 0x62, 0x0a, 0x1c, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x5f, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x5f, 0x63, 0x6f, 0x6d, 0x70,
+	0x61, 0x72, 0x69, 0x73, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x70,
+	0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e,
+	0x65, 0x64, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x69, 0x73, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x1a,
+	0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64,
+	0x43, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x69, 0x73, 0x6f, 0x6e, 0x42, 0x0b, 0x0a, 0x09, 0x63, 0x6f,
+	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xc8, 0x01, 0x0a, 0x15, 0x52, 0x65, 0x6c, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x53, 0x69, 0x67, 0x6e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x4d, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x5f,
+	0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63,
+	0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x14, 0x61, 0x72, 0x69, 0x74,
+	0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e,
+	0x12, 0x32, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1e,
+	0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x69, 0x67, 0x6e,
+	0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04,
+	0x74, 0x79, 0x70, 0x65, 0x22, 0x2c, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0c, 0x0a, 0x08,
+	0x50, 0x4f, 0x53, 0x49, 0x54, 0x49, 0x56, 0x45, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x4e, 0x45,
+	0x47, 0x41, 0x54, 0x49, 0x56, 0x45, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x5a, 0x45, 0x52, 0x4f,
+	0x10, 0x02, 0x22, 0xef, 0x01, 0x0a, 0x1c, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x41,
+	0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x69,
+	0x73, 0x6f, 0x6e, 0x12, 0x41, 0x0a, 0x0f, 0x6c, 0x65, 0x66, 0x74, 0x5f, 0x65, 0x78, 0x70, 0x72,
+	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70,
+	0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72,
+	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x0e, 0x6c, 0x65, 0x66, 0x74, 0x45, 0x78, 0x70, 0x72,
+	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x47, 0x0a, 0x13, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x61, 0x6c, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x52, 0x12, 0x72, 0x65, 0x6c,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12,
+	0x43, 0x0a, 0x10, 0x72, 0x69, 0x67, 0x68, 0x74, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41,
+	0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x52, 0x0f, 0x72, 0x69, 0x67, 0x68, 0x74, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x22, 0x93, 0x02, 0x0a, 0x1a, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x69,
+	0x73, 0x6f, 0x6e, 0x12, 0x4d, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69,
+	0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74,
+	0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x14, 0x61, 0x72,
+	0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69,
+	0x6f, 0x6e, 0x12, 0x47, 0x0a, 0x13, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
+	0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x16, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x4f,
+	0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x52, 0x12, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x5d, 0x0a, 0x1b, 0x72,
+	0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64,
+	0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1d, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f,
+	0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x19, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65,
+	0x64, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xfb, 0x01, 0x0a, 0x19, 0x52,
+	0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x43,
+	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x41, 0x0a, 0x0f, 0x6c, 0x65, 0x66, 0x74,
+	0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69,
+	0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x0e, 0x6c, 0x65, 0x66,
+	0x74, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x3a, 0x0a, 0x06, 0x61,
+	0x6e, 0x64, 0x5f, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x23, 0x2e, 0x70, 0x62,
+	0x2e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65,
+	0x64, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x6e, 0x64, 0x4f, 0x72,
+	0x52, 0x05, 0x61, 0x6e, 0x64, 0x4f, 0x72, 0x12, 0x45, 0x0a, 0x11, 0x72, 0x69, 0x67, 0x68, 0x74,
+	0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x03, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74,
+	0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x10, 0x72, 0x69,
+	0x67, 0x68, 0x74, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x22, 0x18,
+	0x0a, 0x05, 0x41, 0x6e, 0x64, 0x4f, 0x72, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x4e, 0x44, 0x10, 0x00,
+	0x12, 0x06, 0x0a, 0x02, 0x4f, 0x52, 0x10, 0x01, 0x22, 0xdc, 0x01, 0x0a, 0x0c, 0x41, 0x62, 0x62,
+	0x72, 0x65, 0x76, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x47, 0x0a, 0x13, 0x72, 0x65, 0x6c,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x6c, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x52, 0x12,
+	0x72, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74,
+	0x6f, 0x72, 0x12, 0x4d, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63,
+	0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69,
+	0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x14, 0x61, 0x72, 0x69,
+	0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f,
+	0x6e, 0x12, 0x34, 0x0a, 0x0c, 0x61, 0x62, 0x62, 0x72, 0x65, 0x76, 0x69, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x62, 0x62,
+	0x72, 0x65, 0x76, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0c, 0x61, 0x62, 0x62, 0x72, 0x65,
+	0x76, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x8a, 0x02, 0x0a, 0x0a, 0x49, 0x64, 0x65, 0x6e,
+	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x47, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66,
+	0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69,
+	0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x11, 0x71, 0x75,
+	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12,
+	0x2e, 0x0a, 0x0a, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x63, 0x61, 0x6c, 0x6c, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61,
+	0x6c, 0x6c, 0x48, 0x00, 0x52, 0x09, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x12,
+	0x37, 0x0a, 0x0d, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x61, 0x6c, 0x6c,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x75, 0x6e, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x6c, 0x6c, 0x48, 0x00, 0x52, 0x0c, 0x66, 0x75, 0x6e, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x6c, 0x6c, 0x12, 0x40, 0x0a, 0x10, 0x73, 0x70, 0x65, 0x63,
+	0x69, 0x61, 0x6c, 0x5f, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52,
+	0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0f, 0x73, 0x70, 0x65, 0x63, 0x69,
+	0x61, 0x6c, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e,
+	0x65, 0x5f, 0x6f, 0x66, 0x22, 0xc7, 0x01, 0x0a, 0x09, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61,
+	0x6c, 0x6c, 0x12, 0x45, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f,
+	0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61,
+	0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65,
+	0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x73, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e,
+	0x70, 0x62, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x0a, 0x73, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x12, 0x44, 0x0a, 0x12, 0x72, 0x65, 0x66, 0x65,
+	0x72, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65,
+	0x6e, 0x63, 0x65, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x11, 0x72, 0x65, 0x66,
+	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x22, 0xb7,
+	0x01, 0x0a, 0x0c, 0x46, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x6c, 0x6c, 0x12,
+	0x35, 0x0a, 0x0d, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x75, 0x6e, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0c, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2a, 0x0a, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65,
+	0x6e, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x41,
+	0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e,
 	0x74, 0x73, 0x12, 0x44, 0x0a, 0x12, 0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x5f,
 	0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15,
 	0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x6f, 0x64,
 	0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x11, 0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
-	0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x22, 0xb7, 0x01, 0x0a, 0x0c, 0x46, 0x75, 0x6e,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x6c, 0x6c, 0x12, 0x35, 0x0a, 0x0d, 0x66, 0x75, 0x6e,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61,
-	0x6d, 0x65, 0x52, 0x0c, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65,
-	0x12, 0x2a, 0x0a, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x02, 0x20,
-	0x03, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e,
-	0x74, 0x52, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x44, 0x0a, 0x12,
-	0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69,
-	0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x52, 0x65,
-	0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52,
-	0x11, 0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69,
-	0x65, 0x72, 0x22, 0x7d, 0x0a, 0x11, 0x52, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d,
-	0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x44, 0x0a, 0x12, 0x63, 0x68, 0x61, 0x72, 0x61,
-	0x63, 0x74, 0x65, 0x72, 0x5f, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74,
-	0x65, 0x72, 0x50, 0x6f, 0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x11, 0x63, 0x68, 0x61, 0x72,
-	0x61, 0x63, 0x74, 0x65, 0x72, 0x50, 0x6f, 0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x22, 0x0a,
-	0x06, 0x6c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e,
-	0x70, 0x62, 0x2e, 0x4c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x52, 0x06, 0x6c, 0x65, 0x6e, 0x67, 0x74,
-	0x68, 0x22, 0x62, 0x0a, 0x11, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x50, 0x6f,
-	0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x4d, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d,
-	0x65, 0x74, 0x69, 0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68,
-	0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52,
-	0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65,
-	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x57, 0x0a, 0x06, 0x4c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x12,
-	0x4d, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x5f, 0x65, 0x78,
-	0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18,
-	0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78,
-	0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d,
-	0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0xce,
-	0x02, 0x0a, 0x09, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x12, 0x12, 0x0a, 0x03,
-	0x61, 0x6c, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x48, 0x00, 0x52, 0x03, 0x61, 0x6c, 0x6c,
-	0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65,
-	0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49,
-	0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52,
-	0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12,
-	0x55, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74,
-	0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70,
-	0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e,
-	0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
-	0x6c, 0x48, 0x00, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61,
-	0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3c, 0x0a, 0x0a, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x5f,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x70, 0x62, 0x2e,
-	0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72,
-	0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x09, 0x69, 0x6e, 0x64, 0x65, 0x78,
-	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x4f, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74,
-	0x69, 0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65,
-	0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52,
-	0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65,
-	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22,
-	0xd5, 0x02, 0x0a, 0x08, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x27, 0x0a, 0x07,
-	0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e,
-	0x70, 0x62, 0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x07, 0x6c, 0x69,
-	0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x30, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
-	0x69, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49,
-	0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48, 0x00, 0x52, 0x0a, 0x69, 0x64, 0x65,
-	0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x55, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69,
-	0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66,
-	0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67,
-	0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x11, 0x71, 0x75, 0x61,
-	0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3c,
-	0x0a, 0x0a, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d,
-	0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48,
-	0x00, 0x52, 0x09, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x4f, 0x0a, 0x15,
+	0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x22, 0x7d, 0x0a, 0x11, 0x52, 0x65, 0x66, 0x65,
+	0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x44, 0x0a,
+	0x12, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x5f, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x43,
+	0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x50, 0x6f, 0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x11, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x50, 0x6f, 0x73, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x22, 0x0a, 0x06, 0x6c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x52,
+	0x06, 0x6c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x22, 0x62, 0x0a, 0x11, 0x43, 0x68, 0x61, 0x72, 0x61,
+	0x63, 0x74, 0x65, 0x72, 0x50, 0x6f, 0x73, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x4d, 0x0a, 0x15,
 	0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65,
-	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62,
+	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62,
 	0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65,
-	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65,
-	0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x08, 0x0a,
-	0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0xa5, 0x01, 0x0a, 0x1f, 0x51, 0x75, 0x61, 0x6c,
-	0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74,
-	0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x45, 0x0a, 0x13, 0x71,
-	0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61,
-	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75,
-	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52,
-	0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61,
-	0x6d, 0x65, 0x12, 0x3b, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69,
-	0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62,
-	0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x52,
-	0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x22,
-	0x84, 0x01, 0x0a, 0x17, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74,
-	0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x2c, 0x0a, 0x0a, 0x69,
-	0x6e, 0x64, 0x65, 0x78, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x09,
-	0x69, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3b, 0x0a, 0x0f, 0x69, 0x6e, 0x74,
-	0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c,
-	0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c,
-	0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x22, 0xdd, 0x01, 0x0a, 0x11, 0x51, 0x75, 0x61, 0x6c, 0x69,
-	0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2e, 0x0a, 0x02,
-	0x66, 0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75,
-	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46,
-	0x6f, 0x72, 0x6d, 0x61, 0x74, 0x31, 0x48, 0x00, 0x52, 0x02, 0x66, 0x31, 0x12, 0x2e, 0x0a, 0x02,
-	0x66, 0x32, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75,
-	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46,
-	0x6f, 0x72, 0x6d, 0x61, 0x74, 0x32, 0x48, 0x00, 0x52, 0x02, 0x66, 0x32, 0x12, 0x2e, 0x0a, 0x02,
-	0x66, 0x33, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75,
-	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46,
-	0x6f, 0x72, 0x6d, 0x61, 0x74, 0x33, 0x48, 0x00, 0x52, 0x02, 0x66, 0x33, 0x12, 0x2e, 0x0a, 0x02,
-	0x66, 0x34, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75,
-	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46,
-	0x6f, 0x72, 0x6d, 0x61, 0x74, 0x34, 0x48, 0x00, 0x52, 0x02, 0x66, 0x34, 0x42, 0x08, 0x0a, 0x06,
-	0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x83, 0x02, 0x0a, 0x18, 0x51, 0x75, 0x61, 0x6c, 0x69,
-	0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d,
-	0x61, 0x74, 0x31, 0x12, 0x2b, 0x0a, 0x09, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x44, 0x61, 0x74, 0x61,
-	0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x08, 0x64, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65,
-	0x12, 0x3a, 0x0a, 0x0e, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61,
-	0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f,
-	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x0d, 0x63,
-	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x25, 0x0a, 0x08,
-	0x69, 0x6e, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0a,
-	0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x07, 0x69, 0x6e, 0x44, 0x61,
-	0x74, 0x61, 0x73, 0x12, 0x28, 0x0a, 0x09, 0x69, 0x6e, 0x5f, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x73,
-	0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x54, 0x61,
-	0x62, 0x6c, 0x65, 0x52, 0x08, 0x69, 0x6e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x12, 0x23, 0x0a,
-	0x07, 0x69, 0x6e, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a,
-	0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x06, 0x69, 0x6e, 0x46, 0x69,
-	0x6c, 0x65, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x82, 0x01, 0x0a,
+	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69,
+	0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x57, 0x0a, 0x06, 0x4c,
+	0x65, 0x6e, 0x67, 0x74, 0x68, 0x12, 0x4d, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65,
+	0x74, 0x69, 0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d,
+	0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x14,
+	0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x22, 0xce, 0x02, 0x0a, 0x09, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x12, 0x12, 0x0a, 0x03, 0x61, 0x6c, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x48,
+	0x00, 0x52, 0x03, 0x61, 0x6c, 0x6c, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65,
+	0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65,
+	0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x55, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69,
+	0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65,
+	0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72,
+	0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69,
+	0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3c, 0x0a, 0x0a,
+	0x69, 0x6e, 0x64, 0x65, 0x78, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1b, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52,
+	0x09, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x4f, 0x0a, 0x15, 0x61, 0x72,
+	0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41,
+	0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x14, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69,
+	0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x08, 0x0a, 0x06, 0x6f,
+	0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0xd5, 0x02, 0x0a, 0x08, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65,
+	0x6e, 0x74, 0x12, 0x27, 0x0a, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c,
+	0x48, 0x00, 0x52, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x30, 0x0a, 0x0a, 0x69,
+	0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x48,
+	0x00, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x55, 0x0a,
+	0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70, 0x62, 0x2e,
+	0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d,
+	0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48,
+	0x00, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61,
+	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3c, 0x0a, 0x0a, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x5f, 0x6e, 0x61,
+	0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e,
+	0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x09, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61,
+	0x6d, 0x65, 0x12, 0x4f, 0x0a, 0x15, 0x61, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63,
+	0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x41, 0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69,
+	0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x14, 0x61,
+	0x72, 0x69, 0x74, 0x68, 0x6d, 0x65, 0x74, 0x69, 0x63, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0xa5, 0x01,
+	0x0a, 0x1f, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e,
+	0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x12, 0x45, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64,
+	0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15,
+	0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74,
+	0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64,
+	0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3b, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65,
+	0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x22, 0x84, 0x01, 0x0a, 0x17, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e,
+	0x61, 0x6d, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x12, 0x2c, 0x0a, 0x0a, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x64, 0x65, 0x78,
+	0x4e, 0x61, 0x6d, 0x65, 0x52, 0x09, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x12,
+	0x3b, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72,
+	0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x52, 0x0e, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x22, 0xdd, 0x01, 0x0a,
+	0x11, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61,
+	0x6d, 0x65, 0x12, 0x2e, 0x0a, 0x02, 0x66, 0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c,
+	0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74,
+	0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x31, 0x48, 0x00, 0x52, 0x02,
+	0x66, 0x31, 0x12, 0x2e, 0x0a, 0x02, 0x66, 0x32, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c,
+	0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74,
+	0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x32, 0x48, 0x00, 0x52, 0x02,
+	0x66, 0x32, 0x12, 0x2e, 0x0a, 0x02, 0x66, 0x33, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c,
+	0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74,
+	0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x33, 0x48, 0x00, 0x52, 0x02,
+	0x66, 0x33, 0x12, 0x2e, 0x0a, 0x02, 0x66, 0x34, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c,
+	0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74,
+	0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x34, 0x48, 0x00, 0x52, 0x02,
+	0x66, 0x34, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x83, 0x02, 0x0a,
 	0x18, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61,
-	0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x32, 0x12, 0x38, 0x0a, 0x0e, 0x70, 0x61, 0x72,
-	0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68,
-	0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0d, 0x70, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x4e,
-	0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x53,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x09, 0x69, 0x6e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x22, 0x73, 0x0a, 0x18, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61,
-	0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x33, 0x12, 0x29, 0x0a,
-	0x09, 0x74, 0x65, 0x78, 0x74, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x54, 0x65, 0x78, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x08,
-	0x74, 0x65, 0x78, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x69, 0x6e, 0x5f, 0x6c,
-	0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70,
-	0x62, 0x2e, 0x49, 0x6e, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x52, 0x09, 0x69, 0x6e, 0x4c,
-	0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x22, 0x3f, 0x0a, 0x18, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66,
-	0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61,
-	0x74, 0x34, 0x12, 0x23, 0x0a, 0x07, 0x69, 0x6e, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x52,
-	0x06, 0x69, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x22, 0x33, 0x0a, 0x06, 0x49, 0x6e, 0x44, 0x61, 0x74,
-	0x61, 0x12, 0x29, 0x0a, 0x09, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61,
-	0x6d, 0x65, 0x52, 0x08, 0x64, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x33, 0x0a, 0x06,
-	0x49, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x29, 0x0a, 0x09, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x46,
-	0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x08, 0x66, 0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d,
-	0x65, 0x22, 0x43, 0x0a, 0x0a, 0x49, 0x6e, 0x4d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x12,
-	0x35, 0x0a, 0x0d, 0x6d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x6e, 0x65, 0x6d,
-	0x6f, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0c, 0x6d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e,
-	0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3f, 0x0a, 0x09, 0x49, 0x6e, 0x53, 0x65, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x12, 0x32, 0x0a, 0x0c, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x53,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0b, 0x73, 0x65, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3f, 0x0a, 0x09, 0x49, 0x6e, 0x4c, 0x69, 0x62,
-	0x72, 0x61, 0x72, 0x79, 0x12, 0x32, 0x0a, 0x0c, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x5f,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e,
-	0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0b, 0x6c, 0x69, 0x62,
-	0x72, 0x61, 0x72, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x37, 0x0a, 0x07, 0x49, 0x6e, 0x54, 0x61,
-	0x62, 0x6c, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x63, 0x61, 0x6c,
-	0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x54, 0x61, 0x62,
-	0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x52, 0x09, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c,
-	0x6c, 0x22, 0x3c, 0x0a, 0x0c, 0x41, 0x6c, 0x70, 0x68, 0x61, 0x62, 0x65, 0x74, 0x4e, 0x61, 0x6d,
-	0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c,
-	0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22,
-	0x41, 0x0a, 0x0e, 0x41, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d,
-	0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x79, 0x73, 0x74,
-	0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0a, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61,
-	0x6d, 0x65, 0x22, 0x3f, 0x0a, 0x09, 0x42, 0x61, 0x73, 0x69, 0x73, 0x4e, 0x61, 0x6d, 0x65, 0x12,
-	0x32, 0x0a, 0x0c, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x72, 0x6f, 0x67, 0x72,
-	0x61, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0b, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d, 0x4e,
-	0x61, 0x6d, 0x65, 0x22, 0x36, 0x0a, 0x06, 0x43, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a,
-	0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64,
-	0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x39, 0x0a, 0x09, 0x43,
-	0x6c, 0x61, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f,
-	0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70,
-	0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62,
-	0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x3f, 0x0a, 0x0c, 0x43, 0x6f, 0x6d, 0x70, 0x75, 0x74,
-	0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62,
-	0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0a, 0x73, 0x79, 0x73,
-	0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3d, 0x0a, 0x0d, 0x43, 0x6f, 0x6e, 0x64, 0x69,
-	0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f,
-	0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70,
-	0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62,
-	0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x38, 0x0a, 0x08, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61,
-	0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f,
-	0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64,
-	0x22, 0x24, 0x0a, 0x0c, 0x44, 0x61, 0x74, 0x61, 0x44, 0x65, 0x73, 0x63, 0x4e, 0x61, 0x6d, 0x65,
-	0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x42, 0x0a, 0x0f, 0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f,
-	0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x73, 0x79, 0x73,
-	0x74, 0x65, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e,
-	0x2e, 0x70, 0x62, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0a,
-	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x38, 0x0a, 0x08, 0x46, 0x69,
-	0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f,
-	0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e,
-	0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
-	0x57, 0x6f, 0x72, 0x64, 0x22, 0x24, 0x0a, 0x0c, 0x46, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x39, 0x0a, 0x09, 0x49, 0x6e,
-	0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
+	0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x31, 0x12, 0x2b, 0x0a, 0x09, 0x64, 0x61, 0x74,
+	0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70,
+	0x62, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x08, 0x64, 0x61,
+	0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3a, 0x0a, 0x0e, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11,
+	0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d,
+	0x65, 0x48, 0x00, 0x52, 0x0d, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61,
+	0x6d, 0x65, 0x12, 0x25, 0x0a, 0x08, 0x69, 0x6e, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x18, 0x03,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x44, 0x61, 0x74, 0x61,
+	0x52, 0x07, 0x69, 0x6e, 0x44, 0x61, 0x74, 0x61, 0x73, 0x12, 0x28, 0x0a, 0x09, 0x69, 0x6e, 0x5f,
+	0x74, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70,
+	0x62, 0x2e, 0x49, 0x6e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x08, 0x69, 0x6e, 0x54, 0x61, 0x62,
+	0x6c, 0x65, 0x73, 0x12, 0x23, 0x0a, 0x07, 0x69, 0x6e, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x05,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x46, 0x69, 0x6c, 0x65,
+	0x52, 0x06, 0x69, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f,
+	0x6f, 0x66, 0x22, 0x82, 0x01, 0x0a, 0x18, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64,
+	0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x32, 0x12,
+	0x38, 0x0a, 0x0e, 0x70, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x5f, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x61, 0x72,
+	0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0d, 0x70, 0x61, 0x72, 0x61,
+	0x67, 0x72, 0x61, 0x70, 0x68, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x69, 0x6e, 0x5f,
+	0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e,
+	0x70, 0x62, 0x2e, 0x49, 0x6e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x09, 0x69, 0x6e,
+	0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x73, 0x0a, 0x18, 0x51, 0x75, 0x61, 0x6c, 0x69,
+	0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x46, 0x6f, 0x72, 0x6d,
+	0x61, 0x74, 0x33, 0x12, 0x29, 0x0a, 0x09, 0x74, 0x65, 0x78, 0x74, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x54, 0x65, 0x78, 0x74,
+	0x4e, 0x61, 0x6d, 0x65, 0x52, 0x08, 0x74, 0x65, 0x78, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c,
+	0x0a, 0x0a, 0x69, 0x6e, 0x5f, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72,
+	0x79, 0x52, 0x09, 0x69, 0x6e, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x22, 0x3f, 0x0a, 0x18,
+	0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d,
+	0x65, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x34, 0x12, 0x23, 0x0a, 0x07, 0x69, 0x6e, 0x5f, 0x66,
+	0x69, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x70, 0x62, 0x2e, 0x49,
+	0x6e, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x06, 0x69, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x22, 0x33, 0x0a,
+	0x06, 0x49, 0x6e, 0x44, 0x61, 0x74, 0x61, 0x12, 0x29, 0x0a, 0x09, 0x64, 0x61, 0x74, 0x61, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x62, 0x2e,
+	0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x08, 0x64, 0x61, 0x74, 0x61, 0x4e, 0x61,
+	0x6d, 0x65, 0x22, 0x33, 0x0a, 0x06, 0x49, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x29, 0x0a, 0x09,
+	0x66, 0x69, 0x6c, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0c, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x08, 0x66,
+	0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x43, 0x0a, 0x0a, 0x49, 0x6e, 0x4d, 0x6e, 0x65,
+	0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x12, 0x35, 0x0a, 0x0d, 0x6d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69,
+	0x63, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x70,
+	0x62, 0x2e, 0x4d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0c,
+	0x6d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3f, 0x0a, 0x09,
+	0x49, 0x6e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x32, 0x0a, 0x0c, 0x73, 0x65, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65,
+	0x52, 0x0b, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3f, 0x0a,
+	0x09, 0x49, 0x6e, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x12, 0x32, 0x0a, 0x0c, 0x6c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x4e, 0x61, 0x6d,
+	0x65, 0x52, 0x0b, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x37,
+	0x0a, 0x07, 0x49, 0x6e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x74, 0x61, 0x62,
+	0x6c, 0x65, 0x5f, 0x63, 0x61, 0x6c, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e,
+	0x70, 0x62, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x52, 0x09, 0x74, 0x61,
+	0x62, 0x6c, 0x65, 0x43, 0x61, 0x6c, 0x6c, 0x22, 0x3c, 0x0a, 0x0c, 0x41, 0x6c, 0x70, 0x68, 0x61,
+	0x62, 0x65, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
 	0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62,
 	0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f,
-	0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x3f, 0x0a, 0x0c, 0x4c, 0x61, 0x6e, 0x67, 0x75, 0x61, 0x67,
-	0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e,
-	0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0a, 0x73, 0x79, 0x73, 0x74,
-	0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x0b, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72,
-	0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77,
-	0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43,
-	0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57,
-	0x6f, 0x72, 0x64, 0x22, 0x39, 0x0a, 0x09, 0x4c, 0x6f, 0x63, 0x61, 0x6c, 0x4e, 0x61, 0x6d, 0x65,
-	0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57,
-	0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x3c,
-	0x0a, 0x0c, 0x4d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c,
+	0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x41, 0x0a, 0x0e, 0x41, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x6d,
+	0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70,
+	0x62, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0a, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3f, 0x0a, 0x09, 0x42, 0x61, 0x73, 0x69,
+	0x73, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x32, 0x0a, 0x0c, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d,
+	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62,
+	0x2e, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0b, 0x70, 0x72,
+	0x6f, 0x67, 0x72, 0x61, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x36, 0x0a, 0x06, 0x43, 0x64, 0x4e,
+	0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62,
+	0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72,
+	0x64, 0x22, 0x39, 0x0a, 0x09, 0x43, 0x6c, 0x61, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c,
 	0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72,
-	0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x88, 0x01, 0x0a,
-	0x0d, 0x50, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2e,
+	0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x3f, 0x0a, 0x0c,
+	0x43, 0x6f, 0x6d, 0x70, 0x75, 0x74, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a, 0x0b,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d,
+	0x65, 0x52, 0x0a, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3d, 0x0a,
+	0x0d, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c,
 	0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72,
-	0x64, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x12, 0x3d,
-	0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61,
-	0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74,
-	0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69,
-	0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x42, 0x08, 0x0a,
-	0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x8b, 0x01, 0x0a, 0x0d, 0x50, 0x72, 0x6f, 0x63,
-	0x65, 0x64, 0x75, 0x72, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x3a, 0x0a, 0x0e, 0x70, 0x61, 0x72,
-	0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68,
-	0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x0d, 0x70, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70,
-	0x68, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x34, 0x0a, 0x0c, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62,
-	0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x0b,
-	0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x08, 0x0a, 0x06, 0x6f,
-	0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x90, 0x01, 0x0a, 0x0b, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x61,
-	0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x47, 0x0a, 0x13, 0x6e, 0x6f, 0x6e, 0x5f, 0x6e, 0x75, 0x6d,
-	0x65, 0x72, 0x69, 0x63, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x4e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72,
-	0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x11, 0x6e, 0x6f, 0x6e,
-	0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x2e,
-	0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72,
-	0x64, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x42, 0x08,
-	0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x53, 0x0a, 0x0a, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x45, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66,
-	0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69,
-	0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c,
-	0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x53, 0x0a,
-	0x0a, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x45, 0x0a, 0x13, 0x71,
-	0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61,
-	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75,
-	0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52,
-	0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61,
-	0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x0b, 0x52, 0x6f, 0x75, 0x74, 0x69, 0x6e, 0x67, 0x4e, 0x61, 0x6d,
-	0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c,
-	0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22,
-	0x3a, 0x0a, 0x0a, 0x53, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a,
+	0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x38, 0x0a, 0x08,
+	0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f,
+	0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70,
+	0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62,
+	0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x24, 0x0a, 0x0c, 0x44, 0x61, 0x74, 0x61, 0x44, 0x65,
+	0x73, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x42, 0x0a, 0x0f,
+	0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12,
+	0x2f, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x4e, 0x61, 0x6d, 0x65, 0x52, 0x0a, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65,
+	0x22, 0x38, 0x0a, 0x08, 0x46, 0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a,
+	0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52,
+	0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x24, 0x0a, 0x0c, 0x46, 0x75,
+	0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
+	0x22, 0x39, 0x0a, 0x09, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a,
 	0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64,
-	0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x86, 0x01, 0x0a, 0x0b,
-	0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2e, 0x0a, 0x0a, 0x63,
+	0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x3f, 0x0a, 0x0c, 0x4c,
+	0x61, 0x6e, 0x67, 0x75, 0x61, 0x67, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a, 0x0b, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65,
+	0x52, 0x0a, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x0b,
+	0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63,
 	0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x48, 0x00,
-	0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x12, 0x3d, 0x0a, 0x0f, 0x69,
-	0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65,
-	0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65,
-	0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e,
-	0x65, 0x5f, 0x6f, 0x66, 0x22, 0x3a, 0x0a, 0x0a, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61,
-	0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f,
-	0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64,
-	0x22, 0x41, 0x0a, 0x11, 0x53, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x69, 0x63, 0x43, 0x68, 0x61, 0x72,
-	0x61, 0x63, 0x74, 0x65, 0x72, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77,
+	0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09,
+	0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x39, 0x0a, 0x09, 0x4c, 0x6f, 0x63,
+	0x61, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f,
+	0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e,
+	0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
+	0x57, 0x6f, 0x72, 0x64, 0x22, 0x3c, 0x0a, 0x0c, 0x4d, 0x6e, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x63,
+	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f,
+	0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f,
+	0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f,
+	0x72, 0x64, 0x22, 0x88, 0x01, 0x0a, 0x0d, 0x50, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68,
+	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2e, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f,
+	0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f,
+	0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
+	0x57, 0x6f, 0x72, 0x64, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f,
+	0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e,
+	0x70, 0x62, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x48, 0x00, 0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65,
+	0x72, 0x61, 0x6c, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x8b, 0x01,
+	0x0a, 0x0d, 0x50, 0x72, 0x6f, 0x63, 0x65, 0x64, 0x75, 0x72, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12,
+	0x3a, 0x0a, 0x0e, 0x70, 0x61, 0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x5f, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x61, 0x72,
+	0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x4e, 0x61, 0x6d, 0x65, 0x48, 0x00, 0x52, 0x0d, 0x70, 0x61,
+	0x72, 0x61, 0x67, 0x72, 0x61, 0x70, 0x68, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x34, 0x0a, 0x0c, 0x73,
+	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x0f, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61,
+	0x6d, 0x65, 0x48, 0x00, 0x52, 0x0b, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d,
+	0x65, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x90, 0x01, 0x0a, 0x0b,
+	0x50, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x47, 0x0a, 0x13, 0x6e,
+	0x6f, 0x6e, 0x5f, 0x6e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72,
+	0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x4e, 0x6f,
+	0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48,
+	0x00, 0x52, 0x11, 0x6e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74,
+	0x65, 0x72, 0x61, 0x6c, 0x12, 0x2e, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f,
+	0x72, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f,
+	0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
+	0x57, 0x6f, 0x72, 0x64, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x53,
+	0x0a, 0x0a, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x45, 0x0a, 0x13,
+	0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x51,
+	0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65,
+	0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74, 0x61, 0x4e,
+	0x61, 0x6d, 0x65, 0x22, 0x53, 0x0a, 0x0a, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x4e, 0x61, 0x6d,
+	0x65, 0x12, 0x45, 0x0a, 0x13, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x5f, 0x64,
+	0x61, 0x74, 0x61, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15,
+	0x2e, 0x70, 0x62, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64, 0x44, 0x61, 0x74,
+	0x61, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x11, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x64,
+	0x44, 0x61, 0x74, 0x61, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x0b, 0x52, 0x6f, 0x75, 0x74,
+	0x69, 0x6e, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
+	0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62,
+	0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f,
+	0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x3a, 0x0a, 0x0a, 0x53, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x4e,
+	0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62,
+	0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72,
+	0x64, 0x22, 0x86, 0x01, 0x0a, 0x0b, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d,
+	0x65, 0x12, 0x2e, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c,
+	0x57, 0x6f, 0x72, 0x64, 0x48, 0x00, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72,
+	0x64, 0x12, 0x3d, 0x0a, 0x0f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x74,
+	0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00,
+	0x52, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c,
+	0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x3a, 0x0a, 0x0a, 0x53, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f,
+	0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70,
+	0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62,
+	0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x41, 0x0a, 0x11, 0x53, 0x79, 0x6d, 0x62, 0x6f, 0x6c,
+	0x69, 0x63, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x12, 0x2c, 0x0a, 0x0a, 0x63,
+	0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09,
+	0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x38, 0x0a, 0x08, 0x54, 0x65, 0x78,
+	0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77,
 	0x6f, 0x72, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43,
 	0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57,
-	0x6f, 0x72, 0x64, 0x22, 0x38, 0x0a, 0x08, 0x54, 0x65, 0x78, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12,
-	0x2c, 0x0a, 0x0a, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x5f, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f,
-	0x72, 0x64, 0x52, 0x09, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x22, 0x21, 0x0a,
-	0x09, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
-	0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
-	0x22, 0xbe, 0x03, 0x0a, 0x07, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x24, 0x0a, 0x04,
-	0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e,
-	0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79,
-	0x70, 0x65, 0x12, 0x3d, 0x0a, 0x0f, 0x6e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x5f, 0x6c, 0x69,
-	0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62,
-	0x2e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48,
-	0x00, 0x52, 0x0e, 0x6e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
-	0x6c, 0x12, 0x3d, 0x0a, 0x0f, 0x62, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x5f, 0x6c, 0x69, 0x74,
-	0x65, 0x72, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e,
-	0x42, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00,
-	0x52, 0x0e, 0x62, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c,
-	0x12, 0x47, 0x0a, 0x13, 0x6e, 0x6f, 0x6e, 0x5f, 0x6e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x5f,
-	0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e,
-	0x70, 0x62, 0x2e, 0x4e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74,
-	0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x11, 0x6e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72,
-	0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x49, 0x0a, 0x13, 0x66, 0x69, 0x67,
-	0x75, 0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74,
-	0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x67, 0x75,
-	0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x48, 0x00,
-	0x52, 0x12, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73,
-	0x74, 0x61, 0x6e, 0x74, 0x22, 0x71, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07,
-	0x42, 0x4f, 0x4f, 0x4c, 0x45, 0x41, 0x4e, 0x10, 0x00, 0x12, 0x11, 0x0a, 0x0d, 0x43, 0x49, 0x43,
-	0x53, 0x5f, 0x44, 0x46, 0x48, 0x5f, 0x52, 0x45, 0x53, 0x50, 0x10, 0x01, 0x12, 0x12, 0x0a, 0x0e,
-	0x43, 0x49, 0x43, 0x53, 0x5f, 0x44, 0x46, 0x48, 0x5f, 0x56, 0x41, 0x4c, 0x55, 0x45, 0x10, 0x02,
-	0x12, 0x17, 0x0a, 0x13, 0x46, 0x49, 0x47, 0x55, 0x52, 0x41, 0x54, 0x49, 0x56, 0x45, 0x5f, 0x43,
-	0x4f, 0x4e, 0x53, 0x54, 0x41, 0x4e, 0x54, 0x10, 0x03, 0x12, 0x0f, 0x0a, 0x0b, 0x4e, 0x4f, 0x4e,
-	0x5f, 0x4e, 0x55, 0x4d, 0x45, 0x52, 0x49, 0x43, 0x10, 0x04, 0x12, 0x0b, 0x0a, 0x07, 0x4e, 0x55,
-	0x4d, 0x45, 0x52, 0x49, 0x43, 0x10, 0x05, 0x42, 0x08, 0x0a, 0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f,
-	0x66, 0x22, 0x26, 0x0a, 0x0e, 0x42, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x4c, 0x69, 0x74, 0x65,
-	0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x08, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x73, 0x0a, 0x0e, 0x4e, 0x75, 0x6d,
-	0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x2b, 0x0a, 0x04, 0x74,
-	0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x17, 0x2e, 0x70, 0x62, 0x2e, 0x4e,
-	0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x2e, 0x54, 0x79,
-	0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75,
-	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x1e,
-	0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x09, 0x0a, 0x05, 0x46, 0x4c, 0x4f, 0x41, 0x54, 0x10,
-	0x00, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x4e, 0x54, 0x45, 0x47, 0x45, 0x52, 0x10, 0x01, 0x22, 0x26,
-	0x0a, 0x0e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c,
+	0x6f, 0x72, 0x64, 0x22, 0x21, 0x0a, 0x09, 0x43, 0x6f, 0x62, 0x6f, 0x6c, 0x57, 0x6f, 0x72, 0x64,
 	0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0xa2, 0x02, 0x0a, 0x12, 0x46, 0x69, 0x67, 0x75, 0x72,
-	0x61, 0x74, 0x69, 0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x12, 0x2f, 0x0a,
-	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x70, 0x62,
-	0x2e, 0x46, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74,
-	0x61, 0x6e, 0x74, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x25,
-	0x0a, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x52, 0x07, 0x6c, 0x69,
-	0x74, 0x65, 0x72, 0x61, 0x6c, 0x22, 0xb3, 0x01, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x07,
-	0x0a, 0x03, 0x41, 0x4c, 0x4c, 0x10, 0x00, 0x12, 0x0e, 0x0a, 0x0a, 0x48, 0x49, 0x47, 0x48, 0x5f,
-	0x56, 0x41, 0x4c, 0x55, 0x45, 0x10, 0x01, 0x12, 0x0f, 0x0a, 0x0b, 0x48, 0x49, 0x47, 0x48, 0x5f,
-	0x56, 0x41, 0x4c, 0x55, 0x45, 0x53, 0x10, 0x02, 0x12, 0x0d, 0x0a, 0x09, 0x4c, 0x4f, 0x57, 0x5f,
-	0x56, 0x41, 0x4c, 0x55, 0x45, 0x10, 0x03, 0x12, 0x0e, 0x0a, 0x0a, 0x4c, 0x4f, 0x57, 0x5f, 0x56,
-	0x41, 0x4c, 0x55, 0x45, 0x53, 0x10, 0x04, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x55, 0x4c, 0x4c, 0x10,
-	0x05, 0x12, 0x09, 0x0a, 0x05, 0x4e, 0x55, 0x4c, 0x4c, 0x53, 0x10, 0x06, 0x12, 0x09, 0x0a, 0x05,
-	0x51, 0x55, 0x4f, 0x54, 0x45, 0x10, 0x07, 0x12, 0x0a, 0x0a, 0x06, 0x51, 0x55, 0x4f, 0x54, 0x45,
-	0x53, 0x10, 0x08, 0x12, 0x09, 0x0a, 0x05, 0x53, 0x50, 0x41, 0x43, 0x45, 0x10, 0x09, 0x12, 0x0a,
-	0x0a, 0x06, 0x53, 0x50, 0x41, 0x43, 0x45, 0x53, 0x10, 0x0a, 0x12, 0x08, 0x0a, 0x04, 0x5a, 0x45,
-	0x52, 0x4f, 0x10, 0x0b, 0x12, 0x0a, 0x0a, 0x06, 0x5a, 0x45, 0x52, 0x4f, 0x45, 0x53, 0x10, 0x0c,
-	0x12, 0x09, 0x0a, 0x05, 0x5a, 0x45, 0x52, 0x4f, 0x53, 0x10, 0x0d, 0x22, 0x11, 0x0a, 0x0f, 0x53,
-	0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x22, 0x29,
-	0x0a, 0x11, 0x4e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65,
-	0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x25, 0x0a, 0x0d, 0x53, 0x74, 0x72,
-	0x69, 0x6e, 0x67, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
+	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0xbe, 0x03, 0x0a, 0x07, 0x4c, 0x69, 0x74, 0x65, 0x72,
+	0x61, 0x6c, 0x12, 0x24, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e,
+	0x32, 0x10, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x2e, 0x54, 0x79,
+	0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x3d, 0x0a, 0x0f, 0x6e, 0x75, 0x6d, 0x65,
+	0x72, 0x69, 0x63, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69,
+	0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x6e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63,
+	0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x3d, 0x0a, 0x0f, 0x62, 0x6f, 0x6f, 0x6c, 0x65,
+	0x61, 0x6e, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x42, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x4c, 0x69, 0x74,
+	0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x0e, 0x62, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x4c,
+	0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x47, 0x0a, 0x13, 0x6e, 0x6f, 0x6e, 0x5f, 0x6e, 0x75,
+	0x6d, 0x65, 0x72, 0x69, 0x63, 0x5f, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x4e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65,
+	0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x11, 0x6e, 0x6f,
+	0x6e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12,
+	0x49, 0x0a, 0x13, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x63, 0x6f,
+	0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x70,
+	0x62, 0x2e, 0x46, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73,
+	0x74, 0x61, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x12, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69,
+	0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x22, 0x71, 0x0a, 0x04, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x42, 0x4f, 0x4f, 0x4c, 0x45, 0x41, 0x4e, 0x10, 0x00, 0x12,
+	0x11, 0x0a, 0x0d, 0x43, 0x49, 0x43, 0x53, 0x5f, 0x44, 0x46, 0x48, 0x5f, 0x52, 0x45, 0x53, 0x50,
+	0x10, 0x01, 0x12, 0x12, 0x0a, 0x0e, 0x43, 0x49, 0x43, 0x53, 0x5f, 0x44, 0x46, 0x48, 0x5f, 0x56,
+	0x41, 0x4c, 0x55, 0x45, 0x10, 0x02, 0x12, 0x17, 0x0a, 0x13, 0x46, 0x49, 0x47, 0x55, 0x52, 0x41,
+	0x54, 0x49, 0x56, 0x45, 0x5f, 0x43, 0x4f, 0x4e, 0x53, 0x54, 0x41, 0x4e, 0x54, 0x10, 0x03, 0x12,
+	0x0f, 0x0a, 0x0b, 0x4e, 0x4f, 0x4e, 0x5f, 0x4e, 0x55, 0x4d, 0x45, 0x52, 0x49, 0x43, 0x10, 0x04,
+	0x12, 0x0b, 0x0a, 0x07, 0x4e, 0x55, 0x4d, 0x45, 0x52, 0x49, 0x43, 0x10, 0x05, 0x42, 0x08, 0x0a,
+	0x06, 0x6f, 0x6e, 0x65, 0x5f, 0x6f, 0x66, 0x22, 0x26, 0x0a, 0x0e, 0x42, 0x6f, 0x6f, 0x6c, 0x65,
+	0x61, 0x6e, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22,
+	0x73, 0x0a, 0x0e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x12, 0x2b, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x17, 0x2e, 0x70, 0x62, 0x2e, 0x4e, 0x75, 0x6d, 0x65, 0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65,
+	0x72, 0x61, 0x6c, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x14,
+	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x22, 0x1e, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x09, 0x0a, 0x05,
+	0x46, 0x4c, 0x4f, 0x41, 0x54, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x4e, 0x54, 0x45, 0x47,
+	0x45, 0x52, 0x10, 0x01, 0x22, 0x26, 0x0a, 0x0e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x4c,
+	0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0xa2, 0x02, 0x0a,
+	0x12, 0x46, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x76, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74,
+	0x61, 0x6e, 0x74, 0x12, 0x2f, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0e, 0x32, 0x1b, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x76,
+	0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04,
+	0x74, 0x79, 0x70, 0x65, 0x12, 0x25, 0x0a, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x74, 0x65, 0x72,
+	0x61, 0x6c, 0x52, 0x07, 0x6c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x22, 0xb3, 0x01, 0x0a, 0x04,
+	0x54, 0x79, 0x70, 0x65, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x4c, 0x4c, 0x10, 0x00, 0x12, 0x0e, 0x0a,
+	0x0a, 0x48, 0x49, 0x47, 0x48, 0x5f, 0x56, 0x41, 0x4c, 0x55, 0x45, 0x10, 0x01, 0x12, 0x0f, 0x0a,
+	0x0b, 0x48, 0x49, 0x47, 0x48, 0x5f, 0x56, 0x41, 0x4c, 0x55, 0x45, 0x53, 0x10, 0x02, 0x12, 0x0d,
+	0x0a, 0x09, 0x4c, 0x4f, 0x57, 0x5f, 0x56, 0x41, 0x4c, 0x55, 0x45, 0x10, 0x03, 0x12, 0x0e, 0x0a,
+	0x0a, 0x4c, 0x4f, 0x57, 0x5f, 0x56, 0x41, 0x4c, 0x55, 0x45, 0x53, 0x10, 0x04, 0x12, 0x08, 0x0a,
+	0x04, 0x4e, 0x55, 0x4c, 0x4c, 0x10, 0x05, 0x12, 0x09, 0x0a, 0x05, 0x4e, 0x55, 0x4c, 0x4c, 0x53,
+	0x10, 0x06, 0x12, 0x09, 0x0a, 0x05, 0x51, 0x55, 0x4f, 0x54, 0x45, 0x10, 0x07, 0x12, 0x0a, 0x0a,
+	0x06, 0x51, 0x55, 0x4f, 0x54, 0x45, 0x53, 0x10, 0x08, 0x12, 0x09, 0x0a, 0x05, 0x53, 0x50, 0x41,
+	0x43, 0x45, 0x10, 0x09, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x50, 0x41, 0x43, 0x45, 0x53, 0x10, 0x0a,
+	0x12, 0x08, 0x0a, 0x04, 0x5a, 0x45, 0x52, 0x4f, 0x10, 0x0b, 0x12, 0x0a, 0x0a, 0x06, 0x5a, 0x45,
+	0x52, 0x4f, 0x45, 0x53, 0x10, 0x0c, 0x12, 0x09, 0x0a, 0x05, 0x5a, 0x45, 0x52, 0x4f, 0x53, 0x10,
+	0x0d, 0x22, 0xb1, 0x04, 0x0a, 0x0f, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x67,
+	0x69, 0x73, 0x74, 0x65, 0x72, 0x12, 0x2c, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61, 0x6c,
+	0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74,
+	0x79, 0x70, 0x65, 0x12, 0x2e, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65,
+	0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x49, 0x64, 0x65,
+	0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
+	0x69, 0x65, 0x72, 0x22, 0xbf, 0x03, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0e, 0x0a, 0x0a,
+	0x41, 0x44, 0x44, 0x52, 0x45, 0x53, 0x53, 0x5f, 0x4f, 0x46, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04,
+	0x44, 0x41, 0x54, 0x45, 0x10, 0x01, 0x12, 0x07, 0x0a, 0x03, 0x44, 0x41, 0x59, 0x10, 0x02, 0x12,
+	0x0f, 0x0a, 0x0b, 0x44, 0x41, 0x59, 0x5f, 0x4f, 0x46, 0x5f, 0x57, 0x45, 0x45, 0x4b, 0x10, 0x03,
+	0x12, 0x12, 0x0a, 0x0e, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f, 0x43, 0x4f, 0x4e, 0x54, 0x45, 0x4e,
+	0x54, 0x53, 0x10, 0x04, 0x12, 0x0e, 0x0a, 0x0a, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f, 0x49, 0x54,
+	0x45, 0x4d, 0x10, 0x05, 0x12, 0x0e, 0x0a, 0x0a, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f, 0x4c, 0x49,
+	0x4e, 0x45, 0x10, 0x06, 0x12, 0x0e, 0x0a, 0x0a, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f, 0x4e, 0x41,
+	0x4d, 0x45, 0x10, 0x07, 0x12, 0x0f, 0x0a, 0x0b, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f, 0x53, 0x55,
+	0x42, 0x5f, 0x31, 0x10, 0x08, 0x12, 0x0f, 0x0a, 0x0b, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f, 0x53,
+	0x55, 0x42, 0x5f, 0x32, 0x10, 0x09, 0x12, 0x0f, 0x0a, 0x0b, 0x44, 0x45, 0x42, 0x55, 0x47, 0x5f,
+	0x53, 0x55, 0x42, 0x5f, 0x33, 0x10, 0x0a, 0x12, 0x0d, 0x0a, 0x09, 0x4c, 0x45, 0x4e, 0x47, 0x54,
+	0x48, 0x5f, 0x4f, 0x46, 0x10, 0x0b, 0x12, 0x12, 0x0a, 0x0e, 0x4c, 0x49, 0x4e, 0x41, 0x47, 0x45,
+	0x5f, 0x43, 0x4f, 0x55, 0x4e, 0x54, 0x45, 0x52, 0x10, 0x0c, 0x12, 0x10, 0x0a, 0x0c, 0x4c, 0x49,
+	0x4e, 0x45, 0x5f, 0x43, 0x4f, 0x55, 0x4e, 0x54, 0x45, 0x52, 0x10, 0x0d, 0x12, 0x10, 0x0a, 0x0c,
+	0x50, 0x41, 0x47, 0x45, 0x5f, 0x43, 0x4f, 0x55, 0x4e, 0x54, 0x45, 0x52, 0x10, 0x0e, 0x12, 0x0f,
+	0x0a, 0x0b, 0x52, 0x45, 0x54, 0x55, 0x52, 0x4e, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x10, 0x0f, 0x12,
+	0x0c, 0x0a, 0x08, 0x53, 0x48, 0x49, 0x46, 0x54, 0x5f, 0x49, 0x4e, 0x10, 0x10, 0x12, 0x0d, 0x0a,
+	0x09, 0x53, 0x48, 0x49, 0x46, 0x54, 0x5f, 0x4f, 0x55, 0x54, 0x10, 0x11, 0x12, 0x10, 0x0a, 0x0c,
+	0x53, 0x4f, 0x52, 0x54, 0x5f, 0x43, 0x4f, 0x4e, 0x54, 0x52, 0x4f, 0x4c, 0x10, 0x12, 0x12, 0x12,
+	0x0a, 0x0e, 0x53, 0x4f, 0x52, 0x54, 0x5f, 0x43, 0x4f, 0x52, 0x45, 0x5f, 0x53, 0x49, 0x5a, 0x45,
+	0x10, 0x13, 0x12, 0x12, 0x0a, 0x0e, 0x53, 0x4f, 0x52, 0x54, 0x5f, 0x46, 0x49, 0x4c, 0x45, 0x5f,
+	0x53, 0x49, 0x5a, 0x45, 0x10, 0x14, 0x12, 0x10, 0x0a, 0x0c, 0x53, 0x4f, 0x52, 0x54, 0x5f, 0x4d,
+	0x45, 0x53, 0x53, 0x41, 0x47, 0x45, 0x10, 0x15, 0x12, 0x12, 0x0a, 0x0e, 0x53, 0x4f, 0x52, 0x54,
+	0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f, 0x53, 0x49, 0x5a, 0x45, 0x10, 0x16, 0x12, 0x0f, 0x0a, 0x0b,
+	0x53, 0x4f, 0x52, 0x54, 0x5f, 0x52, 0x45, 0x54, 0x55, 0x52, 0x4e, 0x10, 0x17, 0x12, 0x09, 0x0a,
+	0x05, 0x54, 0x41, 0x4c, 0x4c, 0x59, 0x10, 0x18, 0x12, 0x08, 0x0a, 0x04, 0x54, 0x49, 0x4d, 0x45,
+	0x10, 0x19, 0x12, 0x11, 0x0a, 0x0d, 0x57, 0x48, 0x45, 0x4e, 0x5f, 0x43, 0x4f, 0x4d, 0x50, 0x49,
+	0x4c, 0x45, 0x44, 0x10, 0x1a, 0x22, 0x29, 0x0a, 0x11, 0x4e, 0x6f, 0x6e, 0x4e, 0x75, 0x6d, 0x65,
+	0x72, 0x69, 0x63, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
 	0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
-	0x22, 0x23, 0x0a, 0x0b, 0x44, 0x62, 0x63, 0x73, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12,
-	0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
-	0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x21, 0x0a, 0x09, 0x48, 0x65, 0x78, 0x4e, 0x75, 0x6d, 0x62,
-	0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x26, 0x0a, 0x0e, 0x4e, 0x75, 0x6c, 0x6c,
-	0x54, 0x65, 0x72, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x65, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
-	0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
-	0x42, 0x22, 0x5a, 0x20, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6b,
-	0x61, 0x69, 0x73, 0x61, 0x77, 0x69, 0x6e, 0x64, 0x2f, 0x63, 0x6f, 0x62, 0x6f, 0x6c, 0x2f, 0x70,
-	0x62, 0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0x25, 0x0a, 0x0d, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4c, 0x69, 0x74, 0x65, 0x72, 0x61,
+	0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x23, 0x0a, 0x0b, 0x44, 0x62, 0x63, 0x73, 0x4c,
+	0x69, 0x74, 0x65, 0x72, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x21, 0x0a, 0x09,
+	0x48, 0x65, 0x78, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22,
+	0x26, 0x0a, 0x0e, 0x4e, 0x75, 0x6c, 0x6c, 0x54, 0x65, 0x72, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x65,
+	0x64, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x2a, 0xa8, 0x01, 0x0a, 0x12, 0x52, 0x65, 0x6c, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x09,
+	0x0a, 0x05, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x4e, 0x4f, 0x54,
+	0x5f, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x01, 0x12, 0x16, 0x0a, 0x12, 0x4d, 0x4f, 0x52, 0x45,
+	0x5f, 0x54, 0x48, 0x41, 0x4e, 0x5f, 0x4f, 0x52, 0x5f, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x02,
+	0x12, 0x16, 0x0a, 0x12, 0x4c, 0x45, 0x53, 0x53, 0x5f, 0x54, 0x48, 0x41, 0x4e, 0x5f, 0x4f, 0x52,
+	0x5f, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x03, 0x12, 0x10, 0x0a, 0x0c, 0x47, 0x52, 0x45, 0x41,
+	0x54, 0x45, 0x52, 0x5f, 0x54, 0x48, 0x41, 0x4e, 0x10, 0x04, 0x12, 0x14, 0x0a, 0x10, 0x4e, 0x4f,
+	0x54, 0x5f, 0x47, 0x52, 0x45, 0x41, 0x54, 0x45, 0x52, 0x5f, 0x54, 0x48, 0x41, 0x4e, 0x10, 0x05,
+	0x12, 0x0d, 0x0a, 0x09, 0x4c, 0x45, 0x53, 0x53, 0x5f, 0x54, 0x48, 0x41, 0x4e, 0x10, 0x06, 0x12,
+	0x11, 0x0a, 0x0d, 0x4e, 0x4f, 0x54, 0x5f, 0x4c, 0x45, 0x53, 0x53, 0x5f, 0x54, 0x48, 0x41, 0x4e,
+	0x10, 0x07, 0x42, 0x22, 0x5a, 0x20, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2f, 0x6b, 0x61, 0x69, 0x73, 0x61, 0x77, 0x69, 0x6e, 0x64, 0x2f, 0x63, 0x6f, 0x62, 0x6f, 0x6c,
+	0x2f, 0x70, 0x62, 0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -27131,1076 +29138,1153 @@ func file_cobol_proto_rawDescGZIP() []byte {
 	return file_cobol_proto_rawDescData
 }
 
-var file_cobol_proto_enumTypes = make([]protoimpl.EnumInfo, 47)
-var file_cobol_proto_msgTypes = make([]protoimpl.MessageInfo, 356)
+var file_cobol_proto_enumTypes = make([]protoimpl.EnumInfo, 53)
+var file_cobol_proto_msgTypes = make([]protoimpl.MessageInfo, 376)
 var file_cobol_proto_goTypes = []interface{}{
-	(ProgramIdParagraph_Attribute)(0),             // 0: pb.ProgramIdParagraph.Attribute
-	(MemorySizeClause_Unit)(0),                    // 1: pb.MemorySizeClause.Unit
-	(DiskSizeClause_Unit)(0),                      // 2: pb.DiskSizeClause.Unit
-	(AlphabetClause_Alphanumeric_Type)(0),         // 3: pb.AlphabetClause.Alphanumeric.Type
-	(AlphabetClause_National_Type)(0),             // 4: pb.AlphabetClause.National.Type
-	(ClassClause_Type)(0),                         // 5: pb.ClassClause.Type
-	(DefaultDisplaySignClause_Type)(0),            // 6: pb.DefaultDisplaySignClause.Type
-	(SymbolicCharactersClause_Type)(0),            // 7: pb.SymbolicCharactersClause.Type
-	(AssignClause_Type)(0),                        // 8: pb.AssignClause.Type
-	(OrganizationClause_Mode)(0),                  // 9: pb.OrganizationClause.Mode
-	(OrganizationClause_Type)(0),                  // 10: pb.OrganizationClause.Type
-	(RecordDelimiterClause_Type)(0),               // 11: pb.RecordDelimiterClause.Type
-	(AccessModeClause_Mode)(0),                    // 12: pb.AccessModeClause.Mode
-	(RerunEveryOf_Type)(0),                        // 13: pb.RerunEveryOf.Type
-	(SameClause_Form)(0),                          // 14: pb.SameClause.Form
-	(BlockContainsClause_Unit)(0),                 // 15: pb.BlockContainsClause.Unit
-	(LabelRecordsClause_Type)(0),                  // 16: pb.LabelRecordsClause.Type
-	(PictureChars_Type)(0),                        // 17: pb.PictureChars.Type
-	(DataCommonOwnLocalClause_Type)(0),            // 18: pb.DataCommonOwnLocalClause.Type
-	(DataTypeClause_Type)(0),                      // 19: pb.DataTypeClause.Type
-	(DataTypeClause_Mode)(0),                      // 20: pb.DataTypeClause.Mode
-	(DataUsingClause_Type)(0),                     // 21: pb.DataUsingClause.Type
-	(DataUsageClause_Type)(0),                     // 22: pb.DataUsageClause.Type
-	(DataReceivedByClause_Type)(0),                // 23: pb.DataReceivedByClause.Type
-	(DataSignClause_Type)(0),                      // 24: pb.DataSignClause.Type
-	(DataSynchronizedClause_Type)(0),              // 25: pb.DataSynchronizedClause.Type
-	(FullClause_Type)(0),                          // 26: pb.FullClause.Type
-	(RequiredClause_Type)(0),                      // 27: pb.RequiredClause.Type
-	(SecureClause_Type)(0),                        // 28: pb.SecureClause.Type
-	(AutoClause_Type)(0),                          // 29: pb.AutoClause.Type
-	(BlankClause_Type)(0),                         // 30: pb.BlankClause.Type
-	(BellClause_Type)(0),                          // 31: pb.BellClause.Type
-	(EraseClause_Type)(0),                         // 32: pb.EraseClause.Type
-	(LightClause_Type)(0),                         // 33: pb.LightClause.Type
-	(GridClause_Type)(0),                          // 34: pb.GridClause.Type
-	(LineClause_Type)(0),                          // 35: pb.LineClause.Type
-	(ColumnClause_Type)(0),                        // 36: pb.ColumnClause.Type
-	(SignClause_Type)(0),                          // 37: pb.SignClause.Type
-	(AttributeClause1_Sharing)(0),                 // 38: pb.AttributeClause1.Sharing
-	(AttributeClause2_LibAccess)(0),               // 39: pb.AttributeClause2.LibAccess
-	(ProcedureDivision_GivingClause_Type)(0),      // 40: pb.ProcedureDivision.GivingClause.Type
-	(ProcedureDivision_UsingClause_Type)(0),       // 41: pb.ProcedureDivision.UsingClause.Type
-	(AcceptStatement_FromDate_Type)(0),            // 42: pb.AcceptStatement.FromDate.Type
-	(UseAfterClause_Type)(0),                      // 43: pb.UseAfterClause.Type
-	(Literal_Type)(0),                             // 44: pb.Literal.Type
-	(NumericLiteral_Type)(0),                      // 45: pb.NumericLiteral.Type
-	(FigurativeConstant_Type)(0),                  // 46: pb.FigurativeConstant.Type
-	(*Program)(nil),                               // 47: pb.Program
-	(*CompilationUnit)(nil),                       // 48: pb.CompilationUnit
-	(*ProgramUnit)(nil),                           // 49: pb.ProgramUnit
-	(*IdentificationDivision)(nil),                // 50: pb.IdentificationDivision
-	(*ProgramIdParagraph)(nil),                    // 51: pb.ProgramIdParagraph
-	(*AuthorParagraph)(nil),                       // 52: pb.AuthorParagraph
-	(*DateCompiledParagraph)(nil),                 // 53: pb.DateCompiledParagraph
-	(*DateWrittenParagraph)(nil),                  // 54: pb.DateWrittenParagraph
-	(*InstallationParagraph)(nil),                 // 55: pb.InstallationParagraph
-	(*RemarksParagraph)(nil),                      // 56: pb.RemarksParagraph
-	(*SecurityParagraph)(nil),                     // 57: pb.SecurityParagraph
-	(*EnvironmentDivision)(nil),                   // 58: pb.EnvironmentDivision
-	(*ConfigurationSection)(nil),                  // 59: pb.ConfigurationSection
-	(*SourceComputerParagraph)(nil),               // 60: pb.SourceComputerParagraph
-	(*ObjectComputerParagraph)(nil),               // 61: pb.ObjectComputerParagraph
-	(*MemorySizeClause)(nil),                      // 62: pb.MemorySizeClause
-	(*DiskSizeClause)(nil),                        // 63: pb.DiskSizeClause
-	(*CollatingSequenceClause)(nil),               // 64: pb.CollatingSequenceClause
-	(*SegmentLimitClause)(nil),                    // 65: pb.SegmentLimitClause
-	(*CharacterSetClause)(nil),                    // 66: pb.CharacterSetClause
-	(*SpecialNamesParagraph)(nil),                 // 67: pb.SpecialNamesParagraph
-	(*AlphabetClause)(nil),                        // 68: pb.AlphabetClause
-	(*ChannelClause)(nil),                         // 69: pb.ChannelClause
-	(*ClassClause)(nil),                           // 70: pb.ClassClause
-	(*ClassClauseThrough)(nil),                    // 71: pb.ClassClauseThrough
-	(*CurrencySignClause)(nil),                    // 72: pb.CurrencySignClause
-	(*DecimalPointClause)(nil),                    // 73: pb.DecimalPointClause
-	(*DefaultDisplaySignClause)(nil),              // 74: pb.DefaultDisplaySignClause
-	(*OdtClause)(nil),                             // 75: pb.OdtClause
-	(*ReserveNetworkClause)(nil),                  // 76: pb.ReserveNetworkClause
-	(*SymbolicCharactersClause)(nil),              // 77: pb.SymbolicCharactersClause
-	(*InputOutputSection)(nil),                    // 78: pb.InputOutputSection
-	(*FileControlParagraph)(nil),                  // 79: pb.FileControlParagraph
-	(*FileControlEntry)(nil),                      // 80: pb.FileControlEntry
-	(*SelectClause)(nil),                          // 81: pb.SelectClause
-	(*AssignClause)(nil),                          // 82: pb.AssignClause
-	(*ReserveClause)(nil),                         // 83: pb.ReserveClause
-	(*OrganizationClause)(nil),                    // 84: pb.OrganizationClause
-	(*PaddingCharacterClause)(nil),                // 85: pb.PaddingCharacterClause
-	(*RecordDelimiterClause)(nil),                 // 86: pb.RecordDelimiterClause
-	(*AccessModeClause)(nil),                      // 87: pb.AccessModeClause
-	(*RecordKeyClause)(nil),                       // 88: pb.RecordKeyClause
-	(*AlternateRecordKeyClause)(nil),              // 89: pb.AlternateRecordKeyClause
-	(*PasswordClause)(nil),                        // 90: pb.PasswordClause
-	(*FileStatusClause)(nil),                      // 91: pb.FileStatusClause
-	(*RelativeKeyClause)(nil),                     // 92: pb.RelativeKeyClause
-	(*IoControlParagraph)(nil),                    // 93: pb.IoControlParagraph
-	(*RerunClause)(nil),                           // 94: pb.RerunClause
-	(*RerunEveryRecords)(nil),                     // 95: pb.RerunEveryRecords
-	(*RerunEveryOf)(nil),                          // 96: pb.RerunEveryOf
-	(*RerunEveryClock)(nil),                       // 97: pb.RerunEveryClock
-	(*SameClause)(nil),                            // 98: pb.SameClause
-	(*MultipleFileClause)(nil),                    // 99: pb.MultipleFileClause
-	(*MultipleFilePosition)(nil),                  // 100: pb.MultipleFilePosition
-	(*CommitmentControlClause)(nil),               // 101: pb.CommitmentControlClause
-	(*DataDivision)(nil),                          // 102: pb.DataDivision
-	(*FileSection)(nil),                           // 103: pb.FileSection
-	(*FileDescriptionEntry)(nil),                  // 104: pb.FileDescriptionEntry
-	(*ModeStatement)(nil),                         // 105: pb.ModeStatement
-	(*RecordingModeClause)(nil),                   // 106: pb.RecordingModeClause
-	(*ExternalClause)(nil),                        // 107: pb.ExternalClause
-	(*GlobalClause)(nil),                          // 108: pb.GlobalClause
-	(*BlockContainsClause)(nil),                   // 109: pb.BlockContainsClause
-	(*RecordContainsClause)(nil),                  // 110: pb.RecordContainsClause
-	(*LabelRecordsClause)(nil),                    // 111: pb.LabelRecordsClause
-	(*ValueOfClause)(nil),                         // 112: pb.ValueOfClause
-	(*ValuePair)(nil),                             // 113: pb.ValuePair
-	(*DataRecordsClause)(nil),                     // 114: pb.DataRecordsClause
-	(*DataNameOrIntegerLiteral)(nil),              // 115: pb.DataNameOrIntegerLiteral
-	(*LinageClause)(nil),                          // 116: pb.LinageClause
-	(*CodeSetClause)(nil),                         // 117: pb.CodeSetClause
-	(*ReportClause)(nil),                          // 118: pb.ReportClause
-	(*WorkingStorageSection)(nil),                 // 119: pb.WorkingStorageSection
-	(*DataDescriptionEntry)(nil),                  // 120: pb.DataDescriptionEntry
-	(*DataRenamesClause)(nil),                     // 121: pb.DataRenamesClause
-	(*DataRedefinesClause)(nil),                   // 122: pb.DataRedefinesClause
-	(*DataIntegerStringClause)(nil),               // 123: pb.DataIntegerStringClause
-	(*DataExternalClause)(nil),                    // 124: pb.DataExternalClause
-	(*DataGlobalClause)(nil),                      // 125: pb.DataGlobalClause
-	(*DataTypeDefClause)(nil),                     // 126: pb.DataTypeDefClause
-	(*DataThreadLocalClause)(nil),                 // 127: pb.DataThreadLocalClause
-	(*DataPictureClause)(nil),                     // 128: pb.DataPictureClause
-	(*PictureString)(nil),                         // 129: pb.PictureString
-	(*PictureChars)(nil),                          // 130: pb.PictureChars
-	(*PictureCardinality)(nil),                    // 131: pb.PictureCardinality
-	(*DataCommonOwnLocalClause)(nil),              // 132: pb.DataCommonOwnLocalClause
-	(*DataTypeClause)(nil),                        // 133: pb.DataTypeClause
-	(*DataUsingClause)(nil),                       // 134: pb.DataUsingClause
-	(*DataUsageClause)(nil),                       // 135: pb.DataUsageClause
-	(*DataValueInterval)(nil),                     // 136: pb.DataValueInterval
-	(*DataValueClause)(nil),                       // 137: pb.DataValueClause
-	(*DataReceivedByClause)(nil),                  // 138: pb.DataReceivedByClause
-	(*DataOccursClause)(nil),                      // 139: pb.DataOccursClause
-	(*DataSignClause)(nil),                        // 140: pb.DataSignClause
-	(*DataSynchronizedClause)(nil),                // 141: pb.DataSynchronizedClause
-	(*DataJustifiedClause)(nil),                   // 142: pb.DataJustifiedClause
-	(*DataBlankWhenZeroClause)(nil),               // 143: pb.DataBlankWhenZeroClause
-	(*DataWithLowerBoundsClause)(nil),             // 144: pb.DataWithLowerBoundsClause
-	(*DataAlignedClause)(nil),                     // 145: pb.DataAlignedClause
-	(*DataRecordAreaClause)(nil),                  // 146: pb.DataRecordAreaClause
-	(*ScreenSection)(nil),                         // 147: pb.ScreenSection
-	(*ScreenDescriptionEntry)(nil),                // 148: pb.ScreenDescriptionEntry
-	(*ZeroFillClause)(nil),                        // 149: pb.ZeroFillClause
-	(*FullClause)(nil),                            // 150: pb.FullClause
-	(*PromptClause)(nil),                          // 151: pb.PromptClause
-	(*RequiredClause)(nil),                        // 152: pb.RequiredClause
-	(*SecureClause)(nil),                          // 153: pb.SecureClause
-	(*AutoClause)(nil),                            // 154: pb.AutoClause
-	(*UsingClause)(nil),                           // 155: pb.UsingClause
-	(*FromClause)(nil),                            // 156: pb.FromClause
-	(*BlankClause)(nil),                           // 157: pb.BlankClause
-	(*BellClause)(nil),                            // 158: pb.BellClause
-	(*BlinkClause)(nil),                           // 159: pb.BlinkClause
-	(*EraseClause)(nil),                           // 160: pb.EraseClause
-	(*LightClause)(nil),                           // 161: pb.LightClause
-	(*GridClause)(nil),                            // 162: pb.GridClause
-	(*ReverseVideoClause)(nil),                    // 163: pb.ReverseVideoClause
-	(*UnderlineClause)(nil),                       // 164: pb.UnderlineClause
-	(*SizeClause)(nil),                            // 165: pb.SizeClause
-	(*LineClause)(nil),                            // 166: pb.LineClause
-	(*ColumnClause)(nil),                          // 167: pb.ColumnClause
-	(*ForegroundColorClause)(nil),                 // 168: pb.ForegroundColorClause
-	(*BackgroundColorClause)(nil),                 // 169: pb.BackgroundColorClause
-	(*ControlClause)(nil),                         // 170: pb.ControlClause
-	(*ReportSection)(nil),                         // 171: pb.ReportSection
-	(*ReportDescription)(nil),                     // 172: pb.ReportDescription
-	(*ReportDescriptionEntry)(nil),                // 173: pb.ReportDescriptionEntry
-	(*PageLimitClause)(nil),                       // 174: pb.PageLimitClause
-	(*HeadingClause)(nil),                         // 175: pb.HeadingClause
-	(*FirstDetailClause)(nil),                     // 176: pb.FirstDetailClause
-	(*LastDetailClause)(nil),                      // 177: pb.LastDetailClause
-	(*FootingClause)(nil),                         // 178: pb.FootingClause
-	(*ReportGroupDescriptionEntry)(nil),           // 179: pb.ReportGroupDescriptionEntry
-	(*ResetClause)(nil),                           // 180: pb.ResetClause
-	(*SumClause)(nil),                             // 181: pb.SumClause
-	(*ValueClause)(nil),                           // 182: pb.ValueClause
-	(*SourceClause)(nil),                          // 183: pb.SourceClause
-	(*IndicateClause)(nil),                        // 184: pb.IndicateClause
-	(*ColumnNumberClause)(nil),                    // 185: pb.ColumnNumberClause
-	(*BlankWhenZeroClause)(nil),                   // 186: pb.BlankWhenZeroClause
-	(*JustifiedClause)(nil),                       // 187: pb.JustifiedClause
-	(*SignClause)(nil),                            // 188: pb.SignClause
-	(*PictureClause)(nil),                         // 189: pb.PictureClause
-	(*LineNumberClause)(nil),                      // 190: pb.LineNumberClause
-	(*NextGroupClause)(nil),                       // 191: pb.NextGroupClause
-	(*TypeClause)(nil),                            // 192: pb.TypeClause
-	(*UsageClause)(nil),                           // 193: pb.UsageClause
-	(*ProgramLibrarySection)(nil),                 // 194: pb.ProgramLibrarySection
-	(*LibraryDescriptionEntry)(nil),               // 195: pb.LibraryDescriptionEntry
-	(*IsCommonClause)(nil),                        // 196: pb.IsCommonClause
-	(*AttributeClause1)(nil),                      // 197: pb.AttributeClause1
-	(*AttributeClause2)(nil),                      // 198: pb.AttributeClause2
-	(*ProcedureClause1)(nil),                      // 199: pb.ProcedureClause1
-	(*ProcedureClause2)(nil),                      // 200: pb.ProcedureClause2
-	(*LocalStorageSection)(nil),                   // 201: pb.LocalStorageSection
-	(*LinkageSection)(nil),                        // 202: pb.LinkageSection
-	(*CommunicationSection)(nil),                  // 203: pb.CommunicationSection
-	(*CommunicationDescriptionEntry)(nil),         // 204: pb.CommunicationDescriptionEntry
-	(*SymbolicTerminalClause)(nil),                // 205: pb.SymbolicTerminalClause
-	(*SymbolicDestinationClause)(nil),             // 206: pb.SymbolicDestinationClause
-	(*ErrorKeyClause)(nil),                        // 207: pb.ErrorKeyClause
-	(*DestinationTableClause)(nil),                // 208: pb.DestinationTableClause
-	(*DestinationCountClause)(nil),                // 209: pb.DestinationCountClause
-	(*SymbolicQueueClause)(nil),                   // 210: pb.SymbolicQueueClause
-	(*SymbolicSubQueueClause)(nil),                // 211: pb.SymbolicSubQueueClause
-	(*MessageDateClause)(nil),                     // 212: pb.MessageDateClause
-	(*MessageTimeClause)(nil),                     // 213: pb.MessageTimeClause
-	(*SymbolicSourceClause)(nil),                  // 214: pb.SymbolicSourceClause
-	(*TextLengthClause)(nil),                      // 215: pb.TextLengthClause
-	(*EndKeyClause)(nil),                          // 216: pb.EndKeyClause
-	(*StatusKeyClause)(nil),                       // 217: pb.StatusKeyClause
-	(*MessageCountClause)(nil),                    // 218: pb.MessageCountClause
-	(*DataBaseSection)(nil),                       // 219: pb.DataBaseSection
-	(*DataBaseSectionEntry)(nil),                  // 220: pb.DataBaseSectionEntry
-	(*ProcedureDivision)(nil),                     // 221: pb.ProcedureDivision
-	(*ProcedureSection)(nil),                      // 222: pb.ProcedureSection
-	(*Declarative)(nil),                           // 223: pb.Declarative
-	(*ProcedureSectionHeader)(nil),                // 224: pb.ProcedureSectionHeader
-	(*Paragraphs)(nil),                            // 225: pb.Paragraphs
-	(*Paragraph)(nil),                             // 226: pb.Paragraph
-	(*Sentences)(nil),                             // 227: pb.Sentences
-	(*Sentence)(nil),                              // 228: pb.Sentence
-	(*Statement)(nil),                             // 229: pb.Statement
-	(*WriteStatement)(nil),                        // 230: pb.WriteStatement
-	(*UnstringStatement)(nil),                     // 231: pb.UnstringStatement
-	(*TerminateStatement)(nil),                    // 232: pb.TerminateStatement
-	(*SubtractStatement)(nil),                     // 233: pb.SubtractStatement
-	(*StringStatement)(nil),                       // 234: pb.StringStatement
-	(*StopStatement)(nil),                         // 235: pb.StopStatement
-	(*StartStatement)(nil),                        // 236: pb.StartStatement
-	(*SortStatement)(nil),                         // 237: pb.SortStatement
-	(*SetStatement)(nil),                          // 238: pb.SetStatement
-	(*SendStatement)(nil),                         // 239: pb.SendStatement
-	(*SearchStatement)(nil),                       // 240: pb.SearchStatement
-	(*RewriteStatement)(nil),                      // 241: pb.RewriteStatement
-	(*ReturnStatement)(nil),                       // 242: pb.ReturnStatement
-	(*ReleaseStatement)(nil),                      // 243: pb.ReleaseStatement
-	(*ReceiveStatement)(nil),                      // 244: pb.ReceiveStatement
-	(*ReadStatement)(nil),                         // 245: pb.ReadStatement
-	(*PurgeStatement)(nil),                        // 246: pb.PurgeStatement
-	(*PerformStatement)(nil),                      // 247: pb.PerformStatement
-	(*OpenStatement)(nil),                         // 248: pb.OpenStatement
-	(*NextSentenceStatement)(nil),                 // 249: pb.NextSentenceStatement
-	(*MultiplyStatement)(nil),                     // 250: pb.MultiplyStatement
-	(*MoveStatement)(nil),                         // 251: pb.MoveStatement
-	(*MoveToStatement)(nil),                       // 252: pb.MoveToStatement
-	(*MoveCorrespondingToStatement)(nil),          // 253: pb.MoveCorrespondingToStatement
-	(*MergeStatement)(nil),                        // 254: pb.MergeStatement
-	(*InspectStatement)(nil),                      // 255: pb.InspectStatement
-	(*InitiateStatement)(nil),                     // 256: pb.InitiateStatement
-	(*InitializeStatement)(nil),                   // 257: pb.InitializeStatement
-	(*IfStatement)(nil),                           // 258: pb.IfStatement
-	(*GoToStatement)(nil),                         // 259: pb.GoToStatement
-	(*GobackStatement)(nil),                       // 260: pb.GobackStatement
-	(*GenerateStatement)(nil),                     // 261: pb.GenerateStatement
-	(*ExitStatement)(nil),                         // 262: pb.ExitStatement
-	(*ExecSqlImsStatement)(nil),                   // 263: pb.ExecSqlImsStatement
-	(*ExecSqlStatement)(nil),                      // 264: pb.ExecSqlStatement
-	(*ExecCicsStatement)(nil),                     // 265: pb.ExecCicsStatement
-	(*ExhibitStatement)(nil),                      // 266: pb.ExhibitStatement
-	(*EvaluateStatement)(nil),                     // 267: pb.EvaluateStatement
-	(*EntryStatement)(nil),                        // 268: pb.EntryStatement
-	(*EnableStatement)(nil),                       // 269: pb.EnableStatement
-	(*DivideStatement)(nil),                       // 270: pb.DivideStatement
-	(*DisplayOperand)(nil),                        // 271: pb.DisplayOperand
-	(*DisplayAt)(nil),                             // 272: pb.DisplayAt
-	(*DisplayUpon)(nil),                           // 273: pb.DisplayUpon
-	(*DisplayWith)(nil),                           // 274: pb.DisplayWith
-	(*DisplayStatement)(nil),                      // 275: pb.DisplayStatement
-	(*DisableStatement)(nil),                      // 276: pb.DisableStatement
-	(*DeleteStatement)(nil),                       // 277: pb.DeleteStatement
-	(*ContinueStatement)(nil),                     // 278: pb.ContinueStatement
-	(*ComputeStatement)(nil),                      // 279: pb.ComputeStatement
-	(*CloseStatement)(nil),                        // 280: pb.CloseStatement
-	(*CancelStatement)(nil),                       // 281: pb.CancelStatement
-	(*CallStatement)(nil),                         // 282: pb.CallStatement
-	(*AlterStatement)(nil),                        // 283: pb.AlterStatement
-	(*AddStatement)(nil),                          // 284: pb.AddStatement
-	(*AcceptStatement)(nil),                       // 285: pb.AcceptStatement
-	(*OnExceptionClause)(nil),                     // 286: pb.OnExceptionClause
-	(*NotOnExceptionClause)(nil),                  // 287: pb.NotOnExceptionClause
-	(*OnSizeErrorPhrase)(nil),                     // 288: pb.OnSizeErrorPhrase
-	(*NotOnSizeErrorPhrase)(nil),                  // 289: pb.NotOnSizeErrorPhrase
-	(*UseStatement)(nil),                          // 290: pb.UseStatement
-	(*UseDebugOn)(nil),                            // 291: pb.UseDebugOn
-	(*UseDebugClause)(nil),                        // 292: pb.UseDebugClause
-	(*UseAfterClause)(nil),                        // 293: pb.UseAfterClause
-	(*ArithmeticExpression)(nil),                  // 294: pb.ArithmeticExpression
-	(*Identifier)(nil),                            // 295: pb.Identifier
-	(*TableCall)(nil),                             // 296: pb.TableCall
-	(*FunctionCall)(nil),                          // 297: pb.FunctionCall
-	(*ReferenceModifier)(nil),                     // 298: pb.ReferenceModifier
-	(*CharacterPosition)(nil),                     // 299: pb.CharacterPosition
-	(*Length)(nil),                                // 300: pb.Length
-	(*Subscript)(nil),                             // 301: pb.Subscript
-	(*Argument)(nil),                              // 302: pb.Argument
-	(*QualifiedDataNameIntegerLiteral)(nil),       // 303: pb.QualifiedDataNameIntegerLiteral
-	(*IndexNameIntegerLiteral)(nil),               // 304: pb.IndexNameIntegerLiteral
-	(*QualifiedDataName)(nil),                     // 305: pb.QualifiedDataName
-	(*QualifiedDataNameFormat1)(nil),              // 306: pb.QualifiedDataNameFormat1
-	(*QualifiedDataNameFormat2)(nil),              // 307: pb.QualifiedDataNameFormat2
-	(*QualifiedDataNameFormat3)(nil),              // 308: pb.QualifiedDataNameFormat3
-	(*QualifiedDataNameFormat4)(nil),              // 309: pb.QualifiedDataNameFormat4
-	(*InData)(nil),                                // 310: pb.InData
-	(*InFile)(nil),                                // 311: pb.InFile
-	(*InMnemonic)(nil),                            // 312: pb.InMnemonic
-	(*InSection)(nil),                             // 313: pb.InSection
-	(*InLibrary)(nil),                             // 314: pb.InLibrary
-	(*InTable)(nil),                               // 315: pb.InTable
-	(*AlphabetName)(nil),                          // 316: pb.AlphabetName
-	(*AssignmentName)(nil),                        // 317: pb.AssignmentName
-	(*BasisName)(nil),                             // 318: pb.BasisName
-	(*CdName)(nil),                                // 319: pb.CdName
-	(*ClassName)(nil),                             // 320: pb.ClassName
-	(*ComputerName)(nil),                          // 321: pb.ComputerName
-	(*ConditionName)(nil),                         // 322: pb.ConditionName
-	(*DataName)(nil),                              // 323: pb.DataName
-	(*DataDescName)(nil),                          // 324: pb.DataDescName
-	(*EnvironmentName)(nil),                       // 325: pb.EnvironmentName
-	(*FileName)(nil),                              // 326: pb.FileName
-	(*FunctionName)(nil),                          // 327: pb.FunctionName
-	(*IndexName)(nil),                             // 328: pb.IndexName
-	(*LanguageName)(nil),                          // 329: pb.LanguageName
-	(*LibraryName)(nil),                           // 330: pb.LibraryName
-	(*LocalName)(nil),                             // 331: pb.LocalName
-	(*MnemonicName)(nil),                          // 332: pb.MnemonicName
-	(*ParagraphName)(nil),                         // 333: pb.ParagraphName
-	(*ProcedureName)(nil),                         // 334: pb.ProcedureName
-	(*ProgramName)(nil),                           // 335: pb.ProgramName
-	(*RecordName)(nil),                            // 336: pb.RecordName
-	(*ReportName)(nil),                            // 337: pb.ReportName
-	(*RoutingName)(nil),                           // 338: pb.RoutingName
-	(*ScreenName)(nil),                            // 339: pb.ScreenName
-	(*SectionName)(nil),                           // 340: pb.SectionName
-	(*SystemName)(nil),                            // 341: pb.SystemName
-	(*SymbolicCharacter)(nil),                     // 342: pb.SymbolicCharacter
-	(*TextName)(nil),                              // 343: pb.TextName
-	(*CobolWord)(nil),                             // 344: pb.CobolWord
-	(*Literal)(nil),                               // 345: pb.Literal
-	(*BooleanLiteral)(nil),                        // 346: pb.BooleanLiteral
-	(*NumericLiteral)(nil),                        // 347: pb.NumericLiteral
-	(*IntegerLiteral)(nil),                        // 348: pb.IntegerLiteral
-	(*FigurativeConstant)(nil),                    // 349: pb.FigurativeConstant
-	(*SpecialRegister)(nil),                       // 350: pb.SpecialRegister
-	(*NonNumericLiteral)(nil),                     // 351: pb.NonNumericLiteral
-	(*StringLiteral)(nil),                         // 352: pb.StringLiteral
-	(*DbcsLiteral)(nil),                           // 353: pb.DbcsLiteral
-	(*HexNumber)(nil),                             // 354: pb.HexNumber
-	(*NullTerminated)(nil),                        // 355: pb.NullTerminated
-	(*AlphabetClause_Also)(nil),                   // 356: pb.AlphabetClause.Also
-	(*AlphabetClause_AlphabetLiteral)(nil),        // 357: pb.AlphabetClause.AlphabetLiteral
-	(*AlphabetClause_AlphabetLiterals)(nil),       // 358: pb.AlphabetClause.AlphabetLiterals
-	(*AlphabetClause_Alphanumeric)(nil),           // 359: pb.AlphabetClause.Alphanumeric
-	(*AlphabetClause_National)(nil),               // 360: pb.AlphabetClause.National
-	(*LabelRecordsClause_DataNames)(nil),          // 361: pb.LabelRecordsClause.DataNames
-	(*DataDescriptionEntry_Format1)(nil),          // 362: pb.DataDescriptionEntry.Format1
-	(*DataDescriptionEntry_Format2)(nil),          // 363: pb.DataDescriptionEntry.Format2
-	(*DataDescriptionEntry_Format3)(nil),          // 364: pb.DataDescriptionEntry.Format3
-	(*DataDescriptionEntry_ExecSql)(nil),          // 365: pb.DataDescriptionEntry.ExecSql
-	(*DataTypeClause_Lob)(nil),                    // 366: pb.DataTypeClause.Lob
-	(*DataOccursClause_Sort)(nil),                 // 367: pb.DataOccursClause.Sort
-	(*DataOccursClause_Indexed)(nil),              // 368: pb.DataOccursClause.Indexed
-	(*ReportGroupDescriptionEntry_Vertical)(nil),  // 369: pb.ReportGroupDescriptionEntry.Vertical
-	(*ReportGroupDescriptionEntry_Single)(nil),    // 370: pb.ReportGroupDescriptionEntry.Single
-	(*ReportGroupDescriptionEntry_Printable)(nil), // 371: pb.ReportGroupDescriptionEntry.Printable
-	(*TypeClause_ReportHeading)(nil),              // 372: pb.TypeClause.ReportHeading
-	(*TypeClause_PageHeading)(nil),                // 373: pb.TypeClause.PageHeading
-	(*TypeClause_ControlHeading)(nil),             // 374: pb.TypeClause.ControlHeading
-	(*TypeClause_Detail)(nil),                     // 375: pb.TypeClause.Detail
-	(*TypeClause_ControlFooting)(nil),             // 376: pb.TypeClause.ControlFooting
-	(*TypeClause_PageFooting)(nil),                // 377: pb.TypeClause.PageFooting
-	(*TypeClause_ReportFooting)(nil),              // 378: pb.TypeClause.ReportFooting
-	(*LibraryDescriptionEntry_Import)(nil),        // 379: pb.LibraryDescriptionEntry.Import
-	(*LibraryDescriptionEntry_Export)(nil),        // 380: pb.LibraryDescriptionEntry.Export
-	(*ProcedureClause2_WithName)(nil),             // 381: pb.ProcedureClause2.WithName
-	(*ProcedureClause2_UsingName)(nil),            // 382: pb.ProcedureClause2.UsingName
-	(*CommunicationDescriptionEntry_Input)(nil),   // 383: pb.CommunicationDescriptionEntry.Input
-	(*CommunicationDescriptionEntry_Output)(nil),  // 384: pb.CommunicationDescriptionEntry.Output
-	(*CommunicationDescriptionEntry_Io)(nil),      // 385: pb.CommunicationDescriptionEntry.Io
-	(*ProcedureDivision_ByReference)(nil),         // 386: pb.ProcedureDivision.ByReference
-	(*ProcedureDivision_ByReferencePhrase)(nil),   // 387: pb.ProcedureDivision.ByReferencePhrase
-	(*ProcedureDivision_ByValue)(nil),             // 388: pb.ProcedureDivision.ByValue
-	(*ProcedureDivision_ByValuePhrase)(nil),       // 389: pb.ProcedureDivision.ByValuePhrase
-	(*ProcedureDivision_UsingParameter)(nil),      // 390: pb.ProcedureDivision.UsingParameter
-	(*ProcedureDivision_GivingClause)(nil),        // 391: pb.ProcedureDivision.GivingClause
-	(*ProcedureDivision_UsingClause)(nil),         // 392: pb.ProcedureDivision.UsingClause
-	(*AddStatement_AddFrom)(nil),                  // 393: pb.AddStatement.AddFrom
-	(*AddStatement_AddToGiving)(nil),              // 394: pb.AddStatement.AddToGiving
-	(*AddStatement_To)(nil),                       // 395: pb.AddStatement.To
-	(*AddStatement_ToGiving)(nil),                 // 396: pb.AddStatement.ToGiving
-	(*AddStatement_Corresponding)(nil),            // 397: pb.AddStatement.Corresponding
-	(*AcceptStatement_FromDate)(nil),              // 398: pb.AcceptStatement.FromDate
-	(*AcceptStatement_FromEscapeKey)(nil),         // 399: pb.AcceptStatement.FromEscapeKey
-	(*AcceptStatement_FromMnemonic)(nil),          // 400: pb.AcceptStatement.FromMnemonic
-	(*AcceptStatement_MessageCount)(nil),          // 401: pb.AcceptStatement.MessageCount
-	(*UseAfterClause_FileNames)(nil),              // 402: pb.UseAfterClause.FileNames
+	(RelationalOperator)(0),                           // 0: pb.RelationalOperator
+	(ProgramIdParagraph_Attribute)(0),                 // 1: pb.ProgramIdParagraph.Attribute
+	(MemorySizeClause_Unit)(0),                        // 2: pb.MemorySizeClause.Unit
+	(DiskSizeClause_Unit)(0),                          // 3: pb.DiskSizeClause.Unit
+	(AlphabetClause_Alphanumeric_Type)(0),             // 4: pb.AlphabetClause.Alphanumeric.Type
+	(AlphabetClause_National_Type)(0),                 // 5: pb.AlphabetClause.National.Type
+	(ClassClause_Type)(0),                             // 6: pb.ClassClause.Type
+	(DefaultDisplaySignClause_Type)(0),                // 7: pb.DefaultDisplaySignClause.Type
+	(SymbolicCharactersClause_Type)(0),                // 8: pb.SymbolicCharactersClause.Type
+	(AssignClause_Type)(0),                            // 9: pb.AssignClause.Type
+	(OrganizationClause_Mode)(0),                      // 10: pb.OrganizationClause.Mode
+	(OrganizationClause_Type)(0),                      // 11: pb.OrganizationClause.Type
+	(RecordDelimiterClause_Type)(0),                   // 12: pb.RecordDelimiterClause.Type
+	(AccessModeClause_Mode)(0),                        // 13: pb.AccessModeClause.Mode
+	(RerunEveryOf_Type)(0),                            // 14: pb.RerunEveryOf.Type
+	(SameClause_Form)(0),                              // 15: pb.SameClause.Form
+	(BlockContainsClause_Unit)(0),                     // 16: pb.BlockContainsClause.Unit
+	(LabelRecordsClause_Type)(0),                      // 17: pb.LabelRecordsClause.Type
+	(PictureChars_Type)(0),                            // 18: pb.PictureChars.Type
+	(DataCommonOwnLocalClause_Type)(0),                // 19: pb.DataCommonOwnLocalClause.Type
+	(DataTypeClause_Type)(0),                          // 20: pb.DataTypeClause.Type
+	(DataTypeClause_Mode)(0),                          // 21: pb.DataTypeClause.Mode
+	(DataUsingClause_Type)(0),                         // 22: pb.DataUsingClause.Type
+	(DataUsageClause_Type)(0),                         // 23: pb.DataUsageClause.Type
+	(DataReceivedByClause_Type)(0),                    // 24: pb.DataReceivedByClause.Type
+	(DataSignClause_Type)(0),                          // 25: pb.DataSignClause.Type
+	(DataSynchronizedClause_Type)(0),                  // 26: pb.DataSynchronizedClause.Type
+	(FullClause_Type)(0),                              // 27: pb.FullClause.Type
+	(RequiredClause_Type)(0),                          // 28: pb.RequiredClause.Type
+	(SecureClause_Type)(0),                            // 29: pb.SecureClause.Type
+	(AutoClause_Type)(0),                              // 30: pb.AutoClause.Type
+	(BlankClause_Type)(0),                             // 31: pb.BlankClause.Type
+	(BellClause_Type)(0),                              // 32: pb.BellClause.Type
+	(EraseClause_Type)(0),                             // 33: pb.EraseClause.Type
+	(LightClause_Type)(0),                             // 34: pb.LightClause.Type
+	(GridClause_Type)(0),                              // 35: pb.GridClause.Type
+	(LineClause_Type)(0),                              // 36: pb.LineClause.Type
+	(ColumnClause_Type)(0),                            // 37: pb.ColumnClause.Type
+	(SignClause_Type)(0),                              // 38: pb.SignClause.Type
+	(AttributeClause1_Sharing)(0),                     // 39: pb.AttributeClause1.Sharing
+	(AttributeClause2_LibAccess)(0),                   // 40: pb.AttributeClause2.LibAccess
+	(ProcedureDivision_GivingClause_Type)(0),          // 41: pb.ProcedureDivision.GivingClause.Type
+	(ProcedureDivision_UsingClause_Type)(0),           // 42: pb.ProcedureDivision.UsingClause.Type
+	(AcceptStatement_FromDate_Type)(0),                // 43: pb.AcceptStatement.FromDate.Type
+	(UseAfterClause_Type)(0),                          // 44: pb.UseAfterClause.Type
+	(AndOrCondition_AndOr)(0),                         // 45: pb.AndOrCondition.AndOr
+	(ClassCondition_Type)(0),                          // 46: pb.ClassCondition.Type
+	(RelationSignCondition_Type)(0),                   // 47: pb.RelationSignCondition.Type
+	(RelationCombinedCondition_AndOr)(0),              // 48: pb.RelationCombinedCondition.AndOr
+	(Literal_Type)(0),                                 // 49: pb.Literal.Type
+	(NumericLiteral_Type)(0),                          // 50: pb.NumericLiteral.Type
+	(FigurativeConstant_Type)(0),                      // 51: pb.FigurativeConstant.Type
+	(SpecialRegister_Type)(0),                         // 52: pb.SpecialRegister.Type
+	(*Program)(nil),                                   // 53: pb.Program
+	(*CompilationUnit)(nil),                           // 54: pb.CompilationUnit
+	(*ProgramUnit)(nil),                               // 55: pb.ProgramUnit
+	(*IdentificationDivision)(nil),                    // 56: pb.IdentificationDivision
+	(*ProgramIdParagraph)(nil),                        // 57: pb.ProgramIdParagraph
+	(*AuthorParagraph)(nil),                           // 58: pb.AuthorParagraph
+	(*DateCompiledParagraph)(nil),                     // 59: pb.DateCompiledParagraph
+	(*DateWrittenParagraph)(nil),                      // 60: pb.DateWrittenParagraph
+	(*InstallationParagraph)(nil),                     // 61: pb.InstallationParagraph
+	(*RemarksParagraph)(nil),                          // 62: pb.RemarksParagraph
+	(*SecurityParagraph)(nil),                         // 63: pb.SecurityParagraph
+	(*EnvironmentDivision)(nil),                       // 64: pb.EnvironmentDivision
+	(*ConfigurationSection)(nil),                      // 65: pb.ConfigurationSection
+	(*SourceComputerParagraph)(nil),                   // 66: pb.SourceComputerParagraph
+	(*ObjectComputerParagraph)(nil),                   // 67: pb.ObjectComputerParagraph
+	(*MemorySizeClause)(nil),                          // 68: pb.MemorySizeClause
+	(*DiskSizeClause)(nil),                            // 69: pb.DiskSizeClause
+	(*CollatingSequenceClause)(nil),                   // 70: pb.CollatingSequenceClause
+	(*SegmentLimitClause)(nil),                        // 71: pb.SegmentLimitClause
+	(*CharacterSetClause)(nil),                        // 72: pb.CharacterSetClause
+	(*SpecialNamesParagraph)(nil),                     // 73: pb.SpecialNamesParagraph
+	(*AlphabetClause)(nil),                            // 74: pb.AlphabetClause
+	(*ChannelClause)(nil),                             // 75: pb.ChannelClause
+	(*ClassClause)(nil),                               // 76: pb.ClassClause
+	(*ClassClauseThrough)(nil),                        // 77: pb.ClassClauseThrough
+	(*CurrencySignClause)(nil),                        // 78: pb.CurrencySignClause
+	(*DecimalPointClause)(nil),                        // 79: pb.DecimalPointClause
+	(*DefaultDisplaySignClause)(nil),                  // 80: pb.DefaultDisplaySignClause
+	(*OdtClause)(nil),                                 // 81: pb.OdtClause
+	(*ReserveNetworkClause)(nil),                      // 82: pb.ReserveNetworkClause
+	(*SymbolicCharactersClause)(nil),                  // 83: pb.SymbolicCharactersClause
+	(*InputOutputSection)(nil),                        // 84: pb.InputOutputSection
+	(*FileControlParagraph)(nil),                      // 85: pb.FileControlParagraph
+	(*FileControlEntry)(nil),                          // 86: pb.FileControlEntry
+	(*SelectClause)(nil),                              // 87: pb.SelectClause
+	(*AssignClause)(nil),                              // 88: pb.AssignClause
+	(*ReserveClause)(nil),                             // 89: pb.ReserveClause
+	(*OrganizationClause)(nil),                        // 90: pb.OrganizationClause
+	(*PaddingCharacterClause)(nil),                    // 91: pb.PaddingCharacterClause
+	(*RecordDelimiterClause)(nil),                     // 92: pb.RecordDelimiterClause
+	(*AccessModeClause)(nil),                          // 93: pb.AccessModeClause
+	(*RecordKeyClause)(nil),                           // 94: pb.RecordKeyClause
+	(*AlternateRecordKeyClause)(nil),                  // 95: pb.AlternateRecordKeyClause
+	(*PasswordClause)(nil),                            // 96: pb.PasswordClause
+	(*FileStatusClause)(nil),                          // 97: pb.FileStatusClause
+	(*RelativeKeyClause)(nil),                         // 98: pb.RelativeKeyClause
+	(*IoControlParagraph)(nil),                        // 99: pb.IoControlParagraph
+	(*RerunClause)(nil),                               // 100: pb.RerunClause
+	(*RerunEveryRecords)(nil),                         // 101: pb.RerunEveryRecords
+	(*RerunEveryOf)(nil),                              // 102: pb.RerunEveryOf
+	(*RerunEveryClock)(nil),                           // 103: pb.RerunEveryClock
+	(*SameClause)(nil),                                // 104: pb.SameClause
+	(*MultipleFileClause)(nil),                        // 105: pb.MultipleFileClause
+	(*MultipleFilePosition)(nil),                      // 106: pb.MultipleFilePosition
+	(*CommitmentControlClause)(nil),                   // 107: pb.CommitmentControlClause
+	(*DataDivision)(nil),                              // 108: pb.DataDivision
+	(*FileSection)(nil),                               // 109: pb.FileSection
+	(*FileDescriptionEntry)(nil),                      // 110: pb.FileDescriptionEntry
+	(*ModeStatement)(nil),                             // 111: pb.ModeStatement
+	(*RecordingModeClause)(nil),                       // 112: pb.RecordingModeClause
+	(*ExternalClause)(nil),                            // 113: pb.ExternalClause
+	(*GlobalClause)(nil),                              // 114: pb.GlobalClause
+	(*BlockContainsClause)(nil),                       // 115: pb.BlockContainsClause
+	(*RecordContainsClause)(nil),                      // 116: pb.RecordContainsClause
+	(*LabelRecordsClause)(nil),                        // 117: pb.LabelRecordsClause
+	(*ValueOfClause)(nil),                             // 118: pb.ValueOfClause
+	(*ValuePair)(nil),                                 // 119: pb.ValuePair
+	(*DataRecordsClause)(nil),                         // 120: pb.DataRecordsClause
+	(*DataNameOrIntegerLiteral)(nil),                  // 121: pb.DataNameOrIntegerLiteral
+	(*LinageClause)(nil),                              // 122: pb.LinageClause
+	(*CodeSetClause)(nil),                             // 123: pb.CodeSetClause
+	(*ReportClause)(nil),                              // 124: pb.ReportClause
+	(*WorkingStorageSection)(nil),                     // 125: pb.WorkingStorageSection
+	(*DataDescriptionEntry)(nil),                      // 126: pb.DataDescriptionEntry
+	(*DataRenamesClause)(nil),                         // 127: pb.DataRenamesClause
+	(*DataRedefinesClause)(nil),                       // 128: pb.DataRedefinesClause
+	(*DataIntegerStringClause)(nil),                   // 129: pb.DataIntegerStringClause
+	(*DataExternalClause)(nil),                        // 130: pb.DataExternalClause
+	(*DataGlobalClause)(nil),                          // 131: pb.DataGlobalClause
+	(*DataTypeDefClause)(nil),                         // 132: pb.DataTypeDefClause
+	(*DataThreadLocalClause)(nil),                     // 133: pb.DataThreadLocalClause
+	(*DataPictureClause)(nil),                         // 134: pb.DataPictureClause
+	(*PictureString)(nil),                             // 135: pb.PictureString
+	(*PictureChars)(nil),                              // 136: pb.PictureChars
+	(*PictureCardinality)(nil),                        // 137: pb.PictureCardinality
+	(*DataCommonOwnLocalClause)(nil),                  // 138: pb.DataCommonOwnLocalClause
+	(*DataTypeClause)(nil),                            // 139: pb.DataTypeClause
+	(*DataUsingClause)(nil),                           // 140: pb.DataUsingClause
+	(*DataUsageClause)(nil),                           // 141: pb.DataUsageClause
+	(*DataValueInterval)(nil),                         // 142: pb.DataValueInterval
+	(*DataValueClause)(nil),                           // 143: pb.DataValueClause
+	(*DataReceivedByClause)(nil),                      // 144: pb.DataReceivedByClause
+	(*DataOccursClause)(nil),                          // 145: pb.DataOccursClause
+	(*DataSignClause)(nil),                            // 146: pb.DataSignClause
+	(*DataSynchronizedClause)(nil),                    // 147: pb.DataSynchronizedClause
+	(*DataJustifiedClause)(nil),                       // 148: pb.DataJustifiedClause
+	(*DataBlankWhenZeroClause)(nil),                   // 149: pb.DataBlankWhenZeroClause
+	(*DataWithLowerBoundsClause)(nil),                 // 150: pb.DataWithLowerBoundsClause
+	(*DataAlignedClause)(nil),                         // 151: pb.DataAlignedClause
+	(*DataRecordAreaClause)(nil),                      // 152: pb.DataRecordAreaClause
+	(*ScreenSection)(nil),                             // 153: pb.ScreenSection
+	(*ScreenDescriptionEntry)(nil),                    // 154: pb.ScreenDescriptionEntry
+	(*ZeroFillClause)(nil),                            // 155: pb.ZeroFillClause
+	(*FullClause)(nil),                                // 156: pb.FullClause
+	(*PromptClause)(nil),                              // 157: pb.PromptClause
+	(*RequiredClause)(nil),                            // 158: pb.RequiredClause
+	(*SecureClause)(nil),                              // 159: pb.SecureClause
+	(*AutoClause)(nil),                                // 160: pb.AutoClause
+	(*UsingClause)(nil),                               // 161: pb.UsingClause
+	(*FromClause)(nil),                                // 162: pb.FromClause
+	(*BlankClause)(nil),                               // 163: pb.BlankClause
+	(*BellClause)(nil),                                // 164: pb.BellClause
+	(*BlinkClause)(nil),                               // 165: pb.BlinkClause
+	(*EraseClause)(nil),                               // 166: pb.EraseClause
+	(*LightClause)(nil),                               // 167: pb.LightClause
+	(*GridClause)(nil),                                // 168: pb.GridClause
+	(*ReverseVideoClause)(nil),                        // 169: pb.ReverseVideoClause
+	(*UnderlineClause)(nil),                           // 170: pb.UnderlineClause
+	(*SizeClause)(nil),                                // 171: pb.SizeClause
+	(*LineClause)(nil),                                // 172: pb.LineClause
+	(*ColumnClause)(nil),                              // 173: pb.ColumnClause
+	(*ForegroundColorClause)(nil),                     // 174: pb.ForegroundColorClause
+	(*BackgroundColorClause)(nil),                     // 175: pb.BackgroundColorClause
+	(*ControlClause)(nil),                             // 176: pb.ControlClause
+	(*ReportSection)(nil),                             // 177: pb.ReportSection
+	(*ReportDescription)(nil),                         // 178: pb.ReportDescription
+	(*ReportDescriptionEntry)(nil),                    // 179: pb.ReportDescriptionEntry
+	(*PageLimitClause)(nil),                           // 180: pb.PageLimitClause
+	(*HeadingClause)(nil),                             // 181: pb.HeadingClause
+	(*FirstDetailClause)(nil),                         // 182: pb.FirstDetailClause
+	(*LastDetailClause)(nil),                          // 183: pb.LastDetailClause
+	(*FootingClause)(nil),                             // 184: pb.FootingClause
+	(*ReportGroupDescriptionEntry)(nil),               // 185: pb.ReportGroupDescriptionEntry
+	(*ResetClause)(nil),                               // 186: pb.ResetClause
+	(*SumClause)(nil),                                 // 187: pb.SumClause
+	(*ValueClause)(nil),                               // 188: pb.ValueClause
+	(*SourceClause)(nil),                              // 189: pb.SourceClause
+	(*IndicateClause)(nil),                            // 190: pb.IndicateClause
+	(*ColumnNumberClause)(nil),                        // 191: pb.ColumnNumberClause
+	(*BlankWhenZeroClause)(nil),                       // 192: pb.BlankWhenZeroClause
+	(*JustifiedClause)(nil),                           // 193: pb.JustifiedClause
+	(*SignClause)(nil),                                // 194: pb.SignClause
+	(*PictureClause)(nil),                             // 195: pb.PictureClause
+	(*LineNumberClause)(nil),                          // 196: pb.LineNumberClause
+	(*NextGroupClause)(nil),                           // 197: pb.NextGroupClause
+	(*TypeClause)(nil),                                // 198: pb.TypeClause
+	(*UsageClause)(nil),                               // 199: pb.UsageClause
+	(*ProgramLibrarySection)(nil),                     // 200: pb.ProgramLibrarySection
+	(*LibraryDescriptionEntry)(nil),                   // 201: pb.LibraryDescriptionEntry
+	(*IsCommonClause)(nil),                            // 202: pb.IsCommonClause
+	(*AttributeClause1)(nil),                          // 203: pb.AttributeClause1
+	(*AttributeClause2)(nil),                          // 204: pb.AttributeClause2
+	(*ProcedureClause1)(nil),                          // 205: pb.ProcedureClause1
+	(*ProcedureClause2)(nil),                          // 206: pb.ProcedureClause2
+	(*LocalStorageSection)(nil),                       // 207: pb.LocalStorageSection
+	(*LinkageSection)(nil),                            // 208: pb.LinkageSection
+	(*CommunicationSection)(nil),                      // 209: pb.CommunicationSection
+	(*CommunicationDescriptionEntry)(nil),             // 210: pb.CommunicationDescriptionEntry
+	(*SymbolicTerminalClause)(nil),                    // 211: pb.SymbolicTerminalClause
+	(*SymbolicDestinationClause)(nil),                 // 212: pb.SymbolicDestinationClause
+	(*ErrorKeyClause)(nil),                            // 213: pb.ErrorKeyClause
+	(*DestinationTableClause)(nil),                    // 214: pb.DestinationTableClause
+	(*DestinationCountClause)(nil),                    // 215: pb.DestinationCountClause
+	(*SymbolicQueueClause)(nil),                       // 216: pb.SymbolicQueueClause
+	(*SymbolicSubQueueClause)(nil),                    // 217: pb.SymbolicSubQueueClause
+	(*MessageDateClause)(nil),                         // 218: pb.MessageDateClause
+	(*MessageTimeClause)(nil),                         // 219: pb.MessageTimeClause
+	(*SymbolicSourceClause)(nil),                      // 220: pb.SymbolicSourceClause
+	(*TextLengthClause)(nil),                          // 221: pb.TextLengthClause
+	(*EndKeyClause)(nil),                              // 222: pb.EndKeyClause
+	(*StatusKeyClause)(nil),                           // 223: pb.StatusKeyClause
+	(*MessageCountClause)(nil),                        // 224: pb.MessageCountClause
+	(*DataBaseSection)(nil),                           // 225: pb.DataBaseSection
+	(*DataBaseSectionEntry)(nil),                      // 226: pb.DataBaseSectionEntry
+	(*ProcedureDivision)(nil),                         // 227: pb.ProcedureDivision
+	(*ProcedureSection)(nil),                          // 228: pb.ProcedureSection
+	(*Declarative)(nil),                               // 229: pb.Declarative
+	(*ProcedureSectionHeader)(nil),                    // 230: pb.ProcedureSectionHeader
+	(*Paragraphs)(nil),                                // 231: pb.Paragraphs
+	(*Paragraph)(nil),                                 // 232: pb.Paragraph
+	(*Sentences)(nil),                                 // 233: pb.Sentences
+	(*Sentence)(nil),                                  // 234: pb.Sentence
+	(*Statement)(nil),                                 // 235: pb.Statement
+	(*WriteStatement)(nil),                            // 236: pb.WriteStatement
+	(*UnstringStatement)(nil),                         // 237: pb.UnstringStatement
+	(*TerminateStatement)(nil),                        // 238: pb.TerminateStatement
+	(*SubtractStatement)(nil),                         // 239: pb.SubtractStatement
+	(*StringStatement)(nil),                           // 240: pb.StringStatement
+	(*StopStatement)(nil),                             // 241: pb.StopStatement
+	(*StartStatement)(nil),                            // 242: pb.StartStatement
+	(*SortStatement)(nil),                             // 243: pb.SortStatement
+	(*SetStatement)(nil),                              // 244: pb.SetStatement
+	(*SendStatement)(nil),                             // 245: pb.SendStatement
+	(*SearchStatement)(nil),                           // 246: pb.SearchStatement
+	(*RewriteStatement)(nil),                          // 247: pb.RewriteStatement
+	(*ReturnStatement)(nil),                           // 248: pb.ReturnStatement
+	(*ReleaseStatement)(nil),                          // 249: pb.ReleaseStatement
+	(*ReceiveStatement)(nil),                          // 250: pb.ReceiveStatement
+	(*ReadStatement)(nil),                             // 251: pb.ReadStatement
+	(*PurgeStatement)(nil),                            // 252: pb.PurgeStatement
+	(*PerformStatement)(nil),                          // 253: pb.PerformStatement
+	(*OpenStatement)(nil),                             // 254: pb.OpenStatement
+	(*NextSentenceStatement)(nil),                     // 255: pb.NextSentenceStatement
+	(*MultiplyStatement)(nil),                         // 256: pb.MultiplyStatement
+	(*MoveStatement)(nil),                             // 257: pb.MoveStatement
+	(*MoveToStatement)(nil),                           // 258: pb.MoveToStatement
+	(*MoveCorrespondingToStatement)(nil),              // 259: pb.MoveCorrespondingToStatement
+	(*MergeStatement)(nil),                            // 260: pb.MergeStatement
+	(*InspectStatement)(nil),                          // 261: pb.InspectStatement
+	(*InitiateStatement)(nil),                         // 262: pb.InitiateStatement
+	(*InitializeStatement)(nil),                       // 263: pb.InitializeStatement
+	(*IfStatement)(nil),                               // 264: pb.IfStatement
+	(*GoToStatement)(nil),                             // 265: pb.GoToStatement
+	(*GobackStatement)(nil),                           // 266: pb.GobackStatement
+	(*GenerateStatement)(nil),                         // 267: pb.GenerateStatement
+	(*ExitStatement)(nil),                             // 268: pb.ExitStatement
+	(*ExecSqlImsStatement)(nil),                       // 269: pb.ExecSqlImsStatement
+	(*ExecSqlStatement)(nil),                          // 270: pb.ExecSqlStatement
+	(*ExecCicsStatement)(nil),                         // 271: pb.ExecCicsStatement
+	(*ExhibitStatement)(nil),                          // 272: pb.ExhibitStatement
+	(*EvaluateStatement)(nil),                         // 273: pb.EvaluateStatement
+	(*EntryStatement)(nil),                            // 274: pb.EntryStatement
+	(*EnableStatement)(nil),                           // 275: pb.EnableStatement
+	(*DivideStatement)(nil),                           // 276: pb.DivideStatement
+	(*DisplayOperand)(nil),                            // 277: pb.DisplayOperand
+	(*DisplayAt)(nil),                                 // 278: pb.DisplayAt
+	(*DisplayUpon)(nil),                               // 279: pb.DisplayUpon
+	(*DisplayWith)(nil),                               // 280: pb.DisplayWith
+	(*DisplayStatement)(nil),                          // 281: pb.DisplayStatement
+	(*DisableStatement)(nil),                          // 282: pb.DisableStatement
+	(*DeleteStatement)(nil),                           // 283: pb.DeleteStatement
+	(*ContinueStatement)(nil),                         // 284: pb.ContinueStatement
+	(*ComputeStatement)(nil),                          // 285: pb.ComputeStatement
+	(*CloseStatement)(nil),                            // 286: pb.CloseStatement
+	(*CancelStatement)(nil),                           // 287: pb.CancelStatement
+	(*CallStatement)(nil),                             // 288: pb.CallStatement
+	(*AlterStatement)(nil),                            // 289: pb.AlterStatement
+	(*AddStatement)(nil),                              // 290: pb.AddStatement
+	(*AcceptStatement)(nil),                           // 291: pb.AcceptStatement
+	(*OnSizeErrorPhrase)(nil),                         // 292: pb.OnSizeErrorPhrase
+	(*NotOnSizeErrorPhrase)(nil),                      // 293: pb.NotOnSizeErrorPhrase
+	(*OnExceptionClause)(nil),                         // 294: pb.OnExceptionClause
+	(*NotOnExceptionClause)(nil),                      // 295: pb.NotOnExceptionClause
+	(*UseStatement)(nil),                              // 296: pb.UseStatement
+	(*UseDebugOn)(nil),                                // 297: pb.UseDebugOn
+	(*UseDebugClause)(nil),                            // 298: pb.UseDebugClause
+	(*UseAfterClause)(nil),                            // 299: pb.UseAfterClause
+	(*ArithmeticExpression)(nil),                      // 300: pb.ArithmeticExpression
+	(*PlusMinus)(nil),                                 // 301: pb.PlusMinus
+	(*MultDivs)(nil),                                  // 302: pb.MultDivs
+	(*MultDiv)(nil),                                   // 303: pb.MultDiv
+	(*Powers)(nil),                                    // 304: pb.Powers
+	(*Power)(nil),                                     // 305: pb.Power
+	(*Basis)(nil),                                     // 306: pb.Basis
+	(*Condition)(nil),                                 // 307: pb.Condition
+	(*AndOrCondition)(nil),                            // 308: pb.AndOrCondition
+	(*CombinableCondition)(nil),                       // 309: pb.CombinableCondition
+	(*SimpleCondition)(nil),                           // 310: pb.SimpleCondition
+	(*ClassCondition)(nil),                            // 311: pb.ClassCondition
+	(*ConditionNameReference)(nil),                    // 312: pb.ConditionNameReference
+	(*RelationCondition)(nil),                         // 313: pb.RelationCondition
+	(*RelationSignCondition)(nil),                     // 314: pb.RelationSignCondition
+	(*RelationArithmeticComparison)(nil),              // 315: pb.RelationArithmeticComparison
+	(*RelationCombinedComparison)(nil),                // 316: pb.RelationCombinedComparison
+	(*RelationCombinedCondition)(nil),                 // 317: pb.RelationCombinedCondition
+	(*Abbreviation)(nil),                              // 318: pb.Abbreviation
+	(*Identifier)(nil),                                // 319: pb.Identifier
+	(*TableCall)(nil),                                 // 320: pb.TableCall
+	(*FunctionCall)(nil),                              // 321: pb.FunctionCall
+	(*ReferenceModifier)(nil),                         // 322: pb.ReferenceModifier
+	(*CharacterPosition)(nil),                         // 323: pb.CharacterPosition
+	(*Length)(nil),                                    // 324: pb.Length
+	(*Subscript)(nil),                                 // 325: pb.Subscript
+	(*Argument)(nil),                                  // 326: pb.Argument
+	(*QualifiedDataNameIntegerLiteral)(nil),           // 327: pb.QualifiedDataNameIntegerLiteral
+	(*IndexNameIntegerLiteral)(nil),                   // 328: pb.IndexNameIntegerLiteral
+	(*QualifiedDataName)(nil),                         // 329: pb.QualifiedDataName
+	(*QualifiedDataNameFormat1)(nil),                  // 330: pb.QualifiedDataNameFormat1
+	(*QualifiedDataNameFormat2)(nil),                  // 331: pb.QualifiedDataNameFormat2
+	(*QualifiedDataNameFormat3)(nil),                  // 332: pb.QualifiedDataNameFormat3
+	(*QualifiedDataNameFormat4)(nil),                  // 333: pb.QualifiedDataNameFormat4
+	(*InData)(nil),                                    // 334: pb.InData
+	(*InFile)(nil),                                    // 335: pb.InFile
+	(*InMnemonic)(nil),                                // 336: pb.InMnemonic
+	(*InSection)(nil),                                 // 337: pb.InSection
+	(*InLibrary)(nil),                                 // 338: pb.InLibrary
+	(*InTable)(nil),                                   // 339: pb.InTable
+	(*AlphabetName)(nil),                              // 340: pb.AlphabetName
+	(*AssignmentName)(nil),                            // 341: pb.AssignmentName
+	(*BasisName)(nil),                                 // 342: pb.BasisName
+	(*CdName)(nil),                                    // 343: pb.CdName
+	(*ClassName)(nil),                                 // 344: pb.ClassName
+	(*ComputerName)(nil),                              // 345: pb.ComputerName
+	(*ConditionName)(nil),                             // 346: pb.ConditionName
+	(*DataName)(nil),                                  // 347: pb.DataName
+	(*DataDescName)(nil),                              // 348: pb.DataDescName
+	(*EnvironmentName)(nil),                           // 349: pb.EnvironmentName
+	(*FileName)(nil),                                  // 350: pb.FileName
+	(*FunctionName)(nil),                              // 351: pb.FunctionName
+	(*IndexName)(nil),                                 // 352: pb.IndexName
+	(*LanguageName)(nil),                              // 353: pb.LanguageName
+	(*LibraryName)(nil),                               // 354: pb.LibraryName
+	(*LocalName)(nil),                                 // 355: pb.LocalName
+	(*MnemonicName)(nil),                              // 356: pb.MnemonicName
+	(*ParagraphName)(nil),                             // 357: pb.ParagraphName
+	(*ProcedureName)(nil),                             // 358: pb.ProcedureName
+	(*ProgramName)(nil),                               // 359: pb.ProgramName
+	(*RecordName)(nil),                                // 360: pb.RecordName
+	(*ReportName)(nil),                                // 361: pb.ReportName
+	(*RoutingName)(nil),                               // 362: pb.RoutingName
+	(*ScreenName)(nil),                                // 363: pb.ScreenName
+	(*SectionName)(nil),                               // 364: pb.SectionName
+	(*SystemName)(nil),                                // 365: pb.SystemName
+	(*SymbolicCharacter)(nil),                         // 366: pb.SymbolicCharacter
+	(*TextName)(nil),                                  // 367: pb.TextName
+	(*CobolWord)(nil),                                 // 368: pb.CobolWord
+	(*Literal)(nil),                                   // 369: pb.Literal
+	(*BooleanLiteral)(nil),                            // 370: pb.BooleanLiteral
+	(*NumericLiteral)(nil),                            // 371: pb.NumericLiteral
+	(*IntegerLiteral)(nil),                            // 372: pb.IntegerLiteral
+	(*FigurativeConstant)(nil),                        // 373: pb.FigurativeConstant
+	(*SpecialRegister)(nil),                           // 374: pb.SpecialRegister
+	(*NonNumericLiteral)(nil),                         // 375: pb.NonNumericLiteral
+	(*StringLiteral)(nil),                             // 376: pb.StringLiteral
+	(*DbcsLiteral)(nil),                               // 377: pb.DbcsLiteral
+	(*HexNumber)(nil),                                 // 378: pb.HexNumber
+	(*NullTerminated)(nil),                            // 379: pb.NullTerminated
+	(*AlphabetClause_Also)(nil),                       // 380: pb.AlphabetClause.Also
+	(*AlphabetClause_AlphabetLiteral)(nil),            // 381: pb.AlphabetClause.AlphabetLiteral
+	(*AlphabetClause_AlphabetLiterals)(nil),           // 382: pb.AlphabetClause.AlphabetLiterals
+	(*AlphabetClause_Alphanumeric)(nil),               // 383: pb.AlphabetClause.Alphanumeric
+	(*AlphabetClause_National)(nil),                   // 384: pb.AlphabetClause.National
+	(*LabelRecordsClause_DataNames)(nil),              // 385: pb.LabelRecordsClause.DataNames
+	(*DataDescriptionEntry_Format1)(nil),              // 386: pb.DataDescriptionEntry.Format1
+	(*DataDescriptionEntry_Format2)(nil),              // 387: pb.DataDescriptionEntry.Format2
+	(*DataDescriptionEntry_Format3)(nil),              // 388: pb.DataDescriptionEntry.Format3
+	(*DataDescriptionEntry_ExecSql)(nil),              // 389: pb.DataDescriptionEntry.ExecSql
+	(*DataTypeClause_Lob)(nil),                        // 390: pb.DataTypeClause.Lob
+	(*DataOccursClause_Sort)(nil),                     // 391: pb.DataOccursClause.Sort
+	(*DataOccursClause_Indexed)(nil),                  // 392: pb.DataOccursClause.Indexed
+	(*ReportGroupDescriptionEntry_Vertical)(nil),      // 393: pb.ReportGroupDescriptionEntry.Vertical
+	(*ReportGroupDescriptionEntry_Single)(nil),        // 394: pb.ReportGroupDescriptionEntry.Single
+	(*ReportGroupDescriptionEntry_Printable)(nil),     // 395: pb.ReportGroupDescriptionEntry.Printable
+	(*TypeClause_ReportHeading)(nil),                  // 396: pb.TypeClause.ReportHeading
+	(*TypeClause_PageHeading)(nil),                    // 397: pb.TypeClause.PageHeading
+	(*TypeClause_ControlHeading)(nil),                 // 398: pb.TypeClause.ControlHeading
+	(*TypeClause_Detail)(nil),                         // 399: pb.TypeClause.Detail
+	(*TypeClause_ControlFooting)(nil),                 // 400: pb.TypeClause.ControlFooting
+	(*TypeClause_PageFooting)(nil),                    // 401: pb.TypeClause.PageFooting
+	(*TypeClause_ReportFooting)(nil),                  // 402: pb.TypeClause.ReportFooting
+	(*LibraryDescriptionEntry_Import)(nil),            // 403: pb.LibraryDescriptionEntry.Import
+	(*LibraryDescriptionEntry_Export)(nil),            // 404: pb.LibraryDescriptionEntry.Export
+	(*ProcedureClause2_WithName)(nil),                 // 405: pb.ProcedureClause2.WithName
+	(*ProcedureClause2_UsingName)(nil),                // 406: pb.ProcedureClause2.UsingName
+	(*CommunicationDescriptionEntry_Input)(nil),       // 407: pb.CommunicationDescriptionEntry.Input
+	(*CommunicationDescriptionEntry_Output)(nil),      // 408: pb.CommunicationDescriptionEntry.Output
+	(*CommunicationDescriptionEntry_Io)(nil),          // 409: pb.CommunicationDescriptionEntry.Io
+	(*ProcedureDivision_ByReference)(nil),             // 410: pb.ProcedureDivision.ByReference
+	(*ProcedureDivision_ByReferencePhrase)(nil),       // 411: pb.ProcedureDivision.ByReferencePhrase
+	(*ProcedureDivision_ByValue)(nil),                 // 412: pb.ProcedureDivision.ByValue
+	(*ProcedureDivision_ByValuePhrase)(nil),           // 413: pb.ProcedureDivision.ByValuePhrase
+	(*ProcedureDivision_UsingParameter)(nil),          // 414: pb.ProcedureDivision.UsingParameter
+	(*ProcedureDivision_GivingClause)(nil),            // 415: pb.ProcedureDivision.GivingClause
+	(*ProcedureDivision_UsingClause)(nil),             // 416: pb.ProcedureDivision.UsingClause
+	(*AddStatement_AddFrom)(nil),                      // 417: pb.AddStatement.AddFrom
+	(*AddStatement_AddToGiving)(nil),                  // 418: pb.AddStatement.AddToGiving
+	(*AddStatement_To)(nil),                           // 419: pb.AddStatement.To
+	(*AddStatement_ToGiving)(nil),                     // 420: pb.AddStatement.ToGiving
+	(*AddStatement_Corresponding)(nil),                // 421: pb.AddStatement.Corresponding
+	(*AcceptStatement_FromDate)(nil),                  // 422: pb.AcceptStatement.FromDate
+	(*AcceptStatement_FromEscapeKey)(nil),             // 423: pb.AcceptStatement.FromEscapeKey
+	(*AcceptStatement_FromMnemonic)(nil),              // 424: pb.AcceptStatement.FromMnemonic
+	(*AcceptStatement_MessageCount)(nil),              // 425: pb.AcceptStatement.MessageCount
+	(*UseAfterClause_FileNames)(nil),                  // 426: pb.UseAfterClause.FileNames
+	(*ConditionNameReference_SubscriptReference)(nil), // 427: pb.ConditionNameReference.SubscriptReference
+	(*ConditionNameReference_InSubscript)(nil),        // 428: pb.ConditionNameReference.InSubscript
 }
 var file_cobol_proto_depIdxs = []int32{
-	48,  // 0: pb.Program.compilation_units:type_name -> pb.CompilationUnit
-	49,  // 1: pb.CompilationUnit.program_units:type_name -> pb.ProgramUnit
-	50,  // 2: pb.ProgramUnit.identification_division:type_name -> pb.IdentificationDivision
-	58,  // 3: pb.ProgramUnit.environment_division:type_name -> pb.EnvironmentDivision
-	102, // 4: pb.ProgramUnit.data_division:type_name -> pb.DataDivision
-	221, // 5: pb.ProgramUnit.procedure_division:type_name -> pb.ProcedureDivision
-	51,  // 6: pb.IdentificationDivision.program_id_paragraph:type_name -> pb.ProgramIdParagraph
-	52,  // 7: pb.IdentificationDivision.author_paragraph:type_name -> pb.AuthorParagraph
-	53,  // 8: pb.IdentificationDivision.date_compiled_paragraph:type_name -> pb.DateCompiledParagraph
-	54,  // 9: pb.IdentificationDivision.date_written_paragraph:type_name -> pb.DateWrittenParagraph
-	55,  // 10: pb.IdentificationDivision.installation_paragraph:type_name -> pb.InstallationParagraph
-	56,  // 11: pb.IdentificationDivision.remarks_paragraph:type_name -> pb.RemarksParagraph
-	57,  // 12: pb.IdentificationDivision.security_paragraph:type_name -> pb.SecurityParagraph
-	335, // 13: pb.ProgramIdParagraph.program_name:type_name -> pb.ProgramName
-	0,   // 14: pb.ProgramIdParagraph.attribute:type_name -> pb.ProgramIdParagraph.Attribute
-	59,  // 15: pb.EnvironmentDivision.configuration_section:type_name -> pb.ConfigurationSection
-	78,  // 16: pb.EnvironmentDivision.input_output_section:type_name -> pb.InputOutputSection
-	67,  // 17: pb.EnvironmentDivision.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
-	61,  // 18: pb.ConfigurationSection.object_computer_paragraph:type_name -> pb.ObjectComputerParagraph
-	60,  // 19: pb.ConfigurationSection.source_computer_paragraph:type_name -> pb.SourceComputerParagraph
-	67,  // 20: pb.ConfigurationSection.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
-	321, // 21: pb.SourceComputerParagraph.computer_name:type_name -> pb.ComputerName
-	321, // 22: pb.ObjectComputerParagraph.computer_name:type_name -> pb.ComputerName
-	62,  // 23: pb.ObjectComputerParagraph.memory_size_clause:type_name -> pb.MemorySizeClause
-	63,  // 24: pb.ObjectComputerParagraph.disk_size_clause:type_name -> pb.DiskSizeClause
-	64,  // 25: pb.ObjectComputerParagraph.collating_sequence_clause:type_name -> pb.CollatingSequenceClause
-	65,  // 26: pb.ObjectComputerParagraph.segment_limit_clause:type_name -> pb.SegmentLimitClause
-	66,  // 27: pb.ObjectComputerParagraph.character_set_clause:type_name -> pb.CharacterSetClause
-	1,   // 28: pb.MemorySizeClause.unit:type_name -> pb.MemorySizeClause.Unit
-	348, // 29: pb.MemorySizeClause.integer_literal:type_name -> pb.IntegerLiteral
-	344, // 30: pb.MemorySizeClause.cobol_word:type_name -> pb.CobolWord
-	2,   // 31: pb.DiskSizeClause.unit:type_name -> pb.DiskSizeClause.Unit
-	348, // 32: pb.DiskSizeClause.integer_literal:type_name -> pb.IntegerLiteral
-	344, // 33: pb.DiskSizeClause.cobol_word:type_name -> pb.CobolWord
-	316, // 34: pb.CollatingSequenceClause.national:type_name -> pb.AlphabetName
-	316, // 35: pb.CollatingSequenceClause.alphanumeric:type_name -> pb.AlphabetName
-	316, // 36: pb.CollatingSequenceClause.alphabet_names:type_name -> pb.AlphabetName
-	348, // 37: pb.SegmentLimitClause.segment_limit:type_name -> pb.IntegerLiteral
-	68,  // 38: pb.SpecialNamesParagraph.alphabet_clauses:type_name -> pb.AlphabetClause
-	69,  // 39: pb.SpecialNamesParagraph.channel_clause:type_name -> pb.ChannelClause
-	70,  // 40: pb.SpecialNamesParagraph.class_clause:type_name -> pb.ClassClause
-	72,  // 41: pb.SpecialNamesParagraph.currency_sign_clause:type_name -> pb.CurrencySignClause
-	73,  // 42: pb.SpecialNamesParagraph.decimal_point_clause:type_name -> pb.DecimalPointClause
-	74,  // 43: pb.SpecialNamesParagraph.default_display_sign_clause:type_name -> pb.DefaultDisplaySignClause
-	75,  // 44: pb.SpecialNamesParagraph.odt_clause:type_name -> pb.OdtClause
-	76,  // 45: pb.SpecialNamesParagraph.reserve_network_clause:type_name -> pb.ReserveNetworkClause
-	77,  // 46: pb.SpecialNamesParagraph.symbolic_characters_clause:type_name -> pb.SymbolicCharactersClause
-	316, // 47: pb.AlphabetClause.alphabet_name:type_name -> pb.AlphabetName
-	359, // 48: pb.AlphabetClause.alphanumeric:type_name -> pb.AlphabetClause.Alphanumeric
-	360, // 49: pb.AlphabetClause.national:type_name -> pb.AlphabetClause.National
-	348, // 50: pb.ChannelClause.Channel:type_name -> pb.IntegerLiteral
-	332, // 51: pb.ChannelClause.mnemonic_name:type_name -> pb.MnemonicName
-	320, // 52: pb.ClassClause.class_name:type_name -> pb.ClassName
-	5,   // 53: pb.ClassClause.type:type_name -> pb.ClassClause.Type
-	71,  // 54: pb.ClassClause.class_throughs:type_name -> pb.ClassClauseThrough
-	295, // 55: pb.ClassClauseThrough.identifier_from:type_name -> pb.Identifier
-	345, // 56: pb.ClassClauseThrough.literal_from:type_name -> pb.Literal
-	295, // 57: pb.ClassClauseThrough.identifier_to:type_name -> pb.Identifier
-	345, // 58: pb.ClassClauseThrough.literal_to:type_name -> pb.Literal
-	345, // 59: pb.CurrencySignClause.currency_literal:type_name -> pb.Literal
-	345, // 60: pb.CurrencySignClause.picture_symbol_literal:type_name -> pb.Literal
-	6,   // 61: pb.DefaultDisplaySignClause.type:type_name -> pb.DefaultDisplaySignClause.Type
-	332, // 62: pb.OdtClause.mnemonic_name:type_name -> pb.MnemonicName
-	7,   // 63: pb.SymbolicCharactersClause.type:type_name -> pb.SymbolicCharactersClause.Type
-	79,  // 64: pb.InputOutputSection.file_control_paragraph:type_name -> pb.FileControlParagraph
-	93,  // 65: pb.InputOutputSection.io_control_paragraph:type_name -> pb.IoControlParagraph
-	80,  // 66: pb.FileControlParagraph.file_control_entries:type_name -> pb.FileControlEntry
-	326, // 67: pb.FileControlEntry.file_name:type_name -> pb.FileName
-	81,  // 68: pb.FileControlEntry.select_clause:type_name -> pb.SelectClause
-	89,  // 69: pb.FileControlEntry.alternate_record_key_clause:type_name -> pb.AlternateRecordKeyClause
-	82,  // 70: pb.FileControlEntry.assign_clause:type_name -> pb.AssignClause
-	91,  // 71: pb.FileControlEntry.file_status_clause:type_name -> pb.FileStatusClause
-	84,  // 72: pb.FileControlEntry.organization_clause:type_name -> pb.OrganizationClause
-	85,  // 73: pb.FileControlEntry.padding_character_clause:type_name -> pb.PaddingCharacterClause
-	90,  // 74: pb.FileControlEntry.password_clause:type_name -> pb.PasswordClause
-	86,  // 75: pb.FileControlEntry.record_delimiter_clause:type_name -> pb.RecordDelimiterClause
-	88,  // 76: pb.FileControlEntry.record_key_clause:type_name -> pb.RecordKeyClause
-	92,  // 77: pb.FileControlEntry.relative_key_clause:type_name -> pb.RelativeKeyClause
-	83,  // 78: pb.FileControlEntry.reserve_clause:type_name -> pb.ReserveClause
-	87,  // 79: pb.FileControlEntry.access_mode_clause:type_name -> pb.AccessModeClause
-	326, // 80: pb.SelectClause.file_name:type_name -> pb.FileName
-	8,   // 81: pb.AssignClause.type:type_name -> pb.AssignClause.Type
-	317, // 82: pb.AssignClause.assignment_name:type_name -> pb.AssignmentName
-	345, // 83: pb.AssignClause.literal:type_name -> pb.Literal
-	348, // 84: pb.ReserveClause.value:type_name -> pb.IntegerLiteral
-	9,   // 85: pb.OrganizationClause.mode:type_name -> pb.OrganizationClause.Mode
-	10,  // 86: pb.OrganizationClause.type:type_name -> pb.OrganizationClause.Type
-	305, // 87: pb.PaddingCharacterClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	345, // 88: pb.PaddingCharacterClause.literal:type_name -> pb.Literal
-	11,  // 89: pb.RecordDelimiterClause.type:type_name -> pb.RecordDelimiterClause.Type
-	317, // 90: pb.RecordDelimiterClause.assignment_name:type_name -> pb.AssignmentName
-	12,  // 91: pb.AccessModeClause.mode:type_name -> pb.AccessModeClause.Mode
-	90,  // 92: pb.RecordKeyClause.password_clause:type_name -> pb.PasswordClause
-	305, // 93: pb.RecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	90,  // 94: pb.AlternateRecordKeyClause.password_clause:type_name -> pb.PasswordClause
-	305, // 95: pb.AlternateRecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	323, // 96: pb.PasswordClause.data_name:type_name -> pb.DataName
-	305, // 97: pb.FileStatusClause.qualified_data_name_1:type_name -> pb.QualifiedDataName
-	305, // 98: pb.FileStatusClause.qualified_data_name_2:type_name -> pb.QualifiedDataName
-	305, // 99: pb.RelativeKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	326, // 100: pb.IoControlParagraph.file_name:type_name -> pb.FileName
-	101, // 101: pb.IoControlParagraph.commitment_control_clause:type_name -> pb.CommitmentControlClause
-	99,  // 102: pb.IoControlParagraph.multiple_file_clause:type_name -> pb.MultipleFileClause
-	94,  // 103: pb.IoControlParagraph.rerun_clause:type_name -> pb.RerunClause
-	98,  // 104: pb.IoControlParagraph.same_clauses:type_name -> pb.SameClause
-	317, // 105: pb.RerunClause.assignment_name:type_name -> pb.AssignmentName
-	326, // 106: pb.RerunClause.file_name:type_name -> pb.FileName
-	97,  // 107: pb.RerunClause.rerun_every_clock:type_name -> pb.RerunEveryClock
-	96,  // 108: pb.RerunClause.rerun_every_of:type_name -> pb.RerunEveryOf
-	95,  // 109: pb.RerunClause.rerun_every_records:type_name -> pb.RerunEveryRecords
-	348, // 110: pb.RerunEveryRecords.records:type_name -> pb.IntegerLiteral
-	13,  // 111: pb.RerunEveryOf.type:type_name -> pb.RerunEveryOf.Type
-	326, // 112: pb.RerunEveryOf.file_name:type_name -> pb.FileName
-	348, // 113: pb.RerunEveryClock.clock_units:type_name -> pb.IntegerLiteral
-	326, // 114: pb.SameClause.file_names:type_name -> pb.FileName
-	14,  // 115: pb.SameClause.form:type_name -> pb.SameClause.Form
-	100, // 116: pb.MultipleFileClause.multiple_file_positions:type_name -> pb.MultipleFilePosition
-	348, // 117: pb.MultipleFilePosition.position:type_name -> pb.IntegerLiteral
-	326, // 118: pb.MultipleFilePosition.file_name:type_name -> pb.FileName
-	326, // 119: pb.CommitmentControlClause.file_name:type_name -> pb.FileName
-	203, // 120: pb.DataDivision.communication_section:type_name -> pb.CommunicationSection
-	219, // 121: pb.DataDivision.data_base_section:type_name -> pb.DataBaseSection
-	103, // 122: pb.DataDivision.file_section:type_name -> pb.FileSection
-	202, // 123: pb.DataDivision.linkage_section:type_name -> pb.LinkageSection
-	201, // 124: pb.DataDivision.local_storage_section:type_name -> pb.LocalStorageSection
-	194, // 125: pb.DataDivision.program_library_section:type_name -> pb.ProgramLibrarySection
-	171, // 126: pb.DataDivision.report_section:type_name -> pb.ReportSection
-	147, // 127: pb.DataDivision.ScreenSection:type_name -> pb.ScreenSection
-	119, // 128: pb.DataDivision.working_storage_section:type_name -> pb.WorkingStorageSection
-	104, // 129: pb.FileSection.file_description_entries:type_name -> pb.FileDescriptionEntry
-	326, // 130: pb.FileDescriptionEntry.file_name:type_name -> pb.FileName
-	107, // 131: pb.FileDescriptionEntry.external_clause:type_name -> pb.ExternalClause
-	108, // 132: pb.FileDescriptionEntry.global_clause:type_name -> pb.GlobalClause
-	109, // 133: pb.FileDescriptionEntry.block_contains_clause:type_name -> pb.BlockContainsClause
-	110, // 134: pb.FileDescriptionEntry.record_contains_clause:type_name -> pb.RecordContainsClause
-	111, // 135: pb.FileDescriptionEntry.label_records_clause:type_name -> pb.LabelRecordsClause
-	112, // 136: pb.FileDescriptionEntry.value_of_clause:type_name -> pb.ValueOfClause
-	114, // 137: pb.FileDescriptionEntry.data_records_clause:type_name -> pb.DataRecordsClause
-	116, // 138: pb.FileDescriptionEntry.linage_clause:type_name -> pb.LinageClause
-	117, // 139: pb.FileDescriptionEntry.code_set_clause:type_name -> pb.CodeSetClause
-	118, // 140: pb.FileDescriptionEntry.report_clause:type_name -> pb.ReportClause
-	120, // 141: pb.FileDescriptionEntry.data_description_entries:type_name -> pb.DataDescriptionEntry
-	106, // 142: pb.FileDescriptionEntry.recording_mode_clause:type_name -> pb.RecordingModeClause
-	344, // 143: pb.ModeStatement.cobol_word:type_name -> pb.CobolWord
-	105, // 144: pb.RecordingModeClause.mode_statement:type_name -> pb.ModeStatement
-	348, // 145: pb.BlockContainsClause.from:type_name -> pb.IntegerLiteral
-	348, // 146: pb.BlockContainsClause.to:type_name -> pb.IntegerLiteral
-	15,  // 147: pb.BlockContainsClause.unit:type_name -> pb.BlockContainsClause.Unit
-	348, // 148: pb.RecordContainsClause.from:type_name -> pb.IntegerLiteral
-	348, // 149: pb.RecordContainsClause.to:type_name -> pb.IntegerLiteral
-	305, // 150: pb.RecordContainsClause.qualified_data_name:type_name -> pb.QualifiedDataName
-	16,  // 151: pb.LabelRecordsClause.type:type_name -> pb.LabelRecordsClause.Type
-	361, // 152: pb.LabelRecordsClause.data_names:type_name -> pb.LabelRecordsClause.DataNames
-	113, // 153: pb.ValueOfClause.value_pairs:type_name -> pb.ValuePair
-	341, // 154: pb.ValuePair.system_name:type_name -> pb.SystemName
-	305, // 155: pb.ValuePair.qualified_data_name:type_name -> pb.QualifiedDataName
-	345, // 156: pb.ValuePair.literal:type_name -> pb.Literal
-	323, // 157: pb.DataRecordsClause.data_names:type_name -> pb.DataName
-	323, // 158: pb.DataNameOrIntegerLiteral.data_name:type_name -> pb.DataName
-	348, // 159: pb.DataNameOrIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
-	115, // 160: pb.LinageClause.footing_at:type_name -> pb.DataNameOrIntegerLiteral
-	115, // 161: pb.LinageClause.lines_at_bottom:type_name -> pb.DataNameOrIntegerLiteral
-	115, // 162: pb.LinageClause.lines_at_top:type_name -> pb.DataNameOrIntegerLiteral
-	115, // 163: pb.LinageClause.number_of_lines:type_name -> pb.DataNameOrIntegerLiteral
-	316, // 164: pb.CodeSetClause.alphabet_name:type_name -> pb.AlphabetName
-	337, // 165: pb.ReportClause.report_names:type_name -> pb.ReportName
-	120, // 166: pb.WorkingStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	362, // 167: pb.DataDescriptionEntry.f1:type_name -> pb.DataDescriptionEntry.Format1
-	363, // 168: pb.DataDescriptionEntry.f2:type_name -> pb.DataDescriptionEntry.Format2
-	364, // 169: pb.DataDescriptionEntry.f3:type_name -> pb.DataDescriptionEntry.Format3
-	365, // 170: pb.DataDescriptionEntry.exec_sql:type_name -> pb.DataDescriptionEntry.ExecSql
-	305, // 171: pb.DataRenamesClause.from:type_name -> pb.QualifiedDataName
-	305, // 172: pb.DataRenamesClause.to:type_name -> pb.QualifiedDataName
-	323, // 173: pb.DataRedefinesClause.data_name:type_name -> pb.DataName
-	345, // 174: pb.DataExternalClause.literal:type_name -> pb.Literal
-	129, // 175: pb.DataPictureClause.picture_string:type_name -> pb.PictureString
-	130, // 176: pb.PictureString.chars:type_name -> pb.PictureChars
-	17,  // 177: pb.PictureChars.type:type_name -> pb.PictureChars.Type
-	348, // 178: pb.PictureChars.integer_literal:type_name -> pb.IntegerLiteral
-	348, // 179: pb.PictureCardinality.integer_literal:type_name -> pb.IntegerLiteral
-	18,  // 180: pb.DataCommonOwnLocalClause.type:type_name -> pb.DataCommonOwnLocalClause.Type
-	19,  // 181: pb.DataTypeClause.type:type_name -> pb.DataTypeClause.Type
-	366, // 182: pb.DataTypeClause.lob:type_name -> pb.DataTypeClause.Lob
-	21,  // 183: pb.DataUsingClause.type:type_name -> pb.DataUsingClause.Type
-	344, // 184: pb.DataUsingClause.cobol_word:type_name -> pb.CobolWord
-	323, // 185: pb.DataUsingClause.data_name:type_name -> pb.DataName
-	22,  // 186: pb.DataUsageClause.type:type_name -> pb.DataUsageClause.Type
-	345, // 187: pb.DataValueInterval.literal_from:type_name -> pb.Literal
-	344, // 188: pb.DataValueInterval.cobol_word_from:type_name -> pb.CobolWord
-	345, // 189: pb.DataValueInterval.literal_to:type_name -> pb.Literal
-	136, // 190: pb.DataValueClause.data_value_interval:type_name -> pb.DataValueInterval
-	23,  // 191: pb.DataReceivedByClause.type:type_name -> pb.DataReceivedByClause.Type
-	295, // 192: pb.DataOccursClause.identifier:type_name -> pb.Identifier
-	348, // 193: pb.DataOccursClause.integer_literal:type_name -> pb.IntegerLiteral
-	348, // 194: pb.DataOccursClause.to:type_name -> pb.IntegerLiteral
-	305, // 195: pb.DataOccursClause.depending_on:type_name -> pb.QualifiedDataName
-	367, // 196: pb.DataOccursClause.sorts:type_name -> pb.DataOccursClause.Sort
-	368, // 197: pb.DataOccursClause.indexes:type_name -> pb.DataOccursClause.Indexed
-	24,  // 198: pb.DataSignClause.type:type_name -> pb.DataSignClause.Type
-	25,  // 199: pb.DataSynchronizedClause.type:type_name -> pb.DataSynchronizedClause.Type
-	148, // 200: pb.ScreenSection.screen_description_entries:type_name -> pb.ScreenDescriptionEntry
-	339, // 201: pb.ScreenDescriptionEntry.screen_name:type_name -> pb.ScreenName
-	157, // 202: pb.ScreenDescriptionEntry.blank_clause:type_name -> pb.BlankClause
-	158, // 203: pb.ScreenDescriptionEntry.bell_clause:type_name -> pb.BellClause
-	159, // 204: pb.ScreenDescriptionEntry.blink_clause:type_name -> pb.BlinkClause
-	160, // 205: pb.ScreenDescriptionEntry.erase_clause:type_name -> pb.EraseClause
-	161, // 206: pb.ScreenDescriptionEntry.light_clause:type_name -> pb.LightClause
-	162, // 207: pb.ScreenDescriptionEntry.grid_clause:type_name -> pb.GridClause
-	163, // 208: pb.ScreenDescriptionEntry.reverse_video_clause:type_name -> pb.ReverseVideoClause
-	164, // 209: pb.ScreenDescriptionEntry.underline_clause:type_name -> pb.UnderlineClause
-	165, // 210: pb.ScreenDescriptionEntry.size_clause:type_name -> pb.SizeClause
-	166, // 211: pb.ScreenDescriptionEntry.line_clause:type_name -> pb.LineClause
-	167, // 212: pb.ScreenDescriptionEntry.column_clause:type_name -> pb.ColumnClause
-	168, // 213: pb.ScreenDescriptionEntry.foreground_color_clause:type_name -> pb.ForegroundColorClause
-	169, // 214: pb.ScreenDescriptionEntry.background_color_clause:type_name -> pb.BackgroundColorClause
-	170, // 215: pb.ScreenDescriptionEntry.control_clause:type_name -> pb.ControlClause
-	182, // 216: pb.ScreenDescriptionEntry.value_clause:type_name -> pb.ValueClause
-	189, // 217: pb.ScreenDescriptionEntry.picture_clause:type_name -> pb.PictureClause
-	156, // 218: pb.ScreenDescriptionEntry.from_clause:type_name -> pb.FromClause
-	155, // 219: pb.ScreenDescriptionEntry.using_clause:type_name -> pb.UsingClause
-	193, // 220: pb.ScreenDescriptionEntry.usage_clause:type_name -> pb.UsageClause
-	188, // 221: pb.ScreenDescriptionEntry.sign_clause:type_name -> pb.SignClause
-	186, // 222: pb.ScreenDescriptionEntry.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
-	187, // 223: pb.ScreenDescriptionEntry.justified_clause:type_name -> pb.JustifiedClause
-	154, // 224: pb.ScreenDescriptionEntry.auto_clause:type_name -> pb.AutoClause
-	153, // 225: pb.ScreenDescriptionEntry.secure_clause:type_name -> pb.SecureClause
-	152, // 226: pb.ScreenDescriptionEntry.required_clause:type_name -> pb.RequiredClause
-	151, // 227: pb.ScreenDescriptionEntry.prompt_clause:type_name -> pb.PromptClause
-	150, // 228: pb.ScreenDescriptionEntry.full_clause:type_name -> pb.FullClause
-	149, // 229: pb.ScreenDescriptionEntry.zero_fill_clause:type_name -> pb.ZeroFillClause
-	26,  // 230: pb.FullClause.type:type_name -> pb.FullClause.Type
-	295, // 231: pb.PromptClause.identifier:type_name -> pb.Identifier
-	345, // 232: pb.PromptClause.literal:type_name -> pb.Literal
-	348, // 233: pb.PromptClause.times:type_name -> pb.IntegerLiteral
-	27,  // 234: pb.RequiredClause.type:type_name -> pb.RequiredClause.Type
-	28,  // 235: pb.SecureClause.type:type_name -> pb.SecureClause.Type
-	29,  // 236: pb.AutoClause.type:type_name -> pb.AutoClause.Type
-	295, // 237: pb.UsingClause.using:type_name -> pb.Identifier
-	295, // 238: pb.FromClause.identifier:type_name -> pb.Identifier
-	345, // 239: pb.FromClause.literal:type_name -> pb.Literal
-	295, // 240: pb.FromClause.to:type_name -> pb.Identifier
-	30,  // 241: pb.BlankClause.type:type_name -> pb.BlankClause.Type
-	31,  // 242: pb.BellClause.type:type_name -> pb.BellClause.Type
-	32,  // 243: pb.EraseClause.type:type_name -> pb.EraseClause.Type
-	33,  // 244: pb.LightClause.type:type_name -> pb.LightClause.Type
-	34,  // 245: pb.GridClause.type:type_name -> pb.GridClause.Type
-	295, // 246: pb.SizeClause.identifier:type_name -> pb.Identifier
-	348, // 247: pb.SizeClause.integer_literal:type_name -> pb.IntegerLiteral
-	35,  // 248: pb.LineClause.type:type_name -> pb.LineClause.Type
-	295, // 249: pb.LineClause.identifier:type_name -> pb.Identifier
-	348, // 250: pb.LineClause.integer_literal:type_name -> pb.IntegerLiteral
-	36,  // 251: pb.ColumnClause.type:type_name -> pb.ColumnClause.Type
-	295, // 252: pb.ColumnClause.identifier:type_name -> pb.Identifier
-	348, // 253: pb.ColumnClause.integer_literal:type_name -> pb.IntegerLiteral
-	295, // 254: pb.ForegroundColorClause.identifier:type_name -> pb.Identifier
-	348, // 255: pb.ForegroundColorClause.integer_literal:type_name -> pb.IntegerLiteral
-	295, // 256: pb.BackgroundColorClause.identifier:type_name -> pb.Identifier
-	348, // 257: pb.BackgroundColorClause.integer_literal:type_name -> pb.IntegerLiteral
-	295, // 258: pb.ControlClause.control:type_name -> pb.Identifier
-	172, // 259: pb.ReportSection.report_descriptions:type_name -> pb.ReportDescription
-	173, // 260: pb.ReportDescription.report_description_entry:type_name -> pb.ReportDescriptionEntry
-	179, // 261: pb.ReportDescription.report_group_description_entries:type_name -> pb.ReportGroupDescriptionEntry
-	337, // 262: pb.ReportDescriptionEntry.report_name:type_name -> pb.ReportName
-	108, // 263: pb.ReportDescriptionEntry.global_clause:type_name -> pb.GlobalClause
-	174, // 264: pb.ReportDescriptionEntry.page_limit_clause:type_name -> pb.PageLimitClause
-	175, // 265: pb.ReportDescriptionEntry.heading_clause:type_name -> pb.HeadingClause
-	176, // 266: pb.ReportDescriptionEntry.first_detail_clause:type_name -> pb.FirstDetailClause
-	177, // 267: pb.ReportDescriptionEntry.last_detail_clause:type_name -> pb.LastDetailClause
-	178, // 268: pb.ReportDescriptionEntry.footing_clause:type_name -> pb.FootingClause
-	348, // 269: pb.PageLimitClause.page:type_name -> pb.IntegerLiteral
-	348, // 270: pb.HeadingClause.heading:type_name -> pb.IntegerLiteral
-	348, // 271: pb.FirstDetailClause.first_detail:type_name -> pb.IntegerLiteral
-	348, // 272: pb.LastDetailClause.last_detail:type_name -> pb.IntegerLiteral
-	348, // 273: pb.FootingClause.footing:type_name -> pb.IntegerLiteral
-	348, // 274: pb.ReportGroupDescriptionEntry.integer_literal:type_name -> pb.IntegerLiteral
-	323, // 275: pb.ReportGroupDescriptionEntry.data_name:type_name -> pb.DataName
-	369, // 276: pb.ReportGroupDescriptionEntry.vertical:type_name -> pb.ReportGroupDescriptionEntry.Vertical
-	370, // 277: pb.ReportGroupDescriptionEntry.single:type_name -> pb.ReportGroupDescriptionEntry.Single
-	371, // 278: pb.ReportGroupDescriptionEntry.printable:type_name -> pb.ReportGroupDescriptionEntry.Printable
-	323, // 279: pb.ResetClause.data_name:type_name -> pb.DataName
-	295, // 280: pb.SumClause.sums:type_name -> pb.Identifier
-	323, // 281: pb.SumClause.upons:type_name -> pb.DataName
-	345, // 282: pb.ValueClause.value:type_name -> pb.Literal
-	295, // 283: pb.SourceClause.source:type_name -> pb.Identifier
-	348, // 284: pb.ColumnNumberClause.column_number:type_name -> pb.IntegerLiteral
-	37,  // 285: pb.SignClause.type:type_name -> pb.SignClause.Type
-	129, // 286: pb.PictureClause.picture_string:type_name -> pb.PictureString
-	348, // 287: pb.LineNumberClause.next_page:type_name -> pb.IntegerLiteral
-	348, // 288: pb.LineNumberClause.plus:type_name -> pb.IntegerLiteral
-	348, // 289: pb.NextGroupClause.next_group:type_name -> pb.IntegerLiteral
-	348, // 290: pb.NextGroupClause.plus:type_name -> pb.IntegerLiteral
-	372, // 291: pb.TypeClause.report_heading:type_name -> pb.TypeClause.ReportHeading
-	373, // 292: pb.TypeClause.page_heading:type_name -> pb.TypeClause.PageHeading
-	374, // 293: pb.TypeClause.control_heading:type_name -> pb.TypeClause.ControlHeading
-	375, // 294: pb.TypeClause.detail:type_name -> pb.TypeClause.Detail
-	376, // 295: pb.TypeClause.control_footing:type_name -> pb.TypeClause.ControlFooting
-	377, // 296: pb.TypeClause.page_footing:type_name -> pb.TypeClause.PageFooting
-	378, // 297: pb.TypeClause.report_footing:type_name -> pb.TypeClause.ReportFooting
-	195, // 298: pb.ProgramLibrarySection.library_description_entries:type_name -> pb.LibraryDescriptionEntry
-	330, // 299: pb.LibraryDescriptionEntry.library_name:type_name -> pb.LibraryName
-	379, // 300: pb.LibraryDescriptionEntry.import:type_name -> pb.LibraryDescriptionEntry.Import
-	380, // 301: pb.LibraryDescriptionEntry.export:type_name -> pb.LibraryDescriptionEntry.Export
-	38,  // 302: pb.AttributeClause1.sharing:type_name -> pb.AttributeClause1.Sharing
-	345, // 303: pb.AttributeClause2.function_name:type_name -> pb.Literal
-	39,  // 304: pb.AttributeClause2.lib_access:type_name -> pb.AttributeClause2.LibAccess
-	345, // 305: pb.AttributeClause2.lib_parameter:type_name -> pb.Literal
-	345, // 306: pb.AttributeClause2.title:type_name -> pb.Literal
-	335, // 307: pb.ProcedureClause1.program_name:type_name -> pb.ProgramName
-	345, // 308: pb.ProcedureClause1.for:type_name -> pb.Literal
-	335, // 309: pb.ProcedureClause2.program_name:type_name -> pb.ProgramName
-	345, // 310: pb.ProcedureClause2.for:type_name -> pb.Literal
-	381, // 311: pb.ProcedureClause2.with_names:type_name -> pb.ProcedureClause2.WithName
-	382, // 312: pb.ProcedureClause2.using_names:type_name -> pb.ProcedureClause2.UsingName
-	323, // 313: pb.ProcedureClause2.giving:type_name -> pb.DataName
-	120, // 314: pb.LocalStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	331, // 315: pb.LocalStorageSection.local_name:type_name -> pb.LocalName
-	120, // 316: pb.LinkageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	204, // 317: pb.CommunicationSection.communication_description_entries:type_name -> pb.CommunicationDescriptionEntry
-	120, // 318: pb.CommunicationSection.data_description_entries:type_name -> pb.DataDescriptionEntry
-	319, // 319: pb.CommunicationDescriptionEntry.cd_name:type_name -> pb.CdName
-	383, // 320: pb.CommunicationDescriptionEntry.input:type_name -> pb.CommunicationDescriptionEntry.Input
-	384, // 321: pb.CommunicationDescriptionEntry.output:type_name -> pb.CommunicationDescriptionEntry.Output
-	385, // 322: pb.CommunicationDescriptionEntry.io:type_name -> pb.CommunicationDescriptionEntry.Io
-	324, // 323: pb.SymbolicTerminalClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 324: pb.SymbolicDestinationClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 325: pb.ErrorKeyClause.data_desc_name:type_name -> pb.DataDescName
-	348, // 326: pb.DestinationTableClause.times:type_name -> pb.IntegerLiteral
-	328, // 327: pb.DestinationTableClause.indexes:type_name -> pb.IndexName
-	324, // 328: pb.DestinationCountClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 329: pb.SymbolicQueueClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 330: pb.SymbolicSubQueueClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 331: pb.MessageDateClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 332: pb.MessageTimeClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 333: pb.SymbolicSourceClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 334: pb.TextLengthClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 335: pb.EndKeyClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 336: pb.StatusKeyClause.data_desc_name:type_name -> pb.DataDescName
-	324, // 337: pb.MessageCountClause.data_desc_name:type_name -> pb.DataDescName
-	220, // 338: pb.DataBaseSection.data_base_section_entries:type_name -> pb.DataBaseSectionEntry
-	348, // 339: pb.DataBaseSectionEntry.integer_literal:type_name -> pb.IntegerLiteral
-	345, // 340: pb.DataBaseSectionEntry.literal:type_name -> pb.Literal
-	345, // 341: pb.DataBaseSectionEntry.invoke:type_name -> pb.Literal
-	392, // 342: pb.ProcedureDivision.using_clause:type_name -> pb.ProcedureDivision.UsingClause
-	391, // 343: pb.ProcedureDivision.giving_clause:type_name -> pb.ProcedureDivision.GivingClause
-	223, // 344: pb.ProcedureDivision.declaratives:type_name -> pb.Declarative
-	225, // 345: pb.ProcedureDivision.paragraphs:type_name -> pb.Paragraphs
-	222, // 346: pb.ProcedureDivision.procedure_sections:type_name -> pb.ProcedureSection
-	224, // 347: pb.ProcedureSection.procedure_section_header:type_name -> pb.ProcedureSectionHeader
-	225, // 348: pb.ProcedureSection.paragraphs:type_name -> pb.Paragraphs
-	224, // 349: pb.Declarative.procedure_section_header:type_name -> pb.ProcedureSectionHeader
-	290, // 350: pb.Declarative.use_statement:type_name -> pb.UseStatement
-	225, // 351: pb.Declarative.paragraphs:type_name -> pb.Paragraphs
-	340, // 352: pb.ProcedureSectionHeader.section_name:type_name -> pb.SectionName
-	348, // 353: pb.ProcedureSectionHeader.integer_literal:type_name -> pb.IntegerLiteral
-	227, // 354: pb.Paragraphs.sentences:type_name -> pb.Sentences
-	226, // 355: pb.Paragraphs.paragraphs:type_name -> pb.Paragraph
-	333, // 356: pb.Paragraph.paragraph_name:type_name -> pb.ParagraphName
-	227, // 357: pb.Paragraph.sentences:type_name -> pb.Sentences
-	228, // 358: pb.Sentences.sentences:type_name -> pb.Sentence
-	229, // 359: pb.Sentence.statements:type_name -> pb.Statement
-	285, // 360: pb.Statement.accept_statement:type_name -> pb.AcceptStatement
-	284, // 361: pb.Statement.AddStatement:type_name -> pb.AddStatement
-	283, // 362: pb.Statement.alterStatement:type_name -> pb.AlterStatement
-	282, // 363: pb.Statement.callStatement:type_name -> pb.CallStatement
-	281, // 364: pb.Statement.cancelStatement:type_name -> pb.CancelStatement
-	280, // 365: pb.Statement.closeStatement:type_name -> pb.CloseStatement
-	279, // 366: pb.Statement.computeStatement:type_name -> pb.ComputeStatement
-	278, // 367: pb.Statement.continueStatement:type_name -> pb.ContinueStatement
-	277, // 368: pb.Statement.deleteStatement:type_name -> pb.DeleteStatement
-	276, // 369: pb.Statement.disableStatement:type_name -> pb.DisableStatement
-	275, // 370: pb.Statement.displayStatement:type_name -> pb.DisplayStatement
-	270, // 371: pb.Statement.divideStatement:type_name -> pb.DivideStatement
-	269, // 372: pb.Statement.enableStatement:type_name -> pb.EnableStatement
-	268, // 373: pb.Statement.entryStatement:type_name -> pb.EntryStatement
-	267, // 374: pb.Statement.evaluateStatement:type_name -> pb.EvaluateStatement
-	266, // 375: pb.Statement.exhibitStatement:type_name -> pb.ExhibitStatement
-	265, // 376: pb.Statement.execCicsStatement:type_name -> pb.ExecCicsStatement
-	264, // 377: pb.Statement.execSqlStatement:type_name -> pb.ExecSqlStatement
-	263, // 378: pb.Statement.execSqlImsStatement:type_name -> pb.ExecSqlImsStatement
-	262, // 379: pb.Statement.exitStatement:type_name -> pb.ExitStatement
-	261, // 380: pb.Statement.generateStatement:type_name -> pb.GenerateStatement
-	260, // 381: pb.Statement.gobackStatement:type_name -> pb.GobackStatement
-	259, // 382: pb.Statement.goToStatement:type_name -> pb.GoToStatement
-	258, // 383: pb.Statement.ifStatement:type_name -> pb.IfStatement
-	257, // 384: pb.Statement.initializeStatement:type_name -> pb.InitializeStatement
-	256, // 385: pb.Statement.initiateStatement:type_name -> pb.InitiateStatement
-	255, // 386: pb.Statement.inspectStatement:type_name -> pb.InspectStatement
-	254, // 387: pb.Statement.mergeStatement:type_name -> pb.MergeStatement
-	251, // 388: pb.Statement.moveStatement:type_name -> pb.MoveStatement
-	250, // 389: pb.Statement.multiplyStatement:type_name -> pb.MultiplyStatement
-	249, // 390: pb.Statement.nextSentenceStatement:type_name -> pb.NextSentenceStatement
-	248, // 391: pb.Statement.openStatement:type_name -> pb.OpenStatement
-	247, // 392: pb.Statement.performStatement:type_name -> pb.PerformStatement
-	246, // 393: pb.Statement.purgeStatement:type_name -> pb.PurgeStatement
-	245, // 394: pb.Statement.readStatement:type_name -> pb.ReadStatement
-	244, // 395: pb.Statement.receiveStatement:type_name -> pb.ReceiveStatement
-	243, // 396: pb.Statement.releaseStatement:type_name -> pb.ReleaseStatement
-	242, // 397: pb.Statement.returnStatement:type_name -> pb.ReturnStatement
-	241, // 398: pb.Statement.rewriteStatement:type_name -> pb.RewriteStatement
-	240, // 399: pb.Statement.searchStatement:type_name -> pb.SearchStatement
-	239, // 400: pb.Statement.sendStatement:type_name -> pb.SendStatement
-	238, // 401: pb.Statement.setStatement:type_name -> pb.SetStatement
-	237, // 402: pb.Statement.sortStatement:type_name -> pb.SortStatement
-	236, // 403: pb.Statement.startStatement:type_name -> pb.StartStatement
-	235, // 404: pb.Statement.stopStatement:type_name -> pb.StopStatement
-	234, // 405: pb.Statement.stringStatement:type_name -> pb.StringStatement
-	233, // 406: pb.Statement.subtractStatement:type_name -> pb.SubtractStatement
-	232, // 407: pb.Statement.terminateStatement:type_name -> pb.TerminateStatement
-	231, // 408: pb.Statement.unstringStatement:type_name -> pb.UnstringStatement
-	230, // 409: pb.Statement.writeStatement:type_name -> pb.WriteStatement
-	252, // 410: pb.MoveStatement.move_to:type_name -> pb.MoveToStatement
-	253, // 411: pb.MoveStatement.move_corresponding_to:type_name -> pb.MoveCorrespondingToStatement
-	295, // 412: pb.MoveToStatement.Identifier:type_name -> pb.Identifier
-	345, // 413: pb.MoveToStatement.Literal:type_name -> pb.Literal
-	295, // 414: pb.MoveToStatement.to:type_name -> pb.Identifier
-	295, // 415: pb.MoveCorrespondingToStatement.sending_area:type_name -> pb.Identifier
-	295, // 416: pb.MoveCorrespondingToStatement.to:type_name -> pb.Identifier
-	295, // 417: pb.DisplayOperand.Identifier:type_name -> pb.Identifier
-	345, // 418: pb.DisplayOperand.Literal:type_name -> pb.Literal
-	295, // 419: pb.DisplayAt.Identifier:type_name -> pb.Identifier
-	345, // 420: pb.DisplayAt.Literal:type_name -> pb.Literal
-	332, // 421: pb.DisplayUpon.mnemonic_name:type_name -> pb.MnemonicName
-	325, // 422: pb.DisplayUpon.environment_name:type_name -> pb.EnvironmentName
-	271, // 423: pb.DisplayStatement.operands:type_name -> pb.DisplayOperand
-	272, // 424: pb.DisplayStatement.at:type_name -> pb.DisplayAt
-	273, // 425: pb.DisplayStatement.upon:type_name -> pb.DisplayUpon
-	274, // 426: pb.DisplayStatement.with:type_name -> pb.DisplayWith
-	286, // 427: pb.DisplayStatement.on_exception_clause:type_name -> pb.OnExceptionClause
-	287, // 428: pb.DisplayStatement.not_on_exception_clause:type_name -> pb.NotOnExceptionClause
-	395, // 429: pb.AddStatement.to:type_name -> pb.AddStatement.To
-	396, // 430: pb.AddStatement.to_giving:type_name -> pb.AddStatement.ToGiving
-	397, // 431: pb.AddStatement.corresponding:type_name -> pb.AddStatement.Corresponding
-	288, // 432: pb.AddStatement.on_size_error_phrase:type_name -> pb.OnSizeErrorPhrase
-	289, // 433: pb.AddStatement.not_on_size_error_phrase:type_name -> pb.NotOnSizeErrorPhrase
-	295, // 434: pb.AcceptStatement.identifier:type_name -> pb.Identifier
-	398, // 435: pb.AcceptStatement.from_date:type_name -> pb.AcceptStatement.FromDate
-	399, // 436: pb.AcceptStatement.from_escape_key:type_name -> pb.AcceptStatement.FromEscapeKey
-	400, // 437: pb.AcceptStatement.from_mnemonic:type_name -> pb.AcceptStatement.FromMnemonic
-	401, // 438: pb.AcceptStatement.message_count:type_name -> pb.AcceptStatement.MessageCount
-	286, // 439: pb.AcceptStatement.on_exception_clause:type_name -> pb.OnExceptionClause
-	287, // 440: pb.AcceptStatement.not_on_exception_clause:type_name -> pb.NotOnExceptionClause
-	229, // 441: pb.OnExceptionClause.statements:type_name -> pb.Statement
-	229, // 442: pb.NotOnExceptionClause.statements:type_name -> pb.Statement
-	229, // 443: pb.OnSizeErrorPhrase.statements:type_name -> pb.Statement
-	229, // 444: pb.NotOnSizeErrorPhrase.statements:type_name -> pb.Statement
-	293, // 445: pb.UseStatement.use_after_clause:type_name -> pb.UseAfterClause
-	292, // 446: pb.UseStatement.use_debug_clause:type_name -> pb.UseDebugClause
-	295, // 447: pb.UseDebugOn.Identifier:type_name -> pb.Identifier
-	334, // 448: pb.UseDebugOn.procedureName:type_name -> pb.ProcedureName
-	326, // 449: pb.UseDebugOn.fileName:type_name -> pb.FileName
-	291, // 450: pb.UseDebugClause.ons:type_name -> pb.UseDebugOn
-	43,  // 451: pb.UseAfterClause.type:type_name -> pb.UseAfterClause.Type
-	402, // 452: pb.UseAfterClause.file_names:type_name -> pb.UseAfterClause.FileNames
-	305, // 453: pb.Identifier.qualified_data_name:type_name -> pb.QualifiedDataName
-	296, // 454: pb.Identifier.table_call:type_name -> pb.TableCall
-	297, // 455: pb.Identifier.function_call:type_name -> pb.FunctionCall
-	350, // 456: pb.Identifier.special_register:type_name -> pb.SpecialRegister
-	305, // 457: pb.TableCall.qualified_data_name:type_name -> pb.QualifiedDataName
-	301, // 458: pb.TableCall.subscripts:type_name -> pb.Subscript
-	298, // 459: pb.TableCall.reference_modifier:type_name -> pb.ReferenceModifier
-	327, // 460: pb.FunctionCall.function_name:type_name -> pb.FunctionName
-	302, // 461: pb.FunctionCall.arguments:type_name -> pb.Argument
-	298, // 462: pb.FunctionCall.reference_modifier:type_name -> pb.ReferenceModifier
-	299, // 463: pb.ReferenceModifier.character_position:type_name -> pb.CharacterPosition
-	300, // 464: pb.ReferenceModifier.length:type_name -> pb.Length
-	294, // 465: pb.CharacterPosition.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	294, // 466: pb.Length.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	348, // 467: pb.Subscript.integer_literal:type_name -> pb.IntegerLiteral
-	303, // 468: pb.Subscript.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
-	304, // 469: pb.Subscript.index_name:type_name -> pb.IndexNameIntegerLiteral
-	294, // 470: pb.Subscript.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	345, // 471: pb.Argument.literal:type_name -> pb.Literal
-	295, // 472: pb.Argument.identifier:type_name -> pb.Identifier
-	303, // 473: pb.Argument.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
-	304, // 474: pb.Argument.index_name:type_name -> pb.IndexNameIntegerLiteral
-	294, // 475: pb.Argument.arithmetic_expression:type_name -> pb.ArithmeticExpression
-	305, // 476: pb.QualifiedDataNameIntegerLiteral.qualified_data_name:type_name -> pb.QualifiedDataName
-	348, // 477: pb.QualifiedDataNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
-	328, // 478: pb.IndexNameIntegerLiteral.index_name:type_name -> pb.IndexName
-	348, // 479: pb.IndexNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
-	306, // 480: pb.QualifiedDataName.f1:type_name -> pb.QualifiedDataNameFormat1
-	307, // 481: pb.QualifiedDataName.f2:type_name -> pb.QualifiedDataNameFormat2
-	308, // 482: pb.QualifiedDataName.f3:type_name -> pb.QualifiedDataNameFormat3
-	309, // 483: pb.QualifiedDataName.f4:type_name -> pb.QualifiedDataNameFormat4
-	323, // 484: pb.QualifiedDataNameFormat1.data_name:type_name -> pb.DataName
-	322, // 485: pb.QualifiedDataNameFormat1.condition_name:type_name -> pb.ConditionName
-	310, // 486: pb.QualifiedDataNameFormat1.in_datas:type_name -> pb.InData
-	315, // 487: pb.QualifiedDataNameFormat1.in_tables:type_name -> pb.InTable
-	311, // 488: pb.QualifiedDataNameFormat1.in_file:type_name -> pb.InFile
-	333, // 489: pb.QualifiedDataNameFormat2.paragraph_name:type_name -> pb.ParagraphName
-	313, // 490: pb.QualifiedDataNameFormat2.in_section:type_name -> pb.InSection
-	343, // 491: pb.QualifiedDataNameFormat3.text_name:type_name -> pb.TextName
-	314, // 492: pb.QualifiedDataNameFormat3.in_library:type_name -> pb.InLibrary
-	311, // 493: pb.QualifiedDataNameFormat4.in_file:type_name -> pb.InFile
-	323, // 494: pb.InData.data_name:type_name -> pb.DataName
-	326, // 495: pb.InFile.file_name:type_name -> pb.FileName
-	332, // 496: pb.InMnemonic.mnemonic_name:type_name -> pb.MnemonicName
-	340, // 497: pb.InSection.section_name:type_name -> pb.SectionName
-	330, // 498: pb.InLibrary.library_name:type_name -> pb.LibraryName
-	296, // 499: pb.InTable.table_call:type_name -> pb.TableCall
-	344, // 500: pb.AlphabetName.cobol_word:type_name -> pb.CobolWord
-	341, // 501: pb.AssignmentName.system_name:type_name -> pb.SystemName
-	335, // 502: pb.BasisName.program_name:type_name -> pb.ProgramName
-	344, // 503: pb.CdName.cobol_word:type_name -> pb.CobolWord
-	344, // 504: pb.ClassName.cobol_word:type_name -> pb.CobolWord
-	341, // 505: pb.ComputerName.system_name:type_name -> pb.SystemName
-	344, // 506: pb.ConditionName.cobol_word:type_name -> pb.CobolWord
-	344, // 507: pb.DataName.cobol_word:type_name -> pb.CobolWord
-	341, // 508: pb.EnvironmentName.system_name:type_name -> pb.SystemName
-	344, // 509: pb.FileName.cobol_word:type_name -> pb.CobolWord
-	344, // 510: pb.IndexName.cobol_word:type_name -> pb.CobolWord
-	341, // 511: pb.LanguageName.system_name:type_name -> pb.SystemName
-	344, // 512: pb.LibraryName.cobol_word:type_name -> pb.CobolWord
-	344, // 513: pb.LocalName.cobol_word:type_name -> pb.CobolWord
-	344, // 514: pb.MnemonicName.cobol_word:type_name -> pb.CobolWord
-	344, // 515: pb.ParagraphName.cobol_word:type_name -> pb.CobolWord
-	348, // 516: pb.ParagraphName.integer_literal:type_name -> pb.IntegerLiteral
-	333, // 517: pb.ProcedureName.paragraph_name:type_name -> pb.ParagraphName
-	340, // 518: pb.ProcedureName.section_name:type_name -> pb.SectionName
-	351, // 519: pb.ProgramName.non_numeric_literal:type_name -> pb.NonNumericLiteral
-	344, // 520: pb.ProgramName.cobol_word:type_name -> pb.CobolWord
-	305, // 521: pb.RecordName.qualified_data_name:type_name -> pb.QualifiedDataName
-	305, // 522: pb.ReportName.qualified_data_name:type_name -> pb.QualifiedDataName
-	344, // 523: pb.RoutingName.cobol_word:type_name -> pb.CobolWord
-	344, // 524: pb.ScreenName.cobol_word:type_name -> pb.CobolWord
-	344, // 525: pb.SectionName.cobol_word:type_name -> pb.CobolWord
-	348, // 526: pb.SectionName.integer_literal:type_name -> pb.IntegerLiteral
-	344, // 527: pb.SystemName.cobol_word:type_name -> pb.CobolWord
-	344, // 528: pb.SymbolicCharacter.cobol_word:type_name -> pb.CobolWord
-	344, // 529: pb.TextName.cobol_word:type_name -> pb.CobolWord
-	44,  // 530: pb.Literal.type:type_name -> pb.Literal.Type
-	347, // 531: pb.Literal.numeric_literal:type_name -> pb.NumericLiteral
-	346, // 532: pb.Literal.boolean_literal:type_name -> pb.BooleanLiteral
-	351, // 533: pb.Literal.non_numeric_literal:type_name -> pb.NonNumericLiteral
-	349, // 534: pb.Literal.figurative_constant:type_name -> pb.FigurativeConstant
-	45,  // 535: pb.NumericLiteral.type:type_name -> pb.NumericLiteral.Type
-	46,  // 536: pb.FigurativeConstant.type:type_name -> pb.FigurativeConstant.Type
-	345, // 537: pb.FigurativeConstant.literal:type_name -> pb.Literal
-	345, // 538: pb.AlphabetClause.Also.alsos:type_name -> pb.Literal
-	345, // 539: pb.AlphabetClause.AlphabetLiteral.literal:type_name -> pb.Literal
-	345, // 540: pb.AlphabetClause.AlphabetLiteral.through:type_name -> pb.Literal
-	356, // 541: pb.AlphabetClause.AlphabetLiteral.alsos:type_name -> pb.AlphabetClause.Also
-	357, // 542: pb.AlphabetClause.AlphabetLiterals.values:type_name -> pb.AlphabetClause.AlphabetLiteral
-	3,   // 543: pb.AlphabetClause.Alphanumeric.type:type_name -> pb.AlphabetClause.Alphanumeric.Type
-	344, // 544: pb.AlphabetClause.Alphanumeric.cobol_word:type_name -> pb.CobolWord
-	358, // 545: pb.AlphabetClause.Alphanumeric.values:type_name -> pb.AlphabetClause.AlphabetLiterals
-	4,   // 546: pb.AlphabetClause.National.type:type_name -> pb.AlphabetClause.National.Type
-	345, // 547: pb.AlphabetClause.National.ccs_version:type_name -> pb.Literal
-	323, // 548: pb.LabelRecordsClause.DataNames.data_names:type_name -> pb.DataName
-	323, // 549: pb.DataDescriptionEntry.Format1.data_name:type_name -> pb.DataName
-	122, // 550: pb.DataDescriptionEntry.Format1.data_redefines_clause:type_name -> pb.DataRedefinesClause
-	123, // 551: pb.DataDescriptionEntry.Format1.data_integer_string_clause:type_name -> pb.DataIntegerStringClause
-	124, // 552: pb.DataDescriptionEntry.Format1.data_external_clause:type_name -> pb.DataExternalClause
-	125, // 553: pb.DataDescriptionEntry.Format1.data_global_clause:type_name -> pb.DataGlobalClause
-	126, // 554: pb.DataDescriptionEntry.Format1.data_type_def_clause:type_name -> pb.DataTypeDefClause
-	127, // 555: pb.DataDescriptionEntry.Format1.data_thread_local_clause:type_name -> pb.DataThreadLocalClause
-	128, // 556: pb.DataDescriptionEntry.Format1.data_picture_clause:type_name -> pb.DataPictureClause
-	132, // 557: pb.DataDescriptionEntry.Format1.data_common_own_local_clause:type_name -> pb.DataCommonOwnLocalClause
-	133, // 558: pb.DataDescriptionEntry.Format1.data_type_clause:type_name -> pb.DataTypeClause
-	134, // 559: pb.DataDescriptionEntry.Format1.data_using_clause:type_name -> pb.DataUsingClause
-	135, // 560: pb.DataDescriptionEntry.Format1.data_usage_clause:type_name -> pb.DataUsageClause
-	137, // 561: pb.DataDescriptionEntry.Format1.data_value_clause:type_name -> pb.DataValueClause
-	138, // 562: pb.DataDescriptionEntry.Format1.data_received_by_clause:type_name -> pb.DataReceivedByClause
-	139, // 563: pb.DataDescriptionEntry.Format1.data_occurs_clause:type_name -> pb.DataOccursClause
-	140, // 564: pb.DataDescriptionEntry.Format1.data_sign_clause:type_name -> pb.DataSignClause
-	141, // 565: pb.DataDescriptionEntry.Format1.data_synchronized_clause:type_name -> pb.DataSynchronizedClause
-	142, // 566: pb.DataDescriptionEntry.Format1.data_justified_clause:type_name -> pb.DataJustifiedClause
-	143, // 567: pb.DataDescriptionEntry.Format1.data_blank_when_zero_clause:type_name -> pb.DataBlankWhenZeroClause
-	144, // 568: pb.DataDescriptionEntry.Format1.data_with_lower_bounds_clause:type_name -> pb.DataWithLowerBoundsClause
-	145, // 569: pb.DataDescriptionEntry.Format1.data_aligned_clause:type_name -> pb.DataAlignedClause
-	146, // 570: pb.DataDescriptionEntry.Format1.data_record_area_clause:type_name -> pb.DataRecordAreaClause
-	323, // 571: pb.DataDescriptionEntry.Format2.data_name:type_name -> pb.DataName
-	121, // 572: pb.DataDescriptionEntry.Format2.data_renames_clause:type_name -> pb.DataRenamesClause
-	322, // 573: pb.DataDescriptionEntry.Format3.condition_name:type_name -> pb.ConditionName
-	137, // 574: pb.DataDescriptionEntry.Format3.data_value_clause:type_name -> pb.DataValueClause
-	20,  // 575: pb.DataTypeClause.Lob.mode:type_name -> pb.DataTypeClause.Mode
-	348, // 576: pb.DataTypeClause.Lob.integer_literal:type_name -> pb.IntegerLiteral
-	305, // 577: pb.DataOccursClause.Sort.qualified_data_names:type_name -> pb.QualifiedDataName
-	328, // 578: pb.DataOccursClause.Indexed.index_names:type_name -> pb.IndexName
-	190, // 579: pb.ReportGroupDescriptionEntry.Vertical.line_number_clause:type_name -> pb.LineNumberClause
-	191, // 580: pb.ReportGroupDescriptionEntry.Vertical.next_group_clause:type_name -> pb.NextGroupClause
-	192, // 581: pb.ReportGroupDescriptionEntry.Vertical.type_clause:type_name -> pb.TypeClause
-	193, // 582: pb.ReportGroupDescriptionEntry.Vertical.usage_clause:type_name -> pb.UsageClause
-	190, // 583: pb.ReportGroupDescriptionEntry.Single.line_number_clause:type_name -> pb.LineNumberClause
-	193, // 584: pb.ReportGroupDescriptionEntry.Single.usage_clause:type_name -> pb.UsageClause
-	189, // 585: pb.ReportGroupDescriptionEntry.Printable.picture_clause:type_name -> pb.PictureClause
-	193, // 586: pb.ReportGroupDescriptionEntry.Printable.usage_clause:type_name -> pb.UsageClause
-	188, // 587: pb.ReportGroupDescriptionEntry.Printable.sign_clause:type_name -> pb.SignClause
-	187, // 588: pb.ReportGroupDescriptionEntry.Printable.justified_clause:type_name -> pb.JustifiedClause
-	186, // 589: pb.ReportGroupDescriptionEntry.Printable.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
-	190, // 590: pb.ReportGroupDescriptionEntry.Printable.line_number_clause:type_name -> pb.LineNumberClause
-	185, // 591: pb.ReportGroupDescriptionEntry.Printable.column_number_clause:type_name -> pb.ColumnNumberClause
-	184, // 592: pb.ReportGroupDescriptionEntry.Printable.IndicateClause:type_name -> pb.IndicateClause
-	183, // 593: pb.ReportGroupDescriptionEntry.Printable.source_clause:type_name -> pb.SourceClause
-	182, // 594: pb.ReportGroupDescriptionEntry.Printable.value_clause:type_name -> pb.ValueClause
-	181, // 595: pb.ReportGroupDescriptionEntry.Printable.SumClause:type_name -> pb.SumClause
-	180, // 596: pb.ReportGroupDescriptionEntry.Printable.reset_clause:type_name -> pb.ResetClause
-	323, // 597: pb.TypeClause.ControlHeading.data_name:type_name -> pb.DataName
-	323, // 598: pb.TypeClause.ControlFooting.data_name:type_name -> pb.DataName
-	108, // 599: pb.LibraryDescriptionEntry.Import.global_clause:type_name -> pb.GlobalClause
-	196, // 600: pb.LibraryDescriptionEntry.Import.is_common_clause:type_name -> pb.IsCommonClause
-	198, // 601: pb.LibraryDescriptionEntry.Import.attribute_clause:type_name -> pb.AttributeClause2
-	200, // 602: pb.LibraryDescriptionEntry.Import.procedure_clause:type_name -> pb.ProcedureClause2
-	197, // 603: pb.LibraryDescriptionEntry.Export.attribute_clause:type_name -> pb.AttributeClause1
-	199, // 604: pb.LibraryDescriptionEntry.Export.procedure_clause:type_name -> pb.ProcedureClause1
-	331, // 605: pb.ProcedureClause2.WithName.local_name:type_name -> pb.LocalName
-	326, // 606: pb.ProcedureClause2.WithName.file_name:type_name -> pb.FileName
-	323, // 607: pb.ProcedureClause2.UsingName.data_name:type_name -> pb.DataName
-	326, // 608: pb.ProcedureClause2.UsingName.file_name:type_name -> pb.FileName
-	210, // 609: pb.CommunicationDescriptionEntry.Input.symbolic_queue_clause:type_name -> pb.SymbolicQueueClause
-	211, // 610: pb.CommunicationDescriptionEntry.Input.symbolic_sub_queue_clause:type_name -> pb.SymbolicSubQueueClause
-	212, // 611: pb.CommunicationDescriptionEntry.Input.message_date_clause:type_name -> pb.MessageDateClause
-	213, // 612: pb.CommunicationDescriptionEntry.Input.message_time_clause:type_name -> pb.MessageTimeClause
-	214, // 613: pb.CommunicationDescriptionEntry.Input.symbolic_source_clause:type_name -> pb.SymbolicSourceClause
-	215, // 614: pb.CommunicationDescriptionEntry.Input.text_length_clause:type_name -> pb.TextLengthClause
-	216, // 615: pb.CommunicationDescriptionEntry.Input.end_key_clause:type_name -> pb.EndKeyClause
-	217, // 616: pb.CommunicationDescriptionEntry.Input.status_key_clause:type_name -> pb.StatusKeyClause
-	218, // 617: pb.CommunicationDescriptionEntry.Input.message_count_clause:type_name -> pb.MessageCountClause
-	324, // 618: pb.CommunicationDescriptionEntry.Input.data_desc_name:type_name -> pb.DataDescName
-	209, // 619: pb.CommunicationDescriptionEntry.Output.destination_count_clause:type_name -> pb.DestinationCountClause
-	215, // 620: pb.CommunicationDescriptionEntry.Output.text_length_clause:type_name -> pb.TextLengthClause
-	217, // 621: pb.CommunicationDescriptionEntry.Output.status_key_clause:type_name -> pb.StatusKeyClause
-	208, // 622: pb.CommunicationDescriptionEntry.Output.destination_table_clause:type_name -> pb.DestinationTableClause
-	207, // 623: pb.CommunicationDescriptionEntry.Output.errorKeyClause:type_name -> pb.ErrorKeyClause
-	206, // 624: pb.CommunicationDescriptionEntry.Output.symbolic_destination_clause:type_name -> pb.SymbolicDestinationClause
-	212, // 625: pb.CommunicationDescriptionEntry.Io.message_date_clause:type_name -> pb.MessageDateClause
-	213, // 626: pb.CommunicationDescriptionEntry.Io.message_time_clause:type_name -> pb.MessageTimeClause
-	205, // 627: pb.CommunicationDescriptionEntry.Io.symbolic_terminal_clause:type_name -> pb.SymbolicTerminalClause
-	215, // 628: pb.CommunicationDescriptionEntry.Io.text_length_clause:type_name -> pb.TextLengthClause
-	216, // 629: pb.CommunicationDescriptionEntry.Io.end_key_clause:type_name -> pb.EndKeyClause
-	217, // 630: pb.CommunicationDescriptionEntry.Io.status_key_clause:type_name -> pb.StatusKeyClause
-	295, // 631: pb.ProcedureDivision.ByReference.identifier:type_name -> pb.Identifier
-	326, // 632: pb.ProcedureDivision.ByReference.file_name:type_name -> pb.FileName
-	386, // 633: pb.ProcedureDivision.ByReferencePhrase.references:type_name -> pb.ProcedureDivision.ByReference
-	295, // 634: pb.ProcedureDivision.ByValue.identifier:type_name -> pb.Identifier
-	345, // 635: pb.ProcedureDivision.ByValue.literal:type_name -> pb.Literal
-	388, // 636: pb.ProcedureDivision.ByValuePhrase.values:type_name -> pb.ProcedureDivision.ByValue
-	387, // 637: pb.ProcedureDivision.UsingParameter.by_reference_phrase:type_name -> pb.ProcedureDivision.ByReferencePhrase
-	389, // 638: pb.ProcedureDivision.UsingParameter.by_value_phrase:type_name -> pb.ProcedureDivision.ByValuePhrase
-	40,  // 639: pb.ProcedureDivision.GivingClause.type:type_name -> pb.ProcedureDivision.GivingClause.Type
-	323, // 640: pb.ProcedureDivision.GivingClause.data_name:type_name -> pb.DataName
-	41,  // 641: pb.ProcedureDivision.UsingClause.type:type_name -> pb.ProcedureDivision.UsingClause.Type
-	390, // 642: pb.ProcedureDivision.UsingClause.using_parameters:type_name -> pb.ProcedureDivision.UsingParameter
-	295, // 643: pb.AddStatement.AddFrom.Identifier:type_name -> pb.Identifier
-	345, // 644: pb.AddStatement.AddFrom.literal:type_name -> pb.Literal
-	295, // 645: pb.AddStatement.AddToGiving.Identifier:type_name -> pb.Identifier
-	345, // 646: pb.AddStatement.AddToGiving.literal:type_name -> pb.Literal
-	393, // 647: pb.AddStatement.To.froms:type_name -> pb.AddStatement.AddFrom
-	295, // 648: pb.AddStatement.To.tos:type_name -> pb.Identifier
-	393, // 649: pb.AddStatement.ToGiving.froms:type_name -> pb.AddStatement.AddFrom
-	394, // 650: pb.AddStatement.ToGiving.tos:type_name -> pb.AddStatement.AddToGiving
-	295, // 651: pb.AddStatement.ToGiving.givings:type_name -> pb.Identifier
-	295, // 652: pb.AddStatement.Corresponding.corresponding:type_name -> pb.Identifier
-	295, // 653: pb.AddStatement.Corresponding.to:type_name -> pb.Identifier
-	42,  // 654: pb.AcceptStatement.FromDate.type:type_name -> pb.AcceptStatement.FromDate.Type
-	332, // 655: pb.AcceptStatement.FromMnemonic.mnemonic_name:type_name -> pb.MnemonicName
-	326, // 656: pb.UseAfterClause.FileNames.file_names:type_name -> pb.FileName
-	657, // [657:657] is the sub-list for method output_type
-	657, // [657:657] is the sub-list for method input_type
-	657, // [657:657] is the sub-list for extension type_name
-	657, // [657:657] is the sub-list for extension extendee
-	0,   // [0:657] is the sub-list for field type_name
+	54,  // 0: pb.Program.compilation_units:type_name -> pb.CompilationUnit
+	55,  // 1: pb.CompilationUnit.program_units:type_name -> pb.ProgramUnit
+	56,  // 2: pb.ProgramUnit.identification_division:type_name -> pb.IdentificationDivision
+	64,  // 3: pb.ProgramUnit.environment_division:type_name -> pb.EnvironmentDivision
+	108, // 4: pb.ProgramUnit.data_division:type_name -> pb.DataDivision
+	227, // 5: pb.ProgramUnit.procedure_division:type_name -> pb.ProcedureDivision
+	57,  // 6: pb.IdentificationDivision.program_id_paragraph:type_name -> pb.ProgramIdParagraph
+	58,  // 7: pb.IdentificationDivision.author_paragraph:type_name -> pb.AuthorParagraph
+	59,  // 8: pb.IdentificationDivision.date_compiled_paragraph:type_name -> pb.DateCompiledParagraph
+	60,  // 9: pb.IdentificationDivision.date_written_paragraph:type_name -> pb.DateWrittenParagraph
+	61,  // 10: pb.IdentificationDivision.installation_paragraph:type_name -> pb.InstallationParagraph
+	62,  // 11: pb.IdentificationDivision.remarks_paragraph:type_name -> pb.RemarksParagraph
+	63,  // 12: pb.IdentificationDivision.security_paragraph:type_name -> pb.SecurityParagraph
+	359, // 13: pb.ProgramIdParagraph.program_name:type_name -> pb.ProgramName
+	1,   // 14: pb.ProgramIdParagraph.attribute:type_name -> pb.ProgramIdParagraph.Attribute
+	65,  // 15: pb.EnvironmentDivision.configuration_section:type_name -> pb.ConfigurationSection
+	84,  // 16: pb.EnvironmentDivision.input_output_section:type_name -> pb.InputOutputSection
+	73,  // 17: pb.EnvironmentDivision.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
+	67,  // 18: pb.ConfigurationSection.object_computer_paragraph:type_name -> pb.ObjectComputerParagraph
+	66,  // 19: pb.ConfigurationSection.source_computer_paragraph:type_name -> pb.SourceComputerParagraph
+	73,  // 20: pb.ConfigurationSection.special_names_paragraph:type_name -> pb.SpecialNamesParagraph
+	345, // 21: pb.SourceComputerParagraph.computer_name:type_name -> pb.ComputerName
+	345, // 22: pb.ObjectComputerParagraph.computer_name:type_name -> pb.ComputerName
+	68,  // 23: pb.ObjectComputerParagraph.memory_size_clause:type_name -> pb.MemorySizeClause
+	69,  // 24: pb.ObjectComputerParagraph.disk_size_clause:type_name -> pb.DiskSizeClause
+	70,  // 25: pb.ObjectComputerParagraph.collating_sequence_clause:type_name -> pb.CollatingSequenceClause
+	71,  // 26: pb.ObjectComputerParagraph.segment_limit_clause:type_name -> pb.SegmentLimitClause
+	72,  // 27: pb.ObjectComputerParagraph.character_set_clause:type_name -> pb.CharacterSetClause
+	2,   // 28: pb.MemorySizeClause.unit:type_name -> pb.MemorySizeClause.Unit
+	372, // 29: pb.MemorySizeClause.integer_literal:type_name -> pb.IntegerLiteral
+	368, // 30: pb.MemorySizeClause.cobol_word:type_name -> pb.CobolWord
+	3,   // 31: pb.DiskSizeClause.unit:type_name -> pb.DiskSizeClause.Unit
+	372, // 32: pb.DiskSizeClause.integer_literal:type_name -> pb.IntegerLiteral
+	368, // 33: pb.DiskSizeClause.cobol_word:type_name -> pb.CobolWord
+	340, // 34: pb.CollatingSequenceClause.national:type_name -> pb.AlphabetName
+	340, // 35: pb.CollatingSequenceClause.alphanumeric:type_name -> pb.AlphabetName
+	340, // 36: pb.CollatingSequenceClause.alphabet_names:type_name -> pb.AlphabetName
+	372, // 37: pb.SegmentLimitClause.segment_limit:type_name -> pb.IntegerLiteral
+	74,  // 38: pb.SpecialNamesParagraph.alphabet_clauses:type_name -> pb.AlphabetClause
+	75,  // 39: pb.SpecialNamesParagraph.channel_clause:type_name -> pb.ChannelClause
+	76,  // 40: pb.SpecialNamesParagraph.class_clause:type_name -> pb.ClassClause
+	78,  // 41: pb.SpecialNamesParagraph.currency_sign_clause:type_name -> pb.CurrencySignClause
+	79,  // 42: pb.SpecialNamesParagraph.decimal_point_clause:type_name -> pb.DecimalPointClause
+	80,  // 43: pb.SpecialNamesParagraph.default_display_sign_clause:type_name -> pb.DefaultDisplaySignClause
+	81,  // 44: pb.SpecialNamesParagraph.odt_clause:type_name -> pb.OdtClause
+	82,  // 45: pb.SpecialNamesParagraph.reserve_network_clause:type_name -> pb.ReserveNetworkClause
+	83,  // 46: pb.SpecialNamesParagraph.symbolic_characters_clause:type_name -> pb.SymbolicCharactersClause
+	340, // 47: pb.AlphabetClause.alphabet_name:type_name -> pb.AlphabetName
+	383, // 48: pb.AlphabetClause.alphanumeric:type_name -> pb.AlphabetClause.Alphanumeric
+	384, // 49: pb.AlphabetClause.national:type_name -> pb.AlphabetClause.National
+	372, // 50: pb.ChannelClause.Channel:type_name -> pb.IntegerLiteral
+	356, // 51: pb.ChannelClause.mnemonic_name:type_name -> pb.MnemonicName
+	344, // 52: pb.ClassClause.class_name:type_name -> pb.ClassName
+	6,   // 53: pb.ClassClause.type:type_name -> pb.ClassClause.Type
+	77,  // 54: pb.ClassClause.class_throughs:type_name -> pb.ClassClauseThrough
+	319, // 55: pb.ClassClauseThrough.identifier_from:type_name -> pb.Identifier
+	369, // 56: pb.ClassClauseThrough.literal_from:type_name -> pb.Literal
+	319, // 57: pb.ClassClauseThrough.identifier_to:type_name -> pb.Identifier
+	369, // 58: pb.ClassClauseThrough.literal_to:type_name -> pb.Literal
+	369, // 59: pb.CurrencySignClause.currency_literal:type_name -> pb.Literal
+	369, // 60: pb.CurrencySignClause.picture_symbol_literal:type_name -> pb.Literal
+	7,   // 61: pb.DefaultDisplaySignClause.type:type_name -> pb.DefaultDisplaySignClause.Type
+	356, // 62: pb.OdtClause.mnemonic_name:type_name -> pb.MnemonicName
+	8,   // 63: pb.SymbolicCharactersClause.type:type_name -> pb.SymbolicCharactersClause.Type
+	85,  // 64: pb.InputOutputSection.file_control_paragraph:type_name -> pb.FileControlParagraph
+	99,  // 65: pb.InputOutputSection.io_control_paragraph:type_name -> pb.IoControlParagraph
+	86,  // 66: pb.FileControlParagraph.file_control_entries:type_name -> pb.FileControlEntry
+	350, // 67: pb.FileControlEntry.file_name:type_name -> pb.FileName
+	87,  // 68: pb.FileControlEntry.select_clause:type_name -> pb.SelectClause
+	95,  // 69: pb.FileControlEntry.alternate_record_key_clause:type_name -> pb.AlternateRecordKeyClause
+	88,  // 70: pb.FileControlEntry.assign_clause:type_name -> pb.AssignClause
+	97,  // 71: pb.FileControlEntry.file_status_clause:type_name -> pb.FileStatusClause
+	90,  // 72: pb.FileControlEntry.organization_clause:type_name -> pb.OrganizationClause
+	91,  // 73: pb.FileControlEntry.padding_character_clause:type_name -> pb.PaddingCharacterClause
+	96,  // 74: pb.FileControlEntry.password_clause:type_name -> pb.PasswordClause
+	92,  // 75: pb.FileControlEntry.record_delimiter_clause:type_name -> pb.RecordDelimiterClause
+	94,  // 76: pb.FileControlEntry.record_key_clause:type_name -> pb.RecordKeyClause
+	98,  // 77: pb.FileControlEntry.relative_key_clause:type_name -> pb.RelativeKeyClause
+	89,  // 78: pb.FileControlEntry.reserve_clause:type_name -> pb.ReserveClause
+	93,  // 79: pb.FileControlEntry.access_mode_clause:type_name -> pb.AccessModeClause
+	350, // 80: pb.SelectClause.file_name:type_name -> pb.FileName
+	9,   // 81: pb.AssignClause.type:type_name -> pb.AssignClause.Type
+	341, // 82: pb.AssignClause.assignment_name:type_name -> pb.AssignmentName
+	369, // 83: pb.AssignClause.literal:type_name -> pb.Literal
+	372, // 84: pb.ReserveClause.value:type_name -> pb.IntegerLiteral
+	10,  // 85: pb.OrganizationClause.mode:type_name -> pb.OrganizationClause.Mode
+	11,  // 86: pb.OrganizationClause.type:type_name -> pb.OrganizationClause.Type
+	329, // 87: pb.PaddingCharacterClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	369, // 88: pb.PaddingCharacterClause.literal:type_name -> pb.Literal
+	12,  // 89: pb.RecordDelimiterClause.type:type_name -> pb.RecordDelimiterClause.Type
+	341, // 90: pb.RecordDelimiterClause.assignment_name:type_name -> pb.AssignmentName
+	13,  // 91: pb.AccessModeClause.mode:type_name -> pb.AccessModeClause.Mode
+	96,  // 92: pb.RecordKeyClause.password_clause:type_name -> pb.PasswordClause
+	329, // 93: pb.RecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	96,  // 94: pb.AlternateRecordKeyClause.password_clause:type_name -> pb.PasswordClause
+	329, // 95: pb.AlternateRecordKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	347, // 96: pb.PasswordClause.data_name:type_name -> pb.DataName
+	329, // 97: pb.FileStatusClause.qualified_data_name_1:type_name -> pb.QualifiedDataName
+	329, // 98: pb.FileStatusClause.qualified_data_name_2:type_name -> pb.QualifiedDataName
+	329, // 99: pb.RelativeKeyClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	350, // 100: pb.IoControlParagraph.file_name:type_name -> pb.FileName
+	107, // 101: pb.IoControlParagraph.commitment_control_clause:type_name -> pb.CommitmentControlClause
+	105, // 102: pb.IoControlParagraph.multiple_file_clause:type_name -> pb.MultipleFileClause
+	100, // 103: pb.IoControlParagraph.rerun_clause:type_name -> pb.RerunClause
+	104, // 104: pb.IoControlParagraph.same_clauses:type_name -> pb.SameClause
+	341, // 105: pb.RerunClause.assignment_name:type_name -> pb.AssignmentName
+	350, // 106: pb.RerunClause.file_name:type_name -> pb.FileName
+	103, // 107: pb.RerunClause.rerun_every_clock:type_name -> pb.RerunEveryClock
+	102, // 108: pb.RerunClause.rerun_every_of:type_name -> pb.RerunEveryOf
+	101, // 109: pb.RerunClause.rerun_every_records:type_name -> pb.RerunEveryRecords
+	372, // 110: pb.RerunEveryRecords.records:type_name -> pb.IntegerLiteral
+	14,  // 111: pb.RerunEveryOf.type:type_name -> pb.RerunEveryOf.Type
+	350, // 112: pb.RerunEveryOf.file_name:type_name -> pb.FileName
+	372, // 113: pb.RerunEveryClock.clock_units:type_name -> pb.IntegerLiteral
+	350, // 114: pb.SameClause.file_names:type_name -> pb.FileName
+	15,  // 115: pb.SameClause.form:type_name -> pb.SameClause.Form
+	106, // 116: pb.MultipleFileClause.multiple_file_positions:type_name -> pb.MultipleFilePosition
+	372, // 117: pb.MultipleFilePosition.position:type_name -> pb.IntegerLiteral
+	350, // 118: pb.MultipleFilePosition.file_name:type_name -> pb.FileName
+	350, // 119: pb.CommitmentControlClause.file_name:type_name -> pb.FileName
+	209, // 120: pb.DataDivision.communication_section:type_name -> pb.CommunicationSection
+	225, // 121: pb.DataDivision.data_base_section:type_name -> pb.DataBaseSection
+	109, // 122: pb.DataDivision.file_section:type_name -> pb.FileSection
+	208, // 123: pb.DataDivision.linkage_section:type_name -> pb.LinkageSection
+	207, // 124: pb.DataDivision.local_storage_section:type_name -> pb.LocalStorageSection
+	200, // 125: pb.DataDivision.program_library_section:type_name -> pb.ProgramLibrarySection
+	177, // 126: pb.DataDivision.report_section:type_name -> pb.ReportSection
+	153, // 127: pb.DataDivision.ScreenSection:type_name -> pb.ScreenSection
+	125, // 128: pb.DataDivision.working_storage_section:type_name -> pb.WorkingStorageSection
+	110, // 129: pb.FileSection.file_description_entries:type_name -> pb.FileDescriptionEntry
+	350, // 130: pb.FileDescriptionEntry.file_name:type_name -> pb.FileName
+	113, // 131: pb.FileDescriptionEntry.external_clause:type_name -> pb.ExternalClause
+	114, // 132: pb.FileDescriptionEntry.global_clause:type_name -> pb.GlobalClause
+	115, // 133: pb.FileDescriptionEntry.block_contains_clause:type_name -> pb.BlockContainsClause
+	116, // 134: pb.FileDescriptionEntry.record_contains_clause:type_name -> pb.RecordContainsClause
+	117, // 135: pb.FileDescriptionEntry.label_records_clause:type_name -> pb.LabelRecordsClause
+	118, // 136: pb.FileDescriptionEntry.value_of_clause:type_name -> pb.ValueOfClause
+	120, // 137: pb.FileDescriptionEntry.data_records_clause:type_name -> pb.DataRecordsClause
+	122, // 138: pb.FileDescriptionEntry.linage_clause:type_name -> pb.LinageClause
+	123, // 139: pb.FileDescriptionEntry.code_set_clause:type_name -> pb.CodeSetClause
+	124, // 140: pb.FileDescriptionEntry.report_clause:type_name -> pb.ReportClause
+	126, // 141: pb.FileDescriptionEntry.data_description_entries:type_name -> pb.DataDescriptionEntry
+	112, // 142: pb.FileDescriptionEntry.recording_mode_clause:type_name -> pb.RecordingModeClause
+	368, // 143: pb.ModeStatement.cobol_word:type_name -> pb.CobolWord
+	111, // 144: pb.RecordingModeClause.mode_statement:type_name -> pb.ModeStatement
+	372, // 145: pb.BlockContainsClause.from:type_name -> pb.IntegerLiteral
+	372, // 146: pb.BlockContainsClause.to:type_name -> pb.IntegerLiteral
+	16,  // 147: pb.BlockContainsClause.unit:type_name -> pb.BlockContainsClause.Unit
+	372, // 148: pb.RecordContainsClause.from:type_name -> pb.IntegerLiteral
+	372, // 149: pb.RecordContainsClause.to:type_name -> pb.IntegerLiteral
+	329, // 150: pb.RecordContainsClause.qualified_data_name:type_name -> pb.QualifiedDataName
+	17,  // 151: pb.LabelRecordsClause.type:type_name -> pb.LabelRecordsClause.Type
+	385, // 152: pb.LabelRecordsClause.data_names:type_name -> pb.LabelRecordsClause.DataNames
+	119, // 153: pb.ValueOfClause.value_pairs:type_name -> pb.ValuePair
+	365, // 154: pb.ValuePair.system_name:type_name -> pb.SystemName
+	329, // 155: pb.ValuePair.qualified_data_name:type_name -> pb.QualifiedDataName
+	369, // 156: pb.ValuePair.literal:type_name -> pb.Literal
+	347, // 157: pb.DataRecordsClause.data_names:type_name -> pb.DataName
+	347, // 158: pb.DataNameOrIntegerLiteral.data_name:type_name -> pb.DataName
+	372, // 159: pb.DataNameOrIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
+	121, // 160: pb.LinageClause.footing_at:type_name -> pb.DataNameOrIntegerLiteral
+	121, // 161: pb.LinageClause.lines_at_bottom:type_name -> pb.DataNameOrIntegerLiteral
+	121, // 162: pb.LinageClause.lines_at_top:type_name -> pb.DataNameOrIntegerLiteral
+	121, // 163: pb.LinageClause.number_of_lines:type_name -> pb.DataNameOrIntegerLiteral
+	340, // 164: pb.CodeSetClause.alphabet_name:type_name -> pb.AlphabetName
+	361, // 165: pb.ReportClause.report_names:type_name -> pb.ReportName
+	126, // 166: pb.WorkingStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	386, // 167: pb.DataDescriptionEntry.f1:type_name -> pb.DataDescriptionEntry.Format1
+	387, // 168: pb.DataDescriptionEntry.f2:type_name -> pb.DataDescriptionEntry.Format2
+	388, // 169: pb.DataDescriptionEntry.f3:type_name -> pb.DataDescriptionEntry.Format3
+	389, // 170: pb.DataDescriptionEntry.exec_sql:type_name -> pb.DataDescriptionEntry.ExecSql
+	329, // 171: pb.DataRenamesClause.from:type_name -> pb.QualifiedDataName
+	329, // 172: pb.DataRenamesClause.to:type_name -> pb.QualifiedDataName
+	347, // 173: pb.DataRedefinesClause.data_name:type_name -> pb.DataName
+	369, // 174: pb.DataExternalClause.literal:type_name -> pb.Literal
+	135, // 175: pb.DataPictureClause.picture_string:type_name -> pb.PictureString
+	136, // 176: pb.PictureString.chars:type_name -> pb.PictureChars
+	18,  // 177: pb.PictureChars.type:type_name -> pb.PictureChars.Type
+	372, // 178: pb.PictureChars.integer_literal:type_name -> pb.IntegerLiteral
+	372, // 179: pb.PictureCardinality.integer_literal:type_name -> pb.IntegerLiteral
+	19,  // 180: pb.DataCommonOwnLocalClause.type:type_name -> pb.DataCommonOwnLocalClause.Type
+	20,  // 181: pb.DataTypeClause.type:type_name -> pb.DataTypeClause.Type
+	390, // 182: pb.DataTypeClause.lob:type_name -> pb.DataTypeClause.Lob
+	22,  // 183: pb.DataUsingClause.type:type_name -> pb.DataUsingClause.Type
+	368, // 184: pb.DataUsingClause.cobol_word:type_name -> pb.CobolWord
+	347, // 185: pb.DataUsingClause.data_name:type_name -> pb.DataName
+	23,  // 186: pb.DataUsageClause.type:type_name -> pb.DataUsageClause.Type
+	369, // 187: pb.DataValueInterval.literal_from:type_name -> pb.Literal
+	368, // 188: pb.DataValueInterval.cobol_word_from:type_name -> pb.CobolWord
+	369, // 189: pb.DataValueInterval.literal_to:type_name -> pb.Literal
+	142, // 190: pb.DataValueClause.data_value_interval:type_name -> pb.DataValueInterval
+	24,  // 191: pb.DataReceivedByClause.type:type_name -> pb.DataReceivedByClause.Type
+	319, // 192: pb.DataOccursClause.identifier:type_name -> pb.Identifier
+	372, // 193: pb.DataOccursClause.integer_literal:type_name -> pb.IntegerLiteral
+	372, // 194: pb.DataOccursClause.to:type_name -> pb.IntegerLiteral
+	329, // 195: pb.DataOccursClause.depending_on:type_name -> pb.QualifiedDataName
+	391, // 196: pb.DataOccursClause.sorts:type_name -> pb.DataOccursClause.Sort
+	392, // 197: pb.DataOccursClause.indexes:type_name -> pb.DataOccursClause.Indexed
+	25,  // 198: pb.DataSignClause.type:type_name -> pb.DataSignClause.Type
+	26,  // 199: pb.DataSynchronizedClause.type:type_name -> pb.DataSynchronizedClause.Type
+	154, // 200: pb.ScreenSection.screen_description_entries:type_name -> pb.ScreenDescriptionEntry
+	363, // 201: pb.ScreenDescriptionEntry.screen_name:type_name -> pb.ScreenName
+	163, // 202: pb.ScreenDescriptionEntry.blank_clause:type_name -> pb.BlankClause
+	164, // 203: pb.ScreenDescriptionEntry.bell_clause:type_name -> pb.BellClause
+	165, // 204: pb.ScreenDescriptionEntry.blink_clause:type_name -> pb.BlinkClause
+	166, // 205: pb.ScreenDescriptionEntry.erase_clause:type_name -> pb.EraseClause
+	167, // 206: pb.ScreenDescriptionEntry.light_clause:type_name -> pb.LightClause
+	168, // 207: pb.ScreenDescriptionEntry.grid_clause:type_name -> pb.GridClause
+	169, // 208: pb.ScreenDescriptionEntry.reverse_video_clause:type_name -> pb.ReverseVideoClause
+	170, // 209: pb.ScreenDescriptionEntry.underline_clause:type_name -> pb.UnderlineClause
+	171, // 210: pb.ScreenDescriptionEntry.size_clause:type_name -> pb.SizeClause
+	172, // 211: pb.ScreenDescriptionEntry.line_clause:type_name -> pb.LineClause
+	173, // 212: pb.ScreenDescriptionEntry.column_clause:type_name -> pb.ColumnClause
+	174, // 213: pb.ScreenDescriptionEntry.foreground_color_clause:type_name -> pb.ForegroundColorClause
+	175, // 214: pb.ScreenDescriptionEntry.background_color_clause:type_name -> pb.BackgroundColorClause
+	176, // 215: pb.ScreenDescriptionEntry.control_clause:type_name -> pb.ControlClause
+	188, // 216: pb.ScreenDescriptionEntry.value_clause:type_name -> pb.ValueClause
+	195, // 217: pb.ScreenDescriptionEntry.picture_clause:type_name -> pb.PictureClause
+	162, // 218: pb.ScreenDescriptionEntry.from_clause:type_name -> pb.FromClause
+	161, // 219: pb.ScreenDescriptionEntry.using_clause:type_name -> pb.UsingClause
+	199, // 220: pb.ScreenDescriptionEntry.usage_clause:type_name -> pb.UsageClause
+	194, // 221: pb.ScreenDescriptionEntry.sign_clause:type_name -> pb.SignClause
+	192, // 222: pb.ScreenDescriptionEntry.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
+	193, // 223: pb.ScreenDescriptionEntry.justified_clause:type_name -> pb.JustifiedClause
+	160, // 224: pb.ScreenDescriptionEntry.auto_clause:type_name -> pb.AutoClause
+	159, // 225: pb.ScreenDescriptionEntry.secure_clause:type_name -> pb.SecureClause
+	158, // 226: pb.ScreenDescriptionEntry.required_clause:type_name -> pb.RequiredClause
+	157, // 227: pb.ScreenDescriptionEntry.prompt_clause:type_name -> pb.PromptClause
+	156, // 228: pb.ScreenDescriptionEntry.full_clause:type_name -> pb.FullClause
+	155, // 229: pb.ScreenDescriptionEntry.zero_fill_clause:type_name -> pb.ZeroFillClause
+	27,  // 230: pb.FullClause.type:type_name -> pb.FullClause.Type
+	319, // 231: pb.PromptClause.identifier:type_name -> pb.Identifier
+	369, // 232: pb.PromptClause.literal:type_name -> pb.Literal
+	372, // 233: pb.PromptClause.times:type_name -> pb.IntegerLiteral
+	28,  // 234: pb.RequiredClause.type:type_name -> pb.RequiredClause.Type
+	29,  // 235: pb.SecureClause.type:type_name -> pb.SecureClause.Type
+	30,  // 236: pb.AutoClause.type:type_name -> pb.AutoClause.Type
+	319, // 237: pb.UsingClause.using:type_name -> pb.Identifier
+	319, // 238: pb.FromClause.identifier:type_name -> pb.Identifier
+	369, // 239: pb.FromClause.literal:type_name -> pb.Literal
+	319, // 240: pb.FromClause.to:type_name -> pb.Identifier
+	31,  // 241: pb.BlankClause.type:type_name -> pb.BlankClause.Type
+	32,  // 242: pb.BellClause.type:type_name -> pb.BellClause.Type
+	33,  // 243: pb.EraseClause.type:type_name -> pb.EraseClause.Type
+	34,  // 244: pb.LightClause.type:type_name -> pb.LightClause.Type
+	35,  // 245: pb.GridClause.type:type_name -> pb.GridClause.Type
+	319, // 246: pb.SizeClause.identifier:type_name -> pb.Identifier
+	372, // 247: pb.SizeClause.integer_literal:type_name -> pb.IntegerLiteral
+	36,  // 248: pb.LineClause.type:type_name -> pb.LineClause.Type
+	319, // 249: pb.LineClause.identifier:type_name -> pb.Identifier
+	372, // 250: pb.LineClause.integer_literal:type_name -> pb.IntegerLiteral
+	37,  // 251: pb.ColumnClause.type:type_name -> pb.ColumnClause.Type
+	319, // 252: pb.ColumnClause.identifier:type_name -> pb.Identifier
+	372, // 253: pb.ColumnClause.integer_literal:type_name -> pb.IntegerLiteral
+	319, // 254: pb.ForegroundColorClause.identifier:type_name -> pb.Identifier
+	372, // 255: pb.ForegroundColorClause.integer_literal:type_name -> pb.IntegerLiteral
+	319, // 256: pb.BackgroundColorClause.identifier:type_name -> pb.Identifier
+	372, // 257: pb.BackgroundColorClause.integer_literal:type_name -> pb.IntegerLiteral
+	319, // 258: pb.ControlClause.control:type_name -> pb.Identifier
+	178, // 259: pb.ReportSection.report_descriptions:type_name -> pb.ReportDescription
+	179, // 260: pb.ReportDescription.report_description_entry:type_name -> pb.ReportDescriptionEntry
+	185, // 261: pb.ReportDescription.report_group_description_entries:type_name -> pb.ReportGroupDescriptionEntry
+	361, // 262: pb.ReportDescriptionEntry.report_name:type_name -> pb.ReportName
+	114, // 263: pb.ReportDescriptionEntry.global_clause:type_name -> pb.GlobalClause
+	180, // 264: pb.ReportDescriptionEntry.page_limit_clause:type_name -> pb.PageLimitClause
+	181, // 265: pb.ReportDescriptionEntry.heading_clause:type_name -> pb.HeadingClause
+	182, // 266: pb.ReportDescriptionEntry.first_detail_clause:type_name -> pb.FirstDetailClause
+	183, // 267: pb.ReportDescriptionEntry.last_detail_clause:type_name -> pb.LastDetailClause
+	184, // 268: pb.ReportDescriptionEntry.footing_clause:type_name -> pb.FootingClause
+	372, // 269: pb.PageLimitClause.page:type_name -> pb.IntegerLiteral
+	372, // 270: pb.HeadingClause.heading:type_name -> pb.IntegerLiteral
+	372, // 271: pb.FirstDetailClause.first_detail:type_name -> pb.IntegerLiteral
+	372, // 272: pb.LastDetailClause.last_detail:type_name -> pb.IntegerLiteral
+	372, // 273: pb.FootingClause.footing:type_name -> pb.IntegerLiteral
+	372, // 274: pb.ReportGroupDescriptionEntry.integer_literal:type_name -> pb.IntegerLiteral
+	347, // 275: pb.ReportGroupDescriptionEntry.data_name:type_name -> pb.DataName
+	393, // 276: pb.ReportGroupDescriptionEntry.vertical:type_name -> pb.ReportGroupDescriptionEntry.Vertical
+	394, // 277: pb.ReportGroupDescriptionEntry.single:type_name -> pb.ReportGroupDescriptionEntry.Single
+	395, // 278: pb.ReportGroupDescriptionEntry.printable:type_name -> pb.ReportGroupDescriptionEntry.Printable
+	347, // 279: pb.ResetClause.data_name:type_name -> pb.DataName
+	319, // 280: pb.SumClause.sums:type_name -> pb.Identifier
+	347, // 281: pb.SumClause.upons:type_name -> pb.DataName
+	369, // 282: pb.ValueClause.value:type_name -> pb.Literal
+	319, // 283: pb.SourceClause.source:type_name -> pb.Identifier
+	372, // 284: pb.ColumnNumberClause.column_number:type_name -> pb.IntegerLiteral
+	38,  // 285: pb.SignClause.type:type_name -> pb.SignClause.Type
+	135, // 286: pb.PictureClause.picture_string:type_name -> pb.PictureString
+	372, // 287: pb.LineNumberClause.next_page:type_name -> pb.IntegerLiteral
+	372, // 288: pb.LineNumberClause.plus:type_name -> pb.IntegerLiteral
+	372, // 289: pb.NextGroupClause.next_group:type_name -> pb.IntegerLiteral
+	372, // 290: pb.NextGroupClause.plus:type_name -> pb.IntegerLiteral
+	396, // 291: pb.TypeClause.report_heading:type_name -> pb.TypeClause.ReportHeading
+	397, // 292: pb.TypeClause.page_heading:type_name -> pb.TypeClause.PageHeading
+	398, // 293: pb.TypeClause.control_heading:type_name -> pb.TypeClause.ControlHeading
+	399, // 294: pb.TypeClause.detail:type_name -> pb.TypeClause.Detail
+	400, // 295: pb.TypeClause.control_footing:type_name -> pb.TypeClause.ControlFooting
+	401, // 296: pb.TypeClause.page_footing:type_name -> pb.TypeClause.PageFooting
+	402, // 297: pb.TypeClause.report_footing:type_name -> pb.TypeClause.ReportFooting
+	201, // 298: pb.ProgramLibrarySection.library_description_entries:type_name -> pb.LibraryDescriptionEntry
+	354, // 299: pb.LibraryDescriptionEntry.library_name:type_name -> pb.LibraryName
+	403, // 300: pb.LibraryDescriptionEntry.import:type_name -> pb.LibraryDescriptionEntry.Import
+	404, // 301: pb.LibraryDescriptionEntry.export:type_name -> pb.LibraryDescriptionEntry.Export
+	39,  // 302: pb.AttributeClause1.sharing:type_name -> pb.AttributeClause1.Sharing
+	369, // 303: pb.AttributeClause2.function_name:type_name -> pb.Literal
+	40,  // 304: pb.AttributeClause2.lib_access:type_name -> pb.AttributeClause2.LibAccess
+	369, // 305: pb.AttributeClause2.lib_parameter:type_name -> pb.Literal
+	369, // 306: pb.AttributeClause2.title:type_name -> pb.Literal
+	359, // 307: pb.ProcedureClause1.program_name:type_name -> pb.ProgramName
+	369, // 308: pb.ProcedureClause1.for:type_name -> pb.Literal
+	359, // 309: pb.ProcedureClause2.program_name:type_name -> pb.ProgramName
+	369, // 310: pb.ProcedureClause2.for:type_name -> pb.Literal
+	405, // 311: pb.ProcedureClause2.with_names:type_name -> pb.ProcedureClause2.WithName
+	406, // 312: pb.ProcedureClause2.using_names:type_name -> pb.ProcedureClause2.UsingName
+	347, // 313: pb.ProcedureClause2.giving:type_name -> pb.DataName
+	126, // 314: pb.LocalStorageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	355, // 315: pb.LocalStorageSection.local_name:type_name -> pb.LocalName
+	126, // 316: pb.LinkageSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	210, // 317: pb.CommunicationSection.communication_description_entries:type_name -> pb.CommunicationDescriptionEntry
+	126, // 318: pb.CommunicationSection.data_description_entries:type_name -> pb.DataDescriptionEntry
+	343, // 319: pb.CommunicationDescriptionEntry.cd_name:type_name -> pb.CdName
+	407, // 320: pb.CommunicationDescriptionEntry.input:type_name -> pb.CommunicationDescriptionEntry.Input
+	408, // 321: pb.CommunicationDescriptionEntry.output:type_name -> pb.CommunicationDescriptionEntry.Output
+	409, // 322: pb.CommunicationDescriptionEntry.io:type_name -> pb.CommunicationDescriptionEntry.Io
+	348, // 323: pb.SymbolicTerminalClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 324: pb.SymbolicDestinationClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 325: pb.ErrorKeyClause.data_desc_name:type_name -> pb.DataDescName
+	372, // 326: pb.DestinationTableClause.times:type_name -> pb.IntegerLiteral
+	352, // 327: pb.DestinationTableClause.indexes:type_name -> pb.IndexName
+	348, // 328: pb.DestinationCountClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 329: pb.SymbolicQueueClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 330: pb.SymbolicSubQueueClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 331: pb.MessageDateClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 332: pb.MessageTimeClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 333: pb.SymbolicSourceClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 334: pb.TextLengthClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 335: pb.EndKeyClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 336: pb.StatusKeyClause.data_desc_name:type_name -> pb.DataDescName
+	348, // 337: pb.MessageCountClause.data_desc_name:type_name -> pb.DataDescName
+	226, // 338: pb.DataBaseSection.data_base_section_entries:type_name -> pb.DataBaseSectionEntry
+	372, // 339: pb.DataBaseSectionEntry.integer_literal:type_name -> pb.IntegerLiteral
+	369, // 340: pb.DataBaseSectionEntry.literal:type_name -> pb.Literal
+	369, // 341: pb.DataBaseSectionEntry.invoke:type_name -> pb.Literal
+	416, // 342: pb.ProcedureDivision.using_clause:type_name -> pb.ProcedureDivision.UsingClause
+	415, // 343: pb.ProcedureDivision.giving_clause:type_name -> pb.ProcedureDivision.GivingClause
+	229, // 344: pb.ProcedureDivision.declaratives:type_name -> pb.Declarative
+	231, // 345: pb.ProcedureDivision.paragraphs:type_name -> pb.Paragraphs
+	228, // 346: pb.ProcedureDivision.procedure_sections:type_name -> pb.ProcedureSection
+	230, // 347: pb.ProcedureSection.procedure_section_header:type_name -> pb.ProcedureSectionHeader
+	231, // 348: pb.ProcedureSection.paragraphs:type_name -> pb.Paragraphs
+	230, // 349: pb.Declarative.procedure_section_header:type_name -> pb.ProcedureSectionHeader
+	296, // 350: pb.Declarative.use_statement:type_name -> pb.UseStatement
+	231, // 351: pb.Declarative.paragraphs:type_name -> pb.Paragraphs
+	364, // 352: pb.ProcedureSectionHeader.section_name:type_name -> pb.SectionName
+	372, // 353: pb.ProcedureSectionHeader.integer_literal:type_name -> pb.IntegerLiteral
+	233, // 354: pb.Paragraphs.sentences:type_name -> pb.Sentences
+	232, // 355: pb.Paragraphs.paragraphs:type_name -> pb.Paragraph
+	357, // 356: pb.Paragraph.paragraph_name:type_name -> pb.ParagraphName
+	233, // 357: pb.Paragraph.sentences:type_name -> pb.Sentences
+	234, // 358: pb.Sentences.sentences:type_name -> pb.Sentence
+	235, // 359: pb.Sentence.statements:type_name -> pb.Statement
+	291, // 360: pb.Statement.accept_statement:type_name -> pb.AcceptStatement
+	290, // 361: pb.Statement.AddStatement:type_name -> pb.AddStatement
+	289, // 362: pb.Statement.alterStatement:type_name -> pb.AlterStatement
+	288, // 363: pb.Statement.callStatement:type_name -> pb.CallStatement
+	287, // 364: pb.Statement.cancelStatement:type_name -> pb.CancelStatement
+	286, // 365: pb.Statement.closeStatement:type_name -> pb.CloseStatement
+	285, // 366: pb.Statement.computeStatement:type_name -> pb.ComputeStatement
+	284, // 367: pb.Statement.continueStatement:type_name -> pb.ContinueStatement
+	283, // 368: pb.Statement.deleteStatement:type_name -> pb.DeleteStatement
+	282, // 369: pb.Statement.disableStatement:type_name -> pb.DisableStatement
+	281, // 370: pb.Statement.displayStatement:type_name -> pb.DisplayStatement
+	276, // 371: pb.Statement.divideStatement:type_name -> pb.DivideStatement
+	275, // 372: pb.Statement.enableStatement:type_name -> pb.EnableStatement
+	274, // 373: pb.Statement.entryStatement:type_name -> pb.EntryStatement
+	273, // 374: pb.Statement.evaluateStatement:type_name -> pb.EvaluateStatement
+	272, // 375: pb.Statement.exhibitStatement:type_name -> pb.ExhibitStatement
+	271, // 376: pb.Statement.execCicsStatement:type_name -> pb.ExecCicsStatement
+	270, // 377: pb.Statement.execSqlStatement:type_name -> pb.ExecSqlStatement
+	269, // 378: pb.Statement.execSqlImsStatement:type_name -> pb.ExecSqlImsStatement
+	268, // 379: pb.Statement.exitStatement:type_name -> pb.ExitStatement
+	267, // 380: pb.Statement.generateStatement:type_name -> pb.GenerateStatement
+	266, // 381: pb.Statement.gobackStatement:type_name -> pb.GobackStatement
+	265, // 382: pb.Statement.goToStatement:type_name -> pb.GoToStatement
+	264, // 383: pb.Statement.ifStatement:type_name -> pb.IfStatement
+	263, // 384: pb.Statement.initializeStatement:type_name -> pb.InitializeStatement
+	262, // 385: pb.Statement.initiateStatement:type_name -> pb.InitiateStatement
+	261, // 386: pb.Statement.inspectStatement:type_name -> pb.InspectStatement
+	260, // 387: pb.Statement.mergeStatement:type_name -> pb.MergeStatement
+	257, // 388: pb.Statement.moveStatement:type_name -> pb.MoveStatement
+	256, // 389: pb.Statement.multiplyStatement:type_name -> pb.MultiplyStatement
+	255, // 390: pb.Statement.nextSentenceStatement:type_name -> pb.NextSentenceStatement
+	254, // 391: pb.Statement.openStatement:type_name -> pb.OpenStatement
+	253, // 392: pb.Statement.performStatement:type_name -> pb.PerformStatement
+	252, // 393: pb.Statement.purgeStatement:type_name -> pb.PurgeStatement
+	251, // 394: pb.Statement.readStatement:type_name -> pb.ReadStatement
+	250, // 395: pb.Statement.receiveStatement:type_name -> pb.ReceiveStatement
+	249, // 396: pb.Statement.releaseStatement:type_name -> pb.ReleaseStatement
+	248, // 397: pb.Statement.returnStatement:type_name -> pb.ReturnStatement
+	247, // 398: pb.Statement.rewriteStatement:type_name -> pb.RewriteStatement
+	246, // 399: pb.Statement.searchStatement:type_name -> pb.SearchStatement
+	245, // 400: pb.Statement.sendStatement:type_name -> pb.SendStatement
+	244, // 401: pb.Statement.setStatement:type_name -> pb.SetStatement
+	243, // 402: pb.Statement.sortStatement:type_name -> pb.SortStatement
+	242, // 403: pb.Statement.startStatement:type_name -> pb.StartStatement
+	241, // 404: pb.Statement.stopStatement:type_name -> pb.StopStatement
+	240, // 405: pb.Statement.stringStatement:type_name -> pb.StringStatement
+	239, // 406: pb.Statement.subtractStatement:type_name -> pb.SubtractStatement
+	238, // 407: pb.Statement.terminateStatement:type_name -> pb.TerminateStatement
+	237, // 408: pb.Statement.unstringStatement:type_name -> pb.UnstringStatement
+	236, // 409: pb.Statement.writeStatement:type_name -> pb.WriteStatement
+	258, // 410: pb.MoveStatement.move_to:type_name -> pb.MoveToStatement
+	259, // 411: pb.MoveStatement.move_corresponding_to:type_name -> pb.MoveCorrespondingToStatement
+	319, // 412: pb.MoveToStatement.Identifier:type_name -> pb.Identifier
+	369, // 413: pb.MoveToStatement.Literal:type_name -> pb.Literal
+	319, // 414: pb.MoveToStatement.to:type_name -> pb.Identifier
+	319, // 415: pb.MoveCorrespondingToStatement.sending_area:type_name -> pb.Identifier
+	319, // 416: pb.MoveCorrespondingToStatement.to:type_name -> pb.Identifier
+	319, // 417: pb.DisplayOperand.Identifier:type_name -> pb.Identifier
+	369, // 418: pb.DisplayOperand.Literal:type_name -> pb.Literal
+	319, // 419: pb.DisplayAt.Identifier:type_name -> pb.Identifier
+	369, // 420: pb.DisplayAt.Literal:type_name -> pb.Literal
+	356, // 421: pb.DisplayUpon.mnemonic_name:type_name -> pb.MnemonicName
+	349, // 422: pb.DisplayUpon.environment_name:type_name -> pb.EnvironmentName
+	277, // 423: pb.DisplayStatement.operands:type_name -> pb.DisplayOperand
+	278, // 424: pb.DisplayStatement.at:type_name -> pb.DisplayAt
+	279, // 425: pb.DisplayStatement.upon:type_name -> pb.DisplayUpon
+	280, // 426: pb.DisplayStatement.with:type_name -> pb.DisplayWith
+	294, // 427: pb.DisplayStatement.on_exception_clause:type_name -> pb.OnExceptionClause
+	295, // 428: pb.DisplayStatement.not_on_exception_clause:type_name -> pb.NotOnExceptionClause
+	419, // 429: pb.AddStatement.to:type_name -> pb.AddStatement.To
+	420, // 430: pb.AddStatement.to_giving:type_name -> pb.AddStatement.ToGiving
+	421, // 431: pb.AddStatement.corresponding:type_name -> pb.AddStatement.Corresponding
+	292, // 432: pb.AddStatement.on_size_error_phrase:type_name -> pb.OnSizeErrorPhrase
+	293, // 433: pb.AddStatement.not_on_size_error_phrase:type_name -> pb.NotOnSizeErrorPhrase
+	319, // 434: pb.AcceptStatement.identifier:type_name -> pb.Identifier
+	422, // 435: pb.AcceptStatement.from_date:type_name -> pb.AcceptStatement.FromDate
+	423, // 436: pb.AcceptStatement.from_escape_key:type_name -> pb.AcceptStatement.FromEscapeKey
+	424, // 437: pb.AcceptStatement.from_mnemonic:type_name -> pb.AcceptStatement.FromMnemonic
+	425, // 438: pb.AcceptStatement.message_count:type_name -> pb.AcceptStatement.MessageCount
+	294, // 439: pb.AcceptStatement.on_exception_clause:type_name -> pb.OnExceptionClause
+	295, // 440: pb.AcceptStatement.not_on_exception_clause:type_name -> pb.NotOnExceptionClause
+	235, // 441: pb.OnSizeErrorPhrase.statements:type_name -> pb.Statement
+	235, // 442: pb.NotOnSizeErrorPhrase.statements:type_name -> pb.Statement
+	235, // 443: pb.OnExceptionClause.statements:type_name -> pb.Statement
+	235, // 444: pb.NotOnExceptionClause.statements:type_name -> pb.Statement
+	299, // 445: pb.UseStatement.use_after_clause:type_name -> pb.UseAfterClause
+	298, // 446: pb.UseStatement.use_debug_clause:type_name -> pb.UseDebugClause
+	319, // 447: pb.UseDebugOn.Identifier:type_name -> pb.Identifier
+	358, // 448: pb.UseDebugOn.procedureName:type_name -> pb.ProcedureName
+	350, // 449: pb.UseDebugOn.fileName:type_name -> pb.FileName
+	297, // 450: pb.UseDebugClause.ons:type_name -> pb.UseDebugOn
+	44,  // 451: pb.UseAfterClause.type:type_name -> pb.UseAfterClause.Type
+	426, // 452: pb.UseAfterClause.file_names:type_name -> pb.UseAfterClause.FileNames
+	302, // 453: pb.ArithmeticExpression.mult_divs:type_name -> pb.MultDivs
+	301, // 454: pb.ArithmeticExpression.plus_minus:type_name -> pb.PlusMinus
+	302, // 455: pb.PlusMinus.mult_divs:type_name -> pb.MultDivs
+	304, // 456: pb.MultDivs.powers:type_name -> pb.Powers
+	303, // 457: pb.MultDivs.mult_div:type_name -> pb.MultDiv
+	304, // 458: pb.MultDiv.powers:type_name -> pb.Powers
+	306, // 459: pb.Powers.basis:type_name -> pb.Basis
+	305, // 460: pb.Powers.powers:type_name -> pb.Power
+	306, // 461: pb.Power.basis:type_name -> pb.Basis
+	300, // 462: pb.Basis.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	319, // 463: pb.Basis.identifier:type_name -> pb.Identifier
+	369, // 464: pb.Basis.literal:type_name -> pb.Literal
+	309, // 465: pb.Condition.combinable_condition:type_name -> pb.CombinableCondition
+	308, // 466: pb.Condition.and_or_condition:type_name -> pb.AndOrCondition
+	45,  // 467: pb.AndOrCondition.and_or:type_name -> pb.AndOrCondition.AndOr
+	309, // 468: pb.AndOrCondition.combinable_condition:type_name -> pb.CombinableCondition
+	318, // 469: pb.AndOrCondition.abbreviations:type_name -> pb.Abbreviation
+	310, // 470: pb.CombinableCondition.simple_condition:type_name -> pb.SimpleCondition
+	307, // 471: pb.SimpleCondition.condition:type_name -> pb.Condition
+	313, // 472: pb.SimpleCondition.relation_condition:type_name -> pb.RelationCondition
+	311, // 473: pb.SimpleCondition.class_condition:type_name -> pb.ClassCondition
+	312, // 474: pb.SimpleCondition.condition_name_reference:type_name -> pb.ConditionNameReference
+	319, // 475: pb.ClassCondition.identifier:type_name -> pb.Identifier
+	46,  // 476: pb.ClassCondition.value:type_name -> pb.ClassCondition.Type
+	344, // 477: pb.ClassCondition.class_name:type_name -> pb.ClassName
+	346, // 478: pb.ConditionNameReference.condition_name:type_name -> pb.ConditionName
+	428, // 479: pb.ConditionNameReference.in_subscript:type_name -> pb.ConditionNameReference.InSubscript
+	336, // 480: pb.ConditionNameReference.in_mnemonic:type_name -> pb.InMnemonic
+	314, // 481: pb.RelationCondition.relation_sign_condition:type_name -> pb.RelationSignCondition
+	315, // 482: pb.RelationCondition.relation_arithmetic_comparison:type_name -> pb.RelationArithmeticComparison
+	316, // 483: pb.RelationCondition.relation_combined_comparison:type_name -> pb.RelationCombinedComparison
+	300, // 484: pb.RelationSignCondition.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	47,  // 485: pb.RelationSignCondition.type:type_name -> pb.RelationSignCondition.Type
+	300, // 486: pb.RelationArithmeticComparison.left_expression:type_name -> pb.ArithmeticExpression
+	0,   // 487: pb.RelationArithmeticComparison.relational_operator:type_name -> pb.RelationalOperator
+	300, // 488: pb.RelationArithmeticComparison.right_expression:type_name -> pb.ArithmeticExpression
+	300, // 489: pb.RelationCombinedComparison.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	0,   // 490: pb.RelationCombinedComparison.relational_operator:type_name -> pb.RelationalOperator
+	317, // 491: pb.RelationCombinedComparison.relation_combined_condition:type_name -> pb.RelationCombinedCondition
+	300, // 492: pb.RelationCombinedCondition.left_expression:type_name -> pb.ArithmeticExpression
+	48,  // 493: pb.RelationCombinedCondition.and_or:type_name -> pb.RelationCombinedCondition.AndOr
+	300, // 494: pb.RelationCombinedCondition.right_expressions:type_name -> pb.ArithmeticExpression
+	0,   // 495: pb.Abbreviation.relational_operator:type_name -> pb.RelationalOperator
+	300, // 496: pb.Abbreviation.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	318, // 497: pb.Abbreviation.abbreviation:type_name -> pb.Abbreviation
+	329, // 498: pb.Identifier.qualified_data_name:type_name -> pb.QualifiedDataName
+	320, // 499: pb.Identifier.table_call:type_name -> pb.TableCall
+	321, // 500: pb.Identifier.function_call:type_name -> pb.FunctionCall
+	374, // 501: pb.Identifier.special_register:type_name -> pb.SpecialRegister
+	329, // 502: pb.TableCall.qualified_data_name:type_name -> pb.QualifiedDataName
+	325, // 503: pb.TableCall.subscripts:type_name -> pb.Subscript
+	322, // 504: pb.TableCall.reference_modifier:type_name -> pb.ReferenceModifier
+	351, // 505: pb.FunctionCall.function_name:type_name -> pb.FunctionName
+	326, // 506: pb.FunctionCall.arguments:type_name -> pb.Argument
+	322, // 507: pb.FunctionCall.reference_modifier:type_name -> pb.ReferenceModifier
+	323, // 508: pb.ReferenceModifier.character_position:type_name -> pb.CharacterPosition
+	324, // 509: pb.ReferenceModifier.length:type_name -> pb.Length
+	300, // 510: pb.CharacterPosition.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	300, // 511: pb.Length.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	372, // 512: pb.Subscript.integer_literal:type_name -> pb.IntegerLiteral
+	327, // 513: pb.Subscript.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
+	328, // 514: pb.Subscript.index_name:type_name -> pb.IndexNameIntegerLiteral
+	300, // 515: pb.Subscript.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	369, // 516: pb.Argument.literal:type_name -> pb.Literal
+	319, // 517: pb.Argument.identifier:type_name -> pb.Identifier
+	327, // 518: pb.Argument.qualified_data_name:type_name -> pb.QualifiedDataNameIntegerLiteral
+	328, // 519: pb.Argument.index_name:type_name -> pb.IndexNameIntegerLiteral
+	300, // 520: pb.Argument.arithmetic_expression:type_name -> pb.ArithmeticExpression
+	329, // 521: pb.QualifiedDataNameIntegerLiteral.qualified_data_name:type_name -> pb.QualifiedDataName
+	372, // 522: pb.QualifiedDataNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
+	352, // 523: pb.IndexNameIntegerLiteral.index_name:type_name -> pb.IndexName
+	372, // 524: pb.IndexNameIntegerLiteral.integer_literal:type_name -> pb.IntegerLiteral
+	330, // 525: pb.QualifiedDataName.f1:type_name -> pb.QualifiedDataNameFormat1
+	331, // 526: pb.QualifiedDataName.f2:type_name -> pb.QualifiedDataNameFormat2
+	332, // 527: pb.QualifiedDataName.f3:type_name -> pb.QualifiedDataNameFormat3
+	333, // 528: pb.QualifiedDataName.f4:type_name -> pb.QualifiedDataNameFormat4
+	347, // 529: pb.QualifiedDataNameFormat1.data_name:type_name -> pb.DataName
+	346, // 530: pb.QualifiedDataNameFormat1.condition_name:type_name -> pb.ConditionName
+	334, // 531: pb.QualifiedDataNameFormat1.in_datas:type_name -> pb.InData
+	339, // 532: pb.QualifiedDataNameFormat1.in_tables:type_name -> pb.InTable
+	335, // 533: pb.QualifiedDataNameFormat1.in_file:type_name -> pb.InFile
+	357, // 534: pb.QualifiedDataNameFormat2.paragraph_name:type_name -> pb.ParagraphName
+	337, // 535: pb.QualifiedDataNameFormat2.in_section:type_name -> pb.InSection
+	367, // 536: pb.QualifiedDataNameFormat3.text_name:type_name -> pb.TextName
+	338, // 537: pb.QualifiedDataNameFormat3.in_library:type_name -> pb.InLibrary
+	335, // 538: pb.QualifiedDataNameFormat4.in_file:type_name -> pb.InFile
+	347, // 539: pb.InData.data_name:type_name -> pb.DataName
+	350, // 540: pb.InFile.file_name:type_name -> pb.FileName
+	356, // 541: pb.InMnemonic.mnemonic_name:type_name -> pb.MnemonicName
+	364, // 542: pb.InSection.section_name:type_name -> pb.SectionName
+	354, // 543: pb.InLibrary.library_name:type_name -> pb.LibraryName
+	320, // 544: pb.InTable.table_call:type_name -> pb.TableCall
+	368, // 545: pb.AlphabetName.cobol_word:type_name -> pb.CobolWord
+	365, // 546: pb.AssignmentName.system_name:type_name -> pb.SystemName
+	359, // 547: pb.BasisName.program_name:type_name -> pb.ProgramName
+	368, // 548: pb.CdName.cobol_word:type_name -> pb.CobolWord
+	368, // 549: pb.ClassName.cobol_word:type_name -> pb.CobolWord
+	365, // 550: pb.ComputerName.system_name:type_name -> pb.SystemName
+	368, // 551: pb.ConditionName.cobol_word:type_name -> pb.CobolWord
+	368, // 552: pb.DataName.cobol_word:type_name -> pb.CobolWord
+	365, // 553: pb.EnvironmentName.system_name:type_name -> pb.SystemName
+	368, // 554: pb.FileName.cobol_word:type_name -> pb.CobolWord
+	368, // 555: pb.IndexName.cobol_word:type_name -> pb.CobolWord
+	365, // 556: pb.LanguageName.system_name:type_name -> pb.SystemName
+	368, // 557: pb.LibraryName.cobol_word:type_name -> pb.CobolWord
+	368, // 558: pb.LocalName.cobol_word:type_name -> pb.CobolWord
+	368, // 559: pb.MnemonicName.cobol_word:type_name -> pb.CobolWord
+	368, // 560: pb.ParagraphName.cobol_word:type_name -> pb.CobolWord
+	372, // 561: pb.ParagraphName.integer_literal:type_name -> pb.IntegerLiteral
+	357, // 562: pb.ProcedureName.paragraph_name:type_name -> pb.ParagraphName
+	364, // 563: pb.ProcedureName.section_name:type_name -> pb.SectionName
+	375, // 564: pb.ProgramName.non_numeric_literal:type_name -> pb.NonNumericLiteral
+	368, // 565: pb.ProgramName.cobol_word:type_name -> pb.CobolWord
+	329, // 566: pb.RecordName.qualified_data_name:type_name -> pb.QualifiedDataName
+	329, // 567: pb.ReportName.qualified_data_name:type_name -> pb.QualifiedDataName
+	368, // 568: pb.RoutingName.cobol_word:type_name -> pb.CobolWord
+	368, // 569: pb.ScreenName.cobol_word:type_name -> pb.CobolWord
+	368, // 570: pb.SectionName.cobol_word:type_name -> pb.CobolWord
+	372, // 571: pb.SectionName.integer_literal:type_name -> pb.IntegerLiteral
+	368, // 572: pb.SystemName.cobol_word:type_name -> pb.CobolWord
+	368, // 573: pb.SymbolicCharacter.cobol_word:type_name -> pb.CobolWord
+	368, // 574: pb.TextName.cobol_word:type_name -> pb.CobolWord
+	49,  // 575: pb.Literal.type:type_name -> pb.Literal.Type
+	371, // 576: pb.Literal.numeric_literal:type_name -> pb.NumericLiteral
+	370, // 577: pb.Literal.boolean_literal:type_name -> pb.BooleanLiteral
+	375, // 578: pb.Literal.non_numeric_literal:type_name -> pb.NonNumericLiteral
+	373, // 579: pb.Literal.figurative_constant:type_name -> pb.FigurativeConstant
+	50,  // 580: pb.NumericLiteral.type:type_name -> pb.NumericLiteral.Type
+	51,  // 581: pb.FigurativeConstant.type:type_name -> pb.FigurativeConstant.Type
+	369, // 582: pb.FigurativeConstant.literal:type_name -> pb.Literal
+	52,  // 583: pb.SpecialRegister.type:type_name -> pb.SpecialRegister.Type
+	319, // 584: pb.SpecialRegister.identifier:type_name -> pb.Identifier
+	369, // 585: pb.AlphabetClause.Also.alsos:type_name -> pb.Literal
+	369, // 586: pb.AlphabetClause.AlphabetLiteral.literal:type_name -> pb.Literal
+	369, // 587: pb.AlphabetClause.AlphabetLiteral.through:type_name -> pb.Literal
+	380, // 588: pb.AlphabetClause.AlphabetLiteral.alsos:type_name -> pb.AlphabetClause.Also
+	381, // 589: pb.AlphabetClause.AlphabetLiterals.values:type_name -> pb.AlphabetClause.AlphabetLiteral
+	4,   // 590: pb.AlphabetClause.Alphanumeric.type:type_name -> pb.AlphabetClause.Alphanumeric.Type
+	368, // 591: pb.AlphabetClause.Alphanumeric.cobol_word:type_name -> pb.CobolWord
+	382, // 592: pb.AlphabetClause.Alphanumeric.values:type_name -> pb.AlphabetClause.AlphabetLiterals
+	5,   // 593: pb.AlphabetClause.National.type:type_name -> pb.AlphabetClause.National.Type
+	369, // 594: pb.AlphabetClause.National.ccs_version:type_name -> pb.Literal
+	347, // 595: pb.LabelRecordsClause.DataNames.data_names:type_name -> pb.DataName
+	347, // 596: pb.DataDescriptionEntry.Format1.data_name:type_name -> pb.DataName
+	128, // 597: pb.DataDescriptionEntry.Format1.data_redefines_clause:type_name -> pb.DataRedefinesClause
+	129, // 598: pb.DataDescriptionEntry.Format1.data_integer_string_clause:type_name -> pb.DataIntegerStringClause
+	130, // 599: pb.DataDescriptionEntry.Format1.data_external_clause:type_name -> pb.DataExternalClause
+	131, // 600: pb.DataDescriptionEntry.Format1.data_global_clause:type_name -> pb.DataGlobalClause
+	132, // 601: pb.DataDescriptionEntry.Format1.data_type_def_clause:type_name -> pb.DataTypeDefClause
+	133, // 602: pb.DataDescriptionEntry.Format1.data_thread_local_clause:type_name -> pb.DataThreadLocalClause
+	134, // 603: pb.DataDescriptionEntry.Format1.data_picture_clause:type_name -> pb.DataPictureClause
+	138, // 604: pb.DataDescriptionEntry.Format1.data_common_own_local_clause:type_name -> pb.DataCommonOwnLocalClause
+	139, // 605: pb.DataDescriptionEntry.Format1.data_type_clause:type_name -> pb.DataTypeClause
+	140, // 606: pb.DataDescriptionEntry.Format1.data_using_clause:type_name -> pb.DataUsingClause
+	141, // 607: pb.DataDescriptionEntry.Format1.data_usage_clause:type_name -> pb.DataUsageClause
+	143, // 608: pb.DataDescriptionEntry.Format1.data_value_clause:type_name -> pb.DataValueClause
+	144, // 609: pb.DataDescriptionEntry.Format1.data_received_by_clause:type_name -> pb.DataReceivedByClause
+	145, // 610: pb.DataDescriptionEntry.Format1.data_occurs_clause:type_name -> pb.DataOccursClause
+	146, // 611: pb.DataDescriptionEntry.Format1.data_sign_clause:type_name -> pb.DataSignClause
+	147, // 612: pb.DataDescriptionEntry.Format1.data_synchronized_clause:type_name -> pb.DataSynchronizedClause
+	148, // 613: pb.DataDescriptionEntry.Format1.data_justified_clause:type_name -> pb.DataJustifiedClause
+	149, // 614: pb.DataDescriptionEntry.Format1.data_blank_when_zero_clause:type_name -> pb.DataBlankWhenZeroClause
+	150, // 615: pb.DataDescriptionEntry.Format1.data_with_lower_bounds_clause:type_name -> pb.DataWithLowerBoundsClause
+	151, // 616: pb.DataDescriptionEntry.Format1.data_aligned_clause:type_name -> pb.DataAlignedClause
+	152, // 617: pb.DataDescriptionEntry.Format1.data_record_area_clause:type_name -> pb.DataRecordAreaClause
+	347, // 618: pb.DataDescriptionEntry.Format2.data_name:type_name -> pb.DataName
+	127, // 619: pb.DataDescriptionEntry.Format2.data_renames_clause:type_name -> pb.DataRenamesClause
+	346, // 620: pb.DataDescriptionEntry.Format3.condition_name:type_name -> pb.ConditionName
+	143, // 621: pb.DataDescriptionEntry.Format3.data_value_clause:type_name -> pb.DataValueClause
+	21,  // 622: pb.DataTypeClause.Lob.mode:type_name -> pb.DataTypeClause.Mode
+	372, // 623: pb.DataTypeClause.Lob.integer_literal:type_name -> pb.IntegerLiteral
+	329, // 624: pb.DataOccursClause.Sort.qualified_data_names:type_name -> pb.QualifiedDataName
+	352, // 625: pb.DataOccursClause.Indexed.index_names:type_name -> pb.IndexName
+	196, // 626: pb.ReportGroupDescriptionEntry.Vertical.line_number_clause:type_name -> pb.LineNumberClause
+	197, // 627: pb.ReportGroupDescriptionEntry.Vertical.next_group_clause:type_name -> pb.NextGroupClause
+	198, // 628: pb.ReportGroupDescriptionEntry.Vertical.type_clause:type_name -> pb.TypeClause
+	199, // 629: pb.ReportGroupDescriptionEntry.Vertical.usage_clause:type_name -> pb.UsageClause
+	196, // 630: pb.ReportGroupDescriptionEntry.Single.line_number_clause:type_name -> pb.LineNumberClause
+	199, // 631: pb.ReportGroupDescriptionEntry.Single.usage_clause:type_name -> pb.UsageClause
+	195, // 632: pb.ReportGroupDescriptionEntry.Printable.picture_clause:type_name -> pb.PictureClause
+	199, // 633: pb.ReportGroupDescriptionEntry.Printable.usage_clause:type_name -> pb.UsageClause
+	194, // 634: pb.ReportGroupDescriptionEntry.Printable.sign_clause:type_name -> pb.SignClause
+	193, // 635: pb.ReportGroupDescriptionEntry.Printable.justified_clause:type_name -> pb.JustifiedClause
+	192, // 636: pb.ReportGroupDescriptionEntry.Printable.blank_when_zero_clause:type_name -> pb.BlankWhenZeroClause
+	196, // 637: pb.ReportGroupDescriptionEntry.Printable.line_number_clause:type_name -> pb.LineNumberClause
+	191, // 638: pb.ReportGroupDescriptionEntry.Printable.column_number_clause:type_name -> pb.ColumnNumberClause
+	190, // 639: pb.ReportGroupDescriptionEntry.Printable.IndicateClause:type_name -> pb.IndicateClause
+	189, // 640: pb.ReportGroupDescriptionEntry.Printable.source_clause:type_name -> pb.SourceClause
+	188, // 641: pb.ReportGroupDescriptionEntry.Printable.value_clause:type_name -> pb.ValueClause
+	187, // 642: pb.ReportGroupDescriptionEntry.Printable.SumClause:type_name -> pb.SumClause
+	186, // 643: pb.ReportGroupDescriptionEntry.Printable.reset_clause:type_name -> pb.ResetClause
+	347, // 644: pb.TypeClause.ControlHeading.data_name:type_name -> pb.DataName
+	347, // 645: pb.TypeClause.ControlFooting.data_name:type_name -> pb.DataName
+	114, // 646: pb.LibraryDescriptionEntry.Import.global_clause:type_name -> pb.GlobalClause
+	202, // 647: pb.LibraryDescriptionEntry.Import.is_common_clause:type_name -> pb.IsCommonClause
+	204, // 648: pb.LibraryDescriptionEntry.Import.attribute_clause:type_name -> pb.AttributeClause2
+	206, // 649: pb.LibraryDescriptionEntry.Import.procedure_clause:type_name -> pb.ProcedureClause2
+	203, // 650: pb.LibraryDescriptionEntry.Export.attribute_clause:type_name -> pb.AttributeClause1
+	205, // 651: pb.LibraryDescriptionEntry.Export.procedure_clause:type_name -> pb.ProcedureClause1
+	355, // 652: pb.ProcedureClause2.WithName.local_name:type_name -> pb.LocalName
+	350, // 653: pb.ProcedureClause2.WithName.file_name:type_name -> pb.FileName
+	347, // 654: pb.ProcedureClause2.UsingName.data_name:type_name -> pb.DataName
+	350, // 655: pb.ProcedureClause2.UsingName.file_name:type_name -> pb.FileName
+	216, // 656: pb.CommunicationDescriptionEntry.Input.symbolic_queue_clause:type_name -> pb.SymbolicQueueClause
+	217, // 657: pb.CommunicationDescriptionEntry.Input.symbolic_sub_queue_clause:type_name -> pb.SymbolicSubQueueClause
+	218, // 658: pb.CommunicationDescriptionEntry.Input.message_date_clause:type_name -> pb.MessageDateClause
+	219, // 659: pb.CommunicationDescriptionEntry.Input.message_time_clause:type_name -> pb.MessageTimeClause
+	220, // 660: pb.CommunicationDescriptionEntry.Input.symbolic_source_clause:type_name -> pb.SymbolicSourceClause
+	221, // 661: pb.CommunicationDescriptionEntry.Input.text_length_clause:type_name -> pb.TextLengthClause
+	222, // 662: pb.CommunicationDescriptionEntry.Input.end_key_clause:type_name -> pb.EndKeyClause
+	223, // 663: pb.CommunicationDescriptionEntry.Input.status_key_clause:type_name -> pb.StatusKeyClause
+	224, // 664: pb.CommunicationDescriptionEntry.Input.message_count_clause:type_name -> pb.MessageCountClause
+	348, // 665: pb.CommunicationDescriptionEntry.Input.data_desc_name:type_name -> pb.DataDescName
+	215, // 666: pb.CommunicationDescriptionEntry.Output.destination_count_clause:type_name -> pb.DestinationCountClause
+	221, // 667: pb.CommunicationDescriptionEntry.Output.text_length_clause:type_name -> pb.TextLengthClause
+	223, // 668: pb.CommunicationDescriptionEntry.Output.status_key_clause:type_name -> pb.StatusKeyClause
+	214, // 669: pb.CommunicationDescriptionEntry.Output.destination_table_clause:type_name -> pb.DestinationTableClause
+	213, // 670: pb.CommunicationDescriptionEntry.Output.errorKeyClause:type_name -> pb.ErrorKeyClause
+	212, // 671: pb.CommunicationDescriptionEntry.Output.symbolic_destination_clause:type_name -> pb.SymbolicDestinationClause
+	218, // 672: pb.CommunicationDescriptionEntry.Io.message_date_clause:type_name -> pb.MessageDateClause
+	219, // 673: pb.CommunicationDescriptionEntry.Io.message_time_clause:type_name -> pb.MessageTimeClause
+	211, // 674: pb.CommunicationDescriptionEntry.Io.symbolic_terminal_clause:type_name -> pb.SymbolicTerminalClause
+	221, // 675: pb.CommunicationDescriptionEntry.Io.text_length_clause:type_name -> pb.TextLengthClause
+	222, // 676: pb.CommunicationDescriptionEntry.Io.end_key_clause:type_name -> pb.EndKeyClause
+	223, // 677: pb.CommunicationDescriptionEntry.Io.status_key_clause:type_name -> pb.StatusKeyClause
+	319, // 678: pb.ProcedureDivision.ByReference.identifier:type_name -> pb.Identifier
+	350, // 679: pb.ProcedureDivision.ByReference.file_name:type_name -> pb.FileName
+	410, // 680: pb.ProcedureDivision.ByReferencePhrase.references:type_name -> pb.ProcedureDivision.ByReference
+	319, // 681: pb.ProcedureDivision.ByValue.identifier:type_name -> pb.Identifier
+	369, // 682: pb.ProcedureDivision.ByValue.literal:type_name -> pb.Literal
+	412, // 683: pb.ProcedureDivision.ByValuePhrase.values:type_name -> pb.ProcedureDivision.ByValue
+	411, // 684: pb.ProcedureDivision.UsingParameter.by_reference_phrase:type_name -> pb.ProcedureDivision.ByReferencePhrase
+	413, // 685: pb.ProcedureDivision.UsingParameter.by_value_phrase:type_name -> pb.ProcedureDivision.ByValuePhrase
+	41,  // 686: pb.ProcedureDivision.GivingClause.type:type_name -> pb.ProcedureDivision.GivingClause.Type
+	347, // 687: pb.ProcedureDivision.GivingClause.data_name:type_name -> pb.DataName
+	42,  // 688: pb.ProcedureDivision.UsingClause.type:type_name -> pb.ProcedureDivision.UsingClause.Type
+	414, // 689: pb.ProcedureDivision.UsingClause.using_parameters:type_name -> pb.ProcedureDivision.UsingParameter
+	319, // 690: pb.AddStatement.AddFrom.Identifier:type_name -> pb.Identifier
+	369, // 691: pb.AddStatement.AddFrom.literal:type_name -> pb.Literal
+	319, // 692: pb.AddStatement.AddToGiving.Identifier:type_name -> pb.Identifier
+	369, // 693: pb.AddStatement.AddToGiving.literal:type_name -> pb.Literal
+	417, // 694: pb.AddStatement.To.froms:type_name -> pb.AddStatement.AddFrom
+	319, // 695: pb.AddStatement.To.tos:type_name -> pb.Identifier
+	417, // 696: pb.AddStatement.ToGiving.froms:type_name -> pb.AddStatement.AddFrom
+	418, // 697: pb.AddStatement.ToGiving.tos:type_name -> pb.AddStatement.AddToGiving
+	319, // 698: pb.AddStatement.ToGiving.givings:type_name -> pb.Identifier
+	319, // 699: pb.AddStatement.Corresponding.corresponding:type_name -> pb.Identifier
+	319, // 700: pb.AddStatement.Corresponding.to:type_name -> pb.Identifier
+	43,  // 701: pb.AcceptStatement.FromDate.type:type_name -> pb.AcceptStatement.FromDate.Type
+	356, // 702: pb.AcceptStatement.FromMnemonic.mnemonic_name:type_name -> pb.MnemonicName
+	350, // 703: pb.UseAfterClause.FileNames.file_names:type_name -> pb.FileName
+	325, // 704: pb.ConditionNameReference.SubscriptReference.subscripts:type_name -> pb.Subscript
+	334, // 705: pb.ConditionNameReference.InSubscript.in_datas:type_name -> pb.InData
+	335, // 706: pb.ConditionNameReference.InSubscript.in_file:type_name -> pb.InFile
+	427, // 707: pb.ConditionNameReference.InSubscript.refs:type_name -> pb.ConditionNameReference.SubscriptReference
+	708, // [708:708] is the sub-list for method output_type
+	708, // [708:708] is the sub-list for method input_type
+	708, // [708:708] is the sub-list for extension type_name
+	708, // [708:708] is the sub-list for extension extendee
+	0,   // [0:708] is the sub-list for field type_name
 }
 
 func init() { file_cobol_proto_init() }
@@ -31078,30 +33162,6 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[239].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OnExceptionClause); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cobol_proto_msgTypes[240].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NotOnExceptionClause); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cobol_proto_msgTypes[241].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OnSizeErrorPhrase); i {
 			case 0:
 				return &v.state
@@ -31113,8 +33173,32 @@ func file_cobol_proto_init() {
 				return nil
 			}
 		}
-		file_cobol_proto_msgTypes[242].Exporter = func(v interface{}, i int) interface{} {
+		file_cobol_proto_msgTypes[240].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NotOnSizeErrorPhrase); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[241].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OnExceptionClause); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[242].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NotOnExceptionClause); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31186,7 +33270,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[248].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Identifier); i {
+			switch v := v.(*PlusMinus); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31198,7 +33282,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[249].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TableCall); i {
+			switch v := v.(*MultDivs); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31210,7 +33294,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[250].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FunctionCall); i {
+			switch v := v.(*MultDiv); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31222,7 +33306,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[251].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReferenceModifier); i {
+			switch v := v.(*Powers); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31234,7 +33318,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[252].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CharacterPosition); i {
+			switch v := v.(*Power); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31246,7 +33330,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[253].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Length); i {
+			switch v := v.(*Basis); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31258,7 +33342,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[254].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Subscript); i {
+			switch v := v.(*Condition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31270,7 +33354,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[255].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Argument); i {
+			switch v := v.(*AndOrCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31282,7 +33366,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[256].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameIntegerLiteral); i {
+			switch v := v.(*CombinableCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31294,7 +33378,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[257].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IndexNameIntegerLiteral); i {
+			switch v := v.(*SimpleCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31306,7 +33390,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[258].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataName); i {
+			switch v := v.(*ClassCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31318,7 +33402,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[259].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat1); i {
+			switch v := v.(*ConditionNameReference); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31330,7 +33414,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[260].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat2); i {
+			switch v := v.(*RelationCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31342,7 +33426,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[261].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat3); i {
+			switch v := v.(*RelationSignCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31354,7 +33438,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[262].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualifiedDataNameFormat4); i {
+			switch v := v.(*RelationArithmeticComparison); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31366,7 +33450,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[263].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InData); i {
+			switch v := v.(*RelationCombinedComparison); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31378,7 +33462,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[264].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InFile); i {
+			switch v := v.(*RelationCombinedCondition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31390,7 +33474,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[265].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InMnemonic); i {
+			switch v := v.(*Abbreviation); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31402,7 +33486,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[266].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InSection); i {
+			switch v := v.(*Identifier); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31414,7 +33498,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[267].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InLibrary); i {
+			switch v := v.(*TableCall); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31426,7 +33510,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[268].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InTable); i {
+			switch v := v.(*FunctionCall); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31438,7 +33522,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[269].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetName); i {
+			switch v := v.(*ReferenceModifier); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31450,7 +33534,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[270].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AssignmentName); i {
+			switch v := v.(*CharacterPosition); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31462,7 +33546,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[271].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BasisName); i {
+			switch v := v.(*Length); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31474,7 +33558,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[272].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CdName); i {
+			switch v := v.(*Subscript); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31486,7 +33570,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[273].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ClassName); i {
+			switch v := v.(*Argument); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31498,7 +33582,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[274].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ComputerName); i {
+			switch v := v.(*QualifiedDataNameIntegerLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31510,7 +33594,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[275].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConditionName); i {
+			switch v := v.(*IndexNameIntegerLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31522,7 +33606,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[276].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataName); i {
+			switch v := v.(*QualifiedDataName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31534,7 +33618,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[277].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescName); i {
+			switch v := v.(*QualifiedDataNameFormat1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31546,7 +33630,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[278].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnvironmentName); i {
+			switch v := v.(*QualifiedDataNameFormat2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31558,7 +33642,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[279].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FileName); i {
+			switch v := v.(*QualifiedDataNameFormat3); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31570,7 +33654,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[280].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FunctionName); i {
+			switch v := v.(*QualifiedDataNameFormat4); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31582,7 +33666,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[281].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IndexName); i {
+			switch v := v.(*InData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31594,7 +33678,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[282].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LanguageName); i {
+			switch v := v.(*InFile); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31606,7 +33690,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[283].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryName); i {
+			switch v := v.(*InMnemonic); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31618,7 +33702,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[284].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LocalName); i {
+			switch v := v.(*InSection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31630,7 +33714,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[285].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MnemonicName); i {
+			switch v := v.(*InLibrary); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31642,7 +33726,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[286].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ParagraphName); i {
+			switch v := v.(*InTable); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31654,7 +33738,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[287].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureName); i {
+			switch v := v.(*AlphabetName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31666,7 +33750,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[288].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProgramName); i {
+			switch v := v.(*AssignmentName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31678,7 +33762,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[289].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordName); i {
+			switch v := v.(*BasisName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31690,7 +33774,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[290].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportName); i {
+			switch v := v.(*CdName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31702,7 +33786,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[291].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RoutingName); i {
+			switch v := v.(*ClassName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31714,7 +33798,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[292].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ScreenName); i {
+			switch v := v.(*ComputerName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31726,7 +33810,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[293].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SectionName); i {
+			switch v := v.(*ConditionName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31738,7 +33822,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[294].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SystemName); i {
+			switch v := v.(*DataName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31750,7 +33834,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[295].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolicCharacter); i {
+			switch v := v.(*DataDescName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31762,7 +33846,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[296].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TextName); i {
+			switch v := v.(*EnvironmentName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31774,7 +33858,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[297].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CobolWord); i {
+			switch v := v.(*FileName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31786,7 +33870,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[298].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Literal); i {
+			switch v := v.(*FunctionName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31798,7 +33882,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[299].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BooleanLiteral); i {
+			switch v := v.(*IndexName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31810,7 +33894,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[300].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NumericLiteral); i {
+			switch v := v.(*LanguageName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31822,7 +33906,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[301].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IntegerLiteral); i {
+			switch v := v.(*LibraryName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31834,7 +33918,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[302].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FigurativeConstant); i {
+			switch v := v.(*LocalName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31846,7 +33930,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[303].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SpecialRegister); i {
+			switch v := v.(*MnemonicName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31858,7 +33942,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[304].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NonNumericLiteral); i {
+			switch v := v.(*ParagraphName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31870,7 +33954,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[305].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StringLiteral); i {
+			switch v := v.(*ProcedureName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31882,7 +33966,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[306].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DbcsLiteral); i {
+			switch v := v.(*ProgramName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31894,7 +33978,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[307].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HexNumber); i {
+			switch v := v.(*RecordName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31906,7 +33990,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[308].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NullTerminated); i {
+			switch v := v.(*ReportName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31918,7 +34002,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[309].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_Also); i {
+			switch v := v.(*RoutingName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31930,7 +34014,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[310].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_AlphabetLiteral); i {
+			switch v := v.(*ScreenName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31942,7 +34026,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[311].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_AlphabetLiterals); i {
+			switch v := v.(*SectionName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31954,7 +34038,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[312].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_Alphanumeric); i {
+			switch v := v.(*SystemName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31966,7 +34050,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[313].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlphabetClause_National); i {
+			switch v := v.(*SymbolicCharacter); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31978,7 +34062,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[314].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LabelRecordsClause_DataNames); i {
+			switch v := v.(*TextName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -31990,7 +34074,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[315].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_Format1); i {
+			switch v := v.(*CobolWord); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32002,7 +34086,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[316].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_Format2); i {
+			switch v := v.(*Literal); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32014,7 +34098,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[317].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_Format3); i {
+			switch v := v.(*BooleanLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32026,7 +34110,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[318].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataDescriptionEntry_ExecSql); i {
+			switch v := v.(*NumericLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32038,7 +34122,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[319].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataTypeClause_Lob); i {
+			switch v := v.(*IntegerLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32050,7 +34134,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[320].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataOccursClause_Sort); i {
+			switch v := v.(*FigurativeConstant); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32062,7 +34146,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[321].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataOccursClause_Indexed); i {
+			switch v := v.(*SpecialRegister); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32074,7 +34158,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[322].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry_Vertical); i {
+			switch v := v.(*NonNumericLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32086,7 +34170,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[323].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry_Single); i {
+			switch v := v.(*StringLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32098,7 +34182,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[324].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportGroupDescriptionEntry_Printable); i {
+			switch v := v.(*DbcsLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32110,7 +34194,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[325].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ReportHeading); i {
+			switch v := v.(*HexNumber); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32122,7 +34206,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[326].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_PageHeading); i {
+			switch v := v.(*NullTerminated); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32134,7 +34218,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[327].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ControlHeading); i {
+			switch v := v.(*AlphabetClause_Also); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32146,7 +34230,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[328].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_Detail); i {
+			switch v := v.(*AlphabetClause_AlphabetLiteral); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32158,7 +34242,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[329].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ControlFooting); i {
+			switch v := v.(*AlphabetClause_AlphabetLiterals); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32170,7 +34254,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[330].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_PageFooting); i {
+			switch v := v.(*AlphabetClause_Alphanumeric); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32182,7 +34266,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[331].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TypeClause_ReportFooting); i {
+			switch v := v.(*AlphabetClause_National); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32194,7 +34278,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[332].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryDescriptionEntry_Import); i {
+			switch v := v.(*LabelRecordsClause_DataNames); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32206,7 +34290,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[333].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LibraryDescriptionEntry_Export); i {
+			switch v := v.(*DataDescriptionEntry_Format1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32218,7 +34302,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[334].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureClause2_WithName); i {
+			switch v := v.(*DataDescriptionEntry_Format2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32230,7 +34314,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[335].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureClause2_UsingName); i {
+			switch v := v.(*DataDescriptionEntry_Format3); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32242,7 +34326,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[336].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationDescriptionEntry_Input); i {
+			switch v := v.(*DataDescriptionEntry_ExecSql); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32254,7 +34338,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[337].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationDescriptionEntry_Output); i {
+			switch v := v.(*DataTypeClause_Lob); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32266,7 +34350,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[338].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CommunicationDescriptionEntry_Io); i {
+			switch v := v.(*DataOccursClause_Sort); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32278,7 +34362,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[339].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_ByReference); i {
+			switch v := v.(*DataOccursClause_Indexed); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32290,7 +34374,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[340].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_ByReferencePhrase); i {
+			switch v := v.(*ReportGroupDescriptionEntry_Vertical); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32302,7 +34386,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[341].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_ByValue); i {
+			switch v := v.(*ReportGroupDescriptionEntry_Single); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32314,7 +34398,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[342].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_ByValuePhrase); i {
+			switch v := v.(*ReportGroupDescriptionEntry_Printable); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32326,7 +34410,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[343].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_UsingParameter); i {
+			switch v := v.(*TypeClause_ReportHeading); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32338,7 +34422,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[344].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_GivingClause); i {
+			switch v := v.(*TypeClause_PageHeading); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32350,7 +34434,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[345].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProcedureDivision_UsingClause); i {
+			switch v := v.(*TypeClause_ControlHeading); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32362,7 +34446,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[346].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddStatement_AddFrom); i {
+			switch v := v.(*TypeClause_Detail); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32374,7 +34458,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[347].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddStatement_AddToGiving); i {
+			switch v := v.(*TypeClause_ControlFooting); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32386,7 +34470,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[348].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddStatement_To); i {
+			switch v := v.(*TypeClause_PageFooting); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32398,7 +34482,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[349].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddStatement_ToGiving); i {
+			switch v := v.(*TypeClause_ReportFooting); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32410,7 +34494,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[350].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddStatement_Corresponding); i {
+			switch v := v.(*LibraryDescriptionEntry_Import); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32422,7 +34506,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[351].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AcceptStatement_FromDate); i {
+			switch v := v.(*LibraryDescriptionEntry_Export); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32434,7 +34518,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[352].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AcceptStatement_FromEscapeKey); i {
+			switch v := v.(*ProcedureClause2_WithName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32446,7 +34530,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[353].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AcceptStatement_FromMnemonic); i {
+			switch v := v.(*ProcedureClause2_UsingName); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32458,7 +34542,7 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[354].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AcceptStatement_MessageCount); i {
+			switch v := v.(*CommunicationDescriptionEntry_Input); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32470,7 +34554,247 @@ func file_cobol_proto_init() {
 			}
 		}
 		file_cobol_proto_msgTypes[355].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CommunicationDescriptionEntry_Output); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[356].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CommunicationDescriptionEntry_Io); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[357].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_ByReference); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[358].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_ByReferencePhrase); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[359].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_ByValue); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[360].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_ByValuePhrase); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[361].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_UsingParameter); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[362].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_GivingClause); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[363].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProcedureDivision_UsingClause); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[364].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AddStatement_AddFrom); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[365].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AddStatement_AddToGiving); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[366].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AddStatement_To); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[367].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AddStatement_ToGiving); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[368].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AddStatement_Corresponding); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[369].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AcceptStatement_FromDate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[370].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AcceptStatement_FromEscapeKey); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[371].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AcceptStatement_FromMnemonic); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[372].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AcceptStatement_MessageCount); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[373].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UseAfterClause_FileNames); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[374].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ConditionNameReference_SubscriptReference); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_cobol_proto_msgTypes[375].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ConditionNameReference_InSubscript); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -32724,98 +35048,122 @@ func file_cobol_proto_init() {
 		(*UseAfterClause_Type_)(nil),
 		(*UseAfterClause_FileNames_)(nil),
 	}
-	file_cobol_proto_msgTypes[248].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[253].OneofWrappers = []interface{}{
+		(*Basis_ArithmeticExpression)(nil),
+		(*Basis_Identifier)(nil),
+		(*Basis_Literal)(nil),
+	}
+	file_cobol_proto_msgTypes[257].OneofWrappers = []interface{}{
+		(*SimpleCondition_Condition)(nil),
+		(*SimpleCondition_RelationCondition)(nil),
+		(*SimpleCondition_ClassCondition)(nil),
+		(*SimpleCondition_ConditionNameReference)(nil),
+	}
+	file_cobol_proto_msgTypes[258].OneofWrappers = []interface{}{
+		(*ClassCondition_Value)(nil),
+		(*ClassCondition_ClassName)(nil),
+	}
+	file_cobol_proto_msgTypes[259].OneofWrappers = []interface{}{
+		(*ConditionNameReference_InSubscript_)(nil),
+		(*ConditionNameReference_InMnemonic)(nil),
+	}
+	file_cobol_proto_msgTypes[260].OneofWrappers = []interface{}{
+		(*RelationCondition_RelationSignCondition)(nil),
+		(*RelationCondition_RelationArithmeticComparison)(nil),
+		(*RelationCondition_RelationCombinedComparison)(nil),
+	}
+	file_cobol_proto_msgTypes[266].OneofWrappers = []interface{}{
 		(*Identifier_QualifiedDataName)(nil),
 		(*Identifier_TableCall)(nil),
 		(*Identifier_FunctionCall)(nil),
 		(*Identifier_SpecialRegister)(nil),
 	}
-	file_cobol_proto_msgTypes[254].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[272].OneofWrappers = []interface{}{
 		(*Subscript_All)(nil),
 		(*Subscript_IntegerLiteral)(nil),
 		(*Subscript_QualifiedDataName)(nil),
 		(*Subscript_IndexName)(nil),
 		(*Subscript_ArithmeticExpression)(nil),
 	}
-	file_cobol_proto_msgTypes[255].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[273].OneofWrappers = []interface{}{
 		(*Argument_Literal)(nil),
 		(*Argument_Identifier)(nil),
 		(*Argument_QualifiedDataName)(nil),
 		(*Argument_IndexName)(nil),
 		(*Argument_ArithmeticExpression)(nil),
 	}
-	file_cobol_proto_msgTypes[258].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[276].OneofWrappers = []interface{}{
 		(*QualifiedDataName_F1)(nil),
 		(*QualifiedDataName_F2)(nil),
 		(*QualifiedDataName_F3)(nil),
 		(*QualifiedDataName_F4)(nil),
 	}
-	file_cobol_proto_msgTypes[259].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[277].OneofWrappers = []interface{}{
 		(*QualifiedDataNameFormat1_DataName)(nil),
 		(*QualifiedDataNameFormat1_ConditionName)(nil),
 	}
-	file_cobol_proto_msgTypes[286].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[304].OneofWrappers = []interface{}{
 		(*ParagraphName_CobolWord)(nil),
 		(*ParagraphName_IntegerLiteral)(nil),
 	}
-	file_cobol_proto_msgTypes[287].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[305].OneofWrappers = []interface{}{
 		(*ProcedureName_ParagraphName)(nil),
 		(*ProcedureName_SectionName)(nil),
 	}
-	file_cobol_proto_msgTypes[288].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[306].OneofWrappers = []interface{}{
 		(*ProgramName_NonNumericLiteral)(nil),
 		(*ProgramName_CobolWord)(nil),
 	}
-	file_cobol_proto_msgTypes[293].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[311].OneofWrappers = []interface{}{
 		(*SectionName_CobolWord)(nil),
 		(*SectionName_IntegerLiteral)(nil),
 	}
-	file_cobol_proto_msgTypes[298].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[316].OneofWrappers = []interface{}{
 		(*Literal_NumericLiteral)(nil),
 		(*Literal_BooleanLiteral)(nil),
 		(*Literal_NonNumericLiteral)(nil),
 		(*Literal_FigurativeConstant)(nil),
 	}
-	file_cobol_proto_msgTypes[312].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[330].OneofWrappers = []interface{}{
 		(*AlphabetClause_Alphanumeric_Type_)(nil),
 		(*AlphabetClause_Alphanumeric_CobolWord)(nil),
 		(*AlphabetClause_Alphanumeric_Values)(nil),
 	}
-	file_cobol_proto_msgTypes[327].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[345].OneofWrappers = []interface{}{
 		(*TypeClause_ControlHeading_Final)(nil),
 		(*TypeClause_ControlHeading_DataName)(nil),
 	}
-	file_cobol_proto_msgTypes[329].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[347].OneofWrappers = []interface{}{
 		(*TypeClause_ControlFooting_Final)(nil),
 		(*TypeClause_ControlFooting_DataName)(nil),
 	}
-	file_cobol_proto_msgTypes[334].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[352].OneofWrappers = []interface{}{
 		(*ProcedureClause2_WithName_LocalName)(nil),
 		(*ProcedureClause2_WithName_FileName)(nil),
 	}
-	file_cobol_proto_msgTypes[335].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[353].OneofWrappers = []interface{}{
 		(*ProcedureClause2_UsingName_DataName)(nil),
 		(*ProcedureClause2_UsingName_FileName)(nil),
 	}
-	file_cobol_proto_msgTypes[339].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[357].OneofWrappers = []interface{}{
 		(*ProcedureDivision_ByReference_Identifier)(nil),
 		(*ProcedureDivision_ByReference_FileName)(nil),
 		(*ProcedureDivision_ByReference_Any)(nil),
 	}
-	file_cobol_proto_msgTypes[341].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[359].OneofWrappers = []interface{}{
 		(*ProcedureDivision_ByValue_Identifier)(nil),
 		(*ProcedureDivision_ByValue_Literal)(nil),
 		(*ProcedureDivision_ByValue_Any)(nil),
 	}
-	file_cobol_proto_msgTypes[343].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[361].OneofWrappers = []interface{}{
 		(*ProcedureDivision_UsingParameter_ByReferencePhrase)(nil),
 		(*ProcedureDivision_UsingParameter_ByValuePhrase)(nil),
 	}
-	file_cobol_proto_msgTypes[346].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[364].OneofWrappers = []interface{}{
 		(*AddStatement_AddFrom_Identifier)(nil),
 		(*AddStatement_AddFrom_Literal)(nil),
 	}
-	file_cobol_proto_msgTypes[347].OneofWrappers = []interface{}{
+	file_cobol_proto_msgTypes[365].OneofWrappers = []interface{}{
 		(*AddStatement_AddToGiving_Identifier)(nil),
 		(*AddStatement_AddToGiving_Literal)(nil),
 	}
@@ -32824,8 +35172,8 @@ func file_cobol_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_cobol_proto_rawDesc,
-			NumEnums:      47,
-			NumMessages:   356,
+			NumEnums:      53,
+			NumMessages:   376,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

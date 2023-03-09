@@ -1819,19 +1819,23 @@ message AcceptStatement {
     NotOnExceptionClause not_on_exception_clause = 99;
 }
 
-message OnExceptionClause {
-    repeated Statement statements = 1;
-}
-
-message NotOnExceptionClause {
-    repeated Statement statements = 1;
-}
+// statement phrases ----------------------------------
 
 message OnSizeErrorPhrase {
     repeated Statement statements = 1;
 }
 
 message NotOnSizeErrorPhrase {
+    repeated Statement statements = 1;
+}
+
+// statement clauses ----------------------------------
+
+message OnExceptionClause {
+    repeated Statement statements = 1;
+}
+
+message NotOnExceptionClause {
     repeated Statement statements = 1;
 }
 
@@ -1877,12 +1881,161 @@ message UseAfterClause {
 // arithmetic expression ----------------------------------
 
 message ArithmeticExpression {
-    // TODO:
+    MultDivs mult_divs = 1;
+    repeated PlusMinus plus_minus = 2;
+}
+
+message PlusMinus {
+    MultDivs mult_divs = 1;
+}
+
+message MultDivs {
+    Powers powers = 1;
+    repeated MultDiv mult_div = 2;
+}
+
+message MultDiv {
+    Powers powers = 1;
+}
+
+message Powers {
+    Basis basis = 1;
+    repeated Power powers = 2;
+}
+
+message Power {
+    Basis basis = 1;
+}
+
+message Basis {
+    oneof one_of {
+        ArithmeticExpression arithmetic_expression = 1;
+        Identifier identifier = 2;
+        Literal literal = 3;
+    }
 }
 
 // condition ----------------------------------
 
+message Condition {
+    CombinableCondition combinable_condition = 1;
+    repeated AndOrCondition and_or_condition = 2;
+}
+
+message AndOrCondition {
+    enum AndOr {
+        AND = 0;
+        OR = 1;
+    }
+    AndOr and_or = 1;
+    CombinableCondition combinable_condition = 2;
+    repeated Abbreviation abbreviations = 3;
+}
+
+message CombinableCondition {
+    bool not = 1;
+    SimpleCondition simple_condition = 2;
+}
+
+message SimpleCondition {
+    oneof one_of {
+        Condition condition = 1;
+        RelationCondition relation_condition = 2;
+        ClassCondition class_condition = 3;
+        ConditionNameReference condition_name_reference = 4;
+    }
+}
+
+message ClassCondition {
+    enum Type {
+        NUMERIC = 0;
+        ALPHABETIC = 1;
+        ALPHABETIC_LOWER = 2;
+        ALPHABETIC_UPPER = 3;
+        DBCS = 4;
+        KANJI = 5;
+    }
+    Identifier identifier = 1;
+    oneof type {
+        Type value = 2;
+        ClassName class_name = 3;
+    }
+}
+
+message ConditionNameReference {
+    message SubscriptReference {
+        repeated Subscript subscripts = 2;
+    }
+    message InSubscript {
+        repeated InData in_datas = 1;
+        InFile in_file = 2;
+        repeated SubscriptReference refs = 3;
+    }
+    ConditionName condition_name = 1;
+    oneof in {
+        InSubscript in_subscript = 2;
+        InMnemonic in_mnemonic = 3;
+    }
+}
+
 // relation ----------------------------------
+
+message RelationCondition {
+    oneof condition {
+        RelationSignCondition relation_sign_condition = 1;
+        RelationArithmeticComparison relation_arithmetic_comparison = 2;
+        RelationCombinedComparison relation_combined_comparison = 3;
+    }
+}
+
+message RelationSignCondition {
+    enum Type {
+        POSITIVE = 0;
+        NEGATIVE = 1;
+        ZERO = 2;
+    }
+    ArithmeticExpression arithmetic_expression = 1;
+    Type type = 2;
+}
+
+message RelationArithmeticComparison {
+    ArithmeticExpression left_expression = 1;
+    RelationalOperator relational_operator = 2;
+    ArithmeticExpression right_expression = 3;
+}
+
+message RelationCombinedComparison {
+    ArithmeticExpression arithmetic_expression = 1;
+    RelationalOperator relational_operator = 2;
+    RelationCombinedCondition relation_combined_condition = 3;
+}
+
+message RelationCombinedCondition {
+    enum AndOr {
+        AND = 0;
+        OR = 1;
+    }
+    ArithmeticExpression left_expression = 1;
+    AndOr and_or = 2;
+    repeated ArithmeticExpression right_expressions = 3;
+}
+
+enum RelationalOperator {
+    EQUAL = 0;               // =
+    NOT_EQUAL = 1;           // !=
+    MORE_THAN_OR_EQUAL = 2;  // >=
+    LESS_THAN_OR_EQUAL = 3;  // <=
+    GREATER_THAN = 4;        // >
+    NOT_GREATER_THAN = 5;    // !>
+    LESS_THAN = 6;           // <
+    NOT_LESS_THAN = 7;       // !<
+}
+
+message Abbreviation {
+    RelationalOperator relational_operator = 1;
+    ArithmeticExpression arithmetic_expression = 2;
+    Abbreviation abbreviation = 3;
+}
 
 // identifier ----------------------------------
 
@@ -2203,7 +2356,37 @@ message FigurativeConstant {
 }
 
 message SpecialRegister {
-    // TODO:
+    enum Type {
+        ADDRESS_OF = 0;
+        DATE = 1;
+        DAY = 2;
+        DAY_OF_WEEK = 3;
+        DEBUG_CONTENTS = 4;
+        DEBUG_ITEM = 5;
+        DEBUG_LINE = 6;
+        DEBUG_NAME = 7;
+        DEBUG_SUB_1 = 8;
+        DEBUG_SUB_2 = 9;
+        DEBUG_SUB_3 = 10;
+        LENGTH_OF =	11;
+        LINAGE_COUNTER = 12;
+        LINE_COUNTER = 13;
+        PAGE_COUNTER = 14;
+        RETURN_CODE = 15;
+        SHIFT_IN = 16;
+        SHIFT_OUT = 17;
+        SORT_CONTROL = 18;
+        SORT_CORE_SIZE = 19;
+        SORT_FILE_SIZE = 20;
+        SORT_MESSAGE = 21;
+        SORT_MODE_SIZE = 22;
+        SORT_RETURN = 23;
+        TALLY = 24;
+        TIME = 25;
+        WHEN_COMPILED = 26;
+    }
+    Type type = 1;
+    Identifier identifier = 2;
 }
 
 message NonNumericLiteral {
