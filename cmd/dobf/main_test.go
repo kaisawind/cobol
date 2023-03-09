@@ -24,8 +24,15 @@ func TestDobf(t *testing.T) {
 
 	listener := NewDobfListener(cts)
 	antlr.ParseTreeWalkerDefault.Walk(listener, cpp.StartRule())
+	vars := map[string]string{}
+	for k, v := range listener.GetVars() {
+		vars[k] = v
+	}
+	for k, v := range listener.GetFuncs() {
+		vars[k] = v
+	}
 	output := map[string]any{
-		"vars":   listener.GetVars(),
+		"vars":   vars,
 		"tokens": listener.GetTokens(),
 	}
 	buff, err = json.Marshal(output)

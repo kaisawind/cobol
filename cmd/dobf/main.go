@@ -33,8 +33,16 @@ func main() {
 
 	listener := NewDobfListener(cts)
 	antlr.ParseTreeWalkerDefault.Walk(listener, cpp.StartRule())
+	vars := map[string]string{}
+	for k, v := range listener.GetVars() {
+		vars[k] = v
+	}
+	for k, v := range listener.GetFuncs() {
+		vars[k] = v
+	}
 	output := map[string]any{
-		"vars":   listener.GetVars(),
+		"text":   listener.GetText(),
+		"vars":   vars,
 		"tokens": listener.GetTokens(),
 	}
 	buff, err = json.Marshal(output)
@@ -90,7 +98,10 @@ type DobfListener struct {
 	cts      *antlr.CommonTokenStream
 	opts     *options.Options
 	vars     map[string]int
-	index    int
+	varIndex int
+
+	funcs     map[string]int
+	funcIndex int
 }
 
 func NewDobfListener(cts *antlr.CommonTokenStream, opts ...options.Option) *DobfListener {
@@ -103,6 +114,7 @@ func NewDobfListener(cts *antlr.CommonTokenStream, opts ...options.Option) *Dobf
 		opts:     o,
 		cts:      cts,
 		vars:     map[string]int{},
+		funcs:    map[string]int{},
 	}
 }
 
@@ -139,8 +151,70 @@ func (s *DobfListener) GetVars() (out map[string]string) {
 	return
 }
 
+func (s *DobfListener) GetFuncs() (out map[string]string) {
+	out = map[string]string{}
+	for k, v := range s.funcs {
+		out[fmt.Sprintf("FUNC_%d", v)] = k
+	}
+	return
+}
+
 func (s *DobfListener) GetTokens() []*Tok {
 	return s.Context().GetTokens()
+}
+
+// EnterParagraph is called when production paragraph is entered.
+func (s *DobfListener) EnterParagraphName(ctx *cobol85.ParagraphNameContext) {
+	s.push()
+}
+
+// ExitParagraph is called when production paragraph is exited.
+func (s *DobfListener) ExitParagraphName(ctx *cobol85.ParagraphNameContext) {
+	popped := s.Context().Read()
+	s.pop()
+	tree := ctx.GetParent()
+	oldFunc := ctx.GetText()
+	newFunc := ""
+	switch tree.(type) {
+	case cobol85.IParagraphContext:
+		i, ok := s.funcs[oldFunc]
+		if !ok {
+			s.funcIndex++
+			s.funcs[oldFunc] = s.funcIndex
+			newFunc = fmt.Sprintf("FUNC_%d", s.funcIndex)
+		} else {
+			newFunc = fmt.Sprintf("FUNC_%d", i)
+		}
+	case cobol85.IProcedureNameContext:
+		i, ok := s.funcs[oldFunc]
+		if !ok {
+			s.funcIndex++
+			s.funcs[oldFunc] = s.funcIndex
+			newFunc = fmt.Sprintf("FUNC_%d", s.funcIndex)
+		} else {
+			newFunc = fmt.Sprintf("FUNC_%d", i)
+		}
+	case cobol85.IQualifiedDataNameFormat2Context:
+		i, ok := s.funcs[oldFunc]
+		if !ok {
+			s.funcIndex++
+			s.funcs[oldFunc] = s.funcIndex
+			newFunc = fmt.Sprintf("FUNC_%d", s.funcIndex)
+		} else {
+			newFunc = fmt.Sprintf("FUNC_%d", i)
+		}
+	default:
+		newFunc = oldFunc
+	}
+
+	content := strings.ReplaceAll(popped, oldFunc, newFunc)
+	s.Context().AppendTokens([]*Tok{
+		{
+			Type:  "RULE",
+			Value: newFunc,
+		},
+	})
+	s.Context().Write(content)
 }
 
 // EnterDataName is called when production dataName is entered.
@@ -159,18 +233,18 @@ func (s *DobfListener) ExitDataName(ctx *cobol85.DataNameContext) {
 	case cobol85.IDataDescriptionEntryFormat1Context:
 		i, ok := s.vars[oldVariable]
 		if !ok {
-			s.index++
-			s.vars[oldVariable] = s.index
-			newVariable = fmt.Sprintf("VAR_%d", s.index)
+			s.varIndex++
+			s.vars[oldVariable] = s.varIndex
+			newVariable = fmt.Sprintf("VAR_%d", s.varIndex)
 		} else {
 			newVariable = fmt.Sprintf("VAR_%d", i)
 		}
 	case cobol85.IDataDescriptionEntryFormat2Context:
 		i, ok := s.vars[oldVariable]
 		if !ok {
-			s.index++
-			s.vars[oldVariable] = s.index
-			newVariable = fmt.Sprintf("VAR_%d", s.index)
+			s.varIndex++
+			s.vars[oldVariable] = s.varIndex
+			newVariable = fmt.Sprintf("VAR_%d", s.varIndex)
 		} else {
 			newVariable = fmt.Sprintf("VAR_%d", i)
 		}

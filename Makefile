@@ -1,4 +1,4 @@
-SERVICES = tree dobf preprocess
+SERVICES = tree dobf preprocess func
 
 define compile
 	go build \
