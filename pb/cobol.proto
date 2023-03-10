@@ -1511,87 +1511,593 @@ message Statement {
 }
 
 message WriteStatement {
-    // TODO:
+    message FromPhrase {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message AdvancingPage {}
+    message AdvancingLines {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message AdvancingMnemonic {
+        MnemonicName mnemonicName = 1;
+    }
+    message AdvancingPhrase {
+        oneof one_of {
+            AdvancingPage advancing_page = 1;
+            AdvancingLines advancing_lines = 2;
+            AdvancingMnemonic advancing_mnemonic = 3;
+        }
+    }
+    RecordName record_name = 1;
+    FromPhrase from_phrase = 2;
+    AdvancingPhrase advancing_phrase = 3;
+    AtEndOfPagePhrase at_end_of_page_phrase = 96;
+    NotAtEndOfPagePhrase not_at_end_of_page_phrase = 97;
+    InvalidKeyPhrase invalid_key_phrase = 98;
+    NotInvalidKeyPhrase not_invalid_key_phrase = 99;
 }
 
 message UnstringStatement {
-    // TODO:
+    message DelimitedByPhrase {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message OrAllPhrase {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message DelimitedOr {
+        DelimitedByPhrase delimited_by_phrase  = 1;
+        repeated OrAllPhrase or_all_phrases = 2;
+    }
+    message Into {
+        Identifier identifier = 1;
+    }
+    message DelimiterIn {
+        Identifier identifier = 1;
+    }
+    message CountIn {
+        Identifier identifier = 1;
+    }
+    message SendingPhrase {
+        Identifier identifier = 1;
+        DelimitedOr delimited_or = 2;
+    }
+    message IntoPhrase {
+        Into into = 1;
+        DelimiterIn delimiter_in = 2;
+        CountIn count_in = 3;
+    }
+    message WithPointerPhrase {
+        QualifiedDataName qualified_data_name = 1;
+    }
+    message TallyingPhrase {
+        QualifiedDataName qualified_data_name = 1;
+    }
+    SendingPhrase sending_phrase = 1;
+    IntoPhrase into_phrase = 2;
+    WithPointerPhrase with_pointer_phrase = 3;
+    TallyingPhrase tallying_phrase = 4;
+    OnOverflowPhrase on_overflow_phrase = 98;
+    NotOnOverflowPhrase not_on_overflow_phrase = 99;
 }
 
 message TerminateStatement {
-    // TODO:
+    ReportName report_name = 1;
 }
 
 message SubtractStatement {
-    // TODO:
+    message Subtrahend {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message Minuend {
+        Identifier identifier = 1;
+    }
+    message MinuendGiving {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message Giving {
+        Identifier identifier = 1;
+    }
+    message MinuendCorresponding {
+        QualifiedDataName qualified_data_name = 1;
+    }
+    message FromStatement {
+        repeated Subtrahend subtrahends = 1;
+        repeated Minuend minuends = 2;
+    }
+    message FromGivingStatement {
+        repeated Subtrahend subtrahends = 1;
+        MinuendGiving minuend_giving = 2;
+        repeated Giving givings = 3;
+    }
+    message CorrespondingStatement {
+        QualifiedDataName qualified_data_name = 1;
+        MinuendCorresponding minuend_corresponding = 2;
+    }
+    oneof one_of {
+        FromStatement from_statement = 1;
+        FromGivingStatement from_giving_statement = 2;
+        CorrespondingStatement corresponding_statement = 3;
+    }
+    OnSizeErrorPhrase on_size_error_phrase = 98;
+    NotOnSizeErrorPhrase not_on_size_error_phrase = 99;
 }
 
 message StringStatement {
-    // TODO:
+    message Sending {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message DelimitedByPhrase {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message ForPhrase {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message SendingPhrase {
+        repeated Sending sendings = 1;
+        DelimitedByPhrase delimited_by_phrase = 2;
+        ForPhrase for_phrase = 3;
+    }
+    message IntoPhrase {
+        Identifier identifier = 1;
+    }
+    message WithPointerPhrase {
+        QualifiedDataName qualified_data_name = 1;
+    }
+    repeated SendingPhrase sending_phrases = 1;
+    IntoPhrase into_phrase = 2;
+    WithPointerPhrase with_pointer_phrase = 3;
+    OnOverflowPhrase on_overflow_phrase = 98;
+    NotOnOverflowPhrase not_on_overflow_phrase = 99;
 }
 
 message StopStatement {
-    // TODO:
+    message Giving {
+        oneof one_of {
+            Identifier identifier = 1;
+            IntegerLiteral integer_literal = 2;
+        }
+    }
+    oneof one_of {
+        bool RUN = 1;
+        Literal literal = 2;
+        Giving giving = 3;
+    }
 }
 
 message StartStatement {
-    // TODO:
+    enum Type {
+        EQUAL = 0;
+        GREATER = 1;
+        NOT_LESS = 2;
+        GREATER_OR_EQUAL = 3;
+    }
+    message Key {
+        Type type = 1;
+        QualifiedDataName qualified_data_name = 2;
+    }
+    FileName file_name = 1;
+    Key key = 2;
+    InvalidKeyPhrase invalid_key_phrase = 98;
+    NotInvalidKeyPhrase not_invalid_key_phrase = 99;
 }
 
 message SortStatement {
-    // TODO:
+    message OnKeyClause {
+        repeated QualifiedDataName keys = 1;
+    }
+    message DuplicatesPhrase {
+
+    }
+    message CollatingAlphanumeric {
+        AlphabetName alphabet_name = 1;
+    }
+    message CollatingNational {
+        AlphabetName alphabet_name = 1;
+    }
+    message CollatingSequencePhrase {
+        repeated AlphabetName alphabet_names = 1;
+        CollatingAlphanumeric collating_alphanumeric = 2;
+        CollatingNational collating_national = 3;
+    }
+    message InputThrough {
+        ProcedureName procedure_name = 1;
+    }
+    message InputProcedurePhrase {
+        ProcedureName procedure_name = 1;
+        InputThrough input_through = 2;
+    }
+    message Using {
+        repeated FileName file_names = 1;
+    }
+    message OutputThrough {
+        ProcedureName procedure_name = 1;
+    }
+    message OutputProcedurePhrase {
+        ProcedureName procedure_name = 1;
+        OutputThrough output_through = 2;
+    }
+    message Giving {
+        enum Type {
+            LOCK = 0;
+            SAVE = 1;
+            NO_REWIND = 2;
+            CRUNCH = 3;
+            RELEASE = 4;
+            WITH_REMOVE_CRUNCH = 5;
+        }
+        FileName file_name = 1;
+        Type type = 2;
+        
+    }
+    message GivingPhrase {
+        repeated Giving givings = 1;
+    }
+    FileName file_name = 1;
+    repeated OnKeyClause on_key_clauses = 2;
+    DuplicatesPhrase duplicates_phrase = 3;
+    CollatingSequencePhrase collating_sequence_phrase = 4;
+    InputProcedurePhrase input_procedure_phrase = 5;
+    repeated Using usings = 6;
+    OutputProcedurePhrase output_procedure_phrase = 7;
+    repeated GivingPhrase giving_phrases = 8;
 }
 
 message SetStatement {
-    // TODO:
+    message To {
+        Identifier identifier = 1;
+    }
+    message Entry {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message ToValue {
+        oneof one_of {
+            bool ON = 1;
+            bool OFF = 2;
+            Entry Entry = 3;
+            Identifier identifier = 4;
+            Literal literal = 5;
+        }
+    }
+    message ByValue {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message ToStatement {
+        repeated To tos = 1;
+        repeated ToValue to_values = 2;
+    }
+    message UpDownByStatement {
+        repeated To tos = 1;
+        ByValue by_value = 2;
+    }
+    repeated ToStatement to_statements = 1;
+    UpDownByStatement up_down_by_statement = 2;
 }
 
 message SendStatement {
-    // TODO:
+    message FromPhrase {
+        Identifier identifier = 1;
+    }
+    message WithPhrase {
+        Identifier identifier = 1;
+    }
+    message ReplacingPhrase {}
+    message AdvancingPage {}
+    message AdvancingLines {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message AdvancingMnemonic {
+        MnemonicName mnemonicName = 1;
+    }
+    message AdvancingPhrase {
+        oneof one_of {
+            AdvancingPage advancing_page = 1;
+            AdvancingLines advancing_lines = 2;
+            AdvancingMnemonic advancing_mnemonic = 3;
+        }
+    }
+    message SyncStatement {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        FromPhrase from_phrase = 3;
+        WithPhrase with_phrase = 4;
+        ReplacingPhrase replacing_phrase = 5;
+        AdvancingPhrase advancing_phrase = 6;
+    }
+    message AsyncStatement {
+        Identifier identifier = 1;
+    }
+    oneof one_of {
+        SyncStatement sync_statement = 1;
+        AsyncStatement async_statement = 2;
+    }
+    OnExceptionClause on_exception_clause = 98;
+    NotOnExceptionClause not_on_exception_clause = 99;
 }
 
 message SearchStatement {
-    // TODO:
+    message Varying {
+        QualifiedDataName qualified_data_name = 1;
+    }
+    message When {
+        Condition condition = 1;
+        bool next_sentence = 2;
+        repeated Statement statements = 3;
+    }
+    QualifiedDataName qualified_data_name = 1;
+    Varying varying = 2;
+    When when = 3;
 }
 
 message RewriteStatement {
-    // TODO:
+    message From {
+        Identifier identifier = 2;
+    }
+    RecordName record_name = 1;
+    From from = 2;
+    InvalidKeyPhrase invalid_key_phrase = 98;
+    NotInvalidKeyPhrase not_invalid_key_phrase = 99;
 }
 
 message ReturnStatement {
-    // TODO:
+    message Into {
+        QualifiedDataName qualified_data_name = 2;
+    }
+    FileName file_name = 1;
+    Into into = 2;
+    AtEndPhrase at_end_phrase = 96;
+    NotAtEndPhrase not_at_end_phrase = 97;
 }
 
 message ReleaseStatement {
-    // TODO:
+    message From {
+        QualifiedDataName qualified_data_name = 2;
+    }
+    RecordName record_name = 1;
+    From from = 2;
 }
 
 message ReceiveStatement {
-    // TODO:
+    message From {
+        DataName data_name = 1;
+    }
+    message With{}
+    message Thread {
+        DataName data_name = 1;
+    }
+    message Size {
+        oneof one_of {
+            NumericLiteral numeric_literal = 1;
+            Identifier identifier = 2;
+        }
+    }
+    message Status {
+        Identifier identifier = 1;
+    }
+    message Before {
+        oneof one_of {
+            NumericLiteral numeric_literal = 1;
+            Identifier identifier = 2;
+        }
+    }
+    message FromStatement {
+        DataName data_name = 1;
+        From from = 2;
+        Before before = 3;
+        With with = 4;
+        Thread thread = 5;
+        Size size = 6;
+        Status status = 7;
+    }
+    message NoData {
+        repeated Statement statements = 1;
+    }
+    message WithData {
+        repeated Statement statements = 1;
+    }
+    message IntoStatement {
+        CdName cd_name = 1;
+        Identifier identifier = 2;
+        NoData no_data = 3;
+        WithData with_data = 4;
+    }
+    oneof one_of {
+        FromStatement from_statement = 1;
+        IntoStatement into_statement = 2;
+    }
+    OnExceptionClause on_exception_clause = 98;
+    NotOnExceptionClause not_on_exception_clause = 99;
 }
 
 message ReadStatement {
-    // TODO:
+    message Into {
+        Identifier identifier = 1;
+    }
+    message With {
+
+    }
+    message Key {
+        QualifiedDataName qualified_data_name = 1;
+    }
+    FileName file_name = 1;
+    Into into = 2;
+    With with = 3;
+    Key key = 4;
+
+    AtEndPhrase at_end_phrase = 96;
+    NotAtEndPhrase not_at_end_phrase = 97;
+    InvalidKeyPhrase invalid_key_phrase = 98;
+    NotInvalidKeyPhrase not_invalid_key_phrase = 99;
 }
 
 message PurgeStatement {
-    // TODO:
+    repeated CdName cd_names = 1;
 }
 
 message PerformStatement {
-    // TODO:
+    message TestClause {
+
+    }
+    message Times {
+        oneof one_of {
+            Identifier identifier = 1;
+            IntegerLiteral integer_literal = 2;
+        }
+    }
+    message Until {
+        TestClause test_clause = 1;
+        Condition condition = 2;
+    }
+    message From {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            ArithmeticExpression arithmetic_expression = 3;
+        }
+    }
+    message By {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            ArithmeticExpression arithmetic_expression = 3;
+        }
+    }
+    message VaryingPhrase {
+        oneof value {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        From from = 3;
+        By by = 4;
+        Until until = 5;
+    }
+    message After {
+        VaryingPhrase varying_phrase = 1;
+    }
+    message VaryingClause {
+        VaryingPhrase varying_phrase = 1;
+        After after = 2;
+    }
+    message Varying {
+        TestClause test_clause = 1;
+        VaryingClause varying_clause = 2;
+    }
+    message Type {
+        oneof one_of {
+            Times times = 1;
+            Until until = 2;
+            Varying varying = 3;
+        }
+    }
+    message InlineStatement {
+        Type type = 1;
+        repeated Statement statements = 2;
+    }
+    message ProcedureStatement {
+        ProcedureName procedure_name = 1;
+        ProcedureName through = 2;
+        Type type = 3;
+    }
+    oneof one_of {
+        InlineStatement inline_statement = 1;
+        ProcedureStatement procedure_statement = 2;
+    }
 }
 
 message OpenStatement {
-    // TODO:
+    message Input {
+        FileName file_name = 1;
+    }
+    message InputStatement {
+        repeated Input inputs = 1;
+    }
+    message Output {
+        FileName file_name = 1;
+    }
+    message OutputStatement {
+        repeated Output outputs = 1;
+    }
+    message IOStatement {
+        repeated FileName file_names = 1;
+    }
+    message ExtendStatement {
+        repeated FileName file_names = 1;
+    }
+    oneof one_of {
+        InputStatement input_statement = 1;
+        OutputStatement output_statement = 2;
+        IOStatement io_statement = 3;
+        ExtendStatement extend_statement = 4;
+    }
 }
 
 message NextSentenceStatement {
-    // TODO:
 }
 
 message MultiplyStatement {
-    // TODO:
+    message GivingOperand {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message GivingResult {
+        Identifier identifier = 1;
+    }
+    message Giving {
+        GivingOperand giving_operand = 1;
+        repeated GivingResult giving_result = 2;
+    }
+    message Regular {
+        repeated GivingOperand giving_operands = 1;
+    }
+    oneof value {
+        Identifier identifier = 1;
+        Literal literal = 2;
+    }
+    oneof by {
+        Regular regular = 3;
+        Giving giving = 4;
+    }
+    OnSizeErrorPhrase on_size_error_phrase = 98;
+    NotOnSizeErrorPhrase not_on_size_error_phrase = 99;
 }
 
 message MoveStatement {
@@ -1603,8 +2109,8 @@ message MoveStatement {
 
 message MoveToStatement {
     oneof sending_area {
-        Identifier Identifier = 1;
-        Literal Literal = 2;
+        Identifier identifier = 1;
+        Literal literal = 2;
     }
     repeated Identifier to = 3;
 }
@@ -1615,71 +2121,353 @@ message MoveCorrespondingToStatement {
 }
 
 message MergeStatement {
-    // TODO:
+    message OnKeyClause {
+        repeated QualifiedDataName keys = 1;
+    }
+    message CollatingSequencePhrase {
+        repeated AlphabetName alphabet_names = 1;
+        CollatingAlphanumeric collating_alphanumeric = 2;
+        CollatingNational collating_national = 3;
+    }
+    message CollatingAlphanumeric {
+        AlphabetName alphabet_name = 1;
+    }
+    message CollatingNational {
+        AlphabetName alphabet_name = 1;
+    }
+    message Using {
+        repeated FileName file_names = 1;
+    }
+    message OutputProcedurePhrase {
+        ProcedureName procedure_name = 1;
+        OutputThrough output_through = 2;
+    }
+    message OutputThrough {
+        ProcedureName procedure_name = 1;
+    }
+    message GivingPhrase {
+        repeated Giving givings = 1;
+    }
+    message Giving {
+        enum Type {
+            LOCK = 0;
+		    SAVE = 1;
+		    NO_REWIND = 2;
+		    CRUNCH = 3;
+		    RELEASE = 4;
+		    WITH_REMOVE_CRUNCH = 5;
+        }
+        FileName file_name = 1;
+        Type type = 2;
+    }
+    FileName file_name = 1;
+    repeated OnKeyClause on_key_clauses = 2;
+    CollatingSequencePhrase collating_sequence_phrase = 3;
+    repeated Using usings = 4;
+    OutputProcedurePhrase output_procedure_phrase = 5;
+    repeated GivingPhrase giving_phrases = 6;
 }
 
 message InspectStatement {
-    // TODO:
+    message By {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message To {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message BeforeAfter {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message ReplacingAllLeading {
+        oneof value {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        By by = 3;
+        repeated BeforeAfter before_afters = 4;
+    }
+    message ReplacingAllLeadings {
+        repeated ReplacingAllLeading replacing_all_leadings = 1;
+    }
+    message AllLeading {
+        oneof value {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        repeated BeforeAfter before_afters = 3;
+    }
+    message AllLeadings {
+        repeated AllLeading all_leadings = 1;
+    }
+    message ReplacingCharacters {
+        By by = 1;
+        repeated BeforeAfter before_afters = 2;
+    }
+    message Characters {
+        repeated BeforeAfter before_afters = 1;
+    }
+    message CharactersLeadings {
+        oneof one_of {
+            Characters characters = 1;
+            AllLeadings all_leadings = 2;
+        }
+    }
+    message For {
+        Identifier identifier = 1;
+        repeated CharactersLeadings characters_leadings = 2;
+    }
+    message ConvertingPhrase {
+        oneof value {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        To to = 3;
+        repeated BeforeAfter before_afters = 4;
+    }
+    message ReplacingCharactersLeadings {
+        oneof one_of {
+            ReplacingCharacters replacing_characters = 1;
+            ReplacingAllLeadings replacing_all_leadings = 2;
+        }
+    }
+    message ReplacingPhrase {
+        repeated ReplacingCharactersLeadings replacing_characters_leadings = 1;
+    }
+    message TallyingReplacingPhrase {
+        repeated For fors = 1;
+        repeated ReplacingPhrase replacing_phrases = 2;
+    }
+    message TallyingPhrase {
+        repeated For fors = 1;
+    }
+    Identifier identifier = 1;
+    oneof phrase {
+        TallyingPhrase tallying_phrase = 2;
+        TallyingReplacingPhrase tallying_replacing_phrase = 3;
+        ReplacingPhrase replacing_phrase = 4;
+        ConvertingPhrase converting_phrase = 5;
+    }
 }
 
 message InitiateStatement {
-    // TODO:
+    repeated ReportName report_names = 1;
 }
 
 message InitializeStatement {
-    // TODO:
+    message ReplacingBy {
+        enum Type {
+            ALPHABETIC = 0;
+		    ALPHANUMERIC = 1;
+		    ALPHANUMERIC_EDITED = 2;
+		    NATIONAL = 3;
+		    NATIONAL_EDITED = 4;
+		    NUMERIC = 5;
+		    NUMERIC_EDITED = 6;
+		    DBCS = 7;
+		    EGCS = 8;
+        }
+        Type type = 1;
+        oneof by {
+            Identifier identifier = 2;
+            Literal literal = 3;
+        }
+    }
+    message ReplacingPhrase {
+        repeated ReplacingBy bys = 1;
+    }
+    repeated Identifier identifiers = 1;
+    ReplacingPhrase replacing_phrase = 2;
 }
 
 message IfStatement {
-    // TODO:
+    message Then {
+        bool next_sentence = 1;
+        repeated Statement statements = 2;
+    }
+    message Else {
+        bool next_sentence = 1;
+        repeated Statement statements = 2;
+    }
+    Condition condition = 1;
+    Then then = 2;
+    Else else = 3;
 }
 
 message GoToStatement {
-    // TODO:
+    message SimpleStatement {
+        ProcedureName procedure_name = 1;
+    }
+    message DependingOn {
+        repeated ProcedureName procedure_names = 1;
+        Identifier depending_on = 2;
+    }
+    message DependingOnStatement {
+        oneof one_of {
+            bool more_labels = 1;
+            DependingOn depending_on = 2;
+        }
+    }
+    oneof statement {
+        SimpleStatement simple = 1;
+        DependingOnStatement depending_on = 2;
+    }
 }
 
 message GobackStatement {
-    // TODO:
 }
 
 message GenerateStatement {
-    // TODO:
+    ReportName report_name = 1;
 }
 
 message ExitStatement {
-    // TODO:
 }
 
 message ExecSqlImsStatement {
-    // TODO:
 }
 
 message ExecSqlStatement {
-    // TODO:
 }
 
 message ExecCicsStatement {
-    // TODO:
 }
 
 message ExhibitStatement {
-    // TODO:
+    message Operand {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    repeated Operand operands = 1;
 }
 
 message EvaluateStatement {
-    // TODO:
+    message Select {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            ArithmeticExpression arithmetic_expression = 3;
+            pb.Condition condition = 4;
+        }
+    }
+    message AlsoSelect {
+        Select select = 1;
+    }
+
+    message ValueThrough {
+        Value value = 1;
+        Through through = 2;
+    }
+
+    message Through {
+        Value value = 1;
+    }
+
+    message Value {
+        Identifier identifier = 1;
+        Literal literal = 2;
+        ArithmeticExpression arithmetic_expression = 3;
+    }
+
+    message Condition {
+        oneof one_of {
+            bool any = 1;
+            ValueThrough value_through = 2;
+            pb.Condition condition = 3;
+            BooleanLiteral boolean_literal = 4;
+        }
+    }
+
+    message AlsoCondition {
+        Condition condition = 1;
+    }
+
+    message WhenOther {
+        repeated Statement statements = 1;
+    }
+
+    message When {
+        Condition condition = 1;
+        repeated AlsoCondition alsos = 2;
+    }
+
+    message WhenPhrase {
+        repeated When whens = 1;
+        repeated Statement statements = 2;
+    }
+
+    Select select = 1;
+    repeated AlsoSelect also_selects = 2;
+    repeated WhenPhrase when_phrases = 3;
+    WhenOther when_other = 4;
 }
 
 message EntryStatement {
-    // TODO:
+    Literal entry = 1;
+    repeated Identifier usings = 2;
 }
 
 message EnableStatement {
-    // TODO:
+    CdName cd_name = 1;
+    oneof key {
+        Identifier identifier = 2;
+        Literal literal = 3;
+    }
 }
 
 message DivideStatement {
-    // TODO:
+    message Giving {
+        Identifier identifier = 1;
+    }
+    message GivingPhrase {
+        repeated Giving givings = 1;
+    }
+    message Into {
+        Identifier identifier = 1;
+    }
+    message IntoStatement {
+        repeated Into intos = 1;
+    }
+    message IntoGivingStatement {
+        oneof into {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        GivingPhrase giving_phrase = 3;
+    }
+    message ByGivingStatement {
+        oneof by {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+        GivingPhrase giving_phrase = 3;
+    }
+    message Remainder {
+        Identifier identifier = 1;
+    }
+
+    oneof divide {
+        Identifier identifier = 1;
+        Literal literal = 2;
+    }
+    oneof statement {
+        IntoStatement into_statement = 3;
+        IntoGivingStatement into_giving_statement = 4;
+        ByGivingStatement by_giving_statement = 5;
+    }
+    Remainder remainder = 6;
+    OnSizeErrorPhrase on_size_error_phrase = 98;
+    NotOnSizeErrorPhrase not_on_size_error_phrase = 99;
 }
 
 message DisplayOperand {
@@ -1717,35 +2505,151 @@ message DisplayStatement {
 }
 
 message DisableStatement {
-    // TODO:
+    CdName cd_name = 1;
+    oneof key {
+        Identifier identifier = 2;
+        Literal literal = 3;
+    }
 }
 
 message DeleteStatement {
-    // TODO:
+    FileName file_name = 1;
+    InvalidKeyPhrase invalid_key_phrase = 98;
+    NotInvalidKeyPhrase not_invalid_key_phrase = 99;
 }
 
 message ContinueStatement {
-    // TODO:
+}
+
+message ComputeStore {
+    Identifier identifier = 1;
 }
 
 message ComputeStatement {
-    // TODO:
+    repeated ComputeStore stores = 1;
+    ArithmeticExpression arithmetic_expression = 2;
+    OnSizeErrorPhrase on_size_error_phrase = 98;
+    NotOnSizeErrorPhrase not_on_size_error_phrase = 99;
+}
+
+message CloseReelUnitStatement {
+
+}
+
+message CloseRelativeStatement {
+
+}
+
+message ClosePortFileIOUsing {
+    message CloseDisposition {
+
+    }
+    message AssociatedData {
+        oneof one_of {
+            Identifier identifier = 1;
+            IntegerLiteral integer_literal = 2;
+        }
+    }
+    message AssociatedDataLength {
+        oneof one_of {
+            Identifier identifier = 1;
+            IntegerLiteral integer_literal = 2;
+        }
+    }
+    oneof one_of {
+        CloseDisposition close_disposition = 1;
+        AssociatedData associated_data = 2;
+        AssociatedDataLength associated_data_length = 3;
+    }
+}
+
+message ClosePortFileIOStatement {
+    repeated ClosePortFileIOUsing usings = 1;
+    bool wait = 2;
+}
+
+message CloseFile {
+    FileName file_name = 1;
+    oneof statement {
+        CloseReelUnitStatement close_reel_unit_statement = 2;
+        CloseRelativeStatement close_relative_statement = 3;
+        ClosePortFileIOStatement close_port_file_io_statement = 4;
+    }
 }
 
 message CloseStatement {
-    // TODO:
+    repeated CloseFile close_files = 1;
+}
+
+message CancelCall {
+    oneof one_of {
+        LibraryName library_name = 1;
+        Identifier identifier = 2;
+        Literal literal = 3;
+    }
 }
 
 message CancelStatement {
-    // TODO:
+    repeated CancelCall calls = 1;
 }
 
 message CallStatement {
-    // TODO:
+    message ByContent {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            bool omitted = 3;
+        }
+    }
+    message ByValue {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+        }
+    }
+    message ByReference {
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            FileName file_name = 3;
+            bool omitted = 4;
+        }
+    }
+    message ByReferencePhrase {
+        repeated ByReference refs = 1;
+    }
+    message ByValuePhrase {
+        repeated ByValue values = 1;
+    }
+    message ByContentPhrase {
+        repeated ByContent contents = 1;
+    }
+    message UsingParameter {
+        oneof one_of {
+            ByReferencePhrase by_reference_phrase = 1;
+            ByValuePhrase by_value_phrase = 2;
+            ByContentPhrase by_content_phrase = 3;
+        }
+    }
+    message UsingPhrase {
+        repeated UsingParameter parameters = 1;
+    }
+    message GivingPhrase {
+        Identifier identifier = 1;
+    }
+    UsingPhrase using_phrase = 1;
+    GivingPhrase giving_phrase = 2;
+    OnOverflowPhrase on_overflow_phrase = 97;
+    OnExceptionClause on_exception_clause = 98;
+    NotOnExceptionClause not_on_exception_clause = 99;
 }
 
 message AlterStatement {
-    // TODO:
+    message ProceedTo {
+        ProcedureName from = 1;
+        ProcedureName to = 2;
+    }
+    repeated ProceedTo proceed_tos = 1;
 }
 
 message AddStatement {
@@ -1821,11 +2725,42 @@ message AcceptStatement {
 
 // statement phrases ----------------------------------
 
+message AtEndOfPagePhrase {
+    repeated Statement statements = 1;
+}
+message NotAtEndOfPagePhrase {
+    repeated Statement statements = 1;
+}
+
 message OnSizeErrorPhrase {
     repeated Statement statements = 1;
 }
 
 message NotOnSizeErrorPhrase {
+    repeated Statement statements = 1;
+}
+
+message OnOverflowPhrase {
+    repeated Statement statements = 1;
+}
+
+message NotOnOverflowPhrase {
+    repeated Statement statements = 1;
+}
+
+message InvalidKeyPhrase {
+    repeated Statement statements = 1;
+}
+
+message NotInvalidKeyPhrase {
+    repeated Statement statements = 1;
+}
+
+message AtEndPhrase {
+    repeated Statement statements = 1;
+}
+
+message NotAtEndPhrase {
     repeated Statement statements = 1;
 }
 
@@ -2021,14 +2956,14 @@ message RelationCombinedCondition {
 }
 
 enum RelationalOperator {
-    EQUAL = 0;               // =
-    NOT_EQUAL = 1;           // !=
-    MORE_THAN_OR_EQUAL = 2;  // >=
-    LESS_THAN_OR_EQUAL = 3;  // <=
-    GREATER_THAN = 4;        // >
-    NOT_GREATER_THAN = 5;    // !>
-    LESS_THAN = 6;           // <
-    NOT_LESS_THAN = 7;       // !<
+    EQUAL = 0;                  // =
+    NOT_EQUAL = 1;              // !=
+    GREATER_OR_EQUAL = 2;       // >=
+    LESS_OR_EQUAL = 3;          // <=
+    GREATER = 4;                // >
+    NOT_GREATER = 5;            // !>
+    LESS = 6;                   // <
+    NOT_LESS = 7;               // !<
 }
 
 message Abbreviation {
