@@ -19,7 +19,7 @@ var (
 	formatFlag   = flag.String("format", "FIXED", "cobol file format, FIXED, TANDEM, VARIABLE")
 	pathFlag     = flag.String("path", ".", "cobol files path")
 	suffixFlag   = flag.String("suffix", ".CBL,src,COB", "cobol cbl, separated by commas")
-	copyPathFlag = flag.String("copyPath", "", "cobol copy book directory")
+	copyPathFlag = flag.String("copy-path", "", "cobol copy book directory")
 )
 
 var (

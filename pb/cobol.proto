@@ -1562,6 +1562,8 @@ message UnstringStatement {
     }
     message Into {
         Identifier identifier = 1;
+        DelimiterIn delimiter_in = 2;
+        CountIn count_in = 3;
     }
     message DelimiterIn {
         Identifier identifier = 1;
@@ -1571,12 +1573,10 @@ message UnstringStatement {
     }
     message SendingPhrase {
         Identifier identifier = 1;
-        DelimitedOr delimited_or = 2;
+        DelimitedByPhrase delimited_by_phrase = 2;
     }
     message IntoPhrase {
-        Into into = 1;
-        DelimiterIn delimiter_in = 2;
-        CountIn count_in = 3;
+        repeated Into into = 1;
     }
     message WithPointerPhrase {
         QualifiedDataName qualified_data_name = 1;
@@ -1863,7 +1863,7 @@ message SearchStatement {
     }
     QualifiedDataName qualified_data_name = 1;
     Varying varying = 2;
-    When when = 3;
+    repeated When when = 3;
 }
 
 message RewriteStatement {
@@ -2013,7 +2013,7 @@ message PerformStatement {
     }
     message VaryingClause {
         VaryingPhrase varying_phrase = 1;
-        After after = 2;
+        repeated After after = 2;
     }
     message Varying {
         TestClause test_clause = 1;
@@ -2085,8 +2085,9 @@ message MultiplyStatement {
         GivingOperand giving_operand = 1;
         repeated GivingResult giving_result = 2;
     }
+    
     message Regular {
-        repeated GivingOperand giving_operands = 1;
+        repeated Identifier regular_operands = 1;
     }
     oneof value {
         Identifier identifier = 1;
@@ -2216,10 +2217,8 @@ message InspectStatement {
         repeated BeforeAfter before_afters = 1;
     }
     message CharactersLeadings {
-        oneof one_of {
-            Characters characters = 1;
-            AllLeadings all_leadings = 2;
-        }
+        Characters characters = 1;
+        AllLeadings all_leadings = 2;
     }
     message For {
         Identifier identifier = 1;
@@ -2234,10 +2233,8 @@ message InspectStatement {
         repeated BeforeAfter before_afters = 4;
     }
     message ReplacingCharactersLeadings {
-        oneof one_of {
-            ReplacingCharacters replacing_characters = 1;
-            ReplacingAllLeadings replacing_all_leadings = 2;
-        }
+        ReplacingCharacters replacing_characters = 1;
+        ReplacingAllLeadings replacing_all_leadings = 2;
     }
     message ReplacingPhrase {
         repeated ReplacingCharactersLeadings replacing_characters_leadings = 1;
@@ -2374,9 +2371,11 @@ message EvaluateStatement {
     }
 
     message Value {
-        Identifier identifier = 1;
-        Literal literal = 2;
-        ArithmeticExpression arithmetic_expression = 3;
+        oneof one_of {
+            Identifier identifier = 1;
+            Literal literal = 2;
+            ArithmeticExpression arithmetic_expression = 3;
+        }
     }
 
     message Condition {

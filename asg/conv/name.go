@@ -5,6 +5,13 @@ import (
 	"github.com/kaisawind/cobol/pb"
 )
 
+func RecordName(in cobol85.IRecordNameContext) *pb.RecordName {
+	ctx := in.(*cobol85.RecordNameContext)
+	return &pb.RecordName{
+		QualifiedDataName: QualifiedDataName(ctx.QualifiedDataName()),
+	}
+}
+
 func ScreenName(in cobol85.IScreenNameContext) *pb.ScreenName {
 	ctx := in.(*cobol85.ScreenNameContext)
 	return &pb.ScreenName{
